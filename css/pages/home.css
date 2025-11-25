@@ -1,0 +1,840 @@
+/* ================================================
+   Home Page Styles
+   ================================================ */
+
+/* ========== Global Utilities ========== */
+.section-spacing {
+	padding: var(--sp-8) 0;
+}
+
+.section-title {
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-700);
+	font-weight: 700;
+	color: var(--brand-primary);
+	line-height: 1.22;
+	margin-bottom: var(--sp-4);
+}
+
+/* ========== Hero Section ========== */
+.hero-section {
+	position: relative;
+	width: 100%;
+	height: 500px;
+	overflow: hidden;
+}
+
+.hero-section__bg {
+	width: 100%;
+	height: 100%;
+	background-image: url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/MSLK53rGr6.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+/* ========== About Section ========== */
+.about-section {
+	position: relative;
+}
+
+.about-section__image-wrapper {
+	position: relative;
+}
+
+.about-section__deco {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	max-width: 895px;
+	height: auto;
+	z-index: 1;
+}
+
+.about-section__main-image {
+	position: relative;
+	width: 100%;
+	max-width: 618px;
+	height: auto;
+	border-radius: var(--radius-30);
+	z-index: 2;
+}
+
+.about-section__subtitle {
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-800);
+	font-weight: 400;
+	color: var(--gray-900);
+	line-height: 1.2;
+	margin-bottom: var(--sp-2);
+}
+
+.about-section__title {
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-900);
+	font-weight: 700;
+	color: var(--brand-primary);
+	line-height: 1.22;
+	margin-bottom: var(--sp-4);
+}
+
+.about-section__description {
+	font-family: Montserrat, var(--font-primary);
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--gray-900);
+	line-height: 1.57;
+}
+
+/* ========== Admission Info Section ========== */
+.admission-info-section {
+	background-image: url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/rvDhgY11nU.png');
+	background-size: cover;
+	background-position: center;
+	padding: var(--sp-8) 0;
+}
+
+.admission-info-section__wrapper {
+	padding: var(--sp-8) 0;
+}
+
+.admission-info-card {
+	background-color: #ffffff;
+	border-radius: var(--radius-lg);
+	padding: var(--sp-6) var(--sp-4);
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.admission-info-card__title {
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-700);
+	font-weight: 700;
+	color: var(--brand-primary);
+	line-height: 1.22;
+	margin-bottom: var(--sp-4);
+}
+
+.admission-info-card__section-title {
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-450);
+	font-weight: 600;
+	color: var(--brand-secondary);
+	text-transform: capitalize;
+	margin-bottom: var(--sp-3);
+}
+
+.admission-info-card__divider {
+	border: none;
+	height: 1px;
+	background-color: var(--gray-300);
+	margin-bottom: var(--sp-3);
+}
+
+.admission-info-card__list {
+	list-style: none;
+	padding: 0;
+	margin-bottom: var(--sp-4);
+}
+
+.admission-info-card__list li {
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-400);
+	font-weight: 500;
+	color: var(--gray-900);
+	line-height: 1.67;
+	margin-bottom: var(--sp-3);
+	padding-left: var(--sp-3);
+	position: relative;
+}
+
+.admission-info-card__list li::before {
+	content: '•';
+	position: absolute;
+	left: 0;
+	color: var(--brand-primary);
+	font-weight: 700;
+}
+
+.admission-info-card__btn {
+	display: inline-block;
+	background-color: var(--brand-secondary);
+	color: #ffffff;
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-300);
+	font-weight: 600;
+	text-transform: capitalize;
+	padding: var(--sp-3) var(--sp-4);
+	border-radius: var(--radius-md);
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+
+.admission-info-card__btn:hover {
+	background-color: #1a2954;
+	color: #ffffff;
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(33, 51, 104, 0.3);
+}
+
+/* ========== Programs Section ========== */
+.programs-section {
+	background-color: #fafafa;
+}
+
+.programs-tabs {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: var(--sp-6);
+	list-style: none;
+	padding: 0;
+	margin-bottom: var(--sp-5);
+	flex-wrap: wrap;
+}
+
+.programs-tabs__item {
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-350);
+	font-weight: 500;
+	color: var(--gray-900);
+	text-transform: capitalize;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	position: relative;
+	padding-bottom: var(--sp-1);
+}
+
+.programs-tabs__item:hover {
+	color: var(--brand-primary);
+}
+
+.programs-tabs__item--active {
+	font-weight: 600;
+	color: var(--brand-primary);
+}
+
+.programs-tabs__item--active::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: var(--brand-primary);
+}
+
+/* ========== News Section ========== */
+.news-section {
+	background-color: var(--brand-primary);
+	padding: var(--sp-8) 0;
+}
+
+.news-section__wrapper {
+	padding: var(--sp-4) 0;
+}
+
+/* ========== Events Section ========== */
+.events-section {
+	padding: var(--sp-8) 0;
+	position: relative;
+}
+
+.events-section__grid {
+	position: relative;
+	min-height: 643px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.events-section__title {
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-700);
+	font-weight: 700;
+	color: var(--brand-primary);
+	line-height: 1.22;
+	margin-bottom: var(--sp-4);
+}
+
+/* Event List Cards - Left Column */
+.event-card--list {
+	position: absolute;
+	left: 0;
+	width: 51.92%; /* 623px in 1200px container */
+	max-width: 623px;
+}
+
+.event-card--1 {
+	top: 89px;
+}
+
+.event-card--2 {
+	top: 282px;
+}
+
+.event-card--3 {
+	top: 474px;
+}
+
+/* Featured Event Card - Right Column */
+.event-card--featured {
+	position: absolute;
+	top: 0;
+	left: 57.17%; /* 686px in 1200px container */
+	width: 42.83%; /* 514px */
+	max-width: 514px;
+	height: 643px;
+}
+
+/* ========== FAQ Section ========== */
+.faq-section__image {
+	width: 100%;
+	max-width: 452px;
+	height: auto;
+	border-radius: 30px;
+}
+
+.faq-section__subtitle {
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-425);
+	font-weight: 500;
+	color: var(--gray-900);
+	margin-bottom: var(--sp-2);
+}
+
+.faq-section__deco {
+	position: absolute;
+	top: 110px;
+	right: 0;
+	width: 120px;
+	height: auto;
+	opacity: 0.5;
+}
+
+/* ========== Student Life Section ========== */
+.student-life-section {
+	background-color: var(--brand-primary);
+	padding: 60px 0;
+	position: relative;
+	overflow: hidden;
+}
+
+.student-life-section__grid {
+	position: relative;
+	min-height: 1024px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/* Absolute positioning for all elements like Codia */
+.student-life-section__col {
+	position: absolute;
+}
+
+/* Left column - 0px in 1200px container */
+.student-life-section__col--left {
+	left: 0;
+	top: 0;
+	width: 32.5%;
+	max-width: 390px;
+}
+
+.student-life-section__content {
+	position: relative;
+	width: 100%;
+	max-width: 387px;
+	padding-top: 55px;
+}
+
+.student-life-section__label {
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-500);
+	font-weight: 600;
+	line-height: 1.208;
+	color: #ffffff;
+	text-transform: capitalize;
+	height: 29px;
+	white-space: nowrap;
+	margin-bottom: 5px;
+}
+
+.student-life-section__title {
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-900);
+	font-weight: 700;
+	line-height: 1.217;
+	color: #ffffff;
+	text-transform: capitalize;
+	height: 73px;
+	white-space: nowrap;
+	margin-bottom: 14px;
+}
+
+.student-life-section__description {
+	font-family: Montserrat, var(--font-primary);
+	font-size: 14px;
+	font-weight: 400;
+	color: #ffffff;
+	line-height: 1.57;
+	width: 100%;
+	max-width: 387px;
+	margin-bottom: 26px;
+}
+
+.student-life-section__image {
+	border-radius: var(--radius-lg);
+	object-fit: cover;
+	display: block;
+	position: relative;
+	max-width: 100%;
+	height: auto;
+}
+
+/* Left column - tall image */
+.student-life-section__col--left .student-life-section__image {
+	width: 100%;
+	aspect-ratio: 390 / 620;
+}
+
+/* Middle column - 406px from left in 1200px container = 33.83% */
+.student-life-section__col--middle {
+	left: 33.83%;
+	top: 60px;
+	width: 32.42%;
+	max-width: 389px;
+}
+
+.student-life-section__col--middle .student-life-section__image:nth-child(1) {
+	width: 100%;
+	aspect-ratio: 389 / 362;
+	margin-bottom: 16px;
+}
+
+.student-life-section__col--middle .student-life-section__image:nth-child(2) {
+	width: 100%;
+	aspect-ratio: 389 / 255;
+	margin-bottom: 16px;
+}
+
+.student-life-section__col--middle .student-life-section__image:nth-child(3) {
+	width: 100%;
+	aspect-ratio: 389 / 255;
+}
+
+/* Right column - 813px from left in 1200px container = 67.75% */
+.student-life-section__col--right {
+	left: 67.75%;
+	top: 60px;
+	width: 32.25%;
+	max-width: 387px;
+}
+
+.student-life-section__col--right .student-life-section__image:nth-child(1) {
+	width: 100%;
+	aspect-ratio: 387 / 497;
+	margin-bottom: 16px;
+}
+
+.student-life-section__col--right .student-life-section__image:nth-child(2) {
+	width: 100%;
+	aspect-ratio: 387 / 390;
+}
+
+/* ========== Registration Section ========== */
+.registration-section__wrapper {
+	position: relative;
+}
+
+.registration-section__bg {
+	width: 100%;
+	height: 543px;
+	object-fit: cover;
+	border-radius: 10px;
+}
+
+.registration-form {
+	position: relative;
+	max-width: 1000px;
+	margin: -200px auto 0;
+	background-color: #ffffff;
+	border-radius: 10px;
+	padding: 46px 96px;
+	box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1);
+}
+
+.registration-form__title {
+	font-family: Montserrat, var(--font-primary);
+	font-size: 26px;
+	font-weight: 700;
+	line-height: 31.694px;
+	color: #a41034;
+	text-align: left;
+	margin-bottom: 21px;
+}
+
+.registration-form__input,
+.registration-form__textarea {
+	width: 100%;
+	height: 38px;
+	border: 1px solid #dddddd;
+	border-radius: 10px;
+	padding: 9px 13px;
+	font-family: Montserrat, var(--font-primary);
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 17px;
+	color: #737477;
+	background-color: #ffffff;
+	transition: border-color 0.3s ease;
+}
+
+.registration-form__input::placeholder,
+.registration-form__textarea::placeholder {
+	color: #737477;
+}
+
+.registration-form__input:focus,
+.registration-form__textarea:focus {
+	outline: none;
+	border-color: #a41034;
+}
+
+.registration-form .row.g-3 {
+	gap: 0;
+	margin-bottom: 18px;
+}
+
+.registration-form .row.g-3 .col-md-6:first-child {
+	padding-right: 9px;
+}
+
+.registration-form .row.g-3 .col-md-6:last-child {
+	padding-left: 9px;
+}
+
+.registration-form .mb-3 {
+	margin-bottom: 18px;
+}
+
+/* Checkboxes */
+.registration-form__checkboxes {
+	display: flex;
+	gap: 35px;
+	justify-content: flex-start;
+	align-items: center;
+	border: none;
+	padding: 0;
+	margin-bottom: 18px;
+}
+
+.registration-form__checkboxes .form-check {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin: 0;
+}
+
+.registration-form__checkboxes .form-check-input {
+	width: 17px;
+	height: 17px;
+	background-color: #dddddd;
+	border: none;
+	border-radius: 2px;
+	margin: 0;
+	cursor: pointer;
+}
+
+.registration-form__checkboxes .form-check-input:checked {
+	background-color: #a41034;
+	border: none;
+}
+
+.registration-form__checkboxes .form-check-input:focus {
+	box-shadow: none;
+}
+
+.registration-form__checkboxes .form-check-label {
+	font-family: Montserrat, var(--font-primary);
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 16.943px;
+	color: #737477;
+	cursor: pointer;
+	margin: 0;
+}
+
+/* Textarea */
+.registration-form__textarea {
+	height: 100px;
+	resize: none;
+	padding-top: 9px;
+}
+
+/* Submit button */
+.registration-form__submit {
+	width: 100%;
+	height: 49px;
+	background-color: #a41034;
+	color: #ffffff;
+	font-family: Montserrat, var(--font-primary);
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 19.504px;
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.registration-form__submit:hover {
+	background-color: #8a0d2b;
+}
+
+/* ========== Responsive Adjustments ========== */
+@media (min-width: 576px) and (max-width: 991px) {
+	.section-title {
+		font-size: var(--fs-600);
+	}
+
+	.hero-section {
+		height: 300px;
+	}
+
+	.about-section__subtitle {
+		font-size: var(--fs-600);
+	}
+
+	.about-section__title {
+		font-size: var(--fs-700);
+	}
+
+	.student-life-section__title {
+		font-size: var(--fs-700);
+	}
+
+	.student-life-section {
+		padding: var(--sp-6) 0;
+	}
+
+	.student-life-section__grid {
+		min-height: auto;
+		padding: 0;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: var(--sp-4);
+		max-width: 100%;
+	}
+
+	.student-life-section__col {
+		position: static !important;
+		width: 100% !important;
+		max-width: 100% !important;
+		left: auto !important;
+		top: auto !important;
+	}
+
+	.student-life-section__col--left {
+		grid-column: 1 / -1;
+		display: flex;
+		flex-direction: column;
+		gap: var(--sp-3);
+	}
+
+	.student-life-section__col--middle {
+		grid-column: 1;
+		display: flex;
+		flex-direction: column;
+		gap: var(--sp-3);
+	}
+
+	.student-life-section__col--right {
+		grid-column: 2;
+		display: flex;
+		flex-direction: column;
+		gap: var(--sp-3);
+	}
+
+	.student-life-section__content {
+		position: static;
+		width: 100%;
+		max-width: 100%;
+		padding-top: 0;
+		padding: 0 var(--sp-3);
+	}
+
+	.student-life-section__label,
+	.student-life-section__title,
+	.student-life-section__description {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		white-space: normal;
+	}
+
+	.student-life-section__image {
+		width: 100% !important;
+		max-width: 100% !important;
+		height: auto !important;
+		aspect-ratio: auto !important;
+		margin-bottom: 0 !important;
+	}
+
+	.events-section__grid {
+		min-height: auto;
+		padding: 0 var(--sp-3);
+	}
+
+	.events-section__title {
+		position: static;
+		margin-bottom: var(--sp-4);
+	}
+
+	.event-card--list,
+	.event-card--featured {
+		position: static !important;
+		width: 100% !important;
+		max-width: 100% !important;
+		left: auto !important;
+		top: auto !important;
+		height: auto !important;
+		margin-bottom: var(--sp-4);
+	}
+
+	.registration-section__bg {
+		height: 400px;
+	}
+
+	.registration-form {
+		margin-top: var(--sp-4);
+		padding: 30px 40px;
+	}
+
+	.registration-form__title {
+		font-size: 22px;
+		line-height: 1.2;
+	}
+
+	.registration-form .row.g-3 .col-md-6:first-child,
+	.registration-form .row.g-3 .col-md-6:last-child {
+		padding-right: 15px;
+		padding-left: 15px;
+	}
+
+	.programs-tabs {
+		gap: var(--sp-3);
+	}
+
+	.programs-tabs__item {
+		font-size: 14px;
+	}
+
+	.faq-section__image {
+		max-width: 100%;
+		margin-bottom: var(--sp-4);
+	}
+
+	.faq-section__subtitle {
+		font-size: var(--fs-400);
+	}
+
+	.faq-section__deco {
+		width: 100px;
+		top: 80px;
+	}
+}
+
+@media (max-width: 575px) {
+	.section-spacing {
+		padding: var(--sp-6) 0;
+	}
+
+	.section-title {
+		font-size: var(--fs-500);
+		text-align: center;
+	}
+
+	.admission-info-card__title {
+		font-size: var(--fs-500);
+	}
+
+	.hero-section {
+		height: 250px;
+	}
+
+	.about-section__deco {
+		display: none;
+	}
+
+	.about-section__subtitle {
+		font-size: var(--fs-500);
+		text-align: center;
+	}
+
+	.about-section__title {
+		font-size: var(--fs-600);
+		text-align: center;
+	}
+
+	.faq-section__image {
+		max-width: 100%;
+		margin: 0 auto var(--sp-4);
+		display: block;
+	}
+
+	.faq-section__subtitle {
+		font-size: var(--fs-350);
+		text-align: center;
+	}
+
+	.registration-section__bg {
+		height: 300px;
+	}
+
+	.registration-form {
+		margin-top: var(--sp-3);
+		padding: 30px 20px;
+	}
+
+	.registration-form__title {
+		font-size: 20px;
+		line-height: 1.2;
+		margin-bottom: 16px;
+	}
+
+	.registration-form .row.g-3 {
+		margin-bottom: 14px;
+	}
+
+	.registration-form .row.g-3 .col-md-6:first-child,
+	.registration-form .row.g-3 .col-md-6:last-child {
+		padding-right: 15px;
+		padding-left: 15px;
+		margin-bottom: 14px;
+	}
+
+	.registration-form .mb-3 {
+		margin-bottom: 14px;
+	}
+
+	.registration-form__checkboxes {
+		flex-direction: column;
+		gap: 12px;
+		align-items: flex-start;
+		margin-bottom: 14px;
+	}
+
+	.registration-form__submit {
+		height: 45px;
+		font-size: 15px;
+	}
+
+	.faq-section__deco {
+		display: none;
+	}
+}

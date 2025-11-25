@@ -1,0 +1,128 @@
+/* ================================================
+   Navbar Component
+   ================================================ */
+
+.navbar {
+	padding: var(--sp-3) 0;
+	background-color: #ffffff;
+}
+
+.navbar-brand {
+	flex-shrink: 0;
+	margin-right: var(--sp-4);
+}
+
+.navbar__logo {
+	width: 50px;
+	height: 72px;
+	object-fit: contain;
+}
+
+.navbar-collapse {
+	flex-grow: 1;
+}
+
+.navbar-nav {
+	gap: var(--sp-2);
+	align-items: center;
+	flex-wrap: nowrap;
+}
+
+.nav-link {
+	font-family: Montserrat, var(--font-primary);
+	font-size: 16px;
+	font-weight: 600;
+	line-height: 19px;
+	color: var(--gray-900);
+	text-transform: capitalize;
+	padding: var(--sp-2) var(--sp-1);
+	position: relative;
+	transition: color 0.3s ease;
+	white-space: nowrap;
+}
+
+.nav-link:hover {
+	color: var(--brand-primary);
+}
+
+/* Active nav-link - Override Bootstrap defaults */
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+	font-family: Montserrat, var(--font-primary);
+	font-weight: 700;
+	line-height: 19px;
+	color: var(--brand-primary) !important;
+}
+
+/* Active link với Montserrat (như "Chương trình đào tạo") */
+.navbar-nav .nav-link--active {
+	font-family: Montserrat, var(--font-primary);
+	font-weight: 600;
+	line-height: 19.504px;
+	color: var(--brand-primary) !important;
+}
+
+.navbar-nav .nav-link.active::after,
+.navbar-nav .nav-link.show::after,
+.navbar-nav .nav-link--active::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background-color: var(--brand-primary);
+}
+
+/* Responsive */
+@media (max-width: 1199px) {
+	.navbar-brand {
+		margin-right: var(--sp-3);
+	}
+
+	.navbar-nav {
+		gap: var(--sp-1);
+	}
+
+	.nav-link {
+		font-size: 14px;
+		padding: var(--sp-2) 4px;
+	}
+}
+
+@media (max-width: 991px) {
+	.navbar {
+		padding: var(--sp-2) 0;
+	}
+
+	.navbar-brand {
+		margin-right: auto;
+	}
+
+	.navbar__logo {
+		width: 45px;
+		height: auto;
+	}
+
+	.navbar-nav {
+		margin-top: var(--sp-4);
+		gap: var(--sp-2);
+		flex-wrap: wrap;
+	}
+
+	.nav-link {
+		padding: var(--sp-2);
+		white-space: normal;
+	}
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 575px) {
+	.navbar__logo {
+		width: 40px;
+	}
+
+	.nav-link {
+		font-size: 14px;
+	}
+}

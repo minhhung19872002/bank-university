@@ -1,0 +1,332 @@
+/* ============================================
+   PAGE: Announcements (Thông báo)
+   Announcements listing and highlights
+   ============================================ */
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.announcements-hero {
+  width: 100%;
+  overflow: hidden;
+}
+
+.announcements-hero__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================
+   FEATURED ANNOUNCEMENTS SECTION
+   ============================================ */
+.announcements-featured {
+  padding-top: 56px;
+  background-color: var(--color-light);
+}
+
+.announcements-featured__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-600);
+  font-weight: 700;
+  line-height: 1.22; /* 37/30 */
+  color: var(--brand-primary);
+  text-transform: capitalize;
+  margin-bottom: 29px;
+}
+
+/* Announcement Card */
+.announcement-card {
+  background-color: var(--gray-100);
+  border-radius: var(--radius-10);
+  padding: 26px 28px 28px;
+  display: flex;
+  gap: 18px;
+  height: 204px;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.announcement-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.announcement-card__date {
+  width: 79px;
+  height: 88px;
+  background-color: var(--brand-primary);
+  border-radius: var(--radius-10);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  position: relative;
+}
+
+.announcement-card__date-day {
+  font-family: var(--font-primary);
+  font-size: var(--fs-350);
+  font-weight: 500;
+  line-height: 1.15; /* 20/16 */
+  color: var(--color-light);
+  text-transform: capitalize;
+  order: 1;
+}
+
+.announcement-card__date-month {
+  font-family: var(--font-primary);
+  font-size: var(--fs-350);
+  font-weight: 500;
+  line-height: 1.15; /* 20/16 */
+  color: var(--color-light);
+  text-transform: capitalize;
+  order: 0;
+}
+
+.announcement-card__date-year {
+  font-family: var(--font-primary);
+  font-size: var(--fs-350);
+  font-weight: 500;
+  line-height: 1.15; /* 20/16 */
+  color: var(--color-light);
+  text-transform: capitalize;
+  order: 2;
+}
+
+.announcement-card__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.announcement-card__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-350);
+  font-weight: 700;
+  line-height: 1.38; /* 22/16 */
+  color: var(--gray-800);
+  text-transform: capitalize;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.announcement-card__excerpt {
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.57; /* 22/14 */
+  color: var(--gray-800);
+  margin: 0;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.announcement-card__link {
+  font-family: var(--font-primary);
+  font-size: var(--fs-350);
+  font-weight: 500;
+  line-height: 1.22; /* 20/16 */
+  color: var(--brand-primary);
+  text-decoration: none;
+  border-bottom: 1px solid var(--brand-primary);
+  display: inline-block;
+  width: fit-content;
+  transition: opacity var(--transition-base);
+}
+
+.announcement-card__link:hover {
+  opacity: 0.8;
+}
+
+/* ============================================
+   PAGINATION SECTION
+   ============================================ */
+.announcements-pagination {
+  padding-top: 30px;
+  background-color: var(--color-light);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.pagination__btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color var(--transition-base);
+  position: relative;
+}
+
+.pagination__btn:hover {
+  background-color: var(--gray-200);
+}
+
+.pagination__btn img {
+  width: 11px;
+  height: 10px;
+  display: block;
+}
+
+.pagination__item {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-primary);
+  font-size: var(--fs-400);
+  font-weight: 400;
+  line-height: 1.22; /* 22/18 */
+  color: var(--gray-800);
+  text-decoration: none;
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.pagination__item:hover {
+  background-color: var(--gray-200);
+}
+
+.pagination__item--active {
+  background-color: var(--brand-primary);
+  color: var(--color-light);
+}
+
+.pagination__item--active:hover {
+  background-color: #8a0d2a;
+}
+
+/* ============================================
+   HIGHLIGHTED NEWS SECTION
+   ============================================ */
+.announcements-highlighted {
+  padding-top: 60px;
+  background-color: var(--color-light);
+}
+
+.announcements-highlighted__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-700);
+  font-weight: 700;
+  line-height: 1.22; /* 49/40 */
+  color: var(--brand-primary);
+  text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 29px;
+}
+
+.announcements-highlighted__wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.announcements-highlighted__track {
+  display: flex;
+  gap: 19px;
+  justify-content: center;
+  padding: 0 50px;
+}
+
+/* News Card */
+.news-card {
+  width: 374px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.news-card__image {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-10);
+}
+
+.news-card__title {
+  width: 320px;
+  margin: 0 auto;
+  font-family: var(--font-primary);
+  font-size: var(--fs-300);
+  font-weight: 700;
+  line-height: 1.47; /* 22/15 */
+  color: var(--gray-800);
+  text-align: center;
+  text-transform: capitalize;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* News Controls */
+.news-control {
+  width: 30px;
+  height: 40px;
+  border: none;
+  border-radius: 3px;
+  position: absolute;
+  top: 150px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-base);
+  z-index: 10;
+  padding: 0;
+}
+
+.news-control--prev {
+  left: 0;
+  background-color: var(--brand-primary);
+}
+
+.news-control--prev:hover {
+  background-color: #8a0d2a;
+}
+
+.news-control--next {
+  right: 0;
+  background-color: #f4f4f4;
+}
+
+.news-control--next:hover {
+  background-color: #e0e0e0;
+}
+
+.news-control img {
+  width: 9px;
+  height: 13px;
+  display: block;
+}
+
+/* ============================================
+   RESPONSIVE
+   TODO: Mobile/Tablet styles sẽ được thêm ở vòng sau với design riêng
+   ============================================ */

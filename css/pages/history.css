@@ -1,0 +1,517 @@
+/* ============================================
+   PAGE: History (Lịch sử hình thành)
+   History page with timeline and mission/vision
+   ============================================ */
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.history-hero {
+  width: 100%;
+  overflow: hidden;
+}
+
+.history-hero__image {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ============================================
+   INTRO SECTION
+   ============================================ */
+.history-intro {
+  padding-top: 54px;
+  background-color: var(--color-light);
+}
+
+.history-intro__text {
+  max-width: 965px;
+  margin: 0 auto;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #333333;
+  text-align: center;
+}
+
+/* ============================================
+   HISTORY GALLERY SECTION
+   ============================================ */
+.history-gallery {
+  padding-top: 60px;
+  background-color: var(--color-light);
+  margin-top: 0;
+  overflow: hidden;
+}
+
+.history-gallery__title {
+  font-family: var(--font-primary);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48.76px;
+  color: var(--brand-primary);
+  text-align: center;
+  margin-bottom: 29px;
+  text-transform: uppercase;
+}
+
+/* Carousel Container */
+.history-gallery__carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.history-gallery__track {
+  display: flex;
+  width: 100%;
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+.history-gallery__track.dragging {
+  cursor: grabbing;
+  transition: none;
+}
+
+.history-gallery__slide {
+  flex: 0 0 100%;
+  width: 100%;
+  min-width: 100%;
+  margin-right: 60px;
+}
+
+.history-gallery__slide:last-child {
+  margin-right: 0;
+}
+
+/* Gallery Grid */
+.history-gallery__grid {
+  display: flex;
+  width: 100%;
+  max-width: 100%;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 28px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.history-gallery__grid:first-child {
+  margin-bottom: 27px;
+}
+
+.history-gallery__slide:first-child .history-gallery__grid {
+  padding-left: 20px;
+}
+
+.history-gallery__slide:last-child .history-gallery__grid {
+  padding-right: 20px;
+}
+
+/* Gallery Item */
+.history-gallery__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 365px;
+}
+
+.history-gallery__item--sm-left {
+  align-items: flex-start;
+}
+
+.history-gallery__item--lg {
+  /* Same width as base */
+}
+
+.history-gallery__item--sm-right {
+  align-items: flex-end;
+}
+
+/* Image Container */
+.history-gallery__image {
+  width: 100%;
+  height: 248px;
+  margin-bottom: 10px;
+}
+
+.history-gallery__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Caption */
+.history-gallery__caption {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 17px;
+  color: var(--brand-primary);
+  text-transform: capitalize;
+  white-space: nowrap;
+  margin: 0 0 9px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.history-gallery__item--sm-left .history-gallery__caption {
+  text-align: left;
+}
+
+.history-gallery__item--sm-right .history-gallery__caption {
+  text-align: right;
+}
+
+/* Year */
+.history-gallery__year {
+  font-family: var(--font-primary);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48.76px;
+  color: transparent;
+  text-transform: capitalize;
+  white-space: nowrap;
+  -webkit-text-stroke: 1px #818181;
+  text-align: center;
+  margin: 0 0 29px 0;
+  display: block;
+  width: 100%;
+}
+
+.history-gallery__item--sm-left .history-gallery__year {
+  text-align: left;
+}
+
+.history-gallery__item--sm-right .history-gallery__year {
+  text-align: right;
+}
+
+/* Divider */
+.history-gallery__divider {
+  width: 100%;
+  max-width: 100%;
+  height: 1px;
+  background-color: #eeeeee;
+  margin: 0 0 25px 0;
+}
+
+/* Description */
+.history-gallery__description {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #333333;
+  text-transform: capitalize;
+  margin: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.history-gallery__item--sm-right .history-gallery__description {
+  text-align: right;
+}
+
+/* ============================================
+   HUB STATISTICS SECTION
+   ============================================ */
+.hub-stats {
+  padding-top: 60px;
+  background-color: #fff4f7;
+}
+
+.hub-stats__title {
+  font-family: var(--font-primary);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48.76px;
+  color: var(--brand-primary);
+  text-align: center;
+  margin-bottom: 29px;
+  text-transform: uppercase;
+}
+
+/* Stats Grid */
+.hub-stats__grid {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Column Layout */
+.hub-stats__column {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 386px;
+}
+
+/* Group Container */
+.hub-stats__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+/* Card Base Styles */
+.hub-stats__card {
+  width: 386px;
+  height: 239px;
+  border-radius: 10px;
+  padding: 71px 30px 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Color Variants */
+.hub-stats__card--gray {
+  background-color: #5b6671;
+}
+
+.hub-stats__card--yellow {
+  background-color: #fdb714;
+}
+
+.hub-stats__card--primary {
+  background-color: var(--brand-primary);
+}
+
+.hub-stats__card--black {
+  background-color: #191919;
+}
+
+/* Image Cards */
+.hub-stats__card--image {
+  padding: 0;
+}
+
+.hub-stats__card--image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Group Top (Image card) */
+.hub-stats__group-top {
+  border-radius: 10px 10px 0 0;
+}
+
+/* Group Bottom (Stat card with shadow) */
+.hub-stats__group-bottom {
+  border-radius: 0 0 10px 10px;
+  margin-top: -5px;
+}
+
+.hub-stats__group-bottom::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 0;
+  right: 0;
+  height: 239px;
+  border-radius: 0 0 10px 10px;
+  z-index: -1;
+}
+
+.hub-stats__card--yellow.hub-stats__group-bottom::before {
+  background-color: rgba(253, 183, 20, 0.2);
+}
+
+.hub-stats__card--primary.hub-stats__group-bottom::before {
+  background-color: rgba(164, 16, 52, 0.2);
+}
+
+.hub-stats__card--gray.hub-stats__group-bottom::before {
+  background-color: rgba(91, 102, 113, 0.2);
+}
+
+/* Number */
+.hub-stats__number {
+  font-family: var(--font-primary);
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--color-light);
+  margin-bottom: 32px;
+  display: block;
+}
+
+/* Description */
+.hub-stats__description {
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+  color: var(--color-light);
+  margin: 0;
+  text-transform: capitalize;
+}
+
+/* ============================================
+   LARGE IMAGE SECTION
+   ============================================ */
+.history-large-image {
+  background-color: var(--color-light);
+}
+
+.history-large-image__img {
+  width: 100%;
+  max-width: 1200px;
+  height: 392px;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ============================================
+   MISSION VISION SECTION
+   ============================================ */
+.mission-vision {
+  padding-top: var(--sp-8);
+  background-color: #fff4f7;
+}
+
+.mission-vision__header {
+  text-align: center;
+  margin-bottom: var(--sp-7);
+}
+
+.mission-vision__title {
+  font-family: var(--font-primary);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 48.76px;
+  color: var(--brand-primary);
+  margin-bottom: 14px;
+}
+
+.mission-vision__subtitle {
+  max-width: 794px;
+  margin: 0 auto;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #333333;
+}
+
+/* Mission Card */
+.mission-card {
+  background-color: var(--brand-primary);
+  background-image: url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/TUMCukndZr.png'), url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/vWCWRr4KVZ.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  padding: 81px 66px 64px 64px;
+  min-height: 528px;
+}
+
+.mission-card__title {
+  font-family: var(--font-primary);
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 22px;
+  color: var(--color-light);
+  text-transform: capitalize;
+  margin-bottom: 39px;
+}
+
+.mission-card__intro {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--color-light);
+  margin-bottom: 43px;
+}
+
+.mission-card__subtitle {
+  font-family: var(--font-primary);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 22px;
+  color: var(--color-light);
+  margin-bottom: var(--sp-4);
+}
+
+.mission-card__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.mission-card__list li {
+  position: relative;
+  padding-left: 20px;
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--color-light);
+}
+
+.mission-card__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 13px;
+  height: 13px;
+  background-image: url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/4osWFv9dRi.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Vision Card Variant */
+.mission-card--vision {
+  background-image: url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/w0uuCVu8Cs.png'), url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/FFaneFwb0w.png');
+}
+
+/* Pagination Dots */
+.history-gallery__pagination {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.history-gallery__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+  display: inline-block;
+  transition: all var(--transition-base);
+}
+
+.history-gallery__dot.active {
+  background-color: var(--brand-primary);
+  width: 32px;
+  border-radius: 6px;
+}
+
+/* ============================================
+   RESPONSIVE
+   TODO: Add tablet and mobile styles later with separate design
+   ============================================ */

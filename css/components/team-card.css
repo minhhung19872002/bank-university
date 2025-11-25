@@ -1,0 +1,206 @@
+/* ============================================
+   COMPONENT: Team Card
+   ============================================ */
+
+.team-card {
+  display: block;
+  height: 100%;
+  background-color: var(--color-light);
+  border: 1px solid #d3dbe2;
+  border-radius: var(--radius-10);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.team-card:hover {
+  box-shadow: var(--shadow-2);
+  transform: translateY(-4px);
+}
+
+/* Card Inner Container */
+.team-card__inner {
+  display: flex;
+  gap: var(--sp-5);
+  padding: var(--sp-4);
+  height: 100%;
+}
+
+/* Photo Section */
+.team-card__photo {
+  flex-shrink: 0;
+  width: 246px;
+  height: 262px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background-color: var(--gray-100);
+}
+
+.team-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* Info Section */
+.team-card__info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--sp-5);
+}
+
+.team-card__name {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 19.504px;
+  color: var(--brand-primary);
+  margin-bottom: var(--sp-2);
+}
+
+.team-card__position {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 22px;
+  color: #707070;
+  margin-bottom: var(--sp-4);
+}
+
+/* Contact Info */
+.team-card__contact {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-4);
+}
+
+.team-card__contact-item {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.team-card__icon {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  color: var(--gray-500);
+}
+
+.team-card__link {
+  font-family: var(--font-primary);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  color: var(--gray-900);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.team-card__link:hover {
+  color: var(--brand-primary);
+}
+
+/* Social Links */
+.team-card__social {
+  display: flex;
+  gap: var(--sp-3);
+  margin-top: auto;
+}
+
+.team-card__social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid #e6e6e6;
+  border-radius: var(--radius-60);
+  color: var(--gray-600);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.team-card__social-link:hover {
+  background-color: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: var(--color-light);
+  transform: translateY(-2px);
+}
+
+.team-card__social-link svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Responsive */
+@media (max-width: 575px) {
+  .team-card__inner {
+    flex-direction: column;
+    gap: var(--sp-4);
+    padding: var(--sp-3);
+  }
+
+  .team-card__photo {
+    width: 100%;
+    height: 280px;
+  }
+
+  .team-card__img {
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .team-card__info {
+    padding-top: 0;
+  }
+
+  .team-card__name {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .team-card__position {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  .team-card__link {
+    font-size: 13px;
+    line-height: 16px;
+  }
+
+  .team-card__social {
+    justify-content: flex-start;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+  .team-card__photo {
+    width: 180px;
+    height: 220px;
+  }
+
+  .team-card__img {
+    object-fit: contain;
+    object-position: center top;
+  }
+
+  .team-card__name {
+    font-size: 15px;
+    line-height: 18px;
+  }
+
+  .team-card__position {
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  .team-card__link {
+    font-size: 13px;
+    line-height: 16px;
+  }
+}

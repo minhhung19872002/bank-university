@@ -1,0 +1,143 @@
+/* ============================================
+   PAGE: Student Life Detail (Chi tiết Đời sống sinh viên)
+   Student life detail article page
+   ============================================ */
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.student-life-detail-hero {
+  width: 100%;
+  overflow: hidden;
+}
+
+.student-life-detail-hero__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================
+   PAGE HEADER SECTION
+   ============================================ */
+.student-life-detail-header {
+  padding-top: 60px;
+  background-color: var(--color-light);
+  text-align: center;
+}
+
+.student-life-detail-header__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-700);
+  font-weight: 700;
+  line-height: 1.22; /* 49/40 */
+  color: var(--brand-primary);
+  margin: 0 auto var(--sp-3);
+  max-width: 800px;
+}
+
+.student-life-detail-header__intro {
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.43; /* 20/14 */
+  color: var(--gray-800);
+  max-width: 794px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   FEATURED IMAGE SECTION
+   ============================================ */
+.student-life-detail-featured {
+  padding-top: 28px;
+  background-color: var(--color-light);
+}
+
+.student-life-detail-featured__image {
+  width: 100%;
+  max-width: 1200px;
+  height: 508px;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ============================================
+   MAIN CONTENT SECTION
+   ============================================ */
+.student-life-detail-content {
+  padding-top: 40px;
+  background-color: var(--color-light);
+}
+
+.student-life-detail-content__text {
+  max-width: 1200px;
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.57; /* 22/14 */
+  color: var(--gray-800);
+}
+
+.student-life-detail-content__text p {
+  margin-bottom: var(--sp-4);
+}
+
+.student-life-detail-content__text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   IMAGE GALLERY SECTION
+   ============================================ */
+.student-life-detail-gallery {
+  padding-top: 30px;
+  background-color: var(--color-light);
+}
+
+.gallery-card {
+  width: 100%;
+  height: 240px;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform var(--transition-base);
+}
+
+.gallery-card:hover {
+  transform: translateY(-4px);
+}
+
+.gallery-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ============================================
+   ADDITIONAL CONTENT SECTION
+   ============================================ */
+.student-life-detail-additional {
+  padding-top: 26px;
+  background-color: var(--color-light);
+}
+
+.student-life-detail-additional__text {
+  max-width: 1200px;
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.57; /* 22/14 */
+  color: var(--gray-800);
+}
+
+.student-life-detail-additional__text p {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   RESPONSIVE
+   TODO: Mobile/Tablet styles sẽ được thêm ở vòng sau với design riêng
+   ============================================ */

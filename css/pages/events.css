@@ -1,0 +1,308 @@
+/* ============================================
+   PAGE: Events (Sự kiện)
+   Events listing and featured upcoming event
+   ============================================ */
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.events-hero {
+  width: 100%;
+  overflow: hidden;
+}
+
+.events-hero__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================
+   EVENTS CONTENT SECTION
+   ============================================ */
+.events-content {
+  padding-top: 57px;
+  background-color: var(--color-light);
+}
+
+/* ============================================
+   FEATURED EVENT CARD
+   ============================================ */
+.featured-event {
+  background-color: var(--brand-primary);
+  border-radius: 20px;
+  padding: 18px 18px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 643px;
+}
+
+.featured-event__image {
+  width: 477px;
+  height: 369px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.featured-event__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-600);
+  font-weight: 700;
+  line-height: 1.22; /* 37/30 */
+  color: var(--color-light);
+  text-align: left;
+  margin: 0 0 12px;
+}
+
+.featured-event__subtitle {
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.21; /* 17/14 */
+  color: var(--color-light);
+  text-align: left;
+  margin: 0 0 24px;
+}
+
+/* Countdown Timer */
+.featured-event__countdown {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 31px;
+}
+
+.countdown-item {
+  width: 74px;
+  height: 68px;
+  background-color: var(--color-light);
+  border-radius: var(--radius-10);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+}
+
+.countdown-item__value {
+  font-family: var(--font-primary);
+  font-size: var(--fs-550);
+  font-weight: 600;
+  line-height: 1.2; /* 30/25 */
+  color: var(--brand-primary);
+  display: block;
+}
+
+.countdown-item__label {
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.21; /* 17/14 */
+  color: var(--brand-primary);
+  display: block;
+}
+
+.featured-event__link {
+  font-family: var(--font-primary);
+  font-size: var(--fs-350);
+  font-weight: 600;
+  line-height: 1.22; /* 20/16 */
+  color: var(--color-light);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-light);
+  display: inline-block;
+  transition: opacity var(--transition-base);
+}
+
+.featured-event__link:hover {
+  opacity: 0.8;
+}
+
+/* ============================================
+   UPCOMING EVENTS SECTION
+   ============================================ */
+.upcoming-events {
+  position: relative;
+}
+
+.upcoming-events__category {
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.21; /* 17/14 */
+  color: var(--brand-secondary);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.upcoming-events__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-700);
+  font-weight: 700;
+  line-height: 1.22; /* 49/40 */
+  color: var(--brand-primary);
+  margin: 0 0 39px;
+}
+
+/* Events List */
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Event Card */
+.event-card {
+  display: flex;
+  gap: 18px;
+  height: 169px;
+}
+
+.event-card__image {
+  width: 186px;
+  height: 169px;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-10) 0 0 var(--radius-10);
+  flex-shrink: 0;
+}
+
+.event-card__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 20px;
+  min-width: 0;
+}
+
+.event-card__category {
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.21; /* 17/14 */
+  color: var(--brand-primary);
+  display: block;
+}
+
+.event-card__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-400);
+  font-weight: 600;
+  line-height: 1.22; /* 22/18 */
+  color: var(--gray-800);
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.event-card__excerpt {
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.71; /* 24/14 */
+  color: var(--gray-800);
+  margin: 0;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.event-card__date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.event-card__icon {
+  width: 15px;
+  height: 15px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.event-card__date span {
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.21; /* 17/14 */
+  color: var(--gray-800);
+}
+
+/* ============================================
+   PAGINATION SECTION
+   ============================================ */
+.events-pagination {
+  padding-top: 30px;
+  background-color: var(--color-light);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.pagination__btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color var(--transition-base);
+  position: relative;
+}
+
+.pagination__btn:hover {
+  background-color: var(--gray-200);
+}
+
+.pagination__btn img {
+  width: 11px;
+  height: 10px;
+  display: block;
+}
+
+.pagination__item {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-primary);
+  font-size: var(--fs-400);
+  font-weight: 400;
+  line-height: 1.22; /* 22/18 */
+  color: var(--gray-800);
+  text-decoration: none;
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.pagination__item:hover {
+  background-color: var(--gray-200);
+}
+
+.pagination__item--active {
+  background-color: var(--brand-primary);
+  color: var(--color-light);
+}
+
+.pagination__item--active:hover {
+  background-color: #8a0d2a;
+}
+
+/* ============================================
+   RESPONSIVE
+   TODO: Mobile/Tablet styles sẽ được thêm ở vòng sau với design riêng
+   ============================================ */

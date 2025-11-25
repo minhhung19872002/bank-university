@@ -1,0 +1,237 @@
+/* ============================================
+   PAGE: Event Detail (Chi tiết sự kiện)
+   Detailed information about a specific event
+   ============================================ */
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.event-detail-hero {
+  width: 100%;
+  overflow: hidden;
+}
+
+.event-detail-hero__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================
+   FEATURED IMAGE SECTION
+   ============================================ */
+.event-detail-featured {
+  padding-top: 60px;
+  background-color: var(--color-light);
+}
+
+.event-detail-featured__image {
+  width: 100%;
+  max-width: 1200px;
+  height: 438px;
+  object-fit: cover;
+  border-radius: var(--radius-10);
+  display: block;
+  margin: 0 auto;
+}
+
+/* ============================================
+   EVENT OVERVIEW SECTION
+   ============================================ */
+.event-detail-overview {
+  padding-top: 57px;
+  background-color: var(--color-light);
+}
+
+.event-detail-overview__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-550);
+  font-weight: 600;
+  line-height: 0.88; /* 22/25 */
+  color: var(--brand-primary);
+  text-transform: capitalize;
+  margin: 0 0 14px;
+  max-width: 1200px;
+}
+
+.event-detail-overview__text {
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.57; /* 22/14 */
+  color: var(--gray-800);
+  margin: 0;
+  max-width: 1200px;
+}
+
+/* ============================================
+   EVENT DETAILS SECTION
+   ============================================ */
+.event-detail-content {
+  padding-top: 30px;
+  background-color: var(--color-light);
+}
+
+.event-detail-divider {
+  width: 100%;
+  max-width: 1200px;
+  height: 1px;
+  background-color: #f0f0f0;
+  margin-bottom: 26px;
+}
+
+.event-detail-content__text {
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.57; /* 22/14 */
+  color: var(--gray-800);
+  margin: 0 0 10px;
+  max-width: 1200px;
+}
+
+/* Event Info List */
+.event-detail-info {
+  list-style: none;
+  padding: 0;
+  margin: 13px 0 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 790px;
+}
+
+.event-detail-info__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.event-detail-info__icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  display: block;
+  margin-top: 5px;
+}
+
+.event-detail-info__item span {
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.86; /* 26/14 */
+  color: var(--gray-800);
+  flex: 1;
+}
+
+/* ============================================
+   RELATED EVENTS SECTION
+   ============================================ */
+.event-detail-related {
+  padding-top: 58px;
+  background-color: var(--color-light);
+}
+
+.event-detail-related__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-700);
+  font-weight: 700;
+  line-height: 1.22; /* 49/40 */
+  color: var(--brand-primary);
+  text-transform: capitalize;
+  text-align: center;
+  margin: 0 0 29px;
+}
+
+.event-detail-related__wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.event-detail-related__track {
+  display: flex;
+  gap: 19px;
+  justify-content: center;
+  padding: 0 50px;
+}
+
+/* Related Event Card */
+.related-event-card {
+  width: 374px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.related-event-card__image {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-10);
+}
+
+.related-event-card__title {
+  width: 320px;
+  margin: 0 auto;
+  font-family: var(--font-primary);
+  font-size: var(--fs-300);
+  font-weight: 700;
+  line-height: 1.47; /* 22/15 */
+  color: var(--gray-800);
+  text-align: center;
+  text-transform: capitalize;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Related Event Controls */
+.related-event-control {
+  width: 30px;
+  height: 40px;
+  border: none;
+  border-radius: 3px;
+  position: absolute;
+  top: 150px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-base);
+  z-index: 10;
+  padding: 0;
+}
+
+.related-event-control--prev {
+  left: 0;
+  background-color: var(--brand-primary);
+}
+
+.related-event-control--prev:hover {
+  background-color: #8a0d2a;
+}
+
+.related-event-control--next {
+  right: 0;
+  background-color: #f4f4f4;
+}
+
+.related-event-control--next:hover {
+  background-color: #e0e0e0;
+}
+
+.related-event-control img {
+  width: 9px;
+  height: 13px;
+  display: block;
+}
+
+/* ============================================
+   RESPONSIVE
+   TODO: Mobile/Tablet styles sẽ được thêm ở vòng sau với design riêng
+   ============================================ */

@@ -1,0 +1,62 @@
+/* ============================================
+   COMPONENT: Career Opportunity
+   Section showing career paths with background
+   ============================================ */
+
+.career-opportunity {
+  padding: var(--sp-8) 0;
+}
+
+.career-opportunity__background {
+  background-image: url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/ja9PhvY0mU.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: var(--sp-8) 0;
+  border-radius: var(--radius-lg);
+}
+
+.career-opportunity__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-700);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  color: var(--color-light);
+  text-align: center;
+  margin: 0 0 var(--sp-6);
+}
+
+.career-opportunity__card {
+  background-color: var(--color-light);
+  border-radius: var(--radius-10);
+  padding: var(--sp-5);
+  text-align: center;
+  min-height: 134px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-3);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.career-opportunity__card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-2);
+}
+
+.career-opportunity__icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.career-opportunity__card-title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-300);
+  font-weight: 600;
+  line-height: var(--lh-normal);
+  color: var(--gray-900);
+  margin: 0;
+}

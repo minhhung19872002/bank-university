@@ -1,0 +1,241 @@
+/* ============================================
+   PAGE: Registration (Đăng ký tư vấn tuyển sinh)
+   Contact/consultation registration form
+   ============================================ */
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.registration-hero {
+  width: 100%;
+  overflow: hidden;
+}
+
+.registration-hero__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================
+   REGISTRATION FORM SECTION
+   ============================================ */
+.registration-form-section {
+  padding-top: 60px;
+  background-color: var(--color-light);
+}
+
+.registration-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  height: 577px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   LEFT IMAGE
+   ============================================ */
+.registration-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 746px;
+  height: 415px;
+  z-index: 0;
+}
+
+.registration-image__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+
+/* ============================================
+   RIGHT FORM CARD
+   ============================================ */
+.registration-card {
+  position: absolute;
+  top: 0;
+  left: 714px;
+  width: 486px;
+  height: 577px;
+  background-color: var(--color-light);
+  border-radius: 20px;
+  padding: 53px 38px;
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+.registration-card__title {
+  font-family: var(--font-primary);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.21; /* 34/28 */
+  color: var(--brand-primary);
+  margin: 0 0 25px;
+}
+
+/* ============================================
+   FORM ELEMENTS
+   ============================================ */
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+}
+
+/* Form Row (2 columns) */
+.registration-form__row {
+  display: flex;
+  gap: 20px;
+}
+
+/* Form Group */
+.registration-form__group {
+  flex: 1;
+  min-width: 0;
+}
+
+.registration-form__group--full {
+  width: 100%;
+}
+
+/* Input Fields */
+.registration-form__input,
+.registration-form__select,
+.registration-form__textarea {
+  width: 100%;
+  height: 37px;
+  padding: 9px 18px;
+  background-color: var(--color-light);
+  border: 1px solid #ededed;
+  border-radius: 6px;
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.21; /* 17/14 */
+  color: var(--gray-800);
+  transition: border-color var(--transition-base);
+}
+
+.registration-form__input:focus,
+.registration-form__select:focus,
+.registration-form__textarea:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+}
+
+.registration-form__input::placeholder,
+.registration-form__textarea::placeholder {
+  color: var(--gray-800);
+}
+
+/* Select Dropdown */
+.registration-form__select {
+  appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><path fill="%23333333" d="M0 0l5 5 5-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  background-size: 10px 10px;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.registration-form__select option:first-child {
+  color: var(--gray-800);
+}
+
+/* Textarea */
+.registration-form__textarea {
+  height: 100px;
+  resize: none;
+  padding-top: 9px;
+}
+
+/* ============================================
+   CHECKBOXES
+   ============================================ */
+.registration-form__checkboxes {
+  display: flex;
+  gap: 27px;
+  margin-top: -6px;
+}
+
+.registration-form__checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.registration-form__checkbox-input {
+  width: 17px;
+  height: 17px;
+  border: 1px solid #ededed;
+  border-radius: 2px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.registration-form__checkbox-label {
+  font-family: var(--font-primary);
+  font-size: var(--fs-100);
+  font-weight: 400;
+  line-height: 1.22; /* 15/12 */
+  color: var(--gray-800);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ============================================
+   SUBMIT BUTTON
+   ============================================ */
+.registration-form__submit {
+  width: 100%;
+  height: 37px;
+  background-color: var(--brand-primary);
+  border: none;
+  border-radius: 10px;
+  font-family: var(--font-primary);
+  font-size: var(--fs-350);
+  font-weight: 700;
+  line-height: 1.22; /* 20/16 */
+  color: var(--color-light);
+  cursor: pointer;
+  transition: background-color var(--transition-base);
+  margin-top: 6px;
+}
+
+.registration-form__submit:hover {
+  background-color: #8a0d2a;
+}
+
+.registration-form__submit:active {
+  transform: translateY(1px);
+}
+
+/* ============================================
+   BACKGROUND TEXT EFFECT
+   ============================================ */
+.registration-text-effect {
+  position: absolute;
+  top: 403px;
+  left: 14px;
+  font-family: var(--font-primary);
+  font-size: 100px;
+  font-weight: 700;
+  line-height: 1.22; /* 122/100 */
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.1);
+  text-stroke: 1px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ============================================
+   RESPONSIVE
+   TODO: Mobile/Tablet styles sẽ được thêm ở vòng sau với design riêng
+   ============================================ */

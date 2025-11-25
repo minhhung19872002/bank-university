@@ -1,0 +1,184 @@
+/* ============================================
+   PAGE: Admissions News (Tin Tuyển Sinh)
+   List of admissions-related news and announcements
+   ============================================ */
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.admissions-news-hero {
+  width: 100%;
+  overflow: hidden;
+}
+
+.admissions-news-hero__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================
+   NEWS LIST SECTION
+   ============================================ */
+.admissions-news-list {
+  padding-top: 57px;
+  background-color: var(--color-light);
+}
+
+.admissions-news-list__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-550);
+  font-weight: 700;
+  line-height: 0.88; /* 22/25 */
+  color: var(--brand-primary);
+  text-transform: uppercase;
+  margin: 0 0 32px;
+}
+
+/* News Items Container */
+.news-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* News Item */
+.news-item {
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+.news-item__image {
+  width: 284px;
+  height: 148px;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-10);
+  flex-shrink: 0;
+}
+
+.news-item__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.news-item__title {
+  font-family: var(--font-primary);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.53; /* 26/17 */
+  color: var(--brand-secondary);
+  margin: 0;
+}
+
+.news-item__excerpt {
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.57; /* 22/14 */
+  color: var(--gray-800);
+  margin: 0;
+}
+
+/* News Badge "Mới" */
+.news-item__badge {
+  display: inline-block;
+  padding: 2px 8px;
+  background-color: var(--brand-primary);
+  font-family: var(--font-primary);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-light);
+  text-align: center;
+  vertical-align: middle;
+  margin-left: 8px;
+  border-radius: 2px;
+}
+
+/* News Divider */
+.news-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #cccccc;
+  opacity: 0.3;
+  margin: 26px 0;
+}
+
+/* ============================================
+   PAGINATION SECTION
+   ============================================ */
+.admissions-news-pagination {
+  padding-top: 30px;
+  background-color: var(--color-light);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.pagination__btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color var(--transition-base);
+  position: relative;
+}
+
+.pagination__btn:hover {
+  background-color: var(--gray-200);
+}
+
+.pagination__btn img {
+  width: 11px;
+  height: 10px;
+  display: block;
+}
+
+.pagination__item {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-primary);
+  font-size: var(--fs-400);
+  font-weight: 400;
+  line-height: 1.22; /* 22/18 */
+  color: var(--gray-800);
+  text-decoration: none;
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.pagination__item:hover {
+  background-color: var(--gray-200);
+}
+
+.pagination__item--active {
+  background-color: var(--brand-primary);
+  color: var(--color-light);
+}
+
+.pagination__item--active:hover {
+  background-color: #8a0d2a;
+}
+
+/* ============================================
+   RESPONSIVE
+   TODO: Mobile/Tablet styles sẽ được thêm ở vòng sau với design riêng
+   ============================================ */

@@ -1,0 +1,293 @@
+/* ============================================
+   PAGE: Admissions Detail (Chi tiết Tin Tuyển Sinh)
+   Detailed article page for admissions news
+   ============================================ */
+
+/* ============================================
+   ARTICLE HEADER SECTION
+   ============================================ */
+.admissions-detail-header {
+  padding-top: 55px;
+  background-color: var(--color-light);
+}
+
+.admissions-detail-header__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-550);
+  font-weight: 700;
+  line-height: 1.2; /* 30/25 */
+  color: var(--brand-primary);
+  margin: 0 0 12px;
+  max-width: 1200px;
+}
+
+.admissions-detail-header__meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 11px;
+}
+
+.admissions-detail-header__icon {
+  width: 12px;
+  height: 12px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.admissions-detail-header__date {
+  font-family: var(--font-primary);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.22; /* 16/13 */
+  color: #9e9e9e;
+}
+
+.admissions-detail-divider {
+  width: 100%;
+  max-width: 1200px;
+  height: 1px;
+  background-color: #cccccc;
+  margin-bottom: 37px;
+}
+
+.admissions-detail-header__intro {
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.21; /* 17/14 */
+  color: var(--gray-800);
+  margin: 0;
+  max-width: 1200px;
+}
+
+/* ============================================
+   ARTICLE CONTENT SECTION
+   ============================================ */
+.admissions-detail-content {
+  padding-top: 15px;
+  background-color: var(--color-light);
+}
+
+/* Figure with Image and Caption */
+.admissions-detail-figure {
+  margin: 0 auto 16px;
+  max-width: 992px;
+  text-align: center;
+}
+
+.admissions-detail-figure__image {
+  width: 100%;
+  max-width: 992px;
+  height: 660px;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto;
+}
+
+.admissions-detail-figure__caption {
+  font-family: var(--font-primary);
+  font-size: var(--fs-400);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.22; /* 22/18 */
+  color: #959595;
+  margin: 16px auto 0;
+  max-width: 992px;
+}
+
+/* Text Content */
+.admissions-detail-text {
+  max-width: 1200px;
+  margin: 36px auto 0;
+}
+
+.admissions-detail-text p {
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.57; /* 22/14 */
+  color: var(--gray-800);
+  margin: 0 0 8px;
+}
+
+.admissions-detail-text p:last-child {
+  margin-bottom: 0;
+}
+
+.admissions-detail-text strong {
+  font-weight: 700;
+}
+
+/* Source Attribution */
+.admissions-detail-source {
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 600;
+  line-height: 1.57; /* 22/14 */
+  color: var(--brand-primary);
+  margin: 16px 0 0;
+  max-width: 1200px;
+}
+
+/* ============================================
+   RELATED ARTICLES SECTION
+   ============================================ */
+.admissions-detail-related {
+  padding-top: 34px;
+  background-color: var(--color-light);
+}
+
+.admissions-detail-related__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-550);
+  font-weight: 700;
+  line-height: 1.2; /* 30/25 */
+  color: var(--brand-primary);
+  text-transform: uppercase;
+  margin: 0 0 18px;
+}
+
+/* Related Articles List */
+.related-articles {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Related Article Card */
+.related-article {
+  display: flex;
+  gap: 20px;
+}
+
+.related-article__image {
+  width: 284px;
+  height: 148px;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-10);
+  flex-shrink: 0;
+}
+
+.related-article__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.related-article__title {
+  font-family: var(--font-primary);
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.53; /* 26/17 */
+  color: var(--brand-secondary);
+  margin: 6px 0 0;
+}
+
+.related-article__excerpt {
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.57; /* 22/14 */
+  color: var(--gray-800);
+  margin: 0;
+}
+
+/* Related Article Badge */
+.related-article__badge {
+  display: inline-block;
+  padding: 2px 8px;
+  background-color: var(--brand-primary);
+  font-family: var(--font-primary);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-light);
+  text-align: center;
+  vertical-align: middle;
+  margin-left: 8px;
+  border-radius: 2px;
+}
+
+/* Related Article Divider */
+.related-article-divider {
+  width: 100%;
+  height: 1px;
+  background-color: #cccccc;
+  opacity: 0.3;
+  margin: 11px 0 18px;
+}
+
+/* ============================================
+   PAGINATION SECTION
+   ============================================ */
+.admissions-detail-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 30px;
+}
+
+.pagination__btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color var(--transition-base);
+  position: relative;
+}
+
+.pagination__btn:hover {
+  background-color: var(--gray-200);
+}
+
+.pagination__btn img {
+  width: 11px;
+  height: 10px;
+  display: block;
+}
+
+.pagination__item {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--gray-100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-primary);
+  font-size: var(--fs-400);
+  font-weight: 400;
+  line-height: 1.22; /* 22/18 */
+  color: var(--gray-800);
+  text-decoration: none;
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+.pagination__item:hover {
+  background-color: var(--gray-200);
+}
+
+.pagination__item--active {
+  background-color: var(--brand-primary);
+  color: var(--color-light);
+}
+
+.pagination__item--active:hover {
+  background-color: #8a0d2a;
+}
+
+/* ============================================
+   RESPONSIVE
+   TODO: Mobile/Tablet styles sẽ được thêm ở vòng sau với design riêng
+   ============================================ */

@@ -1,0 +1,27 @@
+# robots.txt for HUB University Website
+
+# Allow all search engines
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /_/
+Disallow: /api/
+
+# Disallow search results and dynamic pages
+Disallow: /search?
+Disallow: /*?q=
+Disallow: /*?s=
+
+# Allow CSS and JS for better indexing
+Allow: /css/
+Allow: /js/
+Allow: /assets/
+
+# Sitemap location
+Sitemap: https://hub.edu.vn/sitemap.xml
+
+# Crawl-delay for respectful crawling (optional)
+# Crawl-delay: 1

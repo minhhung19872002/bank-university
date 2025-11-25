@@ -1,0 +1,107 @@
+/* ============================================
+   COMPONENT: Pagination
+   ============================================ */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin-top: 30px;
+}
+
+.pagination__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: var(--font-primary);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.942px;
+  color: var(--gray-900);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pagination__button--prev,
+.pagination__button--next {
+  padding: 0;
+}
+
+.pagination__button--prev img,
+.pagination__button--next img {
+  width: 11.111px;
+  height: 10px;
+  object-fit: contain;
+}
+
+.pagination__button--active {
+  background-color: var(--brand-primary);
+  color: var(--color-light);
+}
+
+.pagination__button:not(.pagination__button--prev):not(.pagination__button--next):not(.pagination__button--active) {
+  background-color: #f5f5f5;
+}
+
+.pagination__button:hover:not(.pagination__button--active) {
+  background-color: var(--gray-100);
+  transform: scale(1.1);
+}
+
+.pagination__button:focus {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+}
+
+/* Responsive */
+
+/* Tablet */
+@media (min-width: 576px) and (max-width: 991px) {
+  .pagination {
+    gap: 6px;
+    margin-top: 25px;
+  }
+
+  .pagination__button {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    line-height: 19px;
+  }
+
+  .pagination__button--prev img,
+  .pagination__button--next img {
+    width: 10px;
+    height: 9px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+  .pagination {
+    gap: 5px;
+    margin-top: 20px;
+  }
+
+  .pagination__button {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  .pagination__button--prev img,
+  .pagination__button--next img {
+    width: 9px;
+    height: 8px;
+  }
+}

@@ -1,0 +1,209 @@
+/* ============================================
+   PAGE: Facilities (Cơ sở vật chất)
+   HUB University facilities showcase
+   ============================================ */
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.facilities-hero {
+  width: 100%;
+  overflow: hidden;
+}
+
+.facilities-hero__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* Giữ nguyên aspect ratio của ảnh gốc */
+}
+
+/* ============================================
+   ABOUT FACILITIES SECTION
+   ============================================ */
+.facilities-about {
+  padding-top: var(--sp-8);
+  background-color: var(--color-light);
+}
+
+.facilities-about__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-525);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  color: var(--brand-primary);
+  text-transform: capitalize;
+  margin-bottom: var(--sp-4);
+}
+
+.facilities-about__content {
+  max-width: 1200px;
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.57; /* 22/14 */
+  color: var(--gray-800);
+  margin-bottom: var(--sp-4);
+}
+
+.facilities-about__content p {
+  margin-bottom: var(--sp-4);
+}
+
+.facilities-about__content p:last-child {
+  margin-bottom: 0;
+}
+
+.facilities-about__image {
+  width: 100%;
+  max-width: 1200px;
+  height: 546px;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+
+/* ============================================
+   FACILITIES LIST SECTION
+   ============================================ */
+.facilities-list {
+  padding-top: var(--sp-7);
+  background-color: var(--color-light);
+}
+
+.facilities-list__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-525);
+  font-weight: 600;
+  line-height: var(--lh-tight);
+  color: var(--brand-primary);
+  text-transform: capitalize;
+  margin-bottom: var(--sp-4);
+}
+
+.facilities-list__intro {
+  max-width: 1200px;
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.57; /* 22/14 */
+  color: var(--gray-800);
+  margin-bottom: var(--sp-3);
+}
+
+/* Facility Items List */
+.facilities-list__items {
+  list-style: none;
+  padding: 0;
+  margin: var(--sp-5) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.facilities-list__items li {
+  position: relative;
+  padding-left: 23px;
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.57; /* 22/14 */
+  color: var(--gray-800);
+}
+
+.facilities-list__items li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  background-color: var(--brand-primary);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Facility Cards */
+.facilities-card {
+  width: 100%;
+  height: 260px;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform var(--transition-base);
+}
+
+.facilities-card:hover {
+  transform: translateY(-4px);
+}
+
+.facilities-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ============================================
+   FACILITY DETAILS SECTION
+   ============================================ */
+.facilities-details {
+  padding-top: var(--sp-7);
+  background-color: var(--color-light);
+}
+
+.facilities-details__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-525);
+  font-weight: 600;
+  line-height: var(--lh-tight);
+  color: var(--brand-primary);
+  text-transform: capitalize;
+  margin-bottom: var(--sp-4);
+}
+
+.facilities-details__intro {
+  max-width: 1200px;
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.57; /* 22/14 */
+  color: var(--gray-800);
+  margin-bottom: var(--sp-4);
+}
+
+.facilities-details__list {
+  list-style: none;
+  padding: 0;
+  margin: var(--sp-4) 0 0;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+.facilities-details__list li {
+  position: relative;
+  padding-left: 16px;
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.57; /* 22/14 */
+  color: var(--gray-800);
+}
+
+.facilities-details__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 4px;
+  height: 4px;
+  background-color: var(--gray-900);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   RESPONSIVE
+   TODO: Mobile/Tablet styles sẽ được thêm ở vòng sau với design riêng
+   ============================================ */

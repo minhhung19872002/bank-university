@@ -1,0 +1,586 @@
+/* ============================================
+   PAGE: Student Life (Đời sống sinh viên)
+   Student activities, dormitory, library info
+   ============================================ */
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.student-life-hero {
+  width: 100%;
+  overflow: hidden;
+}
+
+.student-life-hero__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  /* Giữ nguyên aspect ratio của ảnh gốc */
+}
+
+/* ============================================
+   PAGE HEADER SECTION
+   ============================================ */
+.student-life-header {
+  padding-top: 58px;
+  background-color: var(--color-light);
+}
+
+.student-life-header__content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.student-life-header__text {
+  flex: 1;
+}
+
+.student-life-header__category {
+  display: block;
+  font-family: var(--font-primary);
+  font-size: var(--fs-350);
+  font-weight: 600;
+  line-height: 1.22; /* 21/17 */
+  color: var(--brand-secondary);
+  margin-bottom: var(--sp-1);
+}
+
+.student-life-header__title {
+  font-family: var(--font-primary);
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 1.22; /* 61/50 */
+  color: var(--brand-primary);
+  margin: 0;
+}
+
+.student-life-header__controls {
+  display: flex;
+  gap: var(--sp-2);
+  align-items: center;
+}
+
+/* Carousel Navigation Buttons */
+.carousel-nav {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  padding: 0;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-nav--prev {
+  background: var(--brand-primary);
+}
+
+.carousel-nav--prev:hover {
+  background-color: #8a0d2a;
+}
+
+.carousel-nav--next {
+  background: #F2F2F2;
+}
+
+.carousel-nav--next:hover {
+  background-color: #e0e0e0;
+}
+
+.carousel-nav img {
+  width: 25px;
+  height: 25px;
+  display: block;
+}
+
+.carousel-nav--prev img {
+  filter: brightness(0) invert(1);
+}
+
+.carousel-nav--next img {
+  filter: opacity(0.5);
+}
+
+/* ============================================
+   ACTIVITIES CAROUSEL SECTION
+   ============================================ */
+.activities-carousel {
+  padding-top: 46px;
+  padding-bottom: 60px;
+  background-color: var(--color-light);
+  position: relative;
+}
+
+.activities-carousel::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: calc((100vw - 1200px) / 2);
+  background: var(--color-light);
+  z-index: 10;
+  pointer-events: none;
+}
+
+@media (max-width: 1399px) {
+  .activities-carousel::before {
+    width: calc((100vw - 1140px) / 2);
+  }
+}
+
+@media (max-width: 1199px) {
+  .activities-carousel::before {
+    width: calc((100vw - 960px) / 2);
+  }
+}
+
+.activities-carousel .container {
+  max-width: 100%;
+  padding-right: 0;
+}
+
+.activities-carousel .carousel-inner {
+  overflow: visible;
+  padding-left: calc((100vw - 1200px) / 2);
+}
+
+@media (max-width: 1399px) {
+  .activities-carousel .carousel-inner {
+    padding-left: calc((100vw - 1140px) / 2);
+  }
+}
+
+@media (max-width: 1199px) {
+  .activities-carousel .carousel-inner {
+    padding-left: calc((100vw - 960px) / 2);
+  }
+}
+
+.activities-carousel .carousel-item {
+  transition: transform 0.6s ease-in-out;
+}
+
+.activities-carousel__track {
+  display: flex;
+  gap: 17px;
+  justify-content: flex-start;
+}
+
+/* Activity Card */
+.activity-card {
+  background-color: var(--color-light);
+  border-radius: var(--radius-10);
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  width: 342px;
+  flex-shrink: 0;
+}
+
+.activity-card--featured {
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.06);
+}
+
+.activity-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
+}
+
+.activity-card__image {
+  position: relative;
+  width: 100%;
+  height: 192px;
+  overflow: visible;
+}
+
+.activity-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--radius-10) var(--radius-10) 0 0;
+}
+
+.activity-card__badge {
+  position: absolute;
+  bottom: 0;
+  right: 28px;
+  padding: 8px 17px;
+  border-radius: 5px;
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.21; /* 17/14 */
+  color: var(--color-light);
+  transform: translateY(50%);
+}
+
+.activity-card__badge--primary {
+  background-color: var(--brand-primary);
+}
+
+.activity-card__badge--secondary {
+  background-color: var(--brand-secondary);
+}
+
+.activity-card__content {
+  padding: 30px 27px 28px;
+  position: relative;
+  min-height: 172px;
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-card__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-425);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--gray-800);
+  text-transform: capitalize;
+  margin-bottom: var(--sp-3);
+}
+
+.activity-card__description {
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.57; /* 22/14 */
+  color: var(--gray-800);
+  margin-bottom: 0;
+}
+
+.activity-card__link {
+  position: absolute;
+  bottom: 28px;
+  right: 27px;
+  width: 40px;
+  height: 40px;
+  opacity: 0.1;
+  transition: opacity var(--transition-base);
+}
+
+.activity-card__link:hover {
+  opacity: 0.3;
+}
+
+.activity-card__link img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* ============================================
+   DORMITORY INFO SECTION
+   ============================================ */
+.dormitory-info {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: var(--brand-primary);
+  text-align: center;
+}
+
+.dormitory-info__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-700);
+  font-weight: 700;
+  line-height: 1.22; /* 49/40 */
+  color: var(--color-light);
+  margin-bottom: var(--sp-3);
+}
+
+.dormitory-info__intro {
+  max-width: 794px;
+  margin: 0 auto 28px;
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.43; /* 20/14 */
+  color: var(--color-light);
+}
+
+/* Dorm Card */
+.dorm-card {
+  background-color: var(--color-light);
+  border-radius: var(--radius-10);
+  overflow: hidden;
+  height: 518px;
+  display: flex;
+  flex-direction: column;
+}
+
+.dorm-card__image {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.dorm-card__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-350);
+  font-weight: 700;
+  line-height: 1.18; /* 20/17 */
+  color: var(--gray-800);
+  text-transform: capitalize;
+  padding: 0 28px;
+  margin: var(--sp-5) 0 var(--sp-4);
+}
+
+.dorm-card__specs {
+  background-color: var(--gray-100);
+  border-radius: var(--radius-10);
+  padding: var(--sp-4) var(--sp-4) 18px;
+  margin: 0 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: var(--sp-2);
+  column-gap: 32px;
+}
+
+.dorm-spec {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.dorm-spec:last-child {
+  grid-column: 1 / -1;
+}
+
+.dorm-spec img {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.dorm-spec span {
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.43; /* 20/14 */
+  color: var(--gray-800);
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  min-width: 0;
+}
+
+/* ============================================
+   LIBRARY SECTIONS
+   ============================================ */
+
+/* Library Section Header (reusable) */
+.library-section-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: var(--sp-4);
+}
+
+.library-section-header__icon {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.library-section-header__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-525);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--brand-primary);
+  text-transform: capitalize;
+  margin: 0;
+}
+
+/* Library Info Section */
+.library-info {
+  padding-top: 58px;
+  background-color: var(--color-light);
+}
+
+.library-info__intro {
+  max-width: 1200px;
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.57; /* 22/14 */
+  color: var(--gray-800);
+  margin-bottom: 6px;
+}
+
+.library-info__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.library-info__list li {
+  position: relative;
+  padding-left: 16px;
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.57; /* 22/14 */
+  color: var(--gray-800);
+}
+
+.library-info__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 4px;
+  height: 4px;
+  background-color: var(--gray-900);
+  border-radius: 50%;
+}
+
+/* Library Collections Section */
+.library-collections {
+  padding-top: 33px;
+  background-color: var(--color-light);
+}
+
+.library-collections__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.library-collections__list li {
+  position: relative;
+  padding-left: 16px;
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.57; /* 22/14 */
+  color: var(--gray-800);
+}
+
+.library-collections__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 4px;
+  height: 4px;
+  background-color: var(--gray-900);
+  border-radius: 50%;
+}
+
+/* Library Image Section */
+.library-image {
+  padding-top: 37px;
+  background-color: var(--color-light);
+}
+
+.library-image__photo {
+  width: 100%;
+  max-width: 1200px;
+  height: 610px;
+  object-fit: cover;
+  border-radius: 30px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Library Database Section */
+.library-database {
+  padding-top: 38px;
+  background-color: var(--color-light);
+}
+
+.library-database__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.library-database__list li {
+  position: relative;
+  padding-left: 16px;
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.57; /* 22/14 */
+  color: var(--gray-800);
+}
+
+.library-database__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 4px;
+  height: 4px;
+  background-color: var(--gray-900);
+  border-radius: 50%;
+}
+
+/* Library Facilities Section */
+.library-facilities {
+  padding-top: 33px;
+  background-color: var(--color-light);
+}
+
+.library-facilities__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.library-facilities__list li {
+  position: relative;
+  padding-left: 16px;
+  font-family: var(--font-primary);
+  font-size: var(--fs-200);
+  font-weight: 400;
+  line-height: 1.57; /* 22/14 */
+  color: var(--gray-800);
+}
+
+.library-facilities__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 4px;
+  height: 4px;
+  background-color: var(--gray-900);
+  border-radius: 50%;
+}
+
+/* ============================================
+   RESPONSIVE
+   TODO: Mobile/Tablet styles sẽ được thêm ở vòng sau với design riêng
+   ============================================ */

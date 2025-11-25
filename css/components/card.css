@@ -1,0 +1,316 @@
+/* ================================================
+   Card Components
+   ================================================ */
+
+/* ========== Program Cards ========== */
+.program-card {
+	background-color: #ffffff;
+	border: 1px solid var(--gray-300);
+	border-radius: 60px;
+	padding: var(--sp-2);
+	display: flex;
+	align-items: center;
+	gap: var(--sp-3);
+	transition: all 0.3s ease;
+	height: 75px;
+}
+
+.program-card:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	border-color: var(--brand-primary);
+}
+
+.program-card__icon-wrapper {
+	position: relative;
+	width: 58px;
+	height: 58px;
+	flex-shrink: 0;
+}
+
+.program-card__icon-bg {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	object-fit: cover;
+}
+
+.program-card__icon {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	max-width: 40px;
+	max-height: 40px;
+	object-fit: contain;
+}
+
+.program-card__title {
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-300);
+	font-weight: 500;
+	color: var(--gray-900);
+	text-transform: capitalize;
+	line-height: 1.22;
+}
+
+/* ========== News Cards ========== */
+.news-card {
+	background-color: #ffffff;
+	border-radius: var(--radius-lg);
+	overflow: hidden;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.news-card--featured {
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.news-card__image {
+	width: 100%;
+	height: 286px;
+	object-fit: cover;
+	border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.news-card__content {
+	padding: var(--sp-4);
+	flex: 1;
+}
+
+.news-card__title {
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-425);
+	font-weight: 600;
+	color: var(--gray-900);
+	line-height: 1.7;
+	margin-bottom: var(--sp-3);
+	text-transform: capitalize;
+}
+
+.news-card__divider {
+	border: none;
+	height: 1px;
+	background-color: var(--gray-300);
+	margin: var(--sp-3) 0;
+}
+
+.news-card__excerpt {
+	font-family: Montserrat, var(--font-primary);
+	font-size: 14px;
+	font-weight: 400;
+	color: var(--gray-900);
+	line-height: 1.43;
+}
+
+/* News Card - Horizontal Layout */
+.news-card--horizontal {
+	flex-direction: row;
+	margin-bottom: var(--sp-3);
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.news-card--horizontal:last-child {
+	margin-bottom: 0;
+}
+
+.news-card__thumbnail {
+	width: 218px;
+	height: 155px;
+	object-fit: cover;
+	border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+	flex-shrink: 0;
+}
+
+.news-card--horizontal .news-card__content {
+	padding: var(--sp-3);
+}
+
+.news-card--horizontal .news-card__title {
+	font-size: var(--fs-400);
+	line-height: 1.33;
+	margin-bottom: var(--sp-2);
+}
+
+.news-list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-3);
+}
+
+/* ========== Event Cards ========== */
+.event-card--list {
+	background-color: var(--gray-100);
+	border-radius: var(--radius-md);
+	display: flex;
+	gap: var(--sp-4);
+	margin-bottom: var(--sp-3);
+	overflow: hidden;
+}
+
+.event-card--list:last-child {
+	margin-bottom: 0;
+}
+
+.event-card__thumbnail {
+	width: 186px;
+	height: 169px;
+	object-fit: cover;
+	border-radius: var(--radius-md) 0 0 var(--radius-md);
+	flex-shrink: 0;
+}
+
+.event-card__content {
+	padding: var(--sp-3) var(--sp-4) var(--sp-3) 0;
+	flex: 1;
+}
+
+.event-card__title {
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-350);
+	font-weight: 700;
+	color: var(--gray-900);
+	margin-bottom: var(--sp-2);
+}
+
+.event-card__excerpt {
+	font-family: Montserrat, var(--font-primary);
+	font-size: 14px;
+	font-weight: 400;
+	color: var(--gray-900);
+	line-height: 1.71;
+	margin-bottom: var(--sp-3);
+}
+
+.event-card__meta {
+	display: flex;
+	align-items: center;
+	gap: var(--sp-2);
+	font-family: Montserrat, var(--font-primary);
+	font-size: 14px;
+	color: var(--gray-900);
+}
+
+.event-card__icon {
+	width: 15px;
+	height: 15px;
+	object-fit: contain;
+}
+
+/* Event Card - Featured (with Countdown) */
+.event-card--featured {
+	background-color: var(--brand-primary);
+	border-radius: var(--radius-lg);
+	padding: var(--sp-4);
+	height: 100%;
+}
+
+.event-card__featured-image {
+	width: 100%;
+	height: 369px;
+	object-fit: cover;
+	border-radius: var(--radius-md);
+	margin-bottom: var(--sp-3);
+}
+
+.event-card__featured-content {
+	text-align: center;
+}
+
+.event-card__featured-title {
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-600);
+	font-weight: 700;
+	color: #ffffff;
+	margin-bottom: var(--sp-2);
+}
+
+.event-card__featured-subtitle {
+	font-family: Montserrat, var(--font-primary);
+	font-size: 14px;
+	font-weight: 500;
+	color: #ffffff;
+	margin-bottom: var(--sp-4);
+}
+
+/* Event Countdown */
+.event-countdown {
+	display: flex;
+	justify-content: center;
+	gap: var(--sp-3);
+	margin-bottom: var(--sp-4);
+}
+
+.event-countdown__item {
+	background-color: #ffffff;
+	border-radius: var(--radius-md);
+	padding: var(--sp-2) var(--sp-3);
+	text-align: center;
+	min-width: 74px;
+}
+
+.event-countdown__value {
+	display: block;
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-525);
+	font-weight: 600;
+	color: var(--brand-primary);
+	line-height: 1.2;
+	margin-bottom: var(--sp-1);
+}
+
+.event-countdown__label {
+	display: block;
+	font-family: Montserrat, var(--font-primary);
+	font-size: 14px;
+	font-weight: 400;
+	color: var(--brand-primary);
+}
+
+.event-card__link {
+	display: inline-block;
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-300);
+	font-weight: 600;
+	color: #ffffff;
+	text-decoration: none;
+	border-bottom: 1px solid #ffffff;
+	padding-bottom: var(--sp-1);
+	transition: all 0.3s ease;
+}
+
+.event-card__link:hover {
+	color: #ffffff;
+	opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 575px) {
+	.news-card--horizontal {
+		flex-direction: column;
+	}
+
+	.news-card__thumbnail {
+		width: 100%;
+		border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+	}
+
+	.event-card--list {
+		flex-direction: column;
+	}
+
+	.event-card__thumbnail {
+		width: 100%;
+		border-radius: var(--radius-md) var(--radius-md) 0 0;
+	}
+
+	.event-countdown {
+		flex-wrap: wrap;
+	}
+
+	.program-card__title {
+		font-size: 14px;
+	}
+}

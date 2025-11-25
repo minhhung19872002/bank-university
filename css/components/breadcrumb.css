@@ -1,0 +1,49 @@
+/* ============================================
+   COMPONENT: Breadcrumb
+   For program detail pages
+   ============================================ */
+
+.breadcrumb-section {
+  padding: var(--sp-7) 0 var(--sp-3);
+}
+
+.breadcrumb-section__title {
+  font-family: var(--font-primary);
+  font-size: var(--fs-525);
+  font-weight: 700;
+  line-height: var(--lh-tight);
+  color: var(--brand-primary);
+  text-transform: capitalize;
+  margin: 0 0 var(--sp-3);
+}
+
+.breadcrumb-section__meta {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+
+.breadcrumb-section__icon {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.breadcrumb-section__date {
+  font-family: var(--font-primary);
+  font-size: var(--fs-100);
+  font-weight: 400;
+  line-height: 15.847px;
+  color: var(--gray-500);
+}
+
+/* Divider after breadcrumb */
+.breadcrumb-section::after {
+  content: '';
+  display: block;
+  width: 100%;
+  max-width: var(--container-xl);
+  height: 1px;
+  background-color: #cccccc;
+  margin: var(--sp-3) auto 0;
+}
