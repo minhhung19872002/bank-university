@@ -88,64 +88,36 @@
 
 /* Responsive */
 
-/* Tablet (576px - 991px) */
-@media (min-width: 576px) and (max-width: 991px) {
-	.topbar__contact-text {
-		font-size: 11px;
-		line-height: 1.2;
-	}
-
-	.topbar__actions {
-		gap: var(--sp-2);
-	}
-
-	.topbar__search {
-		max-width: 140px;
-		padding: 4px var(--sp-2);
-	}
-
-	.topbar__search-input {
-		font-size: 10px;
-	}
-
-	.topbar__register-btn {
-		font-size: 12px;
-		padding: 4px var(--sp-3);
-		white-space: nowrap;
-	}
-
-	/* Ẩn email text ở tablet để tiết kiệm không gian */
-	.topbar__actions .topbar__contact-text {
-		display: none;
-	}
-
-	.topbar__contact-icon {
-		flex-shrink: 0;
-	}
-}
-
-/* Mobile (≤575px) */
-@media (max-width: 575px) {
+/* Tablet & Mobile (≤991px): thu gọn giống thanh đỏ trong design */
+@media (max-width: 991.98px) {
 	.topbar {
-		padding: var(--sp-2) 0;
+		height: var(--header-topbar-height-mobile, 48px);
+		padding: 0;
+		display: flex;
+		align-items: center;
+	}
+
+	.topbar .row {
+		justify-content: center;
 	}
 
 	.topbar__contact,
 	.topbar__actions {
+		width: 100%;
 		justify-content: center;
-		margin-bottom: var(--sp-2);
 	}
 
+	/* Ẩn icon, email, search, nút ĐĂNG KÝ trên mobile/tablet */
+	.topbar__contact-icon,
 	.topbar__actions {
-		flex-wrap: wrap;
-		gap: var(--sp-2);
+		display: none;
 	}
 
-	.topbar__search {
-		max-width: 100%;
-	}
-
-	.topbar__contact-text {
-		font-size: 11px;
+	/* Dòng tên trường cho tablet/mobile */
+	.topbar__contact-text--school {
+		display: block;
+		text-align: center;
+		font-size: var(--fs-100);
+		text-transform: uppercase;
 	}
 }

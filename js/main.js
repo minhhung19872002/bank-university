@@ -4,6 +4,7 @@ import { includePartials } from './modules/includePartials.js';
     await includePartials();
     initNavigation();
     initFAQAccordion();
+    initMobileNav();
 })();
 
 // Initialize navigation active states and scroll spy
@@ -104,7 +105,7 @@ function handleScrollSpy() {
 // Throttle function to limit scroll event calls
 function throttle(func, limit) {
     let inThrottle;
-    return function() {
+    return function () {
         const args = arguments;
         const context = this;
         if (!inThrottle) {
@@ -120,7 +121,7 @@ function initFAQAccordion() {
     const faqHeaders = document.querySelectorAll('.faq-item__header');
 
     faqHeaders.forEach(header => {
-        header.addEventListener('click', function() {
+        header.addEventListener('click', function () {
             const faqItem = this.closest('.faq-item');
             const isActive = faqItem.classList.contains('faq-item--active');
 
@@ -146,11 +147,52 @@ function initFAQAccordion() {
         });
 
         // Add keyboard support (Enter/Space key)
-        header.addEventListener('keydown', function(e) {
+        header.addEventListener('keydown', function (e) {
             if (e.key === 'Enter' || e.key === ' ') {
                 e.preventDefault();
                 this.click();
             }
+        });
+    });
+}
+
+// Mobile sidebar navigation
+function initMobileNav() {
+    const mobileNav = document.querySelector('[data-mobile-nav]');
+    const toggleBtn = document.querySelector('[data-nav-toggle]');
+    const closeBtn = document.querySelector('[data-nav-close]');
+    const overlay = document.querySelector('[data-mobile-nav-overlay]');
+    const links = mobileNav
+        ? mobileNav.querySelectorAll('.mobile-nav__link')
+        : [];
+
+    if (!mobileNav || !toggleBtn) return;
+
+    const openNav = () => {
+        mobileNav.classList.add('mobile-nav--open');
+        mobileNav.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+    };
+
+    const closeNav = () => {
+        mobileNav.classList.remove('mobile-nav--open');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    };
+
+    toggleBtn.addEventListener('click', openNav);
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeNav);
+    }
+
+    if (overlay) {
+        overlay.addEventListener('click', closeNav);
+    }
+
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            closeNav();
         });
     });
 }

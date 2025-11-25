@@ -27,7 +27,7 @@
 .hero-section__bg {
 	width: 100%;
 	height: 100%;
-	background-image: url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/MSLK53rGr6.png');
+	background-image: url("https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/MSLK53rGr6.png");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -87,9 +87,84 @@
 	line-height: 1.57;
 }
 
+.about-card {
+	background-color: #ffffff;
+	border-radius: 0 0 32px 0;
+	padding: 24px 20px 28px;
+	margin-bottom: 16px;
+}
+
+/* Mobile layout: container full-width, card ngắn hơn bên phải một gutter */
+@media (max-width: 575px) {
+	.about-section__mobile {
+		padding-right: calc(var(--bs-gutter-x) * 0.5);
+	}
+
+	.about-card {
+		width: calc(100% - calc(var(--bs-gutter-x) * 0.5));
+		position: relative;
+		z-index: 2;
+	}
+
+	.about-card__image-wrapper {
+		margin-top: -50px;
+		position: relative;
+		z-index: 1;
+		width: calc(100% - calc(var(--bs-gutter-x) * 0.5));
+		margin-left: calc(var(--bs-gutter-x) * 0.5);
+	}
+}
+
+.about-card__title {
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-500);
+	font-weight: 700;
+	color: var(--brand-primary);
+	margin-bottom: 12px;
+}
+
+.about-card__text {
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-300);
+	font-weight: 400;
+	color: var(--gray-900);
+	line-height: 1.6;
+	margin-bottom: 20px;
+}
+
+.about-card__btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 20px;
+	border-radius: 8px;
+	background-color: var(--brand-secondary);
+	color: #ffffff;
+	font-family: Montserrat, var(--font-primary);
+	font-size: 14px;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.about-card__btn:hover {
+	background-color: #1a2954;
+	color: #ffffff;
+}
+
+.about-card__image-wrapper {
+	border-radius: 0 0 0 24px;
+	overflow: hidden;
+}
+
+.about-card__image {
+	width: 100%;
+	display: block;
+	object-fit: cover;
+}
+
 /* ========== Admission Info Section ========== */
 .admission-info-section {
-	background-image: url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/rvDhgY11nU.png');
+	background-image: url("https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/rvDhgY11nU.png");
 	background-size: cover;
 	background-position: center;
 	padding: var(--sp-8) 0;
@@ -149,7 +224,7 @@
 }
 
 .admission-info-card__list li::before {
-	content: '•';
+	content: "•";
 	position: absolute;
 	left: 0;
 	color: var(--brand-primary);
@@ -175,6 +250,15 @@
 	color: #ffffff;
 	transform: translateY(-2px);
 	box-shadow: 0 4px 12px rgba(33, 51, 104, 0.3);
+}
+
+.admission-info-card__image-wrapper {
+	margin-top: var(--sp-4);
+}
+
+.admission-info-card__image {
+	width: 100%;
+	display: block;
 }
 
 /* ========== Programs Section ========== */
@@ -215,7 +299,7 @@
 }
 
 .programs-tabs__item--active::after {
-	content: '';
+	content: "";
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -596,6 +680,16 @@
 	background-color: #8a0d2b;
 }
 
+/* Admission info - tablet */
+.admission-info-section__wrapper {
+	padding: 0 var(--sp-3);
+}
+
+.admission-info-card {
+	max-width: 100%;
+	margin: 0 auto;
+}
+
 /* ========== Responsive Adjustments ========== */
 @media (min-width: 576px) and (max-width: 991px) {
 	.section-title {
@@ -603,7 +697,7 @@
 	}
 
 	.hero-section {
-		height: 300px;
+		height: 500px;
 	}
 
 	.about-section__subtitle {
@@ -767,6 +861,10 @@
 		height: 250px;
 	}
 
+	.about-section .row.align-items-center {
+		display: none !important;
+	}
+
 	.about-section__deco {
 		display: none;
 	}
@@ -835,6 +933,148 @@
 	}
 
 	.faq-section__deco {
+		display: none;
+	}
+
+	/* Programs section - mobile layout */
+	.programs-section {
+		background-color: #fafafa;
+		padding: 24px 0 32px;
+	}
+
+	.programs-section .container {
+		padding: 0 16px;
+	}
+
+	.programs-section__mobile-card {
+		background-color: transparent;
+		border-radius: 0;
+		padding: 0;
+		box-shadow: none;
+	}
+
+	.programs-section__mobile-header {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		margin-bottom: 20px;
+	}
+
+	.programs-section__mobile-icon {
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		background-color: #a41034;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+	}
+
+	.programs-section__mobile-icon img {
+		width: 22px;
+		height: 22px;
+		object-fit: contain;
+	}
+
+	.programs-section__mobile-heading-text {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.programs-section__mobile-title {
+		font-family: var(--font-primary);
+		font-size: 20px;
+		font-weight: 700;
+		color: var(--gray-900);
+		margin: 0;
+		text-align: left;
+	}
+
+	.programs-section__mobile-subtitle {
+		font-family: var(--font-primary);
+		font-size: 20px;
+		font-weight: 700;
+		color: var(--gray-900);
+		margin: 0;
+		text-align: left;
+	}
+
+	.programs-section__mobile-list {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	/* list item chỉ làm nhiệm vụ spacing, card dùng luôn style .program-card */
+	.programs-section__mobile-item {
+		list-style: none;
+	}
+
+	.programs-section__mobile-global {
+		margin-top: 24px;
+		text-align: center;
+	}
+
+	.programs-section__mobile-global-image {
+		max-width: 100%;
+		height: auto;
+		display: inline-block;
+		padding-top: 8px;
+	}
+
+	.programs-section__mobile-text {
+		font-family: var(--font-primary);
+		font-size: 14px;
+		font-weight: 600;
+		color: var(--gray-900);
+	}
+
+	/* Admission info - mobile override: bỏ background, card full width */
+	.admission-info-section {
+		background: none;
+		background-image: none;
+		padding: 24px 0 32px;
+	}
+
+	.admission-info-section__wrapper {
+		padding: 0;
+	}
+
+	/* Admission info - mobile layout giống card Tuyển Sinh */
+	.admission-info-card {
+		background-color: #ffffff;
+		border-radius: 0 0 32px 0;
+		padding: 20px 0 24px;
+		box-shadow: none;
+		max-width: 100%;
+		margin: 0 0 16px;
+	}
+
+	.admission-info-card__title {
+		font-size: var(--fs-500);
+		margin-bottom: 12px;
+	}
+
+	.admission-info-card__section-title {
+		font-size: 14px;
+		margin-bottom: 8px;
+	}
+
+	.admission-info-card__list {
+		margin-bottom: 12px;
+	}
+
+	/* Divider cao hơn trên mobile */
+	.admission-info-card__divider {
+		height: 2px;
+		background-color: var(--brand-secondary);
+	}
+
+	.admission-info-card__btn--mobile {
 		display: none;
 	}
 }

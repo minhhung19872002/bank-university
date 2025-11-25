@@ -6,7 +6,7 @@
 .hero-section {
 	position: relative;
 	width: 100%;
-	height: 500px;
+	height: calc(100vh - var(--header-total-height-mobile, 112px));
 	overflow: hidden;
 }
 
@@ -18,6 +18,129 @@
 	background-repeat: no-repeat;
 }
 
+/* Hero background cho trang chủ
+	- Desktop: dùng hình cũ (set ở home.css hoặc inline hiện tại)
+	- Tablet + Mobile: override bằng hình mới */
+
+/* Tablet + Mobile (dưới lg) dùng hình mới */
+@media (max-width: 991.98px) {
+	.hero-section .hero-section__bg {
+		background-image: url("https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-21/FtSsKXbfjR.png");
+	}
+}
+
+/* ============================================
+   Mobile Hero (Home page)
+   ============================================ */
+
+.hero-mobile {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+
+.hero-mobile__content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 100%;
+	padding-bottom: 2.5rem;
+	max-width: 320px;
+	color: #fafafa;
+	pointer-events: auto;
+}
+
+.hero-mobile__subtitle {
+	font-family: "SF Pro Display", var(--font-primary, Montserrat);
+	font-size: 0.875rem;
+	font-weight: 600;
+	line-height: 1.25rem;
+	text-transform: uppercase;
+	margin-bottom: 0.5rem;
+}
+
+.hero-mobile__brand {
+	font-family: Oswald, var(--font-primary, Montserrat);
+	font-size: 2rem;
+	line-height: 1.3;
+	color: #ffaa17;
+	margin-bottom: 0.25rem;
+}
+
+.hero-mobile__title {
+	font-family: Oswald, var(--font-primary, Montserrat);
+	font-size: 1.75rem;
+	line-height: 1.4;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+.hero-mobile__btn {
+	margin-top: 1.5rem;
+	background-color: var(--color-secondary);
+	border-color: var(--color-secondary);
+	color: var(--color-on-secondary);
+	border-radius: var(--radius-md);
+	padding: 0.75rem 1.25rem;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-family: Oswald, var(--font-primary, Montserrat);
+	font-size: 0.875rem;
+	text-transform: uppercase;
+	align-self: flex-start;
+	white-space: nowrap;
+}
+
+.hero-mobile__btn:hover,
+.hero-mobile__btn:focus {
+	background-color: #1a294f;
+	border-color: #1a294f;
+	color: var(--color-on-secondary);
+}
+
+.hero-mobile__btn-icon {
+	width: 1.5rem;
+	height: 1.5rem;
+	flex-shrink: 0;
+	background-image: url("https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-21/AxhwgFJngh.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.hero-mobile__fab-group {
+	position: absolute;
+	right: 1rem;
+	bottom: 5.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 24px;
+}
+
+.hero-mobile__fab {
+	width: 3.75rem;
+	height: 3.75rem;
+	border-radius: 999px;
+	border: none;
+	background-color: transparent;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+}
+
+.hero-mobile__fab--chat {
+	background-image: url("https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-21/VeGyY7Zbxo.png");
+}
+
+.hero-mobile__fab--phone {
+	background-image: url("https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-21/W9o6ByXdtU.png");
+}
+
 /* ============================================
    DAI-HOC PAGE VARIANT
    Hero giống index + Feature cards overlay
@@ -25,7 +148,7 @@
 
 /* Hero background cho dai-hoc (giống index) */
 .hero-section--daihoc .hero-section__bg {
-	background-image: url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/MSLK53rGr6.png');
+	background-image: url("https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/MSLK53rGr6.png");
 }
 
 /* Feature Cards Overlay - dùng margin negative để overlay lên hero */
@@ -58,6 +181,19 @@
 
 /* Tablet */
 @media (max-width: 1199.98px) {
+	.hero-mobile__content {
+		max-width: 420px;
+		padding-bottom: 3.5rem;
+	}
+
+	.hero-mobile__title {
+		font-size: 2.1rem;
+	}
+
+	.hero-mobile__fab-group {
+		bottom: 6.5rem;
+	}
+
 	.feature-cards-overlay {
 		margin-top: -80px;
 		max-width: 90%;
@@ -72,7 +208,8 @@
 /* Mobile */
 @media (max-width: 767.98px) {
 	.hero-section {
-		height: 400px;
+		height: auto;
+		min-height: calc(100vh - var(--header-total-height-mobile, 112px));
 	}
 
 	.feature-cards-overlay {

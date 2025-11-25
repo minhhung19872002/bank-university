@@ -2,25 +2,59 @@
 <div class="topbar">
 	<div class="container-fluid">
 		<div class="row align-items-center">
-			<div class="col-md-6">
+			<div class="col-12 col-lg-6">
 				<div class="topbar__contact">
 					<span class="topbar__contact-icon">
-						<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/3ndBgXaONo.png" alt="Biểu tượng điện thoại" width="20" height="20" />
+						<img
+							src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/3ndBgXaONo.png"
+							alt="Biểu tượng điện thoại"
+							width="20"
+							height="20"
+						/>
 					</span>
-					<span class="topbar__contact-text">Hotline: (028) 38 212 430 - (028) 38 211 704 - 0888 353 488</span>
+					<span class="topbar__contact-text d-none d-lg-inline"
+						>Hotline: (028) 38 212 430 - (028) 38 211 704 - 0888 353
+						488</span
+					>
+					<span
+						class="topbar__contact-text topbar__contact-text--school d-inline d-lg-none"
+						>TRƯỜNG ĐẠI HỌC NGÂN HÀNG THÀNH PHỐ HỒ CHÍ MINH</span
+					>
 				</div>
 			</div>
-			<div class="col-md-6">
+			<div class="col-lg-6 d-none d-lg-block">
 				<div class="topbar__actions">
 					<span class="topbar__contact-icon">
-						<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/Eu1HNzG4ZH.png" alt="Biểu tượng email" width="23" height="23" />
+						<img
+							src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/Eu1HNzG4ZH.png"
+							alt="Biểu tượng email"
+							width="23"
+							height="23"
+						/>
 					</span>
-					<span class="topbar__contact-text">Email: phongtvts@hub.edu.vn</span>
+					<span class="topbar__contact-text"
+						>Email: phongtvts@hub.edu.vn</span
+					>
 					<div class="topbar__search">
-						<input type="search" placeholder="Tìm kiếm..." class="topbar__search-input" aria-label="Tìm kiếm" />
-						<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/xEzDJf4qr6.png" alt="" width="16" height="16" />
+						<input
+							type="search"
+							placeholder="Tìm kiếm..."
+							class="topbar__search-input"
+							aria-label="Tìm kiếm"
+						/>
+						<img
+							src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/xEzDJf4qr6.png"
+							alt=""
+							width="16"
+							height="16"
+						/>
 					</div>
-					<a href="#registration" class="topbar__register-btn" aria-label="Đăng ký tuyển sinh">ĐĂNG KÝ</a>
+					<a
+						href="#registration"
+						class="topbar__register-btn"
+						aria-label="Đăng ký tuyển sinh"
+						>ĐĂNG KÝ</a
+					>
 				</div>
 			</div>
 		</div>
@@ -31,24 +65,63 @@
 <nav class="navbar navbar-expand-lg" role="navigation" aria-label="Menu chính">
 	<div class="container">
 		<a class="navbar-brand" href="/" aria-label="Trang chủ HUB University">
-			<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/ET5DYXaxgM.png" alt="Logo Trường Đại học Ngân hàng TP.HCM - HUB University" class="navbar__logo" width="50" height="72" />
+			<img
+				src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/ET5DYXaxgM.png"
+				alt="Logo Trường Đại học Ngân hàng TP.HCM - HUB University"
+				class="navbar__logo"
+				width="50"
+				height="72"
+			/>
+			<span class="navbar-brand__text d-inline d-lg-none">
+				TRƯỜNG ĐẠI HỌC NGÂN HÀNG
+				<br />
+				THÀNH PHỐ HỒ CHÍ MINH
+			</span>
 		</a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
+		<button
+			class="navbar-search-btn d-inline-flex d-lg-none"
+			type="button"
+			aria-label="Tìm kiếm"
+		>
+			<img
+				src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/xEzDJf4qr6.png"
+				alt=""
+				width="20"
+				height="20"
+			/>
 		</button>
-		<div class="collapse navbar-collapse" id="navbarNav">
+		<button
+			class="navbar-toggler"
+			type="button"
+			aria-label="Mở menu điều hướng"
+			data-nav-toggle
+		>
+			<img
+				src="assets/svg/harmbuger.svg"
+				alt="Mở menu điều hướng"
+				width="24"
+				height="24"
+			/>
+		</button>
+		<div class="navbar-nav-wrapper d-none d-lg-block">
 			<ul class="navbar-nav ms-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="/" aria-current="page">Trang Chủ</a>
+					<a class="nav-link" href="/" aria-current="page"
+						>Trang Chủ</a
+					>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#about">Lý Do Chọn HUB</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#programs">Chương Trình Đào Tạo</a>
+					<a class="nav-link" href="#programs"
+						>Chương Trình Đào Tạo</a
+					>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#career">Hướng Nghiệp & Phát Triển</a>
+					<a class="nav-link" href="#career"
+						>Hướng Nghiệp & Phát Triển</a
+					>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="#news">Tin Tức Tuyển Sinh</a>
@@ -57,9 +130,161 @@
 					<a class="nav-link" href="#announcements">Thông Báo</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="#virtual-tour">HUB virtual tour</a>
+					<a class="nav-link" href="#virtual-tour"
+						>HUB virtual tour</a
+					>
 				</li>
 			</ul>
 		</div>
 	</div>
 </nav>
+
+<!-- Mobile Sidebar Nav -->
+<aside class="mobile-nav" aria-hidden="true" data-mobile-nav>
+	<div class="mobile-nav__overlay" data-mobile-nav-overlay></div>
+	<div class="mobile-nav__panel">
+		<div class="mobile-nav__header">
+			<button
+				class="mobile-nav__close"
+				type="button"
+				aria-label="Đóng menu"
+				data-nav-close
+			>
+				<span>&times;</span>
+			</button>
+		</div>
+		<nav class="mobile-nav__body" aria-label="Menu chính (mobile)">
+			<ul class="mobile-nav__list">
+				<li class="mobile-nav__item">
+					<a class="mobile-nav__link" href="/">
+						<img
+							src="assets/svg/home.svg"
+							alt="Trang chủ"
+							class="mobile-nav__icon"
+							width="24"
+							height="24"
+						/>
+						<span>Trang chủ</span>
+					</a>
+				</li>
+				<li class="mobile-nav__item">
+					<a class="mobile-nav__link" href="#about">
+						<img
+							src="assets/svg/reason.svg"
+							alt="Lý do chọn HUB"
+							class="mobile-nav__icon"
+							width="24"
+							height="24"
+						/>
+						<span>Lý do chọn HUB</span>
+					</a>
+				</li>
+				<li class="mobile-nav__item">
+					<a class="mobile-nav__link" href="#programs">
+						<img
+							src="assets/svg/buildings.svg"
+							alt="Chương trình đào tạo"
+							class="mobile-nav__icon"
+							width="24"
+							height="24"
+						/>
+						<span>Chương trình đào tạo</span>
+					</a>
+				</li>
+				<li class="mobile-nav__item">
+					<a class="mobile-nav__link" href="#career">
+						<img
+							src="assets/svg/document.svg"
+							alt="Hướng nghiệp và phát triển"
+							class="mobile-nav__icon"
+							width="24"
+							height="24"
+						/>
+						<span>Hướng nghiệp và phát triển</span>
+					</a>
+				</li>
+				<li class="mobile-nav__item">
+					<a class="mobile-nav__link" href="#news">
+						<img
+							src="assets/svg/phone.svg"
+							alt="Tin tức tuyển sinh"
+							class="mobile-nav__icon"
+							width="24"
+							height="24"
+						/>
+						<span>Tin tức tuyển sinh</span>
+					</a>
+				</li>
+				<li class="mobile-nav__item">
+					<a class="mobile-nav__link" href="#announcements">
+						<img
+							src="assets/svg/notify.svg"
+							alt="Thông báo"
+							class="mobile-nav__icon"
+							width="24"
+							height="24"
+						/>
+						<span>Thông báo</span>
+					</a>
+				</li>
+				<li class="mobile-nav__item">
+					<a class="mobile-nav__link" href="#virtual-tour">
+						<img
+							src="assets/svg/map.svg"
+							alt="HUB virtual tour"
+							class="mobile-nav__icon"
+							width="24"
+							height="24"
+						/>
+						<span>HUB virtual tour</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<div class="mobile-nav__footer">
+			<p class="mobile-nav__footer-title">Kết nối với chúng tôi</p>
+			<div class="mobile-nav__socials">
+				<a href="#" aria-label="Facebook" class="mobile-nav__social">
+					<img
+						src="assets/svg/facebook.svg"
+						alt="Facebook"
+						width="24"
+						height="24"
+					/>
+				</a>
+				<a href="#" aria-label="YouTube" class="mobile-nav__social">
+					<img
+						src="assets/svg/youtube.svg"
+						alt="YouTube"
+						width="24"
+						height="24"
+					/>
+				</a>
+				<a href="#" aria-label="TikTok" class="mobile-nav__social">
+					<img
+						src="assets/svg/tiktok.svg"
+						alt="TikTok"
+						width="24"
+						height="24"
+					/>
+				</a>
+				<a href="#" aria-label="Email" class="mobile-nav__social">
+					<img
+						src="assets/svg/mail.svg"
+						alt="Email"
+						width="24"
+						height="24"
+					/>
+				</a>
+				<a href="#" aria-label="Zalo" class="mobile-nav__social">
+					<img
+						src="assets/svg/zalo.svg"
+						alt="Zalo"
+						width="24"
+						height="24"
+					/>
+				</a>
+			</div>
+		</div>
+	</div>
+</aside>
