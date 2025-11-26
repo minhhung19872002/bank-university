@@ -81,15 +81,15 @@
 
 .about-section__description {
 	font-family: Montserrat, var(--font-primary);
-	font-size: 14px;
+	font-size: var(--fs-300);
 	font-weight: 500;
 	color: var(--gray-900);
 	line-height: 1.57;
 }
 
 .about-card {
-	background-color: #ffffff;
-	border-radius: 0 0 32px 0;
+	background-color: var(--color-light);
+	border-radius: 0 0 var(--radius-32) 0;
 	padding: 24px 20px 28px;
 	margin-bottom: 16px;
 }
@@ -137,11 +137,11 @@
 	align-items: center;
 	justify-content: center;
 	padding: 10px 20px;
-	border-radius: 8px;
+	border-radius: var(--radius-md);
 	background-color: var(--brand-secondary);
-	color: #ffffff;
+	color: var(--color-light);
 	font-family: Montserrat, var(--font-primary);
-	font-size: 14px;
+	font-size: var(--fs-200);
 	font-weight: 600;
 	text-decoration: none;
 }
@@ -175,7 +175,7 @@
 }
 
 .admission-info-card {
-	background-color: #ffffff;
+	background-color: var(--color-light);
 	border-radius: var(--radius-lg);
 	padding: var(--sp-6) var(--sp-4);
 	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
@@ -234,7 +234,7 @@
 .admission-info-card__btn {
 	display: inline-block;
 	background-color: var(--brand-secondary);
-	color: #ffffff;
+	color: var(--color-on-secondary);
 	font-family: Montserrat, var(--font-primary);
 	font-size: var(--fs-300);
 	font-weight: 600;
@@ -308,6 +308,39 @@
 	background-color: var(--brand-primary);
 }
 
+.programs-groups {
+	position: relative;
+}
+
+.programs-group {
+	display: none;
+}
+
+.programs-group--active {
+	display: block;
+}
+
+.programs-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--sp-3);
+}
+
+.programs-row__item {
+	flex: 0 0 260px;
+}
+
+.programs-row__item--wide {
+	flex: 0 0 320px;
+}
+
+@media (max-width: 575.98px) {
+	.programs-row__item,
+	.programs-row__item--wide {
+		flex: 0 0 100%;
+	}
+}
+
 /* ========== News Section ========== */
 .news-section {
 	background-color: var(--brand-primary);
@@ -316,6 +349,37 @@
 
 .news-section__wrapper {
 	padding: var(--sp-4) 0;
+}
+
+@media (max-width: 575.98px) {
+	.news-section {
+		background-color: transparent;
+	}
+
+	.news-section .section-title {
+		color: var(--color-secondary) !important;
+	}
+
+	.news-card--featured {
+		box-shadow: none;
+		background-color: transparent;
+		padding: 0;
+		border-radius: 0;
+	}
+
+	.news-card--featured .news-card__image {
+		display: block;
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+		border-radius: 0;
+	}
+
+	/* Ẩn divider + excerpt của news card trên mobile, giữ từ tablet trở lên */
+	.news-card__divider,
+	.news-card__excerpt {
+		display: none;
+	}
 }
 
 /* ========== Events Section ========== */
@@ -373,7 +437,69 @@
 	height: 643px;
 }
 
+@media (max-width: 575px) {
+	.events-section {
+		padding: var(--sp-6) 0 0;
+	}
+
+	.events-section__grid {
+		min-height: auto;
+		max-width: 100%;
+		padding: 0 var(--sp-3);
+		display: flex;
+		flex-direction: column;
+		gap: var(--sp-4);
+	}
+
+	/* Ẩn heading trên mobile */
+	.events-section__title {
+		display: none;
+	}
+
+	/* Featured card lên trước, full width, static */
+	.event-card--featured {
+		position: static;
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		order: 0;
+		margin-bottom: var(--sp-3);
+	}
+
+	/* Các event-card list xếp dưới, full width, static */
+	.event-card--list {
+		position: static;
+		width: 100%;
+		max-width: 100%;
+		left: auto;
+		top: auto;
+		order: 1;
+		display: flex;
+		flex-direction: row;
+		gap: var(--sp-3);
+		background: none;
+		border-radius: 0;
+	}
+
+	.event-card--list .event-card__thumbnail {
+		flex: 0 0 40%;
+		max-width: 40%;
+		height: auto;
+		object-fit: cover;
+		border-radius: 0;
+	}
+
+	/* Ẩn mô tả, giữ layout gọn trên mobile */
+	.event-card--list .event-card__excerpt {
+		display: none;
+	}
+}
+
 /* ========== FAQ Section ========== */
+.faq-section {
+	background-color: #f6f7f8;
+}
+
 .faq-section__image {
 	width: 100%;
 	max-width: 452px;
@@ -396,6 +522,34 @@
 	width: 120px;
 	height: auto;
 	opacity: 0.5;
+}
+
+.faq-section__view-all {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	margin-top: var(--sp-4);
+	justify-content: center;
+	text-align: center;
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-200);
+	font-weight: 600;
+	color: var(--brand-secondary);
+	text-decoration: none;
+}
+
+.faq-section .col-lg-7 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.faq-section__view-all span:last-child {
+	font-size: 16px;
+}
+
+.faq-section__view-all:hover {
+	text-decoration: underline;
 }
 
 /* ========== Student Life Section ========== */
@@ -459,7 +613,7 @@
 
 .student-life-section__description {
 	font-family: Montserrat, var(--font-primary);
-	font-size: 14px;
+	font-size: var(--fs-300);
 	font-weight: 400;
 	color: #ffffff;
 	line-height: 1.57;
@@ -475,6 +629,31 @@
 	position: relative;
 	max-width: 100%;
 	height: auto;
+}
+
+.student-life-section__view-all {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 6px;
+	margin-top: var(--sp-4);
+	padding: 6px 20px;
+	border-radius: var(--radius-md);
+	background-color: var(--color-light);
+	color: var(--brand-secondary);
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-200);
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.student-life-section__view-all span:last-child {
+	font-size: 16px;
+}
+
+.student-life-section__view-all:hover {
+	text-decoration: none;
+	background-color: #f7f7f7;
 }
 
 /* Left column - tall image */
@@ -527,6 +706,84 @@
 	aspect-ratio: 387 / 390;
 }
 
+@media (max-width: 575px) {
+	.student-life-section {
+		padding: var(--sp-6) 0;
+	}
+
+	.student-life-section__grid {
+		min-height: auto;
+		max-width: 100%;
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 8px;
+	}
+
+	.student-life-section__grid--mobile {
+		padding-top: var(--sp-3);
+	}
+
+	.student-life-section__col {
+		position: static;
+		width: 100%;
+		max-width: 100%;
+		left: auto;
+		top: auto;
+	}
+
+	.student-life-section__content {
+		grid-column: 1 / -1;
+		padding-top: 0;
+		max-width: 100%;
+		margin-bottom: var(--sp-2);
+	}
+
+	.student-life-section__label,
+	.student-life-section__title,
+	.student-life-section__description {
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		white-space: normal;
+	}
+
+	.student-life-section__description {
+		display: none;
+	}
+
+	.student-life-section__label {
+		font-size: var(--fs-400);
+		text-align: left;
+	}
+
+	.student-life-section__title {
+		font-size: var(--fs-700);
+		text-align: left;
+	}
+
+	.student-life-section__description {
+		font-size: var(--fs-300);
+		text-align: left;
+	}
+
+	.student-life-section__image {
+		width: 100% !important;
+		max-width: 100% !important;
+		aspect-ratio: 3 / 4;
+		height: auto;
+		object-fit: cover;
+		margin-bottom: 0 !important;
+		border-radius: 0;
+	}
+
+	.student-life-section__view-all {
+		grid-column: 1 / -1;
+		margin-top: var(--sp-4);
+		justify-self: center;
+		border-radius: 0;
+	}
+}
+
 /* ========== Registration Section ========== */
 .registration-section__wrapper {
 	position: relative;
@@ -536,15 +793,15 @@
 	width: 100%;
 	height: 543px;
 	object-fit: cover;
-	border-radius: 10px;
+	border-radius: var(--radius-10);
 }
 
 .registration-form {
 	position: relative;
 	max-width: 1000px;
 	margin: -200px auto 0;
-	background-color: #ffffff;
-	border-radius: 10px;
+	background-color: var(--color-light);
+	border-radius: var(--radius-10);
 	padding: 46px 96px;
 	box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.1);
 }
@@ -554,7 +811,7 @@
 	font-size: 26px;
 	font-weight: 700;
 	line-height: 31.694px;
-	color: #a41034;
+	color: var(--brand-accent);
 	text-align: left;
 	margin-bottom: 21px;
 }
@@ -563,27 +820,27 @@
 .registration-form__textarea {
 	width: 100%;
 	height: 38px;
-	border: 1px solid #dddddd;
-	border-radius: 10px;
+	border: 1px solid var(--gray-border);
+	border-radius: var(--radius-10);
 	padding: 9px 13px;
 	font-family: Montserrat, var(--font-primary);
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 17px;
-	color: #737477;
-	background-color: #ffffff;
-	transition: border-color 0.3s ease;
+	color: var(--text-muted);
+	background-color: var(--color-light);
+	transition: border-color var(--transition-base);
 }
 
 .registration-form__input::placeholder,
 .registration-form__textarea::placeholder {
-	color: #737477;
+	color: var(--text-muted);
 }
 
 .registration-form__input:focus,
 .registration-form__textarea:focus {
 	outline: none;
-	border-color: #a41034;
+	border-color: var(--brand-accent);
 }
 
 .registration-form .row.g-3 {
@@ -624,7 +881,7 @@
 .registration-form__checkboxes .form-check-input {
 	width: 17px;
 	height: 17px;
-	background-color: #dddddd;
+	background-color: var(--gray-border);
 	border: none;
 	border-radius: 2px;
 	margin: 0;
@@ -632,7 +889,7 @@
 }
 
 .registration-form__checkboxes .form-check-input:checked {
-	background-color: #a41034;
+	background-color: var(--brand-accent);
 	border: none;
 }
 
@@ -645,7 +902,7 @@
 	font-size: 14px;
 	font-weight: 400;
 	line-height: 16.943px;
-	color: #737477;
+	color: var(--text-muted);
 	cursor: pointer;
 	margin: 0;
 }
@@ -661,8 +918,8 @@
 .registration-form__submit {
 	width: 100%;
 	height: 49px;
-	background-color: #a41034;
-	color: #ffffff;
+	background-color: var(--brand-accent);
+	color: var(--color-on-primary);
 	font-family: Montserrat, var(--font-primary);
 	font-size: 16px;
 	font-weight: 700;
@@ -670,14 +927,14 @@
 	border: none;
 	border-radius: 10px;
 	cursor: pointer;
-	transition: background-color 0.3s ease;
+	transition: background-color var(--transition-base);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
 .registration-form__submit:hover {
-	background-color: #8a0d2b;
+	background-color: var(--brand-accent-dark);
 }
 
 /* Admission info - tablet */
@@ -688,6 +945,10 @@
 .admission-info-card {
 	max-width: 100%;
 	margin: 0 auto;
+}
+
+.news-card__meta {
+	display: none;
 }
 
 /* ========== Responsive Adjustments ========== */
@@ -718,10 +979,10 @@
 
 	.student-life-section__grid {
 		min-height: auto;
-		padding: 0;
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		gap: var(--sp-4);
+		padding: 0 var(--sp-3);
+		display: flex;
+		flex-direction: column;
+		gap: var(--sp-3);
 		max-width: 100%;
 	}
 
@@ -731,24 +992,6 @@
 		max-width: 100% !important;
 		left: auto !important;
 		top: auto !important;
-	}
-
-	.student-life-section__col--left {
-		grid-column: 1 / -1;
-		display: flex;
-		flex-direction: column;
-		gap: var(--sp-3);
-	}
-
-	.student-life-section__col--middle {
-		grid-column: 1;
-		display: flex;
-		flex-direction: column;
-		gap: var(--sp-3);
-	}
-
-	.student-life-section__col--right {
-		grid-column: 2;
 		display: flex;
 		flex-direction: column;
 		gap: var(--sp-3);
@@ -810,7 +1053,7 @@
 	}
 
 	.registration-form__title {
-		font-size: 22px;
+		font-size: var(--fs-450);
 		line-height: 1.2;
 	}
 
@@ -825,7 +1068,7 @@
 	}
 
 	.programs-tabs__item {
-		font-size: 14px;
+		font-size: var(--fs-200);
 	}
 
 	.faq-section__image {
@@ -900,7 +1143,7 @@
 	}
 
 	.registration-form__title {
-		font-size: 20px;
+		font-size: var(--fs-400);
 		line-height: 1.2;
 		margin-bottom: 16px;
 	}
@@ -929,10 +1172,63 @@
 
 	.registration-form__submit {
 		height: 45px;
-		font-size: 15px;
+		font-size: var(--fs-300);
 	}
 
 	.faq-section__deco {
+		display: none;
+	}
+
+	/* Ẩn heading FAQ desktop trên mobile */
+	.faq-section__heading-main,
+	.faq-section__subtitle--line {
+		display: none;
+	}
+
+	/* Header FAQ riêng cho mobile */
+	.faq-section__mobile-header {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		margin-bottom: var(--sp-4);
+	}
+
+	.faq-section__mobile-icon {
+		width: 60px;
+		height: 60px;
+		border-radius: 50%;
+		background-color: var(--brand-primary);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.faq-section__mobile-icon-mark {
+		width: 36px;
+		height: 36px;
+		object-fit: contain;
+	}
+
+	.faq-section__mobile-overline {
+		font-family: var(--font-primary);
+		font-size: var(--fs-200);
+		font-weight: 500;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--gray-700);
+		margin: 0 0 2px;
+	}
+
+	.faq-section__mobile-title {
+		font-family: var(--font-primary);
+		font-size: var(--fs-500);
+		font-weight: 700;
+		color: var(--gray-900);
+		margin: 0;
+	}
+
+	/* FAQ: ẩn ảnh bên trái trên mobile, giữ tablet/desktop */
+	.faq-section__image {
 		display: none;
 	}
 
@@ -944,13 +1240,6 @@
 
 	.programs-section .container {
 		padding: 0 16px;
-	}
-
-	.programs-section__mobile-card {
-		background-color: transparent;
-		border-radius: 0;
-		padding: 0;
-		box-shadow: none;
 	}
 
 	.programs-section__mobile-header {
@@ -1000,37 +1289,90 @@
 		text-align: left;
 	}
 
-	.programs-section__mobile-list {
+	/* Ẩn tabs + groups desktop ở mobile, dùng accordion riêng */
+	.programs-tabs,
+	.programs-groups {
+		display: none;
+	}
+
+	.programs-accordion {
 		display: flex;
 		flex-direction: column;
-		gap: 12px;
-		margin: 0;
-		padding: 0;
-		list-style: none;
+		gap: var(--sp-3);
+		margin-top: 16px;
 	}
 
-	/* list item chỉ làm nhiệm vụ spacing, card dùng luôn style .program-card */
-	.programs-section__mobile-item {
-		list-style: none;
-	}
-
-	.programs-section__mobile-global {
-		margin-top: 24px;
-		text-align: center;
-	}
-
-	.programs-section__mobile-global-image {
-		max-width: 100%;
-		height: auto;
-		display: inline-block;
-		padding-top: 8px;
-	}
-
-	.programs-section__mobile-text {
-		font-family: var(--font-primary);
-		font-size: 14px;
-		font-weight: 600;
+	.programs-accordion__header {
+		background-color: var(--color-light);
+		border: 1px solid var(--gray-300);
+		border-radius: 60px;
+		padding: var(--sp-2) var(--sp-3);
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+		font-family: Montserrat, var(--font-primary);
+		font-size: var(--fs-300);
+		font-weight: 500;
 		color: var(--gray-900);
+		text-align: left;
+		cursor: pointer;
+		transition: all var(--transition-base);
+	}
+
+	.programs-accordion__header--active {
+		border-color: var(--brand-primary);
+	}
+
+	.programs-accordion__panel {
+		display: none;
+		margin-top: 8px;
+		overflow-x: auto;
+		padding-bottom: 4px;
+	}
+
+	.programs-accordion__panel--open {
+		display: block;
+	}
+
+	.programs-accordion__global {
+		margin-top: var(--sp-5);
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.programs-accordion__global img {
+		display: block;
+	}
+
+	/* Items trong accordion panel hiển thị dạng list ngang, chỉ text, scroll ngang */
+	.programs-accordion__panel .programs-row {
+		flex-wrap: nowrap;
+		gap: 8px;
+	}
+
+	.programs-accordion__panel .programs-row__item,
+	.programs-accordion__panel .programs-row__item--wide {
+		flex: 0 0 auto;
+		min-width: max-content;
+	}
+
+	.programs-accordion__panel .program-card {
+		background: transparent;
+		box-shadow: none;
+		padding: 0;
+		border-radius: 0;
+	}
+
+	.programs-accordion__panel .program-card__icon-wrapper {
+		display: none;
+	}
+
+	.programs-accordion__panel .program-card__title {
+		font-size: var(--fs-300);
+		font-weight: 500;
+		white-space: nowrap;
 	}
 
 	/* Admission info - mobile override: bỏ background, card full width */
@@ -1046,8 +1388,8 @@
 
 	/* Admission info - mobile layout giống card Tuyển Sinh */
 	.admission-info-card {
-		background-color: #ffffff;
-		border-radius: 0 0 32px 0;
+		background-color: var(--color-light);
+		border-radius: 0 0 var(--radius-32) 0;
 		padding: 20px 0 24px;
 		box-shadow: none;
 		max-width: 100%;
@@ -1076,5 +1418,57 @@
 
 	.admission-info-card__btn--mobile {
 		display: none;
+	}
+}
+
+@media (max-width: 575.98px) {
+	.news-card__meta {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+		margin-top: 8px;
+	}
+
+	.news-card__meta-icon {
+		width: 16px;
+		height: 16px;
+		object-fit: contain;
+	}
+
+	.news-card__meta-date {
+		font-family: Montserrat, var(--font-primary);
+		font-size: var(--fs-200);
+		font-weight: 400;
+		color: var(--gray-600);
+	}
+
+	/* Mobile layout for horizontal news cards: image left, title + date right */
+	.news-card--horizontal {
+		display: flex;
+		gap: var(--sp-3);
+		box-shadow: none;
+		border-radius: 0;
+	}
+
+	.news-card--horizontal .news-card__thumbnail {
+		flex: 0 0 40%;
+		max-width: 40%;
+		height: auto;
+		object-fit: cover;
+		border-radius: 0;
+	}
+
+	.news-card--horizontal .news-card__content {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		padding-top: 0;
+	}
+
+	.news-card--horizontal .news-card__title {
+		font-size: var(--fs-350);
+		font-weight: 600;
+		margin-bottom: 8px;
 	}
 }

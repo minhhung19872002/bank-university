@@ -5,6 +5,8 @@ import { includePartials } from './modules/includePartials.js';
     initNavigation();
     initFAQAccordion();
     initMobileNav();
+    initProgramsTabs();
+    initProgramsAccordionMobile();
 })();
 
 // Initialize navigation active states and scroll spy
@@ -195,4 +197,85 @@ function initMobileNav() {
             closeNav();
         });
     });
+}
+
+// Programs section - tabs control card groups (desktop) and rows (mobile)
+function initProgramsTabs() {
+    const tabs = document.querySelectorAll('.programs-tabs__item');
+    if (!tabs.length) return;
+
+    const groups = document.querySelectorAll('.programs-group');
+    const rows = document.querySelectorAll(
+        '#programs .row.g-3'
+    );
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            // update active tab state
+            tabs.forEach(t => {
+                t.classList.remove('programs-tabs__item--active');
+                t.setAttribute('aria-selected', 'false');
+            });
+            tab.classList.add('programs-tabs__item--active');
+            tab.setAttribute('aria-selected', 'true');
+
+            const targetId = tab.getAttribute('data-program-target');
+
+            // desktop / tablet: show matching group
+            if (targetId && groups.length) {
+                groups.forEach(group => {
+                    if (group.id === targetId) {
+                        group.classList.add('programs-group--active');
+                    } else {
+                        group.classList.remove('programs-group--active');
+                    }
+                });
+            } else if (rows.length) {
+                // fallback: if no groups, just toggle rows for mobile usage
+                rows.forEach((row, index) => {
+                    if (index === 0) {
+                        row.classList.remove('d-none');
+                    } else {
+                        row.classList.add('d-none');
+                    }
+                });
+            }
+        });
+    });
+}
+
+// Programs section - mobile accordion (separate from desktop tabs)
+function initProgramsAccordionMobile() {
+    if (window.innerWidth > 575) return;
+
+    const accordion = document.querySelector('.programs-accordion');
+    if (!accordion) return;
+
+    const headers = accordion.querySelectorAll('.programs-accordion__header');
+
+    headers.forEach(header => {
+        // Panel luôn nằm ngay sau header tương ứng
+        const panel = header.nextElementSibling;
+        if (!panel || !panel.classList.contains('programs-accordion__panel')) return;
+
+        header.addEventListener('click', () => {
+            const isActive = header.classList.contains('programs-accordion__header--active');
+
+            // Đóng tất cả
+            accordion.querySelectorAll('.programs-accordion__header').forEach(h => {
+                h.classList.remove('programs-accordion__header--active');
+            });
+            accordion.querySelectorAll('.programs-accordion__panel').forEach(p => {
+                p.classList.remove('programs-accordion__panel--open');
+            });
+
+            // Nếu header đang đóng thì mở nó (single-open accordion)
+            if (!isActive) {
+                header.classList.add('programs-accordion__header--active');
+                panel.classList.add('programs-accordion__panel--open');
+            }
+        });
+    });
+
+    // Không tự động mở item nào, để user tự click
 }

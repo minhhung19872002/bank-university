@@ -52,9 +52,9 @@
 
 .program-card__badge-text {
   font-family: var(--font-primary);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 17px;
+  font-size: var(--fs-200);
+  font-weight: 500;
+  line-height: 1.2;
   color: var(--color-light);
   text-transform: capitalize;
 }
@@ -78,18 +78,18 @@
 
 .program-card__meta-text {
   font-family: var(--font-primary);
-  font-size: 14px;
+  font-size: var(--fs-200);
   font-weight: 500;
-  line-height: 17px;
+  line-height: 1.2;
   color: #757f95;
   text-transform: capitalize;
 }
 
 .program-card__title {
   font-family: var(--font-primary);
-  font-size: 18px;
+  font-size: var(--fs-450);
   font-weight: 700;
-  line-height: 21.942px;
+  line-height: 1.3;
   color: var(--gray-900);
   text-transform: capitalize;
   margin-bottom: 13px;
@@ -97,9 +97,9 @@
 
 .program-card__description {
   font-family: var(--font-primary);
-  font-size: 14px;
+  font-size: var(--fs-300);
   font-weight: 400;
-  line-height: 22px;
+  line-height: 1.55;
   color: var(--gray-900);
   margin-bottom: 13px;
 }
@@ -131,9 +131,9 @@
 
 .program-card__info-text {
   font-family: var(--font-primary);
-  font-size: 14px;
+  font-size: var(--fs-200);
   font-weight: 400;
-  line-height: 17px;
+  line-height: 1.3;
   color: #757f95;
   text-transform: capitalize;
 }
@@ -154,9 +154,9 @@
 
 .program-card__lessons span {
   font-family: var(--font-primary);
-  font-size: 14px;
+  font-size: var(--fs-200);
   font-weight: 500;
-  line-height: 17px;
+  line-height: 1.3;
   color: #757f95;
   text-transform: capitalize;
 }
@@ -177,9 +177,9 @@
 
 .program-card__meta-item span {
   font-family: var(--font-primary);
-  font-size: 14px;
+  font-size: var(--fs-200);
   font-weight: 400;
-  line-height: 17px;
+  line-height: 1.3;
   color: #757f95;
   text-transform: capitalize;
 }
@@ -231,8 +231,8 @@
   }
 
   .program-card__badge-text {
-    font-size: 12px;
-    line-height: 15px;
+    font-size: var(--fs-100);
+    line-height: 1.2;
   }
 
   .program-card__content {
@@ -240,13 +240,13 @@
   }
 
   .program-card__title {
-    font-size: 16px;
-    line-height: 20px;
+    font-size: var(--fs-400);
+    line-height: 1.3;
   }
 
   .program-card__description {
-    font-size: 13px;
-    line-height: 20px;
+    font-size: var(--fs-200);
+    line-height: 1.5;
   }
 
   .program-card__footer {
@@ -260,7 +260,7 @@
   }
 
   .program-card__info-text {
-    font-size: 12px;
-    line-height: 15px;
+    font-size: var(--fs-100);
+    line-height: 1.2;
   }
 }

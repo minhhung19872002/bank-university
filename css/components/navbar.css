@@ -4,7 +4,7 @@
 
 .navbar {
 	padding: var(--sp-3) 0;
-	background-color: #ffffff;
+	background-color: var(--color-light);
 }
 
 .navbar-toggler {
@@ -73,7 +73,7 @@
 	text-transform: capitalize;
 	padding: var(--sp-2) var(--sp-1);
 	position: relative;
-	transition: color 0.3s ease;
+	transition: color var(--transition-base);
 	white-space: nowrap;
 }
 
@@ -205,7 +205,7 @@
 	width: 80%;
 	max-width: 320px;
 	height: 100%;
-	background-color: #ffffff;
+	background-color: var(--color-light);
 	display: flex;
 	flex-direction: column;
 	padding: var(--sp-4) var(--sp-5) var(--sp-6);
@@ -303,7 +303,7 @@
 
 .mobile-nav__social:hover {
 	background-color: var(--brand-primary);
-	color: #ffffff;
+	color: var(--color-light);
 }
 
 @media (min-width: 992px) {

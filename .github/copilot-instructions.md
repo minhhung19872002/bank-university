@@ -231,3 +231,64 @@ Khi tôi gửi file/HTML:
     -   Semantic & responsive chuẩn (mobile–tablet–desktop)
     -   Thân thiện SEO & accessible
     -   Tối ưu tái sử dụng component, dễ maintain về lâu dài.
+
+---
+
+### 7. Typography & Design Token Rules (CSS)
+
+1. **Font-size – dùng hệ token `--fs-*`**
+
+    - Không dùng `font-size` dạng `px` trực tiếp trong component/page, trừ khi thật sự đặc biệt.
+    - Mapping tham khảo cho site này:
+
+        - `--fs-900`: H1 rất lớn (hero chính, 46–50px)
+        - `--fs-800`: H1/H2 lớn (40px)
+        - `--fs-700`: H2/H3 (32–36px)
+        - `--fs-600`: H3/H4 (26–30px)
+        - `--fs-500`: Title nhỏ / section subtitle (22–24px)
+        - `--fs-425, --fs-400`: subtitle, heading phụ (18–20px)
+        - `--fs-350, --fs-300`: body text, mô tả chính (14–16px)
+        - `--fs-200`: text nhỏ, meta, label (12–13px)
+        - `--fs-100`: text rất nhỏ, badge (≈11–12px)
+
+    - Line-height dùng **tỷ lệ** (`1.2–1.6`) thay vì số px; ưu tiên:
+        - Heading: `1.2–1.3`
+        - Body: `1.5–1.6`
+
+2. **Font-weight – chỉ dùng 4 mức**
+
+    - Dùng trực tiếp số, không tạo token:
+        - `400`: body text, description
+        - `500`: label, subtitle, meta nhấn nhẹ
+        - `600`: sub-heading, title phụ
+        - `700`: heading chính, chữ cần nhấn mạnh
+    - Không dùng các giá trị lẻ khác (300, 800, 900) trừ khi font/display đặc biệt yêu cầu.
+
+3. **Màu sắc – luôn ưu tiên token trong `variables.css`**
+
+    - Không dùng thẳng `#fff`, `#000`, `#333`, `#fafafa`… Nếu cần, map sang:
+        - Nền/trắng: `var(--color-light)`
+        - Text chính: `var(--gray-900)`
+        - Text phụ: `var(--text-muted)` / `var(--gray-600, --gray-500)`
+        - Màu brand: `var(--brand-primary)`, `var(--brand-secondary)`, `var(--brand-accent)`, `var(--brand-accent-dark)`
+        - Border gray: `var(--gray-border)` hoặc `var(--gray-300)`
+    - Nếu phải thêm màu mới → thêm vào `variables.css` trước, sau đó mới dùng.
+
+4. **Radius, shadow, transition – dùng token chung**
+
+    - Radius: ưu tiên `--radius-sm`, `--radius-md`, `--radius-10`, `--radius-24`, `--radius-32`, `--radius-lg`, `--radius-30`, `--radius-40`, `--radius-60`, `--radius-pill`.
+    - Shadow: dùng `--shadow-1`, `--shadow-2` thay vì tự viết `box-shadow` mới nếu có thể reuse.
+    - Transition: dùng `var(--transition-base)` cho hover/focus bình thường (`0.3s ease`).
+
+5. **Ảnh & background**
+
+    - Ảnh luôn `display: block; max-width: 100%; height: auto;` trừ khi cần ratio cố định.
+    - `object-fit: cover` cho thumbnail/card; nếu dùng màu nền riêng → dùng token, không hard-code.
+
+6. **Ưu tiên sửa code cũ theo hệ token**
+
+    - Khi đụng vào bất kỳ component/page CSS nào:
+        - Thay `font-size` px → `--fs-*` phù hợp.
+        - Thay màu thô (`#ffffff`, `#333333`, `#fafafa`…) → token tương ứng.
+        - Thay `border-radius`, `box-shadow`, `transition` lẻ → token nếu đã có.
+    - Mục tiêu: toàn bộ `css/components` và `css/pages` **không còn** style “magic number” khó reuse, tất cả đi qua hệ token.

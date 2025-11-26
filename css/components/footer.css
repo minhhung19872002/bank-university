@@ -4,8 +4,8 @@
 
 /* Main Footer Container */
 .footer {
-	background-color: #a41034;
-	color: #ffffff;
+	background-color: var(--brand-accent);
+	color: var(--color-light);
 	padding: 55px 0 30px;
 	margin-top: 60px;
 }
@@ -38,10 +38,10 @@
 
 .footer__description {
 	font-family: Montserrat, var(--font-primary);
-	font-size: 14px;
+	font-size: var(--fs-200);
 	font-weight: 400;
 	line-height: 22px;
-	color: #ffffff;
+	color: var(--color-light);
 	margin-bottom: 20px;
 }
 
@@ -78,23 +78,23 @@
 /* Headings */
 .footer__heading {
 	font-family: Montserrat, var(--font-primary);
-	font-size: 17px;
+	font-size: var(--fs-350);
 	font-weight: 700;
 	line-height: 20.723px;
-	color: #ffffff;
+	color: var(--color-light);
 	margin-bottom: 11px;
 	padding-bottom: 11px;
 	position: relative;
 }
 
 .footer__heading::after {
-	content: '';
+	content: "";
 	position: absolute;
 	bottom: 0;
 	left: 0;
 	width: 47px;
 	height: 1px;
-	background-color: #ffffff;
+	background-color: var(--color-light);
 }
 
 /* Contact List */
@@ -110,10 +110,10 @@
 	gap: 12px;
 	margin-bottom: 15px;
 	font-family: Montserrat, var(--font-primary);
-	font-size: 14px;
+	font-size: var(--fs-200);
 	font-weight: 400;
 	line-height: 24px;
-	color: #ffffff;
+	color: var(--color-light);
 }
 
 .footer__list-item img {
@@ -141,17 +141,17 @@
 .footer__link {
 	display: block;
 	font-family: Montserrat, var(--font-primary);
-	font-size: 14px;
+	font-size: var(--fs-200);
 	font-weight: 400;
 	line-height: 30px;
-	color: #ffffff;
+	color: var(--color-light);
 	text-decoration: none;
 	transition: opacity 0.3s ease;
 }
 
 .footer__link:hover {
 	opacity: 0.8;
-	color: #ffffff;
+	color: var(--color-light);
 }
 
 /* Bottom Section */
@@ -169,10 +169,10 @@
 
 .footer__copyright p {
 	font-family: Montserrat, var(--font-primary);
-	font-size: 14px;
+	font-size: var(--fs-200);
 	font-weight: 400;
 	line-height: 30px;
-	color: #ffffff;
+	color: var(--color-light);
 	margin: 0;
 }
 
@@ -287,7 +287,7 @@
 	.footer__list-item {
 		justify-content: flex-start;
 		text-align: left;
-		font-size: 14px;
+		font-size: var(--fs-200);
 		line-height: 22px;
 		margin-bottom: 18px;
 	}

@@ -25,6 +25,14 @@
 	--color-danger: #dc3545;
 	--color-info: #0dcaf0;
 
+	/* Brand accents & semantic tokens */
+	--brand-accent: #a41034;
+	--brand-accent-dark: #8a0d2b;
+	--gray-border: #dddddd;
+	--text-muted: #737477;
+	--radius-24: 24px;
+	--radius-32: 32px;
+
 	--gradient-brand: radial-gradient(277.07deg, #a61b28 0%, #213368 100%);
 
 	--ff-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial,
