@@ -1,4 +1,5 @@
 import { includePartials } from './modules/includePartials.js';
+import { initProgramSlider } from './modules/program-slider.js';
 
 (async function start() {
     await includePartials();
@@ -7,6 +8,7 @@ import { includePartials } from './modules/includePartials.js';
     initMobileNav();
     initProgramsTabs();
     initProgramsAccordionMobile();
+    initProgramSlider();
 })();
 
 // Initialize navigation active states and scroll spy

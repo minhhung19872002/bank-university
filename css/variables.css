@@ -88,7 +88,7 @@
 
 	/* Header heights (mobile/tablet) */
 	--header-topbar-height-mobile: 48px;
-	--header-navbar-height-mobile: 66px;
+	--header-navbar-height-mobile: 76px;
 	--header-total-height-mobile: calc(
 		var(--header-topbar-height-mobile) + var(--header-navbar-height-mobile)
 	);

@@ -16,7 +16,7 @@
 	margin-bottom: var(--sp-4);
 }
 
-/* ========== Hero Section ========== */
+/* ========== Hero Section - Single Source of Truth ========== */
 .hero-section {
 	position: relative;
 	width: 100%;
@@ -33,9 +33,163 @@
 	background-repeat: no-repeat;
 }
 
-/* ========== About Section ========== */
+/* Hero Overlay - Visible on Mobile/Tablet, Hidden on Desktop */
+.hero-section__overlay {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	background: linear-gradient(
+		to right,
+		rgba(0, 0, 0, 0.5) 0%,
+		transparent 70%
+	);
+}
+
+.hero-section__overlay > .container {
+	display: flex;
+	align-items: center;
+}
+
+.hero-section__content {
+	color: var(--color-light);
+	text-align: left;
+}
+
+.hero-section__brand {
+	font-family: "SVN-Bango", var(--font-primary);
+	font-size: 48px;
+	font-weight: 400;
+	line-height: 1;
+	margin-bottom: var(--sp-2);
+	color: var(--color-light);
+}
+
+.hero-section__title {
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-500);
+	font-weight: 700;
+	line-height: 1.3;
+	margin-bottom: var(--sp-4);
+	max-width: 280px;
+}
+
+.hero-section__btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	background-color: var(--brand-secondary);
+	color: var(--color-light);
+	padding: 10px 20px;
+	border-radius: var(--radius-md);
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-200);
+	font-weight: 600;
+	text-decoration: none;
+	transition: background-color var(--transition-base);
+}
+
+.hero-section__btn:hover {
+	background-color: #1a2954;
+	color: var(--color-light);
+}
+
+.hero-section__btn-icon {
+	width: 16px;
+	height: 16px;
+	background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z'/%3E%3C/svg%3E")
+		no-repeat center / contain;
+}
+
+/* FAB Buttons - Mobile/Tablet Only */
+.hero-section__fab-group {
+	position: absolute;
+	bottom: 100px;
+	right: 16px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	z-index: 10;
+}
+
+.hero-section__fab {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	border: none;
+	cursor: pointer;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+	transition: transform var(--transition-base);
+}
+
+.hero-section__fab:hover {
+	transform: scale(1.1);
+}
+
+.hero-section__fab--chat {
+	background: var(--brand-secondary)
+		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M2.678 11.894a1 1 0 0 1 .287.801 10.97 10.97 0 0 1-.398 2c1.395-.323 2.247-.697 2.634-.893a1 1 0 0 1 .71-.074A8.06 8.06 0 0 0 8 14c3.996 0 7-2.807 7-6 0-3.192-3.004-6-7-6S1 4.808 1 8c0 1.468.617 2.83 1.678 3.894zm-.493 3.905a21.682 21.682 0 0 1-.713.129c-.2.032-.352-.176-.273-.362a9.68 9.68 0 0 0 .244-.637l.003-.01c.248-.72.45-1.548.524-2.319C.743 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.52.263-1.639.742-3.468 1.105z'/%3E%3C/svg%3E")
+		no-repeat center / 24px;
+}
+
+.hero-section__fab--phone {
+	background: var(--brand-secondary)
+		url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z'/%3E%3C/svg%3E")
+		no-repeat center / 20px;
+}
+
+/* Desktop: Hide overlay and FAB */
+@media (min-width: 992px) {
+	.hero-section__overlay,
+	.hero-section__fab-group {
+		display: none;
+	}
+
+	.hero-section {
+		height: 500px;
+	}
+}
+
+/* Tablet adjustments */
+@media (min-width: 576px) and (max-width: 991px) {
+	.hero-section {
+		height: 400px;
+	}
+
+	.hero-section__brand {
+		font-size: 56px;
+	}
+
+	.hero-section__title {
+		font-size: var(--fs-600);
+		max-width: 350px;
+	}
+}
+
+/* Mobile adjustments */
+@media (max-width: 575px) {
+	.hero-section {
+		height: 280px;
+	}
+
+	.hero-section__brand {
+		font-size: 36px;
+	}
+
+	.hero-section__title {
+		font-size: var(--fs-400);
+		max-width: 240px;
+	}
+}
+
+/* ========== About Section - Single Source of Truth ========== */
 .about-section {
 	position: relative;
+}
+
+.about-section__row {
+	/* Wrapper for responsive layout - styles applied via Bootstrap grid */
+	gap: 0;
 }
 
 .about-section__image-wrapper {
@@ -61,13 +215,19 @@
 	z-index: 2;
 }
 
+.about-section__content {
+	/* Content wrapper for text elements - mobile styling via media query */
+	position: relative;
+}
+
 .about-section__subtitle {
 	font-family: Montserrat, var(--font-primary);
-	font-size: var(--fs-800);
+	font-size: var(--fs-600);
 	font-weight: 400;
 	color: var(--gray-900);
 	line-height: 1.2;
 	margin-bottom: var(--sp-2);
+	font-style: italic;
 }
 
 .about-section__title {
@@ -85,54 +245,10 @@
 	font-weight: 500;
 	color: var(--gray-900);
 	line-height: 1.57;
+	margin-bottom: var(--sp-4);
 }
 
-.about-card {
-	background-color: var(--color-light);
-	border-radius: 0 0 var(--radius-32) 0;
-	padding: 24px 20px 28px;
-	margin-bottom: 16px;
-}
-
-/* Mobile layout: container full-width, card ngắn hơn bên phải một gutter */
-@media (max-width: 575px) {
-	.about-section__mobile {
-		padding-right: calc(var(--bs-gutter-x) * 0.5);
-	}
-
-	.about-card {
-		width: calc(100% - calc(var(--bs-gutter-x) * 0.5));
-		position: relative;
-		z-index: 2;
-	}
-
-	.about-card__image-wrapper {
-		margin-top: -50px;
-		position: relative;
-		z-index: 1;
-		width: calc(100% - calc(var(--bs-gutter-x) * 0.5));
-		margin-left: calc(var(--bs-gutter-x) * 0.5);
-	}
-}
-
-.about-card__title {
-	font-family: Montserrat, var(--font-primary);
-	font-size: var(--fs-500);
-	font-weight: 700;
-	color: var(--brand-primary);
-	margin-bottom: 12px;
-}
-
-.about-card__text {
-	font-family: Montserrat, var(--font-primary);
-	font-size: var(--fs-300);
-	font-weight: 400;
-	color: var(--gray-900);
-	line-height: 1.6;
-	margin-bottom: 20px;
-}
-
-.about-card__btn {
+.about-section__btn {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
@@ -144,22 +260,132 @@
 	font-size: var(--fs-200);
 	font-weight: 600;
 	text-decoration: none;
+	transition: background-color var(--transition-base);
 }
 
-.about-card__btn:hover {
+.about-section__btn:hover {
 	background-color: #1a2954;
-	color: #ffffff;
+	color: var(--color-light);
 }
 
-.about-card__image-wrapper {
-	border-radius: 0 0 0 24px;
-	overflow: hidden;
+/* Desktop & Tablet: Standard 2-column layout, image left, text right */
+@media (min-width: 576px) {
+	.about-section__content-col {
+		display: flex;
+		align-items: center;
+	}
+
+	.about-section__image-col {
+		margin-bottom: 0;
+	}
+
+	.about-section__deco {
+		display: block;
+	}
+
+	.about-section__btn {
+		display: inline-flex;
+	}
 }
 
-.about-card__image {
-	width: 100%;
-	display: block;
-	object-fit: cover;
+/* Tablet adjustments */
+@media (min-width: 576px) and (max-width: 991px) {
+	.about-section__row {
+		gap: var(--sp-4);
+	}
+
+	.about-section__subtitle {
+		font-size: var(--fs-500);
+	}
+
+	.about-section__title {
+		font-size: var(--fs-700);
+	}
+
+	.about-section__deco {
+		display: none;
+	}
+
+	.about-section__main-image {
+		max-width: 100%;
+	}
+}
+
+/* Mobile: Card-style layout with content first, image below */
+@media (max-width: 575px) {
+	.about-section.section-spacing {
+		padding: 0;
+	}
+
+	.about-section > .container {
+		padding: 0;
+		max-width: 100%;
+	}
+
+	.about-section__row {
+		margin: 0;
+	}
+
+	.about-section__content-col,
+	.about-section__image-col {
+		padding: 0;
+	}
+
+	/* Content styled as card */
+	.about-section__content {
+		background-color: var(--color-light);
+		border-radius: 0 0 var(--radius-32) 0;
+		padding: 24px 0px 28px;
+		margin-left: calc(var(--bs-gutter-x) * 0.5);
+		margin-right: calc(var(--bs-gutter-x) * 0.5);
+		position: relative;
+		z-index: 2;
+	}
+
+	.about-section__subtitle {
+		display: none; /* Hide "Đôi nét về" on mobile */
+	}
+
+	.about-section__title {
+		font-size: var(--fs-500);
+		font-weight: 700;
+		color: var(--brand-primary);
+		margin-bottom: 12px;
+	}
+
+	.about-section__description {
+		font-size: var(--fs-300);
+		font-weight: 400;
+		line-height: 1.6;
+		margin-bottom: 20px;
+	}
+
+	.about-section__btn {
+		display: inline-flex;
+	}
+
+	/* Image wrapper styled with overlap effect */
+	.about-section__image-col {
+		margin-top: -50px;
+		position: relative;
+		z-index: 1;
+	}
+
+	.about-section__image-wrapper {
+		margin-left: calc(var(--bs-gutter-x) * 0.5);
+		border-radius: 0 0 0 24px;
+		overflow: hidden;
+	}
+
+	.about-section__main-image {
+		width: 100%;
+		max-width: 100%;
+		border-radius: 0;
+	}
+
+	.about-section__deco {
+		display: none;
+	}
 }
 
 /* ========== Admission Info Section ========== */
@@ -357,6 +583,8 @@
 	}
 
 	.news-section .section-title {
+		text-align: left;
+		margin-bottom: 20px !important;
 		color: var(--color-secondary) !important;
 	}
 
@@ -382,115 +610,245 @@
 	}
 }
 
-/* ========== Events Section ========== */
+/* ========== Events Section - Bootstrap Grid Layout (No position absolute) ========== */
 .events-section {
 	padding: var(--sp-8) 0;
 	position: relative;
 }
 
-.events-section__grid {
-	position: relative;
-	min-height: 643px;
-	max-width: 1200px;
-	margin: 0 auto;
-}
-
 .events-section__title {
-	position: absolute;
-	top: 0;
-	left: 0;
 	font-family: Montserrat, var(--font-primary);
 	font-size: var(--fs-700);
 	font-weight: 700;
 	color: var(--brand-primary);
 	line-height: 1.22;
+	margin-bottom: var(--sp-5);
+}
+
+.events-section__list {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-4);
+}
+
+/* Event Card - List Style */
+.event-card--list {
+	display: flex;
+	gap: var(--sp-4);
+	background-color: var(--color-light);
+	border-radius: var(--radius-md);
+	overflow: hidden;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.event-card__thumbnail {
+	flex: 0 0 186px;
+	width: 186px;
+	height: 169px;
+	object-fit: cover;
+}
+
+.event-card__content {
+	flex: 1;
+	padding: var(--sp-3) var(--sp-3) var(--sp-3) 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.event-card__title {
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-400);
+	font-weight: 600;
+	color: var(--gray-900);
+	margin-bottom: var(--sp-2);
+	line-height: 1.4;
+}
+
+.event-card__excerpt {
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-200);
+	font-weight: 400;
+	color: var(--gray-600);
+	line-height: 1.5;
+	margin-bottom: var(--sp-2);
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+}
+
+.event-card__meta {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-200);
+	color: var(--gray-500);
+}
+
+.event-card__icon {
+	width: 15px;
+	height: 15px;
+}
+
+/* Event Card - Featured Style */
+.event-card--featured {
+	background-color: var(--brand-secondary);
+	border-radius: var(--radius-lg);
+	overflow: hidden;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.event-card__featured-image {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 477 / 369;
+	object-fit: cover;
+}
+
+.event-card__featured-content {
+	padding: var(--sp-4);
+	text-align: center;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.event-card__featured-title {
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-300);
+	font-weight: 500;
+	color: var(--color-light);
+	opacity: 0.8;
+	margin-bottom: var(--sp-1);
+}
+
+.event-card__featured-subtitle {
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-500);
+	font-weight: 700;
+	color: var(--color-light);
 	margin-bottom: var(--sp-4);
 }
 
-/* Event List Cards - Left Column */
-.event-card--list {
-	position: absolute;
-	left: 0;
-	width: 51.92%; /* 623px in 1200px container */
-	max-width: 623px;
+/* Countdown */
+.event-countdown {
+	display: flex;
+	justify-content: center;
+	gap: var(--sp-3);
+	margin-bottom: var(--sp-4);
 }
 
-.event-card--1 {
-	top: 89px;
+.event-countdown__item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 60px;
 }
 
-.event-card--2 {
-	top: 282px;
+.event-countdown__value {
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-700);
+	font-weight: 700;
+	color: var(--brand-secondary);
+	line-height: 1;
 }
 
-.event-card--3 {
-	top: 474px;
+.event-countdown__label {
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-200);
+	font-weight: 400;
+	color: var(--brand-secondary);
+	text-transform: uppercase;
 }
 
-/* Featured Event Card - Right Column */
-.event-card--featured {
-	position: absolute;
-	top: 0;
-	left: 57.17%; /* 686px in 1200px container */
-	width: 42.83%; /* 514px */
-	max-width: 514px;
-	height: 643px;
+.event-card__link {
+	display: inline-block;
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-200);
+	font-weight: 600;
+	color: var(--color-light);
+	text-decoration: underline;
+	transition: opacity var(--transition-base);
 }
 
+.event-card__link:hover {
+	opacity: 0.8;
+	color: var(--color-light);
+}
+
+/* Desktop: List left, Featured right */
+@media (min-width: 992px) {
+	.events-section__list {
+		padding-right: var(--sp-4);
+	}
+}
+
+/* Tablet */
+@media (min-width: 576px) and (max-width: 991px) {
+	.events-section__title {
+		font-size: var(--fs-600);
+	}
+
+	.event-card--featured {
+		margin-bottom: var(--sp-4);
+	}
+}
+
+/* Mobile */
 @media (max-width: 575px) {
 	.events-section {
-		padding: var(--sp-6) 0 0;
+		padding: var(--sp-6) 0;
 	}
 
-	.events-section__grid {
-		min-height: auto;
-		max-width: 100%;
-		padding: 0 var(--sp-3);
-		display: flex;
-		flex-direction: column;
-		gap: var(--sp-4);
+	.events-section .events-section__title {
+		font-size: var(--fs-500);
+		text-align: left;
+		color: var(--brand-secondary);
+		margin-bottom: var(--sp-4);
 	}
 
-	/* Ẩn heading trên mobile */
-	.events-section__title {
-		display: none;
-	}
-
-	/* Featured card lên trước, full width, static */
+	/* Featured card adjustments */
 	.event-card--featured {
-		position: static;
-		width: 100%;
-		max-width: 100%;
-		height: auto;
-		order: 0;
-		margin-bottom: var(--sp-3);
+		margin-bottom: var(--sp-4);
 	}
 
-	/* Các event-card list xếp dưới, full width, static */
+	.event-card__featured-subtitle {
+		font-size: var(--fs-400);
+	}
+
+	.event-countdown__value {
+		font-size: var(--fs-500);
+	}
+
+	/* List cards - horizontal layout */
 	.event-card--list {
-		position: static;
-		width: 100%;
-		max-width: 100%;
-		left: auto;
-		top: auto;
-		order: 1;
-		display: flex;
 		flex-direction: row;
 		gap: var(--sp-3);
-		background: none;
-		border-radius: 0;
 	}
 
-	.event-card--list .event-card__thumbnail {
+	.event-card__thumbnail {
 		flex: 0 0 40%;
 		max-width: 40%;
 		height: auto;
-		object-fit: cover;
-		border-radius: 0;
+		aspect-ratio: 1 / 1;
 	}
 
-	/* Ẩn mô tả, giữ layout gọn trên mobile */
-	.event-card--list .event-card__excerpt {
+	.event-card__content {
+		padding: var(--sp-2);
+	}
+
+	.event-card__title {
+		font-size: var(--fs-350);
+		margin-bottom: var(--sp-1);
+	}
+
+	.event-card__excerpt {
 		display: none;
 	}
 }
@@ -552,7 +910,7 @@
 	text-decoration: underline;
 }
 
-/* ========== Student Life Section ========== */
+/* ========== Student Life Section - CSS Grid Layout (No position absolute) ========== */
 .student-life-section {
 	background-color: var(--brand-primary);
 	padding: 60px 0;
@@ -561,41 +919,24 @@
 }
 
 .student-life-section__grid {
-	position: relative;
-	min-height: 1024px;
-	max-width: 1200px;
-	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-4);
 }
 
-/* Absolute positioning for all elements like Codia */
-.student-life-section__col {
-	position: absolute;
-}
-
-/* Left column - 0px in 1200px container */
-.student-life-section__col--left {
-	left: 0;
-	top: 0;
-	width: 32.5%;
+/* Header - Full width */
+.student-life-section__header {
 	max-width: 390px;
-}
-
-.student-life-section__content {
-	position: relative;
-	width: 100%;
-	max-width: 387px;
-	padding-top: 55px;
+	margin-bottom: var(--sp-4);
 }
 
 .student-life-section__label {
 	font-family: Montserrat, var(--font-primary);
 	font-size: var(--fs-500);
 	font-weight: 600;
-	line-height: 1.208;
-	color: #ffffff;
+	line-height: 1.2;
+	color: var(--color-light);
 	text-transform: capitalize;
-	height: 29px;
-	white-space: nowrap;
 	margin-bottom: 5px;
 }
 
@@ -603,11 +944,9 @@
 	font-family: Montserrat, var(--font-primary);
 	font-size: var(--fs-900);
 	font-weight: 700;
-	line-height: 1.217;
-	color: #ffffff;
+	line-height: 1.2;
+	color: var(--color-light);
 	text-transform: capitalize;
-	height: 73px;
-	white-space: nowrap;
 	margin-bottom: 14px;
 }
 
@@ -615,22 +954,57 @@
 	font-family: Montserrat, var(--font-primary);
 	font-size: var(--fs-300);
 	font-weight: 400;
-	color: #ffffff;
+	color: var(--color-light);
 	line-height: 1.57;
-	width: 100%;
-	max-width: 387px;
-	margin-bottom: 26px;
+}
+
+/* Images Grid - CSS Grid for desktop, simpler for mobile */
+.student-life-section__images {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 16px;
+}
+
+.student-life-section__col {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
 }
 
 .student-life-section__image {
 	border-radius: var(--radius-lg);
 	object-fit: cover;
 	display: block;
-	position: relative;
-	max-width: 100%;
+	width: 100%;
 	height: auto;
 }
 
+/* Left column - tall image */
+.student-life-section__col--left .student-life-section__image--tall {
+	aspect-ratio: 390 / 620;
+	height: 100%;
+}
+
+/* Middle column images */
+.student-life-section__col--middle .student-life-section__image:nth-child(1) {
+	aspect-ratio: 389 / 362;
+}
+
+.student-life-section__col--middle .student-life-section__image:nth-child(2),
+.student-life-section__col--middle .student-life-section__image:nth-child(3) {
+	aspect-ratio: 389 / 255;
+}
+
+/* Right column images */
+.student-life-section__col--right .student-life-section__image:nth-child(1) {
+	aspect-ratio: 387 / 497;
+}
+
+.student-life-section__col--right .student-life-section__image:nth-child(2) {
+	aspect-ratio: 387 / 390;
+}
+
+/* View All Link */
 .student-life-section__view-all {
 	display: inline-flex;
 	align-items: center;
@@ -645,141 +1019,119 @@
 	font-size: var(--fs-200);
 	font-weight: 600;
 	text-decoration: none;
-}
-
-.student-life-section__view-all span:last-child {
-	font-size: 16px;
+	align-self: center;
 }
 
 .student-life-section__view-all:hover {
 	text-decoration: none;
 	background-color: #f7f7f7;
+	color: var(--brand-secondary);
 }
 
-/* Left column - tall image */
-.student-life-section__col--left .student-life-section__image {
-	width: 100%;
-	aspect-ratio: 390 / 620;
+/* Desktop: Header beside left column */
+@media (min-width: 992px) {
+	.student-life-section__grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto auto;
+		gap: 0;
+	}
+
+	.student-life-section__header {
+		grid-column: 1;
+		grid-row: 1;
+		padding-top: 55px;
+		margin-bottom: var(--sp-6);
+	}
+
+	.student-life-section__images {
+		grid-template-columns: 32.5% 32.5% 32.5%;
+		gap: 16px;
+	}
+
+	.student-life-section__view-all {
+		display: none; /* Hide on desktop */
+	}
 }
 
-/* Middle column - 406px from left in 1200px container = 33.83% */
-.student-life-section__col--middle {
-	left: 33.83%;
-	top: 60px;
-	width: 32.42%;
-	max-width: 389px;
+/* Tablet */
+@media (min-width: 576px) and (max-width: 991px) {
+	.student-life-section {
+		padding: var(--sp-6) 0;
+	}
+
+	.student-life-section__header {
+		max-width: 100%;
+		text-align: left;
+	}
+
+	.student-life-section__title {
+		font-size: var(--fs-700);
+	}
+
+	.student-life-section__images {
+		grid-template-columns: 1fr 1fr;
+		gap: var(--sp-3);
+	}
+
+	.student-life-section__col {
+		display: contents; /* Flatten columns for tablet grid */
+	}
+
+	.student-life-section__image {
+		aspect-ratio: 1 / 1;
+		border-radius: var(--radius-md);
+	}
+
+	.student-life-section__image--tall {
+		aspect-ratio: 1 / 1 !important;
+		height: auto !important;
+	}
 }
 
-.student-life-section__col--middle .student-life-section__image:nth-child(1) {
-	width: 100%;
-	aspect-ratio: 389 / 362;
-	margin-bottom: 16px;
-}
-
-.student-life-section__col--middle .student-life-section__image:nth-child(2) {
-	width: 100%;
-	aspect-ratio: 389 / 255;
-	margin-bottom: 16px;
-}
-
-.student-life-section__col--middle .student-life-section__image:nth-child(3) {
-	width: 100%;
-	aspect-ratio: 389 / 255;
-}
-
-/* Right column - 813px from left in 1200px container = 67.75% */
-.student-life-section__col--right {
-	left: 67.75%;
-	top: 60px;
-	width: 32.25%;
-	max-width: 387px;
-}
-
-.student-life-section__col--right .student-life-section__image:nth-child(1) {
-	width: 100%;
-	aspect-ratio: 387 / 497;
-	margin-bottom: 16px;
-}
-
-.student-life-section__col--right .student-life-section__image:nth-child(2) {
-	width: 100%;
-	aspect-ratio: 387 / 390;
-}
-
+/* Mobile */
 @media (max-width: 575px) {
 	.student-life-section {
 		padding: var(--sp-6) 0;
 	}
 
-	.student-life-section__grid {
-		min-height: auto;
+	.student-life-section__header {
 		max-width: 100%;
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: 8px;
+		margin-bottom: var(--sp-3);
 	}
 
-	.student-life-section__grid--mobile {
-		padding-top: var(--sp-3);
+	.student-life-section__label {
+		font-size: var(--fs-400);
 	}
 
-	.student-life-section__col {
-		position: static;
-		width: 100%;
-		max-width: 100%;
-		left: auto;
-		top: auto;
-	}
-
-	.student-life-section__content {
-		grid-column: 1 / -1;
-		padding-top: 0;
-		max-width: 100%;
+	.student-life-section__title {
+		font-size: var(--fs-700);
 		margin-bottom: var(--sp-2);
-	}
-
-	.student-life-section__label,
-	.student-life-section__title,
-	.student-life-section__description {
-		width: 100%;
-		max-width: 100%;
-		height: auto;
-		white-space: normal;
 	}
 
 	.student-life-section__description {
 		display: none;
 	}
 
-	.student-life-section__label {
-		font-size: var(--fs-400);
-		text-align: left;
+	.student-life-section__images {
+		grid-template-columns: 1fr 1fr;
+		gap: 8px;
 	}
 
-	.student-life-section__title {
-		font-size: var(--fs-700);
-		text-align: left;
+	.student-life-section__col {
+		display: contents; /* Flatten for mobile 2-column grid */
 	}
 
-	.student-life-section__description {
-		font-size: var(--fs-300);
-		text-align: left;
-	}
-
-	.student-life-section__image {
-		width: 100% !important;
-		max-width: 100% !important;
-		aspect-ratio: 3 / 4;
-		height: auto;
-		object-fit: cover;
-		margin-bottom: 0 !important;
-		border-radius: 0;
+	/* Override all image aspect ratios to be square */
+	.student-life-section__images .student-life-section__image {
+		aspect-ratio: 1 / 1 !important;
+		border-radius: 0 !important;
+		height: auto !important;
 	}
 
 	.student-life-section__view-all {
 		grid-column: 1 / -1;
 		margin-top: var(--sp-4);
-		justify-self: center;
 		border-radius: 0;
 	}
 }
@@ -957,92 +1309,6 @@
 		font-size: var(--fs-600);
 	}
 
-	.hero-section {
-		height: 500px;
-	}
-
-	.about-section__subtitle {
-		font-size: var(--fs-600);
-	}
-
-	.about-section__title {
-		font-size: var(--fs-700);
-	}
-
-	.student-life-section__title {
-		font-size: var(--fs-700);
-	}
-
-	.student-life-section {
-		padding: var(--sp-6) 0;
-	}
-
-	.student-life-section__grid {
-		min-height: auto;
-		padding: 0 var(--sp-3);
-		display: flex;
-		flex-direction: column;
-		gap: var(--sp-3);
-		max-width: 100%;
-	}
-
-	.student-life-section__col {
-		position: static !important;
-		width: 100% !important;
-		max-width: 100% !important;
-		left: auto !important;
-		top: auto !important;
-		display: flex;
-		flex-direction: column;
-		gap: var(--sp-3);
-	}
-
-	.student-life-section__content {
-		position: static;
-		width: 100%;
-		max-width: 100%;
-		padding-top: 0;
-		padding: 0 var(--sp-3);
-	}
-
-	.student-life-section__label,
-	.student-life-section__title,
-	.student-life-section__description {
-		width: 100%;
-		max-width: 100%;
-		height: auto;
-		white-space: normal;
-	}
-
-	.student-life-section__image {
-		width: 100% !important;
-		max-width: 100% !important;
-		height: auto !important;
-		aspect-ratio: auto !important;
-		margin-bottom: 0 !important;
-	}
-
-	.events-section__grid {
-		min-height: auto;
-		padding: 0 var(--sp-3);
-	}
-
-	.events-section__title {
-		position: static;
-		margin-bottom: var(--sp-4);
-	}
-
-	.event-card--list,
-	.event-card--featured {
-		position: static !important;
-		width: 100% !important;
-		max-width: 100% !important;
-		left: auto !important;
-		top: auto !important;
-		height: auto !important;
-		margin-bottom: var(--sp-4);
-	}
-
 	.registration-section__bg {
 		height: 400px;
 	}
@@ -1098,28 +1364,6 @@
 
 	.admission-info-card__title {
 		font-size: var(--fs-500);
-	}
-
-	.hero-section {
-		height: 250px;
-	}
-
-	.about-section .row.align-items-center {
-		display: none !important;
-	}
-
-	.about-section__deco {
-		display: none;
-	}
-
-	.about-section__subtitle {
-		font-size: var(--fs-500);
-		text-align: center;
-	}
-
-	.about-section__title {
-		font-size: var(--fs-600);
-		text-align: center;
 	}
 
 	.faq-section__image {
@@ -1191,6 +1435,7 @@
 		align-items: center;
 		gap: 12px;
 		margin-bottom: var(--sp-4);
+		margin-right: auto;
 	}
 
 	.faq-section__mobile-icon {
@@ -1390,10 +1635,9 @@
 	.admission-info-card {
 		background-color: var(--color-light);
 		border-radius: 0 0 var(--radius-32) 0;
-		padding: 20px 0 24px;
+		padding: 20px 0 0;
 		box-shadow: none;
 		max-width: 100%;
-		margin: 0 0 16px;
 	}
 
 	.admission-info-card__title {
