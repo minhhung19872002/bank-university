@@ -2,11 +2,6 @@
    PAGE: Đại Học Chính Quy
    ============================================ */
 
-/* ========== SECTION: Hero Dai Hoc ========== */
-.hero-section--daihoc {
-	height: 500px;
-}
-
 /* ========== SECTION: Hero Content ========== */
 
 .hero-content-section {
@@ -184,11 +179,6 @@
 
 /* Tablet */
 @media (min-width: 576px) and (max-width: 991px) {
-	.hero-section--daihoc {
-		height: 350px;
-		min-height: 350px;
-	}
-
 	.hero-content-section {
 		padding: 48px 0;
 	}
@@ -268,11 +258,6 @@
 
 /* Mobile */
 @media (max-width: 575px) {
-	.hero-section--daihoc {
-		height: 250px;
-		min-height: 250px;
-	}
-
 	.hero-content-section {
 		padding: 40px 0;
 	}

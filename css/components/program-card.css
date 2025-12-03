@@ -99,6 +99,13 @@
 	color: var(--gray-900);
 	text-transform: capitalize;
 	margin-bottom: 13px;
+	/* Max 2 lines with fixed height */
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	height: calc(var(--fs-450) * 1.3 * 2);
+	min-height: calc(var(--fs-450) * 1.3 * 2);
 }
 
 .program-card__description {
@@ -108,6 +115,13 @@
 	line-height: 1.55;
 	color: var(--gray-900);
 	margin-bottom: 13px;
+	/* Max 3 lines with fixed height */
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	height: calc(var(--fs-300) * 1.55 * 3);
+	min-height: calc(var(--fs-300) * 1.55 * 3);
 }
 
 /* Footer Section */
@@ -248,11 +262,15 @@
 	.program-card__title {
 		font-size: var(--fs-400);
 		line-height: 1.3;
+		height: calc(var(--fs-400) * 1.3 * 2);
+		min-height: calc(var(--fs-400) * 1.3 * 2);
 	}
 
 	.program-card__description {
 		font-size: var(--fs-200);
 		line-height: 1.5;
+		height: calc(var(--fs-200) * 1.5 * 3);
+		min-height: calc(var(--fs-200) * 1.5 * 3);
 	}
 
 	.program-card__footer {

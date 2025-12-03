@@ -146,11 +146,12 @@
    Hero giống index + Feature cards overlay
    ============================================ */
 
-/* Hero background cho dai-hoc (giống about) */
-.hero-section--daihoc {
+/* Hero banner nhỏ cho các trang con - Desktop */
+.hero-section--banner {
 	height: 500px;
 }
 
+/* Hero background cho dai-hoc */
 .hero-section--daihoc .hero-section__bg {
 	background-image: url("https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/MSLK53rGr6.png");
 }
@@ -224,6 +225,12 @@
 
 /* Tablet - giữ style giống desktop */
 @media (min-width: 576px) and (max-width: 767.98px) {
+	/* Hero banner tablet */
+	.hero-section--banner {
+		height: 350px;
+		min-height: 350px;
+	}
+
 	.feature-cards-wrapper {
 		gap: var(--sp-3);
 	}
@@ -239,6 +246,12 @@
 	.hero-section {
 		height: auto;
 		min-height: calc(100vh - var(--header-total-height-mobile, 112px));
+	}
+
+	/* Hero banner nhỏ cho các trang con */
+	.hero-section--banner {
+		height: 250px;
+		min-height: 250px;
 	}
 
 	.feature-cards-section {

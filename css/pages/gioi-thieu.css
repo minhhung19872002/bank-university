@@ -5,10 +5,6 @@
 /* ========== SECTION: Hero About ========== */
 
 /* Hero variant for About page - uses same structure as index hero-section */
-.hero-section--about {
-	height: 500px;
-}
-
 .hero-section--about .hero-section__bg {
 	background-image: url("https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/MSLK53rGr6.png");
 }
@@ -111,11 +107,6 @@
 
 /* Tablet */
 @media (min-width: 576px) and (max-width: 991px) {
-	.hero-section--about {
-		height: 350px;
-		min-height: 350px;
-	}
-
 	.about-intro__title {
 		font-size: var(--fs-600);
 		line-height: 1.22;
@@ -137,11 +128,6 @@
 
 /* Mobile */
 @media (max-width: 575px) {
-	.hero-section--about {
-		height: 250px;
-		min-height: 250px;
-	}
-
 	.about-intro {
 		padding-top: var(--sp-6) !important;
 		padding-bottom: var(--sp-6) !important;

@@ -74,6 +74,7 @@
 		<link rel="stylesheet" href="/css/components/topbar.css" />
 		<link rel="stylesheet" href="/css/components/navbar.css" />
 		<link rel="stylesheet" href="/css/components/footer.css" />
+		<link rel="stylesheet" href="/css/components/hero.css" />
 		<link rel="stylesheet" href="/css/components/program-card.css" />
 		<link rel="stylesheet" href="/css/components/stats-section.css" />
 		<link rel="stylesheet" href="/css/components/tuition-table.css" />
@@ -83,6 +84,7 @@
 		/>
 		<link rel="stylesheet" href="/css/components/admission-criteria.css" />
 		<link rel="stylesheet" href="/css/components/breadcrumb.css" />
+		<link rel="stylesheet" href="/css/components/mobile-title-box.css" />
 		<link rel="stylesheet" href="/css/pages/thac-si.css" />
 	</head>
 	<body>
@@ -90,9 +92,18 @@
 		<div data-include="/partials/header.html"></div>
 
 		<!-- Main Content -->
-		<main>
-			<!-- Hero Background Only -->
-			<section class="thacsi-hero" aria-label="Banner Thạc sĩ"></section>
+		<main id="main-content">
+			<!-- Hero Section -->
+			<section
+				class="hero-section hero-section--banner hero-section--thacsi"
+				aria-label="Banner Thạc sĩ"
+			>
+				<div
+					class="hero-section__bg"
+					role="img"
+					aria-label="Hình ảnh Thạc sĩ HUB"
+				></div>
+			</section>
 
 			<!-- Breadcrumb Navigation -->
 			<nav class="hero-breadcrumb" aria-label="Breadcrumb">
@@ -206,7 +217,8 @@
 				aria-label="Các ngành đào tạo Thạc sĩ"
 			>
 				<div class="container">
-					<div class="section-header text-center">
+					<!-- Desktop & Tablet: Section Header -->
+					<div class="section-header text-center d-none d-sm-block">
 						<p class="section-header__subtitle">
 							chương trình đào tạo
 						</p>
@@ -215,639 +227,395 @@
 						</h2>
 					</div>
 
+					<!-- Mobile: Title box with icon -->
+					<div class="mobile-title-box mobile-title-box--sm d-sm-none mb-4">
+						<div class="mobile-title-box__icon">
+							<img src="/assets/svg/book.svg" alt="" aria-hidden="true" />
+						</div>
+						<div class="mobile-title-box__content">
+							<p class="mobile-title-box__overline">
+								chương trình đào tạo
+							</p>
+							<h2 class="mobile-title-box__title">
+								CÁC NGÀNH ĐÀO TẠO THẠC SĨ TẠI HUB
+							</h2>
+						</div>
+					</div>
+
 					<div class="program-cards-grid">
-						<!-- Row 1 -->
-						<div class="row justify-content-center g-4 mb-4">
-							<div class="col-12 col-md-6 col-lg-4">
-								<article class="program-card">
-									<div class="program-card__image-wrapper">
+						<!-- Card 1 -->
+						<div class="program-card-item">
+							<article class="program-card">
+								<div class="program-card__image-wrapper">
+									<img
+										src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/jOg7vFe26e.png"
+										alt="Tài chính ngân hàng"
+										class="program-card__image"
+									/>
+									<div class="program-card__badge">
 										<img
-											src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/jOg7vFe26e.png"
-											alt="Tài chính ngân hàng"
-											class="program-card__image"
+											src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/EZhiaqun78.png"
+											alt=""
+											class="program-card__badge-icon"
 										/>
-										<div class="program-card__badge">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/EZhiaqun78.png"
-												alt=""
-												class="program-card__badge-icon"
-											/>
-											<span
-												class="program-card__badge-text"
-												>Financial</span
-											>
-										</div>
+										<span class="program-card__badge-text">Financial</span>
 									</div>
-									<div class="program-card__content">
-										<div class="program-card__meta">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/sTNwnNTrg1.png"
-												alt=""
-												class="program-card__meta-icon"
-											/>
-											<span
-												class="program-card__meta-text"
-												>10 Lessons</span
-											>
-										</div>
-										<h3 class="program-card__title">
-											tài chính ngân hàng
-										</h3>
-										<p class="program-card__description">
-											Lorem Ipsum chỉ đơn giản là một đoạn
-											văn bản giả, được dùng vào việc
-											trình bày và dàn trang phục vụ cho
-											in ấn.
-										</p>
-										<div class="program-card__footer">
-											<div class="program-card__info">
-												<img
-													src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/UZHoQEk3ma.png"
-													alt=""
-													class="program-card__info-icon"
-												/>
-												<span
-													class="program-card__info-text"
-													>100 Chỗ ngồi</span
-												>
-											</div>
-											<div class="program-card__info">
-												<img
-													src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/vuEXKiQQ3Y.png"
-													alt=""
-													class="program-card__info-icon"
-												/>
-												<span
-													class="program-card__info-text"
-													>4 năm</span
-												>
-											</div>
-										</div>
-									</div>
-								</article>
-							</div>
-
-							<div class="col-12 col-md-6 col-lg-4">
-								<article class="program-card">
-									<div class="program-card__image-wrapper">
+								</div>
+								<div class="program-card__content">
+									<div class="program-card__meta">
 										<img
-											src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/nx1uDa82DZ.png"
-											alt="Quản trị kinh doanh"
-											class="program-card__image"
+											src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/sTNwnNTrg1.png"
+											alt=""
+											class="program-card__meta-icon"
 										/>
-										<div class="program-card__badge">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/EZhiaqun78.png"
-												alt=""
-												class="program-card__badge-icon"
-											/>
-											<span
-												class="program-card__badge-text"
-												>Financial</span
-											>
+										<span class="program-card__meta-text">10 Lessons</span>
+									</div>
+									<h3 class="program-card__title">tài chính ngân hàng</h3>
+									<p class="program-card__description">
+										Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn.
+									</p>
+									<div class="program-card__footer">
+										<div class="program-card__info">
+											<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/UZHoQEk3ma.png" alt="" class="program-card__info-icon" />
+											<span class="program-card__info-text">100 Chỗ ngồi</span>
+										</div>
+										<div class="program-card__info">
+											<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/vuEXKiQQ3Y.png" alt="" class="program-card__info-icon" />
+											<span class="program-card__info-text">4 năm</span>
 										</div>
 									</div>
-									<div class="program-card__content">
-										<div class="program-card__meta">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/sTNwnNTrg1.png"
-												alt=""
-												class="program-card__meta-icon"
-											/>
-											<span
-												class="program-card__meta-text"
-												>10 Lessons</span
-											>
-										</div>
-										<h3 class="program-card__title">
-											quản trị kinh doanh
-										</h3>
-										<p class="program-card__description">
-											Lorem Ipsum chỉ đơn giản là một đoạn
-											văn bản giả, được dùng vào việc
-											trình bày và dàn trang phục vụ cho
-											in ấn.
-										</p>
-										<div class="program-card__footer">
-											<div class="program-card__info">
-												<img
-													src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/UZHoQEk3ma.png"
-													alt=""
-													class="program-card__info-icon"
-												/>
-												<span
-													class="program-card__info-text"
-													>100 Chỗ ngồi</span
-												>
-											</div>
-											<div class="program-card__info">
-												<img
-													src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/vuEXKiQQ3Y.png"
-													alt=""
-													class="program-card__info-icon"
-												/>
-												<span
-													class="program-card__info-text"
-													>4 năm</span
-												>
-											</div>
-										</div>
-									</div>
-								</article>
-							</div>
-
-							<div class="col-12 col-md-6 col-lg-4">
-								<article class="program-card">
-									<div class="program-card__image-wrapper">
-										<img
-											src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/bvyvLCvfnD.png"
-											alt="Kinh tế quốc tế"
-											class="program-card__image"
-										/>
-										<div class="program-card__badge">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/EZhiaqun78.png"
-												alt=""
-												class="program-card__badge-icon"
-											/>
-											<span
-												class="program-card__badge-text"
-												>Financial</span
-											>
-										</div>
-									</div>
-									<div class="program-card__content">
-										<div class="program-card__meta">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/sTNwnNTrg1.png"
-												alt=""
-												class="program-card__meta-icon"
-											/>
-											<span
-												class="program-card__meta-text"
-												>10 Lessons</span
-											>
-										</div>
-										<h3 class="program-card__title">
-											ngành kinh tế quốc tế
-										</h3>
-										<p class="program-card__description">
-											Lorem Ipsum chỉ đơn giản là một đoạn
-											văn bản giả, được dùng vào việc
-											trình bày và dàn trang phục vụ cho
-											in ấn.
-										</p>
-										<div class="program-card__footer">
-											<div class="program-card__info">
-												<img
-													src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/UZHoQEk3ma.png"
-													alt=""
-													class="program-card__info-icon"
-												/>
-												<span
-													class="program-card__info-text"
-													>100 Chỗ ngồi</span
-												>
-											</div>
-											<div class="program-card__info">
-												<img
-													src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/vuEXKiQQ3Y.png"
-													alt=""
-													class="program-card__info-icon"
-												/>
-												<span
-													class="program-card__info-text"
-													>4 năm</span
-												>
-											</div>
-										</div>
-									</div>
-								</article>
-							</div>
+								</div>
+							</article>
 						</div>
 
-						<!-- Row 2 -->
-						<div class="row justify-content-center g-4 mb-4">
-							<div class="col-12 col-md-6 col-lg-4">
-								<article class="program-card">
-									<div class="program-card__image-wrapper">
-										<img
-											src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/9D6S6w0mvr.png"
-											alt="Marketing"
-											class="program-card__image"
-										/>
-										<div class="program-card__badge">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/EZhiaqun78.png"
-												alt=""
-												class="program-card__badge-icon"
-											/>
-											<span
-												class="program-card__badge-text"
-												>Financial</span
-											>
+						<!-- Card 2 -->
+						<div class="program-card-item">
+							<article class="program-card">
+								<div class="program-card__image-wrapper">
+									<img
+										src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/nx1uDa82DZ.png"
+										alt="Quản trị kinh doanh"
+										class="program-card__image"
+									/>
+									<div class="program-card__badge">
+										<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/EZhiaqun78.png" alt="" class="program-card__badge-icon" />
+										<span class="program-card__badge-text">Financial</span>
+									</div>
+								</div>
+								<div class="program-card__content">
+									<div class="program-card__meta">
+										<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/sTNwnNTrg1.png" alt="" class="program-card__meta-icon" />
+										<span class="program-card__meta-text">10 Lessons</span>
+									</div>
+									<h3 class="program-card__title">quản trị kinh doanh</h3>
+									<p class="program-card__description">
+										Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn.
+									</p>
+									<div class="program-card__footer">
+										<div class="program-card__info">
+											<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/UZHoQEk3ma.png" alt="" class="program-card__info-icon" />
+											<span class="program-card__info-text">100 Chỗ ngồi</span>
+										</div>
+										<div class="program-card__info">
+											<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/vuEXKiQQ3Y.png" alt="" class="program-card__info-icon" />
+											<span class="program-card__info-text">4 năm</span>
 										</div>
 									</div>
-									<div class="program-card__content">
-										<div class="program-card__meta">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/sTNwnNTrg1.png"
-												alt=""
-												class="program-card__meta-icon"
-											/>
-											<span
-												class="program-card__meta-text"
-												>10 Lessons</span
-											>
-										</div>
-										<h3 class="program-card__title">
-											ngành marketing
-										</h3>
-										<p class="program-card__description">
-											Lorem Ipsum chỉ đơn giản là một đoạn
-											văn bản giả, được dùng vào việc
-											trình bày và dàn trang phục vụ cho
-											in ấn.
-										</p>
-										<div class="program-card__footer">
-											<div class="program-card__info">
-												<img
-													src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/UZHoQEk3ma.png"
-													alt=""
-													class="program-card__info-icon"
-												/>
-												<span
-													class="program-card__info-text"
-													>100 Chỗ ngồi</span
-												>
-											</div>
-											<div class="program-card__info">
-												<img
-													src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/vuEXKiQQ3Y.png"
-													alt=""
-													class="program-card__info-icon"
-												/>
-												<span
-													class="program-card__info-text"
-													>4 năm</span
-												>
-											</div>
-										</div>
-									</div>
-								</article>
-							</div>
-
-							<div class="col-12 col-md-6 col-lg-4">
-								<article class="program-card">
-									<div class="program-card__image-wrapper">
-										<img
-											src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/fx46bgFYiK.png"
-											alt="Công nghệ tài chính"
-											class="program-card__image"
-										/>
-										<div class="program-card__badge">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/EZhiaqun78.png"
-												alt=""
-												class="program-card__badge-icon"
-											/>
-											<span
-												class="program-card__badge-text"
-												>Financial</span
-											>
-										</div>
-									</div>
-									<div class="program-card__content">
-										<div class="program-card__meta">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/sTNwnNTrg1.png"
-												alt=""
-												class="program-card__meta-icon"
-											/>
-											<span
-												class="program-card__meta-text"
-												>10 Lessons</span
-											>
-										</div>
-										<h3 class="program-card__title">
-											ngành công nghệ tài chính
-										</h3>
-										<p class="program-card__description">
-											Lorem Ipsum chỉ đơn giản là một đoạn
-											văn bản giả, được dùng vào việc
-											trình bày và dàn trang phục vụ cho
-											in ấn.
-										</p>
-										<div class="program-card__footer">
-											<div class="program-card__info">
-												<img
-													src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/UZHoQEk3ma.png"
-													alt=""
-													class="program-card__info-icon"
-												/>
-												<span
-													class="program-card__info-text"
-													>100 Chỗ ngồi</span
-												>
-											</div>
-											<div class="program-card__info">
-												<img
-													src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/vuEXKiQQ3Y.png"
-													alt=""
-													class="program-card__info-icon"
-												/>
-												<span
-													class="program-card__info-text"
-													>4 năm</span
-												>
-											</div>
-										</div>
-									</div>
-								</article>
-							</div>
-
-							<div class="col-12 col-md-6 col-lg-4">
-								<article class="program-card">
-									<div class="program-card__image-wrapper">
-										<img
-											src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/p79m9srbpn.png"
-											alt="Kinh doanh quốc tế"
-											class="program-card__image"
-										/>
-										<div class="program-card__badge">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/EZhiaqun78.png"
-												alt=""
-												class="program-card__badge-icon"
-											/>
-											<span
-												class="program-card__badge-text"
-												>Financial</span
-											>
-										</div>
-									</div>
-									<div class="program-card__content">
-										<div class="program-card__meta">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/sTNwnNTrg1.png"
-												alt=""
-												class="program-card__meta-icon"
-											/>
-											<span
-												class="program-card__meta-text"
-												>10 Lessons</span
-											>
-										</div>
-										<h3 class="program-card__title">
-											ngành kinh doanh quốc tế
-										</h3>
-										<p class="program-card__description">
-											Lorem Ipsum chỉ đơn giản là một đoạn
-											văn bản giả, được dùng vào việc
-											trình bày và dàn trang phục vụ cho
-											in ấn.
-										</p>
-										<div class="program-card__footer">
-											<div class="program-card__info">
-												<img
-													src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/UZHoQEk3ma.png"
-													alt=""
-													class="program-card__info-icon"
-												/>
-												<span
-													class="program-card__info-text"
-													>100 Chỗ ngồi</span
-												>
-											</div>
-											<div class="program-card__info">
-												<img
-													src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/vuEXKiQQ3Y.png"
-													alt=""
-													class="program-card__info-icon"
-												/>
-												<span
-													class="program-card__info-text"
-													>4 năm</span
-												>
-											</div>
-										</div>
-									</div>
-								</article>
-							</div>
+								</div>
+							</article>
 						</div>
 
-						<!-- Row 3 -->
-						<div class="row justify-content-center g-4 mb-5">
-							<div class="col-12 col-md-6 col-lg-4">
-								<article class="program-card">
-									<div class="program-card__image-wrapper">
-										<img
-											src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/haHuYeMwb0.png"
-											alt="Luật kinh tế"
-											class="program-card__image"
-										/>
-										<div class="program-card__badge">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/EZhiaqun78.png"
-												alt=""
-												class="program-card__badge-icon"
-											/>
-											<span
-												class="program-card__badge-text"
-												>Financial</span
-											>
+						<!-- Card 3 -->
+						<div class="program-card-item">
+							<article class="program-card">
+								<div class="program-card__image-wrapper">
+									<img
+										src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/bvyvLCvfnD.png"
+										alt="Kinh tế quốc tế"
+										class="program-card__image"
+									/>
+									<div class="program-card__badge">
+										<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/EZhiaqun78.png" alt="" class="program-card__badge-icon" />
+										<span class="program-card__badge-text">Financial</span>
+									</div>
+								</div>
+								<div class="program-card__content">
+									<div class="program-card__meta">
+										<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/sTNwnNTrg1.png" alt="" class="program-card__meta-icon" />
+										<span class="program-card__meta-text">10 Lessons</span>
+									</div>
+									<h3 class="program-card__title">ngành kinh tế quốc tế</h3>
+									<p class="program-card__description">
+										Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn.
+									</p>
+									<div class="program-card__footer">
+										<div class="program-card__info">
+											<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/UZHoQEk3ma.png" alt="" class="program-card__info-icon" />
+											<span class="program-card__info-text">100 Chỗ ngồi</span>
+										</div>
+										<div class="program-card__info">
+											<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/vuEXKiQQ3Y.png" alt="" class="program-card__info-icon" />
+											<span class="program-card__info-text">4 năm</span>
 										</div>
 									</div>
-									<div class="program-card__content">
-										<div class="program-card__meta">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/sTNwnNTrg1.png"
-												alt=""
-												class="program-card__meta-icon"
-											/>
-											<span
-												class="program-card__meta-text"
-												>10 Lessons</span
-											>
-										</div>
-										<h3 class="program-card__title">
-											ngành luật kinh tế
-										</h3>
-										<p class="program-card__description">
-											Lorem Ipsum chỉ đơn giản là một đoạn
-											văn bản giả, được dùng vào việc
-											trình bày và dàn trang phục vụ cho
-											in ấn.
-										</p>
-										<div class="program-card__footer">
-											<div class="program-card__info">
-												<img
-													src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/UZHoQEk3ma.png"
-													alt=""
-													class="program-card__info-icon"
-												/>
-												<span
-													class="program-card__info-text"
-													>100 Chỗ ngồi</span
-												>
-											</div>
-											<div class="program-card__info">
-												<img
-													src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/vuEXKiQQ3Y.png"
-													alt=""
-													class="program-card__info-icon"
-												/>
-												<span
-													class="program-card__info-text"
-													>4 năm</span
-												>
-											</div>
-										</div>
-									</div>
-								</article>
-							</div>
-
-							<div class="col-12 col-md-6 col-lg-4">
-								<article class="program-card">
-									<div class="program-card__image-wrapper">
-										<img
-											src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/60Fd20b36q.png"
-											alt="Ngôn ngữ anh"
-											class="program-card__image"
-										/>
-										<div class="program-card__badge">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/EZhiaqun78.png"
-												alt=""
-												class="program-card__badge-icon"
-											/>
-											<span
-												class="program-card__badge-text"
-												>Financial</span
-											>
-										</div>
-									</div>
-									<div class="program-card__content">
-										<div class="program-card__meta">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/sTNwnNTrg1.png"
-												alt=""
-												class="program-card__meta-icon"
-											/>
-											<span
-												class="program-card__meta-text"
-												>10 Lessons</span
-											>
-										</div>
-										<h3 class="program-card__title">
-											ngành ngôn ngữ anh
-										</h3>
-										<p class="program-card__description">
-											Lorem Ipsum chỉ đơn giản là một đoạn
-											văn bản giả, được dùng vào việc
-											trình bày và dàn trang phục vụ cho
-											in ấn.
-										</p>
-										<div class="program-card__footer">
-											<div class="program-card__info">
-												<img
-													src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/UZHoQEk3ma.png"
-													alt=""
-													class="program-card__info-icon"
-												/>
-												<span
-													class="program-card__info-text"
-													>100 Chỗ ngồi</span
-												>
-											</div>
-											<div class="program-card__info">
-												<img
-													src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/vuEXKiQQ3Y.png"
-													alt=""
-													class="program-card__info-icon"
-												/>
-												<span
-													class="program-card__info-text"
-													>4 năm</span
-												>
-											</div>
-										</div>
-									</div>
-								</article>
-							</div>
-
-							<div class="col-12 col-md-6 col-lg-4">
-								<article class="program-card">
-									<div class="program-card__image-wrapper">
-										<img
-											src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/MqnrtyPubj.png"
-											alt="Khoa học dữ liệu"
-											class="program-card__image"
-										/>
-										<div class="program-card__badge">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/EZhiaqun78.png"
-												alt=""
-												class="program-card__badge-icon"
-											/>
-											<span
-												class="program-card__badge-text"
-												>Financial</span
-											>
-										</div>
-									</div>
-									<div class="program-card__content">
-										<div class="program-card__meta">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/sTNwnNTrg1.png"
-												alt=""
-												class="program-card__meta-icon"
-											/>
-											<span
-												class="program-card__meta-text"
-												>10 Lessons</span
-											>
-										</div>
-										<h3 class="program-card__title">
-											ngành khoa học dữ liệu
-										</h3>
-										<p class="program-card__description">
-											Lorem Ipsum chỉ đơn giản là một đoạn
-											văn bản giả, được dùng vào việc
-											trình bày và dàn trang phục vụ cho
-											in ấn.
-										</p>
-										<div class="program-card__footer">
-											<div class="program-card__info">
-												<img
-													src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/UZHoQEk3ma.png"
-													alt=""
-													class="program-card__info-icon"
-												/>
-												<span
-													class="program-card__info-text"
-													>100 Chỗ ngồi</span
-												>
-											</div>
-											<div class="program-card__info">
-												<img
-													src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/vuEXKiQQ3Y.png"
-													alt=""
-													class="program-card__info-icon"
-												/>
-												<span
-													class="program-card__info-text"
-													>4 năm</span
-												>
-											</div>
-										</div>
-									</div>
-								</article>
-							</div>
+								</div>
+							</article>
 						</div>
 
-						<!-- Pagination -->
-						<div class="program-pagination">
+						<!-- Card 4 -->
+						<div class="program-card-item">
+							<article class="program-card">
+								<div class="program-card__image-wrapper">
+									<img
+										src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/9D6S6w0mvr.png"
+										alt="Marketing"
+										class="program-card__image"
+									/>
+									<div class="program-card__badge">
+										<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/EZhiaqun78.png" alt="" class="program-card__badge-icon" />
+										<span class="program-card__badge-text">Financial</span>
+									</div>
+								</div>
+								<div class="program-card__content">
+									<div class="program-card__meta">
+										<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/sTNwnNTrg1.png" alt="" class="program-card__meta-icon" />
+										<span class="program-card__meta-text">10 Lessons</span>
+									</div>
+									<h3 class="program-card__title">ngành marketing</h3>
+									<p class="program-card__description">
+										Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn.
+									</p>
+									<div class="program-card__footer">
+										<div class="program-card__info">
+											<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/UZHoQEk3ma.png" alt="" class="program-card__info-icon" />
+											<span class="program-card__info-text">100 Chỗ ngồi</span>
+										</div>
+										<div class="program-card__info">
+											<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/vuEXKiQQ3Y.png" alt="" class="program-card__info-icon" />
+											<span class="program-card__info-text">4 năm</span>
+										</div>
+									</div>
+								</div>
+							</article>
+						</div>
+
+						<!-- Card 5 -->
+						<div class="program-card-item">
+							<article class="program-card">
+								<div class="program-card__image-wrapper">
+									<img
+										src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/fx46bgFYiK.png"
+										alt="Công nghệ tài chính"
+										class="program-card__image"
+									/>
+									<div class="program-card__badge">
+										<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/EZhiaqun78.png" alt="" class="program-card__badge-icon" />
+										<span class="program-card__badge-text">Financial</span>
+									</div>
+								</div>
+								<div class="program-card__content">
+									<div class="program-card__meta">
+										<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/sTNwnNTrg1.png" alt="" class="program-card__meta-icon" />
+										<span class="program-card__meta-text">10 Lessons</span>
+									</div>
+									<h3 class="program-card__title">ngành công nghệ tài chính</h3>
+									<p class="program-card__description">
+										Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn.
+									</p>
+									<div class="program-card__footer">
+										<div class="program-card__info">
+											<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/UZHoQEk3ma.png" alt="" class="program-card__info-icon" />
+											<span class="program-card__info-text">100 Chỗ ngồi</span>
+										</div>
+										<div class="program-card__info">
+											<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/vuEXKiQQ3Y.png" alt="" class="program-card__info-icon" />
+											<span class="program-card__info-text">4 năm</span>
+										</div>
+									</div>
+								</div>
+							</article>
+						</div>
+
+						<!-- Card 6 -->
+						<div class="program-card-item">
+							<article class="program-card">
+								<div class="program-card__image-wrapper">
+									<img
+										src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/p79m9srbpn.png"
+										alt="Kinh doanh quốc tế"
+										class="program-card__image"
+									/>
+									<div class="program-card__badge">
+										<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/EZhiaqun78.png" alt="" class="program-card__badge-icon" />
+										<span class="program-card__badge-text">Financial</span>
+									</div>
+								</div>
+								<div class="program-card__content">
+									<div class="program-card__meta">
+										<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/sTNwnNTrg1.png" alt="" class="program-card__meta-icon" />
+										<span class="program-card__meta-text">10 Lessons</span>
+									</div>
+									<h3 class="program-card__title">ngành kinh doanh quốc tế</h3>
+									<p class="program-card__description">
+										Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn.
+									</p>
+									<div class="program-card__footer">
+										<div class="program-card__info">
+											<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/UZHoQEk3ma.png" alt="" class="program-card__info-icon" />
+											<span class="program-card__info-text">100 Chỗ ngồi</span>
+										</div>
+										<div class="program-card__info">
+											<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/vuEXKiQQ3Y.png" alt="" class="program-card__info-icon" />
+											<span class="program-card__info-text">4 năm</span>
+										</div>
+									</div>
+								</div>
+							</article>
+						</div>
+
+						<!-- Card 7 -->
+						<div class="program-card-item">
+							<article class="program-card">
+								<div class="program-card__image-wrapper">
+									<img
+										src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/haHuYeMwb0.png"
+										alt="Luật kinh tế"
+										class="program-card__image"
+									/>
+									<div class="program-card__badge">
+										<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/EZhiaqun78.png" alt="" class="program-card__badge-icon" />
+										<span class="program-card__badge-text">Financial</span>
+									</div>
+								</div>
+								<div class="program-card__content">
+									<div class="program-card__meta">
+										<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/sTNwnNTrg1.png" alt="" class="program-card__meta-icon" />
+										<span class="program-card__meta-text">10 Lessons</span>
+									</div>
+									<h3 class="program-card__title">ngành luật kinh tế</h3>
+									<p class="program-card__description">
+										Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn.
+									</p>
+									<div class="program-card__footer">
+										<div class="program-card__info">
+											<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/UZHoQEk3ma.png" alt="" class="program-card__info-icon" />
+											<span class="program-card__info-text">100 Chỗ ngồi</span>
+										</div>
+										<div class="program-card__info">
+											<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/vuEXKiQQ3Y.png" alt="" class="program-card__info-icon" />
+											<span class="program-card__info-text">4 năm</span>
+										</div>
+									</div>
+								</div>
+							</article>
+						</div>
+
+						<!-- Card 8 -->
+						<div class="program-card-item">
+							<article class="program-card">
+								<div class="program-card__image-wrapper">
+									<img
+										src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/60Fd20b36q.png"
+										alt="Ngôn ngữ anh"
+										class="program-card__image"
+									/>
+									<div class="program-card__badge">
+										<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/EZhiaqun78.png" alt="" class="program-card__badge-icon" />
+										<span class="program-card__badge-text">Financial</span>
+									</div>
+								</div>
+								<div class="program-card__content">
+									<div class="program-card__meta">
+										<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/sTNwnNTrg1.png" alt="" class="program-card__meta-icon" />
+										<span class="program-card__meta-text">10 Lessons</span>
+									</div>
+									<h3 class="program-card__title">ngành ngôn ngữ anh</h3>
+									<p class="program-card__description">
+										Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn.
+									</p>
+									<div class="program-card__footer">
+										<div class="program-card__info">
+											<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/UZHoQEk3ma.png" alt="" class="program-card__info-icon" />
+											<span class="program-card__info-text">100 Chỗ ngồi</span>
+										</div>
+										<div class="program-card__info">
+											<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/vuEXKiQQ3Y.png" alt="" class="program-card__info-icon" />
+											<span class="program-card__info-text">4 năm</span>
+										</div>
+									</div>
+								</div>
+							</article>
+						</div>
+
+						<!-- Card 9 -->
+						<div class="program-card-item">
+							<article class="program-card">
+								<div class="program-card__image-wrapper">
+									<img
+										src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/MqnrtyPubj.png"
+										alt="Khoa học dữ liệu"
+										class="program-card__image"
+									/>
+									<div class="program-card__badge">
+										<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/EZhiaqun78.png" alt="" class="program-card__badge-icon" />
+										<span class="program-card__badge-text">Financial</span>
+									</div>
+								</div>
+								<div class="program-card__content">
+									<div class="program-card__meta">
+										<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/sTNwnNTrg1.png" alt="" class="program-card__meta-icon" />
+										<span class="program-card__meta-text">10 Lessons</span>
+									</div>
+									<h3 class="program-card__title">ngành khoa học dữ liệu</h3>
+									<p class="program-card__description">
+										Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào việc trình bày và dàn trang phục vụ cho in ấn.
+									</p>
+									<div class="program-card__footer">
+										<div class="program-card__info">
+											<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/UZHoQEk3ma.png" alt="" class="program-card__info-icon" />
+											<span class="program-card__info-text">100 Chỗ ngồi</span>
+										</div>
+										<div class="program-card__info">
+											<img src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/vuEXKiQQ3Y.png" alt="" class="program-card__info-icon" />
+											<span class="program-card__info-text">4 năm</span>
+										</div>
+									</div>
+								</div>
+							</article>
+						</div>
+					</div>
+
+					<!-- Mobile Slider Navigation -->
+					<nav
+						class="program-slider-nav d-sm-none"
+						aria-label="Điều hướng slider"
+					>
+						<button
+							class="program-slider-nav__btn program-slider-nav__btn--prev"
+							type="button"
+							aria-label="Slide trước"
+						>
+							<img
+								src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/uEtdSLufrN.png"
+								alt=""
+								loading="lazy"
+							/>
+						</button>
+						<button
+							class="program-slider-nav__btn program-slider-nav__btn--next"
+							type="button"
+							aria-label="Slide sau"
+						>
+							<img
+								src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/hfZNvvXoQk.png"
+								alt=""
+								loading="lazy"
+							/>
+						</button>
+					</nav>
+
+					<!-- Pagination -->
+					<div class="program-pagination d-none d-sm-flex">
 							<button
 								class="program-pagination__btn program-pagination__btn--prev"
 								aria-label="Trang trước"
@@ -1262,6 +1030,57 @@
 				const response = await fetch(file);
 				el.innerHTML = await response.text();
 			});
+		</script>
+
+		<!-- Program Slider Navigation -->
+		<script>
+			(function() {
+				const slider = document.querySelector('.program-cards-grid');
+				const prevBtn = document.querySelector('.program-slider-nav__btn--prev');
+				const nextBtn = document.querySelector('.program-slider-nav__btn--next');
+
+				if (!slider || !prevBtn || !nextBtn) return;
+
+				let currentIndex = 0;
+				const cards = slider.querySelectorAll('.program-card-item');
+				const totalCards = cards.length;
+
+				function getCardWidth() {
+					const card = slider.querySelector('.program-card-item');
+					return card ? card.offsetWidth + 16 : 0; // 16px = gap
+				}
+
+				function scrollToIndex(index) {
+					const cardWidth = getCardWidth();
+					if (cardWidth === 0) return;
+					index = Math.max(0, Math.min(index, totalCards - 1));
+					currentIndex = index;
+					slider.scrollTo({
+						left: cardWidth * index,
+						behavior: 'smooth'
+					});
+				}
+
+				prevBtn.addEventListener('click', () => {
+					scrollToIndex(currentIndex - 1);
+				});
+
+				nextBtn.addEventListener('click', () => {
+					scrollToIndex(currentIndex + 1);
+				});
+
+				// Update current index on scroll
+				let scrollTimeout;
+				slider.addEventListener('scroll', () => {
+					clearTimeout(scrollTimeout);
+					scrollTimeout = setTimeout(() => {
+						const cardWidth = getCardWidth();
+						if (cardWidth > 0) {
+							currentIndex = Math.round(slider.scrollLeft / cardWidth);
+						}
+					}, 50);
+				});
+			})();
 		</script>
 	</body>
 </html>
