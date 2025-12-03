@@ -180,53 +180,8 @@
 		padding-bottom: var(--sp-6) !important;
 	}
 
-	/* Team header mobile layout */
 	.team-section__header {
-		display: flex;
-		align-items: center;
-		gap: 12px;
-		text-align: left;
-		margin-bottom: var(--sp-4) !important;
-	}
-
-	.team-section__header-icon {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 48px;
-		height: 48px;
-		min-width: 48px;
-		background-color: var(--brand-primary);
-		border-radius: 50%;
-	}
-
-	.team-section__header-icon img {
-		width: 24px;
-		height: 24px;
-		filter: brightness(0) invert(1);
-	}
-
-	.team-section__header-text {
-		display: flex;
-		flex-direction: column;
-	}
-
-	.team-section__subtitle {
-		display: block;
-		font-family: var(--font-primary);
-		font-size: var(--fs-200);
-		font-weight: 500;
-		color: var(--gray-700);
-		margin-bottom: 2px;
-		text-align: left;
-	}
-
-	.team-section__title {
-		font-size: var(--fs-400);
-		font-weight: 700;
-		line-height: 1.22;
-		color: var(--brand-secondary);
-		margin-bottom: 0;
+		display: none;
 	}
 
 	.team-section__description {

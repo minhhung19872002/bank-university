@@ -79,6 +79,8 @@
 		<link rel="stylesheet" href="/css/components/footer.css" />
 		<link rel="stylesheet" href="/css/components/hero.css" />
 		<link rel="stylesheet" href="/css/components/team-card.css" />
+		<link rel="stylesheet" href="/css/components/mobile-title-box.css" />
+		<link rel="stylesheet" href="/css/components/breadcrumb.css" />
 		<link rel="stylesheet" href="/css/pages/gioi-thieu.css" />
 	</head>
 	<body>
@@ -111,6 +113,26 @@
 					</div>
 				</div>
 			</section>
+
+			<!-- Breadcrumb Navigation -->
+			<nav class="hero-breadcrumb" aria-label="Breadcrumb">
+				<div class="container">
+					<ol class="hero-breadcrumb__list">
+						<li class="hero-breadcrumb__item">
+							<a href="/" class="hero-breadcrumb__link"
+								>Trang chủ</a
+							>
+						</li>
+						<li
+							class="hero-breadcrumb__item hero-breadcrumb__item--active"
+						>
+							<span class="hero-breadcrumb__current"
+								>Về chúng tôi</span
+							>
+						</li>
+					</ol>
+				</div>
+			</nav>
 
 			<!-- SECTION: About Us -->
 			<section
@@ -176,29 +198,36 @@
 				aria-labelledby="team-title"
 			>
 				<div class="container">
-					<!-- Section Header -->
-					<div class="team-section__header text-center mb-5">
-						<div class="team-section__header-icon">
-							<img
-								src="/assets/svg/people.svg"
-								alt=""
-								width="24"
-								height="24"
-								aria-hidden="true"
-							/>
-						</div>
-						<div class="team-section__header-text">
-							<p class="team-section__subtitle">KHÁM PHÁ</p>
-							<h2 id="team-title" class="team-section__title">
-								ĐỘI NGŨ GIẢNG VIÊN
-							</h2>
-						</div>
+					<!-- Desktop Section Header -->
+					<div
+						class="team-section__header text-center mb-5 d-none d-sm-block"
+					>
+						<h2 id="team-title" class="team-section__title">
+							ĐỘI NGŨ GIẢNG VIÊN
+						</h2>
 						<p class="team-section__description mx-auto">
 							Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả,
 							được dùng vào việc trình bày và dàn trang phục vụ
 							cho in ấn. Lorem Ipsum đã được sử dụng như một văn
 							bản chuẩn
 						</p>
+					</div>
+
+					<!-- Mobile Section Header -->
+					<div class="mobile-title-box d-sm-none mb-4">
+						<div class="mobile-title-box__icon">
+							<img
+								src="/assets/svg/people.svg"
+								alt=""
+								aria-hidden="true"
+							/>
+						</div>
+						<div class="mobile-title-box__content">
+							<p class="mobile-title-box__overline">KHÁM PHÁ</p>
+							<h2 class="mobile-title-box__title">
+								ĐỘI NGŨ GIẢNG VIÊN
+							</h2>
+						</div>
 					</div>
 
 					<!-- Team Cards Grid -->

@@ -143,6 +143,7 @@
 		<link href="/css/components/navbar.css" rel="stylesheet" />
 		<link href="/css/components/card.css" rel="stylesheet" />
 		<link href="/css/components/faq.css" rel="stylesheet" />
+		<link href="/css/components/mobile-title-box.css" rel="stylesheet" />
 		<link href="/css/components/footer.css" rel="stylesheet" />
 		<link href="/css/components/hero.css" rel="stylesheet" />
 
@@ -424,20 +425,19 @@
 					</h2>
 
 					<!-- Mobile header (icon + 2 dòng title) -->
-					<div class="programs-section__mobile-header d-sm-none">
-						<div class="programs-section__mobile-icon">
+					<div
+						class="mobile-title-box mobile-title-box--sm d-sm-none"
+					>
+						<div class="mobile-title-box__icon">
 							<img
 								src="assets/svg/course.svg"
-								alt="Biểu tượng chương trình đào tạo"
-								width="32"
-								height="32"
+								alt=""
+								aria-hidden="true"
 							/>
 						</div>
-						<div class="programs-section__mobile-heading-text">
-							<p class="programs-section__mobile-title">
-								KHÁM PHÁ
-							</p>
-							<h2 class="programs-section__mobile-subtitle">
+						<div class="mobile-title-box__content">
+							<p class="mobile-title-box__title">KHÁM PHÁ</p>
+							<h2 class="mobile-title-box__title">
 								CHƯƠNG TRÌNH ĐÀO TẠO
 							</h2>
 						</div>
@@ -1027,21 +1027,21 @@
 
 							<!-- Mobile-only FAQ header -->
 							<div
-								class="faq-section__mobile-header d-sm-none"
+								class="mobile-title-box mobile-title-box--lg d-sm-none"
 								aria-hidden="true"
 							>
-								<div class="faq-section__mobile-icon">
+								<div class="mobile-title-box__icon">
 									<img
 										src="assets/svg/question.svg"
-										alt="Câu hỏi"
-										class="faq-section__mobile-icon-mark"
+										alt=""
+										aria-hidden="true"
 									/>
 								</div>
-								<div class="faq-section__mobile-text">
-									<p class="faq-section__mobile-overline">
+								<div class="mobile-title-box__content">
+									<p class="mobile-title-box__overline">
 										TRƯỜNG ĐẠI HỌC NGÂN HÀNG HUB
 									</p>
-									<h2 class="faq-section__mobile-title">
+									<h2 class="mobile-title-box__title">
 										CÂU HỎI THƯỜNG GẶP
 									</h2>
 								</div>

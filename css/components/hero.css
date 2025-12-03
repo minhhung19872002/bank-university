@@ -159,6 +159,7 @@
 .feature-cards-section {
 	background-color: var(--color-light);
 	padding: 60px 0;
+	overflow: hidden;
 }
 
 .feature-cards-section__title {
@@ -221,8 +222,20 @@
 	}
 }
 
+/* Tablet - giữ style giống desktop */
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.feature-cards-wrapper {
+		gap: var(--sp-3);
+	}
+
+	.feature-cards-wrapper .col-lg-3 {
+		width: auto;
+		max-width: none;
+	}
+}
+
 /* Mobile */
-@media (max-width: 767.98px) {
+@media (max-width: 575.98px) {
 	.hero-section {
 		height: auto;
 		min-height: calc(100vh - var(--header-total-height-mobile, 112px));
@@ -244,10 +257,11 @@
 
 	.feature-cards-wrapper {
 		gap: var(--sp-3);
+		flex-direction: column;
 	}
 
 	.feature-cards-wrapper .col-lg-3 {
 		width: 100%;
-		max-width: 300px;
+		max-width: 100%;
 	}
 }

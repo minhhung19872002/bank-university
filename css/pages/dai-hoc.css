@@ -12,6 +12,7 @@
 .hero-content-section {
 	background-color: var(--color-light);
 	padding: 60px 0;
+	overflow: hidden;
 }
 
 .hero-content__right {
@@ -93,6 +94,7 @@
 .programs-section {
 	background-color: var(--color-light);
 	padding: 72px 0 60px;
+	overflow: hidden;
 }
 
 .programs-section__subtitle {
@@ -149,6 +151,33 @@
 	height: 520px;
 	border-radius: var(--radius-10);
 	object-fit: cover;
+}
+
+.faq-section .col-lg-7 {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+.faq-section__view-all {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	margin: var(--sp-5) auto 0;
+	font-family: Montserrat, var(--font-primary);
+	font-size: var(--fs-200);
+	font-weight: 600;
+	color: var(--brand-secondary);
+	text-decoration: none;
+}
+
+.faq-section__view-all-icon {
+	width: 16px;
+	height: 16px;
+}
+
+.faq-section__view-all:hover {
+	text-decoration: underline;
 }
 
 /* ========== Responsive ========== */

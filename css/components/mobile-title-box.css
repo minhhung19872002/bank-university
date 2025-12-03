@@ -1,0 +1,109 @@
+/* ============================================
+   COMPONENT: Mobile Title Box
+   Dùng cho các title với icon ở mobile
+   ============================================ */
+
+/* Desktop: ẩn mặc định */
+.mobile-title-box {
+	display: none;
+}
+
+/* Mobile: hiển thị */
+@media (max-width: 575px) {
+	.mobile-title-box {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		margin-bottom: 24px;
+	}
+
+	/* === Variant: Default (icon tròn + text bên phải) === */
+	.mobile-title-box__icon {
+		width: 48px;
+		height: 48px;
+		border-radius: 50%;
+		background-color: var(--brand-primary);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+	}
+
+	.mobile-title-box__icon img {
+		width: 24px;
+		height: 24px;
+		object-fit: contain;
+		filter: brightness(0) invert(1); /* Make icon white on primary background */
+	}
+
+	.mobile-title-box__content {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.mobile-title-box__overline {
+		font-family: var(--font-primary);
+		font-size: var(--fs-200);
+		font-weight: 500;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: var(--gray-700);
+		margin: 0 0 2px;
+	}
+
+	.mobile-title-box__title {
+		font-family: var(--font-primary);
+		font-size: 20px;
+		font-weight: 700;
+		color: var(--gray-900);
+		margin: 0;
+		text-align: left;
+	}
+
+	/* === Variant: Filled (nền màu primary, text trắng) === */
+	.mobile-title-box--filled {
+		background-color: var(--brand-primary);
+		padding: 16px 24px;
+		border-radius: 8px;
+	}
+
+	.mobile-title-box--filled .mobile-title-box__icon {
+		background-color: var(--color-light);
+	}
+
+	.mobile-title-box--filled .mobile-title-box__icon img {
+		filter: none; /* Icon giữ màu gốc (brand-primary) */
+	}
+
+	.mobile-title-box--filled .mobile-title-box__title {
+		color: var(--color-light);
+		font-size: 26px;
+		line-height: 1.3;
+	}
+
+	.mobile-title-box--filled .mobile-title-box__overline {
+		color: rgba(255, 255, 255, 0.8);
+	}
+
+	/* === Variant: Small (icon nhỏ hơn) === */
+	.mobile-title-box--sm .mobile-title-box__icon {
+		width: 40px;
+		height: 40px;
+	}
+
+	.mobile-title-box--sm .mobile-title-box__icon img {
+		width: 22px;
+		height: 22px;
+	}
+
+	/* === Variant: Large (icon lớn hơn) === */
+	.mobile-title-box--lg .mobile-title-box__icon {
+		width: 60px;
+		height: 60px;
+	}
+
+	.mobile-title-box--lg .mobile-title-box__icon img {
+		width: 36px;
+		height: 36px;
+	}
+}

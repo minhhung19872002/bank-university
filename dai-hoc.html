@@ -87,6 +87,8 @@
 		<link rel="stylesheet" href="/css/components/pagination.css" />
 		<link rel="stylesheet" href="/css/components/recruitment-section.css" />
 		<link rel="stylesheet" href="/css/components/faq.css" />
+		<link rel="stylesheet" href="/css/components/mobile-title-box.css" />
+		<link rel="stylesheet" href="/css/components/breadcrumb.css" />
 		<link rel="stylesheet" href="/css/pages/dai-hoc.css" />
 	</head>
 	<body>
@@ -106,6 +108,26 @@
 					aria-label="Hình ảnh Đại Học HUB"
 				></div>
 			</section>
+
+			<!-- Breadcrumb Navigation -->
+			<nav class="hero-breadcrumb" aria-label="Breadcrumb">
+				<div class="container">
+					<ol class="hero-breadcrumb__list">
+						<li class="hero-breadcrumb__item">
+							<a href="/" class="hero-breadcrumb__link"
+								>Trang chủ</a
+							>
+						</li>
+						<li
+							class="hero-breadcrumb__item hero-breadcrumb__item--active"
+						>
+							<span class="hero-breadcrumb__current"
+								>Đại học</span
+							>
+						</li>
+					</ol>
+				</div>
+			</nav>
 
 			<!-- SECTION: Hero Content (Welcome Section) -->
 			<section
@@ -300,24 +322,34 @@
 				aria-labelledby="programs-title"
 			>
 				<div class="container">
-					<!-- Section Title -->
-					<div class="programs-section__header text-center mb-4">
-						<div class="programs-section__icon-wrapper d-lg-none">
+					<!-- Desktop: Section Title -->
+					<div
+						class="programs-section__header text-center mb-4 d-none d-lg-block"
+					>
+						<p class="programs-section__subtitle">
+							chương trình đào tạo
+						</p>
+						<h2 id="programs-title" class="programs-section__title">
+							CÁC NGÀNH ĐÀO TẠO
+						</h2>
+					</div>
+
+					<!-- Mobile: Title box with icon -->
+					<div
+						class="mobile-title-box mobile-title-box--sm d-lg-none mb-4"
+					>
+						<div class="mobile-title-box__icon">
 							<img
 								src="/assets/svg/book.svg"
 								alt=""
-								class="programs-section__icon"
 								aria-hidden="true"
 							/>
 						</div>
-						<div class="programs-section__title-wrapper">
-							<p class="programs-section__subtitle">
+						<div class="mobile-title-box__content">
+							<p class="mobile-title-box__overline">
 								chương trình đào tạo
 							</p>
-							<h2
-								id="programs-title"
-								class="programs-section__title"
-							>
+							<h2 class="mobile-title-box__title">
 								CÁC NGÀNH ĐÀO TẠO
 							</h2>
 						</div>
@@ -924,7 +956,7 @@
 
 					<!-- Mobile Slider Navigation -->
 					<nav
-						class="program-slider-nav d-lg-none"
+						class="program-slider-nav d-sm-none"
 						aria-label="Điều hướng slider"
 					>
 						<button
@@ -1040,20 +1072,20 @@
 
 								<!-- Mobile: title box with icon -->
 								<div
-									class="recruitment-section__title-box d-lg-none"
+									class="mobile-title-box mobile-title-box--filled d-lg-none"
 								>
-									<div
-										class="recruitment-section__title-icon"
-									>
+									<div class="mobile-title-box__icon">
 										<img
-											src="/assets/svg/steps.svg"
+											src="/assets/svg/chevron-right-triple.svg"
 											alt=""
 											aria-hidden="true"
 										/>
 									</div>
-									<h2 class="recruitment-section__title">
-										Các Bước Đơn Giản Để Bắt Đầu
-									</h2>
+									<div class="mobile-title-box__content">
+										<h2 class="mobile-title-box__title">
+											Các Bước Đơn Giản Để Bắt Đầu
+										</h2>
+									</div>
 								</div>
 
 								<div class="recruitment-steps">
@@ -1261,15 +1293,40 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-7">
-							<h2 id="faq-title" class="faq-section__title">
+							<!-- Desktop: Title + Subtitles -->
+							<h2
+								id="faq-title"
+								class="faq-section__title d-none d-sm-block"
+							>
 								CÂU HỎI THƯỜNG GẶP
 							</h2>
-							<p class="faq-section__subtitle">
+							<p class="faq-section__subtitle d-none d-sm-block">
 								HUB – Nơi hội tụ tinh hoa tài chính
 							</p>
-							<p class="faq-section__subtitle">
+							<p class="faq-section__subtitle d-none d-sm-block">
 								Dẫn đầu giáo dục tài chính – Ngân hàng
 							</p>
+
+							<!-- Mobile: Title box with icon -->
+							<div
+								class="mobile-title-box mobile-title-box--lg d-sm-none mb-4"
+							>
+								<div class="mobile-title-box__icon">
+									<img
+										src="/assets/svg/question.svg"
+										alt=""
+										aria-hidden="true"
+									/>
+								</div>
+								<div class="mobile-title-box__content">
+									<p class="mobile-title-box__overline">
+										TRƯỜNG ĐẠI HỌC NGÂN HÀNG HUB
+									</p>
+									<h2 class="mobile-title-box__title">
+										CÂU HỎI THƯỜNG GẶP
+									</h2>
+								</div>
+							</div>
 
 							<div class="faq-list">
 								<!-- FAQ Item 1 - Expanded -->
@@ -1426,6 +1483,19 @@
 									</div>
 								</article>
 							</div>
+
+							<a
+								href="/faq.html"
+								class="link-button faq-section__view-all"
+							>
+								<span>XEM TẤT CẢ</span>
+								<img
+									src="assets/svg/arrow-right.svg"
+									alt=""
+									class="faq-section__view-all-icon"
+									aria-hidden="true"
+								/>
+							</a>
 						</div>
 						<div class="col-lg-5">
 							<img

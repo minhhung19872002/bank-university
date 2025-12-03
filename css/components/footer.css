@@ -335,6 +335,9 @@
 	/* Bottom section */
 	.footer__bottom {
 		margin-top: 20px;
+		margin-left: -16px;
+		margin-right: -16px;
+		width: calc(100% + 32px);
 	}
 
 	/* Connect bar - vertical layout */

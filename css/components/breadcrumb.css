@@ -4,46 +4,113 @@
    ============================================ */
 
 .breadcrumb-section {
-  padding: var(--sp-7) 0 var(--sp-3);
+	padding: var(--sp-7) 0 var(--sp-3);
 }
 
 .breadcrumb-section__title {
-  font-family: var(--font-primary);
-  font-size: var(--fs-525);
-  font-weight: 700;
-  line-height: var(--lh-tight);
-  color: var(--brand-primary);
-  text-transform: capitalize;
-  margin: 0 0 var(--sp-3);
+	font-family: var(--font-primary);
+	font-size: var(--fs-525);
+	font-weight: 700;
+	line-height: var(--lh-tight);
+	color: var(--brand-primary);
+	text-transform: capitalize;
+	margin: 0 0 var(--sp-3);
 }
 
 .breadcrumb-section__meta {
-  display: flex;
-  align-items: center;
-  gap: var(--sp-2);
+	display: flex;
+	align-items: center;
+	gap: var(--sp-2);
 }
 
 .breadcrumb-section__icon {
-  width: 12px;
-  height: 12px;
-  flex-shrink: 0;
+	width: 12px;
+	height: 12px;
+	flex-shrink: 0;
 }
 
 .breadcrumb-section__date {
-  font-family: var(--font-primary);
-  font-size: var(--fs-100);
-  font-weight: 400;
-  line-height: 15.847px;
-  color: var(--gray-500);
+	font-family: var(--font-primary);
+	font-size: var(--fs-100);
+	font-weight: 400;
+	line-height: 15.847px;
+	color: var(--gray-500);
 }
 
 /* Divider after breadcrumb */
 .breadcrumb-section::after {
-  content: '';
-  display: block;
-  width: 100%;
-  max-width: var(--container-xl);
-  height: 1px;
-  background-color: #cccccc;
-  margin: var(--sp-3) auto 0;
+	content: "";
+	display: block;
+	width: 100%;
+	max-width: var(--container-xl);
+	height: 1px;
+	background-color: #cccccc;
+	margin: var(--sp-3) auto 0;
+}
+
+/* ============================================
+   COMPONENT: Hero Breadcrumb
+   Breadcrumb dùng sau hero section (chỉ hiển thị ở mobile)
+   ============================================ */
+
+.hero-breadcrumb {
+	display: none;
+	background-color: #f6f7f8;
+	padding: var(--sp-3) 0;
+}
+
+/* Chỉ hiển thị ở mobile (< 576px) */
+@media (max-width: 575.98px) {
+	.hero-breadcrumb {
+		display: block;
+	}
+}
+
+.hero-breadcrumb__list {
+	display: flex;
+	align-items: center;
+	gap: var(--sp-2);
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.hero-breadcrumb__item {
+	display: flex;
+	align-items: center;
+	gap: var(--sp-2);
+	font-family: var(--font-secondary);
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.2;
+}
+
+/* Arrow separator */
+.hero-breadcrumb__item:not(:last-child)::after {
+	content: "";
+	display: inline-block;
+	width: 5px;
+	height: 8px;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='5' height='8' viewBox='0 0 5 8' fill='none'%3E%3Cpath d='M1 1L4 4L1 7' stroke='%23333333' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin-left: var(--sp-2);
+}
+
+.hero-breadcrumb__link {
+	color: var(--gray-700);
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.hero-breadcrumb__link:hover {
+	color: var(--brand-primary);
+	text-decoration: underline;
+}
+
+/* Active item - màu brand secondary */
+.hero-breadcrumb__item--active .hero-breadcrumb__current {
+	color: var(--brand-secondary);
+	font-weight: 400;
 }
