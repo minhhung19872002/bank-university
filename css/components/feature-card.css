@@ -3,174 +3,183 @@
    ============================================ */
 
 .feature-card {
-  position: relative;
-  width: 254px;
-  height: 202px;
-  background-color: var(--color-light);
-  border-radius: var(--radius-40) var(--radius-40) var(--radius-40) 0;
-  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
-  padding: 0;
-  transition: all 0.3s ease;
-  flex-shrink: 0;
+	position: relative;
+	width: 254px;
+	height: 202px;
+	background-color: var(--color-light);
+	border-radius: var(--radius-40) var(--radius-40) var(--radius-40) 0;
+	box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+	padding: 0;
+	transition: all 0.3s ease;
+	flex-shrink: 0;
 }
 
 .feature-card:hover {
-  box-shadow: var(--shadow-2);
-  transform: translateY(-4px);
+	box-shadow: var(--shadow-2);
+	transform: translateY(-4px);
 }
 
 /* Icon Wrapper - Absolute positioning như Codia */
 .feature-card__icon-wrapper {
-  position: absolute;
-  top: 17px;
-  left: 21px;
-  width: 70px;
-  height: 70px;
+	position: absolute;
+	top: 17px;
+	left: 21px;
+	width: 70px;
+	height: 70px;
 }
 
 .feature-card__icon-bg {
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  width: 70px;
-  height: 70px;
-  background-color: var(--brand-primary);
-  border-radius: 50%;
-  z-index: 1;
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	width: 70px;
+	height: 70px;
+	background-color: var(--brand-primary);
+	border-radius: 50%;
+	z-index: 1;
 }
 
 .feature-card__icon {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  z-index: 2;
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	width: 40px;
+	height: 40px;
+	object-fit: contain;
+	z-index: 2;
 }
 
 /* Number Badge - Absolute positioning như Codia */
 .feature-card__number {
-  position: absolute;
-  top: 29px;
-  right: 30px;
-  font-family: var(--font-primary);
-  font-size: 50px;
-  font-weight: 700;
-  line-height: 60.95px;
-  color: transparent;
-  -webkit-text-stroke: 1px var(--brand-primary);
-  text-stroke: 1px var(--brand-primary);
-  user-select: none;
-  pointer-events: none;
+	position: absolute;
+	top: 29px;
+	right: 30px;
+	font-family: var(--font-primary);
+	font-size: 50px;
+	font-weight: 700;
+	line-height: 60.95px;
+	color: transparent;
+	-webkit-text-stroke: 1px var(--brand-primary);
+	text-stroke: 1px var(--brand-primary);
+	user-select: none;
+	pointer-events: none;
 }
 
 /* Title - Positioned như Codia (108px từ top, 21px từ left) */
 .feature-card__title {
-  position: absolute;
-  top: 108px;
-  left: 21px;
-  right: 21px;
-  font-family: var(--font-primary);
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 19.504px;
-  color: var(--gray-900);
-  text-transform: capitalize;
-  margin: 0;
+	position: absolute;
+	top: 108px;
+	left: 21px;
+	right: 21px;
+	font-family: var(--font-primary);
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 19.504px;
+	color: var(--gray-900);
+	text-transform: capitalize;
+	margin: 0;
 }
 
 /* Description - 9px dưới title, 21px từ left */
 .feature-card__description {
-  position: absolute;
-  top: 137px;
-  left: 21px;
-  right: 21px;
-  font-family: var(--font-primary);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 22px;
-  color: var(--gray-900);
-  margin: 0;
+	position: absolute;
+	top: 137px;
+	left: 21px;
+	right: 21px;
+	font-family: var(--font-primary);
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 22px;
+	color: var(--gray-900);
+	margin: 0;
 }
 
 /* Responsive */
 @media (min-width: 576px) and (max-width: 991px) {
-  .feature-card {
-    min-height: 180px;
-    padding: var(--sp-3);
-  }
+	.feature-card {
+		min-height: 180px;
+		padding: var(--sp-3);
+	}
 
-  .feature-card__icon-wrapper {
-    width: 60px;
-    height: 60px;
-  }
+	.feature-card__icon-wrapper {
+		width: 60px;
+		height: 60px;
+	}
 
-  .feature-card__icon-bg {
-    width: 60px;
-    height: 60px;
-  }
+	.feature-card__icon-bg {
+		width: 60px;
+		height: 60px;
+	}
 
-  .feature-card__icon {
-    width: 35px;
-    height: 35px;
-  }
+	.feature-card__icon {
+		width: 35px;
+		height: 35px;
+	}
 
-  .feature-card__number {
-    font-size: 40px;
-    line-height: 48px;
-    top: var(--sp-4);
-    right: var(--sp-4);
-  }
+	.feature-card__number {
+		font-size: 40px;
+		line-height: 48px;
+		top: var(--sp-4);
+		right: var(--sp-4);
+	}
 
-  .feature-card__title {
-    font-size: 15px;
-    line-height: 18px;
-  }
+	.feature-card__title {
+		font-size: 15px;
+		line-height: 18px;
+	}
 
-  .feature-card__description {
-    font-size: 13px;
-    line-height: 20px;
-  }
+	.feature-card__description {
+		font-size: 13px;
+		line-height: 20px;
+	}
 }
 
 @media (max-width: 575px) {
-  .feature-card {
-    min-height: 160px;
-    padding: var(--sp-3);
-    border-radius: var(--radius-30) var(--radius-30) var(--radius-30) 0;
-  }
+	.feature-card {
+		min-height: 250px;
+		height: 250px;
+		padding: var(--sp-3);
+		border-radius: var(--radius-30) var(--radius-30) var(--radius-30) 0;
+		width: 100%;
+	}
 
-  .feature-card__icon-wrapper {
-    width: 50px;
-    height: 50px;
-    margin-bottom: var(--sp-4);
-  }
+	.feature-card__icon-wrapper {
+		width: 100px;
+		height: 100px;
+		margin-bottom: var(--sp-4);
+	}
 
-  .feature-card__icon-bg {
-    width: 50px;
-    height: 50px;
-  }
+	.feature-card__icon-bg {
+		width: 100px;
+		height: 100px;
+	}
 
-  .feature-card__icon {
-    width: 30px;
-    height: 30px;
-  }
+	.feature-card__icon {
+		width: 50px;
+		height: 50px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
 
-  .feature-card__number {
-    font-size: 35px;
-    line-height: 42px;
-    top: var(--sp-3);
-    right: var(--sp-3);
-  }
+	.feature-card__number {
+		font-size: 60px;
+		line-height: 1;
+		top: var(--sp-3);
+		right: var(--sp-3);
+	}
 
-  .feature-card__title {
-    font-size: 14px;
-    line-height: 17px;
-  }
+	.feature-card__title {
+		font-size: 20px;
+		line-height: 1.3;
+		top: auto;
+		bottom: 50px;
+	}
 
-  .feature-card__description {
-    font-size: 12px;
-    line-height: 18px;
-  }
+	.feature-card__description {
+		font-size: 14px;
+		line-height: 1.5;
+		top: auto;
+		bottom: var(--sp-3);
+	}
 }

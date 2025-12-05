@@ -234,35 +234,48 @@ Khi tôi gửi file/HTML:
 
 ---
 
-### 7. Typography & Design Token Rules (CSS)
+### 8. Bổ sung quy tắc từ yêu cầu kỹ thuật khách hàng
 
-1. **Font-size – dùng hệ token `--fs-*`**
+#### 8.1. Tối ưu SEO
 
-    - Không dùng `font-size` dạng `px` trực tiếp trong component/page, trừ khi thật sự đặc biệt.
-    - Mapping tham khảo cho site này:
+    - Luôn kiểm tra và bổ sung các thẻ meta, title, description, từ khóa, Open Graph, favicon… cho từng trang.
+    - Heading phải đúng hierarchy, mỗi trang chỉ có 1 `<h1>`, các heading khác dùng `h2`, `h3` theo thứ bậc nội dung.
 
-        - `--fs-900`: H1 rất lớn (hero chính, 46–50px)
-        - `--fs-800`: H1/H2 lớn (40px)
-        - `--fs-700`: H2/H3 (32–36px)
-        - `--fs-600`: H3/H4 (26–30px)
-        - `--fs-500`: Title nhỏ / section subtitle (22–24px)
-        - `--fs-425, --fs-400`: subtitle, heading phụ (18–20px)
-        - `--fs-350, --fs-300`: body text, mô tả chính (14–16px)
-        - `--fs-200`: text nhỏ, meta, label (12–13px)
-        - `--fs-100`: text rất nhỏ, badge (≈11–12px)
+#### 8.2. Accessibility
 
-    - Line-height dùng **tỷ lệ** (`1.2–1.6`) thay vì số px; ưu tiên:
-        - Heading: `1.2–1.3`
-        - Body: `1.5–1.6`
+    - Đảm bảo các thành phần tương tác (button, link, form…) có text rõ ràng, không dùng placeholder `#` trừ khi là demo.
+    - Thêm thuộc tính `aria-label`, `aria-expanded`, `aria-controls` cho các phần có tương tác (menu, accordion, hamburger…).
+    - Tất cả ảnh phải có `alt` mô tả.
 
-2. **Font-weight – chỉ dùng 4 mức**
+#### 8.3. Hiệu năng
 
-    - Dùng trực tiếp số, không tạo token:
-        - `400`: body text, description
-        - `500`: label, subtitle, meta nhấn nhẹ
-        - `600`: sub-heading, title phụ
-        - `700`: heading chính, chữ cần nhấn mạnh
-    - Không dùng các giá trị lẻ khác (300, 800, 900) trừ khi font/display đặc biệt yêu cầu.
+    - Ưu tiên dùng ảnh tối ưu (webp, kích thước phù hợp), lazy load cho ảnh lớn hoặc gallery.
+    - Sử dụng Bootstrap utility class để giảm CSS custom, tránh lặp lại style.
+
+#### 8.4. Tái sử dụng component
+
+    - Nhận diện các pattern lặp lại (card, button, section-title, slider…) và tạo class/component chung để dễ maintain.
+    - Đề xuất tách header, footer, navbar, topbar thành các file riêng trong `/partials`.
+
+#### 8.5. Kiểm soát responsive
+
+    - Luôn kiểm tra và đảm bảo layout hiển thị tốt trên các breakpoint (mobile, tablet, desktop).
+    - Nếu mobile khác biệt lớn, dùng chiến lược tách markup như instruction đã nêu.
+
+#### 8.6. Kiểm thử & kiểm tra chất lượng
+
+    - Sau khi refactor, kiểm tra lại toàn bộ UI/UX, responsive, SEO, accessibility, hiệu năng.
+    - Đề xuất checklist kiểm thử cho từng trang/component.
+
+1. **Font-size & font-weight – AI tự động nhận diện**
+
+    - AI được phép tự động nhận diện hierarchy nội dung (heading, body, caption…) và thiết lập hệ token `--fs-*` và font-weight phù hợp nhất cho từng trang, đảm bảo nhất quán, dễ đọc, tối ưu UI/UX.
+    - Không cần bám sát mapping cứng, AI có thể đề xuất lại giá trị token nếu phát hiện design thực tế không ổn định.
+    - Line-height dùng tỷ lệ (`1.2–1.6`) theo hierarchy nội dung.
+
+2. **Spacing, radius, shadow – AI tự động nhận diện**
+
+    - AI tự động nhận diện pattern spacing, border-radius, shadow… và sử dụng hoặc đề xuất hệ token phù hợp, đảm bảo đồng bộ toàn site.
 
 3. **Màu sắc – luôn ưu tiên token trong `variables.css`**
 
@@ -274,21 +287,22 @@ Khi tôi gửi file/HTML:
         - Border gray: `var(--gray-border)` hoặc `var(--gray-300)`
     - Nếu phải thêm màu mới → thêm vào `variables.css` trước, sau đó mới dùng.
 
-4. **Radius, shadow, transition – dùng token chung**
-
-    - Radius: ưu tiên `--radius-sm`, `--radius-md`, `--radius-10`, `--radius-24`, `--radius-32`, `--radius-lg`, `--radius-30`, `--radius-40`, `--radius-60`, `--radius-pill`.
-    - Shadow: dùng `--shadow-1`, `--shadow-2` thay vì tự viết `box-shadow` mới nếu có thể reuse.
-    - Transition: dùng `var(--transition-base)` cho hover/focus bình thường (`0.3s ease`).
-
-5. **Ảnh & background**
+4. **Ảnh & background**
 
     - Ảnh luôn `display: block; max-width: 100%; height: auto;` trừ khi cần ratio cố định.
     - `object-fit: cover` cho thumbnail/card; nếu dùng màu nền riêng → dùng token, không hard-code.
 
-6. **Ưu tiên sửa code cũ theo hệ token**
+5. **Ưu tiên sửa code cũ theo hệ token**
 
     - Khi đụng vào bất kỳ component/page CSS nào:
         - Thay `font-size` px → `--fs-*` phù hợp.
         - Thay màu thô (`#ffffff`, `#333333`, `#fafafa`…) → token tương ứng.
         - Thay `border-radius`, `box-shadow`, `transition` lẻ → token nếu đã có.
     - Mục tiêu: toàn bộ `css/components` và `css/pages` **không còn** style “magic number” khó reuse, tất cả đi qua hệ token.
+
+6. **AI tự động hóa nhận diện & refactor**
+
+    - AI được phép tự động nhận diện các vấn đề về typography, spacing, radius, shadow… và refactor lại CSS/HTML cho đồng bộ, dễ maintain.
+
+7. **Instruction bổ sung:**
+    - “AI được phép tự động nhận diện và thiết lập hệ token (font-size, font-weight, spacing, radius, shadow…) phù hợp nhất với từng trang, đảm bảo nhất quán, dễ maintain, tối ưu cho UI/UX và responsive. Không cần bám sát mapping cứng nếu phát hiện design thực tế không ổn định. Màu sắc vẫn phải mapping đúng token đã quy định.”
