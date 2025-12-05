@@ -4,145 +4,229 @@
    ============================================ */
 
 .tuition-section {
-  padding: var(--sp-7) 0;
-  background-color: #fff4f7;
-  position: relative;
+	padding: var(--sp-7) 0;
+	background-color: #fff4f7;
+	position: relative;
 }
 
 .tuition-section .container {
-  position: relative;
+	position: relative;
 }
 
 .tuition-section__title {
-  font-family: var(--font-primary);
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 48.76px;
-  color: var(--brand-primary);
-  text-align: center;
-  text-transform: capitalize;
-  margin-bottom: var(--sp-3);
+	font-family: var(--font-primary);
+	font-size: 40px;
+	font-weight: 700;
+	line-height: 48.76px;
+	color: var(--brand-primary);
+	text-align: center;
+	text-transform: capitalize;
+	margin-bottom: var(--sp-3);
 }
 
 .tuition-section__description {
-  font-family: var(--font-primary);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 17px;
-  color: var(--gray-900);
-  text-align: center;
-  margin-bottom: var(--sp-6);
+	font-family: var(--font-primary);
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 17px;
+	color: var(--gray-900);
+	text-align: center;
+	margin-bottom: var(--sp-6);
 }
 
 .tuition-table-wrapper {
-  position: relative;
-  max-width: 996px;
-  margin: 0 auto;
+	position: relative;
+	max-width: 996px;
+	margin: 0 auto;
 }
 
 .tuition-table-wrapper::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 160px;
-  height: 262px;
-  background-image: url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/cEw2T9MC8w.png');
-  background-size: contain;
-  background-position: bottom left;
-  background-repeat: no-repeat;
-  pointer-events: none;
-  z-index: 0;
-  transform: translateX(-100%);
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 160px;
+	height: 262px;
+	background-image: url("https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/cEw2T9MC8w.png");
+	background-size: contain;
+	background-position: bottom left;
+	background-repeat: no-repeat;
+	pointer-events: none;
+	z-index: 0;
+	transform: translateX(-100%);
 }
 
 .tuition-table {
-  width: 100%;
-  background-color: var(--color-light);
-  border-collapse: collapse;
-  overflow: hidden;
+	width: 100%;
+	background-color: var(--color-light);
+	border-collapse: collapse;
+	overflow: hidden;
 }
 
 .tuition-table thead {
-  background-color: var(--brand-primary);
+	background-color: var(--brand-primary);
 }
 
 .tuition-table thead th {
-  font-family: var(--font-primary);
-  font-size: 16px;
-  font-weight: 700;
-  line-height: 18px;
-  color: var(--color-light);
-  text-transform: capitalize;
-  padding: 12px 24px;
-  text-align: center;
-  white-space: nowrap;
+	font-family: var(--font-primary);
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 18px;
+	color: var(--color-light);
+	text-transform: capitalize;
+	padding: 12px 24px;
+	text-align: center;
+	white-space: nowrap;
 }
 
 .tuition-table thead th:first-child {
-  text-align: left;
-  padding-left: 160px;
+	text-align: left;
+	padding-left: 160px;
 }
 
 .tuition-table thead th:nth-child(2) {
-  text-align: center;
+	text-align: center;
 }
 
 .tuition-table thead th:last-child {
-  text-align: left;
+	text-align: left;
 }
 
 .tuition-table tbody tr {
-  background-color: var(--color-light);
-  border: 1px solid #e3e3e3;
+	background-color: var(--color-light);
+	border: 1px solid #e3e3e3;
 }
 
 .tuition-table tbody tr.tuition-table__row--alt {
-  background-color: #f4f4f4;
+	background-color: #f4f4f4;
 }
 
 .tuition-table tbody td {
-  font-family: var(--font-primary);
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 22px;
-  color: var(--gray-900);
-  padding: 15px 24px;
-  border-left: 1px solid #e3e3e3;
-  vertical-align: middle;
+	font-family: var(--font-primary);
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 22px;
+	color: var(--gray-900);
+	padding: 15px 24px;
+	border-left: 1px solid #e3e3e3;
+	vertical-align: middle;
 }
 
 .tuition-table tbody td:first-child {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 19.504px;
-  text-align: left;
-  padding-left: 160px;
-  border-left: none;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 19.504px;
+	text-align: left;
+	padding-left: 160px;
+	border-left: none;
 }
 
 .tuition-table tbody td:nth-child(2) {
-  text-align: center;
+	text-align: center;
 }
 
 .tuition-table tbody td.tuition-table__price {
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 23px;
-  color: var(--brand-primary);
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 23px;
+	color: var(--brand-primary);
 }
 
 .tuition-table__note {
-  font-family: var(--font-primary);
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 24px;
-  color: var(--brand-primary);
-  text-align: center;
-  margin-top: var(--sp-4);
+	font-family: var(--font-primary);
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 24px;
+	color: var(--brand-primary);
+	text-align: center;
+	margin-top: var(--sp-4);
 }
 
 /* ============================================
    RESPONSIVE
    TODO: Add tablet and mobile styles later with separate design
    ============================================ */
+
+/* Mobile */
+@media (max-width: 575.98px) {
+	.tuition-section {
+		padding: var(--sp-5) 0;
+	}
+
+	.tuition-section__title {
+		text-align: left;
+		font-size: 24px;
+		line-height: 1.3;
+	}
+
+	.tuition-section__description {
+		text-align: left;
+		margin-bottom: var(--sp-4);
+	}
+
+	/* Hide decoration on mobile */
+	.tuition-table-wrapper::before {
+		display: none;
+	}
+
+	/* Table responsive */
+	.tuition-table-wrapper {
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.tuition-table {
+		min-width: 100%;
+		table-layout: fixed;
+	}
+
+	.tuition-table thead th {
+		font-size: 12px;
+		padding: 10px 8px;
+		white-space: normal;
+	}
+
+	.tuition-table thead th:first-child {
+		width: 50px;
+		padding-left: 8px;
+		text-align: center;
+	}
+
+	.tuition-table thead th:nth-child(2) {
+		width: auto;
+	}
+
+	.tuition-table thead th:last-child {
+		width: 115px;
+		text-align: right;
+	}
+
+	.tuition-table tbody td {
+		font-size: 12px;
+		padding: 10px 8px;
+		line-height: 1.4;
+	}
+
+	.tuition-table tbody td:first-child {
+		font-size: 14px;
+		padding-left: 8px;
+		text-align: center;
+		width: 50px;
+	}
+
+	.tuition-table tbody td:last-child {
+		text-align: right;
+		width: 115px;
+	}
+
+	.tuition-table tbody td.tuition-table__price {
+		font-size: 12px;
+		white-space: nowrap;
+	}
+
+	.tuition-table__note {
+		font-size: 12px;
+		text-align: left;
+		line-height: 1.5;
+	}
+}

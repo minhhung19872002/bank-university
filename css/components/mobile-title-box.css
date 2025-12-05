@@ -63,8 +63,6 @@
 	/* === Variant: Filled (nền màu primary, text trắng) === */
 	.mobile-title-box--filled {
 		background-color: var(--brand-primary);
-		padding: 16px 24px;
-		border-radius: 8px;
 	}
 
 	.mobile-title-box--filled .mobile-title-box__icon {
