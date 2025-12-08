@@ -1,1522 +1,1292 @@
 <!DOCTYPE html>
 <html lang="vi">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<!-- SEO Meta Tags -->
-		<title>
-			Đại Học Chính Quy - Trường Đại Học Ngân Hàng TP.HCM | HUB University
-		</title>
-		<meta
-			name="description"
-			content="Chương trình đại học chính quy tại HUB - Học bổng hấp dẫn, giảng viên chất lượng cao, cơ sở vật chất hiện đại, học phí phải chăng. Đăng ký tư vấn ngay!"
-		/>
-		<meta
-			name="keywords"
-			content="đại học chính quy HUB, tuyển sinh đại học, học bổng đại học, chương trình đại học ngân hàng, học phí đại học"
-		/>
-		<meta name="author" content="HUB University" />
-		<meta name="robots" content="index, follow" />
+    <!-- SEO Meta Tags -->
+    <title>
+      Đại Học Chính Quy - Trường Đại Học Ngân Hàng TP.HCM | HUB University
+    </title>
+    <meta
+      name="description"
+      content="Chương trình đại học chính quy tại HUB - Học bổng hấp dẫn, giảng viên chất lượng cao, cơ sở vật chất hiện đại, học phí phải chăng. Đăng ký tư vấn ngay!"
+    />
+    <meta
+      name="keywords"
+      content="đại học chính quy HUB, tuyển sinh đại học, học bổng đại học, chương trình đại học ngân hàng, học phí đại học"
+    />
+    <meta name="author" content="HUB University" />
+    <meta name="robots" content="index, follow" />
 
-		<!-- Open Graph -->
-		<meta property="og:type" content="website" />
-		<meta
-			property="og:title"
-			content="Đại Học Chính Quy - HUB University"
-		/>
-		<meta
-			property="og:description"
-			content="Chương trình đại học chính quy với học bổng hấp dẫn, giảng viên giàu kinh nghiệm và cơ sở vật chất hiện đại"
-		/>
-		<meta property="og:url" content="https://hub.edu.vn/dai-hoc" />
-		<meta property="og:locale" content="vi_VN" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Đại Học Chính Quy - HUB University" />
+    <meta
+      property="og:description"
+      content="Chương trình đại học chính quy với học bổng hấp dẫn, giảng viên giàu kinh nghiệm và cơ sở vật chất hiện đại"
+    />
+    <meta property="og:url" content="https://hub.edu.vn/dai-hoc" />
+    <meta property="og:locale" content="vi_VN" />
 
-		<!-- Favicon -->
-		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="32x32"
-			href="/favicon-32x32.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="16x16"
-			href="/favicon-16x16.png"
-		/>
-		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-		<!-- Preconnect -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
 
-		<!-- Google Fonts -->
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
-		/>
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=UTM+ClassizismAntiqua:wght@400&display=swap"
-		/>
+    <!-- Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=UTM+ClassizismAntiqua:wght@400&display=swap"
+    />
 
-		<!-- Bootstrap CSS -->
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-		/>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-		<!-- Custom CSS -->
-		<link rel="stylesheet" href="/css/variables.css" />
-		<link rel="stylesheet" href="/css/base.css" />
-		<link rel="stylesheet" href="/css/components/topbar.css" />
-		<link rel="stylesheet" href="/css/components/navbar.css" />
-		<link rel="stylesheet" href="/css/components/footer.css" />
-		<link rel="stylesheet" href="/css/components/hero.css" />
-		<link rel="stylesheet" href="/css/components/feature-card.css" />
-		<link rel="stylesheet" href="/css/components/program-card.css" />
-		<link rel="stylesheet" href="/css/components/filter-button.css" />
-		<link rel="stylesheet" href="/css/components/pagination.css" />
-		<link rel="stylesheet" href="/css/components/recruitment-section.css" />
-		<link rel="stylesheet" href="/css/components/faq.css" />
-		<link rel="stylesheet" href="/css/components/mobile-title-box.css" />
-		<link rel="stylesheet" href="/css/components/breadcrumb.css" />
-		<link rel="stylesheet" href="/css/pages/dai-hoc.css" />
-	</head>
-	<body>
-		<!-- HEADER: Topbar + Navbar -->
-		<div data-include="/partials/header.html"></div>
+    <!-- Iconify -->
+    <script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
 
-		<!-- MAIN CONTENT -->
-		<main id="main-content">
-			<!-- Hero Section -->
-			<section
-				class="hero-section hero-section--banner hero-section--daihoc"
-				aria-label="Banner Đại Học Chính Quy"
-			>
-				<div
-					class="hero-section__bg"
-					role="img"
-					aria-label="Hình ảnh Đại Học HUB"
-				></div>
-			</section>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/variables.css" />
+    <link rel="stylesheet" href="/css/base.css" />
+    <link rel="stylesheet" href="/css/components/topbar.css" />
+    <link rel="stylesheet" href="/css/components/navbar.css" />
+    <link rel="stylesheet" href="/css/components/footer.css" />
+    <link rel="stylesheet" href="/css/components/hero.css" />
+    <link rel="stylesheet" href="/css/components/feature-card.css" />
+    <link rel="stylesheet" href="/css/components/program-card.css" />
+    <link rel="stylesheet" href="/css/components/filter-button.css" />
+    <link rel="stylesheet" href="/css/components/pagination.css" />
+    <link rel="stylesheet" href="/css/components/recruitment-section.css" />
+    <link rel="stylesheet" href="/css/components/faq.css" />
+    <link rel="stylesheet" href="/css/components/mobile-title-box.css" />
+    <link rel="stylesheet" href="/css/components/breadcrumb.css" />
+    <link rel="stylesheet" href="/css/pages/dai-hoc.css" />
+  </head>
+  <body>
+    <!-- HEADER: Topbar + Navbar -->
+    <div data-include="/partials/header.html"></div>
 
-			<!-- Breadcrumb Navigation -->
-			<nav class="hero-breadcrumb" aria-label="Breadcrumb">
-				<div class="container">
-					<ol class="hero-breadcrumb__list">
-						<li class="hero-breadcrumb__item">
-							<a href="/" class="hero-breadcrumb__link"
-								>Trang chủ</a
-							>
-						</li>
-						<li
-							class="hero-breadcrumb__item hero-breadcrumb__item--active"
-						>
-							<span class="hero-breadcrumb__current"
-								>Đại học</span
-							>
-						</li>
-					</ol>
-				</div>
-			</nav>
+    <!-- MAIN CONTENT -->
+    <main id="main-content">
+      <!-- Hero Section -->
+      <section
+        class="hero-section hero-section--banner hero-section--daihoc"
+        aria-label="Banner Đại Học Chính Quy"
+      >
+        <div
+          class="hero-section__bg"
+          role="img"
+          aria-label="Hình ảnh Đại Học HUB"
+        ></div>
+      </section>
 
-			<!-- SECTION: Hero Content (Welcome Section) -->
-			<section
-				class="hero-content-section"
-				id="hero-content"
-				aria-labelledby="hero-content-title"
-			>
-				<div class="container">
-					<div class="row align-items-center g-5">
-						<div
-							class="col-lg-6 order-1 order-lg-1 hero-content__right"
-						>
-							<div class="hero-content__text">
-								<p class="hero-content__subtitle">
-									Chào mừng đến với Tuyển sinh
-								</p>
-								<h2
-									id="hero-content-title"
-									class="hero-content__title"
-								>
-									ĐẠI HỌC CHÍNH QUY CHUẨN
-								</h2>
-								<p class="hero-content__description">
-									Lorem Ipsum chỉ đơn giản là một đoạn văn bản
-									giả, được dùng vào việc trình bày và dàn
-									trang phục vụ cho in ấn. Lorem Ipsum đã được
-									sử dụng như một văn bản chuẩn cho ngành công
-									nghiệp in ấn từ những năm 1500, khi một họa
-									sĩ vô danh ghép nhiều đoạn văn bản với nhau
-									để tạo thành một bản mẫu văn bản. Đoạn văn
-									bản này không những đã tồn tại năm thế kỉ,
-									mà khi được áp dụng vào tin học văn phòng,
-									nội dung của nó vẫn không hề bị thay đổi.
-								</p>
-							</div>
-						</div>
-						<div class="col-lg-6 order-2 order-lg-2">
-							<div class="hero-content__image-wrapper">
-								<div class="hero-content__image-bg"></div>
-								<img
-									src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/S3ZJJejdQQ.png"
-									alt="Đại học chính quy"
-									class="hero-content__image"
-									loading="lazy"
-								/>
-								<img
-									src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/aycD99MMyQ.png"
-									alt="Decoration"
-									class="hero-content__decoration"
-									loading="lazy"
-								/>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+      <!-- Breadcrumb Navigation -->
+      <nav class="hero-breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+          <ol class="hero-breadcrumb__list">
+            <li class="hero-breadcrumb__item">
+              <a href="/" class="hero-breadcrumb__link">Trang chủ</a>
+            </li>
+            <li class="hero-breadcrumb__item hero-breadcrumb__item--active">
+              <span class="hero-breadcrumb__current">Đại học</span>
+            </li>
+          </ol>
+        </div>
+      </nav>
 
-			<!-- SECTION: Feature Cards - Tiêu chí -->
-			<section
-				class="feature-cards-section"
-				id="tieu-chi"
-				aria-labelledby="feature-cards-title"
-			>
-				<div class="container">
-					<!-- Section Title -->
-					<div class="text-center mb-5">
-						<h2
-							id="feature-cards-title"
-							class="feature-cards-section__title"
-						>
-							Tiêu chí
-						</h2>
-					</div>
+      <!-- SECTION: Hero Content (Welcome Section) -->
+      <section
+        class="hero-content-section"
+        id="hero-content"
+        aria-labelledby="hero-content-title"
+      >
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6 order-1 order-lg-1 hero-content__right">
+              <div class="hero-content__text">
+                <p class="hero-content__subtitle">
+                  Chào mừng đến với Tuyển sinh
+                </p>
+                <h2 id="hero-content-title" class="hero-content__title">
+                  ĐẠI HỌC CHÍNH QUY CHUẨN
+                </h2>
+                <p class="hero-content__description">
+                  Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                  vào việc trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum
+                  đã được sử dụng như một văn bản chuẩn cho ngành công nghiệp in
+                  ấn từ những năm 1500, khi một họa sĩ vô danh ghép nhiều đoạn
+                  văn bản với nhau để tạo thành một bản mẫu văn bản. Đoạn văn
+                  bản này không những đã tồn tại năm thế kỉ, mà khi được áp dụng
+                  vào tin học văn phòng, nội dung của nó vẫn không hề bị thay
+                  đổi.
+                </p>
+              </div>
+            </div>
+            <div class="col-lg-6 order-2 order-lg-2">
+              <div class="hero-content__image-wrapper">
+                <div class="hero-content__image-bg"></div>
+                <img
+                  src="/assets/images/daihoc_bg.png"
+                  alt="Đại học chính quy"
+                  class="hero-content__image"
+                  loading="lazy"
+                />
+                <img
+                  src="/assets/images/daihoc_decorator.png"
+                  alt="Decoration"
+                  class="hero-content__decoration"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-					<div class="feature-cards-wrapper">
-						<!-- Feature Card 1: Học bổng -->
-						<div class="col-lg-3 col-md-6">
-							<article class="feature-card">
-								<div class="feature-card__icon-wrapper">
-									<div class="feature-card__icon-bg"></div>
-									<img
-										src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/qKOKxG79hz.png"
-										alt="Icon học bổng"
-										class="feature-card__icon"
-										loading="lazy"
-									/>
-								</div>
-								<span
-									class="feature-card__number"
-									aria-hidden="true"
-									>01</span
-								>
-								<h3 class="feature-card__title">
-									Cơ sở học bổng
-								</h3>
-								<p class="feature-card__description">
-									Lorem Ipsum chỉ đơn giản là một đoạn văn bản
-									giả.
-								</p>
-							</article>
-						</div>
+      <!-- SECTION: Feature Cards - Tiêu chí -->
+      <section
+        class="feature-cards-section"
+        id="tieu-chi"
+        aria-labelledby="feature-cards-title"
+      >
+        <div class="container">
+          <!-- Section Title -->
+          <div class="text-center mb-5">
+            <h2 id="feature-cards-title" class="feature-cards-section__title">
+              Tiêu chí
+            </h2>
+          </div>
 
-						<!-- Feature Card 2: Giảng viên -->
-						<div class="col-lg-3 col-md-6">
-							<article class="feature-card">
-								<div class="feature-card__icon-wrapper">
-									<div class="feature-card__icon-bg"></div>
-									<img
-										src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/3KFtJ1c0HY.png"
-										alt="Icon giảng viên"
-										class="feature-card__icon"
-										loading="lazy"
-									/>
-								</div>
-								<span
-									class="feature-card__number"
-									aria-hidden="true"
-									>02</span
-								>
-								<h3 class="feature-card__title">
-									Giảng viên tay nghề cao
-								</h3>
-								<p class="feature-card__description">
-									Lorem Ipsum chỉ đơn giản là một đoạn văn bản
-									giả.
-								</p>
-							</article>
-						</div>
+          <div class="feature-cards-wrapper">
+            <!-- Feature Card 1: Học bổng -->
+            <div class="col-lg-3 col-md-6">
+              <article class="feature-card">
+                <div class="feature-card__icon-wrapper">
+                  <div class="feature-card__icon-bg"></div>
+                  <img
+                    src="/assets/images/hocbong.png"
+                    alt="Icon học bổng"
+                    class="feature-card__icon"
+                    loading="lazy"
+                  />
+                </div>
+                <span class="feature-card__number" aria-hidden="true">01</span>
+                <h3 class="feature-card__title">Cơ sở học bổng</h3>
+                <p class="feature-card__description">
+                  Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả.
+                </p>
+              </article>
+            </div>
 
-						<!-- Feature Card 3: Thư viện -->
-						<div class="col-lg-3 col-md-6">
-							<article class="feature-card">
-								<div class="feature-card__icon-wrapper">
-									<div class="feature-card__icon-bg"></div>
-									<img
-										src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/gLRU1mKoDX.png"
-										alt="Icon thư viện"
-										class="feature-card__icon"
-										loading="lazy"
-									/>
-								</div>
-								<span
-									class="feature-card__number"
-									aria-hidden="true"
-									>03</span
-								>
-								<h3 class="feature-card__title">
-									Cơ sở Thư viện
-								</h3>
-								<p class="feature-card__description">
-									Lorem Ipsum chỉ đơn giản là một đoạn văn bản
-									giả.
-								</p>
-							</article>
-						</div>
+            <!-- Feature Card 2: Giảng viên -->
+            <div class="col-lg-3 col-md-6">
+              <article class="feature-card">
+                <div class="feature-card__icon-wrapper">
+                  <div class="feature-card__icon-bg"></div>
+                  <img
+                    src="/assets/svg/giangvien.svg"
+                    alt="Icon giảng viên"
+                    class="feature-card__icon"
+                    loading="lazy"
+                  />
+                </div>
+                <span class="feature-card__number" aria-hidden="true">02</span>
+                <h3 class="feature-card__title">Giảng viên tay nghề cao</h3>
+                <p class="feature-card__description">
+                  Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả.
+                </p>
+              </article>
+            </div>
 
-						<!-- Feature Card 4: Giá cả -->
-						<div class="col-lg-3 col-md-6">
-							<article class="feature-card">
-								<div class="feature-card__icon-wrapper">
-									<div class="feature-card__icon-bg"></div>
-									<img
-										src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/tDxXmNvdFE.png"
-										alt="Icon học phí"
-										class="feature-card__icon"
-										loading="lazy"
-									/>
-								</div>
-								<span
-									class="feature-card__number"
-									aria-hidden="true"
-									>04</span
-								>
-								<h3 class="feature-card__title">
-									Giá cả phải chăng
-								</h3>
-								<p class="feature-card__description">
-									Lorem Ipsum chỉ đơn giản là một đoạn văn bản
-									giả.
-								</p>
-							</article>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- End Feature Cards -->
+            <!-- Feature Card 3: Thư viện -->
+            <div class="col-lg-3 col-md-6">
+              <article class="feature-card">
+                <div class="feature-card__icon-wrapper">
+                  <div class="feature-card__icon-bg"></div>
+                  <img
+                    src="/assets/images/thuvien.png"
+                    alt="Icon thư viện"
+                    class="feature-card__icon"
+                    loading="lazy"
+                  />
+                </div>
+                <span class="feature-card__number" aria-hidden="true">03</span>
+                <h3 class="feature-card__title">Cơ sở Thư viện</h3>
+                <p class="feature-card__description">
+                  Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả.
+                </p>
+              </article>
+            </div>
 
-			<!-- SECTION: Programs Title & Filters -->
-			<section
-				class="programs-section"
-				id="programs"
-				aria-labelledby="programs-title"
-			>
-				<div class="container">
-					<!-- Desktop: Section Title -->
-					<div
-						class="programs-section__header text-center mb-4 d-none d-lg-block"
-					>
-						<p class="programs-section__subtitle">
-							chương trình đào tạo
-						</p>
-						<h2 id="programs-title" class="programs-section__title">
-							CÁC NGÀNH ĐÀO TẠO
-						</h2>
-					</div>
+            <!-- Feature Card 4: Giá cả -->
+            <div class="col-lg-3 col-md-6">
+              <article class="feature-card">
+                <div class="feature-card__icon-wrapper">
+                  <div class="feature-card__icon-bg"></div>
+                  <img
+                    src="/assets/svg/hocphi.svg"
+                    alt="Icon học phí"
+                    class="feature-card__icon"
+                    loading="lazy"
+                  />
+                </div>
+                <span class="feature-card__number" aria-hidden="true">04</span>
+                <h3 class="feature-card__title">Giá cả phải chăng</h3>
+                <p class="feature-card__description">
+                  Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Feature Cards -->
 
-					<!-- Mobile: Title box with icon -->
-					<div
-						class="mobile-title-box mobile-title-box--sm d-lg-none mb-4"
-					>
-						<div class="mobile-title-box__icon">
-							<img
-								src="/assets/svg/book.svg"
-								alt=""
-								aria-hidden="true"
-							/>
-						</div>
-						<div class="mobile-title-box__content">
-							<p class="mobile-title-box__overline">
-								chương trình đào tạo
-							</p>
-							<h2 class="mobile-title-box__title">
-								CÁC NGÀNH ĐÀO TẠO
-							</h2>
-						</div>
-					</div>
+      <!-- SECTION: Programs Title & Filters -->
+      <section
+        class="programs-section"
+        id="programs"
+        aria-labelledby="programs-title"
+      >
+        <div class="container">
+          <!-- Desktop: Section Title -->
+          <div
+            class="programs-section__header text-center mb-4 d-none d-lg-block"
+          >
+            <p class="programs-section__subtitle">chương trình đào tạo</p>
+            <h2 id="programs-title" class="programs-section__title">
+              CÁC NGÀNH ĐÀO TẠO
+            </h2>
+          </div>
 
-					<!-- Filter Buttons -->
-					<div
-						class="filter-buttons mb-4"
-						role="group"
-						aria-label="Lọc chương trình đào tạo"
-					>
-						<button
-							class="filter-button filter-button--active"
-							type="button"
-						>
-							đại học chính quy chuẩn
-						</button>
-						<button class="filter-button" type="button">
-							đại học chính quy tiếng anh bán phần, đặc biệt
-						</button>
-						<button class="filter-button" type="button">
-							đại học chính quy quốc tế cấp song bằng
-						</button>
-						<button class="filter-button" type="button">
-							đại học chính quy quốc tế do đối tác cấp bằng
-						</button>
-						<button class="filter-button" type="button">
-							đại học hệ vừa học vừa làm
-						</button>
-						<button class="filter-button" type="button">
-							đại học văn bằng 2
-						</button>
-					</div>
+          <!-- Mobile: Title box with icon -->
+          <div class="mobile-title-box mobile-title-box--sm d-lg-none mb-4">
+            <div class="mobile-title-box__icon">
+              <img src="/assets/svg/book.svg" alt="" aria-hidden="true" />
+            </div>
+            <div class="mobile-title-box__content">
+              <p class="mobile-title-box__overline">chương trình đào tạo</p>
+              <h2 class="mobile-title-box__title">CÁC NGÀNH ĐÀO TẠO</h2>
+            </div>
+          </div>
 
-					<!-- Program Cards Grid -->
-					<div class="row g-4 mb-4">
-						<!-- Program Card 1 -->
-						<div class="col-lg-4 col-md-6">
-							<article class="program-card">
-								<div class="program-card__image-wrapper">
-									<img
-										src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/DZvSyupZrv.png"
-										alt="Tài chính ngân hàng"
-										class="program-card__image"
-										loading="lazy"
-									/>
-									<span class="program-card__badge">
-										<img
-											src="assets/images/bookmark.png"
-											alt="Category icon"
-											class="program-card__badge-icon"
-											loading="lazy"
-										/>
-										Financial
-									</span>
-								</div>
-								<div class="program-card__content">
-									<div class="program-card__lessons">
-										<img
-											src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/1if2ory9zO.png"
-											alt="Lessons icon"
-											class="program-card__lessons-icon"
-											loading="lazy"
-										/>
-										<span>10 Lessons</span>
-									</div>
-									<h3 class="program-card__title">
-										tài chính ngân hàng
-									</h3>
-									<p class="program-card__description">
-										Lorem Ipsum chỉ đơn giản là một đoạn văn
-										bản giả, được dùng vào việc trình bày và
-										dàn trang phục vụ cho in ấn.
-									</p>
-									<div class="program-card__divider"></div>
-									<div class="program-card__meta">
-										<div class="program-card__meta-item">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/Y1k5cRa6Ck.png"
-												alt="Seats icon"
-												class="program-card__meta-icon"
-												loading="lazy"
-											/>
-											<span>100 Chỗ ngồi</span>
-										</div>
-										<div class="program-card__meta-item">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/ZTbbfWmRLm.png"
-												alt="Duration icon"
-												class="program-card__meta-icon"
-												loading="lazy"
-											/>
-											<span>4 năm</span>
-										</div>
-									</div>
-								</div>
-							</article>
-						</div>
+          <!-- Filter Buttons -->
+          <div
+            class="filter-buttons mb-4"
+            role="group"
+            aria-label="Lọc chương trình đào tạo"
+          >
+            <button class="filter-button filter-button--active" type="button">
+              đại học chính quy chuẩn
+            </button>
+            <button class="filter-button" type="button">
+              đại học chính quy tiếng anh bán phần, đặc biệt
+            </button>
+            <button class="filter-button" type="button">
+              đại học chính quy quốc tế cấp song bằng
+            </button>
+            <button class="filter-button" type="button">
+              đại học chính quy quốc tế do đối tác cấp bằng
+            </button>
+            <button class="filter-button" type="button">
+              đại học hệ vừa học vừa làm
+            </button>
+            <button class="filter-button" type="button">
+              đại học văn bằng 2
+            </button>
+          </div>
 
-						<!-- Program Card 2 -->
-						<div class="col-lg-4 col-md-6">
-							<article class="program-card">
-								<div class="program-card__image-wrapper">
-									<img
-										src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/V0dnKD5yVw.png"
-										alt="Quản trị kinh doanh"
-										class="program-card__image"
-										loading="lazy"
-									/>
-									<span class="program-card__badge">
-										<img
-											src="assets/images/bookmark.png"
-											alt="Category icon"
-											class="program-card__badge-icon"
-											loading="lazy"
-										/>
-										Financial
-									</span>
-								</div>
-								<div class="program-card__content">
-									<div class="program-card__lessons">
-										<img
-											src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/1if2ory9zO.png"
-											alt="Lessons icon"
-											class="program-card__lessons-icon"
-											loading="lazy"
-										/>
-										<span>10 Lessons</span>
-									</div>
-									<h3 class="program-card__title">
-										quản trị kinh doanh
-									</h3>
-									<p class="program-card__description">
-										Lorem Ipsum chỉ đơn giản là một đoạn văn
-										bản giả, được dùng vào việc trình bày và
-										dàn trang phục vụ cho in ấn.
-									</p>
-									<div class="program-card__divider"></div>
-									<div class="program-card__meta">
-										<div class="program-card__meta-item">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/Y1k5cRa6Ck.png"
-												alt="Seats icon"
-												class="program-card__meta-icon"
-												loading="lazy"
-											/>
-											<span>100 Chỗ ngồi</span>
-										</div>
-										<div class="program-card__meta-item">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/ZTbbfWmRLm.png"
-												alt="Duration icon"
-												class="program-card__meta-icon"
-												loading="lazy"
-											/>
-											<span>4 năm</span>
-										</div>
-									</div>
-								</div>
-							</article>
-						</div>
+          <!-- Program Cards Grid -->
+          <div class="row g-4 mb-4">
+            <!-- Program Card 1 -->
+            <div class="col-lg-4 col-md-6">
+              <article class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img1.png"
+                    alt="Tài chính ngân hàng"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">tài chính ngân hàng</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
 
-						<!-- Program Card 3 -->
-						<div class="col-lg-4 col-md-6">
-							<article class="program-card">
-								<div class="program-card__image-wrapper">
-									<img
-										src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/avYRxJusoX.png"
-										alt="Ngành kinh tế quốc tế"
-										class="program-card__image"
-										loading="lazy"
-									/>
-									<span class="program-card__badge">
-										<img
-											src="assets/images/bookmark.png"
-											alt="Category icon"
-											class="program-card__badge-icon"
-											loading="lazy"
-										/>
-										Financial
-									</span>
-								</div>
-								<div class="program-card__content">
-									<div class="program-card__lessons">
-										<img
-											src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/1if2ory9zO.png"
-											alt="Lessons icon"
-											class="program-card__lessons-icon"
-											loading="lazy"
-										/>
-										<span>10 Lessons</span>
-									</div>
-									<h3 class="program-card__title">
-										ngành kinh tế quốc tế
-									</h3>
-									<p class="program-card__description">
-										Lorem Ipsum chỉ đơn giản là một đoạn văn
-										bản giả, được dùng vào việc trình bày và
-										dàn trang phục vụ cho in ấn.
-									</p>
-									<div class="program-card__divider"></div>
-									<div class="program-card__meta">
-										<div class="program-card__meta-item">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/Y1k5cRa6Ck.png"
-												alt="Seats icon"
-												class="program-card__meta-icon"
-												loading="lazy"
-											/>
-											<span>100 Chỗ ngồi</span>
-										</div>
-										<div class="program-card__meta-item">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/ZTbbfWmRLm.png"
-												alt="Duration icon"
-												class="program-card__meta-icon"
-												loading="lazy"
-											/>
-											<span>4 năm</span>
-										</div>
-									</div>
-								</div>
-							</article>
-						</div>
+            <!-- Program Card 2 -->
+            <div class="col-lg-4 col-md-6">
+              <article class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img2.png"
+                    alt="Quản trị kinh doanh"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">quản trị kinh doanh</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
 
-						<!-- Program Card 4 -->
-						<div class="col-lg-4 col-md-6">
-							<article class="program-card">
-								<div class="program-card__image-wrapper">
-									<img
-										src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/oKdUr88jKj.png"
-										alt="Ngành marketing"
-										class="program-card__image"
-										loading="lazy"
-									/>
-									<span class="program-card__badge">
-										<img
-											src="assets/images/bookmark.png"
-											alt="Category icon"
-											class="program-card__badge-icon"
-											loading="lazy"
-										/>
-										Financial
-									</span>
-								</div>
-								<div class="program-card__content">
-									<div class="program-card__lessons">
-										<img
-											src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/1if2ory9zO.png"
-											alt="Lessons icon"
-											class="program-card__lessons-icon"
-											loading="lazy"
-										/>
-										<span>10 Lessons</span>
-									</div>
-									<h3 class="program-card__title">
-										ngành marketing
-									</h3>
-									<p class="program-card__description">
-										Lorem Ipsum chỉ đơn giản là một đoạn văn
-										bản giả, được dùng vào việc trình bày và
-										dàn trang phục vụ cho in ấn.
-									</p>
-									<div class="program-card__divider"></div>
-									<div class="program-card__meta">
-										<div class="program-card__meta-item">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/Y1k5cRa6Ck.png"
-												alt="Seats icon"
-												class="program-card__meta-icon"
-												loading="lazy"
-											/>
-											<span>100 Chỗ ngồi</span>
-										</div>
-										<div class="program-card__meta-item">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/ZTbbfWmRLm.png"
-												alt="Duration icon"
-												class="program-card__meta-icon"
-												loading="lazy"
-											/>
-											<span>4 năm</span>
-										</div>
-									</div>
-								</div>
-							</article>
-						</div>
+            <!-- Program Card 3 -->
+            <div class="col-lg-4 col-md-6">
+              <article class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img3.png"
+                    alt="Ngành kinh tế quốc tế"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">ngành kinh tế quốc tế</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
 
-						<!-- Program Card 5 -->
-						<div class="col-lg-4 col-md-6">
-							<article class="program-card">
-								<div class="program-card__image-wrapper">
-									<img
-										src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/wD9az0av5t.png"
-										alt="Ngành công nghệ tài chính"
-										class="program-card__image"
-										loading="lazy"
-									/>
-									<span class="program-card__badge">
-										<img
-											src="assets/images/bookmark.png"
-											alt="Category icon"
-											class="program-card__badge-icon"
-											loading="lazy"
-										/>
-										Financial
-									</span>
-								</div>
-								<div class="program-card__content">
-									<div class="program-card__lessons">
-										<img
-											src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/1if2ory9zO.png"
-											alt="Lessons icon"
-											class="program-card__lessons-icon"
-											loading="lazy"
-										/>
-										<span>10 Lessons</span>
-									</div>
-									<h3 class="program-card__title">
-										ngành công nghệ tài chính
-									</h3>
-									<p class="program-card__description">
-										Lorem Ipsum chỉ đơn giản là một đoạn văn
-										bản giả, được dùng vào việc trình bày và
-										dàn trang phục vụ cho in ấn.
-									</p>
-									<div class="program-card__divider"></div>
-									<div class="program-card__meta">
-										<div class="program-card__meta-item">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/Y1k5cRa6Ck.png"
-												alt="Seats icon"
-												class="program-card__meta-icon"
-												loading="lazy"
-											/>
-											<span>100 Chỗ ngồi</span>
-										</div>
-										<div class="program-card__meta-item">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/ZTbbfWmRLm.png"
-												alt="Duration icon"
-												class="program-card__meta-icon"
-												loading="lazy"
-											/>
-											<span>4 năm</span>
-										</div>
-									</div>
-								</div>
-							</article>
-						</div>
+            <!-- Program Card 4 -->
+            <div class="col-lg-4 col-md-6">
+              <article class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img4.png"
+                    alt="Ngành marketing"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">ngành marketing</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
 
-						<!-- Program Card 6 -->
-						<div class="col-lg-4 col-md-6">
-							<article class="program-card">
-								<div class="program-card__image-wrapper">
-									<img
-										src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/mtiWharfFy.png"
-										alt="Ngành kinh doanh quốc tế"
-										class="program-card__image"
-										loading="lazy"
-									/>
-									<span class="program-card__badge">
-										<img
-											src="assets/images/bookmark.png"
-											alt="Category icon"
-											class="program-card__badge-icon"
-											loading="lazy"
-										/>
-										Financial
-									</span>
-								</div>
-								<div class="program-card__content">
-									<div class="program-card__lessons">
-										<img
-											src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/1if2ory9zO.png"
-											alt="Lessons icon"
-											class="program-card__lessons-icon"
-											loading="lazy"
-										/>
-										<span>10 Lessons</span>
-									</div>
-									<h3 class="program-card__title">
-										ngành kinh doanh quốc tế
-									</h3>
-									<p class="program-card__description">
-										Lorem Ipsum chỉ đơn giản là một đoạn văn
-										bản giả, được dùng vào việc trình bày và
-										dàn trang phục vụ cho in ấn.
-									</p>
-									<div class="program-card__divider"></div>
-									<div class="program-card__meta">
-										<div class="program-card__meta-item">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/Y1k5cRa6Ck.png"
-												alt="Seats icon"
-												class="program-card__meta-icon"
-												loading="lazy"
-											/>
-											<span>100 Chỗ ngồi</span>
-										</div>
-										<div class="program-card__meta-item">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/ZTbbfWmRLm.png"
-												alt="Duration icon"
-												class="program-card__meta-icon"
-												loading="lazy"
-											/>
-											<span>4 năm</span>
-										</div>
-									</div>
-								</div>
-							</article>
-						</div>
+            <!-- Program Card 5 -->
+            <div class="col-lg-4 col-md-6">
+              <article class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img5.png"
+                    alt="Ngành công nghệ tài chính"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">ngành công nghệ tài chính</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
 
-						<!-- Program Card 7 -->
-						<div class="col-lg-4 col-md-6">
-							<article class="program-card">
-								<div class="program-card__image-wrapper">
-									<img
-										src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/7bJYMmY8wi.png"
-										alt="Ngành luật kinh tế"
-										class="program-card__image"
-										loading="lazy"
-									/>
-									<span class="program-card__badge">
-										<img
-											src="assets/images/bookmark.png"
-											alt="Category icon"
-											class="program-card__badge-icon"
-											loading="lazy"
-										/>
-										Financial
-									</span>
-								</div>
-								<div class="program-card__content">
-									<div class="program-card__lessons">
-										<img
-											src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/1if2ory9zO.png"
-											alt="Lessons icon"
-											class="program-card__lessons-icon"
-											loading="lazy"
-										/>
-										<span>10 Lessons</span>
-									</div>
-									<h3 class="program-card__title">
-										ngành luật kinh tế
-									</h3>
-									<p class="program-card__description">
-										Lorem Ipsum chỉ đơn giản là một đoạn văn
-										bản giả, được dùng vào việc trình bày và
-										dàn trang phục vụ cho in ấn.
-									</p>
-									<div class="program-card__divider"></div>
-									<div class="program-card__meta">
-										<div class="program-card__meta-item">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/Y1k5cRa6Ck.png"
-												alt="Seats icon"
-												class="program-card__meta-icon"
-												loading="lazy"
-											/>
-											<span>100 Chỗ ngồi</span>
-										</div>
-										<div class="program-card__meta-item">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/ZTbbfWmRLm.png"
-												alt="Duration icon"
-												class="program-card__meta-icon"
-												loading="lazy"
-											/>
-											<span>4 năm</span>
-										</div>
-									</div>
-								</div>
-							</article>
-						</div>
+            <!-- Program Card 6 -->
+            <div class="col-lg-4 col-md-6">
+              <article class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img6.png"
+                    alt="Ngành kinh doanh quốc tế"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">ngành kinh doanh quốc tế</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
 
-						<!-- Program Card 8 -->
-						<div class="col-lg-4 col-md-6">
-							<article class="program-card">
-								<div class="program-card__image-wrapper">
-									<img
-										src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/BcFiBE4zAy.png"
-										alt="Ngành ngôn ngữ anh"
-										class="program-card__image"
-										loading="lazy"
-									/>
-									<span class="program-card__badge">
-										<img
-											src="assets/images/bookmark.png"
-											alt="Category icon"
-											class="program-card__badge-icon"
-											loading="lazy"
-										/>
-										Financial
-									</span>
-								</div>
-								<div class="program-card__content">
-									<div class="program-card__lessons">
-										<img
-											src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/1if2ory9zO.png"
-											alt="Lessons icon"
-											class="program-card__lessons-icon"
-											loading="lazy"
-										/>
-										<span>10 Lessons</span>
-									</div>
-									<h3 class="program-card__title">
-										ngành ngôn ngữ anh
-									</h3>
-									<p class="program-card__description">
-										Lorem Ipsum chỉ đơn giản là một đoạn văn
-										bản giả, được dùng vào việc trình bày và
-										dàn trang phục vụ cho in ấn.
-									</p>
-									<div class="program-card__divider"></div>
-									<div class="program-card__meta">
-										<div class="program-card__meta-item">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/Y1k5cRa6Ck.png"
-												alt="Seats icon"
-												class="program-card__meta-icon"
-												loading="lazy"
-											/>
-											<span>100 Chỗ ngồi</span>
-										</div>
-										<div class="program-card__meta-item">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/ZTbbfWmRLm.png"
-												alt="Duration icon"
-												class="program-card__meta-icon"
-												loading="lazy"
-											/>
-											<span>4 năm</span>
-										</div>
-									</div>
-								</div>
-							</article>
-						</div>
+            <!-- Program Card 7 -->
+            <div class="col-lg-4 col-md-6">
+              <article class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img7.png"
+                    alt="Ngành luật kinh tế"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">ngành luật kinh tế</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
 
-						<!-- Program Card 9 -->
-						<div class="col-lg-4 col-md-6">
-							<article class="program-card">
-								<div class="program-card__image-wrapper">
-									<img
-										src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/hj4PfTJfS5.png"
-										alt="Ngành khoa học dữ liệu"
-										class="program-card__image"
-										loading="lazy"
-									/>
-									<span class="program-card__badge">
-										<img
-											src="assets/images/bookmark.png"
-											alt="Category icon"
-											class="program-card__badge-icon"
-											loading="lazy"
-										/>
-										Financial
-									</span>
-								</div>
-								<div class="program-card__content">
-									<div class="program-card__lessons">
-										<img
-											src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/1if2ory9zO.png"
-											alt="Lessons icon"
-											class="program-card__lessons-icon"
-											loading="lazy"
-										/>
-										<span>10 Lessons</span>
-									</div>
-									<h3 class="program-card__title">
-										ngành khoa học dữ liệu
-									</h3>
-									<p class="program-card__description">
-										Lorem Ipsum chỉ đơn giản là một đoạn văn
-										bản giả, được dùng vào việc trình bày và
-										dàn trang phục vụ cho in ấn.
-									</p>
-									<div class="program-card__divider"></div>
-									<div class="program-card__meta">
-										<div class="program-card__meta-item">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/Y1k5cRa6Ck.png"
-												alt="Seats icon"
-												class="program-card__meta-icon"
-												loading="lazy"
-											/>
-											<span>100 Chỗ ngồi</span>
-										</div>
-										<div class="program-card__meta-item">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/ZTbbfWmRLm.png"
-												alt="Duration icon"
-												class="program-card__meta-icon"
-												loading="lazy"
-											/>
-											<span>4 năm</span>
-										</div>
-									</div>
-								</div>
-							</article>
-						</div>
-					</div>
+            <!-- Program Card 8 -->
+            <div class="col-lg-4 col-md-6">
+              <article class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img8.png"
+                    alt="Ngành ngôn ngữ anh"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">ngành ngôn ngữ anh</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
 
-					<!-- Mobile Slider Navigation -->
-					<nav
-						class="program-slider-nav d-sm-none"
-						aria-label="Điều hướng slider"
-					>
-						<button
-							class="program-slider-nav__btn program-slider-nav__btn--prev"
-							type="button"
-							aria-label="Slide trước"
-						>
-							<img
-								src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/uEtdSLufrN.png"
-								alt=""
-								loading="lazy"
-							/>
-						</button>
-						<button
-							class="program-slider-nav__btn program-slider-nav__btn--next"
-							type="button"
-							aria-label="Slide sau"
-						>
-							<img
-								src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/hfZNvvXoQk.png"
-								alt=""
-								loading="lazy"
-							/>
-						</button>
-					</nav>
+            <!-- Program Card 9 -->
+            <div class="col-lg-4 col-md-6">
+              <article class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img9.png"
+                    alt="Ngành khoa học dữ liệu"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">ngành khoa học dữ liệu</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
 
-					<!-- Pagination -->
-					<nav
-						class="pagination"
-						aria-label="Phân trang chương trình đào tạo"
-					>
-						<button
-							class="pagination__button pagination__button--prev"
-							type="button"
-							aria-label="Trang trước"
-						>
-							<img
-								src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/uEtdSLufrN.png"
-								alt=""
-								loading="lazy"
-							/>
-						</button>
-						<button
-							class="pagination__button pagination__button--active"
-							type="button"
-							aria-label="Trang 1"
-							aria-current="page"
-						>
-							1
-						</button>
-						<button
-							class="pagination__button"
-							type="button"
-							aria-label="Trang 2"
-						>
-							2
-						</button>
-						<button
-							class="pagination__button pagination__button--next"
-							type="button"
-							aria-label="Trang sau"
-						>
-							<img
-								src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/hfZNvvXoQk.png"
-								alt=""
-								loading="lazy"
-							/>
-						</button>
-					</nav>
-				</div>
-			</section>
+          <!-- Mobile Slider Navigation -->
+          <nav
+            class="program-slider-nav d-sm-none"
+            aria-label="Điều hướng slider"
+          >
+            <button
+              class="program-slider-nav__btn program-slider-nav__btn--prev"
+              type="button"
+              aria-label="Slide trước"
+            >
+              <img src="/assets/svg/d-arrow-left.svg" alt="" loading="lazy" />
+            </button>
+            <button
+              class="program-slider-nav__btn program-slider-nav__btn--next"
+              type="button"
+              aria-label="Slide sau"
+            >
+              <img src="/assets/svg/d-arrow-right.svg" alt="" loading="lazy" />
+            </button>
+          </nav>
 
-			<!-- SECTION: Recruitment Process -->
-			<section
-				class="recruitment-section"
-				id="recruitment"
-				aria-labelledby="recruitment-title"
-			>
-				<div class="recruitment-section__bg"></div>
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-5">
-							<img
-								src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/Nv2204GWVR.png"
-								alt="Quy trình tuyển sinh"
-								class="recruitment-section__image"
-								loading="lazy"
-							/>
-						</div>
-						<div class="col-lg-7">
-							<div class="recruitment-section__content">
-								<!-- Desktop: subtitle + title + description -->
-								<p
-									class="recruitment-section__subtitle d-none d-lg-block"
-								>
-									quy trình tuyển sinh
-								</p>
-								<h2
-									id="recruitment-title"
-									class="recruitment-section__title d-none d-lg-block"
-								>
-									CÁC BƯỚC ĐƠN GIẢN ĐỂ BẮT ĐẦU
-								</h2>
-								<p
-									class="recruitment-section__description d-none d-lg-block"
-								>
-									Lorem Ipsum chỉ đơn giản là một đoạn văn bản
-									giả, được dùng vào việc trình bày và dàn
-									trang phục vụ cho in ấn. Lorem Ipsum đã được
-									sử dụng như một văn bản chuẩn cho ngành công
-									nghiệp
-								</p>
+          <!-- Pagination -->
+          <nav class="pagination" aria-label="Phân trang chương trình đào tạo">
+            <button
+              class="pagination__button pagination__button--prev"
+              type="button"
+              aria-label="Trang trước"
+            >
+              <img src="/assets/svg/d-arrow-left.svg" alt="" loading="lazy" />
+            </button>
+            <button
+              class="pagination__button pagination__button--active"
+              type="button"
+              aria-label="Trang 1"
+              aria-current="page"
+            >
+              1
+            </button>
+            <button
+              class="pagination__button"
+              type="button"
+              aria-label="Trang 2"
+            >
+              2
+            </button>
+            <button
+              class="pagination__button pagination__button--next"
+              type="button"
+              aria-label="Trang sau"
+            >
+              <img src="/assets/svg/d-arrow-right.svg" alt="" loading="lazy" />
+            </button>
+          </nav>
+        </div>
+      </section>
 
-								<!-- Mobile: title box with icon -->
-								<div
-									class="mobile-title-box mobile-title-box--filled d-lg-none"
-								>
-									<div class="mobile-title-box__icon">
-										<img
-											src="/assets/svg/chevron-right-triple.svg"
-											alt=""
-											aria-hidden="true"
-										/>
-									</div>
-									<div class="mobile-title-box__content">
-										<h2 class="mobile-title-box__title">
-											Các Bước Đơn Giản Để Bắt Đầu
-										</h2>
-									</div>
-								</div>
+      <!-- SECTION: Recruitment Process -->
+      <section
+        class="recruitment-section"
+        id="recruitment"
+        aria-labelledby="recruitment-title"
+      >
+        <div class="recruitment-section__bg"></div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5">
+              <img
+                src="/assets/images/recruitment_img.png"
+                alt="Quy trình tuyển sinh"
+                class="recruitment-section__image"
+                loading="lazy"
+              />
+            </div>
+            <div class="col-lg-7">
+              <div class="recruitment-section__content">
+                <!-- Desktop: subtitle + title + description -->
+                <p class="recruitment-section__subtitle d-none d-lg-block">
+                  quy trình tuyển sinh
+                </p>
+                <h2
+                  id="recruitment-title"
+                  class="recruitment-section__title d-none d-lg-block"
+                >
+                  CÁC BƯỚC ĐƠN GIẢN ĐỂ BẮT ĐẦU
+                </h2>
+                <p class="recruitment-section__description d-none d-lg-block">
+                  Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                  vào việc trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum
+                  đã được sử dụng như một văn bản chuẩn cho ngành công nghiệp
+                </p>
 
-								<div class="recruitment-steps">
-									<!-- Row 1 -->
-									<div class="recruitment-steps__row">
-										<article class="recruitment-step">
-											<div
-												class="recruitment-step__number"
-												aria-hidden="true"
-											>
-												1
-											</div>
-											<div
-												class="recruitment-step__icon-wrapper"
-											>
-												<div
-													class="recruitment-step__icon-bg"
-												></div>
-												<img
-													src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/CicZO36guf.png"
-													alt="Step 1 icon"
-													class="recruitment-step__icon"
-													loading="lazy"
-												/>
-											</div>
-											<h3 class="recruitment-step__title">
-												chọn chương<br />trình học
-											</h3>
-											<p
-												class="recruitment-step__description"
-											>
-												Lorem Ipsum chỉ đơn giản là một
-												đoạn văn bản giả
-											</p>
-										</article>
+                <!-- Mobile: title box with icon -->
+                <div
+                  class="mobile-title-box mobile-title-box--filled d-lg-none"
+                >
+                  <div class="mobile-title-box__icon">
+                    <img
+                      src="/assets/svg/chevron-right-triple.svg"
+                      alt=""
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <div class="mobile-title-box__content">
+                    <h2 class="mobile-title-box__title">
+                      Các Bước Đơn Giản Để Bắt Đầu
+                    </h2>
+                  </div>
+                </div>
 
-										<article class="recruitment-step">
-											<div
-												class="recruitment-step__number"
-												aria-hidden="true"
-											>
-												2
-											</div>
-											<div
-												class="recruitment-step__icon-wrapper"
-											>
-												<div
-													class="recruitment-step__icon-bg"
-												></div>
-												<img
-													src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/D1vEQWt37R.png"
-													alt="Step 2 icon"
-													class="recruitment-step__icon"
-													loading="lazy"
-												/>
-											</div>
-											<h3 class="recruitment-step__title">
-												chuẩn bị tài<br />liệu của bạn
-											</h3>
-											<p
-												class="recruitment-step__description"
-											>
-												Lorem Ipsum chỉ đơn giản là một
-												đoạn văn bản giả
-											</p>
-										</article>
+                <div class="recruitment-steps">
+                  <!-- Row 1 -->
+                  <div class="recruitment-steps__row">
+                    <article class="recruitment-step">
+                      <div class="recruitment-step__number" aria-hidden="true">
+                        1
+                      </div>
+                      <div class="recruitment-step__icon-wrapper">
+                        <div class="recruitment-step__icon-bg"></div>
+                        <img
+                          src="/assets/images/recruitment_step1.png"
+                          alt="Step 1 icon"
+                          class="recruitment-step__icon"
+                          loading="lazy"
+                        />
+                      </div>
+                      <h3 class="recruitment-step__title">
+                        chọn chương<br />trình học
+                      </h3>
+                      <p class="recruitment-step__description">
+                        Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả
+                      </p>
+                    </article>
 
-										<article class="recruitment-step">
-											<div
-												class="recruitment-step__number"
-												aria-hidden="true"
-											>
-												3
-											</div>
-											<div
-												class="recruitment-step__icon-wrapper"
-											>
-												<div
-													class="recruitment-step__icon-bg"
-												></div>
-												<img
-													src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/QeFKsTNGPp.png"
-													alt="Step 3 icon"
-													class="recruitment-step__icon"
-													loading="lazy"
-												/>
-											</div>
-											<h3 class="recruitment-step__title">
-												kiểm tra đủ<br />điều kiện
-											</h3>
-											<p
-												class="recruitment-step__description"
-											>
-												Lorem Ipsum chỉ đơn giản là một
-												đoạn văn bản giả
-											</p>
-										</article>
-									</div>
+                    <article class="recruitment-step">
+                      <div class="recruitment-step__number" aria-hidden="true">
+                        2
+                      </div>
+                      <div class="recruitment-step__icon-wrapper">
+                        <div class="recruitment-step__icon-bg"></div>
+                        <img
+                          src="/assets/images/recruitment_step2.png"
+                          alt="Step 2 icon"
+                          class="recruitment-step__icon"
+                          loading="lazy"
+                        />
+                      </div>
+                      <h3 class="recruitment-step__title">
+                        chuẩn bị tài<br />liệu của bạn
+                      </h3>
+                      <p class="recruitment-step__description">
+                        Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả
+                      </p>
+                    </article>
 
-									<!-- Row 2 -->
-									<div class="recruitment-steps__row">
-										<article class="recruitment-step">
-											<div
-												class="recruitment-step__number"
-												aria-hidden="true"
-											>
-												4
-											</div>
-											<div
-												class="recruitment-step__icon-wrapper"
-											>
-												<div
-													class="recruitment-step__icon-bg"
-												></div>
-												<img
-													src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/T7PWPWyvBO.png"
-													alt="Step 4 icon"
-													class="recruitment-step__icon"
-													loading="lazy"
-												/>
-											</div>
-											<h3 class="recruitment-step__title">
-												hoàn thành<br />đăng ký Online
-											</h3>
-											<p
-												class="recruitment-step__description"
-											>
-												Lorem Ipsum chỉ đơn giản là một
-												đoạn văn bản giả
-											</p>
-										</article>
+                    <article class="recruitment-step">
+                      <div class="recruitment-step__number" aria-hidden="true">
+                        3
+                      </div>
+                      <div class="recruitment-step__icon-wrapper">
+                        <div class="recruitment-step__icon-bg"></div>
+                        <img
+                          src="/assets/images/recruitment_step3.png"
+                          alt="Step 3 icon"
+                          class="recruitment-step__icon"
+                          loading="lazy"
+                        />
+                      </div>
+                      <h3 class="recruitment-step__title">
+                        kiểm tra đủ<br />điều kiện
+                      </h3>
+                      <p class="recruitment-step__description">
+                        Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả
+                      </p>
+                    </article>
+                  </div>
 
-										<article class="recruitment-step">
-											<div
-												class="recruitment-step__number"
-												aria-hidden="true"
-											>
-												5
-											</div>
-											<div
-												class="recruitment-step__icon-wrapper"
-											>
-												<div
-													class="recruitment-step__icon-bg"
-												></div>
-												<img
-													src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/BJsVFdXtsY.png"
-													alt="Step 5 icon"
-													class="recruitment-step__icon"
-													loading="lazy"
-												/>
-											</div>
-											<h3 class="recruitment-step__title">
-												tham dự phỏng<br />vấn hoặc đánh
-												giá
-											</h3>
-											<p
-												class="recruitment-step__description"
-											>
-												Lorem Ipsum chỉ đơn giản là một
-												đoạn văn bản giả
-											</p>
-										</article>
+                  <!-- Row 2 -->
+                  <div class="recruitment-steps__row">
+                    <article class="recruitment-step">
+                      <div class="recruitment-step__number" aria-hidden="true">
+                        4
+                      </div>
+                      <div class="recruitment-step__icon-wrapper">
+                        <div class="recruitment-step__icon-bg"></div>
+                        <img
+                          src="/assets/images/recruitment_step4.png"
+                          alt="Step 4 icon"
+                          class="recruitment-step__icon"
+                          loading="lazy"
+                        />
+                      </div>
+                      <h3 class="recruitment-step__title">
+                        hoàn thành<br />đăng ký Online
+                      </h3>
+                      <p class="recruitment-step__description">
+                        Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả
+                      </p>
+                    </article>
 
-										<article class="recruitment-step">
-											<div
-												class="recruitment-step__number"
-												aria-hidden="true"
-											>
-												6
-											</div>
-											<div
-												class="recruitment-step__icon-wrapper"
-											>
-												<div
-													class="recruitment-step__icon-bg"
-												></div>
-												<img
-													src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/x6gymjO7JH.png"
-													alt="Step 6 icon"
-													class="recruitment-step__icon"
-													loading="lazy"
-												/>
-											</div>
-											<h3 class="recruitment-step__title">
-												nhận quyết định<br />tuyển sinh
-											</h3>
-											<p
-												class="recruitment-step__description"
-											>
-												Lorem Ipsum chỉ đơn giản là một
-												đoạn văn bản giả
-											</p>
-										</article>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+                    <article class="recruitment-step">
+                      <div class="recruitment-step__number" aria-hidden="true">
+                        5
+                      </div>
+                      <div class="recruitment-step__icon-wrapper">
+                        <div class="recruitment-step__icon-bg"></div>
+                        <img
+                          src="/assets/images/recruitment_step5.png"
+                          alt="Step 5 icon"
+                          class="recruitment-step__icon"
+                          loading="lazy"
+                        />
+                      </div>
+                      <h3 class="recruitment-step__title">
+                        tham dự phỏng<br />vấn hoặc đánh giá
+                      </h3>
+                      <p class="recruitment-step__description">
+                        Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả
+                      </p>
+                    </article>
 
-			<!-- SECTION: FAQ -->
-			<section class="faq-section" id="faq" aria-labelledby="faq-title">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-7">
-							<!-- Desktop: Title + Subtitles -->
-							<h2
-								id="faq-title"
-								class="faq-section__title d-none d-sm-block"
-							>
-								CÂU HỎI THƯỜNG GẶP
-							</h2>
-							<p class="faq-section__subtitle d-none d-sm-block">
-								HUB – Nơi hội tụ tinh hoa tài chính
-							</p>
-							<p class="faq-section__subtitle d-none d-sm-block">
-								Dẫn đầu giáo dục tài chính – Ngân hàng
-							</p>
+                    <article class="recruitment-step">
+                      <div class="recruitment-step__number" aria-hidden="true">
+                        6
+                      </div>
+                      <div class="recruitment-step__icon-wrapper">
+                        <div class="recruitment-step__icon-bg"></div>
+                        <img
+                          src="/assets/images/recruitment_step6.png"
+                          alt="Step 6 icon"
+                          class="recruitment-step__icon"
+                          loading="lazy"
+                        />
+                      </div>
+                      <h3 class="recruitment-step__title">
+                        nhận quyết định<br />tuyển sinh
+                      </h3>
+                      <p class="recruitment-step__description">
+                        Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả
+                      </p>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-							<!-- Mobile: Title box with icon -->
-							<div
-								class="mobile-title-box mobile-title-box--lg d-sm-none mb-4"
-							>
-								<div class="mobile-title-box__icon">
-									<img
-										src="/assets/svg/question.svg"
-										alt=""
-										aria-hidden="true"
-									/>
-								</div>
-								<div class="mobile-title-box__content">
-									<p class="mobile-title-box__overline">
-										TRƯỜNG ĐẠI HỌC NGÂN HÀNG HUB
-									</p>
-									<h2 class="mobile-title-box__title">
-										CÂU HỎI THƯỜNG GẶP
-									</h2>
-								</div>
-							</div>
+      <!-- SECTION: FAQ -->
+      <section class="faq-section" id="faq" aria-labelledby="faq-title">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7">
+              <!-- Desktop: Title + Subtitles -->
+              <h2 id="faq-title" class="faq-section__title d-none d-sm-block">
+                CÂU HỎI THƯỜNG GẶP
+              </h2>
+              <p class="faq-section__subtitle d-none d-sm-block">
+                HUB – Nơi hội tụ tinh hoa tài chính
+              </p>
+              <p class="faq-section__subtitle d-none d-sm-block">
+                Dẫn đầu giáo dục tài chính – Ngân hàng
+              </p>
 
-							<div class="faq-list">
-								<!-- FAQ Item 1 - Expanded -->
-								<article class="faq-item faq-item--active">
-									<button
-										class="faq-item__header"
-										type="button"
-										aria-expanded="true"
-									>
-										<h3 class="faq-item__title">
-											Về Tuyển sinh – Đại học, Thạc sĩ,
-											Tiến sĩ?
-										</h3>
-										<span
-											class="faq-item__icon"
-											aria-hidden="true"
-										></span>
-									</button>
-									<div class="faq-item__content">
-										<p class="faq-item__description">
-											Lorem Ipsum chỉ đơn giản là một đoạn
-											văn bản giả, được dùng vào việc
-											trình bày và dàn trang phục vụ cho
-											in ấn. Lorem Ipsum đã được sử dụng
-											như một văn bản chuẩn cho ngành công
-											nghiệp in ấn từ những năm 1500
-										</p>
-									</div>
-								</article>
+              <!-- Mobile: Title box with icon -->
+              <div class="mobile-title-box mobile-title-box--lg d-sm-none mb-4">
+                <div class="mobile-title-box__icon">
+                  <img
+                    src="/assets/svg/question.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </div>
+                <div class="mobile-title-box__content">
+                  <p class="mobile-title-box__overline">
+                    TRƯỜNG ĐẠI HỌC NGÂN HÀNG HUB
+                  </p>
+                  <h2 class="mobile-title-box__title">CÂU HỎI THƯỜNG GẶP</h2>
+                </div>
+              </div>
 
-								<!-- FAQ Item 2 -->
-								<article class="faq-item">
-									<button
-										class="faq-item__header"
-										type="button"
-										aria-expanded="false"
-									>
-										<h3 class="faq-item__title">
-											Về Chương trình đào tạo?
-										</h3>
-										<span
-											class="faq-item__icon"
-											aria-hidden="true"
-										></span>
-									</button>
-									<div class="faq-item__content">
-										<p class="faq-item__description">
-											Lorem Ipsum chỉ đơn giản là một đoạn
-											văn bản giả, được dùng vào việc
-											trình bày và dàn trang phục vụ cho
-											in ấn.
-										</p>
-									</div>
-								</article>
+              <div class="faq-list">
+                <!-- FAQ Item 1 - Expanded -->
+                <article class="faq-item faq-item--active">
+                  <button
+                    class="faq-item__header"
+                    type="button"
+                    aria-expanded="true"
+                  >
+                    <h3 class="faq-item__title">
+                      Về Tuyển sinh – Đại học, Thạc sĩ, Tiến sĩ?
+                    </h3>
+                    <span class="faq-item__icon" aria-hidden="true"></span>
+                  </button>
+                  <div class="faq-item__content">
+                    <p class="faq-item__description">
+                      Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được
+                      dùng vào việc trình bày và dàn trang phục vụ cho in ấn.
+                      Lorem Ipsum đã được sử dụng như một văn bản chuẩn cho
+                      ngành công nghiệp in ấn từ những năm 1500
+                    </p>
+                  </div>
+                </article>
 
-								<!-- FAQ Item 3 -->
-								<article class="faq-item">
-									<button
-										class="faq-item__header"
-										type="button"
-										aria-expanded="false"
-									>
-										<h3 class="faq-item__title">
-											Học phí – Học bổng?
-										</h3>
-										<span
-											class="faq-item__icon"
-											aria-hidden="true"
-										></span>
-									</button>
-									<div class="faq-item__content">
-										<p class="faq-item__description">
-											Lorem Ipsum chỉ đơn giản là một đoạn
-											văn bản giả, được dùng vào việc
-											trình bày và dàn trang phục vụ cho
-											in ấn.
-										</p>
-									</div>
-								</article>
+                <!-- FAQ Item 2 -->
+                <article class="faq-item">
+                  <button
+                    class="faq-item__header"
+                    type="button"
+                    aria-expanded="false"
+                  >
+                    <h3 class="faq-item__title">Về Chương trình đào tạo?</h3>
+                    <span class="faq-item__icon" aria-hidden="true"></span>
+                  </button>
+                  <div class="faq-item__content">
+                    <p class="faq-item__description">
+                      Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được
+                      dùng vào việc trình bày và dàn trang phục vụ cho in ấn.
+                    </p>
+                  </div>
+                </article>
 
-								<!-- FAQ Item 4 -->
-								<article class="faq-item">
-									<button
-										class="faq-item__header"
-										type="button"
-										aria-expanded="false"
-									>
-										<h3 class="faq-item__title">
-											Cơ hội việc làm – Thực tập?
-										</h3>
-										<span
-											class="faq-item__icon"
-											aria-hidden="true"
-										></span>
-									</button>
-									<div class="faq-item__content">
-										<p class="faq-item__description">
-											Lorem Ipsum chỉ đơn giản là một đoạn
-											văn bản giả, được dùng vào việc
-											trình bày và dàn trang phục vụ cho
-											in ấn.
-										</p>
-									</div>
-								</article>
+                <!-- FAQ Item 3 -->
+                <article class="faq-item">
+                  <button
+                    class="faq-item__header"
+                    type="button"
+                    aria-expanded="false"
+                  >
+                    <h3 class="faq-item__title">Học phí – Học bổng?</h3>
+                    <span class="faq-item__icon" aria-hidden="true"></span>
+                  </button>
+                  <div class="faq-item__content">
+                    <p class="faq-item__description">
+                      Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được
+                      dùng vào việc trình bày và dàn trang phục vụ cho in ấn.
+                    </p>
+                  </div>
+                </article>
 
-								<!-- FAQ Item 5 -->
-								<article class="faq-item">
-									<button
-										class="faq-item__header"
-										type="button"
-										aria-expanded="false"
-									>
-										<h3 class="faq-item__title">
-											Cơ sở vật chất – Sinh hoạt sinh
-											viên?
-										</h3>
-										<span
-											class="faq-item__icon"
-											aria-hidden="true"
-										></span>
-									</button>
-									<div class="faq-item__content">
-										<p class="faq-item__description">
-											Lorem Ipsum chỉ đơn giản là một đoạn
-											văn bản giả, được dùng vào việc
-											trình bày và dàn trang phục vụ cho
-											in ấn.
-										</p>
-									</div>
-								</article>
+                <!-- FAQ Item 4 -->
+                <article class="faq-item">
+                  <button
+                    class="faq-item__header"
+                    type="button"
+                    aria-expanded="false"
+                  >
+                    <h3 class="faq-item__title">Cơ hội việc làm – Thực tập?</h3>
+                    <span class="faq-item__icon" aria-hidden="true"></span>
+                  </button>
+                  <div class="faq-item__content">
+                    <p class="faq-item__description">
+                      Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được
+                      dùng vào việc trình bày và dàn trang phục vụ cho in ấn.
+                    </p>
+                  </div>
+                </article>
 
-								<!-- FAQ Item 6 -->
-								<article class="faq-item">
-									<button
-										class="faq-item__header"
-										type="button"
-										aria-expanded="false"
-									>
-										<h3 class="faq-item__title">
-											Học chuyển tiếp – Quốc tế hóa?
-										</h3>
-										<span
-											class="faq-item__icon"
-											aria-hidden="true"
-										></span>
-									</button>
-									<div class="faq-item__content">
-										<p class="faq-item__description">
-											Lorem Ipsum chỉ đơn giản là một đoạn
-											văn bản giả, được dùng vào việc
-											trình bày và dàn trang phục vụ cho
-											in ấn.
-										</p>
-									</div>
-								</article>
-							</div>
+                <!-- FAQ Item 5 -->
+                <article class="faq-item">
+                  <button
+                    class="faq-item__header"
+                    type="button"
+                    aria-expanded="false"
+                  >
+                    <h3 class="faq-item__title">
+                      Cơ sở vật chất – Sinh hoạt sinh viên?
+                    </h3>
+                    <span class="faq-item__icon" aria-hidden="true"></span>
+                  </button>
+                  <div class="faq-item__content">
+                    <p class="faq-item__description">
+                      Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được
+                      dùng vào việc trình bày và dàn trang phục vụ cho in ấn.
+                    </p>
+                  </div>
+                </article>
 
-							<a
-								href="/faq.html"
-								class="link-button faq-section__view-all"
-							>
-								<span>XEM TẤT CẢ</span>
-								<img
-									src="assets/svg/arrow-right.svg"
-									alt=""
-									class="faq-section__view-all-icon"
-									aria-hidden="true"
-								/>
-							</a>
-						</div>
-						<div class="col-lg-5">
-							<img
-								src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/F9rinOuPYy.png"
-								alt="FAQ illustration"
-								class="faq-section__image"
-								loading="lazy"
-							/>
-						</div>
-					</div>
-				</div>
-			</section>
-		</main>
+                <!-- FAQ Item 6 -->
+                <article class="faq-item">
+                  <button
+                    class="faq-item__header"
+                    type="button"
+                    aria-expanded="false"
+                  >
+                    <h3 class="faq-item__title">
+                      Học chuyển tiếp – Quốc tế hóa?
+                    </h3>
+                    <span class="faq-item__icon" aria-hidden="true"></span>
+                  </button>
+                  <div class="faq-item__content">
+                    <p class="faq-item__description">
+                      Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được
+                      dùng vào việc trình bày và dàn trang phục vụ cho in ấn.
+                    </p>
+                  </div>
+                </article>
+              </div>
 
-		<!-- FOOTER -->
-		<div data-include="/partials/footer.html"></div>
+              <a href="/faq.html" class="link-button faq-section__view-all">
+                <span>XEM TẤT CẢ</span>
+                <img
+                  src="assets/svg/arrow-right.svg"
+                  alt=""
+                  class="faq-section__view-all-icon"
+                  aria-hidden="true"
+                />
+              </a>
+            </div>
+            <div class="col-lg-5">
+              <img
+                src="/assets/images/faq_img.png"
+                alt="FAQ illustration"
+                class="faq-section__image"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-		<!-- Bootstrap JS -->
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- FOOTER -->
+    <div data-include="/partials/footer.html"></div>
 
-		<!-- Custom JS -->
-		<script type="module" src="/js/main.js"></script>
-	</body>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script type="module" src="/js/main.js"></script>
+  </body>
 </html>
