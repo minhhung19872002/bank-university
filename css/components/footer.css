@@ -116,13 +116,11 @@
 	color: var(--gray-700);
 }
 
-.footer__list-item img {
-	width: 14px;
-	height: 14px;
+.footer__list-item .iconify {
+	font-size: 14px;
 	margin-top: 5px;
 	flex-shrink: 0;
-	filter: brightness(0) saturate(100%) invert(19%) sepia(69%) saturate(1735%)
-		hue-rotate(207deg) brightness(93%) contrast(89%);
+	color: var(--brand-secondary);
 }
 
 .footer__list-item strong {
@@ -201,9 +199,9 @@
 	transform: scale(1.05);
 }
 
-.footer__social-link img {
-	width: 18px;
-	height: 18px;
+.footer__social-link .iconify {
+	font-size: 18px;
+	color: var(--brand-primary);
 }
 
 /* Responsive Design */
@@ -328,7 +326,7 @@
 		margin-bottom: 12px;
 	}
 
-	.footer__list-item img {
+	.footer__list-item .iconify {
 		margin-top: 3px;
 	}
 
@@ -357,8 +355,7 @@
 		height: 28px;
 	}
 
-	.footer__social-link img {
-		width: 14px;
-		height: 14px;
+	.footer__social-link .iconify {
+		font-size: 14px;
 	}
 }

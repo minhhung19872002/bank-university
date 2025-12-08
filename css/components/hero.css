@@ -153,7 +153,7 @@
 
 /* Hero background cho dai-hoc */
 .hero-section--daihoc .hero-section__bg {
-	background-image: url("https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/MSLK53rGr6.png");
+	background-image: url("/assets/images/hero_bg.png");
 }
 
 /* Feature Cards Section */

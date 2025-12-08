@@ -131,9 +131,8 @@
 	transform: translateY(-2px);
 }
 
-.team-card__social-link svg {
-	width: 14px;
-	height: 14px;
+.team-card__social-link .iconify {
+	font-size: 14px;
 }
 
 /* Responsive */

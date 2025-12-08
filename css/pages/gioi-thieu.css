@@ -6,7 +6,7 @@
 
 /* Hero variant for About page - uses same structure as index hero-section */
 .hero-section--about .hero-section__bg {
-	background-image: url("https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/MSLK53rGr6.png");
+	background-image: url("/assets/images/hero_bg.png");
 }
 
 /* ========== SECTION: About Intro ========== */
