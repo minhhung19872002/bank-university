@@ -13,9 +13,9 @@ html {
 }
 
 body {
-	font-family: Montserrat, var(--font-primary);
-	font-size: var(--fs-300);
-	line-height: 1.6;
+	font-family: var(--font-family-base);
+	font-size: var(--fs-body); /* 16px mobile, scale theo breakpoint */
+	line-height: var(--lh-body-normal); /* 1.5 */
 	color: var(--gray-900);
 	background-color: var(--color-light);
 	overflow-x: hidden;
@@ -37,28 +37,83 @@ button {
 	cursor: pointer;
 }
 
-/* Typography */
+/* ================================================
+   Typography
+   ================================================ */
+
+/* Heading mặc định map theo system Option B */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-	font-weight: 700;
-	line-height: 1.2;
+	font-family: var(--font-family-heading); /* Montserrat */
+	font-weight: var(--fw-bold);
+	line-height: var(--lh-heading-tight);
 	margin-bottom: var(--sp-3);
+}
+
+/* Page / hero title (banner) */
+h1 {
+	font-size: var(--fs-page-title); /* 32 / 36 / 42 */
+}
+
+/* Section title chính: Thông Tin Tuyển Sinh, Tiêu Chí, ... */
+h2 {
+	font-size: var(--fs-heading-xl); /* 26 / 30 / 32 */
+}
+
+/* Subtitle, card title, FAQ question, tên giảng viên */
+h3 {
+	font-size: var(--fs-heading-m); /* 20 / 22 / 24 */
+}
+
+/* Các heading nhỏ hơn, ít dùng hơn */
+h4 {
+	font-size: var(--fs-body); /* 16 */
+}
+
+h5 {
+	font-size: var(--fs-body-sm); /* 14 */
+}
+
+h6 {
+	font-size: var(--fs-caption); /* 13 / 14 */
 }
 
 p {
 	margin-bottom: var(--sp-3);
 }
 
-/* Container utilities */
-.container {
-	max-width: 1200px;
-}
-
-/* Text utilities */
+/* Text utilities cơ bản */
 .text-white {
 	color: var(--color-light) !important;
+}
+
+/* Bạn có thể thêm: */
+.text-body {
+	font-size: var(--fs-body);
+	line-height: var(--lh-body-normal);
+}
+
+.text-body-sm {
+	font-size: var(--fs-body-sm);
+	line-height: var(--lh-body-loose);
+	color: var(--text-muted);
+}
+
+.text-caption {
+	font-size: var(--fs-caption);
+	font-weight: var(--fw-medium);
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: var(--gray-600);
+}
+
+/* ================================================
+   Container utilities
+   ================================================ */
+.container {
+	max-width: 1200px;
 }
