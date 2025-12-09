@@ -115,3 +115,8 @@
 .mobile-title-box--light .mobile-title-box__title {
 	color: var(--color-light);
 }
+
+/* === Variant: Primary Title (title màu primary) === */
+.mobile-title-box--primary-title .mobile-title-box__title {
+	color: var(--brand-primary);
+}
