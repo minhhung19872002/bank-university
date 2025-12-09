@@ -39,8 +39,11 @@ document.addEventListener('DOMContentLoaded', function () {
   // Initialize admission accordion
   initAccordion('.admission-accordion__header', '.admission-accordion__item');
 
-  // Initialize FAQ accordion
+  // Initialize FAQ accordion (legacy)
   initAccordion('.faq-accordion__header', '.faq-accordion__item');
+
+  // Initialize FAQ item component
+  initAccordion('.faq-item__header', '.faq-item');
 
   // Initialize Programs accordion (mobile)
   initProgramsAccordion();
