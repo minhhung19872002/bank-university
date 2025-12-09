@@ -1,8 +1,9 @@
 /* ============================================
    COMPONENT: Program Card
-   Used for Masters/PhD program listings
+   Breakpoints: Desktop (default), Tablet (max-width: 1199px), Mobile (max-width: 575px)
    ============================================ */
 
+/* Desktop-first base styles */
 .program-card {
 	position: relative;
 	width: 100%;
@@ -40,12 +41,12 @@
 	display: flex;
 	align-items: center;
 	gap: 3px;
-	padding: 8px 5px 8px 5px;
+	padding: var(--sp-2) var(--sp-1);
 	background-color: var(--brand-primary);
 	border-radius: 15px 20px 20px 0;
-	font-family: var(--font-primary);
-	font-size: var(--fs-200);
-	font-weight: 500;
+	font-family: var(--font-family-heading);
+	font-size: var(--fs-body-sm);
+	font-weight: var(--fw-medium);
 	line-height: 1.2;
 	color: var(--color-light);
 	text-transform: capitalize;
@@ -57,9 +58,9 @@
 }
 
 .program-card__badge-text {
-	font-family: var(--font-primary);
-	font-size: var(--fs-200);
-	font-weight: 500;
+	font-family: var(--font-family-heading);
+	font-size: var(--fs-body-sm);
+	font-weight: var(--fw-medium);
 	line-height: 1.2;
 	color: var(--color-light);
 	text-transform: capitalize;
@@ -73,8 +74,8 @@
 .program-card__meta {
 	display: flex;
 	align-items: center;
-	gap: 7px;
-	margin-bottom: 13px;
+	gap: var(--sp-1);
+	margin-bottom: var(--sp-2);
 }
 
 .program-card__meta-icon {
@@ -83,23 +84,22 @@
 }
 
 .program-card__meta-text {
-	font-family: var(--font-primary);
-	font-size: var(--fs-200);
-	font-weight: 500;
+	font-family: var(--font-family-heading);
+	font-size: var(--fs-body-sm);
+	font-weight: var(--fw-medium);
 	line-height: 1.2;
 	color: #757f95;
 	text-transform: capitalize;
 }
 
 .program-card__title {
-	font-family: var(--font-primary);
+	font-family: var(--font-family-heading);
 	font-size: var(--fs-450);
-	font-weight: 700;
+	font-weight: var(--fw-bold);
 	line-height: 1.3;
 	color: var(--gray-900);
 	text-transform: capitalize;
-	margin-bottom: 13px;
-	/* Max 2 lines with fixed height */
+	margin-bottom: var(--sp-2);
 	display: -webkit-box;
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
@@ -109,13 +109,12 @@
 }
 
 .program-card__description {
-	font-family: var(--font-primary);
+	font-family: var(--font-family-heading);
 	font-size: var(--fs-300);
-	font-weight: 400;
+	font-weight: var(--fw-regular);
 	line-height: 1.55;
 	color: var(--gray-900);
-	margin-bottom: 13px;
-	/* Max 3 lines with fixed height */
+	margin-bottom: var(--sp-2);
 	display: -webkit-box;
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
@@ -128,8 +127,8 @@
 .program-card__footer {
 	display: flex;
 	align-items: center;
-	gap: 20px;
-	padding-top: 13px;
+	gap: var(--sp-4);
+	padding-top: var(--sp-2);
 	border-top: 1px solid #ebebeb;
 }
 
@@ -150,9 +149,9 @@
 }
 
 .program-card__info-text {
-	font-family: var(--font-primary);
-	font-size: var(--fs-200);
-	font-weight: 400;
+	font-family: var(--font-family-heading);
+	font-size: var(--fs-body-sm);
+	font-weight: var(--fw-regular);
 	line-height: 1.3;
 	color: #757f95;
 	text-transform: capitalize;
@@ -162,8 +161,8 @@
 .program-card__lessons {
 	display: flex;
 	align-items: center;
-	gap: 7px;
-	margin: 21px 0 13px;
+	gap: var(--sp-1);
+	margin: var(--sp-3) 0 var(--sp-2);
 }
 
 .program-card__lessons-icon {
@@ -173,9 +172,9 @@
 }
 
 .program-card__lessons span {
-	font-family: var(--font-primary);
-	font-size: var(--fs-200);
-	font-weight: 500;
+	font-family: var(--font-family-heading);
+	font-size: var(--fs-body-sm);
+	font-weight: var(--fw-medium);
 	line-height: 1.3;
 	color: #757f95;
 	text-transform: capitalize;
@@ -186,7 +185,7 @@
 	height: 1px;
 	background-color: #ebebeb;
 	border: 1px solid #e1e1e1;
-	margin-bottom: 16px;
+	margin-bottom: var(--sp-3);
 }
 
 .program-card__meta-item {
@@ -196,22 +195,24 @@
 }
 
 .program-card__meta-item span {
-	font-family: var(--font-primary);
-	font-size: var(--fs-200);
-	font-weight: 400;
+	font-family: var(--font-family-heading);
+	font-size: var(--fs-body-sm);
+	font-weight: var(--fw-regular);
 	line-height: 1.3;
 	color: #757f95;
 	text-transform: capitalize;
 }
 
-/* ============================================
-   RESPONSIVE
-   ============================================ */
-
-/* Tablet */
-@media (max-width: 991.98px) {
+/* ================================================
+   TABLET (max-width: 1199px)
+   ================================================ */
+@media (max-width: 1199px) {
 	.program-card {
 		max-width: 100%;
+	}
+
+	.program-card__image-wrapper {
+		padding: var(--sp-4) var(--sp-4) 0;
 	}
 
 	.program-card__image {
@@ -222,16 +223,22 @@
 		top: 30px;
 		right: 30px;
 	}
+
+	.program-card__content {
+		padding: var(--sp-4) var(--sp-4) var(--sp-3);
+	}
 }
 
-/* Mobile */
-@media (max-width: 575.98px) {
+/* ================================================
+   MOBILE (max-width: 575px)
+   ================================================ */
+@media (max-width: 575px) {
 	.program-card {
 		border-radius: 30px 30px 30px 0;
 	}
 
 	.program-card__image-wrapper {
-		padding: 15px 15px 0;
+		padding: var(--sp-3) var(--sp-3) 0;
 	}
 
 	.program-card__image {
@@ -241,7 +248,7 @@
 	.program-card__badge {
 		top: 25px;
 		right: 25px;
-		padding: 6px 4px;
+		padding: var(--sp-1) var(--sp-1);
 		border-radius: 12px 15px 15px 0;
 	}
 
@@ -251,30 +258,28 @@
 	}
 
 	.program-card__badge-text {
-		font-size: var(--fs-100);
-		line-height: 1.2;
+		font-size: var(--fs-caption);
 	}
 
 	.program-card__content {
-		padding: 15px;
+		padding: var(--sp-3);
 	}
 
 	.program-card__title {
 		font-size: var(--fs-400);
-		line-height: 1.3;
 		height: calc(var(--fs-400) * 1.3 * 2);
 		min-height: calc(var(--fs-400) * 1.3 * 2);
 	}
 
 	.program-card__description {
-		font-size: var(--fs-200);
+		font-size: var(--fs-body-sm);
 		line-height: 1.5;
-		height: calc(var(--fs-200) * 1.5 * 3);
-		min-height: calc(var(--fs-200) * 1.5 * 3);
+		height: calc(var(--fs-body-sm) * 1.5 * 3);
+		min-height: calc(var(--fs-body-sm) * 1.5 * 3);
 	}
 
 	.program-card__footer {
-		gap: 15px;
+		gap: var(--sp-3);
 	}
 
 	.program-card__info-icon,
@@ -284,7 +289,6 @@
 	}
 
 	.program-card__info-text {
-		font-size: var(--fs-100);
-		line-height: 1.2;
+		font-size: var(--fs-caption);
 	}
 }

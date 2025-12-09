@@ -1,25 +1,44 @@
 /* ============================================
    COMPONENT: Feature Card
+   Breakpoints: Desktop (default), Tablet (max-width: 1199px), Mobile (max-width: 575px)
    ============================================ */
 
+/* Desktop-first base styles */
 .feature-card {
 	position: relative;
 	width: 254px;
 	height: 202px;
 	background-color: var(--color-light);
 	border-radius: var(--radius-40) var(--radius-40) var(--radius-40) 0;
-	box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 	padding: 0;
-	transition: all 0.3s ease;
+	transition: all var(--transition-base);
 	flex-shrink: 0;
+	overflow: hidden;
+}
+
+.feature-card::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));
+	opacity: 0;
+	transition: opacity var(--transition-base);
 }
 
 .feature-card:hover {
-	box-shadow: var(--shadow-2);
-	transform: translateY(-4px);
+	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+	transform: translateY(-6px);
 }
 
-/* Icon Wrapper - Absolute positioning như Codia */
+.feature-card:hover::before {
+	opacity: 1;
+}
+
+/* Icon Wrapper - Absolute positioning */
 .feature-card__icon-wrapper {
 	position: absolute;
 	top: 17px;
@@ -34,9 +53,16 @@
 	left: 4px;
 	width: 70px;
 	height: 70px;
-	background-color: var(--brand-primary);
+	background: linear-gradient(135deg, var(--brand-primary), #c41e3a);
 	border-radius: 50%;
 	z-index: 1;
+	box-shadow: 0 4px 12px rgba(164, 16, 52, 0.3);
+	transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.feature-card:hover .feature-card__icon-bg {
+	transform: scale(1.05);
+	box-shadow: 0 6px 16px rgba(164, 16, 52, 0.4);
 }
 
 .feature-card__icon {
@@ -47,139 +73,189 @@
 	height: 40px;
 	object-fit: contain;
 	z-index: 2;
+	filter: brightness(0) invert(1);
+	transition: transform var(--transition-base);
 }
 
-/* Number Badge - Absolute positioning như Codia */
+.feature-card:hover .feature-card__icon {
+	transform: scale(1.1);
+}
+
+/* Number Badge - Absolute positioning */
 .feature-card__number {
 	position: absolute;
 	top: 29px;
 	right: 30px;
-	font-family: var(--font-primary);
+	font-family: var(--font-family-heading);
 	font-size: 50px;
-	font-weight: 700;
+	font-weight: var(--fw-bold);
 	line-height: 60.95px;
 	color: transparent;
-	-webkit-text-stroke: 1px var(--brand-primary);
-	text-stroke: 1px var(--brand-primary);
+	-webkit-text-stroke: 1.5px var(--brand-primary);
+	text-stroke: 1.5px var(--brand-primary);
 	user-select: none;
 	pointer-events: none;
+	opacity: 0.6;
+	transition: opacity var(--transition-base);
 }
 
-/* Title - Positioned như Codia (108px từ top, 21px từ left) */
+.feature-card:hover .feature-card__number {
+	opacity: 1;
+}
+
+/* Title - Positioned */
 .feature-card__title {
 	position: absolute;
 	top: 108px;
 	left: 21px;
 	right: 21px;
-	font-family: var(--font-primary);
-	font-size: 16px;
-	font-weight: 700;
-	line-height: 19.504px;
+	font-family: var(--font-family-heading);
+	font-size: var(--fs-body-sm);
+	font-weight: var(--fw-bold);
+	line-height: 1.3;
 	color: var(--gray-900);
 	text-transform: capitalize;
 	margin: 0;
+	transition: color var(--transition-base);
 }
 
-/* Description - 9px dưới title, 21px từ left */
+.feature-card:hover .feature-card__title {
+	color: var(--brand-primary);
+}
+
+/* Description */
 .feature-card__description {
 	position: absolute;
 	top: 137px;
 	left: 21px;
 	right: 21px;
-	font-family: var(--font-primary);
-	font-size: 14px;
-	font-weight: 400;
-	line-height: 22px;
-	color: var(--gray-900);
+	font-family: var(--font-family-heading);
+	font-size: var(--fs-body-sm);
+	font-weight: var(--fw-regular);
+	line-height: 1.5;
+	color: var(--gray-600);
 	margin: 0;
 }
 
-/* Responsive */
-@media (min-width: 576px) and (max-width: 991px) {
+/* ================================================
+   TABLET (max-width: 1199px)
+   ================================================ */
+@media (max-width: 1199px) {
 	.feature-card {
-		min-height: 180px;
-		padding: var(--sp-3);
+		width: 100%;
+		height: 200px;
+		min-height: 200px;
+		padding: var(--sp-4);
 	}
 
 	.feature-card__icon-wrapper {
-		width: 60px;
-		height: 60px;
+		top: var(--sp-4);
+		left: var(--sp-4);
+		width: 56px;
+		height: 56px;
 	}
 
 	.feature-card__icon-bg {
-		width: 60px;
-		height: 60px;
+		top: 0;
+		left: 0;
+		width: 56px;
+		height: 56px;
 	}
 
 	.feature-card__icon {
-		width: 35px;
-		height: 35px;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 28px;
+		height: 28px;
+	}
+
+	.feature-card:hover .feature-card__icon {
+		transform: translate(-50%, -50%) scale(1.1);
 	}
 
 	.feature-card__number {
-		font-size: 40px;
-		line-height: 48px;
+		font-size: 44px;
+		line-height: 1;
 		top: var(--sp-4);
 		right: var(--sp-4);
 	}
 
 	.feature-card__title {
-		font-size: 15px;
-		line-height: 18px;
+		top: auto;
+		bottom: 50px;
+		left: var(--sp-4);
+		right: var(--sp-4);
+		font-size: var(--fs-body-sm);
+		line-height: 1.3;
 	}
 
 	.feature-card__description {
-		font-size: 13px;
-		line-height: 20px;
+		top: auto;
+		bottom: var(--sp-4);
+		left: var(--sp-4);
+		right: var(--sp-4);
+		font-size: var(--fs-caption);
+		line-height: 1.4;
 	}
 }
 
+/* ================================================
+   MOBILE (max-width: 575px)
+   ================================================ */
 @media (max-width: 575px) {
 	.feature-card {
-		min-height: 250px;
-		height: 250px;
-		padding: var(--sp-3);
+		min-height: 180px;
+		height: 180px;
+		padding: var(--sp-4);
 		border-radius: var(--radius-30) var(--radius-30) var(--radius-30) 0;
 		width: 100%;
 	}
 
 	.feature-card__icon-wrapper {
-		width: 100px;
-		height: 100px;
-		margin-bottom: var(--sp-4);
+		top: var(--sp-4);
+		left: var(--sp-4);
+		width: 56px;
+		height: 56px;
 	}
 
 	.feature-card__icon-bg {
-		width: 100px;
-		height: 100px;
+		top: 0;
+		left: 0;
+		width: 56px;
+		height: 56px;
 	}
 
 	.feature-card__icon {
-		width: 50px;
-		height: 50px;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
+		width: 28px;
+		height: 28px;
+	}
+
+	.feature-card:hover .feature-card__icon {
+		transform: translate(-50%, -50%) scale(1.1);
 	}
 
 	.feature-card__number {
-		font-size: 60px;
+		font-size: 44px;
 		line-height: 1;
-		top: var(--sp-3);
-		right: var(--sp-3);
+		top: var(--sp-4);
+		right: var(--sp-4);
 	}
 
 	.feature-card__title {
-		font-size: 20px;
-		line-height: 1.3;
 		top: auto;
-		bottom: 50px;
+		bottom: 58px;
+		font-size: var(--fs-body);
+		line-height: 1.3;
 	}
 
 	.feature-card__description {
-		font-size: 14px;
-		line-height: 1.5;
 		top: auto;
-		bottom: var(--sp-3);
+		bottom: var(--sp-4);
+		font-size: var(--fs-body-sm);
+		line-height: 1.4;
 	}
 }

@@ -99,8 +99,8 @@
         ></div>
       </section>
 
-      <!-- Breadcrumb Navigation -->
-      <nav class="hero-breadcrumb" aria-label="Breadcrumb">
+      <!-- Breadcrumb Navigation - Only visible on mobile -->
+      <nav class="hero-breadcrumb d-sm-none" aria-label="Breadcrumb">
         <div class="container">
           <ol class="hero-breadcrumb__list">
             <li class="hero-breadcrumb__item">
@@ -268,9 +268,9 @@
         aria-labelledby="programs-title"
       >
         <div class="container">
-          <!-- Desktop: Section Title -->
+          <!-- Desktop & Tablet: Section Title -->
           <div
-            class="programs-section__header text-center mb-4 d-none d-lg-block"
+            class="programs-section__header text-center mb-4 d-none d-sm-block"
           >
             <p class="programs-section__subtitle">chương trình đào tạo</p>
             <h2 id="programs-title" class="programs-section__title">
@@ -278,8 +278,8 @@
             </h2>
           </div>
 
-          <!-- Mobile: Title box with icon -->
-          <div class="mobile-title-box mobile-title-box--sm d-lg-none mb-4">
+          <!-- Mobile only: Title box with icon -->
+          <div class="mobile-title-box mobile-title-box--sm d-sm-none mb-4">
             <div class="mobile-title-box__icon">
               <img src="/assets/svg/book.svg" alt="" aria-hidden="true" />
             </div>
@@ -289,9 +289,9 @@
             </div>
           </div>
 
-          <!-- Filter Buttons -->
+          <!-- Filter Buttons - Hidden on mobile -->
           <div
-            class="filter-buttons mb-4"
+            class="filter-buttons mb-4 d-none d-sm-flex"
             role="group"
             aria-label="Lọc chương trình đào tạo"
           >
@@ -879,8 +879,8 @@
             </button>
           </nav>
 
-          <!-- Pagination -->
-          <nav class="pagination" aria-label="Phân trang chương trình đào tạo">
+          <!-- Pagination - Hidden on mobile -->
+          <nav class="pagination d-none d-sm-flex" aria-label="Phân trang chương trình đào tạo">
             <button
               class="pagination__button pagination__button--prev"
               type="button"
@@ -927,31 +927,31 @@
               <img
                 src="/assets/images/recruitment_img.png"
                 alt="Quy trình tuyển sinh"
-                class="recruitment-section__image"
+                class="recruitment-section__image d-none d-sm-block"
                 loading="lazy"
               />
             </div>
             <div class="col-lg-7">
               <div class="recruitment-section__content">
-                <!-- Desktop: subtitle + title + description -->
-                <p class="recruitment-section__subtitle d-none d-lg-block">
+                <!-- Desktop & Tablet: subtitle + title + description -->
+                <p class="recruitment-section__subtitle d-none d-sm-block">
                   quy trình tuyển sinh
                 </p>
                 <h2
                   id="recruitment-title"
-                  class="recruitment-section__title d-none d-lg-block"
+                  class="recruitment-section__title d-none d-sm-block"
                 >
                   CÁC BƯỚC ĐƠN GIẢN ĐỂ BẮT ĐẦU
                 </h2>
-                <p class="recruitment-section__description d-none d-lg-block">
+                <p class="recruitment-section__description d-none d-sm-block">
                   Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
                   vào việc trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum
                   đã được sử dụng như một văn bản chuẩn cho ngành công nghiệp
                 </p>
 
-                <!-- Mobile: title box with icon -->
+                <!-- Mobile only: title box with icon -->
                 <div
-                  class="mobile-title-box mobile-title-box--filled d-lg-none"
+                  class="mobile-title-box mobile-title-box--filled d-sm-none"
                 >
                   <div class="mobile-title-box__icon">
                     <img

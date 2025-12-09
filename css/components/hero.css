@@ -223,8 +223,8 @@
 	}
 }
 
-/* Tablet - giữ style giống desktop */
-@media (min-width: 576px) and (max-width: 767.98px) {
+/* Tablet - 2 cards per row */
+@media (min-width: 576px) and (max-width: 1199.98px) {
 	/* Hero banner tablet */
 	.hero-section--banner {
 		height: 350px;
@@ -232,12 +232,14 @@
 	}
 
 	.feature-cards-wrapper {
-		gap: var(--sp-3);
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: var(--sp-4);
 	}
 
 	.feature-cards-wrapper .col-lg-3 {
-		width: auto;
-		max-width: none;
+		width: 100%;
+		max-width: 100%;
 	}
 }
 

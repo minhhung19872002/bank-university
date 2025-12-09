@@ -1,34 +1,37 @@
 /* ============================================
    COMPONENT: Filter Buttons
+   Breakpoints: Desktop (default), Tablet (max-width: 1199px), Mobile (max-width: 575px)
+   Visibility controlled by Bootstrap classes (d-none d-sm-flex)
    ============================================ */
 
+/* Desktop-first base styles */
 .filter-buttons {
 	display: flex;
 	flex-wrap: wrap;
-	gap: 20px 14px;
+	gap: var(--sp-4) var(--sp-3);
 	justify-content: center;
 	align-items: center;
 }
 
 .filter-button {
 	display: flex;
-	padding: 10px 20px;
-	gap: 10px;
+	padding: var(--sp-2) var(--sp-4);
+	gap: var(--sp-2);
 	justify-content: center;
 	align-items: center;
 	background-color: var(--color-light);
 	border-radius: var(--radius-10);
 	border: none;
-	font-family: var(--font-primary);
-	font-size: 16px;
-	font-weight: 400;
+	font-family: var(--font-family-heading);
+	font-size: var(--fs-body);
+	font-weight: var(--fw-regular);
 	line-height: 19.504px;
 	color: var(--gray-900);
 	text-transform: capitalize;
 	white-space: nowrap;
 	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.13);
 	cursor: pointer;
-	transition: all 0.3s ease;
+	transition: all var(--transition-base);
 }
 
 .filter-button:hover {
@@ -48,30 +51,31 @@
 	outline-offset: 2px;
 }
 
-/* Responsive */
-
-/* Tablet */
-@media (min-width: 576px) and (max-width: 991px) {
+/* ================================================
+   TABLET (max-width: 1199px)
+   ================================================ */
+@media (max-width: 1199px) {
 	.filter-buttons {
-		gap: 16px 12px;
+		gap: var(--sp-3) var(--sp-2);
 	}
 
 	.filter-button {
-		padding: 9px 18px;
-		font-size: 15px;
-		line-height: 18px;
+		padding: var(--sp-2) var(--sp-4);
 	}
 }
 
-/* Mobile */
+/* ================================================
+   MOBILE (max-width: 575px)
+   Hidden via Bootstrap class d-none d-sm-flex in HTML
+   ================================================ */
 @media (max-width: 575px) {
 	.filter-buttons {
-		display: none;
+		gap: var(--sp-3) var(--sp-2);
 	}
 
 	.filter-button {
-		padding: 8px 16px;
-		font-size: 14px;
-		line-height: 17px;
+		padding: var(--sp-2) var(--sp-3);
+		font-size: var(--fs-body-sm);
+		line-height: 1.2;
 	}
 }
