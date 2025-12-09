@@ -98,3 +98,20 @@
 	width: 36px;
 	height: 36px;
 }
+
+/* === Variant: Light (cho background tối, text trắng) === */
+.mobile-title-box--light .mobile-title-box__icon {
+	background-color: var(--color-light);
+}
+
+.mobile-title-box--light .mobile-title-box__icon img {
+	filter: none;
+}
+
+.mobile-title-box--light .mobile-title-box__overline {
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.mobile-title-box--light .mobile-title-box__title {
+	color: var(--color-light);
+}

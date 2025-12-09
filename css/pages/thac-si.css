@@ -294,8 +294,9 @@
 	}
 
 	.program-cards-grid .program-card-item {
-		flex: 0 0 100%;
-		max-width: 100%;
+		flex: 0 0 calc(100% - 32px);
+		max-width: calc(100% - 32px);
+		min-width: calc(100% - 32px);
 		scroll-snap-align: center;
 	}
 
