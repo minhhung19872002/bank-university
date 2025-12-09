@@ -80,7 +80,11 @@
 		<link rel="stylesheet" href="/css/components/navbar.css" />
 		<link rel="stylesheet" href="/css/components/footer.css" />
 		<link rel="stylesheet" href="/css/components/program-card.css" />
+		<link rel="stylesheet" href="/css/components/faq.css" />
 		<link rel="stylesheet" href="/css/pages/program-detail.css" />
+
+		<!-- Iconify -->
+		<script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
 	</head>
 	<body>
 		<!-- HEADER: Topbar + Navbar -->
@@ -93,11 +97,10 @@
 				<div class="container">
 					<h1 class="program-header__title">ngôn ngữ anh</h1>
 					<div class="program-header__meta">
-						<img
-							src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/j0LeXaYjjj.png"
-							alt=""
-							class="program-header__icon"
-						/>
+						<span
+							class="iconify program-header__icon"
+							data-icon="mdi:calendar"
+						></span>
 						<span class="program-header__date">14/7/2025</span>
 					</div>
 					<div class="program-header__divider"></div>
@@ -143,6 +146,11 @@
 							sĩ.
 						</p>
 						<p class="program-description__video-intro">
+							<img
+								src="assets/images/menu.png"
+								alt=""
+								class="icon-menu"
+							/>
 							Để hiểu thêm về ngành học này, mời các bạn xem video
 							sau!
 						</p>
@@ -216,7 +224,7 @@
 							<img
 								src="assets/images/menu.png"
 								alt=""
-								class="program-qualities__icon"
+								class="icon-menu"
 							/>
 							<span
 								>Yêu thích tiếng Anh, thích khám phá các nền văn
@@ -227,7 +235,7 @@
 							<img
 								src="assets/images/menu.png"
 								alt=""
-								class="program-qualities__icon"
+								class="icon-menu"
 							/>
 							<span
 								>Tự tin trong giao tiếp bằng cả tiếng Việt và
@@ -238,7 +246,7 @@
 							<img
 								src="assets/images/menu.png"
 								alt=""
-								class="program-qualities__icon"
+								class="icon-menu"
 							/>
 							<span
 								>Chủ động học tập, tự luyện kỹ năng nghe – nói –
@@ -249,7 +257,7 @@
 							<img
 								src="assets/images/menu.png"
 								alt=""
-								class="program-qualities__icon"
+								class="icon-menu"
 							/>
 							<span
 								>Có khả năng tư duy logic khi học ngữ pháp, dịch
@@ -260,7 +268,7 @@
 							<img
 								src="assets/images/menu.png"
 								alt=""
-								class="program-qualities__icon"
+								class="icon-menu"
 							/>
 							<span
 								>Linh hoạt, thích nghi tốt trong môi trường học
@@ -271,7 +279,7 @@
 							<img
 								src="assets/images/menu.png"
 								alt=""
-								class="program-qualities__icon"
+								class="icon-menu"
 							/>
 							<span
 								>Biết sử dụng phần mềm dịch thuật, từ điển điện
@@ -313,23 +321,29 @@
 						</li>
 						<li>Tiếp tục học lên Tiến sĩ trong/ngoài nước.</li>
 					</ul>
-					<div class="row g-3">
-						<div class="col-md-6">
+				</div>
+			</section>
+
+			<!-- Career Images Section -->
+			<section class="program-careers-images">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 col-md-6">
 							<img
 								src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/TXh5eeiu4h.png"
 								alt="Cơ hội nghề nghiệp 1"
-								class="program-careers__image-grid"
+								class="program-careers-images__img"
 							/>
 						</div>
-						<div class="col-md-6">
+						<div class="col-12 col-md-6">
 							<img
 								src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/qdrzTkuVGW.png"
 								alt="Cơ hội nghề nghiệp 2"
-								class="program-careers__image-grid"
+								class="program-careers-images__img"
 							/>
 						</div>
 					</div>
-					<p class="program-careers__caption">
+					<p class="program-careers-images__caption">
 						Cơ hội việc làm ngành Ngôn ngữ anh rất đa dạng
 					</p>
 				</div>
@@ -382,7 +396,7 @@
 								<img
 									src="assets/images/menu.png"
 									alt=""
-									class="admission-methods__icon"
+									class="icon-menu"
 								/>
 								<strong class="admission-methods__item-title"
 									>Phương thức tuyển:</strong
@@ -397,7 +411,7 @@
 								<img
 									src="assets/images/menu.png"
 									alt=""
-									class="admission-methods__icon"
+									class="icon-menu"
 								/>
 								<strong class="admission-methods__item-title"
 									>Hồ sơ cần có:</strong
@@ -413,7 +427,7 @@
 								<img
 									src="assets/images/menu.png"
 									alt=""
-									class="admission-methods__icon"
+									class="icon-menu"
 								/>
 								<strong class="admission-methods__item-title"
 									>Ưu tiên cộng điểm:</strong
@@ -429,7 +443,7 @@
 								<img
 									src="assets/images/menu.png"
 									alt=""
-									class="admission-methods__icon"
+									class="icon-menu"
 								/>
 								<strong class="admission-methods__item-title"
 									>Ngoại ngữ:</strong
@@ -444,7 +458,7 @@
 								<img
 									src="assets/images/menu.png"
 									alt=""
-									class="admission-methods__icon"
+									class="icon-menu"
 								/>
 								<strong class="admission-methods__item-title"
 									>Tin học:</strong
@@ -731,276 +745,305 @@
 						<div class="row">
 							<!-- Job Card 1 -->
 							<div class="col-12 col-md-6 col-lg-4">
-								<article class="job-card">
+								<div class="job-card">
 									<div class="job-card__header">
-										<div class="job-card__logo-wrapper">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/ESSBHncuSU.png"
-												alt="HUB University"
-												class="job-card__logo"
-											/>
-											<img
-												src="/assets/images/acb_logo.png"
-												alt=""
+										<div class="job-card__logo">
+											<div
 												class="job-card__badge"
-											/>
+												style="
+													background-image: url('/assets/images/acb_logo.png');
+												"
+											></div>
 										</div>
 										<div class="job-card__info">
 											<h3 class="job-card__title">
-												giảng viên đại học
+												Giảng viên đại học
 											</h3>
 											<p class="job-card__company">
 												HUB University
 											</p>
 										</div>
 										<div class="job-card__bookmark">
-											<img
-												src="assets/images/bookmark.png"
-												alt=""
-												class="job-card__bookmark-icon"
-											/>
+											<span
+												class="iconify"
+												data-icon="mdi:bookmark"
+												data-inline="false"
+											></span>
 										</div>
 									</div>
 									<div class="job-card__footer">
-										<div class="job-card__meta">
-											<img
-												src="assets/images/profit.png"
-												alt=""
-												class="job-card__icon"
-											/>
-											<span>20tr/ Tháng</span>
+										<div class="job-card__salary-wrapper">
+											<span
+												class="iconify"
+												data-icon="mdi:currency-usd"
+												style="
+													color: var(--brand-primary);
+												"
+											></span>
+											<span class="job-card__salary"
+												>20tr/ Tháng</span
+											>
 										</div>
-										<div class="job-card__meta">
-											<img
-												src="assets/images/location.png"
-												alt=""
-												class="job-card__icon"
-											/>
-											<span>Việt Nam</span>
+										<div class="job-card__location-wrapper">
+											<span
+												class="iconify"
+												data-icon="mdi:map-marker"
+												style="
+													color: var(--brand-primary);
+												"
+											></span>
+											<span class="job-card__location"
+												>Việt Nam</span
+											>
 										</div>
 									</div>
-								</article>
+								</div>
 							</div>
 
 							<!-- Job Card 2 -->
 							<div class="col-12 col-md-6 col-lg-4">
-								<article class="job-card">
+								<div class="job-card">
 									<div class="job-card__header">
-										<div class="job-card__logo-wrapper">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/CqRqygV5i1.png"
-												alt="VNU"
-												class="job-card__logo"
-											/>
-											<img
-												src="/assets/images/tcb_logo.png"
-												alt=""
-												class="job-card__logo-overlay"
-											/>
+										<div class="job-card__logo">
+											<div
+												class="job-card__badge"
+												style="
+													background-image: url('/assets/images/tcb_logo.png');
+												"
+											></div>
 										</div>
 										<div class="job-card__info">
 											<h3 class="job-card__title">
-												nghiên cứu viên
+												Nghiên cứu viên
 											</h3>
 											<p class="job-card__company">VNU</p>
 										</div>
 										<div class="job-card__bookmark">
-											<img
-												src="assets/images/bookmark.png"
-												alt=""
-												class="job-card__bookmark-icon"
-											/>
+											<span
+												class="iconify"
+												data-icon="mdi:bookmark"
+												data-inline="false"
+											></span>
 										</div>
 									</div>
 									<div class="job-card__footer">
-										<div class="job-card__meta">
-											<img
-												src="assets/images/profit.png"
-												alt=""
-												class="job-card__icon"
-											/>
-											<span>18tr/ Tháng</span>
+										<div class="job-card__salary-wrapper">
+											<span
+												class="iconify"
+												data-icon="mdi:currency-usd"
+												style="
+													color: var(--brand-primary);
+												"
+											></span>
+											<span class="job-card__salary"
+												>18tr/ Tháng</span
+											>
 										</div>
-										<div class="job-card__meta">
-											<img
-												src="assets/images/location.png"
-												alt=""
-												class="job-card__icon"
-											/>
-											<span>Việt Nam</span>
+										<div class="job-card__location-wrapper">
+											<span
+												class="iconify"
+												data-icon="mdi:map-marker"
+												style="
+													color: var(--brand-primary);
+												"
+											></span>
+											<span class="job-card__location"
+												>Việt Nam</span
+											>
 										</div>
 									</div>
-								</article>
+								</div>
 							</div>
 
 							<!-- Job Card 3 -->
 							<div class="col-12 col-md-6 col-lg-4">
-								<article class="job-card">
+								<div class="job-card">
 									<div class="job-card__header">
-										<div class="job-card__logo-wrapper">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/12oy8NbwB1.png"
-												alt="British Council"
-												class="job-card__logo"
-											/>
-											<img
-												src="/assets/images/vtb_logo.png"
-												alt=""
+										<div
+											class="job-card__logo"
+											style="background-color: #333333"
+										>
+											<div
 												class="job-card__badge"
-											/>
+												style="
+													background-image: url('/assets/images/vtb_logo.png');
+												"
+											></div>
 										</div>
 										<div class="job-card__info">
 											<h3 class="job-card__title">
-												chuyên gia tư vấn
+												Chuyên gia tư vấn
 											</h3>
 											<p class="job-card__company">
 												British Council
 											</p>
 										</div>
 										<div class="job-card__bookmark">
-											<img
-												src="assets/images/bookmark.png"
-												alt=""
-												class="job-card__bookmark-icon"
-											/>
+											<span
+												class="iconify"
+												data-icon="mdi:bookmark"
+												data-inline="false"
+											></span>
 										</div>
 									</div>
 									<div class="job-card__footer">
-										<div class="job-card__meta">
-											<img
-												src="assets/images/profit.png"
-												alt=""
-												class="job-card__icon"
-											/>
-											<span>25tr/ Tháng</span>
+										<div class="job-card__salary-wrapper">
+											<span
+												class="iconify"
+												data-icon="mdi:currency-usd"
+												style="
+													color: var(--brand-primary);
+												"
+											></span>
+											<span class="job-card__salary"
+												>25tr/ Tháng</span
+											>
 										</div>
-										<div class="job-card__meta">
-											<img
-												src="assets/images/location.png"
-												alt=""
-												class="job-card__icon"
-											/>
-											<span>Việt Nam</span>
+										<div class="job-card__location-wrapper">
+											<span
+												class="iconify"
+												data-icon="mdi:map-marker"
+												style="
+													color: var(--brand-primary);
+												"
+											></span>
+											<span class="job-card__location"
+												>Việt Nam</span
+											>
 										</div>
 									</div>
-								</article>
+								</div>
 							</div>
 
 							<!-- Job Card 4 -->
 							<div class="col-12 col-md-6 col-lg-4">
-								<article class="job-card">
+								<div class="job-card">
 									<div class="job-card__header">
-										<div class="job-card__logo-wrapper">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/VNXFXAHQoX.png"
-												alt="Oxford Press"
-												class="job-card__logo"
-											/>
-											<img
-												src="/assets/images/vcb_logo.png"
-												alt=""
+										<div class="job-card__logo">
+											<div
 												class="job-card__badge"
-											/>
+												style="
+													background-image: url('/assets/images/vcb_logo.png');
+												"
+											></div>
 										</div>
 										<div class="job-card__info">
 											<h3 class="job-card__title">
-												biên tập viên
+												Biên tập viên
 											</h3>
 											<p class="job-card__company">
 												Oxford Press
 											</p>
 										</div>
 										<div class="job-card__bookmark">
-											<img
-												src="assets/images/bookmark.png"
-												alt=""
-												class="job-card__bookmark-icon"
-											/>
+											<span
+												class="iconify"
+												data-icon="mdi:bookmark"
+												data-inline="false"
+											></span>
 										</div>
 									</div>
 									<div class="job-card__footer">
-										<div class="job-card__meta">
-											<img
-												src="assets/images/profit.png"
-												alt=""
-												class="job-card__icon"
-											/>
-											<span>22tr/ Tháng</span>
+										<div class="job-card__salary-wrapper">
+											<span
+												class="iconify"
+												data-icon="mdi:currency-usd"
+												style="
+													color: var(--brand-primary);
+												"
+											></span>
+											<span class="job-card__salary"
+												>22tr/ Tháng</span
+											>
 										</div>
-										<div class="job-card__meta">
-											<img
-												src="assets/images/location.png"
-												alt=""
-												class="job-card__icon"
-											/>
-											<span>Việt Nam</span>
+										<div class="job-card__location-wrapper">
+											<span
+												class="iconify"
+												data-icon="mdi:map-marker"
+												style="
+													color: var(--brand-primary);
+												"
+											></span>
+											<span class="job-card__location"
+												>Việt Nam</span
+											>
 										</div>
 									</div>
-								</article>
+								</div>
 							</div>
 
 							<!-- Job Card 5 -->
 							<div class="col-12 col-md-6 col-lg-4">
-								<article class="job-card">
+								<div class="job-card">
 									<div class="job-card__header">
-										<div class="job-card__logo-wrapper">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/UczFDLGJ6c.png"
-												alt="ILA Vietnam"
-												class="job-card__logo"
-											/>
+										<div class="job-card__logo">
+											<div
+												class="job-card__badge"
+												style="
+													background-image: url('/assets/images/tp_logo.png');
+												"
+											></div>
 										</div>
 										<div class="job-card__info">
 											<h3 class="job-card__title">
-												giám đốc đào tạo
+												Giám đốc đào tạo
 											</h3>
 											<p class="job-card__company">
 												ILA Vietnam
 											</p>
 										</div>
 										<div class="job-card__bookmark">
-											<img
-												src="assets/images/bookmark.png"
-												alt=""
-												class="job-card__bookmark-icon"
-											/>
+											<span
+												class="iconify"
+												data-icon="mdi:bookmark"
+												data-inline="false"
+											></span>
 										</div>
 									</div>
 									<div class="job-card__footer">
-										<div class="job-card__meta">
-											<img
-												src="assets/images/profit.png"
-												alt=""
-												class="job-card__icon"
-											/>
-											<span>30tr/ Tháng</span>
+										<div class="job-card__salary-wrapper">
+											<span
+												class="iconify"
+												data-icon="mdi:currency-usd"
+												style="
+													color: var(--brand-primary);
+												"
+											></span>
+											<span class="job-card__salary"
+												>30tr/ Tháng</span
+											>
 										</div>
-										<div class="job-card__meta">
-											<img
-												src="assets/images/location.png"
-												alt=""
-												class="job-card__icon"
-											/>
-											<span>Việt Nam</span>
+										<div class="job-card__location-wrapper">
+											<span
+												class="iconify"
+												data-icon="mdi:map-marker"
+												style="
+													color: var(--brand-primary);
+												"
+											></span>
+											<span class="job-card__location"
+												>Việt Nam</span
+											>
 										</div>
 									</div>
-								</article>
+								</div>
 							</div>
 
 							<!-- Job Card 6 -->
 							<div class="col-12 col-md-6 col-lg-4">
-								<article class="job-card">
+								<div class="job-card">
 									<div class="job-card__header">
-										<div class="job-card__logo-wrapper">
-											<img
-												src="https://codia-f2c.s3.us-west-1.amazonaws.com/default/image/2025-10-20/7cb52a90-a340-4459-934f-f58b00311bd9.png"
-												alt="Pearson"
-												class="job-card__logo"
-											/>
+										<div class="job-card__logo">
+											<div
+												class="job-card__badge"
+												style="
+													background-image: url('/assets/images/homecredit_logo.png');
+												"
+											></div>
 										</div>
 										<div class="job-card__info">
 											<h3 class="job-card__title">
-												chuyên gia phát triển chương
+												Chuyên gia phát triển chương
 												trình
 											</h3>
 											<p class="job-card__company">
@@ -1008,32 +1051,40 @@
 											</p>
 										</div>
 										<div class="job-card__bookmark">
-											<img
-												src="assets/images/bookmark.png"
-												alt=""
-												class="job-card__bookmark-icon"
-											/>
+											<span
+												class="iconify"
+												data-icon="mdi:bookmark"
+												data-inline="false"
+											></span>
 										</div>
 									</div>
 									<div class="job-card__footer">
-										<div class="job-card__meta">
-											<img
-												src="assets/images/profit.png"
-												alt=""
-												class="job-card__icon"
-											/>
-											<span>28tr/ Tháng</span>
+										<div class="job-card__salary-wrapper">
+											<span
+												class="iconify"
+												data-icon="mdi:currency-usd"
+												style="
+													color: var(--brand-primary);
+												"
+											></span>
+											<span class="job-card__salary"
+												>28tr/ Tháng</span
+											>
 										</div>
-										<div class="job-card__meta">
-											<img
-												src="assets/images/location.png"
-												alt=""
-												class="job-card__icon"
-											/>
-											<span>Việt Nam</span>
+										<div class="job-card__location-wrapper">
+											<span
+												class="iconify"
+												data-icon="mdi:map-marker"
+												style="
+													color: var(--brand-primary);
+												"
+											></span>
+											<span class="job-card__location"
+												>Việt Nam</span
+											>
 										</div>
 									</div>
-								</article>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -1096,15 +1147,23 @@
 								Ngân hàng – Quản trị - Kinh doanh – Công nghệ
 							</p>
 
-							<div class="faq-accordion">
-								<div
-									class="faq-accordion__item faq-accordion__item--active"
-								>
-									<button class="faq-accordion__header">
-										Chương trình đào tạo – Học bổng?
+							<div class="faq-list">
+								<article class="faq-item faq-item--active">
+									<button
+										class="faq-item__header"
+										type="button"
+										aria-expanded="true"
+									>
+										<h3 class="faq-item__title">
+											Chương trình đào tạo – Học bổng?
+										</h3>
+										<span
+											class="faq-item__icon"
+											aria-hidden="true"
+										></span>
 									</button>
-									<div class="faq-accordion__content">
-										<p>
+									<div class="faq-item__content">
+										<p class="faq-item__description">
 											Lorem Ipsum chỉ đơn giản là một đoạn
 											văn bản giả, được dùng vào việc
 											trình bày và dàn trang phục vụ cho
@@ -1113,77 +1172,127 @@
 											nghiệp in ấn từ những năm 1500
 										</p>
 									</div>
-								</div>
+								</article>
 
-								<div class="faq-accordion__item">
-									<button class="faq-accordion__header">
-										Điều kiện xét tuyển?
+								<article class="faq-item">
+									<button
+										class="faq-item__header"
+										type="button"
+										aria-expanded="false"
+									>
+										<h3 class="faq-item__title">
+											Điều kiện xét tuyển?
+										</h3>
+										<span
+											class="faq-item__icon"
+											aria-hidden="true"
+										></span>
 									</button>
-									<div class="faq-accordion__content">
-										<p>
+									<div class="faq-item__content">
+										<p class="faq-item__description">
 											Lorem Ipsum chỉ đơn giản là một đoạn
 											văn bản giả, được dùng vào việc
 											trình bày và dàn trang phục vụ cho
 											in ấn.
 										</p>
 									</div>
-								</div>
+								</article>
 
-								<div class="faq-accordion__item">
-									<button class="faq-accordion__header">
-										Học phí – Học bổng?
+								<article class="faq-item">
+									<button
+										class="faq-item__header"
+										type="button"
+										aria-expanded="false"
+									>
+										<h3 class="faq-item__title">
+											Học phí – Học bổng?
+										</h3>
+										<span
+											class="faq-item__icon"
+											aria-hidden="true"
+										></span>
 									</button>
-									<div class="faq-accordion__content">
-										<p>
+									<div class="faq-item__content">
+										<p class="faq-item__description">
 											Lorem Ipsum chỉ đơn giản là một đoạn
 											văn bản giả, được dùng vào việc
 											trình bày và dàn trang phục vụ cho
 											in ấn.
 										</p>
 									</div>
-								</div>
+								</article>
 
-								<div class="faq-accordion__item">
-									<button class="faq-accordion__header">
-										Cơ hội việc làm – Thực tập?
+								<article class="faq-item">
+									<button
+										class="faq-item__header"
+										type="button"
+										aria-expanded="false"
+									>
+										<h3 class="faq-item__title">
+											Cơ hội việc làm – Thực tập?
+										</h3>
+										<span
+											class="faq-item__icon"
+											aria-hidden="true"
+										></span>
 									</button>
-									<div class="faq-accordion__content">
-										<p>
+									<div class="faq-item__content">
+										<p class="faq-item__description">
 											Lorem Ipsum chỉ đơn giản là một đoạn
 											văn bản giả, được dùng vào việc
 											trình bày và dàn trang phục vụ cho
 											in ấn.
 										</p>
 									</div>
-								</div>
+								</article>
 
-								<div class="faq-accordion__item">
-									<button class="faq-accordion__header">
-										Cơ sở vật chất – Sinh hoạt sinh viên?
+								<article class="faq-item">
+									<button
+										class="faq-item__header"
+										type="button"
+										aria-expanded="false"
+									>
+										<h3 class="faq-item__title">
+											Cơ sở vật chất – Sinh hoạt sinh viên?
+										</h3>
+										<span
+											class="faq-item__icon"
+											aria-hidden="true"
+										></span>
 									</button>
-									<div class="faq-accordion__content">
-										<p>
+									<div class="faq-item__content">
+										<p class="faq-item__description">
 											Lorem Ipsum chỉ đơn giản là một đoạn
 											văn bản giả, được dùng vào việc
 											trình bày và dàn trang phục vụ cho
 											in ấn.
 										</p>
 									</div>
-								</div>
+								</article>
 
-								<div class="faq-accordion__item">
-									<button class="faq-accordion__header">
-										Học chuyển tiếp – Quốc tế hóa?
+								<article class="faq-item">
+									<button
+										class="faq-item__header"
+										type="button"
+										aria-expanded="false"
+									>
+										<h3 class="faq-item__title">
+											Học chuyển tiếp – Quốc tế hóa?
+										</h3>
+										<span
+											class="faq-item__icon"
+											aria-hidden="true"
+										></span>
 									</button>
-									<div class="faq-accordion__content">
-										<p>
+									<div class="faq-item__content">
+										<p class="faq-item__description">
 											Lorem Ipsum chỉ đơn giản là một đoạn
 											văn bản giả, được dùng vào việc
 											trình bày và dàn trang phục vụ cho
 											in ấn.
 										</p>
 									</div>
-								</div>
+								</article>
 							</div>
 						</div>
 					</div>
