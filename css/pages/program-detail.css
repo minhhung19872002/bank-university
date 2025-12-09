@@ -97,8 +97,9 @@
 }
 
 .program-description__video-intro {
-	font-weight: var(--fw-medium);
-	color: var(--brand-primary);
+	display: flex;
+	align-items: center;
+	gap: var(--sp-2);
 }
 
 /* ============================================
@@ -223,7 +224,7 @@
 
 .program-qualities__list li {
 	display: flex;
-	align-items: flex-start;
+	align-items: center;
 	gap: var(--sp-3);
 	font-family: var(--font-family-heading);
 	font-size: var(--fs-body-sm);
@@ -232,11 +233,40 @@
 	color: var(--gray-900);
 }
 
-.program-qualities__icon {
-	width: 12px;
-	height: 12px;
-	margin-top: 2px;
-	flex-shrink: 0;
+/* ============================================
+   PROGRAM CAREERS IMAGES SECTION
+   ============================================ */
+.program-careers-images {
+	padding: var(--sp-6) 0;
+	background-color: var(--color-light);
+}
+
+.program-careers-images .row {
+	justify-content: center;
+	gap: var(--sp-2);
+}
+
+.program-careers-images .row > div {
+	flex: 0 0 auto;
+	width: auto;
+	padding: 0;
+}
+
+.program-careers-images__img {
+	max-width: 420px;
+	height: auto;
+	border-radius: var(--radius-20);
+	object-fit: cover;
+}
+
+.program-careers-images__caption {
+	font-family: var(--font-family-heading);
+	font-size: var(--fs-body-sm);
+	font-style: italic;
+	color: var(--gray-600);
+	text-align: center;
+	margin-top: var(--sp-4);
+	margin-bottom: 0;
 }
 
 /* ============================================
@@ -372,12 +402,6 @@
 	display: flex;
 	align-items: center;
 	gap: var(--sp-2);
-}
-
-.admission-methods__icon {
-	width: 12px;
-	height: 12px;
-	flex-shrink: 0;
 }
 
 .admission-methods__item-title {
