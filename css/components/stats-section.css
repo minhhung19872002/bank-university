@@ -1,121 +1,116 @@
 /* ============================================
    COMPONENT: Stats Section
    Used for displaying key statistics
+   Breakpoints: Desktop (default), Tablet (max-width: 1199px), Mobile (max-width: 575px)
    ============================================ */
 
+/* Desktop-first base styles */
 .stats-section-wrapper {
-  padding: var(--sp-7) 0;
+	padding: var(--sp-7) 0;
 }
 
 .stats-section {
-  position: relative;
-  width: 100%;
-  max-width: 1199px;
-  margin: 0 auto;
-  padding: var(--sp-6) var(--sp-5);
+	position: relative;
+	width: 100%;
+	max-width: 1199px;
+	margin: 0 auto;
+	padding: var(--sp-6) var(--sp-5);
 }
 
 .stats-section--thacsi {
-  background-color: var(--brand-primary);
-  background-image: url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/N4MZsUbMGk.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 20px;
-  height: 225px;
-  display: flex;
-  align-items: center;
+	background-color: var(--brand-primary);
+	background-image: url("/assets/images/thacsi_img2.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	border-radius: var(--radius-20);
+	height: 225px;
+	display: flex;
+	align-items: center;
 }
 
 .stats-section .row {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0;
-}
-
-/* Stat Item */
-.stat-item {
-  position: relative;
-  text-align: center;
-  padding: var(--sp-4) 0;
-}
-
-/* Vertical dividers between stats - on column level */
-.stats-section .col-6::after,
-.stats-section .col-md-3::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  width: 2px;
-  height: 118px;
-  background-color: rgba(255, 255, 255, 0.2);
-  z-index: 1;
-}
-
-/* Remove divider from last column */
-.stats-section .col-6:last-child::after,
-.stats-section .col-md-3:last-child::after {
-  display: none;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 0;
 }
 
 /* Add relative positioning to columns for absolute divider */
 .stats-section .col-6,
 .stats-section .col-md-3 {
-  position: relative;
-  flex: 1;
-  max-width: none;
-  padding: 0;
+	position: relative;
+	flex: 1;
+	max-width: none;
+	padding: 0;
 }
 
-/* Desktop: 4 columns equal width */
-@media (min-width: 768px) {
-  .stats-section .col-md-3 {
-    flex: 0 0 25%;
-  }
+/* Stat Item */
+.stat-item {
+	position: relative;
+	text-align: center;
+	padding: var(--sp-4) 0;
+}
+
+/* Vertical dividers between stats - on column level */
+.stats-section .col-6::after,
+.stats-section .col-md-3::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 0;
+	transform: translateY(-50%);
+	width: 2px;
+	height: 118px;
+	background-color: rgba(255, 255, 255, 0.2);
+	z-index: 1;
+}
+
+/* Remove divider from last column */
+.stats-section .col-6:last-child::after,
+.stats-section .col-md-3:last-child::after {
+	display: none;
 }
 
 .stat-item__number {
-  font-family: var(--font-secondary);
-  font-size: 80px;
-  font-weight: 600;
-  line-height: 96.818px;
-  color: var(--color-light);
-  margin-bottom: var(--sp-3);
+	font-family: var(--font-family-body);
+	font-size: 80px;
+	font-weight: var(--fw-semibold);
+	line-height: 1.2;
+	color: var(--color-light);
+	margin-bottom: var(--sp-3);
 }
 
 .stat-item__label {
-  font-family: var(--font-secondary);
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 19px;
-  color: var(--color-light);
-  text-transform: capitalize;
+	font-family: var(--font-family-body);
+	font-size: var(--fs-body);
+	font-weight: var(--fw-medium);
+	line-height: 1.2;
+	color: var(--color-light);
+	text-transform: capitalize;
 }
 
-/* ============================================
-   RESPONSIVE
-   ============================================ */
+/* ================================================
+   TABLET (max-width: 1199px)
+   ================================================ */
+@media (max-width: 1199px) {
+	.stats-section-wrapper {
+		padding: var(--sp-6) 0;
+	}
 
-/* Tablet */
-@media (min-width: 576px) and (max-width: 991.98px) {
 	.stats-section--thacsi {
 		height: auto;
 		padding: var(--sp-5) var(--sp-4);
 	}
 
 	.stat-item__number {
-		font-size: 40px;
-		line-height: 1.2;
+		font-size: 48px;
 		margin-bottom: var(--sp-2);
 	}
 
 	.stat-item__label {
-		font-size: 14px;
-		line-height: 1.3;
+		font-size: var(--fs-body-sm);
 	}
 
 	.stat-item {
@@ -125,6 +120,43 @@
 	/* Dividers smaller on tablet */
 	.stats-section .col-6::after,
 	.stats-section .col-md-3::after {
-		height: 60px;
+		height: 70px;
+	}
+}
+
+/* ================================================
+   MOBILE (max-width: 575px)
+   ================================================ */
+@media (max-width: 575px) {
+	/* Hide stats section on mobile - controlled via Bootstrap class in HTML */
+	.stats-section-wrapper {
+		padding: var(--sp-5) 0;
+	}
+
+	.stats-section--thacsi {
+		padding: var(--sp-4) var(--sp-3);
+		border-radius: var(--radius-10);
+	}
+
+	.stat-item__number {
+		font-size: 32px;
+		margin-bottom: var(--sp-1);
+	}
+
+	.stat-item__label {
+		font-size: var(--fs-caption);
+	}
+
+	.stat-item {
+		padding: var(--sp-2) 0;
+	}
+
+	/* Hide dividers on mobile 2x2 layout */
+	.stats-section .col-6:nth-child(2)::after {
+		display: none;
+	}
+
+	.stats-section .col-6::after {
+		height: 50px;
 	}
 }

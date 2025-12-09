@@ -6,7 +6,7 @@
 .tiensi-hero {
 	width: 100%;
 	height: 500px;
-	background-image: url("https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/Xywz0NRP6V.png");
+	background-image: url("/assets/images/hero_bg.png");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;

@@ -1,12 +1,19 @@
 /* ============================================
    COMPONENT: Training Orientation
    For displaying training program details
+   Breakpoints: Desktop (default), Tablet (max-width: 1199px), Mobile (max-width: 575px)
    ============================================ */
 
+/* Desktop-first base styles */
 .training-orientation {
 	padding: var(--sp-7) 0 0;
 	background-color: var(--brand-primary);
 	position: relative;
+}
+
+/* Mobile Title Box - Hidden on desktop */
+.training-orientation > .container > .mobile-title-box {
+	display: none;
 }
 
 .training-orientation__content {
@@ -14,10 +21,10 @@
 }
 
 .training-orientation__title {
-	font-family: var(--font-primary);
-	font-size: 30px;
-	font-weight: 700;
-	line-height: 36.57px;
+	font-family: var(--font-family-heading);
+	font-size: var(--fs-600);
+	font-weight: var(--fw-bold);
+	line-height: var(--lh-heading-tight);
 	color: var(--color-light);
 	text-transform: capitalize;
 	margin-bottom: var(--sp-4);
@@ -28,20 +35,20 @@
 }
 
 .training-orientation__subtitle {
-	font-family: var(--font-primary);
-	font-size: 20px;
-	font-weight: 600;
-	line-height: 24px;
+	font-family: var(--font-family-heading);
+	font-size: var(--fs-425);
+	font-weight: var(--fw-semibold);
+	line-height: 1.2;
 	color: var(--color-light);
 	text-transform: capitalize;
 	margin-bottom: var(--sp-3);
 }
 
 .training-orientation__text {
-	font-family: var(--font-primary);
-	font-size: 14px;
-	font-weight: 400;
-	line-height: 22px;
+	font-family: var(--font-family-heading);
+	font-size: var(--fs-body-sm);
+	font-weight: var(--fw-regular);
+	line-height: 1.57;
 	color: var(--color-light);
 	margin: 0;
 }
@@ -59,10 +66,10 @@
 }
 
 .training-orientation__item {
-	font-family: var(--font-primary);
-	font-size: 14px;
-	font-weight: 400;
-	line-height: 22px;
+	font-family: var(--font-family-heading);
+	font-size: var(--fs-body-sm);
+	font-weight: var(--fw-regular);
+	line-height: 1.57;
 	color: var(--color-light);
 	margin-bottom: var(--sp-4);
 	padding-left: 0;
@@ -71,7 +78,7 @@
 
 .training-orientation__item .training-orientation__subtitle {
 	position: relative;
-	padding-left: 25px;
+	padding-left: var(--sp-5);
 	margin-top: 0;
 	margin-bottom: var(--sp-2);
 }
@@ -80,10 +87,10 @@
 	content: counter(item) ".";
 	position: absolute;
 	left: 0;
-	font-family: var(--font-primary);
-	font-size: 20px;
-	font-weight: 600;
-	line-height: 24px;
+	font-family: var(--font-family-heading);
+	font-size: var(--fs-425);
+	font-weight: var(--fw-semibold);
+	line-height: 1.2;
 	color: var(--color-light);
 }
 
@@ -95,11 +102,11 @@
 
 .training-orientation__sublist li {
 	position: relative;
-	padding-left: 24px;
-	font-family: var(--font-primary);
-	font-size: 14px;
-	font-weight: 400;
-	line-height: 22px;
+	padding-left: var(--sp-5);
+	font-family: var(--font-family-heading);
+	font-size: var(--fs-body-sm);
+	font-weight: var(--fw-regular);
+	line-height: 1.57;
 	color: var(--color-light);
 	margin-bottom: var(--sp-2);
 }
@@ -118,7 +125,7 @@
 }
 
 .training-orientation__sublist li strong {
-	font-weight: 700;
+	font-weight: var(--fw-bold);
 }
 
 .training-orientation__image-wrapper {
@@ -129,13 +136,74 @@
 .training-orientation__image {
 	width: 100%;
 	height: auto;
-	border-radius: 20px;
+	border-radius: var(--radius-20);
 	max-width: 550px;
 	margin: 0 auto;
 	display: block;
 }
 
-/* ============================================
-   RESPONSIVE
-   TODO: Add tablet and mobile styles later with separate design
-   ============================================ */
+/* ================================================
+   TABLET (max-width: 1199px)
+   ================================================ */
+@media (max-width: 1199px) {
+	.training-orientation {
+		padding: var(--sp-6) 0 0;
+	}
+
+	.training-orientation__title {
+		font-size: var(--fs-500);
+	}
+
+	.training-orientation__subtitle {
+		font-size: var(--fs-350);
+	}
+
+	.training-orientation__image-wrapper {
+		padding: var(--sp-5) 0;
+	}
+
+	.training-orientation__image {
+		max-width: 450px;
+	}
+}
+
+/* ================================================
+   MOBILE (max-width: 575px)
+   ================================================ */
+@media (max-width: 575px) {
+	.training-orientation {
+		padding: var(--sp-5) 0 0;
+	}
+
+	/* Show Mobile Title Box on mobile */
+	.training-orientation > .container > .mobile-title-box {
+		display: flex;
+	}
+
+	/* Hide desktop title on mobile */
+	.training-orientation__title {
+		display: none;
+	}
+
+	.training-orientation__subtitle {
+		font-size: var(--fs-300);
+	}
+
+	.training-orientation__item .training-orientation__subtitle::before {
+		font-size: var(--fs-300);
+	}
+
+	.training-orientation__text,
+	.training-orientation__sublist li {
+		font-size: var(--fs-caption);
+	}
+
+	.training-orientation__image-wrapper {
+		padding: var(--sp-4) 0 0;
+	}
+
+	.training-orientation__image {
+		max-width: 100%;
+		border-radius: 0;
+	}
+}

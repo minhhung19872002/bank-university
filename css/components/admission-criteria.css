@@ -1,18 +1,25 @@
 /* ============================================
    COMPONENT: Admission Criteria
    Accordion-style admission requirements
+   Breakpoints: Desktop (default), Tablet (max-width: 1199px), Mobile (max-width: 575px)
    ============================================ */
 
+/* Desktop-first base styles */
 .admission-criteria {
 	padding: var(--sp-7) 0;
 	background-color: var(--color-light);
 }
 
+/* Mobile Title Box - Hidden on desktop */
+.admission-criteria > .container > .mobile-title-box {
+	display: none;
+}
+
 .admission-criteria__title {
-	font-family: var(--font-primary);
-	font-size: 30px;
-	font-weight: 700;
-	line-height: 36.57px;
+	font-family: var(--font-family-heading);
+	font-size: var(--fs-600);
+	font-weight: var(--fw-bold);
+	line-height: var(--lh-heading-tight);
 	color: var(--brand-primary);
 	text-align: center;
 	text-transform: capitalize;
@@ -26,7 +33,7 @@
 .admission-criteria__image {
 	width: 100%;
 	height: auto;
-	border-radius: 20px;
+	border-radius: var(--radius-20);
 	max-width: 610px;
 }
 
@@ -39,7 +46,7 @@
 
 .admission-accordion__item {
 	background-color: var(--color-light);
-	border-radius: 8px;
+	border-radius: var(--radius-8);
 	box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.13);
 	overflow: hidden;
 	transition: all var(--transition-base);
@@ -52,7 +59,7 @@
 .admission-accordion__item--active .admission-accordion__header {
 	background-color: var(--brand-primary);
 	color: var(--color-light);
-	border-radius: 8px 8px 0 0;
+	border-radius: var(--radius-8) var(--radius-8) 0 0;
 }
 
 .admission-accordion__header {
@@ -60,10 +67,10 @@
 	padding: 20px 29px;
 	background-color: var(--color-light);
 	border: none;
-	font-family: var(--font-primary);
+	font-family: var(--font-family-heading);
 	font-size: 15px;
-	font-weight: 600;
-	line-height: 15px;
+	font-weight: var(--fw-semibold);
+	line-height: 1;
 	color: var(--brand-primary);
 	text-align: left;
 	cursor: pointer;
@@ -97,10 +104,10 @@
 .admission-accordion__content {
 	padding: 17px 29px;
 	background-color: var(--color-light);
-	font-family: var(--font-primary);
-	font-size: 14px;
-	font-weight: 400;
-	line-height: 20px;
+	font-family: var(--font-family-heading);
+	font-size: var(--fs-body-sm);
+	font-weight: var(--fw-regular);
+	line-height: 1.43;
 	color: var(--gray-900);
 	display: none;
 }
@@ -113,15 +120,40 @@
 	margin: 0;
 }
 
-/* ============================================
-   RESPONSIVE
-   TODO: Add tablet and mobile styles later with separate design
-   ============================================ */
+/* ================================================
+   TABLET (max-width: 1199px)
+   ================================================ */
+@media (max-width: 1199px) {
+	.admission-criteria {
+		padding: var(--sp-6) 0;
+	}
 
-/* Mobile */
-@media (max-width: 575.98px) {
+	.admission-criteria__title {
+		font-size: var(--fs-500);
+		margin-bottom: var(--sp-5);
+	}
+
+	.admission-criteria__image {
+		max-width: 500px;
+	}
+}
+
+/* ================================================
+   MOBILE (max-width: 575px)
+   ================================================ */
+@media (max-width: 575px) {
 	.admission-criteria {
 		padding: var(--sp-5) 0;
+	}
+
+	/* Show Mobile Title Box on mobile */
+	.admission-criteria > .container > .mobile-title-box {
+		display: flex;
+	}
+
+	/* Hide desktop title on mobile */
+	.admission-criteria__title {
+		display: none;
 	}
 
 	/* Hide image on mobile */
@@ -131,14 +163,14 @@
 
 	/* Accordion styles similar to FAQ mobile */
 	.admission-accordion__item {
-		background-color: #ffffff;
+		background-color: var(--color-light);
 		box-shadow: 0 2px 4px rgba(15, 23, 42, 0.06);
 		border: 1px solid transparent;
-		border-radius: 8px;
+		border-radius: var(--radius-8);
 	}
 
 	.admission-accordion__item--active {
-		background-color: #ffffff;
+		background-color: var(--color-light);
 		box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
 		border-color: var(--brand-primary);
 	}
@@ -146,16 +178,16 @@
 	.admission-accordion__item--active .admission-accordion__header {
 		background-color: var(--color-light);
 		color: var(--brand-primary);
-		border-radius: 8px 8px 0 0;
+		border-radius: var(--radius-8) var(--radius-8) 0 0;
 	}
 
 	.admission-accordion__header {
-		padding: 16px;
-		font-size: 14px;
+		padding: var(--sp-4);
+		font-size: var(--fs-body-sm);
 	}
 
 	.admission-accordion__header::after {
-		right: 16px;
+		right: var(--sp-4);
 	}
 
 	.admission-accordion__item--active .admission-accordion__header::after {
@@ -163,8 +195,8 @@
 	}
 
 	.admission-accordion__content {
-		padding: 12px 16px 16px;
-		font-size: 13px;
+		padding: var(--sp-3) var(--sp-4) var(--sp-4);
+		font-size: var(--fs-caption);
 		line-height: 1.5;
 	}
 }

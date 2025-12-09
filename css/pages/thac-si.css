@@ -1,13 +1,14 @@
 /* ============================================
    PAGE: Thac Si (Masters Programs)
+   Breakpoints: Desktop (default), Tablet (max-width: 1199px), Mobile (max-width: 575px)
    ============================================ */
 
 /* ========== SECTION: Hero Thac Si ========== */
 .hero-section--thacsi .hero-section__bg {
-	background-image: url("https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/Xywz0NRP6V.png");
+	background-image: url("/assets/images/hero_bg.png");
 }
 
-/* Program Introduction Section */
+/* ========== SECTION: Program Introduction ========== */
 .program-intro {
 	padding: var(--sp-7) 0 0;
 	background-color: var(--color-light);
@@ -21,7 +22,7 @@
 .program-intro__image {
 	width: 553px;
 	height: 366px;
-	border-radius: 20px;
+	border-radius: var(--radius-20);
 	object-fit: cover;
 }
 
@@ -49,59 +50,60 @@
 }
 
 .program-intro__title-sub {
-	font-family: var(--font-primary);
-	font-size: 30px;
-	font-weight: 700;
-	line-height: 36.57px;
+	font-family: var(--font-family-heading);
+	font-size: var(--fs-600);
+	font-weight: var(--fw-bold);
+	line-height: var(--lh-heading-tight);
 	color: var(--brand-primary);
 	text-transform: uppercase;
 }
 
 .program-intro__title-main {
-	font-family: var(--font-primary);
-	font-size: 30px;
-	font-weight: 700;
-	line-height: 36.57px;
+	font-family: var(--font-family-heading);
+	font-size: var(--fs-600);
+	font-weight: var(--fw-bold);
+	line-height: var(--lh-heading-tight);
 	color: var(--brand-primary);
 	text-transform: uppercase;
 }
 
 .program-intro__description {
-	font-family: var(--font-primary);
-	font-size: 14px;
-	font-weight: 400;
-	line-height: 22px;
+	font-family: var(--font-family-heading);
+	font-size: var(--fs-body-sm);
+	font-weight: var(--fw-regular);
+	line-height: 1.57;
 	color: var(--gray-900);
 	margin: 0;
 }
 
-/* Section Headers */
+/* ========== SECTION: Section Headers ========== */
 .section-header {
 	margin-bottom: var(--sp-7);
 }
 
 .section-header__subtitle {
-	font-family: var(--font-primary);
-	font-size: 20px;
-	font-weight: 600;
-	line-height: 24px;
+	font-family: var(--font-family-heading);
+	font-size: var(--fs-425);
+	font-weight: var(--fw-semibold);
+	line-height: 1.2;
 	color: var(--brand-secondary);
 	text-transform: capitalize;
 	margin-bottom: var(--sp-2);
 }
 
 .section-header__title {
-	font-family: var(--font-primary);
-	font-size: 40px;
-	font-weight: 700;
-	line-height: 48.76px;
+	font-family: var(--font-family-heading);
+	font-size: var(--fs-700);
+	font-weight: var(--fw-bold);
+	line-height: var(--lh-heading-tight);
 	color: var(--brand-primary);
 	margin: 0;
 }
 
-/* Program Cards Section */
+/* ========== SECTION: Program Cards ========== */
 .program-cards-section {
 	padding: var(--sp-8) 0;
+	background-color: var(--color-light);
 }
 
 .program-cards-grid {
@@ -114,14 +116,6 @@
 .program-cards-grid .program-card-item {
 	flex: 0 0 calc(33.333% - var(--sp-4) * 2 / 3);
 	max-width: calc(33.333% - var(--sp-4) * 2 / 3);
-}
-
-/* Tablet: 2 columns */
-@media (min-width: 576px) and (max-width: 991.98px) {
-	.program-cards-grid .program-card-item {
-		flex: 0 0 calc(50% - var(--sp-4) / 2);
-		max-width: calc(50% - var(--sp-4) / 2);
-	}
 }
 
 /* Program Pagination */
@@ -146,10 +140,10 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-family: var(--font-primary);
-	font-size: 18px;
-	font-weight: 400;
-	line-height: 21.942px;
+	font-family: var(--font-family-heading);
+	font-size: var(--fs-400);
+	font-weight: var(--fw-regular);
+	line-height: 1.2;
 	color: var(--gray-900);
 }
 
@@ -173,7 +167,7 @@
 }
 
 .program-pagination__btn img {
-	width: 11.111px;
+	width: 11px;
 	height: 10px;
 }
 
@@ -186,13 +180,60 @@
 	cursor: not-allowed;
 }
 
-/* ============================================
-   RESPONSIVE
-   ============================================ */
+/* Slider Navigation - Hidden on desktop */
+.program-slider-nav {
+	display: none;
+}
 
-/* Mobile */
-@media (max-width: 575.98px) {
-	/* Program Intro - nội dung trên, hình dưới */
+/* ================================================
+   TABLET (max-width: 1199px)
+   ================================================ */
+@media (max-width: 1199px) {
+	/* Program Intro - Tablet */
+	.program-intro {
+		padding: var(--sp-6) 0 0;
+	}
+
+	.program-intro__image {
+		width: 100%;
+		max-width: 480px;
+		height: auto;
+	}
+
+	.program-intro__title-sub,
+	.program-intro__title-main {
+		font-size: var(--fs-500);
+	}
+
+	/* Section Header - Tablet */
+	.section-header__subtitle {
+		font-size: var(--fs-350);
+	}
+
+	.section-header__title {
+		font-size: var(--fs-600);
+	}
+
+	/* Program Cards - Tablet: 2 columns */
+	.program-cards-section {
+		padding: var(--sp-7) 0;
+	}
+
+	.program-cards-grid .program-card-item {
+		flex: 0 0 calc(50% - var(--sp-4) / 2);
+		max-width: calc(50% - var(--sp-4) / 2);
+	}
+}
+
+/* ================================================
+   MOBILE (max-width: 575px)
+   ================================================ */
+@media (max-width: 575px) {
+	/* Program Intro - Mobile: content on top, image below */
+	.program-intro {
+		padding: var(--sp-5) 0 0;
+	}
+
 	.program-intro .row {
 		flex-direction: column-reverse;
 	}
@@ -215,12 +256,27 @@
 		padding: var(--sp-4) 0;
 	}
 
-	/* Stats section - ẩn ở mobile */
-	.stats-section-wrapper {
-		display: none;
+	.program-intro__title-sub,
+	.program-intro__title-main {
+		font-size: var(--fs-450);
 	}
 
-	/* Program Cards Mobile Slider */
+	/* Section Header - Mobile */
+	.section-header__subtitle {
+		font-size: var(--fs-300);
+		text-align: left;
+	}
+
+	.section-header__title {
+		font-size: var(--fs-500);
+		text-align: left;
+	}
+
+	/* Program Cards - Mobile: Horizontal slider */
+	.program-cards-section {
+		padding: var(--sp-6) 0;
+	}
+
 	.program-cards-grid {
 		flex-wrap: nowrap;
 		overflow-x: auto;
@@ -243,12 +299,12 @@
 		scroll-snap-align: center;
 	}
 
-	/* Slider Navigation */
+	/* Show Slider Navigation on mobile */
 	.program-slider-nav {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		gap: 16px;
+		gap: var(--sp-4);
 		margin-top: var(--sp-4);
 	}
 
@@ -262,7 +318,7 @@
 		align-items: center;
 		justify-content: center;
 		cursor: pointer;
-		transition: all 0.3s ease;
+		transition: all var(--transition-base);
 	}
 
 	.program-slider-nav__btn:hover {
