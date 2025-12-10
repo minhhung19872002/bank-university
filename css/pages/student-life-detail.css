@@ -27,11 +27,12 @@
 }
 
 .student-life-detail-header__title {
-  font-family: var(--font-primary);
+  font-family: var(--font-family-heading);
   font-size: var(--fs-700);
-  font-weight: 700;
-  line-height: 1.22; /* 49/40 */
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-heading-tight);
   color: var(--brand-primary);
+  text-transform: uppercase;
   margin: 0 auto var(--sp-3);
   max-width: 800px;
 }
@@ -47,13 +48,15 @@
 }
 
 /* ============================================
-   FEATURED IMAGE SECTION
+   ARTICLE BODY SECTION (wrapper)
    ============================================ */
-.student-life-detail-featured {
+.student-life-detail-body {
   padding-top: 28px;
+  padding-bottom: 60px;
   background-color: var(--color-light);
 }
 
+/* Featured Image */
 .student-life-detail-featured__image {
   width: 100%;
   max-width: 1200px;
@@ -64,12 +67,9 @@
   margin: 0 auto;
 }
 
-/* ============================================
-   MAIN CONTENT SECTION
-   ============================================ */
+/* Main Content */
 .student-life-detail-content {
   padding-top: 40px;
-  background-color: var(--color-light);
 }
 
 .student-life-detail-content__text {
@@ -89,12 +89,9 @@
   margin-bottom: 0;
 }
 
-/* ============================================
-   IMAGE GALLERY SECTION
-   ============================================ */
+/* Image Gallery */
 .student-life-detail-gallery {
   padding-top: 30px;
-  background-color: var(--color-light);
 }
 
 .gallery-card {
@@ -116,12 +113,9 @@
   display: block;
 }
 
-/* ============================================
-   ADDITIONAL CONTENT SECTION
-   ============================================ */
+/* Additional Content */
 .student-life-detail-additional {
   padding-top: 26px;
-  background-color: var(--color-light);
 }
 
 .student-life-detail-additional__text {
@@ -137,7 +131,91 @@
   margin-bottom: 0;
 }
 
-/* ============================================
-   RESPONSIVE
-   TODO: Mobile/Tablet styles sẽ được thêm ở vòng sau với design riêng
-   ============================================ */
+/* ================================================
+   TABLET (max-width: 1199px)
+   ================================================ */
+@media (max-width: 1199px) {
+	.student-life-detail-header__title {
+		font-size: var(--fs-600);
+	}
+
+	.student-life-detail-featured__image {
+		height: 400px;
+		border-radius: var(--radius-16);
+	}
+
+	.gallery-card {
+		height: 200px;
+		border-radius: var(--radius-16);
+	}
+}
+
+/* ================================================
+   MOBILE (max-width: 575px)
+   ================================================ */
+@media (max-width: 575px) {
+	/* Header Section - Mobile */
+	.student-life-detail-header {
+		padding-top: var(--sp-5);
+	}
+
+	.student-life-detail-header__title {
+		font-size: var(--fs-500);
+		text-align: left;
+		margin-bottom: var(--sp-2);
+	}
+
+	.student-life-detail-header__intro {
+		display: none;
+	}
+
+	/* Article Body - Mobile */
+	.student-life-detail-body {
+		padding-top: var(--sp-4);
+		padding-bottom: var(--sp-6);
+	}
+
+	/* Featured Image - Mobile */
+	.student-life-detail-featured__image {
+		height: 200px;
+		border-radius: var(--radius-10);
+	}
+
+	/* Content Section - Mobile */
+	.student-life-detail-content {
+		padding-top: var(--sp-4);
+	}
+
+	.student-life-detail-content__text {
+		font-size: var(--fs-body-sm);
+		line-height: 1.5;
+	}
+
+	.student-life-detail-content__text p {
+		margin-bottom: var(--sp-3);
+	}
+
+	/* Gallery Section - Mobile */
+	.student-life-detail-gallery {
+		padding-top: var(--sp-4);
+	}
+
+	.gallery-card {
+		height: 180px;
+		border-radius: var(--radius-10);
+	}
+
+	.gallery-card:hover {
+		transform: none;
+	}
+
+	/* Additional Content - Mobile */
+	.student-life-detail-additional {
+		padding-top: var(--sp-4);
+	}
+
+	.student-life-detail-additional__text {
+		font-size: var(--fs-body-sm);
+		line-height: 1.5;
+	}
+}
