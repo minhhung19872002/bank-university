@@ -354,6 +354,12 @@
 		display: none;
 	}
 
+	.programs-section .row.g-4.is-dragging {
+		scroll-snap-type: none;
+		cursor: grabbing;
+		user-select: none;
+	}
+
 	.programs-section .row.g-4 > .col-lg-4 {
 		flex: 0 0 100%;
 		max-width: 100%;

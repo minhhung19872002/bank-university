@@ -83,34 +83,81 @@ export function initProgramSlider() {
         }, 50);
     });
 
-    // Touch/Drag scroll support
+    // Touch/Drag scroll support with smooth momentum
     let isDown = false;
     let startX;
     let scrollLeft;
+    let velX = 0;
+    let momentumID;
+    let lastX;
+    let lastTime;
+
+    function startMomentum() {
+        cancelMomentum();
+        if (Math.abs(velX) > 0.5) {
+            momentumID = requestAnimationFrame(momentumLoop);
+        }
+    }
+
+    function cancelMomentum() {
+        if (momentumID) {
+            cancelAnimationFrame(momentumID);
+            momentumID = null;
+        }
+    }
+
+    function momentumLoop() {
+        slider.scrollLeft += velX;
+        velX *= 0.92; // Slower decay for smoother feeling
+        if (Math.abs(velX) > 0.5) {
+            momentumID = requestAnimationFrame(momentumLoop);
+        }
+    }
 
     slider.addEventListener('mousedown', (e) => {
         isDown = true;
+        slider.classList.add('is-dragging');
         slider.style.cursor = 'grabbing';
         startX = e.pageX - slider.offsetLeft;
         scrollLeft = slider.scrollLeft;
+        lastX = e.pageX;
+        lastTime = Date.now();
+        velX = 0;
+        cancelMomentum();
     });
 
     slider.addEventListener('mouseleave', () => {
+        if (!isDown) return;
         isDown = false;
+        slider.classList.remove('is-dragging');
         slider.style.cursor = 'grab';
+        startMomentum();
     });
 
     slider.addEventListener('mouseup', () => {
+        if (!isDown) return;
         isDown = false;
+        slider.classList.remove('is-dragging');
         slider.style.cursor = 'grab';
+        startMomentum();
     });
 
     slider.addEventListener('mousemove', (e) => {
         if (!isDown) return;
         e.preventDefault();
+
         const x = e.pageX - slider.offsetLeft;
-        const walk = (x - startX) * 2;
+        const walk = x - startX;
         slider.scrollLeft = scrollLeft - walk;
+
+        // Calculate velocity based on movement over time
+        const now = Date.now();
+        const dt = now - lastTime;
+        if (dt > 0) {
+            velX = (lastX - e.pageX) / dt * 15; // Scale for smooth momentum
+        }
+        lastX = e.pageX;
+        lastTime = now;
     });
 
     // Set initial cursor style
