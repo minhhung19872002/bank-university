@@ -1,15 +1,11 @@
-import { includePartials } from './modules/includePartials.js';
-import { initProgramSlider } from './modules/program-slider.js';
-
-(async function start() {
-    await includePartials();
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
     initNavigation();
     initFAQAccordion();
     initMobileNav();
     initProgramsTabs();
     initProgramsAccordionMobile();
-    initProgramSlider();
-})();
+});
 
 // Initialize navigation active states and scroll spy
 function initNavigation() {
@@ -162,42 +158,62 @@ function initFAQAccordion() {
 
 // Mobile sidebar navigation
 function initMobileNav() {
-    const mobileNav = document.querySelector('[data-mobile-nav]');
-    const toggleBtn = document.querySelector('[data-nav-toggle]');
-    const closeBtn = document.querySelector('[data-nav-close]');
-    const overlay = document.querySelector('[data-mobile-nav-overlay]');
-    const links = mobileNav
-        ? mobileNav.querySelectorAll('.mobile-nav__link')
-        : [];
+    function setupMobileNav() {
+        const mobileNav = document.querySelector('[data-mobile-nav]');
+        const toggleBtn = document.querySelector('[data-nav-toggle]');
+        const closeBtn = document.querySelector('[data-nav-close]');
+        const overlay = document.querySelector('[data-mobile-nav-overlay]');
+        const links = mobileNav
+            ? mobileNav.querySelectorAll('.mobile-nav__link')
+            : [];
 
-    if (!mobileNav || !toggleBtn) return;
+        if (!mobileNav || !toggleBtn) return false;
 
-    const openNav = () => {
-        mobileNav.classList.add('mobile-nav--open');
-        mobileNav.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-    };
+        const openNav = () => {
+            mobileNav.classList.add('mobile-nav--open');
+            mobileNav.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        };
 
-    const closeNav = () => {
-        mobileNav.classList.remove('mobile-nav--open');
-        mobileNav.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-    };
+        const closeNav = () => {
+            mobileNav.classList.remove('mobile-nav--open');
+            mobileNav.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        };
 
-    toggleBtn.addEventListener('click', openNav);
+        toggleBtn.addEventListener('click', openNav);
 
-    if (closeBtn) {
-        closeBtn.addEventListener('click', closeNav);
-    }
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeNav);
+        }
 
-    if (overlay) {
-        overlay.addEventListener('click', closeNav);
-    }
+        if (overlay) {
+            overlay.addEventListener('click', closeNav);
+        }
 
-    links.forEach(link => {
-        link.addEventListener('click', () => {
-            closeNav();
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                closeNav();
+            });
         });
+
+        return true;
+    }
+
+    // Try to setup immediately
+    if (setupMobileNav()) return;
+
+    // If header not loaded yet, observe for it
+    const observer = new MutationObserver((mutations, obs) => {
+        if (document.querySelector('[data-nav-toggle]')) {
+            setupMobileNav();
+            obs.disconnect();
+        }
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
     });
 }
 
