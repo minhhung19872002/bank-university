@@ -844,12 +844,55 @@
 		</script>
 
 		<!-- Activities Carousel -->
-		<script type="module">
-			import { initActivitiesCarousel } from "/js/modules/activities-carousel.js";
-			document.addEventListener(
-				"DOMContentLoaded",
-				initActivitiesCarousel
-			);
+		<script>
+			document.addEventListener("DOMContentLoaded", function () {
+				// Desktop navigation buttons
+				const prevBtn = document.querySelector(".carousel-nav--prev");
+				const nextBtn = document.querySelector(".carousel-nav--next");
+
+				// Initialize activities carousel with snap mode
+				initGallerySlider({
+					gallerySelector: ".activities-carousel__track",
+					prevBtnSelector: ".carousel-nav--prev",
+					nextBtnSelector: ".carousel-nav--next",
+					itemSelector: ".activity-card",
+					gap: 17,
+					swipeThreshold: 50,
+					mode: "snap",
+				});
+
+				// Mobile slider navigation
+				const mobilePrevBtn = document.querySelector(
+					".activities-slider-nav__btn--prev"
+				);
+				const mobileNextBtn = document.querySelector(
+					".activities-slider-nav__btn--next"
+				);
+
+				if (mobilePrevBtn && mobileNextBtn) {
+					const track = document.querySelector(
+						".activities-carousel__track"
+					);
+					const getCardWidth = () => {
+						const card = track.querySelector(".activity-card");
+						return card ? card.offsetWidth + 17 : 0;
+					};
+
+					mobilePrevBtn.addEventListener("click", () => {
+						track.scrollBy({
+							left: -getCardWidth(),
+							behavior: "smooth",
+						});
+					});
+
+					mobileNextBtn.addEventListener("click", () => {
+						track.scrollBy({
+							left: getCardWidth(),
+							behavior: "smooth",
+						});
+					});
+				}
+			});
 		</script>
 
 		<!-- Dorm Slider Navigation -->
@@ -862,12 +905,13 @@
 
 				if (!dormTrack) return;
 
-				// Initialize slider with momentum mode
+				// Initialize slider with snap mode
 				initGallerySlider({
 					gallerySelector: ".dormitory-info .row.g-4",
 					itemSelector: ".col-12",
 					gap: 0,
-					mode: "momentum",
+					swipeThreshold: 50,
+					mode: "snap",
 				});
 
 				// Update active dot based on scroll position

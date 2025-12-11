@@ -10,13 +10,11 @@
  *   itemSelector: '.your-item',           // optional, default: first child class
  *   gap: 12,                              // optional, gap between items in px
  *   swipeThreshold: 50,                   // optional, min distance to trigger swipe
- *   mode: 'snap'                          // optional: 'snap', 'momentum', 'momentum-light', or 'simple'
+ *   mode: 'snap'                          // optional: 'snap' or 'simple'
  * });
  *
  * Modes:
  * - 'snap': Snap to item after drag/swipe (1 item per swipe)
- * - 'momentum': Free scroll with strong momentum after drag
- * - 'momentum-light': Free scroll with light/smooth momentum after drag
  * - 'simple': Only prev/next buttons, no drag functionality
  */
 
@@ -28,7 +26,7 @@ function initGallerySlider(options = {}) {
         itemSelector = null,
         gap = 12,
         swipeThreshold = 50,
-        mode = "snap", // 'snap', 'momentum', 'momentum-light', or 'simple'
+        mode = "snap",
     } = options;
 
     const gallery = document.querySelector(gallerySelector);
@@ -120,50 +118,11 @@ function initGallerySlider(options = {}) {
         };
     }
 
-    // Drag/Swipe functionality (for snap and momentum modes)
+    // Drag/Swipe functionality (for snap mode)
     let isDown = false;
     let startX;
     let scrollLeft;
     let hasMoved = false;
-
-    // Momentum variables
-    let velX = 0;
-    let lastX = 0;
-    let lastTime = 0;
-    let momentumID = null;
-
-    // Check if using any momentum mode
-    const isMomentumMode = mode === "momentum" || mode === "momentum-light";
-
-    const cancelMomentum = () => {
-        if (momentumID) {
-            cancelAnimationFrame(momentumID);
-            momentumID = null;
-        }
-    };
-
-    const startMomentum = () => {
-        cancelMomentum();
-        // momentum-light always starts, momentum checks threshold
-        if (mode === "momentum-light" || Math.abs(velX) > 0.5) {
-            momentumID = requestAnimationFrame(momentumLoop);
-        }
-    };
-
-    const momentumLoop = () => {
-        if (mode === "momentum-light") {
-            // Light momentum: smoother, slower decay (like original lich-su.html)
-            gallery.scrollLeft -= velX * 0.05;
-            velX *= 0.95;
-        } else {
-            // Strong momentum
-            gallery.scrollLeft += velX;
-            velX *= 0.92;
-        }
-        if (Math.abs(velX) > 0.5) {
-            momentumID = requestAnimationFrame(momentumLoop);
-        }
-    };
 
     const handleDragStart = (pageX) => {
         isDown = true;
@@ -171,26 +130,12 @@ function initGallerySlider(options = {}) {
         gallery.classList.add("is-dragging");
         startX = pageX - gallery.offsetLeft;
         scrollLeft = gallery.scrollLeft;
-
-        if (isMomentumMode) {
-            velX = 0;
-            cancelMomentum();
-        }
-        if (mode === "momentum") {
-            lastX = pageX;
-            lastTime = Date.now();
-        }
     };
 
     const handleDragEnd = (pageX) => {
         if (!isDown) return;
         isDown = false;
         gallery.classList.remove("is-dragging");
-
-        if (isMomentumMode) {
-            startMomentum();
-            return;
-        }
 
         // Snap mode: Calculate swipe direction based on distance moved
         const endX = pageX - gallery.offsetLeft;
@@ -231,21 +176,6 @@ function initGallerySlider(options = {}) {
         }
 
         gallery.scrollLeft = scrollLeft - walk;
-
-        // Calculate velocity for momentum modes
-        if (mode === "momentum") {
-            // Strong momentum: velocity based on time
-            const now = Date.now();
-            const dt = now - lastTime;
-            if (dt > 0) {
-                velX = ((lastX - pageX) / dt) * 15;
-            }
-            lastX = pageX;
-            lastTime = now;
-        } else if (mode === "momentum-light") {
-            // Light momentum: velocity based on walk distance
-            velX = walk;
-        }
     };
 
     // Mouse events
@@ -307,7 +237,6 @@ function initGallerySlider(options = {}) {
         goToIndex,
         getCurrentIndex,
         getItemWidth,
-        cancelMomentum,
     };
 }
 
