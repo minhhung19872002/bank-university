@@ -1065,6 +1065,9 @@
 		<!-- Custom JS -->
 		<script src="js/accordion.js"></script>
 
+		<!-- Gallery Slider Module -->
+		<script src="/js/modules/gallery-slider.js"></script>
+
 		<!-- Include Loader -->
 		<script>
 			// Simple include loader
@@ -1077,53 +1080,16 @@
 
 		<!-- Program Slider Navigation -->
 		<script>
-			(function() {
-				const slider = document.querySelector('.program-cards-grid');
-				const prevBtn = document.querySelector('.program-slider-nav__btn--prev');
-				const nextBtn = document.querySelector('.program-slider-nav__btn--next');
-
-				if (!slider || !prevBtn || !nextBtn) return;
-
-				let currentIndex = 0;
-				const cards = slider.querySelectorAll('.program-card-item');
-				const totalCards = cards.length;
-
-				function getCardWidth() {
-					const card = slider.querySelector('.program-card-item');
-					return card ? card.offsetWidth + 16 : 0; // 16px = gap
-				}
-
-				function scrollToIndex(index) {
-					const cardWidth = getCardWidth();
-					if (cardWidth === 0) return;
-					index = Math.max(0, Math.min(index, totalCards - 1));
-					currentIndex = index;
-					slider.scrollTo({
-						left: cardWidth * index,
-						behavior: 'smooth'
-					});
-				}
-
-				prevBtn.addEventListener('click', () => {
-					scrollToIndex(currentIndex - 1);
+			document.addEventListener("DOMContentLoaded", function () {
+				initGallerySlider({
+					gallerySelector: ".program-cards-grid",
+					prevBtnSelector: ".program-slider-nav__btn--prev",
+					nextBtnSelector: ".program-slider-nav__btn--next",
+					itemSelector: ".program-card-item",
+					gap: 16,
+					mode: "simple",
 				});
-
-				nextBtn.addEventListener('click', () => {
-					scrollToIndex(currentIndex + 1);
-				});
-
-				// Update current index on scroll
-				let scrollTimeout;
-				slider.addEventListener('scroll', () => {
-					clearTimeout(scrollTimeout);
-					scrollTimeout = setTimeout(() => {
-						const cardWidth = getCardWidth();
-						if (cardWidth > 0) {
-							currentIndex = Math.round(slider.scrollLeft / cardWidth);
-						}
-					}, 50);
-				});
-			})();
+			});
 		</script>
 	</body>
 </html>

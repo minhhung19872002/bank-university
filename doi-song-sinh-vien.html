@@ -830,6 +830,9 @@
 		<!-- Bootstrap 5 JS -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+		<!-- Gallery Slider Module -->
+		<script src="/js/modules/gallery-slider.js"></script>
+
 		<!-- Include Loader -->
 		<script>
 			// Simple include loader
@@ -859,6 +862,14 @@
 
 				if (!dormTrack) return;
 
+				// Initialize slider with momentum mode
+				initGallerySlider({
+					gallerySelector: ".dormitory-info .row.g-4",
+					itemSelector: ".col-12",
+					gap: 0,
+					mode: "momentum",
+				});
+
 				// Update active dot based on scroll position
 				dormTrack.addEventListener("scroll", function () {
 					if (!dots.length) return;
@@ -885,138 +896,6 @@
 							behavior: "smooth",
 						});
 					});
-				});
-
-				// Drag functionality
-				let isDown = false;
-				let startX;
-				let scrollLeft;
-				let velX = 0;
-				let momentumID;
-				let lastX;
-				let lastTime;
-				let hasMoved = false;
-
-				function startMomentum() {
-					cancelMomentum();
-					if (Math.abs(velX) > 0.5) {
-						momentumID = requestAnimationFrame(momentumLoop);
-					}
-				}
-
-				function cancelMomentum() {
-					if (momentumID) {
-						cancelAnimationFrame(momentumID);
-						momentumID = null;
-					}
-				}
-
-				function momentumLoop() {
-					dormTrack.scrollLeft += velX;
-					velX *= 0.92;
-					if (Math.abs(velX) > 0.5) {
-						momentumID = requestAnimationFrame(momentumLoop);
-					}
-				}
-
-				// Mouse events
-				dormTrack.addEventListener("mousedown", (e) => {
-					isDown = true;
-					hasMoved = false;
-					dormTrack.classList.add("is-dragging");
-					startX = e.pageX - dormTrack.offsetLeft;
-					scrollLeft = dormTrack.scrollLeft;
-					lastX = e.pageX;
-					lastTime = Date.now();
-					velX = 0;
-					cancelMomentum();
-				});
-
-				dormTrack.addEventListener("mouseleave", () => {
-					if (!isDown) return;
-					isDown = false;
-					dormTrack.classList.remove("is-dragging");
-					startMomentum();
-				});
-
-				dormTrack.addEventListener("mouseup", () => {
-					if (!isDown) return;
-					isDown = false;
-					dormTrack.classList.remove("is-dragging");
-					startMomentum();
-				});
-
-				dormTrack.addEventListener("mousemove", (e) => {
-					if (!isDown) return;
-					e.preventDefault();
-
-					const x = e.pageX - dormTrack.offsetLeft;
-					const walk = x - startX;
-
-					if (Math.abs(walk) > 5) {
-						hasMoved = true;
-					}
-
-					dormTrack.scrollLeft = scrollLeft - walk;
-
-					const now = Date.now();
-					const dt = now - lastTime;
-					if (dt > 0) {
-						velX = ((lastX - e.pageX) / dt) * 15;
-					}
-					lastX = e.pageX;
-					lastTime = now;
-				});
-
-				// Prevent click on links/cards if dragged
-				dormTrack.addEventListener(
-					"click",
-					(e) => {
-						if (hasMoved) {
-							e.preventDefault();
-							e.stopPropagation();
-						}
-					},
-					true
-				);
-
-				// Touch events for mobile
-				let touchStartX;
-				let touchScrollLeft;
-
-				dormTrack.addEventListener(
-					"touchstart",
-					(e) => {
-						touchStartX = e.touches[0].pageX - dormTrack.offsetLeft;
-						touchScrollLeft = dormTrack.scrollLeft;
-						lastX = e.touches[0].pageX;
-						lastTime = Date.now();
-						velX = 0;
-						cancelMomentum();
-					},
-					{ passive: true }
-				);
-
-				dormTrack.addEventListener(
-					"touchmove",
-					(e) => {
-						const x = e.touches[0].pageX - dormTrack.offsetLeft;
-						const walk = x - touchStartX;
-						dormTrack.scrollLeft = touchScrollLeft - walk;
-
-						const now = Date.now();
-						const dt = now - lastTime;
-						if (dt > 0) {
-							velX = ((lastX - e.touches[0].pageX) / dt) * 15;
-						}
-						lastX = e.touches[0].pageX;
-						lastTime = now;
-					},
-					{ passive: true }
-				);
-
-				dormTrack.addEventListener("touchend", () => {
-					startMomentum();
 				});
 			});
 		</script>

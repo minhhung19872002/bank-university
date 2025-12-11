@@ -957,8 +957,8 @@
 								class="program-advantages__item program-advantages__item--1"
 							>
 								<p class="program-advantages__text">
-									Tập trung vào nâng cao năng lực nghiên cứu khoa
-									học độc lập.
+									Tập trung vào nâng cao năng lực nghiên cứu
+									khoa học độc lập.
 								</p>
 							</div>
 
@@ -966,8 +966,8 @@
 								class="program-advantages__item program-advantages__item--2"
 							>
 								<p class="program-advantages__text">
-									Hướng dẫn bởi các GS, PGS, TS đầu ngành, có công
-									trình nghiên cứu quốc tế.
+									Hướng dẫn bởi các GS, PGS, TS đầu ngành, có
+									công trình nghiên cứu quốc tế.
 								</p>
 							</div>
 
@@ -975,8 +975,8 @@
 								class="program-advantages__item program-advantages__item--3"
 							>
 								<p class="program-advantages__text">
-									Học viên được tham gia các đề tài cấp Bộ, cấp
-									trường, hoặc nghiên cứu quốc tế.
+									Học viên được tham gia các đề tài cấp Bộ,
+									cấp trường, hoặc nghiên cứu quốc tế.
 								</p>
 							</div>
 
@@ -984,8 +984,8 @@
 								class="program-advantages__item program-advantages__item--4"
 							>
 								<p class="program-advantages__text">
-									Có chương trình hợp tác với các trường đại học,
-									viện nghiên cứu nước ngoài.
+									Có chương trình hợp tác với các trường đại
+									học, viện nghiên cứu nước ngoài.
 								</p>
 							</div>
 
@@ -1002,8 +1002,8 @@
 								class="program-advantages__item program-advantages__item--6"
 							>
 								<p class="program-advantages__text">
-									Truy cập miễn phí kho học liệu quốc tế, thư viện
-									điện tử phong phú.
+									Truy cập miễn phí kho học liệu quốc tế, thư
+									viện điện tử phong phú.
 								</p>
 							</div>
 						</div>
@@ -1403,6 +1403,9 @@
 		<!-- Bootstrap 5 JS -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+		<!-- Gallery Slider Module -->
+		<script src="/js/modules/gallery-slider.js"></script>
+
 		<!-- Include Loader -->
 		<script>
 			// Simple include loader
@@ -1415,59 +1418,16 @@
 
 		<!-- Program Slider Navigation -->
 		<script>
-			(function () {
-				const slider = document.querySelector(".program-cards-grid");
-				const prevBtn = document.querySelector(
-					".program-slider-nav__btn--prev"
-				);
-				const nextBtn = document.querySelector(
-					".program-slider-nav__btn--next"
-				);
-
-				if (!slider || !prevBtn || !nextBtn) return;
-
-				let currentIndex = 0;
-				const cards = slider.querySelectorAll(".program-card-item");
-				const totalCards = cards.length;
-
-				function getCardWidth() {
-					const card = slider.querySelector(".program-card-item");
-					return card ? card.offsetWidth + 16 : 0; // 16px = gap
-				}
-
-				function scrollToIndex(index) {
-					const cardWidth = getCardWidth();
-					if (cardWidth === 0) return;
-					index = Math.max(0, Math.min(index, totalCards - 1));
-					currentIndex = index;
-					slider.scrollTo({
-						left: cardWidth * index,
-						behavior: "smooth",
-					});
-				}
-
-				prevBtn.addEventListener("click", () => {
-					scrollToIndex(currentIndex - 1);
+			document.addEventListener("DOMContentLoaded", function () {
+				initGallerySlider({
+					gallerySelector: ".program-cards-grid",
+					prevBtnSelector: ".program-slider-nav__btn--prev",
+					nextBtnSelector: ".program-slider-nav__btn--next",
+					itemSelector: ".program-card-item",
+					gap: 16,
+					mode: "simple",
 				});
-
-				nextBtn.addEventListener("click", () => {
-					scrollToIndex(currentIndex + 1);
-				});
-
-				// Update current index on scroll
-				let scrollTimeout;
-				slider.addEventListener("scroll", () => {
-					clearTimeout(scrollTimeout);
-					scrollTimeout = setTimeout(() => {
-						const cardWidth = getCardWidth();
-						if (cardWidth > 0) {
-							currentIndex = Math.round(
-								slider.scrollLeft / cardWidth
-							);
-						}
-					}, 50);
-				});
-			})();
+			});
 		</script>
 	</body>
 </html>

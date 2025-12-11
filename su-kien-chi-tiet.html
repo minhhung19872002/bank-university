@@ -402,6 +402,9 @@
 		<!-- Bootstrap 5 JS -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+		<!-- Gallery Slider Module -->
+		<script src="/js/modules/gallery-slider.js"></script>
+
 		<!-- Include Loader -->
 		<script>
 			// Simple include loader
@@ -415,170 +418,13 @@
 		<!-- News Carousel Script -->
 		<script>
 			document.addEventListener("DOMContentLoaded", function () {
-				const track = document.querySelector(
-					".announcements-highlighted__track"
-				);
-				const prevBtn = document.querySelector(".news-pagination__btn--prev");
-				const nextBtn = document.querySelector(".news-pagination__btn--next");
-
-				if (!track) return;
-
-				// Get card width for scrolling
-				const getCardWidth = () => {
-					const card = track.querySelector(".news-card");
-					if (!card) return 393; // 374 + 19 gap
-					return card.offsetWidth + 19;
-				};
-
-				// Navigation buttons
-				if (prevBtn) {
-					prevBtn.addEventListener("click", () => {
-						track.scrollBy({
-							left: -getCardWidth(),
-							behavior: "smooth",
-						});
-					});
-				}
-
-				if (nextBtn) {
-					nextBtn.addEventListener("click", () => {
-						track.scrollBy({
-							left: getCardWidth(),
-							behavior: "smooth",
-						});
-					});
-				}
-
-				// Drag functionality
-				let isDown = false;
-				let startX;
-				let scrollLeft;
-				let velX = 0;
-				let momentumID;
-				let lastX;
-				let lastTime;
-				let hasMoved = false;
-
-				function startMomentum() {
-					cancelMomentum();
-					if (Math.abs(velX) > 0.5) {
-						momentumID = requestAnimationFrame(momentumLoop);
-					}
-				}
-
-				function cancelMomentum() {
-					if (momentumID) {
-						cancelAnimationFrame(momentumID);
-						momentumID = null;
-					}
-				}
-
-				function momentumLoop() {
-					track.scrollLeft += velX;
-					velX *= 0.92;
-					if (Math.abs(velX) > 0.5) {
-						momentumID = requestAnimationFrame(momentumLoop);
-					}
-				}
-
-				// Mouse events
-				track.addEventListener("mousedown", (e) => {
-					isDown = true;
-					hasMoved = false;
-					track.classList.add("is-dragging");
-					startX = e.pageX - track.offsetLeft;
-					scrollLeft = track.scrollLeft;
-					lastX = e.pageX;
-					lastTime = Date.now();
-					velX = 0;
-					cancelMomentum();
-				});
-
-				track.addEventListener("mouseleave", () => {
-					if (!isDown) return;
-					isDown = false;
-					track.classList.remove("is-dragging");
-					startMomentum();
-				});
-
-				track.addEventListener("mouseup", () => {
-					if (!isDown) return;
-					isDown = false;
-					track.classList.remove("is-dragging");
-					startMomentum();
-				});
-
-				track.addEventListener("mousemove", (e) => {
-					if (!isDown) return;
-					e.preventDefault();
-
-					const x = e.pageX - track.offsetLeft;
-					const walk = x - startX;
-
-					if (Math.abs(walk) > 5) {
-						hasMoved = true;
-					}
-
-					track.scrollLeft = scrollLeft - walk;
-
-					const now = Date.now();
-					const dt = now - lastTime;
-					if (dt > 0) {
-						velX = ((lastX - e.pageX) / dt) * 15;
-					}
-					lastX = e.pageX;
-					lastTime = now;
-				});
-
-				// Prevent click if dragged
-				track.addEventListener(
-					"click",
-					(e) => {
-						if (hasMoved) {
-							e.preventDefault();
-							e.stopPropagation();
-						}
-					},
-					true
-				);
-
-				// Touch events
-				let touchStartX;
-				let touchScrollLeft;
-
-				track.addEventListener(
-					"touchstart",
-					(e) => {
-						touchStartX = e.touches[0].pageX - track.offsetLeft;
-						touchScrollLeft = track.scrollLeft;
-						lastX = e.touches[0].pageX;
-						lastTime = Date.now();
-						velX = 0;
-						cancelMomentum();
-					},
-					{ passive: true }
-				);
-
-				track.addEventListener(
-					"touchmove",
-					(e) => {
-						const x = e.touches[0].pageX - track.offsetLeft;
-						const walk = x - touchStartX;
-						track.scrollLeft = touchScrollLeft - walk;
-
-						const now = Date.now();
-						const dt = now - lastTime;
-						if (dt > 0) {
-							velX = ((lastX - e.touches[0].pageX) / dt) * 15;
-						}
-						lastX = e.touches[0].pageX;
-						lastTime = now;
-					},
-					{ passive: true }
-				);
-
-				track.addEventListener("touchend", () => {
-					startMomentum();
+				initGallerySlider({
+					gallerySelector: ".announcements-highlighted__track",
+					prevBtnSelector: ".news-pagination__btn--prev",
+					nextBtnSelector: ".news-pagination__btn--next",
+					itemSelector: ".news-card",
+					gap: 19,
+					mode: "momentum",
 				});
 			});
 		</script>
