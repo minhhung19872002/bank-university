@@ -1,0 +1,146 @@
+<!-- Registration Card Partial -->
+<div class="registration-card">
+	<p class="registration-card__subtitle">
+		TRƯỜNG ĐẠI HỌC NGÂN HÀNG HUB
+	</p>
+	<h2 class="registration-card__title">
+		ĐĂNG KÝ TƯ VẤN
+	</h2>
+
+	<form class="registration-form" id="registrationForm">
+		<!-- Row 1: Họ tên & Số điện thoại -->
+		<div class="registration-form__row">
+			<div class="registration-form__group">
+				<input
+					type="text"
+					class="registration-form__input"
+					id="fullName"
+					placeholder="Họ tên"
+					required
+				/>
+			</div>
+			<div class="registration-form__group">
+				<input
+					type="tel"
+					class="registration-form__input"
+					id="phone"
+					placeholder="Số điện thoại"
+					required
+				/>
+			</div>
+		</div>
+
+		<!-- Row 2: Email & Địa chỉ -->
+		<div class="registration-form__row">
+			<div class="registration-form__group">
+				<input
+					type="email"
+					class="registration-form__input"
+					id="email"
+					placeholder="Email"
+					required
+				/>
+			</div>
+			<div class="registration-form__group">
+				<input
+					type="text"
+					class="registration-form__input"
+					id="address"
+					placeholder="Địa chỉ"
+				/>
+			</div>
+		</div>
+
+		<!-- Dropdown: Chọn chương trình -->
+		<div class="registration-form__group registration-form__group--full">
+			<select
+				class="registration-form__select"
+				id="program"
+				required
+			>
+				<option value="">
+					Chọn chương trình quan tâm
+				</option>
+				<option value="dai-hoc-chinh-quy">
+					Đại học chính quy
+				</option>
+				<option value="lien-thong">
+					Liên thông
+				</option>
+				<option value="chat-luong-cao">
+					Chất lượng cao
+				</option>
+			</select>
+		</div>
+
+		<!-- Dropdown: Chọn ngành học -->
+		<div class="registration-form__group registration-form__group--full">
+			<select
+				class="registration-form__select"
+				id="major"
+				required
+			>
+				<option value="">
+					Chọn ngành học quan tâm
+				</option>
+				<option value="ngan-hang">
+					Ngân hàng
+				</option>
+				<option value="tai-chinh">
+					Tài chính
+				</option>
+				<option value="ke-toan">
+					Kế toán
+				</option>
+				<option value="quan-tri-kinh-doanh">
+					Quản trị kinh doanh
+				</option>
+			</select>
+		</div>
+
+		<!-- Checkboxes -->
+		<div class="registration-form__checkboxes">
+			<div class="registration-form__checkbox">
+				<input
+					type="checkbox"
+					class="registration-form__checkbox-input"
+					id="newsletter"
+				/>
+				<label
+					class="registration-form__checkbox-label"
+					for="newsletter"
+				>
+					Đăng ký nhận thông tin tuyển sinh
+				</label>
+			</div>
+			<div class="registration-form__checkbox">
+				<input
+					type="checkbox"
+					class="registration-form__checkbox-input"
+					id="consultation"
+				/>
+				<label
+					class="registration-form__checkbox-label"
+					for="consultation"
+				>
+					Đăng ký tư vấn
+				</label>
+			</div>
+		</div>
+
+		<!-- Textarea: Nội dung -->
+		<div class="registration-form__group registration-form__group--full">
+			<textarea
+				class="registration-form__textarea"
+				id="content"
+				placeholder="Nội dung"
+				rows="4"
+			></textarea>
+		</div>
+
+		<!-- Submit Button -->
+		<button type="submit" class="registration-form__submit">
+			ĐĂNG KÝ NGAY
+		</button>
+	</form>
+</div>

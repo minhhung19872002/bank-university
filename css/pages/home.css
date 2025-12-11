@@ -814,127 +814,6 @@
 	display: none;
 }
 
-.registration-form {
-	background-color: var(--color-light);
-	border-radius: var(--radius-lg);
-	padding: var(--sp-5) var(--sp-4);
-	box-shadow: var(--shadow-2);
-}
-
-.registration-form__title {
-	font-family: var(--font-family-heading);
-	font-size: var(--fs-500);
-	font-weight: var(--fw-bold);
-	line-height: var(--lh-heading-tight);
-	color: var(--brand-accent);
-	text-align: center;
-	margin-bottom: var(--sp-4);
-}
-
-.registration-form__input,
-.registration-form__textarea {
-	width: 100%;
-	height: 44px;
-	border: 1px solid var(--gray-border);
-	border-radius: var(--radius-md);
-	padding: var(--sp-2) var(--sp-3);
-	font-family: var(--font-family-heading);
-	font-size: var(--fs-body);
-	font-weight: var(--fw-regular);
-	color: var(--gray-900);
-	background-color: var(--color-light);
-	transition: border-color var(--transition-base);
-}
-
-.registration-form__input::placeholder,
-.registration-form__textarea::placeholder {
-	color: var(--text-muted);
-}
-
-.registration-form__input:focus,
-.registration-form__textarea:focus {
-	outline: none;
-	border-color: var(--brand-accent);
-}
-
-.registration-form .row.g-3 {
-	margin-bottom: var(--sp-3);
-}
-
-.registration-form .mb-3 {
-	margin-bottom: var(--sp-3) !important;
-}
-
-/* Checkboxes - Mobile */
-.registration-form__checkboxes {
-	display: flex;
-	flex-direction: column;
-	gap: var(--sp-2);
-	border: none;
-	padding: 0;
-	margin-bottom: var(--sp-3);
-}
-
-.registration-form__checkboxes .form-check {
-	display: flex;
-	align-items: center;
-	gap: var(--sp-2);
-	margin: 0;
-}
-
-.registration-form__checkboxes .form-check-input {
-	width: 18px;
-	height: 18px;
-	background-color: var(--gray-border);
-	border: none;
-	border-radius: 3px;
-	margin: 0;
-	cursor: pointer;
-	flex-shrink: 0;
-}
-
-.registration-form__checkboxes .form-check-input:checked {
-	background-color: var(--brand-accent);
-}
-
-.registration-form__checkboxes .form-check-input:focus {
-	box-shadow: none;
-}
-
-.registration-form__checkboxes .form-check-label {
-	font-family: var(--font-family-heading);
-	font-size: var(--fs-body-sm);
-	font-weight: var(--fw-regular);
-	color: var(--gray-700);
-	cursor: pointer;
-	margin: 0;
-}
-
-/* Textarea - Mobile */
-.registration-form__textarea {
-	height: 100px;
-	resize: none;
-}
-
-/* Submit button - Mobile */
-.registration-form__submit {
-	width: 100%;
-	height: 48px;
-	background-color: var(--brand-accent);
-	color: var(--color-on-primary);
-	font-family: var(--font-family-heading);
-	font-size: var(--fs-body);
-	font-weight: var(--fw-bold);
-	border: none;
-	border-radius: var(--radius-md);
-	cursor: pointer;
-	transition: background-color var(--transition-base);
-}
-
-.registration-form__submit:hover {
-	background-color: var(--brand-accent-dark);
-}
-
 /* ================================================
    TABLET (min-width: 576px) - matches Bootstrap 'sm'
    ================================================ */
@@ -1359,21 +1238,26 @@
 	}
 
 	/* Middle column images */
-	.student-life-section__col--middle .student-life-section__image:nth-child(1) {
+	.student-life-section__col--middle
+		.student-life-section__image:nth-child(1) {
 		aspect-ratio: 389 / 362 !important;
 	}
 
-	.student-life-section__col--middle .student-life-section__image:nth-child(2),
-	.student-life-section__col--middle .student-life-section__image:nth-child(3) {
+	.student-life-section__col--middle
+		.student-life-section__image:nth-child(2),
+	.student-life-section__col--middle
+		.student-life-section__image:nth-child(3) {
 		aspect-ratio: 389 / 255 !important;
 	}
 
 	/* Right column images */
-	.student-life-section__col--right .student-life-section__image:nth-child(1) {
+	.student-life-section__col--right
+		.student-life-section__image:nth-child(1) {
 		aspect-ratio: 387 / 497 !important;
 	}
 
-	.student-life-section__col--right .student-life-section__image:nth-child(2) {
+	.student-life-section__col--right
+		.student-life-section__image:nth-child(2) {
 		aspect-ratio: 387 / 390 !important;
 	}
 
@@ -1386,145 +1270,10 @@
 		border-radius: var(--radius-10);
 	}
 
-	.registration-form {
+	.registration-section .registration-card {
 		position: relative;
 		max-width: 1000px;
-		margin-top: var(--sp-4);
-		margin-left: auto;
-		margin-right: auto;
-		background-color: var(--color-light);
-		border-radius: var(--radius-10);
-		padding: 30px 40px;
-		box-shadow: var(--shadow-2);
-	}
-
-	.registration-form__title {
-		font-family: var(--font-family-heading);
-		font-size: var(--fs-450);
-		font-weight: var(--fw-bold);
-		line-height: var(--lh-heading-tight);
-		color: var(--brand-accent);
-		text-align: left;
-		margin-bottom: 21px;
-	}
-
-	.registration-form__input,
-	.registration-form__textarea {
-		width: 100%;
-		height: 38px;
-		border: 1px solid var(--gray-border);
-		border-radius: var(--radius-10);
-		padding: 9px 13px;
-		font-family: var(--font-family-heading);
-		font-size: var(--fs-body-sm);
-		font-weight: var(--fw-regular);
-		line-height: 17px;
-		color: var(--text-muted);
-		background-color: var(--color-light);
-		transition: border-color var(--transition-base);
-	}
-
-	.registration-form__input::placeholder,
-	.registration-form__textarea::placeholder {
-		color: var(--text-muted);
-	}
-
-	.registration-form__input:focus,
-	.registration-form__textarea:focus {
-		outline: none;
-		border-color: var(--brand-accent);
-	}
-
-	.registration-form .row.g-3 {
-		gap: 0;
-		margin-bottom: 18px;
-	}
-
-	.registration-form .row.g-3 .col-md-6:first-child {
-		padding-right: 15px;
-	}
-
-	.registration-form .row.g-3 .col-md-6:last-child {
-		padding-left: 15px;
-	}
-
-	.registration-form .mb-3 {
-		margin-bottom: 18px;
-	}
-
-	/* Checkboxes */
-	.registration-form__checkboxes {
-		flex-direction: row;
-		gap: 35px;
-		justify-content: flex-start;
-		align-items: center;
-		margin-bottom: 18px;
-	}
-
-	.registration-form__checkboxes .form-check {
-		display: flex;
-		align-items: center;
-		gap: var(--sp-2);
-		margin: 0;
-	}
-
-	.registration-form__checkboxes .form-check-input {
-		width: 17px;
-		height: 17px;
-		background-color: var(--gray-border);
-		border: none;
-		border-radius: 2px;
-		margin: 0;
-		cursor: pointer;
-	}
-
-	.registration-form__checkboxes .form-check-input:checked {
-		background-color: var(--brand-accent);
-		border: none;
-	}
-
-	.registration-form__checkboxes .form-check-input:focus {
-		box-shadow: none;
-	}
-
-	.registration-form__checkboxes .form-check-label {
-		font-family: var(--font-family-heading);
-		font-size: var(--fs-body-sm);
-		font-weight: var(--fw-regular);
-		line-height: 1.2;
-		color: var(--text-muted);
-		cursor: pointer;
-		margin: 0;
-	}
-
-	/* Textarea */
-	.registration-form__textarea {
-		height: 100px;
-		resize: none;
-		padding-top: 9px;
-	}
-
-	/* Submit button */
-	.registration-form__submit {
-		width: 100%;
-		height: 49px;
-		background-color: var(--brand-accent);
-		color: var(--color-on-primary);
-		font-family: var(--font-family-heading);
-		font-size: var(--fs-body);
-		font-weight: var(--fw-bold);
-		line-height: 1.2;
-		border: none;
-		border-radius: var(--radius-10);
-		cursor: pointer;
-		transition: background-color var(--transition-base);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-
-	.registration-form__submit:hover {
-		background-color: var(--brand-accent-dark);
+		margin: var(--sp-4) auto 0;
 	}
 }
 
@@ -1617,20 +1366,17 @@
 		height: 543px;
 	}
 
-	.registration-form {
-		margin: -200px auto 0;
-		padding: 46px 96px;
+	.registration-section .registration-card {
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%, 50%);
+		max-width: 1000px;
+		width: 100%;
+		margin: 0;
 	}
 
-	.registration-form__title {
-		font-size: 26px;
-	}
-
-	.registration-form .row.g-3 .col-md-6:first-child {
-		padding-right: 9px;
-	}
-
-	.registration-form .row.g-3 .col-md-6:last-child {
-		padding-left: 9px;
+	.registration-section__wrapper {
+		padding-bottom: 290px;
 	}
 }
