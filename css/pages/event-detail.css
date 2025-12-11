@@ -110,6 +110,10 @@
    RESPONSIVE - TABLET (max-width: 1199px)
    ============================================ */
 @media (max-width: 1199px) {
+	.event-detail-featured__image {
+		height: 350px;
+	}
+
 	.event-detail-overview__title {
 		font-size: var(--fs-500); /* 24px */
 	}
@@ -119,7 +123,43 @@
    RESPONSIVE - MOBILE (max-width: 575px)
    ============================================ */
 @media (max-width: 575px) {
+	/* Featured Section */
+	.event-detail-featured {
+		padding-top: var(--sp-4);
+	}
+
+	.event-detail-featured__image {
+		height: auto;
+		aspect-ratio: 16/10;
+	}
+
+	/* Overview Section */
+	.event-detail-overview {
+		padding-top: var(--sp-4);
+	}
+
 	.event-detail-overview__title {
 		font-size: var(--fs-400); /* 18px */
+		margin-bottom: 10px;
+	}
+
+	.event-detail-divider {
+		margin: var(--sp-3) 0;
+	}
+
+	/* Event Info List */
+	.event-detail-info {
+		gap: 8px;
+		margin: 10px 0;
+	}
+
+	.event-detail-info__item {
+		gap: 12px;
+	}
+
+	.event-detail-info__icon {
+		width: 14px;
+		height: 14px;
+		margin-top: 4px;
 	}
 }
