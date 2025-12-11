@@ -269,7 +269,7 @@
 /* Programs Tabs */
 .intl-programs__tabs {
 	display: flex;
-	justify-content: flex-start;
+	justify-content: center;
 	gap: var(--sp-4);
 	list-style: none;
 	padding: 10px 10px 10px 10px;
@@ -280,6 +280,10 @@
 	scrollbar-width: none;
 	-ms-overflow-style: none;
 	width: calc(100% + 20px);
+}
+
+.intl-programs__tabs.is-overflow {
+	justify-content: flex-start;
 }
 
 /* Spacer to prevent last item from being cut off */
@@ -400,6 +404,7 @@
 	max-width: 1200px;
 	margin: 0 auto;
 	padding: 0 calc((100% - 1140px) / 2);
+	overflow: hidden;
 }
 
 .intl-journey__gallery {
@@ -841,10 +846,14 @@
 	}
 
 	.intl-programs__tabs {
-		justify-content: flex-start;
+		justify-content: center;
 		margin: -10px -10px var(--sp-6);
 		padding: 10px;
 		width: calc(100% + 20px);
+	}
+
+	.intl-programs__tabs.is-overflow {
+		justify-content: flex-start;
 	}
 
 	.intl-programs__title,
@@ -1011,10 +1020,14 @@
 	}
 
 	.intl-programs__tabs {
-		justify-content: flex-start;
+		justify-content: center;
 		gap: var(--sp-3);
 		margin: -10px -10px var(--sp-4);
 		padding: 10px;
+	}
+
+	.intl-programs__tabs.is-overflow {
+		justify-content: flex-start;
 	}
 
 	.intl-programs__tab {
@@ -1094,13 +1107,14 @@
 		margin: 0 -16px;
 		overflow-x: auto;
 		overflow-y: visible;
-		scroll-snap-type: x proximity;
-		scroll-behavior: smooth;
+		scroll-snap-type: x mandatory;
 		-webkit-overflow-scrolling: touch;
 		scrollbar-width: none;
 		-ms-overflow-style: none;
 		cursor: grab;
 		user-select: none;
+		will-change: scroll-position;
+		touch-action: pan-x;
 	}
 
 	.intl-journey__gallery::-webkit-scrollbar {
@@ -1109,8 +1123,11 @@
 
 	.intl-journey__gallery.is-dragging {
 		cursor: grabbing;
-		scroll-behavior: auto;
 		scroll-snap-type: none;
+	}
+
+	.intl-journey__gallery.is-snapping {
+		scroll-behavior: smooth;
 	}
 
 	.intl-journey__gallery.is-dragging .intl-journey__item {
