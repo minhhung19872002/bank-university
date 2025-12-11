@@ -406,87 +406,138 @@ body.gsc-overflow-hidden {
   color: #202124 !important;
 }
 
-/* Pagination - Google style */
+/* ============================================
+   PAGINATION - Custom Design
+   ============================================ */
 .gsc-results .gsc-cursor-box {
-  margin-top: 30px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+  margin-top: 40px !important;
   padding-top: 0 !important;
   border-top: none !important;
-  text-align: center !important;
 }
 
-/* Google logo style for pagination */
-.gsc-cursor-box::before {
-  content: "G";
-  display: inline-block;
-  color: #4285f4;
-  font-size: 28px;
-  font-weight: 400;
-  font-family: Arial, sans-serif;
-  margin-right: -8px;
-}
-
+/* Hide Google logo pseudo elements */
+.gsc-cursor-box::before,
 .gsc-cursor-box::after {
-  content: "oogle";
-  display: inline-block;
-  font-size: 24px;
-  font-weight: 400;
-  font-family: Arial, sans-serif;
-  margin-right: 28px;
-  letter-spacing: -1px;
+  display: none !important;
 }
 
+/* Pagination page numbers */
 .gsc-results .gsc-cursor-page {
-  width: auto !important;
-  height: auto !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
+  width: 40px !important;
+  height: 40px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
   background-color: transparent !important;
-  border: none !important;
-  display: inline-block !important;
-  font-family: Arial, sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  color: #1a0dab !important;
+  border: 1px solid #ededed !important;
+  font-family: var(--font-primary) !important;
+  font-size: var(--fs-300) !important;
+  font-weight: 500 !important;
+  color: var(--gray-800) !important;
   text-decoration: none !important;
-  margin: 0 3px !important;
-  transition: none !important;
-  min-width: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transition: all var(--transition-base) !important;
+  cursor: pointer !important;
 }
 
 .gsc-cursor-box .gcsc-cursor-container {
-  display: inline-block !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
 }
 
 .gsc-cursor-box td {
-  padding: 0 3px !important;
+  padding: 0 4px !important;
 }
 
-/* O letters colored like Google logo */
+/* Remove Google logo before first td */
 .gsc-cursor-box td:first-child::before {
-  content: "G";
-  color: #4285f4;
-  font-size: 28px;
-  font-weight: 400;
-  position: relative;
-  top: 5px;
-  margin-right: -5px;
+  display: none !important;
 }
 
 .gsc-results .gsc-cursor-page:hover {
-  text-decoration: underline !important;
-  background-color: transparent !important;
+  background-color: #f5f5f5 !important;
+  border-color: var(--gray-400) !important;
+  text-decoration: none !important;
   transform: none !important;
   box-shadow: none !important;
 }
 
+/* Current/Active page */
 .gsc-results .gsc-cursor-current-page {
-  background: transparent !important;
-  border: none !important;
-  color: #202124 !important;
-  font-weight: 400 !important;
+  background-color: var(--brand-primary) !important;
+  border-color: var(--brand-primary) !important;
+  color: var(--color-light) !important;
+  font-weight: 600 !important;
   box-shadow: none !important;
   cursor: default !important;
   pointer-events: none !important;
+}
+
+.gsc-results .gsc-cursor-current-page:hover {
+  background-color: #8a0d2a !important;
+}
+
+/* Custom Pagination Arrows */
+.pagination-arrow {
+  width: 40px !important;
+  height: 40px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 50% !important;
+  background-color: transparent !important;
+  border: 1px solid #ededed !important;
+  cursor: pointer !important;
+  transition: all var(--transition-base) !important;
+}
+
+.pagination-arrow:hover {
+  background-color: #f5f5f5 !important;
+  border-color: var(--gray-400) !important;
+}
+
+.pagination-arrow:disabled {
+  opacity: 0.4 !important;
+  cursor: not-allowed !important;
+}
+
+.pagination-arrow svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--gray-800);
+}
+
+/* Pagination Ellipsis */
+.pagination-ellipsis {
+  width: 40px !important;
+  height: 40px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-family: var(--font-primary) !important;
+  font-size: var(--fs-300) !important;
+  color: var(--gray-600) !important;
+  cursor: default !important;
+}
+
+/* Custom Pagination Container */
+.custom-pagination {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+}
+
+/* Hide original Google pagination when customized */
+.pagination-customized .gsc-cursor {
+  display: none !important;
 }
 
 /* Remove Google Branding */
@@ -544,186 +595,125 @@ body.gsc-overflow-hidden {
 }
 
 /* ============================================
-   RESPONSIVE DESIGN
+   RESPONSIVE - TABLET (max-width: 1199px)
    ============================================ */
-@media (max-width: 768px) {
-  .search-filter {
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
+@media (max-width: 1199px) {
+	.search-filter {
+		padding-top: var(--sp-5);
+		padding-bottom: var(--sp-5);
+	}
 
-  .custom-search-box {
-    max-width: calc(100% - 30px);
-    margin: 0 15px;
-  }
+	.custom-search-box {
+		max-width: 700px;
+	}
 
-  .custom-search-wrapper {
-    border-radius: 20px;
-  }
-
-  .custom-search-input {
-    padding: 10px 16px;
-    font-size: 16px;
-    height: 42px;
-  }
-
-  .custom-clear-btn {
-    right: 48px;
-  }
-
-  .custom-search-btn {
-    width: 32px;
-    height: 32px;
-    right: 6px;
-  }
-
-  .custom-search-btn svg,
-  .custom-clear-btn svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  .search-filter__results {
-    max-width: calc(100% - 30px);
-    margin: 20px 15px 0;
-  }
-
-}
-
-@media (max-width: 480px) {
-  .custom-search-box {
-    max-width: calc(100% - 20px);
-    margin: 0 10px;
-  }
-
-  .custom-search-wrapper {
-    border-radius: 18px;
-  }
-
-  .custom-search-input {
-    padding: 8px 14px;
-    font-size: 14px;
-    height: 40px;
-  }
-
-  .custom-clear-btn {
-    right: 42px;
-  }
-
-  .custom-search-btn {
-    width: 28px;
-    height: 28px;
-    right: 5px;
-  }
-
-  .custom-search-btn svg,
-  .custom-clear-btn svg {
-    width: 16px;
-    height: 16px;
-  }
-
-  .search-filter__results {
-    max-width: calc(100% - 20px);
-    margin: 15px 10px 0;
-  }
-
+	.search-filter__results {
+		max-width: 700px;
+	}
 }
 
 /* ============================================
-   RESPONSIVE - Google style
+   RESPONSIVE - MOBILE (max-width: 575px)
    ============================================ */
-@media (max-width: 768px) {
-  .search-filter {
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
+@media (max-width: 575px) {
+	/* Hero Section */
+	.search-results-hero {
+		display: none;
+	}
 
-  .search-filter__box {
-    max-width: calc(100% - 30px);
-    margin: 0 15px;
-    border-radius: 24px;
-  }
+	/* Search Filter Section */
+	.search-filter {
+		padding-top: var(--sp-4);
+		padding-bottom: var(--sp-4);
+	}
 
-  .search-filter__results {
-    max-width: calc(100% - 30px);
-    margin: 20px 15px 0;
-    padding: 0 15px;
-  }
+	/* Custom Search Box */
+	.custom-search-box {
+		max-width: 100%;
+	}
 
-  .search-filter__box .gsc-input {
-    padding: 10px 76px 10px 16px !important;
-    height: 42px !important;
-    font-size: 16px !important;
-  }
+	.custom-search-wrapper {
+		border-radius: 20px;
+	}
 
-  .search-filter__box .gsc-search-button-v2 {
-    width: 30px !important;
-    height: 30px !important;
-    right: 6px !important;
-  }
+	.custom-search-input {
+		padding: 10px 16px;
+		font-size: var(--fs-200);
+		height: 44px;
+	}
 
-  .search-filter__box .gsib_a {
-    right: 38px !important;
-  }
+	.custom-clear-btn {
+		right: 48px;
+	}
 
-  .gsc-webResult {
-    padding: 0 0 20px 0 !important;
-  }
+	.custom-search-btn {
+		width: 32px;
+		height: 32px;
+		right: 6px;
+	}
 
-  .gsc-webResult .gs-title {
-    font-size: 18px !important;
-  }
+	.custom-search-btn svg,
+	.custom-clear-btn svg {
+		width: 18px;
+		height: 18px;
+	}
 
-  .gsc-webResult .gs-snippet {
-    font-size: 14px !important;
-    line-height: 1.54 !important;
-  }
+	/* Search Results */
+	.search-filter__results {
+		max-width: 100%;
+		margin: var(--sp-3) 0 0;
+		padding: 0;
+	}
 
-  /* Hide Google logo on mobile pagination */
-  .gsc-cursor-box::before,
-  .gsc-cursor-box::after,
-  .gsc-cursor-box td:first-child::before {
-    display: none !important;
-  }
-}
+	/* Google Search Results */
+	.gsc-webResult {
+		padding: 0 0 var(--sp-3) 0 !important;
+	}
 
-@media (max-width: 480px) {
-  .search-filter__box {
-    max-width: calc(100% - 20px);
-    margin: 0 10px;
-  }
+	.gsc-webResult .gs-title {
+		font-size: var(--fs-350) !important;
+	}
 
-  .search-filter__results {
-    max-width: calc(100% - 20px);
-    margin: 15px 10px 0;
-    padding: 0 10px;
-  }
+	.gsc-webResult .gs-snippet {
+		font-size: var(--fs-200) !important;
+		line-height: 1.5 !important;
+	}
 
-  .search-filter__box {
-    border-radius: 22px;
-  }
+	.gsc-webResult .gs-bidi-start-align,
+	.gsc-url-top {
+		font-size: var(--fs-100) !important;
+	}
 
-  .search-filter__box .gsc-input {
-    font-size: 14px !important;
-    padding: 8px 70px 8px 14px !important;
-    height: 40px !important;
-  }
+	/* Pagination */
+	.gsc-results .gsc-cursor-box {
+		gap: 6px !important;
+		margin-top: var(--sp-4) !important;
+	}
 
-  .search-filter__box .gsc-search-button-v2 {
-    width: 28px !important;
-    height: 28px !important;
-    right: 5px !important;
-  }
+	.gsc-results .gsc-cursor-page {
+		width: 36px !important;
+		height: 36px !important;
+		font-size: var(--fs-200) !important;
+	}
 
-  .search-filter__box .gsib_a {
-    right: 35px !important;
-  }
+	.pagination-arrow {
+		width: 36px !important;
+		height: 36px !important;
+	}
 
-  .gsc-webResult .gs-title {
-    font-size: 16px !important;
-  }
+	.pagination-arrow svg {
+		width: 14px;
+		height: 14px;
+	}
 
-  .gsc-webResult .gs-snippet {
-    font-size: 13px !important;
-  }
+	.pagination-ellipsis {
+		width: 36px !important;
+		height: 36px !important;
+		font-size: var(--fs-200) !important;
+	}
+
+	/* Image Results */
+	.gsc-imageResult {
+		width: 50% !important;
+	}
 }
