@@ -156,6 +156,11 @@
 	background-image: url("/assets/images/hero_bg.png");
 }
 
+/* Hero background cho quoc-te */
+.hero-section--quocte .hero-section__bg {
+	background-image: url("/assets/images/quocte_hero.png");
+}
+
 /* Feature Cards Section */
 .feature-cards-section {
 	background-color: var(--color-light);

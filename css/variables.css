@@ -94,7 +94,7 @@
 		var(--header-topbar-height-mobile) + var(--header-navbar-height-mobile)
 	);
 
-	/* ========== TYPOGRAPHY SEMANTIC – MOBILE FIRST (< 768px) ========== */
+	/* ========== TYPOGRAPHY SEMANTIC (< 768px) ========== */
 
 	/* Font family */
 	--font-family-base: var(--font-secondary); /* Inter */
