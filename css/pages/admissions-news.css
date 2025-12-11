@@ -22,17 +22,18 @@
    ============================================ */
 .admissions-news-list {
   padding-top: 57px;
+  padding-bottom: 60px;
   background-color: var(--color-light);
 }
 
 .admissions-news-list__title {
   font-family: var(--font-primary);
-  font-size: var(--fs-550);
+  font-size: var(--fs-525);
   font-weight: 700;
-  line-height: 0.88; /* 22/25 */
+  line-height: var(--lh-tight);
   color: var(--brand-primary);
-  text-transform: uppercase;
-  margin: 0 0 32px;
+  text-transform: capitalize;
+  margin-bottom: 29px;
 }
 
 /* News Items Container */
@@ -47,6 +48,19 @@
   display: flex;
   gap: 20px;
   position: relative;
+  cursor: pointer;
+  transition: background-color var(--transition-base);
+  padding: 10px;
+  margin: -10px;
+  border-radius: var(--radius-10);
+}
+
+.news-item:hover {
+  background-color: var(--gray-100);
+}
+
+.news-item:hover .news-item__title {
+  color: var(--brand-primary);
 }
 
 .news-item__image {
@@ -110,14 +124,10 @@
 }
 
 /* ============================================
-   PAGINATION SECTION
+   PAGINATION
    ============================================ */
-.admissions-news-pagination {
-  padding-top: 30px;
-  background-color: var(--color-light);
-}
-
 .pagination {
+  margin-top: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -179,6 +189,73 @@
 }
 
 /* ============================================
-   RESPONSIVE
-   TODO: Mobile/Tablet styles sẽ được thêm ở vòng sau với design riêng
+   RESPONSIVE - TABLET (max-width: 1199px)
    ============================================ */
+@media (max-width: 1199px) {
+	.admissions-news-list__title {
+		font-size: var(--fs-500);
+	}
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE (max-width: 575px)
+   ============================================ */
+@media (max-width: 575px) {
+	.admissions-news-list {
+		padding-top: var(--sp-4);
+		padding-bottom: var(--sp-5);
+	}
+
+	.admissions-news-list__title {
+		font-size: var(--fs-450);
+		text-align: left;
+		margin-bottom: var(--sp-3);
+	}
+
+	.news-item {
+		gap: 12px;
+	}
+
+	.news-item__image {
+		width: 120px;
+		height: 80px;
+	}
+
+	.news-item__content {
+		gap: 8px;
+	}
+
+	.news-item__title {
+		font-size: var(--fs-200);
+		display: -webkit-box;
+		-webkit-line-clamp: 4;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+
+	.news-item__excerpt {
+		display: none;
+	}
+
+	.news-item__badge {
+		display: none;
+	}
+
+	.news-divider {
+		margin: var(--sp-3) 0;
+	}
+
+	.pagination {
+		margin-top: var(--sp-5);
+	}
+
+	.pagination__btn,
+	.pagination__item {
+		width: 36px;
+		height: 36px;
+	}
+
+	.pagination__item {
+		font-size: var(--fs-300);
+	}
+}
