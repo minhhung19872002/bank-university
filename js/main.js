@@ -29,36 +29,13 @@ document.addEventListener('DOMContentLoaded', async function() {
     initProgramsAccordionMobile();
 });
 
-// Initialize navigation active states and scroll spy
+// Initialize navigation active states
 function initNavigation() {
-    const navLinks = document.querySelectorAll('.navbar .nav-link');
-    const sections = document.querySelectorAll('section[id]');
-
-    // Set initial active state based on hash or default to home
+    // Set initial active state based on current path
     setActiveNavByHash();
 
     // Handle hash change (when clicking nav links)
     window.addEventListener('hashchange', setActiveNavByHash);
-
-    // Handle scroll spy - update active nav based on scroll position
-    if (sections.length > 0) {
-        window.addEventListener('scroll', throttle(handleScrollSpy, 100));
-    }
-
-    // Smooth scroll for anchor links
-    navLinks.forEach(link => {
-        if (link.getAttribute('href').startsWith('#')) {
-            link.addEventListener('click', (e) => {
-                const targetId = link.getAttribute('href').slice(1);
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    e.preventDefault();
-                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    window.history.pushState(null, '', link.getAttribute('href'));
-                }
-            });
-        }
-    });
 }
 
 // Set active nav based on current path
@@ -78,13 +55,13 @@ function setActiveNavByHash() {
 
     const normalizedCurrentPath = normalizePath(currentPath);
 
-    // Helper to check if link matches current page
+    // Helper to check if link matches current page (including sub-pages)
     const isActiveLink = (linkHref) => {
         if (!linkHref) return false;
 
         // Handle hash-only links (only active on home page)
         if (linkHref.startsWith('#')) {
-            return normalizedCurrentPath === '/' || normalizedCurrentPath === '/index.html';
+            return normalizedCurrentPath === '/' || normalizedCurrentPath === '';
         }
 
         // Handle path links
@@ -94,7 +71,12 @@ function setActiveNavByHash() {
         if (linkPath === normalizedCurrentPath) return true;
 
         // Home page special case
-        if (linkPath === '/' && (normalizedCurrentPath === '/' || normalizedCurrentPath === '/index.html')) {
+        if (linkPath === '/' && (normalizedCurrentPath === '/' || normalizedCurrentPath === '')) {
+            return true;
+        }
+
+        // Sub-page match: /tin-tuyen-sinh/ should match /tin-tuyen-sinh/chi-tiet/
+        if (linkPath !== '/' && normalizedCurrentPath.startsWith(linkPath)) {
             return true;
         }
 
@@ -118,50 +100,6 @@ function setActiveNavByHash() {
             link.classList.add('mobile-nav__link--active');
         }
     });
-}
-
-// Scroll spy - update active nav based on visible section
-function handleScrollSpy() {
-    const sections = document.querySelectorAll('section[id]');
-    const scrollPosition = window.scrollY + 100; // Offset for navbar height
-
-    let currentSection = '';
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-            currentSection = section.getAttribute('id');
-        }
-    });
-
-    // Update active states
-    if (currentSection) {
-        const navLinks = document.querySelectorAll('.navbar .nav-link');
-        navLinks.forEach(link => {
-            link.classList.remove('active', 'nav-link--active');
-
-            const linkHref = link.getAttribute('href');
-            if (linkHref === `#${currentSection}`) {
-                link.classList.add('active');
-            }
-        });
-    }
-}
-
-// Throttle function to limit scroll event calls
-function throttle(func, limit) {
-    let inThrottle;
-    return function () {
-        const args = arguments;
-        const context = this;
-        if (!inThrottle) {
-            func.apply(context, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    };
 }
 
 // Initialize FAQ Accordion

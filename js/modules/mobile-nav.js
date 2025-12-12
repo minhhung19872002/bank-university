@@ -1,7 +1,62 @@
 /**
  * Mobile Navigation & Header Module
- * Handles mobile sidebar navigation toggle and sticky header
+ * Handles mobile sidebar navigation toggle, sticky header, and active nav highlighting
  */
+
+/**
+ * Highlight active navigation link based on current URL
+ */
+function initActiveNav() {
+    const currentPath = window.location.pathname;
+
+    // Define mapping of URL paths to nav items
+    const navMapping = {
+        '/': 'Trang Chủ',
+        '/gioi-thieu/': 'Lý Do Chọn HUB',
+        '/dai-hoc/': 'Chương Trình Đào Tạo',
+        '/doi-song-sinh-vien/': 'Đời Sống Sinh Viên',
+        '/tin-tuyen-sinh/': 'Tin Tức Tuyển Sinh',
+        '/danh-muc-thong-bao/': 'Thông Báo',
+        '/su-kien/': 'Sự Kiện'
+    };
+
+    // Find which nav item should be active
+    let activeNavText = null;
+
+    // Check exact match first
+    if (navMapping[currentPath]) {
+        activeNavText = navMapping[currentPath];
+    } else {
+        // Check if current path starts with any of the mapped paths
+        for (const [path, text] of Object.entries(navMapping)) {
+            if (path !== '/' && currentPath.startsWith(path)) {
+                activeNavText = text;
+                break;
+            }
+        }
+    }
+
+    if (!activeNavText) return;
+
+    // Desktop nav links
+    const desktopLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    desktopLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.textContent.trim() === activeNavText) {
+            link.classList.add('active');
+        }
+    });
+
+    // Mobile nav links
+    const mobileLinks = document.querySelectorAll('.mobile-nav__link');
+    mobileLinks.forEach(link => {
+        link.classList.remove('mobile-nav__link--active');
+        const linkText = link.querySelector('span');
+        if (linkText && linkText.textContent.trim().toLowerCase() === activeNavText.toLowerCase()) {
+            link.classList.add('mobile-nav__link--active');
+        }
+    });
+}
 
 function initStickyHeader() {
     const header = document.querySelector('[data-header]');
@@ -72,6 +127,7 @@ function initMobileNav() {
     function initAll() {
         initMobileNav();
         initStickyHeader();
+        initActiveNav();
     }
 
     // Check if header is already in DOM
