@@ -1,0 +1,24 @@
+[
+    {
+        "slug": "tien-si-kinh-te",
+        "title": "Tiến sĩ Kinh tế",
+        "description": "Chương trình đào tạo Tiến sĩ Kinh tế tại Đại học Ngân hàng TP.HCM",
+        "keywords": "tiến sĩ kinh tế, nghiên cứu sinh, HUB, đại học ngân hàng",
+        "date": "01/01/2025",
+        "lastmod": "2025-01-01",
+        "og_image": "https://hub.edu.vn/assets/images/programs/tien-si.png",
+        "content": "<div class=\"admissions-detail-text\"><h2>Giới thiệu chương trình</h2><p>Chương trình Tiến sĩ Kinh tế đào tạo các nhà nghiên cứu, giảng viên và chuyên gia cao cấp trong lĩnh vực kinh tế.</p><h2>Đối tượng tuyển sinh</h2><ul><li>Có bằng Thạc sĩ chuyên ngành phù hợp</li><li>Có công trình nghiên cứu khoa học</li></ul><h2>Thời gian đào tạo</h2><p>3-4 năm</p></div>",
+        "related": []
+    },
+    {
+        "slug": "tien-si-tai-chinh-ngan-hang",
+        "title": "Tiến sĩ Tài chính - Ngân hàng",
+        "description": "Chương trình đào tạo Tiến sĩ Tài chính Ngân hàng tại Đại học Ngân hàng TP.HCM",
+        "keywords": "tiến sĩ tài chính ngân hàng, nghiên cứu sinh, HUB",
+        "date": "01/01/2025",
+        "lastmod": "2025-01-01",
+        "og_image": "https://hub.edu.vn/assets/images/programs/tien-si-tcnh.png",
+        "content": "<div class=\"admissions-detail-text\"><h2>Giới thiệu chương trình</h2><p>Chương trình Tiến sĩ Tài chính - Ngân hàng là chương trình đào tạo nghiên cứu sinh chuyên sâu về lĩnh vực tài chính và ngân hàng.</p></div>",
+        "related": []
+    }
+]
