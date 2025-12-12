@@ -1,4 +1,27 @@
 /* ================================================
+   Header Wrapper (Sticky Header)
+   ================================================ */
+
+/* Ensure data-include container doesn't block sticky */
+[data-include*="header"] {
+	display: contents;
+}
+
+.header-wrapper {
+	position: sticky;
+	top: 0;
+	z-index: 1030;
+	background-color: transparent;
+	box-shadow: none;
+	transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header-wrapper.is-scrolled {
+	background-color: var(--color-light);
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ================================================
    Top Bar Component
    ================================================ */
 

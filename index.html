@@ -157,7 +157,7 @@
 
 	<body>
 		<!-- Header (Topbar + Navbar) -->
-		<header data-include="/partials/header.html"></header>
+		<div data-include="/partials/header.html"></div>
 
 		<!-- Hero Section - Single Source of Truth -->
 		<section class="hero-section" aria-label="Banner chính">
@@ -168,8 +168,8 @@
 				aria-label="Hình ảnh sinh viên HUB University"
 			></div>
 
-			<!-- Hero Content Overlay - Responsive via CSS -->
-			<div class="hero-section__overlay">
+			<!-- Hero Content Overlay - Mobile only -->
+			<div class="hero-section__overlay d-sm-none">
 				<div class="container h-100">
 					<div class="hero-section__content">
 						<p class="hero-section__brand">HUB</p>
@@ -187,8 +187,8 @@
 				</div>
 			</div>
 
-			<!-- Floating action buttons (mobile/tablet only) -->
-			<div class="hero-section__fab-group d-lg-none">
+			<!-- Floating action buttons (mobile only) -->
+			<div class="hero-section__fab-group d-sm-none">
 				<button
 					type="button"
 					class="hero-section__fab hero-section__fab--chat"
@@ -1535,6 +1535,15 @@
 		></script>
 
 		<!-- App JS -->
-		<script type="module" src="/js/main.js"></script>
+		<script src="/js/main.js"></script>
+
+		<!-- Include Loader -->
+		<script>
+			document.querySelectorAll("[data-include]").forEach(async (el) => {
+				const file = el.getAttribute("data-include");
+				const response = await fetch(file);
+				el.innerHTML = await response.text();
+			});
+		</script>
 	</body>
 </html>

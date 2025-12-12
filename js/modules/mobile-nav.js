@@ -1,7 +1,30 @@
 /**
- * Mobile Navigation Module
- * Handles mobile sidebar navigation toggle
+ * Mobile Navigation & Header Module
+ * Handles mobile sidebar navigation toggle and sticky header
  */
+
+function initStickyHeader() {
+    const header = document.querySelector('[data-header]');
+    if (!header) return;
+
+    let lastScrollY = 0;
+    const scrollThreshold = 10;
+
+    function handleScroll() {
+        const currentScrollY = window.scrollY;
+
+        if (currentScrollY > scrollThreshold) {
+            header.classList.add('is-scrolled');
+        } else {
+            header.classList.remove('is-scrolled');
+        }
+
+        lastScrollY = currentScrollY;
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial check
+}
 
 function initMobileNav() {
     const mobileNav = document.querySelector('[data-mobile-nav]');
@@ -46,16 +69,21 @@ function initMobileNav() {
 // Auto-initialize after partials are loaded
 // This handles the case where header is loaded via data-include
 (function() {
+    function initAll() {
+        initMobileNav();
+        initStickyHeader();
+    }
+
     // Check if header is already in DOM
     if (document.querySelector('[data-nav-toggle]')) {
-        initMobileNav();
+        initAll();
         return;
     }
 
     // Otherwise, observe for header being added
     const observer = new MutationObserver((mutations, obs) => {
         if (document.querySelector('[data-nav-toggle]')) {
-            initMobileNav();
+            initAll();
             obs.disconnect();
         }
     });
@@ -67,6 +95,6 @@ function initMobileNav() {
 
     // Fallback: also init on DOMContentLoaded in case observer missed it
     document.addEventListener('DOMContentLoaded', () => {
-        setTimeout(initMobileNav, 100);
+        setTimeout(initAll, 100);
     });
 })();

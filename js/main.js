@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initNavigation();
     initFAQAccordion();
     initMobileNav();
+    initStickyHeader();
     initProgramsTabs();
     initProgramsAccordionMobile();
 });
@@ -207,6 +208,44 @@ function initMobileNav() {
     const observer = new MutationObserver((mutations, obs) => {
         if (document.querySelector('[data-nav-toggle]')) {
             setupMobileNav();
+            obs.disconnect();
+        }
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+}
+
+// Sticky header - add shadow on scroll
+function initStickyHeader() {
+    function setupStickyHeader() {
+        const header = document.querySelector('[data-header]');
+        if (!header) return false;
+
+        const scrollThreshold = 10;
+
+        function handleScroll() {
+            if (window.scrollY > scrollThreshold) {
+                header.classList.add('is-scrolled');
+            } else {
+                header.classList.remove('is-scrolled');
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        handleScroll();
+        return true;
+    }
+
+    // Try to setup immediately
+    if (setupStickyHeader()) return;
+
+    // If header not loaded yet, observe for it
+    const observer = new MutationObserver((mutations, obs) => {
+        if (document.querySelector('[data-header]')) {
+            setupStickyHeader();
             obs.disconnect();
         }
     });

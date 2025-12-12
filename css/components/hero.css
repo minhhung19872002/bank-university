@@ -18,17 +18,6 @@
 	background-repeat: no-repeat;
 }
 
-/* Hero background cho trang chủ
-	- Desktop: dùng hình cũ (set ở home.css hoặc inline hiện tại)
-	- Tablet + Mobile: override bằng hình mới */
-
-/* Tablet + Mobile (dưới lg) dùng hình mới */
-@media (max-width: 991.98px) {
-	.hero-section .hero-section__bg {
-		background-image: url("https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-21/FtSsKXbfjR.png");
-	}
-}
-
 /* ============================================
    Mobile Hero (Home page)
    ============================================ */
