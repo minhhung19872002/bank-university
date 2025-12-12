@@ -3,6 +3,12 @@
    Detailed article page for admissions news
    ============================================ */
 
+/* Link reset for clickable cards */
+a.related-article {
+	text-decoration: none;
+	color: inherit;
+}
+
 /* ============================================
    ARTICLE HEADER SECTION
    ============================================ */
@@ -196,6 +202,11 @@
   line-height: 1.4;
   color: var(--brand-secondary);
   margin: 6px 0 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .related-article__excerpt {
@@ -205,6 +216,11 @@
   line-height: 1.57; /* 22/14 */
   color: var(--gray-800);
   margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Related Article Badge */

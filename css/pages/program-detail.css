@@ -452,6 +452,10 @@
 	position: relative;
 }
 
+.related-programs__carousel .row {
+	row-gap: var(--sp-3);
+}
+
 /* Program Pagination */
 .program-pagination {
 	display: flex;
