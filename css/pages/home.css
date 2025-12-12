@@ -541,7 +541,7 @@
 }
 
 /* Event Card - List Style */
-.event-card--list {
+a.event-card--list {
 	display: flex;
 	flex-direction: row;
 	gap: var(--sp-3);
@@ -549,6 +549,14 @@
 	border-radius: var(--radius-md);
 	overflow: hidden;
 	box-shadow: var(--shadow-1);
+	text-decoration: none;
+	color: inherit;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+a.event-card--list:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .event-card__thumbnail {
@@ -592,14 +600,20 @@
 }
 
 /* Event Card - Featured Style */
-.event-card--featured {
+a.event-card--featured {
+	display: block;
 	background-color: var(--brand-secondary);
 	border-radius: var(--radius-lg);
 	overflow: hidden;
 	height: 100%;
-	display: flex;
-	flex-direction: column;
 	margin-bottom: var(--sp-4);
+	text-decoration: none;
+	color: inherit;
+	transition: opacity 0.2s ease;
+}
+
+a.event-card--featured:hover {
+	opacity: 0.95;
 }
 
 .event-card__featured-image {
@@ -679,6 +693,59 @@
 .event-card__link:hover {
 	opacity: 0.8;
 	color: var(--color-light);
+}
+
+/* Event Cards - Mobile (default styles) */
+@media (max-width: 575px) {
+	a.event-card--list {
+		flex-direction: column;
+		gap: 0;
+	}
+
+	.event-card__thumbnail {
+		flex: none;
+		max-width: 100%;
+		width: 100%;
+		aspect-ratio: 16/9;
+		border-radius: var(--radius-md) var(--radius-md) 0 0;
+	}
+
+	.event-card__content {
+		padding: var(--sp-3);
+	}
+
+	a.event-card--featured {
+		margin-bottom: var(--sp-3);
+	}
+
+	.event-card__featured-image {
+		aspect-ratio: 4/3;
+	}
+
+	.event-card__featured-title {
+		font-size: var(--fs-body-sm);
+	}
+
+	.event-card__featured-subtitle {
+		font-size: var(--fs-350);
+	}
+
+	.event-countdown {
+		flex-wrap: wrap;
+		gap: var(--sp-2);
+	}
+
+	.event-countdown__item {
+		width: 50px;
+	}
+
+	.event-countdown__value {
+		font-size: var(--fs-400);
+	}
+
+	.event-countdown__label {
+		font-size: 10px;
+	}
 }
 
 /* ========== FAQ Section ========== */
