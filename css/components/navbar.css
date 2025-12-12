@@ -272,6 +272,11 @@
 	color: var(--brand-primary);
 }
 
+.mobile-nav__link--active {
+	color: var(--brand-primary);
+	font-weight: 600;
+}
+
 .mobile-nav__footer {
 	margin-top: var(--sp-5);
 	text-align: center;

@@ -1,5 +1,26 @@
+// Load HTML includes (footer, registration-card, etc.) - header is inlined for SEO
+async function loadIncludes() {
+    const includeElements = document.querySelectorAll('[data-include]');
+    const promises = Array.from(includeElements).map(async (el) => {
+        const file = el.getAttribute('data-include');
+        try {
+            const response = await fetch(file);
+            if (response.ok) {
+                el.innerHTML = await response.text();
+            }
+        } catch (error) {
+            console.error('Failed to load include:', file, error);
+        }
+    });
+    await Promise.all(promises);
+}
+
 // Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
+    // Load remaining includes (footer, registration-card, etc.)
+    await loadIncludes();
+
+    // Then initialize all components
     initNavigation();
     initFAQAccordion();
     initMobileNav();
@@ -40,37 +61,63 @@ function initNavigation() {
     });
 }
 
-// Set active nav based on current hash or path
+// Set active nav based on current path
 function setActiveNavByHash() {
     const navLinks = document.querySelectorAll('.navbar .nav-link');
-    const currentHash = window.location.hash || '#';
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav__link');
     const currentPath = window.location.pathname;
 
+    // Normalize path - remove trailing slash and handle index
+    const normalizePath = (path) => {
+        let normalized = path.replace(/\/$/, '') || '/';
+        if (normalized.endsWith('/index.html')) {
+            normalized = normalized.replace('/index.html', '/');
+        }
+        return normalized;
+    };
+
+    const normalizedCurrentPath = normalizePath(currentPath);
+
+    // Helper to check if link matches current page
+    const isActiveLink = (linkHref) => {
+        if (!linkHref) return false;
+
+        // Handle hash-only links (only active on home page)
+        if (linkHref.startsWith('#')) {
+            return normalizedCurrentPath === '/' || normalizedCurrentPath === '/index.html';
+        }
+
+        // Handle path links
+        const linkPath = normalizePath(new URL(linkHref, window.location.origin).pathname);
+
+        // Exact match
+        if (linkPath === normalizedCurrentPath) return true;
+
+        // Home page special case
+        if (linkPath === '/' && (normalizedCurrentPath === '/' || normalizedCurrentPath === '/index.html')) {
+            return true;
+        }
+
+        return false;
+    };
+
+    // Update desktop nav
     navLinks.forEach(link => {
         link.classList.remove('active', 'nav-link--active');
-
         const linkHref = link.getAttribute('href');
-
-        // Handle hash links
-        if (linkHref.startsWith('#')) {
-            if (linkHref === currentHash || (currentHash === '' && linkHref === '#' || linkHref === '/')) {
-                link.classList.add('active');
-            }
-        }
-        // Handle path links
-        else {
-            const linkPath = new URL(link.href, window.location.origin).pathname;
-            if (linkPath === currentPath) {
-                link.classList.add('active');
-            }
+        if (isActiveLink(linkHref)) {
+            link.classList.add('active');
         }
     });
 
-    // If no hash and on home page, activate first link (Trang Chủ)
-    if (!currentHash && currentPath.match(/\/(index\.html)?$/)) {
-        const homeLink = document.querySelector('.navbar .nav-link[href="/"], .navbar .nav-link[href="index.html"]');
-        if (homeLink) homeLink.classList.add('active');
-    }
+    // Update mobile nav
+    mobileNavLinks.forEach(link => {
+        link.classList.remove('mobile-nav__link--active');
+        const linkHref = link.getAttribute('href');
+        if (isActiveLink(linkHref)) {
+            link.classList.add('mobile-nav__link--active');
+        }
+    });
 }
 
 // Scroll spy - update active nav based on visible section
