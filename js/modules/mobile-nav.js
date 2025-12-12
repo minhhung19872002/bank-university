@@ -1,40 +1,21 @@
 /**
  * Mobile Navigation & Header Module
  * Handles mobile sidebar navigation toggle, sticky header, and active nav highlighting
+ * Uses Router utility from js/utils/router.js
  */
 
 /**
  * Highlight active navigation link based on current URL
+ * Uses Router.getActiveNavLabel() to determine which nav item to highlight
  */
 function initActiveNav() {
-    const currentPath = window.location.pathname;
-
-    // Define mapping of URL paths to nav items
-    const navMapping = {
-        '/': 'Trang Chủ',
-        '/gioi-thieu/': 'Lý Do Chọn HUB',
-        '/dai-hoc/': 'Chương Trình Đào Tạo',
-        '/doi-song-sinh-vien/': 'Đời Sống Sinh Viên',
-        '/tin-tuyen-sinh/': 'Tin Tức Tuyển Sinh',
-        '/danh-muc-thong-bao/': 'Thông Báo',
-        '/su-kien/': 'Sự Kiện'
-    };
-
-    // Find which nav item should be active
-    let activeNavText = null;
-
-    // Check exact match first
-    if (navMapping[currentPath]) {
-        activeNavText = navMapping[currentPath];
-    } else {
-        // Check if current path starts with any of the mapped paths
-        for (const [path, text] of Object.entries(navMapping)) {
-            if (path !== '/' && currentPath.startsWith(path)) {
-                activeNavText = text;
-                break;
-            }
-        }
+    if (typeof Router === 'undefined') {
+        console.warn('Router not loaded. Make sure to include js/utils/router.js');
+        return;
     }
+
+    const currentPath = window.location.pathname;
+    const activeNavText = Router.getActiveNavLabel(currentPath);
 
     if (!activeNavText) return;
 

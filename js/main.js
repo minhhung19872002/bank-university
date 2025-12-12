@@ -32,71 +32,39 @@ document.addEventListener('DOMContentLoaded', async function() {
 // Initialize navigation active states
 function initNavigation() {
     // Set initial active state based on current path
-    setActiveNavByHash();
+    setActiveNavByPath();
 
     // Handle hash change (when clicking nav links)
-    window.addEventListener('hashchange', setActiveNavByHash);
+    window.addEventListener('hashchange', setActiveNavByPath);
 }
 
-// Set active nav based on current path
-function setActiveNavByHash() {
-    const navLinks = document.querySelectorAll('.navbar .nav-link');
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav__link');
+// Set active nav based on current path using Router utility
+function setActiveNavByPath() {
+    if (typeof Router === 'undefined') {
+        console.warn('Router not loaded. Make sure to include js/utils/router.js');
+        return;
+    }
+
     const currentPath = window.location.pathname;
+    const activeNavText = Router.getActiveNavLabel(currentPath);
 
-    // Normalize path - remove trailing slash and handle index
-    const normalizePath = (path) => {
-        let normalized = path.replace(/\/$/, '') || '/';
-        if (normalized.endsWith('/index.html')) {
-            normalized = normalized.replace('/index.html', '/');
-        }
-        return normalized;
-    };
-
-    const normalizedCurrentPath = normalizePath(currentPath);
-
-    // Helper to check if link matches current page (including sub-pages)
-    const isActiveLink = (linkHref) => {
-        if (!linkHref) return false;
-
-        // Handle hash-only links (only active on home page)
-        if (linkHref.startsWith('#')) {
-            return normalizedCurrentPath === '/' || normalizedCurrentPath === '';
-        }
-
-        // Handle path links
-        const linkPath = normalizePath(new URL(linkHref, window.location.origin).pathname);
-
-        // Exact match
-        if (linkPath === normalizedCurrentPath) return true;
-
-        // Home page special case
-        if (linkPath === '/' && (normalizedCurrentPath === '/' || normalizedCurrentPath === '')) {
-            return true;
-        }
-
-        // Sub-page match: /tin-tuyen-sinh/ should match /tin-tuyen-sinh/chi-tiet/
-        if (linkPath !== '/' && normalizedCurrentPath.startsWith(linkPath)) {
-            return true;
-        }
-
-        return false;
-    };
+    if (!activeNavText) return;
 
     // Update desktop nav
+    const navLinks = document.querySelectorAll('.navbar .nav-link');
     navLinks.forEach(link => {
         link.classList.remove('active', 'nav-link--active');
-        const linkHref = link.getAttribute('href');
-        if (isActiveLink(linkHref)) {
+        if (link.textContent.trim() === activeNavText) {
             link.classList.add('active');
         }
     });
 
     // Update mobile nav
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav__link');
     mobileNavLinks.forEach(link => {
         link.classList.remove('mobile-nav__link--active');
-        const linkHref = link.getAttribute('href');
-        if (isActiveLink(linkHref)) {
+        const linkText = link.querySelector('span');
+        if (linkText && linkText.textContent.trim().toLowerCase() === activeNavText.toLowerCase()) {
             link.classList.add('mobile-nav__link--active');
         }
     });

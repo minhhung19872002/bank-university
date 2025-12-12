@@ -326,6 +326,17 @@
 	font-weight: var(--fw-bold);
 }
 
+.admission-info-card__list li a {
+	color: inherit;
+	text-decoration: none;
+	transition: color 0.2s ease;
+}
+
+.admission-info-card__list li a:hover {
+	color: var(--brand-primary);
+	text-decoration: underline;
+}
+
 /* Visibility controlled by Bootstrap classes in HTML */
 
 .admission-info-card__image-wrapper {

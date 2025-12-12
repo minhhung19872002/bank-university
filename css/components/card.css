@@ -3,6 +3,11 @@
    ================================================ */
 
 /* ========== Program Cards ========== */
+a.program-card {
+	text-decoration: none;
+	cursor: pointer;
+}
+
 .program-card {
 	background-color: var(--color-light);
 	border: 1px solid var(--gray-300);
