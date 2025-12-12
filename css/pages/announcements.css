@@ -36,6 +36,13 @@
 	margin-bottom: 29px;
 }
 
+/* Link reset for clickable cards */
+a.announcement-card,
+a.news-card {
+	text-decoration: none;
+	color: inherit;
+}
+
 /* Announcement Card */
 .announcement-card {
 	background-color: var(--gray-100);
@@ -242,8 +249,10 @@
 	scroll-behavior: smooth;
 	scrollbar-width: none;
 	-ms-overflow-style: none;
-	cursor: grab;
-	user-select: none;
+}
+
+.announcements-highlighted__track .news-card {
+	cursor: pointer;
 }
 
 .announcements-highlighted__track::-webkit-scrollbar {
@@ -251,12 +260,7 @@
 }
 
 .announcements-highlighted__track.is-dragging {
-	cursor: grabbing;
 	scroll-behavior: auto;
-}
-
-.announcements-highlighted__track.is-dragging .news-card {
-	pointer-events: none;
 }
 
 /* News Card */

@@ -3,6 +3,19 @@
    International Institute programs and info
    ============================================ */
 
+/* Link reset for clickable cards */
+a.intl-news-card,
+a.intl-program-card {
+	text-decoration: none;
+	color: inherit;
+	display: block;
+}
+
+a.intl-news-item {
+	text-decoration: none;
+	color: inherit;
+}
+
 /* ============================================
    ABOUT SECTION
    ============================================ */

@@ -44,6 +44,11 @@
 }
 
 /* News Item */
+a.news-item {
+  text-decoration: none;
+  color: inherit;
+}
+
 .news-item {
   display: flex;
   gap: 20px;

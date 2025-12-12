@@ -169,6 +169,11 @@
 }
 
 /* Event Card */
+a.event-card {
+	text-decoration: none;
+	color: inherit;
+}
+
 .event-card {
 	display: flex;
 	gap: 18px;

@@ -3,6 +3,13 @@
    Breakpoints: Desktop (default), Tablet (max-width: 1199px), Mobile (max-width: 575px)
    ============================================ */
 
+/* Link reset for clickable cards */
+a.program-card {
+	text-decoration: none;
+	color: inherit;
+	display: block;
+}
+
 /* Desktop-first base styles */
 .program-card {
 	position: relative;
