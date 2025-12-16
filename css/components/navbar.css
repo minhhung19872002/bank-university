@@ -333,3 +333,105 @@
 		display: none !important;
 	}
 }
+
+/* ================================================
+   Mobile Search Dialog
+   ================================================ */
+
+.mobile-search {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: var(--sp-4);
+	z-index: 1100;
+	visibility: hidden;
+	transition: background-color 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-search--open {
+	visibility: visible;
+	background-color: rgba(0, 0, 0, 0.7);
+}
+
+.mobile-search__close {
+	position: absolute;
+	top: var(--sp-4);
+	right: var(--sp-4);
+	border: none;
+	background: transparent;
+	font-size: 32px;
+	line-height: 1;
+	cursor: pointer;
+	color: var(--color-light);
+	padding: var(--sp-2);
+}
+
+.mobile-search__close:hover {
+	color: var(--gray-300);
+}
+
+.mobile-search__container {
+	display: flex;
+	align-items: stretch;
+	width: 100%;
+	max-width: 500px;
+	gap: var(--sp-2);
+	transform: translateY(-30px);
+	opacity: 0;
+	transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile-search--open .mobile-search__container {
+	transform: translateY(0);
+	opacity: 1;
+}
+
+.mobile-search__input {
+	flex: 1;
+	border: none;
+	border-radius: 8px;
+	padding: var(--sp-3) var(--sp-4);
+	font-family: Montserrat, var(--font-primary);
+	font-size: 16px;
+	outline: none;
+	background-color: var(--color-light);
+}
+
+.mobile-search__input:focus {
+	box-shadow: 0 0 0 2px var(--brand-primary);
+}
+
+.mobile-search__submit {
+	border: none;
+	background: var(--brand-primary);
+	padding: 0 var(--sp-4);
+	border-radius: 8px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+.mobile-search__submit:hover {
+	background: var(--brand-secondary);
+}
+
+.mobile-search__submit img {
+	filter: brightness(0) invert(1);
+	width: 20px;
+	height: 20px;
+}
+
+/* Hide mobile search on desktop */
+@media (min-width: 992px) {
+	.mobile-search {
+		display: none !important;
+	}
+}

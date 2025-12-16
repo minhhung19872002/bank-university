@@ -16,7 +16,7 @@ async function loadIncludes() {
 }
 
 // Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', async function() {
+document.addEventListener('DOMContentLoaded', async function () {
     // Load remaining includes (footer, registration-card, etc.)
     await loadIncludes();
 

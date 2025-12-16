@@ -105,33 +105,55 @@ function initMobileNav() {
 // Auto-initialize after partials are loaded
 // This handles the case where header is loaded via data-include
 (function() {
+    let initialized = false;
+
     function initAll() {
+        if (initialized) return;
+        initialized = true;
+
         initMobileNav();
         initStickyHeader();
         initActiveNav();
     }
 
-    // Check if header is already in DOM
-    if (document.querySelector('[data-nav-toggle]')) {
-        initAll();
-        return;
-    }
+    // Wait for DOM to be ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if header is already in DOM
+            if (document.querySelector('[data-nav-toggle]')) {
+                initAll();
+            } else {
+                // Observe for header being added (e.g., via data-include)
+                const observer = new MutationObserver((mutations, obs) => {
+                    if (document.querySelector('[data-nav-toggle]')) {
+                        initAll();
+                        obs.disconnect();
+                    }
+                });
 
-    // Otherwise, observe for header being added
-    const observer = new MutationObserver((mutations, obs) => {
+                observer.observe(document.body, {
+                    childList: true,
+                    subtree: true
+                });
+            }
+        });
+    } else {
+        // DOM already ready
         if (document.querySelector('[data-nav-toggle]')) {
             initAll();
-            obs.disconnect();
+        } else {
+            // Observe for header being added
+            const observer = new MutationObserver((mutations, obs) => {
+                if (document.querySelector('[data-nav-toggle]')) {
+                    initAll();
+                    obs.disconnect();
+                }
+            });
+
+            observer.observe(document.body, {
+                childList: true,
+                subtree: true
+            });
         }
-    });
-
-    observer.observe(document.body, {
-        childList: true,
-        subtree: true
-    });
-
-    // Fallback: also init on DOMContentLoaded in case observer missed it
-    document.addEventListener('DOMContentLoaded', () => {
-        setTimeout(initAll, 100);
-    });
+    }
 })();

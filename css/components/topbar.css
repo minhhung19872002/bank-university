@@ -83,6 +83,11 @@
 	color: var(--gray-500);
 }
 
+.topbar__search img {
+	cursor: pointer;
+	flex-shrink: 0;
+}
+
 .topbar__search-icon {
 	width: 16px;
 	height: 16px;

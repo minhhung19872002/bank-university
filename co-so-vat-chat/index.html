@@ -180,6 +180,40 @@
 							height="20"
 						/>
 					</button>
+					<!-- Mobile Search Dialog -->
+					<div
+						class="mobile-search"
+						data-mobile-search
+						aria-hidden="true"
+					>
+						<button
+							class="mobile-search__close"
+							type="button"
+							aria-label="Đóng tìm kiếm"
+						>
+							<span>&times;</span>
+						</button>
+						<div class="mobile-search__container">
+							<input
+								type="search"
+								placeholder="Tìm kiếm..."
+								class="mobile-search__input"
+								aria-label="Tìm kiếm"
+							/>
+							<button
+								class="mobile-search__submit"
+								type="button"
+								aria-label="Tìm kiếm"
+							>
+								<img
+									src="/assets/images/search.png"
+									alt=""
+									width="20"
+									height="20"
+								/>
+							</button>
+						</div>
+					</div>
 					<button
 						class="navbar-toggler"
 						type="button"
@@ -211,9 +245,7 @@
 								>
 							</li>
 							<li class="nav-item">
-								<a
-									class="nav-link"
-									href="/doi-song-sinh-vien/"
+								<a class="nav-link" href="/doi-song-sinh-vien/"
 									>Đời Sống Sinh Viên</a
 								>
 							</li>
@@ -223,16 +255,12 @@
 								>
 							</li>
 							<li class="nav-item">
-								<a
-									class="nav-link"
-									href="/danh-muc-thong-bao/"
+								<a class="nav-link" href="/danh-muc-thong-bao/"
 									>Thông Báo</a
 								>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="/su-kien/"
-									>Sự Kiện</a
-								>
+								<a class="nav-link" href="/su-kien/">Sự Kiện</a>
 							</li>
 						</ul>
 					</div>
@@ -307,10 +335,7 @@
 							</a>
 						</li>
 						<li class="mobile-nav__item">
-							<a
-								class="mobile-nav__link"
-								href="/tin-tuyen-sinh/"
-							>
+							<a class="mobile-nav__link" href="/tin-tuyen-sinh/">
 								<img
 									src="/assets/svg/phone.svg"
 									alt="Tin tức tuyển sinh"
@@ -651,8 +676,9 @@
 
 		<!-- Mobile Navigation -->
 		<script src="/routes.js"></script>
-    <script src="/js/utils/router.js"></script>
-    <script src="/js/modules/mobile-nav.js"></script>
+		<script src="/js/utils/router.js"></script>
+		<script src="/js/modules/mobile-nav.js"></script>
+		<script src="/js/modules/header-search.js"></script>
 
 		<!-- Include Loader -->
 		<script>
