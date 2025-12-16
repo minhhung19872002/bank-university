@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="vi">
+	<head>
+		<!-- Basic Meta Tags -->
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+
+		<!-- SEO Meta Tags -->
+		<title>404 - Không tìm thấy trang | HUB University</title>
+		<meta
+			name="description"
+			content="Trang bạn đang tìm kiếm không tồn tại. Quay lại trang chủ HUB University."
+		/>
+		<meta name="robots" content="noindex, nofollow" />
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/favicon-16x16.png"
+		/>
+
+		<!-- Preconnect for Performance -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preconnect" href="https://cdn.jsdelivr.net" />
+
+		<!-- Custom Fonts -->
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap"
+		/>
+
+		<!-- Bootstrap CSS -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+			crossorigin="anonymous"
+		/>
+
+		<!-- Iconify -->
+		<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
+
+		<!-- Tokens & base -->
+		<link href="/css/variables.css" rel="stylesheet" />
+		<link href="/css/base.css" rel="stylesheet" />
+
+		<!-- CSS Components -->
+		<link href="/css/components/topbar.css" rel="stylesheet" />
+		<link href="/css/components/navbar.css" rel="stylesheet" />
+		<link href="/css/components/footer.css" rel="stylesheet" />
+
+		<style>
+			.error-page {
+				min-height: calc(100vh - 200px);
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: var(--sp-6) var(--sp-4);
+				background: var(--gradient-brand);
+				position: relative;
+				overflow: hidden;
+			}
+
+			.error-page::before {
+				content: "";
+				position: absolute;
+				top: -50%;
+				left: -50%;
+				width: 200%;
+				height: 200%;
+				background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+				animation: float 6s ease-in-out infinite;
+			}
+
+			@keyframes float {
+				0%, 100% { transform: translate(0, 0); }
+				50% { transform: translate(30px, 30px); }
+			}
+
+			.error-page__content {
+				text-align: center;
+				max-width: 550px;
+				background: var(--color-light);
+				padding: var(--sp-7) var(--sp-6);
+				border-radius: var(--radius-20);
+				box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+				position: relative;
+				z-index: 1;
+			}
+
+			.error-page__code {
+				font-family: var(--font-primary);
+				font-size: clamp(80px, 18vw, 140px);
+				font-weight: 700;
+				line-height: 1;
+				color: var(--gray-200);
+				margin-bottom: var(--sp-2);
+			}
+
+			.error-page__title {
+				font-family: var(--font-primary);
+				font-size: var(--fs-heading-xl);
+				font-weight: 700;
+				color: var(--gray-900);
+				margin-bottom: var(--sp-3);
+			}
+
+			.error-page__description {
+				font-family: var(--font-secondary);
+				font-size: var(--fs-body);
+				color: var(--gray-600);
+				margin-bottom: var(--sp-5);
+				line-height: var(--lh-normal);
+			}
+
+			.error-page__actions {
+				display: flex;
+				flex-wrap: wrap;
+				gap: var(--sp-3);
+				justify-content: center;
+			}
+
+			.error-page__btn {
+				display: inline-flex;
+				align-items: center;
+				gap: var(--sp-2);
+				padding: var(--sp-3) var(--sp-5);
+				border-radius: var(--radius-pill);
+				font-family: var(--font-primary);
+				font-size: var(--fs-body-sm);
+				font-weight: 600;
+				text-decoration: none;
+				transition: all var(--transition-base);
+			}
+
+			.error-page__btn--primary {
+				background: var(--brand-secondary);
+				color: var(--color-light);
+				border: none;
+			}
+
+			.error-page__btn--primary:hover {
+				transform: translateY(-2px);
+				box-shadow: 0 10px 20px rgba(33, 51, 104, 0.3);
+				background: var(--brand-primary);
+				color: var(--color-light);
+			}
+
+			.error-page__btn--secondary {
+				background: var(--color-light);
+				color: var(--brand-secondary);
+				border: 2px solid var(--brand-secondary);
+			}
+
+			.error-page__btn--secondary:hover {
+				background: var(--brand-secondary);
+				color: var(--color-light);
+			}
+
+			@media (max-width: 575px) {
+				.error-page__content {
+					padding: var(--sp-5) var(--sp-4);
+				}
+
+				.error-page__actions {
+					flex-direction: column;
+				}
+
+				.error-page__btn {
+					width: 100%;
+					justify-content: center;
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- HEADER: Topbar + Navbar -->
+		<header class="header-wrapper" data-header>
+			<div class="topbar">
+				<div class="container-fluid">
+					<div class="row align-items-center">
+						<div class="col-12 col-lg-6">
+							<div class="topbar__contact">
+								<span class="topbar__contact-icon">
+									<img
+										src="/assets/images/phone.png"
+										alt="Biểu tượng điện thoại"
+										width="20"
+										height="20"
+									/>
+								</span>
+								<span
+									class="topbar__contact-text d-none d-lg-inline"
+									>Hotline: (028) 38 212 430 - (028) 38 211
+									704 - 0888 353 488</span
+								>
+								<span
+									class="topbar__contact-text topbar__contact-text--school d-inline d-lg-none"
+									>TRƯỜNG ĐẠI HỌC NGÂN HÀNG THÀNH PHỐ HỒ CHÍ
+									MINH</span
+								>
+							</div>
+						</div>
+						<div class="col-lg-6 d-none d-lg-block">
+							<div class="topbar__actions">
+								<span class="topbar__contact-icon">
+									<img
+										src="/assets/images/email.png"
+										alt="Biểu tượng email"
+										width="23"
+										height="23"
+									/>
+								</span>
+								<span class="topbar__contact-text"
+									>Email: phongtvts@hub.edu.vn</span
+								>
+								<div class="topbar__search">
+									<input
+										type="search"
+										placeholder="Tìm kiếm..."
+										class="topbar__search-input"
+										aria-label="Tìm kiếm"
+									/>
+									<img
+										src="/assets/images/search.png"
+										alt=""
+										width="16"
+										height="16"
+									/>
+								</div>
+								<a
+									href="/#registration"
+									class="topbar__register-btn"
+									aria-label="Đăng ký tuyển sinh"
+									>ĐĂNG KÝ</a
+								>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<nav
+				class="navbar navbar-expand-lg"
+				role="navigation"
+				aria-label="Menu chính"
+			>
+				<div class="container">
+					<a
+						class="navbar-brand"
+						href="/"
+						aria-label="Trang chủ HUB University"
+					>
+						<img
+							src="/assets/images/logo.svg"
+							alt="Logo Trường Đại học Ngân hàng TP.HCM - HUB University"
+							class="navbar__logo"
+							width="50"
+							height="72"
+						/>
+						<span class="navbar-brand__text d-inline d-lg-none">
+							TRƯỜNG ĐẠI HỌC NGÂN HÀNG
+							<br />
+							THÀNH PHỐ HỒ CHÍ MINH
+						</span>
+					</a>
+					<button
+						class="navbar-search-btn d-inline-flex d-lg-none"
+						type="button"
+						aria-label="Tìm kiếm"
+					>
+						<img
+							src="https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/xEzDJf4qr6.png"
+							alt=""
+							width="20"
+							height="20"
+						/>
+					</button>
+					<!-- Mobile Search Dialog -->
+					<div class="mobile-search" data-mobile-search aria-hidden="true">
+						<button class="mobile-search__close" type="button" aria-label="Đóng tìm kiếm">
+							<span>&times;</span>
+						</button>
+						<div class="mobile-search__container">
+							<input
+								type="search"
+								placeholder="Tìm kiếm..."
+								class="mobile-search__input"
+								aria-label="Tìm kiếm"
+							/>
+							<button class="mobile-search__submit" type="button" aria-label="Tìm kiếm">
+								<img
+									src="/assets/images/search.png"
+									alt=""
+									width="20"
+									height="20"
+								/>
+							</button>
+						</div>
+					</div>
+					<button
+						class="navbar-toggler"
+						type="button"
+						aria-label="Mở menu điều hướng"
+						data-nav-toggle
+					>
+						<img
+							src="/assets/svg/harmbuger.svg"
+							alt="Mở menu điều hướng"
+							width="24"
+							height="24"
+						/>
+					</button>
+					<div class="navbar-nav-wrapper d-none d-lg-block">
+						<ul class="navbar-nav ms-auto">
+							<li class="nav-item">
+								<a class="nav-link" href="/"
+									>Trang Chủ</a
+								>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/gioi-thieu/"
+									>Lý Do Chọn HUB</a
+								>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/dai-hoc/"
+									>Chương Trình Đào Tạo</a
+								>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/doi-song-sinh-vien/"
+									>Đời Sống Sinh Viên</a
+								>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/tin-tuyen-sinh/"
+									>Tin Tức Tuyển Sinh</a
+								>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/danh-muc-thong-bao/"
+									>Thông Báo</a
+								>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/su-kien/">Sự Kiện</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<aside class="mobile-nav" aria-hidden="true" data-mobile-nav>
+			<div class="mobile-nav__overlay" data-mobile-nav-overlay></div>
+			<div class="mobile-nav__panel">
+				<div class="mobile-nav__header">
+					<button
+						class="mobile-nav__close"
+						type="button"
+						aria-label="Đóng menu"
+						data-nav-close
+					>
+						<span>&times;</span>
+					</button>
+				</div>
+				<nav class="mobile-nav__body" aria-label="Menu chính (mobile)">
+					<ul class="mobile-nav__list">
+						<li class="mobile-nav__item">
+							<a class="mobile-nav__link" href="/">
+								<img
+									src="/assets/svg/home.svg"
+									alt="Trang chủ"
+									class="mobile-nav__icon"
+									width="24"
+									height="24"
+								/>
+								<span>Trang chủ</span>
+							</a>
+						</li>
+						<li class="mobile-nav__item">
+							<a class="mobile-nav__link" href="/gioi-thieu/">
+								<img
+									src="/assets/svg/reason.svg"
+									alt="Lý do chọn HUB"
+									class="mobile-nav__icon"
+									width="24"
+									height="24"
+								/>
+								<span>Lý do chọn HUB</span>
+							</a>
+						</li>
+						<li class="mobile-nav__item">
+							<a class="mobile-nav__link" href="/dai-hoc/">
+								<img
+									src="/assets/svg/buildings.svg"
+									alt="Chương trình đào tạo"
+									class="mobile-nav__icon"
+									width="24"
+									height="24"
+								/>
+								<span>Chương trình đào tạo</span>
+							</a>
+						</li>
+						<li class="mobile-nav__item">
+							<a
+								class="mobile-nav__link"
+								href="/doi-song-sinh-vien/"
+							>
+								<img
+									src="/assets/svg/document.svg"
+									alt="Đời sống sinh viên"
+									class="mobile-nav__icon"
+									width="24"
+									height="24"
+								/>
+								<span>Đời sống sinh viên</span>
+							</a>
+						</li>
+						<li class="mobile-nav__item">
+							<a class="mobile-nav__link" href="/tin-tuyen-sinh/">
+								<img
+									src="/assets/svg/phone.svg"
+									alt="Tin tức tuyển sinh"
+									class="mobile-nav__icon"
+									width="24"
+									height="24"
+								/>
+								<span>Tin tức tuyển sinh</span>
+							</a>
+						</li>
+						<li class="mobile-nav__item">
+							<a
+								class="mobile-nav__link"
+								href="/danh-muc-thong-bao/"
+							>
+								<img
+									src="/assets/svg/notify.svg"
+									alt="Thông báo"
+									class="mobile-nav__icon"
+									width="24"
+									height="24"
+								/>
+								<span>Thông báo</span>
+							</a>
+						</li>
+						<li class="mobile-nav__item">
+							<a class="mobile-nav__link" href="/su-kien/">
+								<img
+									src="/assets/svg/map.svg"
+									alt="Sự kiện"
+									class="mobile-nav__icon"
+									width="24"
+									height="24"
+								/>
+								<span>Sự kiện</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="mobile-nav__footer">
+					<p class="mobile-nav__footer-title">
+						Kết nối với chúng tôi
+					</p>
+					<div class="mobile-nav__socials">
+						<a href="#" aria-label="Facebook" class="mobile-nav__social mobile-nav__social--facebook">
+							<span class="iconify" data-icon="mdi:facebook" data-width="20" data-height="20"></span>
+						</a>
+						<a href="#" aria-label="YouTube" class="mobile-nav__social mobile-nav__social--youtube">
+							<span class="iconify" data-icon="mdi:youtube" data-width="20" data-height="20"></span>
+						</a>
+						<a href="#" aria-label="TikTok" class="mobile-nav__social mobile-nav__social--tiktok">
+							<span class="iconify" data-icon="ic:baseline-tiktok" data-width="20" data-height="20"></span>
+						</a>
+						<a href="#" aria-label="Email" class="mobile-nav__social mobile-nav__social--email">
+							<span class="iconify" data-icon="mdi:email" data-width="20" data-height="20"></span>
+						</a>
+						<a href="#" aria-label="Zalo" class="mobile-nav__social mobile-nav__social--zalo">
+							<span class="iconify" data-icon="simple-icons:zalo" data-width="20" data-height="20"></span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</aside>
+
+		<!-- 404 Error Content -->
+		<main class="error-page">
+			<div class="error-page__content">
+				<div class="error-page__code">404</div>
+				<h1 class="error-page__title">Không tìm thấy trang</h1>
+				<p class="error-page__description">
+					Xin lỗi, trang bạn đang tìm kiếm không tồn tại hoặc đã được di chuyển.
+					Vui lòng kiểm tra lại đường dẫn hoặc quay về trang chủ.
+				</p>
+				<div class="error-page__actions">
+					<a href="/" class="error-page__btn error-page__btn--primary">
+						<span class="iconify" data-icon="mdi:home" data-width="20" data-height="20"></span>
+						Về trang chủ
+					</a>
+					<a href="javascript:history.back()" class="error-page__btn error-page__btn--secondary">
+						<span class="iconify" data-icon="mdi:arrow-left" data-width="20" data-height="20"></span>
+						Quay lại
+					</a>
+				</div>
+			</div>
+		</main>
+
+		<!-- Footer -->
+		<div data-include="/partials/footer.html"></div>
+
+		<!-- Scripts -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="/js/utils/router.js"></script>
+		<script src="/js/main.js"></script>
+		<script src="/js/modules/header-search.js"></script>
+	</body>
+</html>
