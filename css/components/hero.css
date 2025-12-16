@@ -137,7 +137,8 @@
 
 /* Hero banner nhỏ cho các trang con - Desktop */
 .hero-section--banner {
-	height: 500px;
+	height: clamp(360px, 28vh, 420px);
+	min-height: 360px;
 }
 
 /* Hero background cho dai-hoc */
@@ -148,6 +149,56 @@
 /* Hero background cho quoc-te */
 .hero-section--quocte .hero-section__bg {
 	background-image: url("/assets/images/quocte_hero.png");
+}
+
+/* Hero background cho doi-song-sinh-vien */
+.hero-section--doisongsinhvien .hero-section__bg {
+	background-image: url("/assets/images/dssv_hero.png");
+}
+
+/* Hero background cho tin-tuyen-sinh */
+.hero-section--tintuyensinh .hero-section__bg {
+	background-image: url("/assets/images/tin_hero.png");
+}
+
+/* Hero background cho danh-muc-thong-bao */
+.hero-section--danhmucthongbao .hero-section__bg {
+	background-image: url("/assets/images/dmtb_hero.png");
+}
+
+/* Hero background cho su-kien */
+.hero-section--sukien .hero-section__bg {
+	background-image: url("/assets/images/sukien_hero.png");
+}
+
+/* Hero background cho su-kien-chi-tiet */
+.hero-section--sukienchitiet .hero-section__bg {
+	background-image: url("/assets/images/skct_hero.png");
+}
+
+/* Hero background cho co-so-vat-chat */
+.hero-section--cosovatchat .hero-section__bg {
+	background-image: url("/assets/images/csvc_hero.png");
+}
+
+/* Hero background cho dktv-tuyen-sinh */
+.hero-section--dangkytuvantuyensinh .hero-section__bg {
+	background-image: url("/assets/images/dktv_hero.png");
+}
+
+/* Hero background cho ket-qua-tim-kiem */
+.hero-section--ketquatimkiem .hero-section__bg {
+	background-image: url("/assets/images/timkiem_hero.png");
+}
+
+/* Hero background cho lich-su */
+.hero-section--lichsu .hero-section__bg {
+	background-image: url("/assets/images/lichsu_hero.png");
+}
+
+/* Hero background cho tien-si */
+.hero-section--tiensi .hero-section__bg {
+	background-image: url("/assets/images/hero_bg.png");
 }
 
 /* Feature Cards Section */
@@ -221,8 +272,8 @@
 @media (min-width: 576px) and (max-width: 1199.98px) {
 	/* Hero banner tablet */
 	.hero-section--banner {
-		height: 350px;
-		min-height: 350px;
+		height: clamp(280px, 30vh, 360px);
+		min-height: 280px;
 	}
 
 	.feature-cards-wrapper {
@@ -246,8 +297,8 @@
 
 	/* Hero banner nhỏ cho các trang con */
 	.hero-section--banner {
-		height: 250px;
-		min-height: 250px;
+		height: 240px;
+		min-height: 240px;
 	}
 
 	.feature-cards-section {
