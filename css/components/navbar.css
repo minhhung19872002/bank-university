@@ -312,20 +312,41 @@
 }
 
 .mobile-nav__social {
-	width: 32px;
-	height: 32px;
+	width: 36px;
+	height: 36px;
 	border-radius: 50%;
-	background-color: var(--gray-100);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	text-decoration: none;
-	color: var(--gray-900);
+	color: var(--color-light);
+	transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .mobile-nav__social:hover {
-	background-color: var(--brand-primary);
-	color: var(--color-light);
+	transform: scale(1.1);
+	opacity: 0.9;
+}
+
+/* Social media brand colors */
+.mobile-nav__social--facebook {
+	background-color: #1877f2;
+}
+
+.mobile-nav__social--youtube {
+	background-color: #ff0000;
+}
+
+.mobile-nav__social--tiktok {
+	background-color: #000000;
+}
+
+.mobile-nav__social--email {
+	background-color: #ea4335;
+}
+
+.mobile-nav__social--zalo {
+	background-color: #0068ff;
 }
 
 @media (min-width: 992px) {
