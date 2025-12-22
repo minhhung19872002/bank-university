@@ -32,7 +32,7 @@
 	left: 0;
 	width: 162px;
 	height: 105px;
-	background-image: url("https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/AWUuiKb5fb.png");
+	background-image: url("/assets/images/program_decorator_1.png");
 	background-size: cover;
 	background-position: center;
 	pointer-events: none;
@@ -148,23 +148,23 @@
 	color: var(--gray-900);
 }
 
-.program-pagination__btn--prev {
-	background-image: url("https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/eaa1jskJOS.png");
-}
-
+.program-pagination__btn--prev,
 .program-pagination__btn--next {
-	background-image: url("https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/4n8Q91imMC.png");
+	background-color: var(--gray-200, #e5e7eb);
+	border-radius: 50%;
 }
 
 .program-pagination__btn--active {
-	background-image: url("https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/DtwDmP4LsG.png");
+	background-color: var(--color-primary, #1e40af);
+	border-radius: 50%;
 	color: var(--color-light);
 }
 
 .program-pagination__btn:not(.program-pagination__btn--prev):not(
 		.program-pagination__btn--next
 	):not(.program-pagination__btn--active) {
-	background-image: url("https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/pGtfVySzrx.png");
+	background-color: var(--gray-200, #e5e7eb);
+	border-radius: 50%;
 }
 
 .program-pagination__btn img {

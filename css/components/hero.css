@@ -91,16 +91,6 @@
 	color: var(--color-on-secondary);
 }
 
-.hero-mobile__btn-icon {
-	width: 1.5rem;
-	height: 1.5rem;
-	flex-shrink: 0;
-	background-image: url("https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-21/AxhwgFJngh.png");
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
 .hero-mobile__fab-group {
 	position: absolute;
 	right: 1rem;
@@ -120,14 +110,6 @@
 	background-repeat: no-repeat;
 	background-size: cover;
 	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
-}
-
-.hero-mobile__fab--chat {
-	background-image: url("https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-21/VeGyY7Zbxo.png");
-}
-
-.hero-mobile__fab--phone {
-	background-image: url("https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-21/W9o6ByXdtU.png");
 }
 
 /* ============================================

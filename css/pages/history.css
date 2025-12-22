@@ -368,7 +368,7 @@
 /* Mission Card */
 .mission-card {
   background-color: var(--brand-primary);
-  background-image: url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/TUMCukndZr.png'), url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/vWCWRr4KVZ.png');
+  background-image: url('/assets/images/misssion_card_1.png'), url('/assets/images/mission_card_2.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -431,7 +431,7 @@
   top: 4px;
   width: 13px;
   height: 13px;
-  background-image: url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/4osWFv9dRi.png');
+  background-image: url('/assets/svg/check_secondary.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -439,7 +439,7 @@
 
 /* Vision Card Variant */
 .mission-card--vision {
-  background-image: url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/w0uuCVu8Cs.png'), url('https://codia-f2c.s3.us-west-1.amazonaws.com/image/2025-10-20/FFaneFwb0w.png');
+  background-image: url('/assets/images/mission_card_2.png'), url('/assets/images/misssion_card_1.png');
 }
 
 /* Pagination Dots */
