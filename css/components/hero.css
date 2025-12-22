@@ -52,7 +52,7 @@
 	display: inline-flex;
 	align-items: center;
 	gap: 0.5rem;
-	font-family: Oswald, var(--font-primary, Montserrat);
+	font-family: var(--font-primary), Montserrat, sans-serif;
 	font-size: var(--fs-200);
 	text-transform: uppercase;
 	align-self: flex-start;
