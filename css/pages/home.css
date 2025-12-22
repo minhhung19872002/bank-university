@@ -57,7 +57,7 @@
 }
 
 .hero-section__brand {
-	font-family: "SVN-Bango", var(--font-family-heading);
+	font-family: var(--font-family-heading);
 	font-size: 36px;
 	font-weight: var(--fw-regular);
 	line-height: 1;
