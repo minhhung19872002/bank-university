@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     initProgramsTabs();
     initProgramsAccordionMobile();
     initFilterButtons();
+    initEventCountdown();
 });
 
 // Initialize navigation active states
@@ -420,4 +421,87 @@ function initFilterButtons() {
 
     // Initial display
     showCardsForPage();
+}
+
+// Event countdown timer
+// Usage: <div class="event-countdown" data-target-date="2025-10-01">
+// Formats: "2025-10-01", "2025-10-01T09:00:00", "October 1, 2025"
+// When countdown reaches 0, it stops and displays 0 - user needs to update data-target-date
+function initEventCountdown() {
+    const countdownContainers = document.querySelectorAll('.event-countdown');
+    if (!countdownContainers.length) return;
+
+    countdownContainers.forEach(container => {
+        setupCountdown(container);
+    });
+
+    function setupCountdown(countdownContainer) {
+        // Get countdown value elements
+        const daysEl = countdownContainer.querySelector('.event-countdown__item:nth-child(1) .event-countdown__value');
+        const hoursEl = countdownContainer.querySelector('.event-countdown__item:nth-child(2) .event-countdown__value');
+        const minsEl = countdownContainer.querySelector('.event-countdown__item:nth-child(3) .event-countdown__value');
+        const secsEl = countdownContainer.querySelector('.event-countdown__item:nth-child(4) .event-countdown__value');
+
+        if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+
+        // Parse target date from data attribute
+        const dateAttr = countdownContainer.getAttribute('data-target-date');
+        if (!dateAttr) {
+            // No date set - show zeros
+            daysEl.textContent = '0';
+            hoursEl.textContent = '00';
+            minsEl.textContent = '00';
+            secsEl.textContent = '00';
+            return;
+        }
+
+        const targetDate = new Date(dateAttr);
+        if (isNaN(targetDate.getTime())) {
+            // Invalid date - show zeros
+            daysEl.textContent = '0';
+            hoursEl.textContent = '00';
+            minsEl.textContent = '00';
+            secsEl.textContent = '00';
+            return;
+        }
+
+        let intervalId = null;
+
+        // Update countdown every second
+        function updateCountdown() {
+            const now = new Date();
+            const diff = targetDate - now;
+
+            // If countdown finished, show zeros and stop
+            if (diff <= 0) {
+                daysEl.textContent = '0';
+                hoursEl.textContent = '00';
+                minsEl.textContent = '00';
+                secsEl.textContent = '00';
+                if (intervalId) {
+                    clearInterval(intervalId);
+                    intervalId = null;
+                }
+                return;
+            }
+
+            // Calculate time parts
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+            // Update DOM with padded values
+            daysEl.textContent = days.toString();
+            hoursEl.textContent = hours.toString().padStart(2, '0');
+            minsEl.textContent = mins.toString().padStart(2, '0');
+            secsEl.textContent = secs.toString().padStart(2, '0');
+        }
+
+        // Initial update
+        updateCountdown();
+
+        // Update every second
+        intervalId = setInterval(updateCountdown, 1000);
+    }
 }

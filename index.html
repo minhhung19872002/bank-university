@@ -78,8 +78,17 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
     <link rel="manifest" href="/favicon/site.webmanifest" />
 
     <!-- Local Fonts -->
@@ -458,8 +467,10 @@
       <div class="hero-section__bg">
         <img
           src="/assets/images/hero_bg.png"
-          srcset="/assets/images/hero_bg-mobile.png 768w,
-                  /assets/images/hero_bg.png 1920w"
+          srcset="
+            /assets/images/hero_bg-mobile.png  768w,
+            /assets/images/hero_bg.png        1920w
+          "
           sizes="100vw"
           alt="Banner Trường Đại học Ngân hàng TP.HCM"
           loading="eager"
@@ -1349,7 +1360,7 @@
                 </div>
               </div>
 
-              <a href="/faq.html" class="link-button faq-section__view-all">
+              <!-- <a href="/faq.html" class="link-button faq-section__view-all">
                 <span>XEM TẤT CẢ</span>
                 <img
                   src="/assets/svg/arrow-right.svg"
@@ -1357,7 +1368,7 @@
                   class="faq-section__view-all-icon"
                   aria-hidden="true"
                 />
-              </a>
+              </a> -->
             </div>
           </div>
         </div>
@@ -1600,6 +1611,7 @@
 
                   <div
                     class="event-countdown"
+                    data-target-date="2026-10-01"
                     aria-label="Thời gian còn lại đến sự kiện"
                   >
                     <div class="event-countdown__item">

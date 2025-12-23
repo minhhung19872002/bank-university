@@ -101,8 +101,8 @@
 
 /* Hero banner cho các trang con - Desktop */
 .hero-section--banner {
-	height: clamp(420px, 38vh, 520px);
-	min-height: 420px;
+	height: clamp(480px, 42vh, 580px);
+	min-height: 480px;
 }
 
 
