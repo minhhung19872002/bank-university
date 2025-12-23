@@ -333,8 +333,30 @@ function initProgramSliderMobile() {
         itemSelector: '.col-lg-4',
         gap: 0, // CSS handles padding
         swipeThreshold: 50,
-        mode: 'snap'
+        mode: 'snap',
+        disableButtons: true,
     });
+
+    // Store all cards for mobile show/hide
+    const allCards = Array.from(programGrid.querySelectorAll('.col-lg-4'));
+    window.showAllProgramCards = () => {
+        allCards.forEach(card => {
+            card.classList.remove('pagination-hidden');
+            // Only show if matches current filter
+            if (!card.style.display || card.style.display !== 'none' || card.getAttribute('data-category')) {
+                const activeFilter = document.querySelector('.filter-button--active[data-filter]');
+                if (activeFilter) {
+                    const filter = activeFilter.getAttribute('data-filter');
+                    if (card.getAttribute('data-category') === filter) {
+                        card.style.display = '';
+                    }
+                } else {
+                    card.style.display = '';
+                }
+            }
+        });
+        updateSliderNavVisibility();
+    };
 }
 
 // Filter buttons and pagination for program cards
@@ -350,7 +372,7 @@ function initFilterButtons() {
     // Get initial filter from active button
     const activeButton = document.querySelector('.filter-button--active[data-filter]');
     const initialFilter = activeButton ? activeButton.getAttribute('data-filter') : null;
-    const initialCards = initialFilter
+    let currentFilteredCards = initialFilter
         ? allCards.filter(card => card.getAttribute('data-category') === initialFilter)
         : allCards;
 
@@ -365,23 +387,59 @@ function initFilterButtons() {
     const header = document.querySelector('.header');
     const headerHeight = header ? header.offsetHeight : 120;
 
-    // Create paginator using reusable utility
-    const paginator = createPagination({
-        items: initialCards,
-        paginationNav,
-        itemsPerPage: 9,
-        scrollTarget: document.getElementById('programs'),
-        scrollOffset: headerHeight + 20,
-        classes: { active: 'pagination__button--active' },
-        createPageElement: (pageNum, isActive) => {
-            const btn = document.createElement('button');
-            btn.className = 'pagination__button' + (isActive ? ' pagination__button--active' : '');
-            btn.type = 'button';
-            btn.setAttribute('aria-label', `Trang ${pageNum}`);
-            btn.textContent = pageNum;
-            return btn;
+    // Responsive: only use pagination on sm+ screens
+    const mobileQuery = window.matchMedia('(max-width: 575px)');
+    let paginator = null;
+
+    function initPagination(cards) {
+        return createPagination({
+            items: cards,
+            paginationNav,
+            itemsPerPage: 9,
+            scrollTarget: document.getElementById('programs'),
+            scrollOffset: headerHeight + 20,
+            classes: { active: 'pagination__button--active' },
+            createPageElement: (pageNum, isActive) => {
+                const btn = document.createElement('button');
+                btn.className = 'pagination__button' + (isActive ? ' pagination__button--active' : '');
+                btn.type = 'button';
+                btn.setAttribute('aria-label', `Trang ${pageNum}`);
+                btn.textContent = pageNum;
+                return btn;
+            }
+        });
+    }
+
+    function showAllFilteredCards() {
+        // Show all cards matching current filter for mobile slider
+        currentFilteredCards.forEach(card => {
+            card.classList.remove('pagination-hidden');
+            card.style.display = '';
+        });
+        if (typeof window.updateProgramSliderNav === 'function') {
+            window.updateProgramSliderNav();
         }
-    });
+    }
+
+    function handleBreakpointChange(e) {
+        if (e.matches) {
+            // Mobile: show all filtered cards for slider
+            showAllFilteredCards();
+        } else {
+            // Desktop/Tablet: enable pagination
+            paginator = initPagination(currentFilteredCards);
+        }
+    }
+
+    // Initial setup based on current viewport
+    if (mobileQuery.matches) {
+        showAllFilteredCards();
+    } else {
+        paginator = initPagination(currentFilteredCards);
+    }
+
+    // Listen for breakpoint changes
+    mobileQuery.addEventListener('change', handleBreakpointChange);
 
     // Initialize filter buttons
     if (filterButtons.length) {
@@ -391,13 +449,21 @@ function initFilterButtons() {
                 filterButtons.forEach(btn => btn.classList.remove('filter-button--active'));
                 button.classList.add('filter-button--active');
 
-                // Filter cards and update paginator
+                // Filter cards and update current filtered cards
                 const selectedFilter = button.getAttribute('data-filter');
-                const filteredCards = allCards.filter(card => card.getAttribute('data-category') === selectedFilter);
+                currentFilteredCards = allCards.filter(card => card.getAttribute('data-category') === selectedFilter);
 
-                // Hide all cards first, then let paginator show filtered ones
+                // Hide all cards first
                 allCards.forEach(card => card.style.display = 'none');
-                paginator.setItems(filteredCards);
+
+                // Show filtered cards based on viewport
+                if (mobileQuery.matches) {
+                    // Mobile: show all filtered cards for slider
+                    showAllFilteredCards();
+                } else {
+                    // Desktop/Tablet: use pagination
+                    paginator.setItems(currentFilteredCards);
+                }
 
                 // Update slider nav visibility
                 if (typeof window.updateProgramSliderNav === 'function') {
