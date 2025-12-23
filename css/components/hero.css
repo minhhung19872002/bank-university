@@ -1,12 +1,18 @@
 /* ============================================
    COMPONENT: Hero Section
+   Updated: Fixed aspect ratio for better image control
    ============================================ */
 
-/* Base Hero Section (dùng cho tất cả pages) */
+/* ============================================
+   BASE HERO SECTION
+   Trang chủ - Full hero với aspect ratio cố định
+   ============================================ */
 .hero-section {
 	position: relative;
 	width: 100%;
-	height: calc(100vh - var(--header-total-height-mobile, 112px));
+	aspect-ratio: 21 / 9;
+	max-height: 80vh;
+	min-height: 450px;
 	overflow: hidden;
 }
 
@@ -14,89 +20,23 @@
 	width: 100%;
 	height: 100%;
 	background-size: cover;
-	background-position: center;
+	background-position: center center;
 	background-repeat: no-repeat;
 }
 
 /* ============================================
-   Mobile Hero (Home page)
+   SUBPAGE BANNER
+   Banner nhỏ cho các trang con
    ============================================ */
-
-.hero-mobile {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	pointer-events: none;
-}
-
-.hero-mobile__content {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	height: 100%;
-	padding-bottom: 2.5rem;
-	max-width: 320px;
-	color: #fafafa;
-	pointer-events: auto;
-}
-
-.hero-mobile__btn {
-	margin-top: 1.5rem;
-	background-color: var(--color-secondary);
-	border-color: var(--color-secondary);
-	color: var(--color-on-secondary);
-	border-radius: var(--radius-md);
-	padding: 0.75rem 1.25rem;
-	display: inline-flex;
-	align-items: center;
-	gap: 0.5rem;
-	font-family: var(--font-primary), Montserrat, sans-serif;
-	font-size: var(--fs-200);
-	text-transform: uppercase;
-	align-self: flex-start;
-	white-space: nowrap;
-}
-
-.hero-mobile__btn:hover,
-.hero-mobile__btn:focus {
-	background-color: #1a294f;
-	border-color: #1a294f;
-	color: var(--color-on-secondary);
-}
-
-.hero-mobile__fab-group {
-	position: absolute;
-	right: 1rem;
-	bottom: 5.5rem;
-	display: flex;
-	flex-direction: column;
-	gap: 24px;
-}
-
-.hero-mobile__fab {
-	width: 3.75rem;
-	height: 3.75rem;
-	border-radius: 999px;
-	border: none;
-	background-color: transparent;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
-}
-
-/* ============================================
-   DAI-HOC PAGE VARIANT
-   Hero giống index + Feature cards overlay
-   ============================================ */
-
-/* Hero banner nhỏ cho các trang con - Desktop */
 .hero-section--banner {
-	height: clamp(360px, 28vh, 420px);
-	min-height: 360px;
+	aspect-ratio: 21 / 6;
+	max-height: 400px;
+	min-height: 280px;
 }
+
+/* ============================================
+   BACKGROUND IMAGES PER PAGE
+   ============================================ */
 
 /* Hero background cho dai-hoc */
 .hero-section--daihoc .hero-section__bg {
@@ -158,7 +98,39 @@
 	background-image: url("/assets/images/hero_bg.png");
 }
 
-/* Feature Cards Section */
+/* Hero background cho thac-si */
+.hero-section--thacsi .hero-section__bg {
+	background-image: url("/assets/images/hero_bg.png");
+}
+
+/* Hero background cho gioi-thieu (about) */
+.hero-section--about .hero-section__bg {
+	background-image: url("/assets/images/hero_bg.png");
+}
+
+/* ============================================
+   FOCAL POINT UTILITIES
+   Cho phép điều chỉnh vị trí focus của hình
+   ============================================ */
+.hero-section__bg--focus-top {
+	background-position: center top;
+}
+
+.hero-section__bg--focus-bottom {
+	background-position: center bottom;
+}
+
+.hero-section__bg--focus-left {
+	background-position: left center;
+}
+
+.hero-section__bg--focus-right {
+	background-position: right center;
+}
+
+/* ============================================
+   Feature Cards Section
+   ============================================ */
 .feature-cards-section {
 	background-color: var(--color-light);
 	padding: 60px 0;
@@ -190,26 +162,23 @@
 }
 
 /* ============================================
-   RESPONSIVE
+   RESPONSIVE - Tablet (992px - 1199px)
    ============================================ */
-
-/* Tablet */
 @media (max-width: 1199.98px) {
-	.hero-mobile__content {
-		max-width: 420px;
-		padding-bottom: 3.5rem;
+	.hero-section {
+		aspect-ratio: 16 / 9;
+		max-height: 70vh;
+		min-height: 400px;
 	}
 
-	.hero-mobile__fab-group {
-		bottom: 6.5rem;
+	.hero-section--banner {
+		aspect-ratio: 16 / 6;
+		max-height: 350px;
+		min-height: 250px;
 	}
 
 	.feature-cards-section {
 		padding: 48px 0;
-	}
-
-	.feature-cards-section__subtitle {
-		font-size: var(--fs-350);
 	}
 
 	.feature-cards-section__title {
@@ -223,12 +192,6 @@
 
 /* Tablet - 2 cards per row */
 @media (min-width: 576px) and (max-width: 1199.98px) {
-	/* Hero banner tablet */
-	.hero-section--banner {
-		height: clamp(280px, 30vh, 360px);
-		min-height: 280px;
-	}
-
 	.feature-cards-wrapper {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
@@ -241,26 +204,30 @@
 	}
 }
 
-/* Mobile */
+/* ============================================
+   RESPONSIVE - Mobile (< 576px)
+   ============================================ */
 @media (max-width: 575.98px) {
 	.hero-section {
-		height: auto;
-		min-height: calc(100vh - var(--header-total-height-mobile, 112px));
+		aspect-ratio: 16 / 9;
+		max-height: 50vh;
+		min-height: 280px;
 	}
 
-	/* Hero banner nhỏ cho các trang con */
+	/* Mobile: focus phần trên của hình (thường là người/tòa nhà) */
+	.hero-section__bg {
+		background-position: center top;
+	}
+
+	/* Banner trang con - mobile */
 	.hero-section--banner {
-		height: 240px;
-		min-height: 240px;
+		aspect-ratio: 16 / 7;
+		max-height: 45vh;
+		min-height: 200px;
 	}
 
 	.feature-cards-section {
 		padding: 40px 0;
-	}
-
-	.feature-cards-section__subtitle {
-		font-size: var(--fs-300);
-		text-align: left;
 	}
 
 	.feature-cards-section__title {
