@@ -1048,8 +1048,11 @@
             </button>
           </nav>
 
-          <!-- Pagination -->
-          <div class="program-pagination d-none d-sm-flex">
+          <!-- Pagination - Desktop/Tablet only -->
+          <nav
+            class="program-pagination d-none d-md-flex"
+            aria-label="Phân trang ngành đào tạo"
+          >
             <button
               class="program-pagination__btn program-pagination__btn--prev"
               aria-label="Trang trước"
@@ -1057,19 +1060,12 @@
               <img src="/assets/svg/d-arrow-left.svg" alt="" />
             </button>
             <button
-              class="program-pagination__btn program-pagination__btn--active"
-              aria-current="page"
-            >
-              1
-            </button>
-            <button class="program-pagination__btn">2</button>
-            <button
               class="program-pagination__btn program-pagination__btn--next"
               aria-label="Trang kế tiếp"
             >
               <img src="/assets/svg/d-arrow-right.svg" alt="" />
             </button>
-          </div>
+          </nav>
         </div>
       </section>
 
@@ -1523,6 +1519,9 @@
     <!-- Gallery Slider Module -->
     <script src="/js/modules/gallery-slider.js"></script>
 
+    <!-- Pagination Utility -->
+    <script src="/js/utils/pagination.js"></script>
+
     <!-- Mobile Navigation -->
     <script src="/routes.js"></script>
     <script src="/js/utils/router.js"></script>
@@ -1539,9 +1538,16 @@
       });
     </script>
 
-    <!-- Program Slider Navigation -->
+    <!-- Page Scripts -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
+        const programGrid = document.querySelector(".program-cards-grid");
+        const paginationNav = document.querySelector(".program-pagination");
+        const allProgramCards = programGrid
+          ? Array.from(programGrid.querySelectorAll(".program-card-item"))
+          : [];
+
+        // Mobile Slider Navigation
         initGallerySlider({
           gallerySelector: ".program-cards-grid",
           prevBtnSelector: ".program-slider-nav__btn--prev",
@@ -1549,7 +1555,74 @@
           itemSelector: ".program-card-item",
           gap: 16,
           mode: "simple",
+          disableButtons: true,
         });
+
+        // Desktop/Tablet Pagination - only active on md+ screens
+        const tabletQuery = window.matchMedia("(min-width: 768px)");
+        let paginator = null;
+
+        function initPagination() {
+          if (!programGrid || !paginationNav) return;
+
+          const header = document.querySelector(".header-wrapper");
+          const headerHeight = header ? header.offsetHeight : 120;
+
+          paginator = createPagination({
+            items: allProgramCards,
+            paginationNav: paginationNav,
+            itemsPerPage: 6,
+            scrollTarget: document.querySelector(".program-cards-section"),
+            scrollOffset: headerHeight + 20,
+            showOnMobile: false,
+            selectors: {
+              prevBtn: ".program-pagination__btn--prev",
+              nextBtn: ".program-pagination__btn--next",
+              pageItem: ".program-pagination__item",
+            },
+            classes: {
+              active: "program-pagination__item--active",
+            },
+            createPageElement: (pageNum, isActive) => {
+              const btn = document.createElement("button");
+              btn.className =
+                "program-pagination__item" +
+                (isActive ? " program-pagination__item--active" : "");
+              btn.type = "button";
+              btn.setAttribute("aria-label", `Trang ${pageNum}`);
+              btn.textContent = pageNum;
+              return btn;
+            },
+          });
+        }
+
+        function showAllItems() {
+          // Show all items for mobile slider
+          allProgramCards.forEach((card) => {
+            card.classList.remove("pagination-hidden");
+            card.style.display = "";
+          });
+        }
+
+        function handleBreakpointChange(e) {
+          if (e.matches) {
+            // Desktop/Tablet: enable pagination
+            initPagination();
+          } else {
+            // Mobile: show all items for slider
+            showAllItems();
+          }
+        }
+
+        // Initial setup based on current viewport
+        if (tabletQuery.matches) {
+          initPagination();
+        } else {
+          showAllItems();
+        }
+
+        // Listen for breakpoint changes
+        tabletQuery.addEventListener("change", handleBreakpointChange);
       });
     </script>
   </body>
