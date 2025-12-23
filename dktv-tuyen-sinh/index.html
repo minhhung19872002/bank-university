@@ -34,8 +34,17 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
     <link rel="manifest" href="/favicon/site.webmanifest" />
 
     <!-- Local Fonts -->
@@ -411,8 +420,10 @@
         <div class="hero-section__bg">
           <img
             src="/assets/images/dktv_hero.png"
-            srcset="/assets/images/dktv_hero-mobile.png 768w,
-                    /assets/images/dktv_hero.png 1920w"
+            srcset="
+              /assets/images/dktv_hero.png  768w,
+              /assets/images/dktv_hero.png 1920w
+            "
             sizes="100vw"
             alt="Banner Đăng ký tư vấn tuyển sinh HUB"
             loading="eager"
@@ -475,25 +486,90 @@
     <script src="/js/modules/mobile-nav.js"></script>
     <script src="/js/modules/header-search.js"></script>
 
-    <!-- Include Loader -->
+    <!-- Include Loader & Form Handler -->
     <script>
-      // Simple include loader
-      document.querySelectorAll("[data-include]").forEach(async (el) => {
-        const file = el.getAttribute("data-include");
-        const response = await fetch(file);
-        el.innerHTML = await response.text();
-      });
+      // Create snackbar element
+      (function initSnackbar() {
+        let snackbar = document.getElementById("snackbar");
+        if (!snackbar) {
+          snackbar = document.createElement("div");
+          snackbar.id = "snackbar";
+          snackbar.className = "snackbar";
+          snackbar.innerHTML = `
+            <span class="snackbar__icon">✓</span>
+            <span class="snackbar__message"></span>
+          `;
+          document.body.appendChild(snackbar);
+        }
+
+        // Show snackbar function
+        window.showSnackbar = function (message, type = "success") {
+          const icon = type === "success" ? "✓" : "✕";
+          snackbar.querySelector(".snackbar__icon").textContent = icon;
+          snackbar.querySelector(".snackbar__message").textContent = message;
+          snackbar.className = `snackbar snackbar--${type} snackbar--show`;
+
+          // Auto hide after 4 seconds
+          setTimeout(() => {
+            snackbar.classList.remove("snackbar--show");
+          }, 4000);
+        };
+      })();
 
       // Form submission handler
-      document
-        .getElementById("registrationForm")
-        ?.addEventListener("submit", function (e) {
+      function setupRegistrationForm() {
+        const form = document.getElementById("registrationForm");
+        if (!form) return;
+
+        form.addEventListener("submit", function (e) {
           e.preventDefault();
-          // Handle form submission here
-          alert(
-            "Cảm ơn bạn đã đăng ký! Chúng tôi sẽ liên hệ với bạn sớm nhất."
+
+          // Get form fields by ID (matching the partial's input IDs)
+          const fullName = document.getElementById("fullName");
+          const phone = document.getElementById("phone");
+          const email = document.getElementById("email");
+
+          // Validation
+          if (!fullName?.value.trim()) {
+            showSnackbar("Vui lòng nhập họ tên", "error");
+            fullName?.focus();
+            return;
+          }
+
+          if (!phone?.value.trim()) {
+            showSnackbar("Vui lòng nhập số điện thoại", "error");
+            phone?.focus();
+            return;
+          }
+
+          if (!email?.value.trim()) {
+            showSnackbar("Vui lòng nhập email", "error");
+            email?.focus();
+            return;
+          }
+
+          // Show success message and reset form
+          showSnackbar(
+            "Đăng ký thành công! Chúng tôi sẽ liên hệ bạn sớm.",
+            "success"
           );
+          this.reset();
         });
+      }
+
+      // Include loader - wait for all partials to load, then setup form
+      (async function loadIncludes() {
+        const includes = document.querySelectorAll("[data-include]");
+        await Promise.all(
+          Array.from(includes).map(async (el) => {
+            const file = el.getAttribute("data-include");
+            const response = await fetch(file);
+            el.innerHTML = await response.text();
+          })
+        );
+        // Setup form after partials are loaded
+        setupRegistrationForm();
+      })();
     </script>
   </body>
 </html>
