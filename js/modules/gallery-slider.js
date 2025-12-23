@@ -27,6 +27,7 @@ function initGallerySlider(options = {}) {
         gap = 12,
         swipeThreshold = 50,
         mode = "snap",
+        disableButtons = false, // Disable prev/next buttons at start/end
     } = options;
 
     const gallery = document.querySelector(gallerySelector);
@@ -56,6 +57,29 @@ function initGallerySlider(options = {}) {
         return gallery.children;
     };
 
+    // Update button disabled states
+    const updateButtonStates = () => {
+        if (!disableButtons) return;
+
+        const maxScroll = gallery.scrollWidth - gallery.clientWidth;
+        const currentScroll = gallery.scrollLeft;
+        const threshold = 5; // Small threshold for rounding errors
+
+        if (prevBtn) {
+            const isAtStart = currentScroll <= threshold;
+            prevBtn.disabled = isAtStart;
+            prevBtn.style.opacity = isAtStart ? '0.5' : '1';
+            prevBtn.style.cursor = isAtStart ? 'not-allowed' : 'pointer';
+        }
+
+        if (nextBtn) {
+            const isAtEnd = currentScroll >= maxScroll - threshold;
+            nextBtn.disabled = isAtEnd;
+            nextBtn.style.opacity = isAtEnd ? '0.5' : '1';
+            nextBtn.style.cursor = isAtEnd ? 'not-allowed' : 'pointer';
+        }
+    };
+
     // Smooth scroll to position
     const smoothScrollTo = (targetScroll) => {
         gallery.classList.add("is-snapping");
@@ -65,6 +89,7 @@ function initGallerySlider(options = {}) {
         });
         setTimeout(() => {
             gallery.classList.remove("is-snapping");
+            updateButtonStates();
         }, 400);
     };
 
@@ -106,6 +131,12 @@ function initGallerySlider(options = {}) {
         nextBtn.addEventListener("click", next);
     }
 
+    // Initial button states and scroll listener for disableButtons
+    if (disableButtons) {
+        updateButtonStates();
+        gallery.addEventListener("scroll", updateButtonStates);
+    }
+
     // Simple mode: only prev/next buttons, no drag
     if (mode === "simple") {
         return {
@@ -115,6 +146,7 @@ function initGallerySlider(options = {}) {
             goToIndex,
             getCurrentIndex,
             getItemWidth,
+            updateButtonStates,
         };
     }
 
@@ -237,6 +269,7 @@ function initGallerySlider(options = {}) {
         goToIndex,
         getCurrentIndex,
         getItemWidth,
+        updateButtonStates,
     };
 }
 

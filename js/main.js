@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     initRelatedArticlesPagination();
     initProgramSliderMobile();
     initAdmissionsNewsPagination();
+    initAnnouncementsPagination();
 });
 
 // Initialize navigation active states
@@ -576,6 +577,41 @@ function initAdmissionsNewsPagination() {
                     }
                 }
             });
+        }
+    });
+}
+
+// Announcements pagination (danh-muc-thong-bao page)
+function initAnnouncementsPagination() {
+    const announcementsSection = document.querySelector('.announcements-featured');
+    const paginationNav = announcementsSection?.querySelector('.pagination');
+
+    if (!announcementsSection || !paginationNav) return;
+
+    const allCards = Array.from(announcementsSection.querySelectorAll('.announcement-card')).map(
+        card => card.closest('.col-12')
+    );
+
+    // Get header height for scroll offset
+    const header = document.querySelector('.header');
+    const headerHeight = header ? header.offsetHeight : 120;
+
+    // Create paginator using reusable utility
+    createPagination({
+        items: allCards,
+        paginationNav,
+        itemsPerPage: 10,
+        scrollTarget: announcementsSection,
+        scrollOffset: headerHeight + 20,
+        showOnMobile: true,
+        classes: { active: 'pagination__item--active' },
+        createPageElement: (pageNum, isActive) => {
+            const link = document.createElement('a');
+            link.href = '#';
+            link.className = 'pagination__item' + (isActive ? ' pagination__item--active' : '');
+            link.textContent = pageNum;
+            if (isActive) link.setAttribute('aria-current', 'page');
+            return link;
         }
     });
 }
