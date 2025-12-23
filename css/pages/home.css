@@ -930,6 +930,10 @@ a.event-card--featured:hover {
 		max-width: var(--container-xl);
 	}
 
+	.about-section__row {
+		gap: var(--sp-4);
+	}
+
 	.about-section__content-col,
 	.about-section__image-col {
 		padding: 0 calc(var(--bs-gutter-x) * 0.5);

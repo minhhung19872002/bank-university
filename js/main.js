@@ -34,6 +34,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     initProgramsAccordionMobile();
     initFilterButtons();
     initEventCountdown();
+    initRegistrationForm();
 });
 
 // Initialize navigation active states
@@ -263,8 +264,6 @@ function initProgramsTabs() {
 
 // Programs section - mobile accordion (separate from desktop tabs)
 function initProgramsAccordionMobile() {
-    if (window.innerWidth > 575) return;
-
     const accordion = document.querySelector('.programs-accordion');
     if (!accordion) return;
 
@@ -275,8 +274,16 @@ function initProgramsAccordionMobile() {
         const panel = header.nextElementSibling;
         if (!panel || !panel.classList.contains('programs-accordion__panel')) return;
 
-        header.addEventListener('click', () => {
-            const isActive = header.classList.contains('programs-accordion__header--active');
+        // Remove existing listeners by cloning
+        const newHeader = header.cloneNode(true);
+        header.parentNode.replaceChild(newHeader, header);
+
+        newHeader.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+
+            const currentPanel = newHeader.nextElementSibling;
+            const isActive = newHeader.classList.contains('programs-accordion__header--active');
 
             // Đóng tất cả
             accordion.querySelectorAll('.programs-accordion__header').forEach(h => {
@@ -287,14 +294,12 @@ function initProgramsAccordionMobile() {
             });
 
             // Nếu header đang đóng thì mở nó (single-open accordion)
-            if (!isActive) {
-                header.classList.add('programs-accordion__header--active');
-                panel.classList.add('programs-accordion__panel--open');
+            if (!isActive && currentPanel) {
+                newHeader.classList.add('programs-accordion__header--active');
+                currentPanel.classList.add('programs-accordion__panel--open');
             }
         });
     });
-
-    // Không tự động mở item nào, để user tự click
 }
 
 // Filter buttons and pagination for program cards
@@ -504,4 +509,93 @@ function initEventCountdown() {
         // Update every second
         intervalId = setInterval(updateCountdown, 1000);
     }
+}
+
+// Registration form with snackbar notification
+function initRegistrationForm() {
+    // Create snackbar element if not exists
+    let snackbar = document.getElementById('snackbar');
+    if (!snackbar) {
+        snackbar = document.createElement('div');
+        snackbar.id = 'snackbar';
+        snackbar.className = 'snackbar';
+        snackbar.innerHTML = `
+            <span class="snackbar__icon">✓</span>
+            <span class="snackbar__message">Đăng ký thành công! Chúng tôi sẽ liên hệ bạn sớm.</span>
+        `;
+        document.body.appendChild(snackbar);
+    }
+
+    // Show snackbar function
+    function showSnackbar(message, type = 'success') {
+        const icon = type === 'success' ? '✓' : '✕';
+        snackbar.querySelector('.snackbar__icon').textContent = icon;
+        snackbar.querySelector('.snackbar__message').textContent = message;
+        snackbar.className = `snackbar snackbar--${type} snackbar--show`;
+
+        // Auto hide after 4 seconds
+        setTimeout(() => {
+            snackbar.classList.remove('snackbar--show');
+        }, 4000);
+    }
+
+    // Wait for registration form to be loaded (it's in a partial)
+    function setupForm() {
+        const form = document.getElementById('registrationForm');
+        if (!form) return false;
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            // Basic validation
+            const fullName = form.querySelector('#fullName');
+            const phone = form.querySelector('#phone');
+            const email = form.querySelector('#email');
+
+            if (!fullName?.value.trim()) {
+                showSnackbar('Vui lòng nhập họ tên', 'error');
+                fullName?.focus();
+                return;
+            }
+
+            if (!phone?.value.trim()) {
+                showSnackbar('Vui lòng nhập số điện thoại', 'error');
+                phone?.focus();
+                return;
+            }
+
+            if (!email?.value.trim()) {
+                showSnackbar('Vui lòng nhập email', 'error');
+                email?.focus();
+                return;
+            }
+
+            // Simulate form submission (replace with actual API call)
+            // For now, just show success message and reset form
+            showSnackbar('Đăng ký thành công! Chúng tôi sẽ liên hệ bạn sớm.', 'success');
+            form.reset();
+        });
+
+        return true;
+    }
+
+    // Try to setup immediately
+    if (setupForm()) return;
+
+    // If form not loaded yet (partial), observe for it
+    const observer = new MutationObserver((mutations, obs) => {
+        if (document.getElementById('registrationForm')) {
+            setupForm();
+            obs.disconnect();
+        }
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
 }
