@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     initStickyHeader();
     initProgramsTabs();
     initProgramsAccordionMobile();
+    initFilterButtons();
 });
 
 // Initialize navigation active states
@@ -293,4 +294,130 @@ function initProgramsAccordionMobile() {
     });
 
     // Không tự động mở item nào, để user tự click
+}
+
+// Filter buttons and pagination for program cards
+function initFilterButtons() {
+    const filterButtons = document.querySelectorAll('.filter-button[data-filter]');
+    const programGrid = document.querySelector('[data-program-grid]');
+    const paginationNav = document.querySelector('.programs-section .pagination');
+
+    if (!programGrid) return;
+
+    const allCards = Array.from(programGrid.querySelectorAll('[data-category]'));
+    const CARDS_PER_PAGE = 9;
+    let currentPage = 1;
+    let filteredCards = allCards;
+
+    // Update pagination UI
+    function updatePagination() {
+        if (!paginationNav) return;
+
+        const totalPages = Math.ceil(filteredCards.length / CARDS_PER_PAGE);
+
+        // Hide pagination if 9 or fewer cards
+        if (filteredCards.length <= CARDS_PER_PAGE) {
+            paginationNav.classList.add('d-none');
+            paginationNav.classList.remove('d-sm-flex');
+            return;
+        }
+
+        paginationNav.classList.remove('d-none');
+        paginationNav.classList.add('d-sm-flex');
+
+        // Clear existing page buttons (keep prev/next)
+        const prevBtn = paginationNav.querySelector('.pagination__button--prev');
+        const nextBtn = paginationNav.querySelector('.pagination__button--next');
+        const existingPageBtns = paginationNav.querySelectorAll('.pagination__button:not(.pagination__button--prev):not(.pagination__button--next)');
+        existingPageBtns.forEach(btn => btn.remove());
+
+        // Create page buttons
+        for (let i = 1; i <= totalPages; i++) {
+            const pageBtn = document.createElement('button');
+            pageBtn.className = 'pagination__button' + (i === currentPage ? ' pagination__button--active' : '');
+            pageBtn.type = 'button';
+            pageBtn.setAttribute('aria-label', `Trang ${i}`);
+            if (i === currentPage) pageBtn.setAttribute('aria-current', 'page');
+            pageBtn.textContent = i;
+            pageBtn.addEventListener('click', () => goToPage(i));
+            nextBtn.before(pageBtn);
+        }
+
+        // Update prev/next state
+        prevBtn.disabled = currentPage === 1;
+        nextBtn.disabled = currentPage === totalPages;
+    }
+
+    // Show cards for current page
+    function showCardsForPage() {
+        const startIndex = (currentPage - 1) * CARDS_PER_PAGE;
+        const endIndex = startIndex + CARDS_PER_PAGE;
+
+        // Hide all cards first
+        allCards.forEach(card => card.style.display = 'none');
+
+        // Show only filtered cards for current page
+        filteredCards.forEach((card, index) => {
+            if (index >= startIndex && index < endIndex) {
+                card.style.display = '';
+            }
+        });
+
+        updatePagination();
+    }
+
+    // Go to specific page
+    function goToPage(page) {
+        currentPage = page;
+        showCardsForPage();
+        // Scroll to top of programs section
+        const programsSection = document.getElementById('programs');
+        if (programsSection) {
+            programsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    // Filter cards by category
+    function filterByCategory(category) {
+        filteredCards = allCards.filter(card => card.getAttribute('data-category') === category);
+        currentPage = 1;
+        showCardsForPage();
+    }
+
+    // Initialize pagination buttons
+    if (paginationNav) {
+        const prevBtn = paginationNav.querySelector('.pagination__button--prev');
+        const nextBtn = paginationNav.querySelector('.pagination__button--next');
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                if (currentPage > 1) goToPage(currentPage - 1);
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                const totalPages = Math.ceil(filteredCards.length / CARDS_PER_PAGE);
+                if (currentPage < totalPages) goToPage(currentPage + 1);
+            });
+        }
+    }
+
+    // Initialize filter buttons
+    if (filterButtons.length) {
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Update active state
+                filterButtons.forEach(btn => btn.classList.remove('filter-button--active'));
+                button.classList.add('filter-button--active');
+
+                // Filter cards
+                const selectedFilter = button.getAttribute('data-filter');
+                filterByCategory(selectedFilter);
+            });
+        });
+    }
+
+    // Initial display
+    showCardsForPage();
 }

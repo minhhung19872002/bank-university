@@ -33,8 +33,17 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
     <link rel="manifest" href="/favicon/site.webmanifest" />
 
     <!-- Local Fonts -->
@@ -616,30 +625,54 @@
             role="group"
             aria-label="Lọc chương trình đào tạo"
           >
-            <button class="filter-button filter-button--active" type="button">
+            <button
+              class="filter-button filter-button--active"
+              type="button"
+              data-filter="chinh-quy-chuan"
+            >
               đại học chính quy chuẩn
             </button>
-            <button class="filter-button" type="button">
+            <button
+              class="filter-button"
+              type="button"
+              data-filter="tieng-anh-ban-phan"
+            >
               đại học chính quy tiếng anh bán phần, đặc biệt
             </button>
-            <button class="filter-button" type="button">
+            <button
+              class="filter-button"
+              type="button"
+              data-filter="quoc-te-song-bang"
+            >
               đại học chính quy quốc tế cấp song bằng
             </button>
-            <button class="filter-button" type="button">
+            <button
+              class="filter-button"
+              type="button"
+              data-filter="quoc-te-doi-tac"
+            >
               đại học chính quy quốc tế do đối tác cấp bằng
             </button>
-            <button class="filter-button" type="button">
+            <button
+              class="filter-button"
+              type="button"
+              data-filter="vua-hoc-vua-lam"
+            >
               đại học hệ vừa học vừa làm
             </button>
-            <button class="filter-button" type="button">
+            <button
+              class="filter-button"
+              type="button"
+              data-filter="van-bang-2"
+            >
               đại học văn bằng 2
             </button>
           </div>
 
           <!-- Program Cards Grid -->
-          <div class="row g-4 mb-4">
+          <div class="row g-4 mb-4" data-program-grid>
             <!-- Program Card 1 -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
               <a href="/dai-hoc-nganh-hoc/" class="program-card">
                 <div class="program-card__image-wrapper">
                   <img
@@ -699,7 +732,7 @@
             </div>
 
             <!-- Program Card 2 -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
               <a href="/dai-hoc-nganh-hoc/" class="program-card">
                 <div class="program-card__image-wrapper">
                   <img
@@ -759,7 +792,7 @@
             </div>
 
             <!-- Program Card 3 -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
               <a href="/dai-hoc-nganh-hoc/" class="program-card">
                 <div class="program-card__image-wrapper">
                   <img
@@ -819,7 +852,7 @@
             </div>
 
             <!-- Program Card 4 -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
               <a href="/dai-hoc-nganh-hoc/" class="program-card">
                 <div class="program-card__image-wrapper">
                   <img
@@ -879,7 +912,7 @@
             </div>
 
             <!-- Program Card 5 -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
               <a href="/dai-hoc-nganh-hoc/" class="program-card">
                 <div class="program-card__image-wrapper">
                   <img
@@ -939,7 +972,7 @@
             </div>
 
             <!-- Program Card 6 -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
               <a href="/dai-hoc-nganh-hoc/" class="program-card">
                 <div class="program-card__image-wrapper">
                   <img
@@ -999,7 +1032,7 @@
             </div>
 
             <!-- Program Card 7 -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
               <a href="/dai-hoc-nganh-hoc/" class="program-card">
                 <div class="program-card__image-wrapper">
                   <img
@@ -1059,7 +1092,7 @@
             </div>
 
             <!-- Program Card 8 -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
               <a href="/dai-hoc-nganh-hoc/" class="program-card">
                 <div class="program-card__image-wrapper">
                   <img
@@ -1119,7 +1152,1081 @@
             </div>
 
             <!-- Program Card 9 -->
-            <div class="col-lg-4 col-md-6">
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
+              <a href="/dai-hoc-nganh-hoc/" class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img9.png"
+                    alt="Ngành khoa học dữ liệu"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="/assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">ngành khoa học dữ liệu</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- Program Card 7 -->
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
+              <a href="/dai-hoc-nganh-hoc/" class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img7.png"
+                    alt="Ngành luật kinh tế"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="/assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">ngành luật kinh tế</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Program Card 8 -->
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
+              <a href="/dai-hoc-nganh-hoc/" class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img8.png"
+                    alt="Ngành ngôn ngữ anh"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="/assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">ngành ngôn ngữ anh</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Program Card 9 -->
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
+              <a href="/dai-hoc-nganh-hoc/" class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img9.png"
+                    alt="Ngành khoa học dữ liệu"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="/assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">ngành khoa học dữ liệu</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- Program Card 7 -->
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
+              <a href="/dai-hoc-nganh-hoc/" class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img7.png"
+                    alt="Ngành luật kinh tế"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="/assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">ngành luật kinh tế</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Program Card 8 -->
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
+              <a href="/dai-hoc-nganh-hoc/" class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img8.png"
+                    alt="Ngành ngôn ngữ anh"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="/assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">ngành ngôn ngữ anh</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Program Card 9 -->
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
+              <a href="/dai-hoc-nganh-hoc/" class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img9.png"
+                    alt="Ngành khoa học dữ liệu"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="/assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">ngành khoa học dữ liệu</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- Program Card 7 -->
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
+              <a href="/dai-hoc-nganh-hoc/" class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img7.png"
+                    alt="Ngành luật kinh tế"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="/assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">ngành luật kinh tế</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Program Card 8 -->
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
+              <a href="/dai-hoc-nganh-hoc/" class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img8.png"
+                    alt="Ngành ngôn ngữ anh"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="/assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">ngành ngôn ngữ anh</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Program Card 9 -->
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
+              <a href="/dai-hoc-nganh-hoc/" class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img9.png"
+                    alt="Ngành khoa học dữ liệu"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="/assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">ngành khoa học dữ liệu</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- Program Card 7 -->
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
+              <a href="/dai-hoc-nganh-hoc/" class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img7.png"
+                    alt="Ngành luật kinh tế"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="/assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">ngành luật kinh tế</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Program Card 8 -->
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
+              <a href="/dai-hoc-nganh-hoc/" class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img8.png"
+                    alt="Ngành ngôn ngữ anh"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="/assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">ngành ngôn ngữ anh</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Program Card 9 -->
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
+              <a href="/dai-hoc-nganh-hoc/" class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img9.png"
+                    alt="Ngành khoa học dữ liệu"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="/assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">ngành khoa học dữ liệu</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- Program Card 7 -->
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
+              <a href="/dai-hoc-nganh-hoc/" class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img7.png"
+                    alt="Ngành luật kinh tế"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="/assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">ngành luật kinh tế</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Program Card 8 -->
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
+              <a href="/dai-hoc-nganh-hoc/" class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img8.png"
+                    alt="Ngành ngôn ngữ anh"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="/assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">ngành ngôn ngữ anh</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Program Card 9 -->
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
+              <a href="/dai-hoc-nganh-hoc/" class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img9.png"
+                    alt="Ngành khoa học dữ liệu"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="/assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">ngành khoa học dữ liệu</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <!-- Program Card 7 -->
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
+              <a href="/dai-hoc-nganh-hoc/" class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img7.png"
+                    alt="Ngành luật kinh tế"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="/assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">ngành luật kinh tế</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Program Card 8 -->
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
+              <a href="/dai-hoc-nganh-hoc/" class="program-card">
+                <div class="program-card__image-wrapper">
+                  <img
+                    src="/assets/images/nganh_img8.png"
+                    alt="Ngành ngôn ngữ anh"
+                    class="program-card__image"
+                    loading="lazy"
+                  />
+                  <span class="program-card__badge">
+                    <img
+                      src="/assets/images/bookmark.png"
+                      alt="Category icon"
+                      class="program-card__badge-icon"
+                      loading="lazy"
+                    />
+                    Financial
+                  </span>
+                </div>
+                <div class="program-card__content">
+                  <div class="program-card__lessons">
+                    <img
+                      src="/assets/images/lesson.png"
+                      alt="Lessons icon"
+                      class="program-card__lessons-icon"
+                      loading="lazy"
+                    />
+                    <span>10 Lessons</span>
+                  </div>
+                  <h3 class="program-card__title">ngành ngôn ngữ anh</h3>
+                  <p class="program-card__description">
+                    Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng
+                    vào việc trình bày và dàn trang phục vụ cho in ấn.
+                  </p>
+                  <div class="program-card__divider"></div>
+                  <div class="program-card__meta">
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/group.png"
+                        alt="Seats icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>100 Chỗ ngồi</span>
+                    </div>
+                    <div class="program-card__meta-item">
+                      <img
+                        src="/assets/images/clock_primary.png"
+                        alt="Duration icon"
+                        class="program-card__meta-icon"
+                        loading="lazy"
+                      />
+                      <span>4 năm</span>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Program Card 9 -->
+            <div class="col-lg-4 col-md-6" data-category="chinh-quy-chuan">
               <a href="/dai-hoc-nganh-hoc/" class="program-card">
                 <div class="program-card__image-wrapper">
                   <img
@@ -1200,7 +2307,7 @@
             </button>
           </nav>
 
-          <!-- Pagination - Hidden on mobile -->
+          <!-- Pagination - Hidden on mobile, dynamically generated -->
           <nav
             class="pagination d-none d-sm-flex"
             aria-label="Phân trang chương trình đào tạo"
@@ -1212,21 +2319,7 @@
             >
               <img src="/assets/svg/d-arrow-left.svg" alt="" loading="lazy" />
             </button>
-            <button
-              class="pagination__button pagination__button--active"
-              type="button"
-              aria-label="Trang 1"
-              aria-current="page"
-            >
-              1
-            </button>
-            <button
-              class="pagination__button"
-              type="button"
-              aria-label="Trang 2"
-            >
-              2
-            </button>
+            <!-- Page buttons will be dynamically generated by JS -->
             <button
               class="pagination__button pagination__button--next"
               type="button"

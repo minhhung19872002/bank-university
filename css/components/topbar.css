@@ -106,6 +106,8 @@
 	text-decoration: none;
 	display: inline-block;
 	transition: all 0.3s ease;
+	white-space: nowrap;
+	flex-shrink: 0;
 }
 
 .topbar__register-btn:hover {
