@@ -931,7 +931,7 @@ a.event-card--featured:hover {
 	}
 
 	.about-section__row {
-		gap: var(--sp-4);
+		row-gap: var(--sp-4);
 	}
 
 	.about-section__content-col,

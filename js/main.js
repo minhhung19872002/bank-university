@@ -35,6 +35,9 @@ document.addEventListener('DOMContentLoaded', async function () {
     initFilterButtons();
     initEventCountdown();
     initRegistrationForm();
+    initRelatedArticlesPagination();
+    initProgramSliderMobile();
+    initAdmissionsNewsPagination();
 });
 
 // Initialize navigation active states
@@ -302,6 +305,37 @@ function initProgramsAccordionMobile() {
     });
 }
 
+// Mobile slider for program cards (dai-hoc page)
+function initProgramSliderMobile() {
+    const programGrid = document.querySelector('.programs-section [data-program-grid]');
+    const sliderNav = document.querySelector('.program-slider-nav');
+
+    if (!programGrid || !sliderNav || typeof initGallerySlider !== 'function') return;
+
+    // Function to update slider nav visibility based on visible items
+    const updateSliderNavVisibility = () => {
+        const visibleItems = programGrid.querySelectorAll('.col-lg-4:not([style*="display: none"])');
+        sliderNav.style.display = visibleItems.length <= 1 ? 'none' : '';
+    };
+
+    // Initial check
+    updateSliderNavVisibility();
+
+    // Store function globally so filter buttons can call it
+    window.updateProgramSliderNav = updateSliderNavVisibility;
+
+    // Initialize slider with gallery-slider module (snap mode for smooth swipe)
+    initGallerySlider({
+        gallerySelector: '.programs-section [data-program-grid]',
+        prevBtnSelector: '.program-slider-nav__btn--prev',
+        nextBtnSelector: '.program-slider-nav__btn--next',
+        itemSelector: '.col-lg-4',
+        gap: 0, // CSS handles padding
+        swipeThreshold: 50,
+        mode: 'snap'
+    });
+}
+
 // Filter buttons and pagination for program cards
 function initFilterButtons() {
     const filterButtons = document.querySelectorAll('.filter-button[data-filter]');
@@ -311,103 +345,42 @@ function initFilterButtons() {
     if (!programGrid) return;
 
     const allCards = Array.from(programGrid.querySelectorAll('[data-category]'));
-    const CARDS_PER_PAGE = 9;
-    let currentPage = 1;
-    let filteredCards = allCards;
 
-    // Update pagination UI
-    function updatePagination() {
-        if (!paginationNav) return;
+    // Get initial filter from active button
+    const activeButton = document.querySelector('.filter-button--active[data-filter]');
+    const initialFilter = activeButton ? activeButton.getAttribute('data-filter') : null;
+    const initialCards = initialFilter
+        ? allCards.filter(card => card.getAttribute('data-category') === initialFilter)
+        : allCards;
 
-        const totalPages = Math.ceil(filteredCards.length / CARDS_PER_PAGE);
-
-        // Hide pagination if 9 or fewer cards
-        if (filteredCards.length <= CARDS_PER_PAGE) {
-            paginationNav.classList.add('d-none');
-            paginationNav.classList.remove('d-sm-flex');
-            return;
-        }
-
-        paginationNav.classList.remove('d-none');
-        paginationNav.classList.add('d-sm-flex');
-
-        // Clear existing page buttons (keep prev/next)
-        const prevBtn = paginationNav.querySelector('.pagination__button--prev');
-        const nextBtn = paginationNav.querySelector('.pagination__button--next');
-        const existingPageBtns = paginationNav.querySelectorAll('.pagination__button:not(.pagination__button--prev):not(.pagination__button--next)');
-        existingPageBtns.forEach(btn => btn.remove());
-
-        // Create page buttons
-        for (let i = 1; i <= totalPages; i++) {
-            const pageBtn = document.createElement('button');
-            pageBtn.className = 'pagination__button' + (i === currentPage ? ' pagination__button--active' : '');
-            pageBtn.type = 'button';
-            pageBtn.setAttribute('aria-label', `Trang ${i}`);
-            if (i === currentPage) pageBtn.setAttribute('aria-current', 'page');
-            pageBtn.textContent = i;
-            pageBtn.addEventListener('click', () => goToPage(i));
-            nextBtn.before(pageBtn);
-        }
-
-        // Update prev/next state
-        prevBtn.disabled = currentPage === 1;
-        nextBtn.disabled = currentPage === totalPages;
-    }
-
-    // Show cards for current page
-    function showCardsForPage() {
-        const startIndex = (currentPage - 1) * CARDS_PER_PAGE;
-        const endIndex = startIndex + CARDS_PER_PAGE;
-
-        // Hide all cards first
-        allCards.forEach(card => card.style.display = 'none');
-
-        // Show only filtered cards for current page
-        filteredCards.forEach((card, index) => {
-            if (index >= startIndex && index < endIndex) {
-                card.style.display = '';
-            }
+    // Hide cards not matching initial filter
+    if (initialFilter) {
+        allCards.forEach(card => {
+            card.style.display = card.getAttribute('data-category') === initialFilter ? '' : 'none';
         });
-
-        updatePagination();
     }
 
-    // Go to specific page
-    function goToPage(page) {
-        currentPage = page;
-        showCardsForPage();
-        // Scroll to top of programs section
-        const programsSection = document.getElementById('programs');
-        if (programsSection) {
-            programsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    // Get header height for scroll offset
+    const header = document.querySelector('.header');
+    const headerHeight = header ? header.offsetHeight : 120;
+
+    // Create paginator using reusable utility
+    const paginator = createPagination({
+        items: initialCards,
+        paginationNav,
+        itemsPerPage: 9,
+        scrollTarget: document.getElementById('programs'),
+        scrollOffset: headerHeight + 20,
+        classes: { active: 'pagination__button--active' },
+        createPageElement: (pageNum, isActive) => {
+            const btn = document.createElement('button');
+            btn.className = 'pagination__button' + (isActive ? ' pagination__button--active' : '');
+            btn.type = 'button';
+            btn.setAttribute('aria-label', `Trang ${pageNum}`);
+            btn.textContent = pageNum;
+            return btn;
         }
-    }
-
-    // Filter cards by category
-    function filterByCategory(category) {
-        filteredCards = allCards.filter(card => card.getAttribute('data-category') === category);
-        currentPage = 1;
-        showCardsForPage();
-    }
-
-    // Initialize pagination buttons
-    if (paginationNav) {
-        const prevBtn = paginationNav.querySelector('.pagination__button--prev');
-        const nextBtn = paginationNav.querySelector('.pagination__button--next');
-
-        if (prevBtn) {
-            prevBtn.addEventListener('click', () => {
-                if (currentPage > 1) goToPage(currentPage - 1);
-            });
-        }
-
-        if (nextBtn) {
-            nextBtn.addEventListener('click', () => {
-                const totalPages = Math.ceil(filteredCards.length / CARDS_PER_PAGE);
-                if (currentPage < totalPages) goToPage(currentPage + 1);
-            });
-        }
-    }
+    });
 
     // Initialize filter buttons
     if (filterButtons.length) {
@@ -417,15 +390,21 @@ function initFilterButtons() {
                 filterButtons.forEach(btn => btn.classList.remove('filter-button--active'));
                 button.classList.add('filter-button--active');
 
-                // Filter cards
+                // Filter cards and update paginator
                 const selectedFilter = button.getAttribute('data-filter');
-                filterByCategory(selectedFilter);
+                const filteredCards = allCards.filter(card => card.getAttribute('data-category') === selectedFilter);
+
+                // Hide all cards first, then let paginator show filtered ones
+                allCards.forEach(card => card.style.display = 'none');
+                paginator.setItems(filteredCards);
+
+                // Update slider nav visibility
+                if (typeof window.updateProgramSliderNav === 'function') {
+                    window.updateProgramSliderNav();
+                }
             });
         });
     }
-
-    // Initial display
-    showCardsForPage();
 }
 
 // Event countdown timer
@@ -509,6 +488,96 @@ function initEventCountdown() {
         // Update every second
         intervalId = setInterval(updateCountdown, 1000);
     }
+}
+
+// Related articles pagination (tuyen-sinh-chi-tiet page)
+function initRelatedArticlesPagination() {
+    const articlesContainer = document.querySelector('.related-articles');
+    const paginationNav = document.querySelector('.admissions-detail-pagination');
+
+    if (!articlesContainer || !paginationNav) return;
+
+    const allArticles = Array.from(articlesContainer.querySelectorAll('.related-article'));
+    const allDividers = Array.from(articlesContainer.querySelectorAll('.related-article-divider'));
+
+    // Get header height for scroll offset
+    const header = document.querySelector('.header');
+    const headerHeight = header ? header.offsetHeight : 120;
+
+    // Create paginator using reusable utility
+    createPagination({
+        items: allArticles,
+        paginationNav,
+        itemsPerPage: 9,
+        scrollTarget: document.querySelector('.admissions-detail-related'),
+        scrollOffset: headerHeight + 20,
+        onPageChange: (_visibleItems, startIndex, endIndex, items) => {
+            // Hide all articles and dividers first
+            items.forEach(article => article.style.display = 'none');
+            allDividers.forEach(divider => divider.style.display = 'none');
+
+            // Show articles for current page
+            items.forEach((article, index) => {
+                if (index >= startIndex && index < endIndex) {
+                    article.style.display = '';
+                    // Show divider after each article except the last one on the page
+                    if (allDividers[index] && index < endIndex - 1 && index < items.length - 1) {
+                        allDividers[index].style.display = '';
+                    }
+                }
+            });
+        }
+    });
+}
+
+// Admissions news pagination (tin-tuyen-sinh page)
+function initAdmissionsNewsPagination() {
+    const newsContainer = document.querySelector('.news-items');
+    const paginationNav = document.querySelector('.admissions-news-list .pagination');
+
+    if (!newsContainer || !paginationNav) return;
+
+    const allNewsItems = Array.from(newsContainer.querySelectorAll('.news-item'));
+    const allDividers = Array.from(newsContainer.querySelectorAll('.news-divider'));
+
+    // Get header height for scroll offset
+    const header = document.querySelector('.header');
+    const headerHeight = header ? header.offsetHeight : 120;
+
+    // Create paginator using reusable utility
+    createPagination({
+        items: allNewsItems,
+        paginationNav,
+        itemsPerPage: 9,
+        scrollTarget: document.querySelector('.admissions-news-list'),
+        scrollOffset: headerHeight + 20, // Extra padding for visual comfort
+        showOnMobile: true, // Show pagination on mobile for this page
+        classes: { active: 'pagination__item--active' },
+        createPageElement: (pageNum, isActive) => {
+            const link = document.createElement('a');
+            link.href = '#';
+            link.className = 'pagination__item' + (isActive ? ' pagination__item--active' : '');
+            link.textContent = pageNum;
+            if (isActive) link.setAttribute('aria-current', 'page');
+            return link;
+        },
+        onPageChange: (_visibleItems, startIndex, endIndex, items) => {
+            // Hide all news items and dividers first
+            items.forEach(item => item.style.display = 'none');
+            allDividers.forEach(divider => divider.style.display = 'none');
+
+            // Show items for current page
+            items.forEach((item, index) => {
+                if (index >= startIndex && index < endIndex) {
+                    item.style.display = '';
+                    // Show divider after each item except the last one on the page
+                    if (allDividers[index] && index < endIndex - 1 && index < items.length - 1) {
+                        allDividers[index].style.display = '';
+                    }
+                }
+            });
+        }
+    });
 }
 
 // Registration form with snackbar notification

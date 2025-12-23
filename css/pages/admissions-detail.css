@@ -252,7 +252,7 @@ a.related-article {
    PAGINATION SECTION
    ============================================ */
 .admissions-detail-pagination {
-  display: flex;
+  display: none; /* Override default - visibility via d-sm-flex */
   align-items: center;
   justify-content: center;
   gap: 7px;

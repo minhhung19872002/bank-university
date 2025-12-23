@@ -66,16 +66,60 @@
 
 /* ================================================
    MOBILE (max-width: 575px)
-   Hidden via Bootstrap class d-none d-sm-flex in HTML
+   Horizontal scroll slider for filter buttons
    ================================================ */
 @media (max-width: 575px) {
 	.filter-buttons {
-		gap: var(--sp-3) var(--sp-2);
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: flex-start;
+		gap: var(--sp-3);
+		overflow-x: auto;
+		scroll-snap-type: x proximity;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+		padding: var(--sp-2) 0;
+	}
+
+	.filter-buttons::-webkit-scrollbar {
+		display: none;
 	}
 
 	.filter-button {
-		padding: var(--sp-2) var(--sp-3);
+		flex: 0 0 auto;
+		scroll-snap-align: start;
+		padding: var(--sp-2) var(--sp-5);
 		font-size: var(--fs-body-sm);
-		line-height: 1.2;
+		font-weight: var(--fw-medium);
+		line-height: 1.4;
+		border-radius: var(--radius-md);
+		background-color: var(--color-light);
+		border: 1.5px solid var(--gray-200);
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+		color: var(--gray-700);
+	}
+
+	.filter-button:hover {
+		border-color: var(--brand-secondary);
+		color: var(--brand-secondary);
+		background-color: var(--color-light);
+	}
+
+	.filter-button--active,
+	.filter-button--active:hover {
+		background-color: var(--brand-secondary) !important;
+		border-color: var(--brand-secondary) !important;
+		color: var(--color-light) !important;
+		box-shadow: 0 2px 8px rgba(0, 51, 102, 0.25);
+	}
+
+	/* Padding cho item đầu và cuối để không sát màn hình */
+	.filter-button:first-child {
+		margin-left: var(--sp-3);
+	}
+
+	.filter-button:last-child {
+		margin-right: var(--sp-3);
 	}
 }
