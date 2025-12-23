@@ -147,10 +147,15 @@ function createPagination(options) {
 		if (onPageChange) {
 			onPageChange(visibleItems, startIndex, endIndex, items);
 		} else {
-			// Default behavior: show/hide items
+			// Default behavior: show/hide items using class for better CSS compatibility
 			items.forEach((item, index) => {
-				item.style.display =
-					index >= startIndex && index < endIndex ? '' : 'none';
+				if (index >= startIndex && index < endIndex) {
+					item.classList.remove('pagination-hidden');
+					item.style.display = '';
+				} else {
+					item.classList.add('pagination-hidden');
+					item.style.display = 'none';
+				}
 			});
 		}
 
