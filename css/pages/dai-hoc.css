@@ -114,6 +114,26 @@
 	margin-bottom: 0;
 }
 
+/* Program Cards Grid - Desktop: 3 columns using flexbox like thac-si */
+.programs-section .row.g-4[data-program-grid] {
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--sp-4);
+	padding-top: var(--sp-4);
+}
+
+.programs-section .row.g-4[data-program-grid] > .col-lg-4 {
+	flex: 0 0 calc(33.333% - var(--sp-4) * 2 / 3);
+	max-width: calc(33.333% - var(--sp-4) * 2 / 3);
+	width: auto;
+	padding: 0;
+}
+
+/* Hidden items in pagination */
+.programs-section .row.g-4[data-program-grid] > .col-lg-4.pagination-hidden {
+	display: none !important;
+}
+
 /* Slider Navigation - Hidden on desktop */
 .program-slider-nav {
 	display: none;
@@ -231,6 +251,12 @@
 		padding: var(--sp-7) 0 var(--sp-8);
 	}
 
+	/* Program Cards - Tablet: 2 columns */
+	.programs-section .row.g-4[data-program-grid] > .col-lg-4 {
+		flex: 0 0 calc(50% - var(--sp-4) / 2);
+		max-width: calc(50% - var(--sp-4) / 2);
+	}
+
 	/* FAQ Section - Tablet */
 	.faq-section {
 		padding: var(--sp-7) 0;
@@ -339,37 +365,37 @@
 	}
 
 	/* Program Cards Mobile Slider */
-	.programs-section .row.g-4 {
-		display: flex;
+	.programs-section .row.g-4[data-program-grid] {
 		flex-wrap: nowrap;
 		overflow-x: auto;
 		scroll-snap-type: x mandatory;
 		-webkit-overflow-scrolling: touch;
 		scrollbar-width: none;
 		-ms-overflow-style: none;
-		gap: 0;
+		gap: var(--sp-3);
 		margin: 0 -16px;
-		padding: 0 16px;
+		padding: var(--sp-4) 16px 0;
 	}
 
-	.programs-section .row.g-4::-webkit-scrollbar {
+	.programs-section .row.g-4[data-program-grid]::-webkit-scrollbar {
 		display: none;
 	}
 
-	.programs-section .row.g-4.is-dragging {
+	.programs-section .row.g-4[data-program-grid].is-dragging {
 		scroll-snap-type: none;
 		cursor: grabbing;
 		user-select: none;
 	}
 
-	.programs-section .row.g-4 > .col-lg-4 {
-		flex: 0 0 100%;
-		max-width: 100%;
+	.programs-section .row.g-4[data-program-grid] > .col-lg-4 {
+		flex: 0 0 calc(100% - 32px);
+		max-width: calc(100% - 32px);
+		min-width: calc(100% - 32px);
 		scroll-snap-align: center;
-		padding: 0 var(--sp-2);
+		padding: 0;
 	}
 
-	.programs-section .row.g-4 .program-card {
+	.programs-section .row.g-4[data-program-grid] .program-card {
 		max-width: 100%;
 	}
 
