@@ -455,11 +455,17 @@
     <!-- Hero Section - Single Source of Truth -->
     <section class="hero-section" aria-label="Banner chính">
       <!-- Background image -->
-      <div
-        class="hero-section__bg"
-        role="img"
-        aria-label="Hình ảnh sinh viên HUB University"
-      ></div>
+      <div class="hero-section__bg">
+        <img
+          src="/assets/images/hero_bg.png"
+          srcset="/assets/images/hero_bg-mobile.png 768w,
+                  /assets/images/hero_bg.png 1920w"
+          sizes="100vw"
+          alt="Banner Trường Đại học Ngân hàng TP.HCM"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
 
       <!-- Hero Content Overlay - Mobile only -->
       <div class="hero-section__overlay d-sm-none">

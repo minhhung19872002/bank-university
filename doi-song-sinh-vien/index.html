@@ -404,11 +404,17 @@
         class="hero-section hero-section--banner hero-section--doisongsinhvien"
         aria-label="Banner đời sống sinh viên"
       >
-        <div
-          class="hero-section__bg"
-          role="img"
-          aria-label="Đời sống sinh viên HUB University"
-        ></div>
+        <div class="hero-section__bg">
+          <img
+            src="/assets/images/dssv_hero.png"
+            srcset="/assets/images/dssv_hero-mobile.png 768w,
+                    /assets/images/dssv_hero.png 1920w"
+            sizes="100vw"
+            alt="Banner Đời sống sinh viên HUB"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
       </section>
 
       <!-- Breadcrumb Navigation - Mobile only -->

@@ -407,11 +407,17 @@
         aria-label="Banner Giới Thiệu"
       >
         <!-- Background image -->
-        <div
-          class="hero-section__bg"
-          role="img"
-          aria-label="Hình ảnh khuôn viên HUB University"
-        ></div>
+        <div class="hero-section__bg">
+          <img
+            src="/assets/images/hero_bg.png"
+            srcset="/assets/images/hero_bg-mobile.png 768w,
+                    /assets/images/hero_bg.png 1920w"
+            sizes="100vw"
+            alt="Banner Giới thiệu HUB University"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
         <div class="hero-section__overlay">
           <div class="container h-100">
             <div class="hero-section__content">

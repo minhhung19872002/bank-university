@@ -413,11 +413,17 @@
         class="hero-section hero-section--banner hero-section--thacsi"
         aria-label="Banner Thạc sĩ"
       >
-        <div
-          class="hero-section__bg"
-          role="img"
-          aria-label="Hình ảnh Thạc sĩ HUB"
-        ></div>
+        <div class="hero-section__bg">
+          <img
+            src="/assets/images/hero_bg.png"
+            srcset="/assets/images/hero_bg-mobile.png 768w,
+                    /assets/images/hero_bg.png 1920w"
+            sizes="100vw"
+            alt="Chương trình đào tạo Thạc sĩ HUB University"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
       </section>
 
       <!-- Breadcrumb Navigation - Mobile only -->

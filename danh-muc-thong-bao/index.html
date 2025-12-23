@@ -404,11 +404,17 @@
         class="hero-section hero-section--banner hero-section--danhmucthongbao"
         aria-label="Banner thông báo"
       >
-        <div
-          class="hero-section__bg"
-          role="img"
-          aria-label="Thông báo HUB University"
-        ></div>
+        <div class="hero-section__bg">
+          <img
+            src="/assets/images/dmtb_hero.png"
+            srcset="/assets/images/dmtb_hero-mobile.png 768w,
+                    /assets/images/dmtb_hero.png 1920w"
+            sizes="100vw"
+            alt="Banner Thông báo HUB"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
       </section>
 
       <!-- Breadcrumb Navigation - Mobile only -->

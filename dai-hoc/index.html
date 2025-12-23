@@ -422,11 +422,17 @@
         class="hero-section hero-section--banner hero-section--daihoc"
         aria-label="Banner Đại Học Chính Quy"
       >
-        <div
-          class="hero-section__bg"
-          role="img"
-          aria-label="Hình ảnh Đại Học HUB"
-        ></div>
+        <div class="hero-section__bg">
+          <img
+            src="/assets/images/hero_bg.png"
+            srcset="/assets/images/hero_bg-mobile.png 768w,
+                    /assets/images/hero_bg.png 1920w"
+            sizes="100vw"
+            alt="Banner Đại Học Chính Quy HUB"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
       </section>
 
       <!-- Breadcrumb Navigation - Only visible on mobile -->

@@ -409,11 +409,17 @@
         class="hero-section hero-section--banner hero-section--tiensi"
         aria-label="Banner Tiến sĩ"
       >
-        <div
-          class="hero-section__bg"
-          role="img"
-          aria-label="Chương trình đào tạo Tiến sĩ HUB University"
-        ></div>
+        <div class="hero-section__bg">
+          <img
+            src="/assets/images/hero_bg.png"
+            srcset="/assets/images/hero_bg-mobile.png 768w,
+                    /assets/images/hero_bg.png 1920w"
+            sizes="100vw"
+            alt="Chương trình đào tạo Tiến sĩ HUB University"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
       </section>
 
       <!-- Program Introduction Section -->
