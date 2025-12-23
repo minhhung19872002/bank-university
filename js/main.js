@@ -690,6 +690,8 @@ function initRegistrationForm() {
         snackbar = document.createElement('div');
         snackbar.id = 'snackbar';
         snackbar.className = 'snackbar';
+        snackbar.style.display = 'none';         
+        snackbar.setAttribute('aria-hidden', 'true');
         snackbar.innerHTML = `
             <span class="snackbar__icon">✓</span>
             <span class="snackbar__message">Đăng ký thành công! Chúng tôi sẽ liên hệ bạn sớm.</span>
@@ -703,10 +705,14 @@ function initRegistrationForm() {
         snackbar.querySelector('.snackbar__icon').textContent = icon;
         snackbar.querySelector('.snackbar__message').textContent = message;
         snackbar.className = `snackbar snackbar--${type} snackbar--show`;
+        snackbar.style.display = '';
+        snackbar.setAttribute('aria-hidden', 'false');
 
         // Auto hide after 4 seconds
         setTimeout(() => {
             snackbar.classList.remove('snackbar--show');
+            snackbar.style.display = 'none';
+            snackbar.setAttribute('aria-hidden', 'true');
         }, 4000);
     }
 
