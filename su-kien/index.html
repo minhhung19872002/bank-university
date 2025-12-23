@@ -468,22 +468,42 @@
                 </p>
 
                 <!-- Countdown Timer -->
-                <div class="featured-event__countdown">
-                  <div class="countdown-item">
-                    <span class="countdown-item__value">541</span>
-                    <span class="countdown-item__label">Days</span>
+                <div
+                  class="featured-event__countdown event-countdown"
+                  data-target-date="2026-10-01"
+                  aria-label="Thời gian còn lại đến sự kiện"
+                >
+                  <div class="countdown-item event-countdown__item">
+                    <span class="countdown-item__value event-countdown__value"
+                      >541</span
+                    >
+                    <span class="countdown-item__label event-countdown__label"
+                      >Days</span
+                    >
                   </div>
-                  <div class="countdown-item">
-                    <span class="countdown-item__value">01</span>
-                    <span class="countdown-item__label">Hrs</span>
+                  <div class="countdown-item event-countdown__item">
+                    <span class="countdown-item__value event-countdown__value"
+                      >01</span
+                    >
+                    <span class="countdown-item__label event-countdown__label"
+                      >Hrs</span
+                    >
                   </div>
-                  <div class="countdown-item">
-                    <span class="countdown-item__value">47</span>
-                    <span class="countdown-item__label">Min</span>
+                  <div class="countdown-item event-countdown__item">
+                    <span class="countdown-item__value event-countdown__value"
+                      >47</span
+                    >
+                    <span class="countdown-item__label event-countdown__label"
+                      >Min</span
+                    >
                   </div>
-                  <div class="countdown-item">
-                    <span class="countdown-item__value">54</span>
-                    <span class="countdown-item__label">Sec</span>
+                  <div class="countdown-item event-countdown__item">
+                    <span class="countdown-item__value event-countdown__value"
+                      >54</span
+                    >
+                    <span class="countdown-item__label event-countdown__label"
+                      >Sec</span
+                    >
                   </div>
                 </div>
 
@@ -650,36 +670,26 @@
                     </div>
                   </a>
                 </div>
-              </div>
-            </div>
-          </div>
 
-          <!-- Pagination -->
-          <div class="row">
-            <div class="col-12">
-              <nav class="pagination" aria-label="Phân trang sự kiện">
-                <button
-                  class="pagination__btn pagination__btn--prev"
-                  aria-label="Trang trước"
+                <!-- Pagination -->
+                <nav
+                  class="events-pagination d-none d-sm-flex"
+                  aria-label="Phân trang sự kiện"
                 >
-                  <img src="/assets/svg/d-arrow-left.svg" alt="Previous" />
-                </button>
-                <a href="#" class="pagination__item">1</a>
-                <a href="#" class="pagination__item">2</a>
-                <a
-                  href="#"
-                  class="pagination__item pagination__item--active"
-                  aria-current="page"
-                  >3</a
-                >
-                <a href="#" class="pagination__item">4</a>
-                <button
-                  class="pagination__btn pagination__btn--next"
-                  aria-label="Trang sau"
-                >
-                  <img src="/assets/svg/d-arrow-right.svg" alt="Next" />
-                </button>
-              </nav>
+                  <button
+                    class="events-pagination__btn events-pagination__btn--prev"
+                    aria-label="Trang trước"
+                  >
+                    <img src="/assets/svg/d-arrow-left.svg" alt="Previous" />
+                  </button>
+                  <button
+                    class="events-pagination__btn events-pagination__btn--next"
+                    aria-label="Trang sau"
+                  >
+                    <img src="/assets/svg/d-arrow-right.svg" alt="Next" />
+                  </button>
+                </nav>
+              </div>
             </div>
           </div>
         </div>
@@ -699,6 +709,9 @@
     <script src="/js/modules/mobile-nav.js"></script>
     <script src="/js/modules/header-search.js"></script>
 
+    <!-- Pagination Utility -->
+    <script src="/js/utils/pagination.js"></script>
+
     <!-- Include Loader -->
     <script>
       // Simple include loader
@@ -706,6 +719,146 @@
         const file = el.getAttribute("data-include");
         const response = await fetch(file);
         el.innerHTML = await response.text();
+      });
+    </script>
+
+    <!-- Page Scripts -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // ========================================
+        // Event Countdown Timer
+        // ========================================
+        function initEventCountdown() {
+          const countdownContainers =
+            document.querySelectorAll(".event-countdown");
+          if (!countdownContainers.length) return;
+
+          countdownContainers.forEach((container) => {
+            setupCountdown(container);
+          });
+
+          function setupCountdown(countdownContainer) {
+            const daysEl = countdownContainer.querySelector(
+              ".event-countdown__item:nth-child(1) .event-countdown__value"
+            );
+            const hoursEl = countdownContainer.querySelector(
+              ".event-countdown__item:nth-child(2) .event-countdown__value"
+            );
+            const minsEl = countdownContainer.querySelector(
+              ".event-countdown__item:nth-child(3) .event-countdown__value"
+            );
+            const secsEl = countdownContainer.querySelector(
+              ".event-countdown__item:nth-child(4) .event-countdown__value"
+            );
+
+            if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
+
+            const dateAttr = countdownContainer.getAttribute("data-target-date");
+            if (!dateAttr) {
+              daysEl.textContent = "0";
+              hoursEl.textContent = "00";
+              minsEl.textContent = "00";
+              secsEl.textContent = "00";
+              return;
+            }
+
+            const targetDate = new Date(dateAttr);
+            if (isNaN(targetDate.getTime())) {
+              daysEl.textContent = "0";
+              hoursEl.textContent = "00";
+              minsEl.textContent = "00";
+              secsEl.textContent = "00";
+              return;
+            }
+
+            let intervalId = null;
+
+            function updateCountdown() {
+              const now = new Date();
+              const diff = targetDate - now;
+
+              if (diff <= 0) {
+                daysEl.textContent = "0";
+                hoursEl.textContent = "00";
+                minsEl.textContent = "00";
+                secsEl.textContent = "00";
+                if (intervalId) {
+                  clearInterval(intervalId);
+                  intervalId = null;
+                }
+                return;
+              }
+
+              const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+              const hours = Math.floor(
+                (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+              );
+              const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+              const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+              daysEl.textContent = days.toString();
+              hoursEl.textContent = hours.toString().padStart(2, "0");
+              minsEl.textContent = mins.toString().padStart(2, "0");
+              secsEl.textContent = secs.toString().padStart(2, "0");
+            }
+
+            updateCountdown();
+            intervalId = setInterval(updateCountdown, 1000);
+          }
+        }
+
+        // ========================================
+        // Events Pagination
+        // ========================================
+        function initEventsPagination() {
+          const eventsList = document.querySelector(".events-list");
+          const paginationNav = document.querySelector(".events-pagination");
+
+          if (!eventsList || !paginationNav) return;
+
+          const allEventCards = Array.from(
+            eventsList.querySelectorAll(".event-card")
+          );
+
+          if (allEventCards.length <= 3) {
+            paginationNav.style.display = "none";
+            return;
+          }
+
+          const header = document.querySelector(".header-wrapper");
+          const headerHeight = header ? header.offsetHeight : 120;
+
+          createPagination({
+            items: allEventCards,
+            paginationNav: paginationNav,
+            itemsPerPage: 3,
+            scrollTarget: document.querySelector(".events-content"),
+            scrollOffset: headerHeight + 20,
+            showOnMobile: true,
+            selectors: {
+              prevBtn: ".events-pagination__btn--prev",
+              nextBtn: ".events-pagination__btn--next",
+              pageItem: ".events-pagination__item",
+            },
+            classes: {
+              active: "events-pagination__item--active",
+            },
+            createPageElement: (pageNum, isActive) => {
+              const btn = document.createElement("button");
+              btn.className =
+                "events-pagination__item" +
+                (isActive ? " events-pagination__item--active" : "");
+              btn.type = "button";
+              btn.setAttribute("aria-label", `Trang ${pageNum}`);
+              btn.textContent = pageNum;
+              return btn;
+            },
+          });
+        }
+
+        // Initialize
+        initEventCountdown();
+        initEventsPagination();
       });
     </script>
   </body>

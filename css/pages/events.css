@@ -327,6 +327,78 @@ a.event-card {
 }
 
 /* ============================================
+   EVENTS PAGINATION (New)
+   ============================================ */
+.events-pagination {
+	margin-top: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 7px;
+}
+
+.events-pagination__btn {
+	width: 40px;
+	height: 40px;
+	border: none;
+	border-radius: 50%;
+	background-color: var(--gray-100);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	transition: background-color var(--transition-base);
+}
+
+.events-pagination__btn:hover:not(:disabled) {
+	background-color: var(--gray-200);
+}
+
+.events-pagination__btn:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.events-pagination__btn img {
+	width: 11px;
+	height: 10px;
+	display: block;
+}
+
+.events-pagination__item {
+	width: 40px;
+	height: 40px;
+	border: none;
+	border-radius: 50%;
+	background-color: var(--gray-100);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: var(--font-primary);
+	font-size: var(--fs-400);
+	font-weight: 400;
+	line-height: 1.22;
+	color: var(--gray-800);
+	cursor: pointer;
+	transition: background-color var(--transition-base),
+		color var(--transition-base);
+}
+
+.events-pagination__item:hover {
+	background-color: var(--gray-200);
+}
+
+.events-pagination__item--active {
+	background-color: var(--brand-primary);
+	color: var(--color-light);
+}
+
+.events-pagination__item--active:hover {
+	background-color: #8a0d2a;
+	color: var(--color-light);
+}
+
+/* ============================================
    RESPONSIVE
    ============================================ */
 
@@ -511,6 +583,21 @@ a.event-card {
 	}
 
 	.pagination__item {
+		font-size: var(--fs-350);
+	}
+
+	/* Events Pagination - Mobile */
+	.events-pagination {
+		margin-top: var(--sp-5);
+	}
+
+	.events-pagination__btn,
+	.events-pagination__item {
+		width: 36px;
+		height: 36px;
+	}
+
+	.events-pagination__item {
 		font-size: var(--fs-350);
 	}
 }
