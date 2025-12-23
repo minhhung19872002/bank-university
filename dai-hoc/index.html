@@ -1824,5 +1824,56 @@
     <script src="/js/modules/gallery-slider.js"></script>
     <script src="/js/main.js"></script>
     <script src="/js/modules/header-search.js"></script>
+
+    <!-- Program Pagination Script (Desktop) & Gallery (Mobile) -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Desktop: Pagination
+        const programItems = document.querySelectorAll(
+          ".programs-section .col-lg-4.col-md-6"
+        );
+        const programPagination = document.querySelector(".pagination");
+
+        if (programItems.length && programPagination) {
+          createPagination({
+            items: programItems,
+            paginationNav: programPagination,
+            itemsPerPage: 9,
+            scrollTarget: document.querySelector(".programs-section"),
+            scrollOffset: 140,
+            selectors: {
+              prevBtn: ".pagination__button--prev",
+              nextBtn: ".pagination__button--next",
+            },
+            classes: {
+              active: "pagination__button--active",
+            },
+            createPageElement: (pageNum, isActive) => {
+              const btn = document.createElement("button");
+              btn.className = "pagination__button";
+              btn.type = "button";
+              btn.textContent = pageNum;
+              btn.setAttribute("aria-label", `Trang ${pageNum}`);
+              if (isActive) {
+                btn.classList.add("pagination__button--active");
+              }
+              return btn;
+            },
+          });
+        }
+
+        // Mobile: Gallery slider
+        initGallerySlider({
+          gallerySelector: ".programs-section .row[data-program-grid]",
+          prevBtnSelector: ".program-slider-nav__btn--prev",
+          nextBtnSelector: ".program-slider-nav__btn--next",
+          itemSelector: ".col-lg-4.col-md-6",
+          gap: 16,
+          swipeThreshold: 50,
+          mode: "simple",
+          disableButtons: true,
+        });
+      });
+    </script>
   </body>
 </html>
