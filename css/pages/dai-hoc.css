@@ -239,7 +239,9 @@
 	.faq-section__subtitle {
 		font-size: var(--fs-350);
 	}
+}
 
+@media (max-width: 991px) {
 	.faq-section__image {
 		display: none;
 	}
