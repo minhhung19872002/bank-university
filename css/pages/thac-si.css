@@ -119,13 +119,29 @@
 	max-width: calc(33.333% - var(--sp-4) * 2 / 3);
 }
 
-/* Program Pagination */
+/* Hidden items in pagination */
+.program-cards-grid .program-card-item.pagination-hidden {
+	display: none !important;
+}
+
+/* Program Pagination - visibility controlled by Bootstrap d-none/d-md-flex classes */
 .program-pagination {
-	display: flex;
+	display: none;
 	align-items: center;
 	justify-content: center;
 	gap: 7px;
 	margin-top: var(--sp-6);
+}
+
+/* Enable flex display when Bootstrap's d-md-flex is applied */
+.program-pagination.d-md-flex {
+	display: none;
+}
+
+@media (min-width: 768px) {
+	.program-pagination.d-md-flex {
+		display: flex !important;
+	}
 }
 
 .program-pagination__btn {
@@ -179,6 +195,39 @@
 .program-pagination__btn:disabled {
 	opacity: 0.5;
 	cursor: not-allowed;
+}
+
+/* Pagination Page Items (dynamically generated) */
+.program-pagination__item {
+	width: 40px;
+	height: 40px;
+	border: none;
+	border-radius: 50%;
+	background-color: var(--gray-200, #e5e7eb);
+	cursor: pointer;
+	transition: all var(--transition-base);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: var(--font-family-heading);
+	font-size: var(--fs-400);
+	font-weight: var(--fw-regular);
+	line-height: 1.2;
+	color: var(--gray-900);
+}
+
+.program-pagination__item:hover {
+	background-color: var(--gray-300);
+}
+
+.program-pagination__item--active {
+	background-color: var(--brand-primary);
+	color: var(--color-light);
+}
+
+.program-pagination__item--active:hover {
+	background-color: var(--brand-primary);
+	color: var(--color-light);
 }
 
 /* Slider Navigation - Hidden on desktop */
@@ -306,7 +355,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		gap: var(--sp-4);
+		gap: var(--sp-2);
 		margin-top: var(--sp-4);
 	}
 
@@ -314,8 +363,8 @@
 		width: 40px;
 		height: 40px;
 		border-radius: 50%;
-		background-color: var(--color-light);
-		border: 1px solid var(--gray-300);
+		background-color: var(--gray-200, #e5e7eb);
+		border: none;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -323,18 +372,18 @@
 		transition: all var(--transition-base);
 	}
 
-	.program-slider-nav__btn:hover {
-		background-color: var(--brand-primary);
-		border-color: var(--brand-primary);
+	.program-slider-nav__btn:hover:not(:disabled) {
+		background-color: var(--gray-300);
 	}
 
-	.program-slider-nav__btn:hover img {
-		filter: brightness(0) invert(1);
+	.program-slider-nav__btn:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
 	}
 
 	.program-slider-nav__btn img {
-		width: 16px;
-		height: 16px;
+		width: 11px;
+		height: 10px;
 		object-fit: contain;
 	}
 }
