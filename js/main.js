@@ -20,6 +20,11 @@ document.addEventListener('DOMContentLoaded', async function () {
     // Load remaining includes (footer, registration-card, etc.)
     await loadIncludes();
 
+    // Replace icons in dynamically loaded content (footer, etc.)
+    if (window.IconSystem) {
+        window.IconSystem.replace();
+    }
+
     // Then initialize all components
     initNavigation();
     initFAQAccordion();

@@ -1,56 +1,4 @@
 /* ============================================
-   COMPONENT: Breadcrumb
-   For program detail pages
-   Breakpoints: Desktop (default), Tablet (max-width: 1199px), Mobile (max-width: 575px)
-   ============================================ */
-
-/* Desktop-first base styles */
-.breadcrumb-section {
-	padding: var(--sp-7) 0 var(--sp-3);
-}
-
-.breadcrumb-section__title {
-	font-family: var(--font-family-heading);
-	font-size: var(--fs-525);
-	font-weight: var(--fw-bold);
-	line-height: var(--lh-heading-tight);
-	color: var(--brand-primary);
-	text-transform: capitalize;
-	margin: 0 0 var(--sp-3);
-}
-
-.breadcrumb-section__meta {
-	display: flex;
-	align-items: center;
-	gap: var(--sp-2);
-}
-
-.breadcrumb-section__icon {
-	width: 12px;
-	height: 12px;
-	flex-shrink: 0;
-}
-
-.breadcrumb-section__date {
-	font-family: var(--font-family-heading);
-	font-size: var(--fs-caption);
-	font-weight: var(--fw-regular);
-	line-height: 1.2;
-	color: var(--gray-500);
-}
-
-/* Divider after breadcrumb */
-.breadcrumb-section::after {
-	content: "";
-	display: block;
-	width: 100%;
-	max-width: var(--container-xl);
-	height: 1px;
-	background-color: #cccccc;
-	margin: var(--sp-3) auto 0;
-}
-
-/* ============================================
    COMPONENT: Hero Breadcrumb
    Breadcrumb dùng sau hero section
    Only visible on mobile - Hidden on tablet/desktop via Bootstrap class d-sm-none in HTML
@@ -111,31 +59,9 @@
 }
 
 /* ================================================
-   TABLET (max-width: 1199px)
-   ================================================ */
-@media (max-width: 1199px) {
-	.breadcrumb-section {
-		padding: var(--sp-6) 0 var(--sp-3);
-	}
-
-	.breadcrumb-section__title {
-		font-size: var(--fs-500);
-	}
-}
-
-/* ================================================
    MOBILE (max-width: 575px)
    ================================================ */
 @media (max-width: 575px) {
-	.breadcrumb-section {
-		padding: var(--sp-5) 0 var(--sp-2);
-	}
-
-	.breadcrumb-section__title {
-		font-size: var(--fs-450);
-		margin: 0 0 var(--sp-2);
-	}
-
 	.hero-breadcrumb__item {
 		font-size: var(--fs-caption);
 	}

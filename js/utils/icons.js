@@ -24,15 +24,21 @@
     "mdi:phone": "icon-phone",
   };
 
+  let spriteLoaded = false;
+
   // Load SVG sprite into document
   function loadSvgSprite() {
+    if (spriteLoaded) return Promise.resolve();
+
     return fetch("/assets/svg/icons.svg")
       .then((response) => response.text())
       .then((svgContent) => {
         const div = document.createElement("div");
         div.style.display = "none";
+        div.id = "svg-sprite-container";
         div.innerHTML = svgContent;
         document.body.insertBefore(div, document.body.firstChild);
+        spriteLoaded = true;
       });
   }
 
@@ -77,6 +83,13 @@
       }
     });
   }
+
+  // Expose globally for use after dynamic content loads
+  window.IconSystem = {
+    replace: function() {
+      loadSvgSprite().then(replaceIcons);
+    }
+  };
 
   // Initialize when DOM is ready
   if (document.readyState === "loading") {
