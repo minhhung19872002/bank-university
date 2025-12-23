@@ -610,6 +610,13 @@ body.gsc-overflow-hidden {
 	.search-filter__results {
 		max-width: 700px;
 	}
+
+	/* Pagination: Hide edge-second and neighbor-2 on tablet */
+	.custom-pagination .gsc-cursor-page[data-position="edge-second"],
+	.custom-pagination .gsc-cursor-page[data-position="edge-second-last"],
+	.custom-pagination .gsc-cursor-page[data-position="neighbor-2"] {
+		display: none !important;
+	}
 }
 
 /* ============================================
@@ -710,6 +717,13 @@ body.gsc-overflow-hidden {
 		width: 36px !important;
 		height: 36px !important;
 		font-size: var(--fs-200) !important;
+	}
+
+	/* Pagination: Hide edge-second and neighbor-2 on mobile (same as tablet) */
+	.custom-pagination .gsc-cursor-page[data-position="edge-second"],
+	.custom-pagination .gsc-cursor-page[data-position="edge-second-last"],
+	.custom-pagination .gsc-cursor-page[data-position="neighbor-2"] {
+		display: none !important;
 	}
 
 	/* Image Results */
