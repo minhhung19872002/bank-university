@@ -98,7 +98,7 @@ a.news-card:hover {
 
 .news-card__title {
 	font-family: Montserrat, var(--font-primary);
-	font-size: var(--fs-425);
+	font-size: var(--fs-350);
 	font-weight: 600;
 	color: var(--gray-900);
 	line-height: 1.7;

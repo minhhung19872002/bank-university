@@ -23,7 +23,7 @@
 
 .hero-content__subtitle {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-400);
+	font-size: var(--section-subtitle);
 	font-weight: var(--fw-semibold);
 	line-height: 1.3;
 	color: var(--brand-secondary);
@@ -32,7 +32,7 @@
 
 .hero-content__title {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-700);
+	font-size: var(--section-title);
 	font-weight: var(--fw-bold);
 	line-height: var(--lh-heading-tight);
 	color: var(--brand-primary);
@@ -41,7 +41,7 @@
 
 .hero-content__description {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-300);
+	font-size: var(--section-description);
 	font-weight: var(--fw-regular);
 	line-height: 1.57;
 	color: var(--gray-900);
@@ -97,7 +97,7 @@
 
 .programs-section__subtitle {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-425);
+	font-size: var(--section-subtitle);
 	font-weight: var(--fw-semibold);
 	line-height: 1.3;
 	color: var(--brand-secondary);
@@ -107,7 +107,7 @@
 
 .programs-section__title {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-700);
+	font-size: var(--section-title);
 	font-weight: var(--fw-bold);
 	line-height: var(--lh-heading-tight);
 	color: var(--brand-primary);
@@ -148,7 +148,7 @@
 
 .faq-section__title {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-700);
+	font-size: var(--section-title);
 	font-weight: var(--fw-bold);
 	line-height: var(--lh-heading-tight);
 	color: var(--brand-primary);
@@ -211,6 +211,10 @@
 		padding: var(--sp-7) 0;
 	}
 
+	.faq-section__title {
+		font-size: var(--section-title-tablet);
+	}
+
 	.hero-content__right {
 		padding-top: var(--sp-7);
 	}
@@ -228,7 +232,7 @@
 	}
 
 	.hero-content__description {
-		font-size: var(--fs-body-sm);
+		font-size: var(--section-description-tablet);
 		line-height: 1.5;
 	}
 
@@ -301,6 +305,7 @@
 	}
 
 	.hero-content__description {
+		font-size: var(--section-description-mobile);
 		text-align: left;
 	}
 
@@ -360,7 +365,7 @@
 	}
 
 	.programs-section__title {
-		font-size: var(--fs-600);
+		font-size: var(--section-title-mobile);
 		text-align: left;
 	}
 
@@ -442,7 +447,7 @@
 	}
 
 	.faq-section__title {
-		font-size: var(--fs-600);
+		font-size: var(--section-title-mobile);
 	}
 
 	.faq-section__subtitle {

@@ -95,7 +95,7 @@
 
 .program-intro--tiensi .program-intro__title-main {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-600);
+	font-size: var(--section-title);
 	font-weight: var(--fw-bold);
 	line-height: var(--lh-heading-tight);
 	color: var(--color-primary);
@@ -113,7 +113,7 @@
 
 .program-intro--tiensi .program-intro__description {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-300);
+	font-size: var(--section-description);
 	font-weight: var(--fw-regular);
 	line-height: 1.57;
 	color: var(--gray-900);
@@ -132,6 +132,10 @@
 		padding: var(--sp-6) 0;
 	}
 
+	.program-intro--tiensi .program-intro__description {
+		font-size: var(--section-description-tablet);
+	}
+
 	.program-intro--tiensi .program-intro__content {
 		padding-left: 0;
 		margin-top: var(--sp-4);
@@ -139,7 +143,7 @@
 
 	.program-intro--tiensi .program-intro__title-main,
 	.program-intro--tiensi .program-intro__title-sub {
-		font-size: var(--fs-500);
+		font-size: var(--section-title-tablet);
 	}
 
 	.program-cards-section {
@@ -167,7 +171,11 @@
 
 	.program-intro--tiensi .program-intro__title-main,
 	.program-intro--tiensi .program-intro__title-sub {
-		font-size: var(--fs-450);
+		font-size: var(--section-title-mobile);
+	}
+
+	.program-intro--tiensi .program-intro__description {
+		font-size: var(--section-description-tablet);
 	}
 
 	.program-cards-section {
@@ -247,7 +255,7 @@
 
 .program-advantages__title {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-800);
+	font-size: var(--section-title);
 	font-weight: var(--fw-bold);
 	line-height: var(--lh-heading);
 	color: var(--color-light);
@@ -366,7 +374,7 @@
 	}
 
 	.program-advantages__title {
-		font-size: var(--fs-700);
+		font-size: var(--section-title-tablet);
 		margin-bottom: var(--sp-5);
 	}
 
@@ -420,7 +428,7 @@
 	}
 
 	.program-advantages__title {
-		font-size: var(--fs-600);
+		font-size: var(--section-title-mobile);
 		margin-bottom: var(--sp-4);
 	}
 
@@ -475,7 +483,7 @@
 
 .scholarship-policy__title {
 	font-family: var(--font-family-body);
-	font-size: var(--fs-900);
+	font-size: var(--section-title);
 	font-weight: var(--fw-bold);
 	line-height: var(--lh-heading-tight);
 	color: var(--color-primary);
@@ -566,7 +574,7 @@
 	}
 
 	.scholarship-policy__title {
-		font-size: var(--fs-700);
+		font-size: var(--section-title-tablet);
 		margin-bottom: var(--sp-5);
 	}
 }
@@ -577,7 +585,7 @@
 	}
 
 	.scholarship-policy__title {
-		font-size: var(--fs-500);
+		font-size: var(--section-title-mobile);
 		text-align: left;
 		margin-bottom: var(--sp-4);
 	}
@@ -656,7 +664,7 @@
 
 .training-format__title {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-800);
+	font-size: var(--section-title);
 	font-weight: var(--fw-bold);
 	line-height: var(--lh-heading-tight);
 	color: var(--color-light);
@@ -670,7 +678,7 @@
 
 .training-format__subtitle {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-500);
+	font-size: var(--section-subtitle);
 	font-weight: var(--fw-bold);
 	line-height: 30px;
 	color: var(--color-light);
@@ -734,12 +742,12 @@
 	}
 
 	.training-format__title {
-		font-size: var(--fs-700);
+		font-size: var(--section-title-tablet);
 		margin-bottom: var(--sp-4);
 	}
 
 	.training-format__subtitle {
-		font-size: var(--fs-400);
+		font-size: var(--section-subtitle-tablet);
 	}
 
 	.training-format::before,
@@ -763,7 +771,7 @@
 
 	/* Title: left-align với font size phù hợp */
 	.training-format__title {
-		font-size: var(--fs-500);
+		font-size: var(--section-title-mobile);
 		text-align: left;
 		color: var(--brand-primary);
 		margin-bottom: var(--sp-4);
@@ -794,7 +802,7 @@
 
 	/* Update text colors for light background */
 	.training-format__subtitle {
-		font-size: var(--fs-350);
+		font-size: var(--section-subtitle-mobile);
 		color: var(--gray-900);
 	}
 
@@ -814,7 +822,7 @@
 
 .section-header__subtitle {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-425);
+	font-size: var(--section-subtitle);
 	font-weight: var(--fw-semibold);
 	line-height: 1.2;
 	color: var(--brand-secondary);
@@ -824,7 +832,7 @@
 
 .section-header__title {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-700);
+	font-size: var(--section-title);
 	font-weight: var(--fw-bold);
 	line-height: var(--lh-heading-tight);
 	color: var(--brand-primary);
@@ -834,11 +842,11 @@
 
 @media (max-width: 1199px) {
 	.section-header__subtitle {
-		font-size: var(--fs-350);
+		font-size: var(--section-subtitle-tablet);
 	}
 
 	.section-header__title {
-		font-size: var(--fs-600);
+		font-size: var(--section-title-tablet);
 	}
 }
 
@@ -848,12 +856,12 @@
 	}
 
 	.section-header__subtitle {
-		font-size: var(--fs-300);
+		font-size: var(--section-subtitle-mobile);
 		text-align: left;
 	}
 
 	.section-header__title {
-		font-size: var(--fs-500);
+		font-size: var(--section-title-mobile);
 		text-align: left;
 	}
 }

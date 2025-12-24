@@ -42,7 +42,7 @@
 
 .recruitment-section__subtitle {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-400);
+	font-size: var(--section-subtitle);
 	font-weight: var(--fw-semibold);
 	line-height: 21.942px;
 	color: var(--color-light);
@@ -52,7 +52,7 @@
 
 .recruitment-section__title {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-600);
+	font-size: var(--section-title);
 	font-weight: var(--fw-bold);
 	line-height: var(--lh-heading-tight);
 	color: var(--color-light);
@@ -61,7 +61,7 @@
 
 .recruitment-section__description {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-body-sm);
+	font-size: var(--section-description);
 	font-weight: var(--fw-regular);
 	line-height: 22px;
 	color: var(--color-light);
@@ -198,7 +198,7 @@
 	}
 
 	.recruitment-section__subtitle {
-		font-size: var(--fs-350);
+		font-size: var(--section-subtitle-tablet);
 		line-height: 1.2;
 		margin-bottom: var(--sp-3);
 	}
@@ -210,7 +210,7 @@
 	}
 
 	.recruitment-section__description {
-		font-size: var(--fs-caption);
+		font-size: var(--section-description-tablet);
 		line-height: 1.55;
 		margin-bottom: var(--sp-5);
 		max-width: 100%;
@@ -268,7 +268,7 @@
 	}
 
 	.recruitment-section__subtitle {
-		font-size: var(--fs-body);
+		font-size: var(--section-subtitle-mobile);
 		margin-bottom: var(--sp-3);
 	}
 

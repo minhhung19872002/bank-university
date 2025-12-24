@@ -117,6 +117,18 @@
 	--lh-heading-tight: var(--lh-tight); /* 1.2 */
 	--lh-body-normal: var(--lh-normal); /* 1.5 */
 	--lh-body-loose: var(--lh-loose); /* 1.7 */
+
+	--section-title: var(--fs-600);
+	--section-title-tablet: var(--fs-550);
+	--section-title-mobile: var(--fs-500);
+
+	--section-subtitle: var(--fs-400);
+	--section-subtitle-tablet: var(--fs-350);
+	--section-subtitle-mobile: var(--fs-300);
+
+	--section-description: var(--fs-300);
+	--section-description-tablet: var(--fs-200);
+	--section-description-mobile: var(--fs-100);
 }
 
 /* ========== TABLET (>= 768px) ========== */
