@@ -9,7 +9,7 @@
 
 .section-title {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-heading-xl);
+	font-size: var(--section-title-mobile);
 	font-weight: var(--fw-bold);
 	color: var(--brand-primary);
 	line-height: var(--lh-heading-tight);
@@ -182,7 +182,7 @@
 
 .about-section__subtitle {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-heading-xl);
+	font-size: var(--fs-350);
 	font-weight: var(--fw-regular);
 	color: var(--gray-900);
 	line-height: var(--lh-heading-tight);
@@ -192,7 +192,7 @@
 
 .about-section__title {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-500);
+	font-size: var(--section-title-mobile);
 	font-weight: var(--fw-bold);
 	color: var(--brand-primary);
 	line-height: var(--lh-heading-tight);
@@ -201,8 +201,7 @@
 
 .about-section__description {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-body);
-	font-weight: var(--fw-regular);
+	font-size: var(--section-description);
 	color: var(--gray-900);
 	line-height: 1.6;
 	margin-bottom: var(--sp-5);
@@ -279,7 +278,7 @@
 
 .admission-info-card__title {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-500);
+	font-size: var(--section-title-mobile);
 	font-weight: var(--fw-bold);
 	color: var(--brand-primary);
 	line-height: var(--lh-heading-tight);
@@ -288,7 +287,7 @@
 
 .admission-info-card__section-title {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-body-sm);
+	font-size: var(--section-subtitle-mobile);
 	font-weight: var(--fw-semibold);
 	color: var(--brand-secondary);
 	text-transform: capitalize;
@@ -299,7 +298,8 @@
 	border: none;
 	height: 2px;
 	background-color: var(--brand-secondary);
-	margin-bottom: var(--sp-3);
+	margin-bottom: var(--sp-1);
+	margin-top: var(--sp-1);
 }
 
 .admission-info-card__list {
@@ -310,7 +310,7 @@
 
 .admission-info-card__list li {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-body);
+	font-size: var(--section-description-mobile);
 	font-weight: var(--fw-medium);
 	color: var(--gray-900);
 	line-height: 1.67;
@@ -527,7 +527,7 @@
 
 .events-section__title {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-500);
+	font-size: var(--section-title-mobile);
 	font-weight: var(--fw-bold);
 	color: var(--brand-secondary);
 	line-height: var(--lh-heading-tight);
@@ -759,7 +759,7 @@ a.event-card--featured:hover {
 
 .faq-section__subtitle {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-350);
+	font-size: var(--section-subtitle-mobile);
 	font-weight: var(--fw-medium);
 	color: var(--gray-900);
 	margin-bottom: var(--sp-2);
@@ -817,7 +817,7 @@ a.event-card--featured:hover {
 
 .student-life-section__label {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-400);
+	font-size: var(--section-subtitle-mobile);
 	font-weight: var(--fw-semibold);
 	line-height: var(--lh-heading-tight);
 	color: var(--color-light);
@@ -827,7 +827,7 @@ a.event-card--featured:hover {
 
 .student-life-section__title {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-700);
+	font-size: var(--section-title-mobile);
 	font-weight: var(--fw-bold);
 	line-height: var(--lh-heading-tight);
 	color: var(--color-light);
@@ -902,7 +902,7 @@ a.event-card--featured:hover {
 	}
 
 	.section-title {
-		font-size: var(--fs-600);
+		font-size: var(--section-title-tablet);
 	}
 
 	/* Hero */
@@ -957,16 +957,12 @@ a.event-card--featured:hover {
 	}
 
 	.about-section__subtitle {
-		font-size: var(--fs-500);
+		font-size: var(--fs-400);
 	}
 
 	.about-section__title {
-		font-size: var(--fs-700);
+		font-size: var(--section-title-tablet);
 		margin-bottom: var(--sp-4);
-	}
-
-	.about-section__description {
-		font-weight: var(--fw-medium);
 	}
 
 	.about-section__image-wrapper {
@@ -1001,12 +997,12 @@ a.event-card--featured:hover {
 	}
 
 	.admission-info-card__title {
-		font-size: var(--fs-700);
+		font-size: var(--section-title-tablet);
 		margin-bottom: var(--sp-4);
 	}
 
 	.admission-info-card__section-title {
-		font-size: var(--fs-450);
+		font-size: var(--section-subtitle-tablet);
 		margin-bottom: var(--sp-3);
 	}
 
@@ -1020,14 +1016,14 @@ a.event-card--featured:hover {
 	}
 
 	.admission-info-card__list li {
-		font-size: var(--fs-400);
+		font-size: var(--section-description-tablet);
 	}
 
 	.admission-info-card__btn {
 		background-color: var(--brand-secondary);
 		color: var(--color-on-secondary);
 		font-family: var(--font-family-heading);
-		font-size: var(--fs-body);
+		font-size: var(--fs-body-sm);
 		font-weight: var(--fw-semibold);
 		text-transform: capitalize;
 		padding: var(--sp-3) var(--sp-4);
@@ -1161,7 +1157,7 @@ a.event-card--featured:hover {
 	}
 
 	.news-card--horizontal .news-card__title {
-		font-size: var(--fs-400);
+		font-size: var(--fs-300);
 	}
 
 	/* Events */
@@ -1170,7 +1166,7 @@ a.event-card--featured:hover {
 	}
 
 	.events-section__title {
-		font-size: var(--fs-600);
+		font-size: var(--section-title-tablet);
 		color: var(--brand-primary);
 		text-align: left;
 		margin-bottom: var(--sp-5);
@@ -1233,7 +1229,7 @@ a.event-card--featured:hover {
 	}
 
 	.faq-section__subtitle {
-		font-size: var(--fs-400);
+		font-size: var(--section-subtitle-tablet);
 		text-align: left;
 	}
 
@@ -1268,16 +1264,16 @@ a.event-card--featured:hover {
 	}
 
 	.student-life-section__label {
-		font-size: var(--fs-500);
+		font-size: var(--section-subtitle-tablet);
 	}
 
 	.student-life-section__title {
-		font-size: var(--fs-700);
+		font-size: var(--section-title-tablet);
 	}
 
 	.student-life-section__description {
 		font-family: var(--font-family-heading);
-		font-size: var(--fs-body);
+		font-size: var(--section-description);
 		font-weight: var(--fw-regular);
 		color: var(--color-light);
 		line-height: 1.57;
@@ -1366,7 +1362,7 @@ a.event-card--featured:hover {
    ================================================ */
 @media (min-width: 1200px) {
 	.section-title {
-		font-size: var(--fs-700);
+		font-size: var(--section-title);
 	}
 
 	/* Hero */
@@ -1377,11 +1373,11 @@ a.event-card--featured:hover {
 
 	/* About */
 	.about-section__subtitle {
-		font-size: var(--fs-600);
+		font-size: var(--fs-500);
 	}
 
 	.about-section__title {
-		font-size: var(--fs-900);
+		font-size: var(--section-title);
 	}
 
 	/* .about-section__deco visibility controlled by Bootstrap classes */
@@ -1392,15 +1388,15 @@ a.event-card--featured:hover {
 
 	/* Admission */
 	.admission-info-card__title {
-		font-size: var(--fs-700);
+		font-size: var(--section-title);
 	}
 
 	.admission-info-card__section-title {
-		font-size: var(--fs-450);
+		font-size: var(--section-subtitle);
 	}
 
 	.admission-info-card__list li {
-		font-size: var(--fs-400);
+		font-size: var(--section-description);
 	}
 
 	/* Programs */
@@ -1414,7 +1410,7 @@ a.event-card--featured:hover {
 
 	/* Events */
 	.events-section__title {
-		font-size: var(--fs-700);
+		font-size: var(--section-title);
 	}
 
 	.events-section__list {
@@ -1431,7 +1427,7 @@ a.event-card--featured:hover {
 	}
 
 	.faq-section__subtitle {
-		font-size: var(--fs-425);
+		font-size: var(--section-subtitle);
 	}
 
 	.faq-section__deco {
@@ -1441,7 +1437,7 @@ a.event-card--featured:hover {
 
 	/* Student Life - Desktop only overrides */
 	.student-life-section__title {
-		font-size: var(--fs-900);
+		font-size: var(--section-title);
 	}
 
 	/* Registration */

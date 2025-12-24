@@ -22,7 +22,7 @@
 
 .training-orientation__title {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-600);
+	font-size: var(--section-title);
 	font-weight: var(--fw-bold);
 	line-height: var(--lh-heading-tight);
 	color: var(--color-light);
@@ -36,7 +36,7 @@
 
 .training-orientation__subtitle {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-425);
+	font-size: var(--section-subtitle);
 	font-weight: var(--fw-semibold);
 	line-height: 1.2;
 	color: var(--color-light);
@@ -46,7 +46,7 @@
 
 .training-orientation__text {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-body-sm);
+	font-size: var(--section-description);
 	font-weight: var(--fw-regular);
 	line-height: 1.57;
 	color: var(--color-light);
@@ -88,7 +88,7 @@
 	position: absolute;
 	left: 0;
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-425);
+	font-size: var(--section-subtitle);
 	font-weight: var(--fw-semibold);
 	line-height: 1.2;
 	color: var(--color-light);
@@ -151,11 +151,11 @@
 	}
 
 	.training-orientation__title {
-		font-size: var(--fs-500);
+		font-size: var(--section-title-tablet);
 	}
 
 	.training-orientation__subtitle {
-		font-size: var(--fs-350);
+		font-size: var(--section-subtitle-tablet);
 	}
 
 	.training-orientation__image-wrapper {
@@ -186,16 +186,16 @@
 	}
 
 	.training-orientation__subtitle {
-		font-size: var(--fs-300);
+		font-size: var(--section-subtitle-mobile);
 	}
 
 	.training-orientation__item .training-orientation__subtitle::before {
-		font-size: var(--fs-300);
+		font-size: var(--section-subtitle-mobile);
 	}
 
 	.training-orientation__text,
 	.training-orientation__sublist li {
-		font-size: var(--fs-caption);
+		font-size: var(--section-description-mobile);
 	}
 
 	.training-orientation__image-wrapper {

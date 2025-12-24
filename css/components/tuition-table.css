@@ -17,7 +17,7 @@
 
 .tuition-section__title {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-700);
+	font-size: var(--section-title);
 	font-weight: var(--fw-bold);
 	line-height: var(--lh-heading-tight);
 	color: var(--brand-primary);
@@ -28,7 +28,7 @@
 
 .tuition-section__description {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-body-sm);
+	font-size: var(--section-description);
 	font-weight: var(--fw-regular);
 	line-height: 1.2;
 	color: var(--gray-900);
@@ -153,7 +153,11 @@
 	}
 
 	.tuition-section__title {
-		font-size: var(--fs-600);
+		font-size: var(--section-title-tablet);
+	}
+
+	.tuition-section__description {
+		font-size: var(--section-description-tablet);
 	}
 
 	/* Hide decoration on tablet */
@@ -180,10 +184,11 @@
 
 	.tuition-section__title {
 		text-align: left;
-		font-size: var(--fs-500);
+		font-size: var(--section-title-mobile);
 	}
 
 	.tuition-section__description {
+		font-size: var(--section-description-mobile);
 		text-align: left;
 		margin-bottom: var(--sp-4);
 	}

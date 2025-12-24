@@ -14,7 +14,7 @@
 
 .program-header__title {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-450);
+	font-size: var(--section-title);
 	font-weight: var(--fw-bold);
 	line-height: var(--lh-heading-tight);
 	color: var(--brand-primary);
@@ -76,7 +76,7 @@
 
 .program-description__title {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-400);
+	font-size: var(--section-subtitle);
 	font-weight: var(--fw-bold);
 	line-height: var(--lh-heading-tight);
 	color: var(--brand-primary);
@@ -86,7 +86,7 @@
 
 .program-description__content {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-body-sm);
+	font-size: var(--section-description);
 	font-weight: var(--fw-regular);
 	line-height: 1.57;
 	color: var(--gray-900);
@@ -205,7 +205,7 @@
 
 .program-qualities__title {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-400);
+	font-size: var(--section-subtitle);
 	font-weight: var(--fw-bold);
 	line-height: var(--lh-heading-tight);
 	color: var(--brand-primary);
@@ -215,7 +215,7 @@
 
 .program-qualities__intro {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-body-sm);
+	font-size: var(--section-description);
 	font-weight: var(--fw-regular);
 	line-height: 1.57;
 	color: var(--gray-900);
@@ -236,7 +236,7 @@
 	align-items: center;
 	gap: var(--sp-3);
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-body-sm);
+	font-size: var(--section-description);
 	font-weight: var(--fw-regular);
 	line-height: 1.2;
 	color: var(--gray-900);
@@ -288,7 +288,7 @@
 
 .program-careers__title {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-400);
+	font-size: var(--section-subtitle);
 	font-weight: var(--fw-bold);
 	line-height: var(--lh-heading-tight);
 	color: var(--brand-primary);
@@ -378,7 +378,7 @@
 
 .admission-methods__title {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-400);
+	font-size: var(--section-subtitle);
 	font-weight: var(--fw-bold);
 	line-height: var(--lh-heading-tight);
 	color: var(--brand-primary);
@@ -388,7 +388,7 @@
 
 .admission-methods__intro {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-body-sm);
+	font-size: var(--section-description);
 	font-weight: var(--fw-regular);
 	line-height: 1.57;
 	color: var(--gray-900);
@@ -449,7 +449,7 @@
 
 .related-programs__title {
 	font-family: var(--font-family-heading);
-	font-size: var(--fs-400);
+	font-size: var(--section-subtitle);
 	font-weight: var(--fw-bold);
 	line-height: var(--lh-heading-tight);
 	color: var(--brand-primary);
@@ -598,7 +598,7 @@
 
 .career-opportunities__title {
 	font-family: var(--font-family-body);
-	font-size: var(--fs-700);
+	font-size: var(--section-title);
 	font-weight: var(--fw-bold);
 	line-height: var(--lh-heading-tight);
 	color: var(--color-light);
@@ -881,7 +881,7 @@
 
 .faq-section__title {
 	font-family: var(--font-family-body);
-	font-size: var(--fs-700);
+	font-size: var(--section-title);
 	font-weight: var(--fw-bold);
 	line-height: var(--lh-heading-tight);
 	color: var(--brand-primary);
@@ -913,7 +913,7 @@
 	}
 
 	.program-header__title {
-		font-size: var(--fs-400);
+		font-size: var(--section-title-tablet);
 		margin-bottom: var(--sp-3);
 	}
 
@@ -933,7 +933,11 @@
 	}
 
 	.program-description__title {
-		font-size: var(--fs-350);
+		font-size: var(--section-subtitle-tablet);
+	}
+
+	.program-description__content {
+		font-size: var(--section-description-tablet);
 	}
 
 	/* Program Video - Tablet */
@@ -959,7 +963,7 @@
 	}
 
 	.program-qualities__title {
-		font-size: var(--fs-350);
+		font-size: var(--section-subtitle-tablet);
 	}
 
 	/* Program Careers - Tablet */
@@ -968,7 +972,7 @@
 	}
 
 	.program-careers__title {
-		font-size: var(--fs-350);
+		font-size: var(--section-subtitle-tablet);
 	}
 
 	/* Admission Methods - Tablet */
@@ -977,7 +981,7 @@
 	}
 
 	.admission-methods__title {
-		font-size: var(--fs-350);
+		font-size: var(--section-subtitle-tablet);
 	}
 
 	/* Related Programs - Tablet */
@@ -986,7 +990,7 @@
 	}
 
 	.related-programs__title {
-		font-size: var(--fs-350);
+		font-size: var(--section-subtitle-tablet);
 	}
 
 	.related-programs__carousel .row > .col-12 {
@@ -999,7 +1003,7 @@
 	}
 
 	.career-opportunities__title {
-		font-size: var(--fs-600);
+		font-size: var(--section-title-tablet);
 	}
 
 	.career-opportunities__grid .row {
@@ -1012,7 +1016,7 @@
 	}
 
 	.faq-section__title {
-		font-size: var(--fs-600);
+		font-size: var(--section-title-tablet);
 	}
 }
 
@@ -1026,7 +1030,7 @@
 	}
 
 	.program-header__title {
-		font-size: var(--fs-350);
+		font-size: var(--section-title-mobile);
 		margin-bottom: var(--sp-2);
 	}
 
@@ -1050,12 +1054,12 @@
 	}
 
 	.program-description__title {
-		font-size: var(--fs-300);
+		font-size: var(--section-subtitle-mobile);
 		margin-bottom: var(--sp-3);
 	}
 
 	.program-description__content {
-		font-size: var(--fs-caption);
+		font-size: var(--section-description-mobile);
 		line-height: 1.5;
 	}
 
@@ -1089,12 +1093,12 @@
 	}
 
 	.program-qualities__title {
-		font-size: var(--fs-300);
+		font-size: var(--section-subtitle-mobile);
 		margin-bottom: var(--sp-3);
 	}
 
 	.program-qualities__list li {
-		font-size: var(--fs-caption);
+		font-size: var(--section-description-mobile);
 	}
 
 	/* Program Careers - Mobile */
@@ -1103,7 +1107,7 @@
 	}
 
 	.program-careers__title {
-		font-size: var(--fs-300);
+		font-size: var(--section-subtitle-mobile);
 		margin-bottom: var(--sp-3);
 	}
 
@@ -1141,12 +1145,12 @@
 	}
 
 	.admission-methods__title {
-		font-size: var(--fs-300);
+		font-size: var(--section-subtitle-mobile);
 		margin-bottom: var(--sp-2);
 	}
 
 	.admission-methods__intro {
-		font-size: var(--fs-caption);
+		font-size: var(--section-description-mobile);
 		margin-bottom: var(--sp-4);
 	}
 
@@ -1169,7 +1173,7 @@
 	}
 
 	.related-programs__title {
-		font-size: var(--fs-300);
+		font-size: var(--section-subtitle-mobile);
 		margin-bottom: var(--sp-4);
 	}
 
@@ -1203,7 +1207,7 @@
 	}
 
 	.career-opportunities__title {
-		font-size: var(--fs-500);
+		font-size: var(--section-title-mobile);
 		margin-bottom: var(--sp-5);
 	}
 
@@ -1279,7 +1283,7 @@
 	}
 
 	.faq-section__title {
-		font-size: var(--fs-500);
+		font-size: var(--section-title-mobile);
 		margin-bottom: var(--sp-3);
 	}
 
