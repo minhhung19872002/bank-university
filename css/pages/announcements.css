@@ -103,7 +103,7 @@ a.news-card {
 
 .announcement-card__title {
 	font-family: var(--font-primary);
-	font-size: var(--fs-350);
+	font-size: var(--fs-300);
 	font-weight: 700;
 	line-height: 1.38; /* 22/16 */
 	color: var(--gray-800);
@@ -133,7 +133,7 @@ a.news-card {
 
 .announcement-card__link {
 	font-family: var(--font-primary);
-	font-size: var(--fs-350);
+	font-size: var(--fs-200);
 	font-weight: 500;
 	line-height: 1.22; /* 20/16 */
 	color: var(--brand-primary);

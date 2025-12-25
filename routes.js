@@ -49,7 +49,9 @@ const ROUTES_CONFIG = [
     {
         path: '/danh-muc-thong-bao/',
         label: 'Thông Báo',
-        children: []
+        children: [
+            '/danh-muc-thong-bao-chi-tiet/'
+        ]
     },
     {
         path: '/su-kien/',
