@@ -6,36 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- SEO Meta Tags -->
-    <title>Đời Sống Sinh Viên | HUB University</title>
+    <title>
+      Quyết định v/v công nhận đạt trình độ tiếng Anh chuẩn đầu ra đối với sinh
+      viên đại học hệ vừa làm vừa học đợt tháng 11 năm 2025 | HUB University
+    </title>
     <meta
       name="description"
-      content="Khám phá đời sống sinh viên tại Trường Đại học Ngân hàng TP. Hồ Chí Minh - hoạt động ngoại khóa, văn nghệ, thể thao, và nhiều trải nghiệm phong phú"
+      content="Quyết định v/v công nhận đạt trình độ tiếng Anh chuẩn đầu ra đối với sinh viên đại học hệ vừa làm vừa học đợt tháng 11 năm 2025 - Trường Đại học Ngân hàng TP.HCM"
     />
     <meta
       name="keywords"
-      content="đời sống sinh viên HUB, hoạt động sinh viên, câu lạc bộ, văn nghệ thể thao, student life HUB"
+      content="chuẩn đầu ra tiếng anh, đại học vừa làm vừa học, HUB, đại học ngân hàng"
     />
     <meta name="author" content="HUB University" />
     <meta name="robots" content="index, follow" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Đời Sống Sinh Viên - HUB University" />
+    <meta
+      property="og:title"
+      content="Quyết định v/v công nhận đạt trình độ tiếng Anh chuẩn đầu ra đối với sinh viên đại học hệ vừa làm vừa học đợt tháng 11 năm 2025"
+    />
     <meta
       property="og:description"
-      content="Khám phá đời sống sinh viên tại HUB University"
+      content="Thông báo về việc công nhận đạt trình độ tiếng Anh chuẩn đầu ra đối với sinh viên đại học hệ vừa làm vừa học đợt tháng 11 năm 2025"
     />
     <meta
       property="og:url"
-      content="https://hub.edu.vn/doi-song-sinh-vien-chi-tiet"
+      content="https://hub.edu.vn/danh-muc-thong-bao-chi-tiet"
     />
     <meta property="og:locale" content="vi_VN" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
     <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
-    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/favicon/favicon-96x96.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicon/apple-touch-icon.png"
+    />
     <link rel="manifest" href="/favicon/site.webmanifest" />
 
     <!-- Local Fonts -->
@@ -50,8 +65,9 @@
     <link rel="stylesheet" href="/css/components/topbar.css" />
     <link rel="stylesheet" href="/css/components/navbar.css" />
     <link rel="stylesheet" href="/css/components/footer.css" />
+    <link rel="stylesheet" href="/css/components/hero.css" />
     <link rel="stylesheet" href="/css/components/breadcrumb.css" />
-    <link rel="stylesheet" href="/css/pages/student-life-detail.css" />
+    <link rel="stylesheet" href="/css/pages/announcement-detail.css" />
   </head>
   <body>
     <!-- HEADER: Topbar + Navbar -->
@@ -400,17 +416,25 @@
     </aside>
 
     <!-- Main Content -->
-    <main class="student-life-detail-page">
+    <main class="announcement-detail-page">
       <!-- SECTION: Hero -->
       <section
-        class="student-life-detail-hero"
-        aria-label="Banner đời sống sinh viên"
+        class="hero-section hero-section--banner hero-section--danhmucthongbao"
+        aria-label="Banner thông báo"
       >
-        <img
-          src="/assets/images/dssv_ct_hero.png"
-          alt="Đời sống sinh viên tại HUB"
-          class="student-life-detail-hero__image"
-        />
+        <div class="hero-section__bg">
+          <img
+            src="/assets/images/dmtb_hero.png"
+            srcset="
+              /assets/images/dmtb_hero.png  768w,
+              /assets/images/dmtb_hero.png 1920w
+            "
+            sizes="100vw"
+            alt="Banner Thông báo HUB"
+            loading="eager"
+            fetchpriority="high"
+          />
+        </div>
       </section>
 
       <!-- Breadcrumb Navigation - Mobile only -->
@@ -421,8 +445,8 @@
               <a href="/" class="hero-breadcrumb__link">Trang chủ</a>
             </li>
             <li class="hero-breadcrumb__item">
-              <a href="/doi-song-sinh-vien/" class="hero-breadcrumb__link"
-                >Đời sống sinh viên</a
+              <a href="/danh-muc-thong-bao/" class="hero-breadcrumb__link"
+                >Thông báo</a
               >
             </li>
             <li class="hero-breadcrumb__item hero-breadcrumb__item--active">
@@ -432,108 +456,216 @@
         </div>
       </nav>
 
-      <!-- SECTION: Page Header -->
-      <section class="student-life-detail-header">
+      <!-- SECTION: Article Header -->
+      <section class="announcement-detail-header">
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <h1 class="student-life-detail-header__title">
-                ĐỜI SỐNG SINH VIÊN TẠI HUB
+              <h1 class="announcement-detail-header__title">
+                Quyết định v/v công nhận đạt trình độ tiếng Anh chuẩn đầu ra đối
+                với sinh viên đại học hệ vừa làm vừa học đợt tháng 11 năm 2025
               </h1>
-              <p class="student-life-detail-header__intro">
-                Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào
-                việc trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum đã
-                được sử dụng như một văn bản chuẩn
-              </p>
+
+              <div class="announcement-detail-divider"></div>
+
+              <div class="announcement-detail-header__meta">
+                <div class="announcement-detail-header__meta-item">
+                  <img
+                    src="/assets/svg/calendar-brand-color.svg"
+                    alt="Calendar icon"
+                    class="announcement-detail-header__icon"
+                  />
+                  <span class="announcement-detail-header__text"
+                    >14 tháng 6, 2025</span
+                  >
+                </div>
+                <div class="announcement-detail-header__meta-item">
+                  <span
+                    class="iconify announcement-detail-header__icon"
+                    data-icon="mdi:eye-outline"
+                    data-width="16"
+                    data-height="16"
+                  ></span>
+                  <span class="announcement-detail-header__text">100 view</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- SECTION: Article Body -->
-      <section class="student-life-detail-body">
+      <!-- SECTION: Article Content -->
+      <section class="announcement-detail-content">
         <div class="container">
-          <!-- Featured Image -->
-          <div class="student-life-detail-featured">
-            <img
-              src="/assets/images/dssv_ct_img1.png"
-              alt="Đời sống sinh viên HUB"
-              class="student-life-detail-featured__image"
-            />
-          </div>
-
-          <!-- Main Content -->
-          <div class="student-life-detail-content">
-            <div class="student-life-detail-content__text">
-              <p>
-                Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào
-                việc trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum đã
-                được sử dụng như một văn bản chuẩn cho ngành công nghiệp in ấn
-                từ những năm 1500, khi một họa sĩ vô danh ghép nhiều đoạn văn
-                bản với nhau để tạo thành một bản mẫu văn bản. Đoạn văn bản này
-                không những đã tồn tại năm thế kỉ, mà khi được áp dụng vào tin
-                học văn phòng, nội dung của nó vẫn không hề bị thay đổi. Nó đã
-                được phổ biến trong những năm 1960 nhờ việc bán những bản giấy
-                Letraset in những đoạn Lorem Ipsum, và gần đây hơn, được sử dụng
-                trong các ứng dụng dàn trang, như Aldus PageMaker.
+          <div class="row">
+            <div class="col-12">
+              <p class="announcement-detail-header__intro">
+                Trong bối cảnh toàn cầu hóa và kinh tế số phát triển mạnh mẽ,
+                nhu cầu đảm bảo minh bạch tài chính, kiểm soát rủi ro và nâng
+                cao hiệu quả quản trị đang trở thành yêu cầu thiết yếu trong mọi
+                tổ chức, doanh nghiệp. Ngành Kiểm toán vì thế không chỉ giữ vai
+                trò kiểm soát, mà còn là công cụ chiến lược hỗ trợ ra quyết định
+                trong quản trị doanh nghiệp, hoạch định chính sách và nâng cao
+                niềm tin thị trường. Đây là một trong những ngành học mang tính
+                ứng dụng cao, luôn cần đến đội ngũ nhân lực chất lượng cao, có
+                đạo đức nghề nghiệp, tư duy phản biện và năng lực công nghệ hiện
+                đại.
               </p>
-              <p>
-                Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào
-                việc trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum đã
-                được sử dụng như một văn bản chuẩn cho ngành công nghiệp in ấn
-                từ những năm 1500, khi một họa sĩ vô danh ghép nhiều đoạn văn
-                bản với nhau để tạo thành một bản mẫu văn bản. Đoạn văn bản này
-                không những đã tồn tại năm thế kỉ, mà khi được áp dụng vào tin
-                học văn phòng, nội dung của nó vẫn không hề bị thay đổi.
-              </p>
-            </div>
-          </div>
 
-          <!-- Image Gallery -->
-          <div class="student-life-detail-gallery">
-            <div class="row g-4">
-              <div class="col-12 col-md-4">
-                <article class="gallery-card">
-                  <img
-                    src="/assets/images/dssv_ct_img2.png"
-                    alt="Hoạt động sinh viên"
-                    class="gallery-card__image"
-                  />
-                </article>
-              </div>
-              <div class="col-12 col-md-4">
-                <article class="gallery-card">
-                  <img
-                    src="/assets/images/dssv_ct_img3.png"
-                    alt="Hoạt động sinh viên"
-                    class="gallery-card__image"
-                  />
-                </article>
-              </div>
-              <div class="col-12 col-md-4">
-                <article class="gallery-card">
-                  <img
-                    src="/assets/images/dssv_ct_img4.png"
-                    alt="Hoạt động sinh viên"
-                    class="gallery-card__image"
-                  />
-                </article>
+              <!-- Image: Decision Document -->
+              <figure class="announcement-detail-figure">
+                <img
+                  src="/assets/images/dmtb_qdtb.png"
+                  alt="Quyết định công nhận đạt trình độ tiếng Anh"
+                  class="announcement-detail-figure__image"
+                />
+              </figure>
+
+              <!-- Content Block -->
+              <div class="announcement-detail-text">
+                <p>
+                  Ngành Kiểm toán (mã ngành: 7340302) được HUB xây dựng hướng
+                  đến mục tiêu cung cấp cho sinh viên kiến thức chuyên sâu về kế
+                  toán - kiểm toán, kỹ năng nghề nghiệp và đạo đức nghề kiểm
+                  toán viên. Sinh viên tốt nghiệp có khả năng kiểm toán báo cáo
+                  tài chính, đánh giá hệ thống kiểm soát nội bộ, kiểm toán tuân
+                  thủ, kiểm toán hoạt động và tư vấn rủi ro tài chính cho các
+                  doanh nghiệp, ngân hàng và tổ chức công.
+                </p>
+
+                <p>
+                  Chương trình học được xây dựng khoa học, cập nhật các xu hướng
+                  mới của ngành như kiểm toán công nghệ thông tin, dữ liệu lớn,
+                  phân tích tài chính số, chuẩn mực quốc tế (ISA, IFRS), đồng
+                  thời lồng ghép nội dung liên ngành với các lĩnh vực tài chính,
+                  ngân hàng, quản trị và công nghệ thông tin.
+                </p>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <!-- Additional Content -->
-          <div class="student-life-detail-additional">
-            <div class="student-life-detail-additional__text">
-              <p>
-                Lorem Ipsum chỉ đơn giản là một đoạn văn bản giả, được dùng vào
-                việc trình bày và dàn trang phục vụ cho in ấn. Lorem Ipsum đã
-                được sử dụng như một văn bản chuẩn cho ngành công nghiệp in ấn
-                từ những năm 1500, khi một họa sĩ vô danh ghép nhiều đoạn văn
-                bản với nhau để tạo thành một bản mẫu văn bản. Đoạn văn bản này
-                không những đã tồn tại năm thế kỉ, mà khi được áp dụng vào tin
-                học văn phòng, nội dung của nó vẫn không hề bị thay đổi.
-              </p>
+      <!-- SECTION: Related Announcements -->
+      <section class="announcement-detail-related">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="announcement-detail-related__title">
+                Các Thông Báo Liên Quan
+              </h2>
+
+              <!-- Related Articles List -->
+              <div class="related-articles">
+                <!-- Article 1 -->
+                <a href="/danh-muc-thong-bao-chi-tiet" class="related-article">
+                  <div class="related-article__date-box">
+                    <span class="related-article__date-day">11</span>
+                    <span class="related-article__date-month">Th7</span>
+                    <span class="related-article__date-year">2025</span>
+                  </div>
+                  <div class="related-article__content">
+                    <h3 class="related-article__title">
+                      Thông Báo Về Kết Quả Lấy Phiếu Tín Nhiệm Đối Với...
+                    </h3>
+                    <p class="related-article__excerpt">
+                      Lorem ipsum chỉ đơn giản là một đoạn văn bản giả...
+                    </p>
+                    <span class="related-article__link">Xem chi tiết</span>
+                  </div>
+                </a>
+
+                <!-- Article 2 -->
+                <a href="/danh-muc-thong-bao-chi-tiet" class="related-article">
+                  <div class="related-article__date-box">
+                    <span class="related-article__date-day">11</span>
+                    <span class="related-article__date-month">Th7</span>
+                    <span class="related-article__date-year">2025</span>
+                  </div>
+                  <div class="related-article__content">
+                    <h3 class="related-article__title">
+                      Quyết Định V/V Công Nhận Đạt Trình Độ Tiếng Anh...
+                    </h3>
+                    <p class="related-article__excerpt">
+                      Lorem ipsum chỉ đơn giản là một đoạn văn bản giả...
+                    </p>
+                    <span class="related-article__link">Xem chi tiết</span>
+                  </div>
+                </a>
+
+                <!-- Article 3 -->
+                <a href="/danh-muc-thong-bao-chi-tiet" class="related-article">
+                  <div class="related-article__date-box">
+                    <span class="related-article__date-day">11</span>
+                    <span class="related-article__date-month">Th7</span>
+                    <span class="related-article__date-year">2025</span>
+                  </div>
+                  <div class="related-article__content">
+                    <h3 class="related-article__title">
+                      Quyết Định V/V Công Nhận Đạt Chuẩn Công Nghệ...
+                    </h3>
+                    <p class="related-article__excerpt">
+                      Lorem ipsum chỉ đơn giản là một đoạn văn bản giả...
+                    </p>
+                    <span class="related-article__link">Xem chi tiết</span>
+                  </div>
+                </a>
+
+                <!-- Article 4 -->
+                <a href="/danh-muc-thong-bao-chi-tiet" class="related-article">
+                  <div class="related-article__date-box">
+                    <span class="related-article__date-day">11</span>
+                    <span class="related-article__date-month">Th7</span>
+                    <span class="related-article__date-year">2025</span>
+                  </div>
+                  <div class="related-article__content">
+                    <h3 class="related-article__title">
+                      Quyết Định V/V Công Nhận Đạt Chuẩn Công Nghệ...
+                    </h3>
+                    <p class="related-article__excerpt">
+                      Lorem ipsum chỉ đơn giản là một đoạn văn bản giả...
+                    </p>
+                    <span class="related-article__link">Xem chi tiết</span>
+                  </div>
+                </a>
+
+                <!-- Article 5 -->
+                <a href="/danh-muc-thong-bao-chi-tiet" class="related-article">
+                  <div class="related-article__date-box">
+                    <span class="related-article__date-day">11</span>
+                    <span class="related-article__date-month">Th7</span>
+                    <span class="related-article__date-year">2025</span>
+                  </div>
+                  <div class="related-article__content">
+                    <h3 class="related-article__title">
+                      Quyết Định V/V Công Nhận Đạt Chuẩn Công Nghệ...
+                    </h3>
+                    <p class="related-article__excerpt">
+                      Lorem ipsum chỉ đơn giản là một đoạn văn bản giả...
+                    </p>
+                    <span class="related-article__link">Xem chi tiết</span>
+                  </div>
+                </a>
+              </div>
+
+              <!-- Pagination -->
+              <nav
+                class="announcement-detail-pagination"
+                aria-label="Phân trang"
+              >
+                <button
+                  class="pagination__btn pagination__btn--prev"
+                  aria-label="Trang trước"
+                >
+                  <img src="/assets/svg/d-arrow-left.svg" alt="" />
+                </button>
+                <button
+                  class="pagination__btn pagination__btn--next"
+                  aria-label="Trang sau"
+                >
+                  <img src="/assets/svg/d-arrow-right.svg" alt="" />
+                </button>
+              </nav>
             </div>
           </div>
         </div>
@@ -553,13 +685,52 @@
     <script src="/js/modules/mobile-nav.js"></script>
     <script src="/js/modules/header-search.js"></script>
 
-    <!-- Include Loader -->
+    <!-- Scripts -->
+    <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <script src="/js/main.js"></script>
+
+    <!-- Pagination Utility -->
+    <script src="/js/utils/pagination.js"></script>
     <script>
-      // Simple include loader
-      document.querySelectorAll("[data-include]").forEach(async (el) => {
-        const file = el.getAttribute("data-include");
-        const response = await fetch(file);
-        el.innerHTML = await response.text();
+      document.addEventListener("DOMContentLoaded", function () {
+        // Pagination Logic
+        const paginationNav = document.querySelector(
+          ".announcement-detail-pagination"
+        );
+        const allArticles = Array.from(
+          document.querySelectorAll(".related-article")
+        );
+
+        if (paginationNav && allArticles.length > 0) {
+          createPagination({
+            items: allArticles,
+            paginationNav: paginationNav,
+            itemsPerPage: 3,
+            scrollTarget: document.querySelector(
+              ".announcement-detail-related"
+            ),
+            scrollOffset: 100,
+            showOnMobile: true,
+            selectors: {
+              prevBtn: ".pagination__btn--prev",
+              nextBtn: ".pagination__btn--next",
+              pageItem: ".pagination__item",
+            },
+            classes: {
+              active: "pagination__item--active",
+            },
+            createPageElement: (pageNum, isActive) => {
+              const btn = document.createElement("button");
+              btn.className =
+                "pagination__item" +
+                (isActive ? " pagination__item--active" : "");
+              btn.type = "button";
+              btn.setAttribute("aria-label", `Trang ${pageNum}`);
+              btn.textContent = pageNum;
+              return btn;
+            },
+          });
+        }
       });
     </script>
   </body>
