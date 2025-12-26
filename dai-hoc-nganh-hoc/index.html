@@ -149,24 +149,12 @@
               width="50"
               height="72"
             />
-            <span class="navbar-brand__text d-inline">
+            <span class="navbar-brand__text">
               TRƯỜNG ĐẠI HỌC NGÂN HÀNG
               <br />
               THÀNH PHỐ HỒ CHÍ MINH
             </span>
           </a>
-          <button
-            class="navbar-search-btn d-inline-flex d-lg-none"
-            type="button"
-            aria-label="Tìm kiếm"
-          >
-            <span
-              class="iconify"
-              data-icon="iconoir:search"
-              data-width="20"
-              data-height="20"
-            ></span>
-          </button>
           <!-- Mobile Search Dialog -->
           <div class="mobile-search" data-mobile-search aria-hidden="true">
             <button
@@ -197,19 +185,33 @@
               </button>
             </div>
           </div>
-          <button
-            class="navbar-toggler"
-            type="button"
-            aria-label="Mở menu điều hướng"
-            data-nav-toggle
-          >
-            <img
-              src="/assets/svg/harmbuger.svg"
-              alt="Mở menu điều hướng"
-              width="24"
-              height="24"
-            />
-          </button>
+          <div class="navbar-actions">
+            <button
+              class="navbar-search-btn d-inline-flex"
+              type="button"
+              aria-label="Tìm kiếm"
+            >
+              <span
+                class="iconify"
+                data-icon="iconoir:search"
+                data-width="20"
+                data-height="20"
+              ></span>
+            </button>
+            <button
+              class="navbar-toggle"
+              type="button"
+              aria-label="Mở menu điều hướng"
+              data-nav-toggle
+            >
+              <img
+                src="/assets/svg/harmbuger.svg"
+                alt="Mở menu điều hướng"
+                width="24"
+                height="24"
+              />
+            </button>
+          </div>
           <div class="navbar-nav-wrapper d-none d-lg-block">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
