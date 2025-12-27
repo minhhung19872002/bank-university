@@ -188,6 +188,20 @@
 	}
 }
 
+@media (max-width: 1030px) {
+	.hero-section--banner {
+		height: auto;
+		min-height: unset;
+	}
+
+	.hero-section--banner .hero-section__bg {
+		position: relative; 
+		height: auto;
+		width: 100%;
+		overflow: hidden;
+	}
+}
+
 /* Mobile */
 @media (max-width: 575.98px) {
 	.hero-section {
@@ -197,8 +211,7 @@
 
 	/* Hero banner cho các trang con */
 	.hero-section--banner {
-		height: 320px;
-		min-height: 320px;
+		min-height: unset;
 	}
 
 	.feature-cards-section {
