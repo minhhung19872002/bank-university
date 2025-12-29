@@ -5,14 +5,13 @@
 .navbar {
 	padding: var(--sp-2) 0;
 	background-color: transparent;
-	margin: 0 72px;
 }
 
-.navbar .container {
+/* .navbar .container {
 	max-width: unset;
 	padding-right: 0;
 	padding-left: 0;
-}
+} */
 
 .navbar-actions {
 	display: none;
@@ -37,11 +36,11 @@
 }
 
 .navbar-brand__text {
-	margin-left: var(--sp-2);
+	margin-left: 6px; /* Giảm từ var(--sp-2) = 8px */
 	font-family: Montserrat, var(--font-primary);
-	font-size: 12px;
+	font-size: 11px; /* Giảm từ 12px */
 	font-weight: 600;
-	line-height: 1.3;
+	line-height: 1.25; /* Giảm từ 1.3 */
 	color: var(--brand-secondary);
 	text-transform: uppercase;
 }
@@ -62,8 +61,8 @@
 }
 
 .navbar__logo {
-	width: 48px;
-	height: 64px;
+	width: 44px; /* Giảm từ 48px */
+	height: 60px; /* Giảm từ 64px */
 	object-fit: contain;
 }
 
@@ -72,19 +71,19 @@
 }
 
 .navbar-nav {
-	gap: var(--sp-2);
+	gap: 2px; /* Giảm gap desktop xuống còn 2px */
 	align-items: center;
 	flex-wrap: nowrap;
 }
 
 .nav-link {
 	font-family: Montserrat, var(--font-primary);
-	font-size: 15px;
+	font-size: 14px; /* Giảm từ 15px */
 	font-weight: 600;
-	line-height: 19px;
+	line-height: 18px; /* Giảm từ 19px */
 	color: var(--gray-900);
 	text-transform: capitalize;
-	padding: var(--sp-2) var(--sp-1);
+	padding: var(--sp-2) 6px; /* Giảm từ var(--sp-1) = 4px lên 6px */
 	position: relative;
 	transition: color var(--transition-base);
 	white-space: nowrap;
@@ -142,16 +141,13 @@
 
 /* Responsive */
 @media (max-width: 1390px) {
-	.navbar {
-		margin: 0 50px;
-	}
 	.navbar__logo {
-		width: 40px;
+		width: 38px; /* Giảm từ 40px */
 		height: auto;
 	}
 
 	.navbar-brand__text {
-		font-size: 12px;
+		font-size: 10.5px; /* Giảm từ 12px */
 	}
 
 	.navbar-nav {
@@ -159,29 +155,28 @@
 	}
 
 	.nav-link {
-		font-size: 14px;
-		padding: var(--sp-2) 6px !important;
+		font-size: 14px; /* TĂNG lên 14px cho dễ đọc */
+		padding: var(--sp-2) 5px !important; /* Giảm từ 6px */
 	}
 }
 
 @media (max-width: 1198px) {
 	.navbar {
-		margin: 0 32px;
 		height: 68px;
 	}
 
 	.navbar__logo {
-		width: 36px;
+		width: 34px; /* Giảm từ 36px */
 		height: auto;
 	}
 
 	.navbar-brand__text {
-		font-size: 10px;
+		font-size: 9.5px; /* Giảm từ 10px */
 	}
 
 	.nav-link {
-		font-size: 12px;
-		padding: var(--sp-2) 6px !important;
+		font-size: 13px; /* TĂNG lên 13px cho dễ đọc */
+		padding: var(--sp-2) 4px !important; /* Giảm từ 6px */
 	}
 }
 
@@ -214,7 +209,13 @@
 /* Mobile specific adjustments */
 @media (max-width: 575px) {
 	.navbar__logo {
-		width: 40px;
+		width: 36px;
+		height: auto;
+	}
+
+	.navbar-brand__text {
+		font-size: 10px;
+		line-height: 1.2;
 	}
 
 	.nav-link {
@@ -225,7 +226,6 @@
 @media (max-width: 360px) {
 	.navbar {
 		height: 64px;
-		margin: 0 16px;
 	}
 	.navbar__logo {
 		width: 32px;

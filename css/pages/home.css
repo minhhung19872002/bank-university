@@ -926,7 +926,6 @@ a.event-card--featured:hover {
 	}
 
 	.about-section > .container {
-		padding: 0 calc(var(--bs-gutter-x) * 0.5);
 		max-width: var(--container-xl);
 	}
 
@@ -937,6 +936,7 @@ a.event-card--featured:hover {
 	.about-section__content-col,
 	.about-section__image-col {
 		padding: 0 calc(var(--bs-gutter-x) * 0.5);
+		padding-left: 0;
 	}
 
 	.about-section__content-col {
