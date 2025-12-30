@@ -208,33 +208,7 @@
             </button>
           </div>
           <div class="navbar-nav-wrapper d-none d-lg-block">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="/" aria-current="page">Trang Chủ</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/gioi-thieu/">Lý Do Chọn HUB</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/dai-hoc/">Chương Trình Đào Tạo</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/doi-song-sinh-vien/"
-                  >Đời Sống Sinh Viên</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/tin-tuyen-sinh/"
-                  >Tin Tức Tuyển Sinh</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/danh-muc-thong-bao/">Thông Báo</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/su-kien/">Sự Kiện</a>
-              </li>
-            </ul>
+            <ul id="main-navbar" class="navbar-nav ms-auto"></ul>
           </div>
         </div>
       </nav>
@@ -936,6 +910,7 @@
         el.innerHTML = await response.text();
       });
     </script>
+    <script src="/js/modules/navbar.js"></script>
 
     <!-- History Gallery Drag Scroll -->
     <script>

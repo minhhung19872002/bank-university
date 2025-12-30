@@ -1,3 +1,52 @@
+/* Hover-fix: invisible overlay dưới nav-link để giữ hover khi rê xuống dropdown */
+.nav-dropdown-hoverfix .nav-link-wrapper {
+	position: relative;
+	display: flex;
+	align-items: center;
+}
+.nav-dropdown-hoverfix .nav-hover-fix {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100%;
+	height: 18px;
+	z-index: 10;
+	background: transparent;
+	pointer-events: auto;
+	display: block;
+}
+/* Dropdown menu custom */
+.navbar-nav .dropdown-menu {
+	min-width: 220px;
+	border-radius: 8px;
+	border: 1px solid var(--gray-200);
+	box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.08);
+	padding: 8px 0;
+	margin-top: 8px;
+	display: none;
+	z-index: 1050;
+}
+
+.navbar-nav .dropdown:hover > .dropdown-menu {
+	display: block;
+}
+
+.navbar-nav .dropdown-item {
+	font-family: Montserrat, var(--font-primary);
+	font-size: 15px;
+	color: var(--gray-900);
+	padding: 8px 24px;
+	border-radius: 4px;
+	transition: background 0.18s, color 0.18s;
+	position: relative;
+}
+.navbar-nav .dropdown-item:hover,
+.navbar-nav .dropdown-item:focus {
+	background: transparent;
+	color: var(--brand-primary);
+	font-weight: 500;
+	text-decoration: none;
+}
 /* ================================================
    Navbar Component
    ================================================ */
@@ -90,28 +139,40 @@
 }
 
 /* Hover underline animation */
-.nav-link::after {
+
+/* Underline cho tất cả nav-link (kể cả dropdown), dày 2px */
+.navbar-nav .nav-link {
+	position: relative;
+}
+.navbar-nav .nav-link::after {
 	content: "";
 	position: absolute;
-	bottom: 0;
 	left: 0;
+	right: 0;
+	bottom: 0;
 	width: 0;
-	height: 1px;
+	height: 1.5px;
 	background-color: var(--brand-primary);
-	transition: width 0.3s ease;
+	transition: width 0.22s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-.nav-link:hover::after {
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link:focus::after,
+.navbar-nav .nav-item.show > .nav-link::after {
 	width: 100%;
 }
-
-.nav-link:not(:hover)::after {
-	left: auto;
-	right: 0;
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+	color: var(--brand-primary);
 }
 
-.nav-link:hover {
-	color: var(--brand-primary);
+/* Dropdown hover giữ menu khi rê vào menu con */
+.navbar-nav .dropdown:hover > .dropdown-menu,
+.navbar-nav .dropdown:focus-within > .dropdown-menu {
+	display: block;
+}
+.navbar-nav .dropdown-menu:hover,
+.navbar-nav .dropdown-menu:focus {
+	display: block;
 }
 
 /* Active nav-link - Override Bootstrap defaults */
