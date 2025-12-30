@@ -1,3 +1,8 @@
+/* Helper: Remove margin left/right for row (dormitory section) */
+.row--no-margin-x {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
 /* ================================================
    Base Styles
    ================================================ */
@@ -125,4 +130,75 @@ p {
    ================================================ */
 .container {
 	max-width: 1200px;
+}
+
+/* ================================================
+   Container Padding - Đồng bộ cho tất cả component
+   ================================================ */
+
+/* Base: tất cả container đều có padding mặc định */
+
+/* Mobile: < 768px - tăng gấp đôi gutter */
+.container,
+.container-fluid,
+.container-sm,
+.container-md,
+.container-lg,
+.container-xl,
+.container-xxl {
+	--bs-gutter-x: 2.5rem; /* 40px mỗi bên cho mobile */
+	padding-right: calc(var(--bs-gutter-x) * 0.5);
+	padding-left: calc(var(--bs-gutter-x) * 0.5);
+}
+
+/* Tablet: >= 768px */
+@media (min-width: 768px) {
+	.container,
+	.container-fluid,
+	.container-sm,
+	.container-md,
+	.container-lg,
+	.container-xl,
+	.container-xxl {
+		--bs-gutter-x: 2rem; /* 32px mỗi bên */
+	}
+}
+
+/* Desktop: >= 992px */
+@media (min-width: 992px) {
+	.container,
+	.container-fluid,
+	.container-sm,
+	.container-md,
+	.container-lg,
+	.container-xl,
+	.container-xxl {
+		--bs-gutter-x: 2.5rem; /* 40px mỗi bên - GIẢM từ 48px */
+	}
+}
+
+/* Large Desktop: >= 1200px */
+@media (min-width: 1200px) {
+	.container,
+	.container-fluid,
+	.container-sm,
+	.container-md,
+	.container-lg,
+	.container-xl,
+	.container-xxl {
+		--bs-gutter-x: 3rem; /* 48px mỗi bên - GIẢM từ 64px */
+	}
+}
+
+/* Extra Large: >= 1400px */
+@media (min-width: 1400px) {
+	.container,
+	.container-fluid,
+	.container-sm,
+	.container-md,
+	.container-lg,
+	.container-xl,
+	.container-xxl {
+		--bs-gutter-x: 3.5rem; /* 56px mỗi bên - GIẢM từ 80px */
+	}
 }

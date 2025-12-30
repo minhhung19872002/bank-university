@@ -59,12 +59,10 @@
     <link rel="stylesheet" href="/css/components/breadcrumb.css" />
     <link rel="stylesheet" href="/css/components/hero.css" />
     <link rel="stylesheet" href="/css/pages/student-life.css" />
-  </head>
-  <body>
     <!-- HEADER: Topbar + Navbar -->
     <header class="header-wrapper" data-header>
       <div class="topbar">
-        <div class="container-fluid">
+        <div class="container">
           <div class="row align-items-center">
             <div class="col-12 col-lg-6">
               <div class="topbar__contact">
@@ -208,33 +206,7 @@
             </button>
           </div>
           <div class="navbar-nav-wrapper d-none d-lg-block">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="/" aria-current="page">Trang Chủ</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/gioi-thieu/">Lý Do Chọn HUB</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/dai-hoc/">Chương Trình Đào Tạo</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/doi-song-sinh-vien/"
-                  >Đời Sống Sinh Viên</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/tin-tuyen-sinh/"
-                  >Tin Tức Tuyển Sinh</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/danh-muc-thong-bao/">Thông Báo</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/su-kien/">Sự Kiện</a>
-              </li>
-            </ul>
+            <ul id="main-navbar" class="navbar-nav ms-auto"></ul>
           </div>
         </div>
       </nav>
@@ -700,7 +672,7 @@
 
           <div class="row justify-content-center">
             <div class="col-12" style="max-width: 1200px">
-              <div class="row g-4">
+              <div class="row g-4 row--no-margin-x">
                 <!-- Room Card 1 -->
                 <div class="col-12 col-md-6 col-lg-4">
                   <article class="dorm-card">
@@ -967,6 +939,7 @@
     <script src="/js/utils/router.js"></script>
     <script src="/js/modules/mobile-nav.js"></script>
     <script src="/js/modules/header-search.js"></script>
+    <script src="/js/modules/navbar.js"></script>
 
     <!-- Include Loader -->
     <script>
