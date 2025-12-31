@@ -20,8 +20,8 @@
 }
 
 .program-intro__image {
-	width: 553px;
-	height: 366px;
+	width: 55.3rem; /* 553px */
+	height: 36.6rem; /* 366px */
 	border-radius: var(--radius-20);
 	object-fit: cover;
 }
@@ -30,8 +30,8 @@
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	width: 162px;
-	height: 105px;
+	width: 16.2rem; /* 162px */
+	height: 10.5rem; /* 105px */
 	background-image: url("/assets/images/program_decorator_1.png");
 	background-size: cover;
 	background-position: center;
@@ -129,7 +129,7 @@
 	display: none;
 	align-items: center;
 	justify-content: center;
-	gap: 7px;
+	gap: 0.7rem; /* 7px */
 	margin-top: var(--sp-6);
 }
 
@@ -145,8 +145,8 @@
 }
 
 .program-pagination__btn {
-	width: 40px;
-	height: 40px;
+	width: 4rem; /* 40px */
+	height: 4rem; /* 40px */
 	border: none;
 	background-color: transparent;
 	background-size: cover;
@@ -184,8 +184,8 @@
 }
 
 .program-pagination__btn img {
-	width: 11px;
-	height: 10px;
+	width: 1.1rem; /* 11px */
+	height: 1rem; /* 10px */
 }
 
 .program-pagination__btn:hover:not(:disabled) {
@@ -199,8 +199,8 @@
 
 /* Pagination Page Items (dynamically generated) */
 .program-pagination__item {
-	width: 40px;
-	height: 40px;
+	width: 4rem; /* 40px */
+	height: 4rem; /* 40px */
 	border: none;
 	border-radius: 50%;
 	background-color: var(--gray-200, #e5e7eb);
@@ -246,7 +246,7 @@
 
 	.program-intro__image {
 		width: 100%;
-		max-width: 480px;
+		max-width: 48rem; /* 480px */
 		height: auto;
 	}
 
@@ -343,8 +343,8 @@
 		scrollbar-width: none;
 		-ms-overflow-style: none;
 		gap: var(--sp-3);
-		margin: 0 -16px;
-		padding: var(--sp-4) 16px 0;
+		margin: 0 -1.6rem; /* -16px */
+		padding: var(--sp-4) 1.6rem 0; /* 16px */
 	}
 
 	.program-cards-grid::-webkit-scrollbar {
@@ -352,9 +352,9 @@
 	}
 
 	.program-cards-grid .program-card-item {
-		flex: 0 0 calc(100% - 32px);
-		max-width: calc(100% - 32px);
-		min-width: calc(100% - 32px);
+		flex: 0 0 calc(100% - 3.2rem); /* 32px */
+		max-width: calc(100% - 3.2rem); /* 32px */
+		min-width: calc(100% - 3.2rem); /* 32px */
 		scroll-snap-align: center;
 	}
 
@@ -368,8 +368,8 @@
 	}
 
 	.program-slider-nav__btn {
-		width: 40px;
-		height: 40px;
+		width: 4rem; /* 40px */
+		height: 4rem; /* 40px */
 		border-radius: 50%;
 		background-color: var(--gray-200, #e5e7eb);
 		border: none;
@@ -390,8 +390,8 @@
 	}
 
 	.program-slider-nav__btn img {
-		width: 11px;
-		height: 10px;
+		width: 1.1rem; /* 11px */
+		height: 1rem; /* 10px */
 		object-fit: contain;
 	}
 }

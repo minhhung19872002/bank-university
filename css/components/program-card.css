@@ -1,9 +1,7 @@
 /* ============================================
    COMPONENT: Program Card
-   Breakpoints: Desktop (default), Tablet (max-width: 1199px), Mobile (max-width: 575px)
    ============================================ */
 
-/* Link reset for clickable cards */
 a.program-card {
 	text-decoration: none;
 	color: inherit;
@@ -14,23 +12,23 @@ a.program-card {
 .program-card {
 	position: relative;
 	width: 100%;
-	max-width: 387px;
+	max-width: 38.7rem;
 	background-color: var(--color-light);
-	border: 1px solid #e1e1e1;
-	border-radius: 50px 50px 50px 0;
+	border: 0.1rem solid #e1e1e1;
+	border-radius: 5rem 5rem 5rem 0;
 	transition: all var(--transition-base);
 	margin: 0 auto;
 }
 
 .program-card:hover {
 	box-shadow: var(--shadow-2);
-	transform: translateY(-4px);
+	transform: translateY(-0.4rem);
 }
 
 /* Image Section */
 .program-card__image-wrapper {
 	position: relative;
-	padding: 21px 22px 0;
+	padding: 2.1rem 2.2rem 0;
 }
 
 .program-card__image {
@@ -38,19 +36,19 @@ a.program-card {
 	height: auto;
 	aspect-ratio: 344 / 229;
 	object-fit: cover;
-	border-radius: 40px 40px 40px 0;
+	border-radius: 4rem 4rem 4rem 0;
 }
 
 .program-card__badge {
 	position: absolute;
-	top: 36px;
-	right: 37px;
+	top: 3.6rem;
+	right: 3.7rem;
 	display: flex;
 	align-items: center;
-	gap: 3px;
+	gap: 0.3rem;
 	padding: var(--sp-2) var(--sp-1);
 	background-color: var(--brand-primary);
-	border-radius: 15px 20px 20px 0;
+	border-radius: 1.5rem 2rem 2rem 0;
 	font-family: var(--font-family-heading);
 	font-size: var(--fs-body-sm);
 	font-weight: var(--fw-medium);
@@ -60,8 +58,8 @@ a.program-card {
 }
 
 .program-card__badge-icon {
-	width: 17px;
-	height: 17px;
+	width: 1.7rem;
+	height: 1.7rem;
 }
 
 .program-card__badge-text {
@@ -75,7 +73,7 @@ a.program-card {
 
 /* Content Section */
 .program-card__content {
-	padding: 21px 21px 16px;
+	padding: 2.1rem 2.1rem 1.6rem;
 }
 
 .program-card__meta {
@@ -86,8 +84,8 @@ a.program-card {
 }
 
 .program-card__meta-icon {
-	width: 18px;
-	height: 18px;
+	width: 1.8rem;
+	height: 1.8rem;
 }
 
 .program-card__meta-text {
@@ -136,23 +134,23 @@ a.program-card {
 	align-items: center;
 	gap: var(--sp-4);
 	padding-top: var(--sp-2);
-	border-top: 1px solid #ebebeb;
+	border-top: 0.1rem solid #ebebeb;
 }
 
 .program-card__info {
 	display: flex;
 	align-items: center;
-	gap: 3px;
+	gap: 0.3rem;
 }
 
 .program-card__info-icon {
-	width: 20px;
-	height: 20px;
+	width: 2rem;
+	height: 2rem;
 }
 
 .program-card__info:nth-child(2) .program-card__info-icon {
-	width: 15px;
-	height: 15px;
+	width: 1.5rem;
+	height: 1.5rem;
 }
 
 .program-card__info-text {
@@ -164,7 +162,7 @@ a.program-card {
 	text-transform: capitalize;
 }
 
-/* Old structure support for backward compatibility */
+/* Old structure support */
 .program-card__lessons {
 	display: flex;
 	align-items: center;
@@ -173,8 +171,8 @@ a.program-card {
 }
 
 .program-card__lessons-icon {
-	width: 18px;
-	height: 18px;
+	width: 1.8rem;
+	height: 1.8rem;
 	object-fit: contain;
 }
 
@@ -189,16 +187,16 @@ a.program-card {
 
 .program-card__divider {
 	width: 100%;
-	height: 1px;
+	height: 0.1rem;
 	background-color: #ebebeb;
-	border: 1px solid #e1e1e1;
+	border: 0.1rem solid #e1e1e1;
 	margin-bottom: var(--sp-3);
 }
 
 .program-card__meta-item {
 	display: flex;
 	align-items: center;
-	gap: 3px;
+	gap: 0.3rem;
 }
 
 .program-card__meta-item span {
@@ -210,9 +208,7 @@ a.program-card {
 	text-transform: capitalize;
 }
 
-/* ================================================
-   TABLET (max-width: 1199px)
-   ================================================ */
+/* Tablet */
 @media (max-width: 1199px) {
 	.program-card {
 		max-width: 100%;
@@ -227,8 +223,8 @@ a.program-card {
 	}
 
 	.program-card__badge {
-		top: 30px;
-		right: 30px;
+		top: 3rem;
+		right: 3rem;
 	}
 
 	.program-card__content {
@@ -236,12 +232,10 @@ a.program-card {
 	}
 }
 
-/* ================================================
-   MOBILE (max-width: 575px)
-   ================================================ */
+/* Mobile */
 @media (max-width: 575px) {
 	.program-card {
-		border-radius: 30px 30px 30px 0;
+		border-radius: 3rem 3rem 3rem 0;
 	}
 
 	.program-card__image-wrapper {
@@ -249,19 +243,19 @@ a.program-card {
 	}
 
 	.program-card__image {
-		border-radius: 25px 25px 25px 0;
+		border-radius: 2.5rem 2.5rem 2.5rem 0;
 	}
 
 	.program-card__badge {
-		top: 25px;
-		right: 25px;
+		top: 2.5rem;
+		right: 2.5rem;
 		padding: var(--sp-1) var(--sp-1);
-		border-radius: 12px 15px 15px 0;
+		border-radius: 1.2rem 1.5rem 1.5rem 0;
 	}
 
 	.program-card__badge-icon {
-		width: 14px;
-		height: 14px;
+		width: 1.4rem;
+		height: 1.4rem;
 	}
 
 	.program-card__badge-text {
@@ -291,8 +285,8 @@ a.program-card {
 
 	.program-card__info-icon,
 	.program-card__info:nth-child(2) .program-card__info-icon {
-		width: 16px;
-		height: 16px;
+		width: 1.6rem;
+		height: 1.6rem;
 	}
 
 	.program-card__info-text {

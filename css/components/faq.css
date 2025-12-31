@@ -5,16 +5,16 @@
 .faq-list {
 	display: flex;
 	flex-direction: column;
-	gap: 13px;
+	gap: 1.3rem;
 	counter-reset: faq-counter;
 }
 
 .faq-item {
-	border-radius: 8px;
+	border-radius: 0.8rem;
 	overflow: hidden;
 	background-color: #ffffff;
-	box-shadow: 0 2px 4px rgba(15, 23, 42, 0.06);
-	border: 1px solid transparent;
+	box-shadow: 0 0.2rem 0.4rem rgba(15, 23, 42, 0.06);
+	border: 0.1rem solid transparent;
 	transition: box-shadow 0.3s ease, transform 0.3s ease,
 		background-color 0.3s ease, border-color 0.3s ease;
 	counter-increment: faq-counter;
@@ -22,7 +22,7 @@
 
 .faq-item--active {
 	background-color: var(--brand-secondary);
-	box-shadow: 0 4px 16px rgba(190, 24, 93, 0.18);
+	box-shadow: 0 0.4rem 1.6rem rgba(190, 24, 93, 0.18);
 	border-color: #ffeff3;
 }
 
@@ -30,7 +30,7 @@
 	width: 100%;
 	background: transparent;
 	border: none;
-	padding: 26px 24px;
+	padding: 2.6rem 2.4rem;
 	text-align: left;
 	cursor: pointer;
 	transition: all 0.3s ease;
@@ -52,7 +52,7 @@
 .faq-item__title::before {
 	content: counter(faq-counter, decimal-leading-zero) ". ";
 	font-weight: 600;
-	margin-right: 8px;
+	margin-right: 0.8rem;
 	color: var(--brand-primary);
 }
 
@@ -67,10 +67,10 @@
 
 .faq-item__icon {
 	position: relative;
-	width: 16px;
-	height: 16px;
+	width: 1.6rem;
+	height: 1.6rem;
 	flex-shrink: 0;
-	margin-left: 20px;
+	margin-left: 2rem;
 }
 
 .faq-item__icon::before,
@@ -80,18 +80,18 @@
 	top: 50%;
 	left: 50%;
 	background-color: #d3d3d3;
-	border-radius: 60px;
+	border-radius: 6rem;
 }
 
 .faq-item__icon::before {
-	width: 16px;
-	height: 2px;
+	width: 1.6rem;
+	height: 0.2rem;
 	transform: translate(-50%, -50%);
 }
 
 .faq-item__icon::after {
-	width: 2px;
-	height: 16px;
+	width: 0.2rem;
+	height: 1.6rem;
 	transform: translate(-50%, -50%);
 	transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -121,8 +121,8 @@
 }
 
 .faq-item--active .faq-item__content {
-	max-height: 500px;
-	padding: 0 30px 30px 30px;
+	max-height: 50rem;
+	padding: 0 3rem 3rem 3rem;
 }
 
 .faq-item__description {
@@ -137,22 +137,18 @@
 /* Responsive */
 @media (min-width: 576px) and (max-width: 991px) {
 	.faq-list {
-		gap: 12px;
+		gap: 1.2rem;
 	}
-
 	.faq-item__header {
-		padding: 22px 20px;
+		padding: 2.2rem 2rem;
 	}
-
 	.faq-item__title {
 		font-size: var(--fs-300);
 		line-height: 1.3;
 	}
-
 	.faq-item--active .faq-item__content {
-		padding: 0 25px 25px 25px;
+		padding: 0 2.5rem 2.5rem 2.5rem;
 	}
-
 	.faq-item__description {
 		font-size: var(--fs-200);
 		line-height: 1.5;
@@ -161,66 +157,52 @@
 
 @media (max-width: 575px) {
 	.faq-list {
-		gap: 10px;
+		gap: 1rem;
 	}
-
 	.faq-item__header {
-		padding: 18px 16px;
+		padding: 1.8rem 1.6rem;
 	}
-
 	.faq-item__title {
 		font-size: var(--fs-300);
 		line-height: 1.3;
 	}
-
 	.faq-item__icon {
-		width: 14px;
-		height: 14px;
-		margin-left: 15px;
+		width: 1.4rem;
+		height: 1.4rem;
+		margin-left: 1.5rem;
 	}
-
 	.faq-item__icon::before {
-		width: 14px;
+		width: 1.4rem;
 	}
-
 	.faq-item__icon::after {
-		height: 14px;
+		height: 1.4rem;
 	}
-
 	.faq-item--active .faq-item__content {
-		padding: 0 20px 20px 20px;
+		padding: 0 2rem 2rem 2rem;
 	}
-
 	.faq-item__description {
 		font-size: var(--fs-200);
 		line-height: 1.5;
 	}
-
-	/* Mobile-only style for active FAQ item: white card with primary border */
 	.faq-item {
 		background-color: #ffffff;
-		box-shadow: 0 2px 4px rgba(15, 23, 42, 0.06);
-		border: 1px solid transparent;
+		box-shadow: 0 0.2rem 0.4rem rgba(15, 23, 42, 0.06);
+		border: 0.1rem solid transparent;
 	}
-
 	.faq-item--active {
 		background-color: #ffffff;
-		box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+		box-shadow: 0 0.4rem 1.2rem rgba(15, 23, 42, 0.08);
 		border-color: var(--brand-primary);
 	}
-
 	.faq-item--active .faq-item__title {
 		color: var(--gray-900);
 	}
-
 	.faq-item--active .faq-item__title::before {
 		color: var(--brand-primary);
 	}
-
 	.faq-item--active .faq-item__description {
 		color: var(--gray-800);
 	}
-
 	.faq-item--active .faq-item__icon::before,
 	.faq-item--active .faq-item__icon::after {
 		background-color: #d3d3d3;

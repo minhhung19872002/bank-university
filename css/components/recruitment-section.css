@@ -1,6 +1,5 @@
 /* ============================================
    COMPONENT: Recruitment Section
-   Breakpoints: Desktop (default), Tablet (max-width: 1199px), Mobile (max-width: 575px)
    ============================================ */
 
 /* Desktop-first base styles */
@@ -29,8 +28,8 @@
 /* Image */
 .recruitment-section__image {
 	width: 100%;
-	max-width: 478px;
-	height: 730px;
+	max-width: 47.8rem;
+	height: 73rem;
 	border-radius: var(--radius-40);
 	object-fit: cover;
 }
@@ -44,7 +43,7 @@
 	font-family: var(--font-family-heading);
 	font-size: var(--section-subtitle);
 	font-weight: var(--fw-semibold);
-	line-height: 21.942px;
+	line-height: 2.2rem;
 	color: var(--color-light);
 	text-transform: capitalize;
 	margin-bottom: var(--sp-4);
@@ -63,10 +62,10 @@
 	font-family: var(--font-family-heading);
 	font-size: var(--section-description);
 	font-weight: var(--fw-regular);
-	line-height: 22px;
+	line-height: 2.2rem;
 	color: var(--color-light);
 	margin-bottom: var(--sp-6);
-	max-width: 616px;
+	max-width: 61.6rem;
 }
 
 /* Steps Container */
@@ -86,10 +85,10 @@
 .recruitment-step {
 	position: relative;
 	flex-shrink: 0;
-	min-width: 200px;
-	max-width: 200px;
-	width: 200px;
-	height: 200px;
+	min-width: 20rem;
+	max-width: 20rem;
+	width: 20rem;
+	height: 20rem;
 	text-align: center;
 	background-color: var(--color-light);
 	border-radius: 50%;
@@ -103,12 +102,12 @@
 .recruitment-step__number {
 	position: absolute;
 	top: 50%;
-	left: 15px;
+	left: 1.5rem;
 	transform: translateY(-50%);
 	font-family: var(--font-family-heading);
-	font-size: 140px;
+	font-size: 14rem;
 	font-weight: var(--fw-regular);
-	line-height: 22px;
+	line-height: 2.2rem;
 	color: rgba(164, 16, 52, 0.13);
 	pointer-events: none;
 	user-select: none;
@@ -120,8 +119,8 @@
 	top: 0;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 52px;
-	height: 52px;
+	width: 5.2rem;
+	height: 5.2rem;
 	z-index: 1;
 }
 
@@ -141,8 +140,8 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 30px;
-	height: 30px;
+	width: 3rem;
+	height: 3rem;
 	object-fit: contain;
 	z-index: 2;
 }
@@ -152,7 +151,7 @@
 	font-family: var(--font-family-heading);
 	font-size: var(--fs-body);
 	font-weight: var(--fw-semibold);
-	line-height: 22px;
+	line-height: 2.2rem;
 	color: var(--gray-900);
 	text-transform: capitalize;
 	margin-bottom: var(--sp-2);
@@ -168,7 +167,7 @@
 	font-family: var(--font-family-heading);
 	font-size: var(--fs-body-sm);
 	font-weight: var(--fw-regular);
-	line-height: 18px;
+	line-height: 1.8rem;
 	color: var(--gray-900);
 	text-align: center;
 	z-index: 1;
@@ -187,8 +186,8 @@
 	}
 
 	.recruitment-section__image {
-		max-width: 400px;
-		height: 610px;
+		max-width: 40rem;
+		height: 61rem;
 		margin: 0 auto var(--sp-5);
 	}
 
@@ -221,26 +220,26 @@
 	}
 
 	.recruitment-step {
-		min-width: 180px;
-		max-width: 180px;
-		width: 180px;
-		height: 180px;
+		min-width: 18rem;
+		max-width: 18rem;
+		width: 18rem;
+		height: 18rem;
 	}
 
 	.recruitment-step__number {
-		font-size: 120px;
+		font-size: 12rem;
 	}
 
 	.recruitment-step__icon-wrapper {
 		top: 0;
 		transform: translate(-50%, -50%);
-		width: 46px;
-		height: 46px;
+		width: 4.6rem;
+		height: 4.6rem;
 	}
 
 	.recruitment-step__icon {
-		width: 26px;
-		height: 26px;
+		width: 2.6rem;
+		height: 2.6rem;
 	}
 
 	.recruitment-step__title {
@@ -293,26 +292,26 @@
 	}
 
 	.recruitment-step {
-		min-width: 278px;
-		max-width: 278px;
-		width: 278px;
-		height: 278px;
+		min-width: 27.8rem;
+		max-width: 27.8rem;
+		width: 27.8rem;
+		height: 27.8rem;
 	}
 
 	.recruitment-step__number {
-		font-size: 140px;
+		font-size: 14rem;
 	}
 
 	.recruitment-step__icon-wrapper {
 		top: 0;
 		transform: translate(-50%, -50%);
-		width: 96px;
-		height: 96px;
+		width: 9.6rem;
+		height: 9.6rem;
 	}
 
 	.recruitment-step__icon {
-		width: 48px;
-		height: 48px;
+		width: 4.8rem;
+		height: 4.8rem;
 	}
 
 	.recruitment-step__title {

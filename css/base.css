@@ -3,6 +3,7 @@
 	margin-left: 0 !important;
 	margin-right: 0 !important;
 }
+
 /* ================================================
    Base Styles
    ================================================ */
@@ -19,8 +20,8 @@ html {
 
 body {
 	font-family: var(--font-family-base);
-	font-size: var(--fs-body); /* 16px mobile, scale theo breakpoint */
-	line-height: var(--lh-body-normal); /* 1.5 */
+	font-size: var(--fs-body);
+	line-height: var(--lh-body-normal);
 	color: var(--gray-900);
 	background-color: var(--color-light);
 	overflow-x: hidden;
@@ -46,45 +47,36 @@ button {
    Typography
    ================================================ */
 
-/* Heading mặc định map theo system Option B */
+/* Heading mặc định */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-	font-family: var(--font-family-heading); /* Montserrat */
+	font-family: var(--font-family-heading);
 	font-weight: var(--fw-bold);
 	line-height: var(--lh-heading-tight);
 	margin-bottom: var(--sp-3);
 }
 
-/* Page / hero title (banner) */
 h1 {
-	font-size: var(--fs-page-title); /* 32 / 36 / 42 */
+	font-size: var(--fs-page-title);
 }
-
-/* Section title chính: Thông Tin Tuyển Sinh, Tiêu Chí, ... */
 h2 {
-	font-size: var(--fs-heading-xl); /* 26 / 30 / 32 */
+	font-size: var(--fs-heading-xl);
 }
-
-/* Subtitle, card title, FAQ question, tên giảng viên */
 h3 {
-	font-size: var(--fs-heading-m); /* 20 / 22 / 24 */
+	font-size: var(--fs-heading-m);
 }
-
-/* Các heading nhỏ hơn, ít dùng hơn */
 h4 {
-	font-size: var(--fs-body); /* 16 */
+	font-size: var(--fs-body);
 }
-
 h5 {
-	font-size: var(--fs-body-sm); /* 14 */
+	font-size: var(--fs-body-sm);
 }
-
 h6 {
-	font-size: var(--fs-caption); /* 13 / 14 */
+	font-size: var(--fs-caption);
 }
 
 p {
@@ -96,7 +88,6 @@ p {
 	color: var(--color-light) !important;
 }
 
-/* Bạn có thể thêm: */
 .text-body {
 	font-size: var(--fs-body);
 	line-height: var(--lh-body-normal);
@@ -116,29 +107,18 @@ p {
 	color: var(--gray-600);
 }
 
-/* ================================================
-   Icon utilities
-   ================================================ */
+/* Icon utilities */
 .icon-menu {
-	width: 16px;
-	height: 16px;
+	width: 1.6rem;
+	height: 1.6rem;
 	flex-shrink: 0;
 }
 
 /* ================================================
-   Container utilities
-   ================================================ */
-.container {
-	max-width: 1200px;
-}
-
-/* ================================================
-   Container Padding - Đồng bộ cho tất cả component
+   Container Config - FLUID SCALE
    ================================================ */
 
-/* Base: tất cả container đều có padding mặc định */
-
-/* Mobile: < 768px - tăng gấp đôi gutter */
+/* Mặc định cho Mobile/Tablet (Sử dụng padding để tạo khoảng trắng 2 bên) */
 .container,
 .container-fluid,
 .container-sm,
@@ -146,59 +126,44 @@ p {
 .container-lg,
 .container-xl,
 .container-xxl {
-	--bs-gutter-x: 2.5rem; /* 40px mỗi bên cho mobile */
+	--bs-gutter-x: 2.5rem;
 	padding-right: calc(var(--bs-gutter-x) * 0.5);
 	padding-left: calc(var(--bs-gutter-x) * 0.5);
+	width: 100%;
+	margin-right: auto;
+	margin-left: auto;
 }
 
-/* Tablet: >= 768px */
+/* Tablet (Giữ max-width cứng theo pixel/rem để ổn định) */
 @media (min-width: 768px) {
-	.container,
-	.container-fluid,
-	.container-sm,
-	.container-md,
-	.container-lg,
-	.container-xl,
-	.container-xxl {
-		--bs-gutter-x: 2rem; /* 32px mỗi bên */
+	.container {
+		max-width: 72rem;
 	}
 }
 
-/* Desktop: >= 992px */
 @media (min-width: 992px) {
-	.container,
-	.container-fluid,
-	.container-sm,
-	.container-md,
-	.container-lg,
-	.container-xl,
-	.container-xxl {
-		--bs-gutter-x: 2.5rem; /* 40px mỗi bên - GIẢM từ 48px */
+	.container {
+		max-width: 96rem;
 	}
 }
 
-/* Large Desktop: >= 1200px */
-@media (min-width: 1200px) {
+/* QUAN TRỌNG: FLUID SCALE CHO DESKTOP LỚN (>= 1024px) */
+@media (min-width: 1024px) {
 	.container,
-	.container-fluid,
-	.container-sm,
-	.container-md,
 	.container-lg,
+	.container-md,
+	.container-sm,
 	.container-xl,
 	.container-xxl {
-		--bs-gutter-x: 3rem; /* 48px mỗi bên - GIẢM từ 64px */
-	}
-}
+		/* Chuyển max-width sang rem. 
+           132rem sẽ tương đương 1320px ở màn hình 1920px.
+           Khi màn hình to hơn 1920px -> 1rem > 10px -> Container > 1320px (Scale lên).
+        */
+		max-width: 132rem !important;
 
-/* Extra Large: >= 1400px */
-@media (min-width: 1400px) {
-	.container,
-	.container-fluid,
-	.container-sm,
-	.container-md,
-	.container-lg,
-	.container-xl,
-	.container-xxl {
-		--bs-gutter-x: 3.5rem; /* 56px mỗi bên - GIẢM từ 80px */
+		/* Gutter cũng scale theo rem */
+		--bs-gutter-x: 4rem;
+		padding-right: calc(var(--bs-gutter-x) * 0.5);
+		padding-left: calc(var(--bs-gutter-x) * 0.5);
 	}
 }

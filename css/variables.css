@@ -1,4 +1,5 @@
 :root {
+	/* --- MÀU SẮC --- */
 	--brand-primary: #a61b28;
 	--brand-secondary: #213368;
 
@@ -25,98 +26,101 @@
 	--color-danger: #dc3545;
 	--color-info: #0dcaf0;
 
-	/* Brand accents & semantic tokens */
+	/* Semantic tokens */
 	--brand-accent: #a41034;
 	--brand-accent-dark: #8a0d2b;
 	--gray-border: #dddddd;
 	--text-muted: #737477;
-	--radius-24: 24px;
-	--radius-32: 32px;
 
-	--gradient-brand: radial-gradient(277.07deg, #a61b28 0%, #213368 100%);
+	/* Đã sửa lỗi syntax: radial-gradient -> linear-gradient */
+	--gradient-brand: linear-gradient(277.07deg, #a61b28 0%, #213368 100%);
 
+	/* --- FONTS --- */
 	--ff-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial,
 		sans-serif;
 	--ff-serif: Georgia, "Times New Roman", serif;
 	--font-primary: "Montserrat", sans-serif;
 	--font-secondary: "Inter", sans-serif;
+	--font-family-base: var(--font-secondary);
+	--font-family-heading: var(--font-primary);
 
-	--fs-100: 12px;
-	--fs-200: 14px;
-	--fs-300: 16px;
-	--fs-350: 17px;
-	--fs-400: 18px;
-	--fs-425: 20px;
-	--fs-450: 23px;
-	--fs-500: 24px;
-	--fs-525: 25px;
-	--fs-550: 26px;
-	--fs-600: 30px;
-	--fs-700: 40px;
-	--fs-800: 55px;
-	--fs-900: 60px;
+	/* --- KÍCH THƯỚC (QUY ĐỔI REM) --- */
+	--fs-100: 1.2rem;
+	--fs-200: 1.4rem;
+	--fs-300: 1.6rem;
+	--fs-350: 1.7rem;
+	--fs-400: 1.8rem;
+	--fs-425: 2rem;
+	--fs-450: 2.3rem;
+	--fs-500: 2.4rem;
+	--fs-525: 2.5rem;
+	--fs-550: 2.6rem;
+	--fs-600: 3rem;
+	--fs-700: 4rem;
+	--fs-800: 5.5rem;
+	--fs-900: 6rem;
+
 	--lh-tight: 1.2;
 	--lh-normal: 1.5;
 	--lh-loose: 1.7;
 
-	--sp-1: 4px;
-	--sp-2: 8px;
-	--sp-3: 12px;
-	--sp-4: 16px;
-	--sp-5: 24px;
-	--sp-6: 32px;
-	--sp-7: 48px;
-	--sp-8: 64px;
-	--radius-sm: 4px;
-	--radius-md: 8px;
-	--radius-10: 10px;
-	--radius-lg: 16px;
-	--radius-20: 20px;
-	--radius-30: 30px;
-	--radius-40: 40px;
-	--radius-60: 60px;
-	--radius-pill: 999px;
-	--shadow-1: 0 1px 2px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.08);
-	--shadow-2: 0 4px 10px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.06);
+	--sp-1: 0.4rem;
+	--sp-2: 0.8rem;
+	--sp-3: 1.2rem;
+	--sp-4: 1.6rem;
+	--sp-5: 2.4rem;
+	--sp-6: 3.2rem;
+	--sp-7: 4.8rem;
+	--sp-8: 6.4rem;
+
+	--radius-sm: 0.4rem;
+	--radius-md: 0.8rem;
+	--radius-10: 1rem;
+	--radius-lg: 1.6rem;
+	--radius-20: 2rem;
+	--radius-24: 2.4rem;
+	--radius-30: 3rem;
+	--radius-32: 3.2rem;
+	--radius-40: 4rem;
+	--radius-60: 6rem;
+	--radius-pill: 999rem;
+
+	--shadow-1: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.06),
+		0 0.1rem 0.3rem rgba(0, 0, 0, 0.08);
+	--shadow-2: 0 0.4rem 1rem rgba(0, 0, 0, 0.08),
+		0 0.2rem 0.6rem rgba(0, 0, 0, 0.06);
 
 	--transition-base: 0.3s ease;
 
-	--container-sm: 540px;
-	--container-md: 720px;
-	--container-lg: 960px;
-	--container-xl: 1140px;
-	--container-xxl: 1320px;
+	/* Container Config */
+	--container-sm: 54rem;
+	--container-md: 72rem;
+	--container-lg: 96rem;
+	--container-xl: 114rem;
+	--container-xxl: 132rem;
 
-	/* Header heights (mobile/tablet) */
-	--header-topbar-height-mobile: 48px;
-	--header-navbar-height-mobile: 72px;
+	--header-topbar-height-mobile: 4.8rem;
+	--header-navbar-height-mobile: 7.2rem;
 	--header-total-height-mobile: calc(
 		var(--header-topbar-height-mobile) + var(--header-navbar-height-mobile)
 	);
 
-	/* ========== TYPOGRAPHY SEMANTIC (< 768px) ========== */
+	/* Semantic Typography Defaults */
+	--fs-page-title: 3.2rem;
+	--fs-heading-xl: 2.6rem;
+	--fs-heading-m: 2rem;
+	--fs-body: 1.6rem;
+	--fs-body-sm: 1.4rem;
+	--fs-caption: 1.3rem;
 
-	/* Font family */
-	--font-family-base: var(--font-secondary); /* Inter */
-	--font-family-heading: var(--font-primary); /* Montserrat */
-
-	/*MOBILE */
-	--fs-page-title: 32px; /* hero / page title */
-	--fs-heading-xl: 26px; /* section title */
-	--fs-heading-m: 20px; /* subtitle / card title */
-	--fs-body: 16px; /* body text */
-	--fs-body-sm: 14px; /* small body text */
-	--fs-caption: 13px; /* caption / link nhỏ */
-
-	/* Weight + line-height */
 	--fw-regular: 400;
 	--fw-medium: 500;
 	--fw-semibold: 600;
 	--fw-bold: 700;
 
-	--lh-heading-tight: var(--lh-tight); /* 1.2 */
-	--lh-body-normal: var(--lh-normal); /* 1.5 */
-	--lh-body-loose: var(--lh-loose); /* 1.7 */
+	--lh-heading-tight: var(--lh-tight);
+	--lh-body-normal: var(--lh-normal);
+	--lh-body-loose: var(--lh-loose);
 
 	--section-title: var(--fs-600);
 	--section-title-tablet: var(--fs-550);
@@ -131,26 +135,32 @@
 	--section-description-mobile: var(--fs-100);
 }
 
-/* ========== TABLET (>= 768px) ========== */
-@media (min-width: 768px) {
-	:root {
-		--fs-page-title: 36px;
-		--fs-heading-xl: 30px;
-		--fs-heading-m: 22px;
-		--fs-body: 16px;
-		--fs-body-sm: 14px;
-		--fs-caption: 13px;
+/* ==========================================================================
+   CƠ CHẾ FLUID SCALING (ĐÃ ĐIỀU CHỈNH)
+   ========================================================================== */
+
+/* 1. Mobile & Tablet (< 1024px): 1rem = 10px chuẩn */
+@media (max-width: 1023.98px) {
+	html {
+		font-size: 62.5%;
 	}
 }
 
-/* ========== DESKTOP (>= 1200px) ========== */
-@media (min-width: 1200px) {
+/* 2. Desktop (>= 1024px): Scale theo VW */
+@media (min-width: 1024px) {
+	html {
+		/* Sử dụng tỉ lệ 0.625vw (Chuẩn 1600px) thay vì 0.52vw (1920px).
+           Điều này giúp font chữ trên laptop to hơn giống bản gốc,
+           nhưng vẫn đảm bảo scale lên khi màn hình rộng hơn 1600px */
+		font-size: 0.625vw !important;
+	}
+
 	:root {
-		--fs-page-title: 42px;
-		--fs-heading-xl: 32px;
-		--fs-heading-m: 24px;
-		--fs-body: 18px;
-		--fs-body-sm: 16px;
-		--fs-caption: 14px;
+		--fs-page-title: 4.2rem;
+		--fs-heading-xl: 3.2rem;
+		--fs-heading-m: 2.4rem;
+		--fs-body: 1.8rem;
+		--fs-body-sm: 1.6rem;
+		--fs-caption: 1.4rem;
 	}
 }

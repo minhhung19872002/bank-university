@@ -1,10 +1,7 @@
 /* ============================================
    COMPONENT: Pagination
-   Breakpoints: Desktop (default), Tablet (max-width: 1199px), Mobile (max-width: 575px)
    ============================================ */
 
-/* Desktop-first base styles */
-/* Override Bootstrap's display:flex - visibility controlled by d-none/d-sm-flex classes in HTML */
 .pagination {
 	display: none;
 	align-items: center;
@@ -17,8 +14,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 40px;
-	height: 40px;
+	width: 4rem;
+	height: 4rem;
 	border-radius: 50%;
 	border: none;
 	background-color: transparent;
@@ -28,7 +25,7 @@
 	font-family: var(--font-family-heading);
 	font-size: var(--fs-400);
 	font-weight: var(--fw-regular);
-	line-height: 21.942px;
+	line-height: 2.2rem;
 	color: var(--gray-900);
 	cursor: pointer;
 	transition: all var(--transition-base);
@@ -41,8 +38,8 @@
 
 .pagination__button--prev img,
 .pagination__button--next img {
-	width: 11.111px;
-	height: 10px;
+	width: 1.1rem;
+	height: 1rem;
 	object-fit: contain;
 }
 
@@ -51,7 +48,9 @@
 	color: var(--color-light);
 }
 
-.pagination__button:not(.pagination__button--prev):not(.pagination__button--next):not(.pagination__button--active) {
+.pagination__button:not(.pagination__button--prev):not(
+		.pagination__button--next
+	):not(.pagination__button--active) {
 	background-color: #f5f5f5;
 }
 
@@ -61,46 +60,42 @@
 }
 
 .pagination__button:focus {
-	outline: 2px solid var(--brand-primary);
-	outline-offset: 2px;
+	outline: 0.2rem solid var(--brand-primary);
+	outline-offset: 0.2rem;
 }
 
-/* ================================================
-   TABLET (max-width: 1199px)
-   ================================================ */
+/* Tablet */
 @media (max-width: 1199px) {
 	.pagination__button {
-		width: 36px;
-		height: 36px;
+		width: 3.6rem;
+		height: 3.6rem;
 		font-size: var(--fs-body);
-		line-height: 19px;
+		line-height: 1.9rem;
 	}
 
 	.pagination__button--prev img,
 	.pagination__button--next img {
-		width: 10px;
-		height: 9px;
+		width: 1rem;
+		height: 0.9rem;
 	}
 }
 
-/* ================================================
-   MOBILE (max-width: 575px)
-   ================================================ */
+/* Mobile */
 @media (max-width: 575px) {
 	.pagination {
 		margin-top: var(--sp-4);
 	}
 
 	.pagination__button {
-		width: 32px;
-		height: 32px;
+		width: 3.2rem;
+		height: 3.2rem;
 		font-size: var(--fs-body-sm);
 		line-height: 1.2;
 	}
 
 	.pagination__button--prev img,
 	.pagination__button--next img {
-		width: 9px;
-		height: 8px;
+		width: 0.9rem;
+		height: 0.8rem;
 	}
 }

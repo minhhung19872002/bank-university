@@ -9,20 +9,21 @@
 	left: 0;
 	right: 0;
 	top: 100%;
-	height: 18px;
+	height: 1.8rem;
 	z-index: 10;
 	background: transparent;
 	pointer-events: auto;
 	display: block;
 }
+
 /* Dropdown menu custom */
 .navbar-nav .dropdown-menu {
-	min-width: 220px;
-	border-radius: 8px;
-	border: 1px solid var(--gray-200);
-	box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.08);
-	padding: 8px 0;
-	margin-top: 8px;
+	min-width: 22rem;
+	border-radius: 0.8rem;
+	border: 0.1rem solid var(--gray-200);
+	box-shadow: 0 0.6rem 2.4rem 0 rgba(0, 0, 0, 0.08);
+	padding: 0.8rem 0;
+	margin-top: 0.8rem;
 	display: none;
 	z-index: 1050;
 }
@@ -33,10 +34,10 @@
 
 .navbar-nav .dropdown-item {
 	font-family: Montserrat, var(--font-primary);
-	font-size: 15px;
+	font-size: 1.5rem;
 	color: var(--gray-900);
-	padding: 8px 24px;
-	border-radius: 4px;
+	padding: 0.8rem 2.4rem;
+	border-radius: 0.4rem;
 	transition: background 0.18s, color 0.18s;
 	position: relative;
 }
@@ -47,6 +48,7 @@
 	font-weight: 500;
 	text-decoration: none;
 }
+
 /* ================================================
    Navbar Component
    ================================================ */
@@ -55,12 +57,6 @@
 	padding: var(--sp-2) 0;
 	background-color: transparent;
 }
-
-/* .navbar .container {
-	max-width: unset;
-	padding-right: 0;
-	padding-left: 0;
-} */
 
 .navbar-actions {
 	display: none;
@@ -85,11 +81,11 @@
 }
 
 .navbar-brand__text {
-	margin-left: 6px; /* Giảm từ var(--sp-2) = 8px */
+	margin-left: 0.6rem;
 	font-family: Montserrat, var(--font-primary);
-	font-size: 11px; /* Giảm từ 12px */
+	font-size: 1.2rem;
 	font-weight: 600;
-	line-height: 1.25; /* Giảm từ 1.3 */
+	line-height: 1.25;
 	color: var(--brand-secondary);
 	text-transform: uppercase;
 }
@@ -110,8 +106,8 @@
 }
 
 .navbar__logo {
-	width: 44px; /* Giảm từ 48px */
-	height: 60px; /* Giảm từ 64px */
+	width: 4.4rem;
+	height: 6rem;
 	object-fit: contain;
 }
 
@@ -120,30 +116,25 @@
 }
 
 .navbar-nav {
-	gap: 2px; /* Giảm gap desktop xuống còn 2px */
+	gap: 0.2rem;
 	align-items: center;
 	flex-wrap: nowrap;
 }
 
 .nav-link {
 	font-family: Montserrat, var(--font-primary);
-	font-size: 14px; /* Giảm từ 15px */
+	font-size: 1.5rem;
 	font-weight: 600;
-	line-height: 18px; /* Giảm từ 19px */
+	line-height: 1.8rem;
 	color: var(--gray-900);
 	text-transform: capitalize;
-	padding: var(--sp-2) 6px; /* Giảm từ var(--sp-1) = 4px lên 6px */
+	padding: var(--sp-2) 0.6rem;
 	position: relative;
 	transition: color var(--transition-base);
 	white-space: nowrap;
 }
 
 /* Hover underline animation */
-
-/* Underline cho tất cả nav-link (kể cả dropdown), dày 2px */
-.navbar-nav .nav-link {
-	position: relative;
-}
 .navbar-nav .nav-link::after {
 	content: "";
 	position: absolute;
@@ -151,7 +142,7 @@
 	right: 0;
 	bottom: 0;
 	width: 0;
-	height: 1.5px;
+	height: 0.15rem;
 	background-color: var(--brand-primary);
 	transition: width 0.22s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -170,25 +161,14 @@
 .navbar-nav .dropdown:focus-within > .dropdown-menu {
 	display: block;
 }
-.navbar-nav .dropdown-menu:hover,
-.navbar-nav .dropdown-menu:focus {
-	display: block;
-}
 
-/* Active nav-link - Override Bootstrap defaults */
+/* Active nav-link */
 .navbar-nav .nav-link.active,
-.navbar-nav .nav-link.show {
-	font-family: Montserrat, var(--font-primary);
-	font-weight: 700;
-	line-height: 19px;
-	color: var(--brand-primary) !important;
-}
-
-/* Active link với Montserrat (như "Chương trình đào tạo") */
+.navbar-nav .nav-link.show,
 .navbar-nav .nav-link--active {
 	font-family: Montserrat, var(--font-primary);
-	font-weight: 600;
-	line-height: 19.504px;
+	font-weight: 700;
+	line-height: 1.8rem;
 	color: var(--brand-primary) !important;
 }
 
@@ -203,43 +183,21 @@
 /* Responsive */
 @media (max-width: 1390px) {
 	.navbar__logo {
-		width: 38px; /* Giảm từ 40px */
+		width: 3.8rem;
 		height: auto;
 	}
-
 	.navbar-brand__text {
-		font-size: 10.5px; /* Giảm từ 12px */
+		font-size: 1.1rem;
 	}
-
 	.navbar-nav {
 		gap: 0;
 	}
-
 	.nav-link {
-		font-size: 14px; /* TĂNG lên 14px cho dễ đọc */
-		padding: var(--sp-2) 5px !important; /* Giảm từ 6px */
+		font-size: 1.5rem;
+		padding: var(--sp-2) 0.5rem !important;
 	}
 }
 
-@media (max-width: 1198px) {
-	.navbar {
-		height: 68px;
-	}
-
-	.navbar__logo {
-		width: 34px; /* Giảm từ 36px */
-		height: auto;
-	}
-
-	.navbar-brand__text {
-		font-size: 9.5px; /* Giảm từ 10px */
-	}
-
-	.nav-link {
-		font-size: 13px; /* TĂNG lên 13px cho dễ đọc */
-		padding: var(--sp-2) 4px !important; /* Giảm từ 6px */
-	}
-}
 
 @media (max-width: 1030px) {
 	.navbar {
@@ -247,20 +205,16 @@
 		display: flex;
 		align-items: center;
 	}
-
 	.navbar-nav-wrapper {
 		display: none !important;
 	}
-
 	.navbar-actions {
 		display: block;
 	}
-
 	.navbar-brand {
 		display: flex;
 		align-items: center;
 	}
-
 	.nav-link {
 		padding: var(--sp-2);
 		white-space: normal;
@@ -270,35 +224,15 @@
 /* Mobile specific adjustments */
 @media (max-width: 575px) {
 	.navbar__logo {
-		width: 36px;
+		width: 3.6rem;
 		height: auto;
 	}
-
 	.navbar-brand__text {
-		font-size: 10px;
+		font-size: 1rem;
 		line-height: 1.2;
 	}
-
 	.nav-link {
-		font-size: 14px;
-	}
-}
-
-@media (max-width: 360px) {
-	.navbar {
-		height: 64px;
-	}
-	.navbar__logo {
-		width: 32px;
-	}
-
-	.navbar-brand__text {
-		font-size: 9px;
-	}
-
-	.navbar-toggle img {
-		width: 20px;
-		height: 20px;
+		font-size: 1.4rem;
 	}
 }
 
@@ -308,10 +242,10 @@
 
 .mobile-nav {
 	position: fixed;
-	top: var(--header-topbar-height-mobile, 48px);
+	top: var(--header-topbar-height-mobile, 4.8rem);
 	left: 0;
 	width: 100%;
-	height: calc(100vh - var(--header-topbar-height-mobile, 48px));
+	height: calc(100vh - var(--header-topbar-height-mobile, 4.8rem));
 	z-index: 1040;
 	opacity: 0;
 	pointer-events: none;
@@ -337,7 +271,7 @@
 	top: 0;
 	right: 0;
 	width: 80%;
-	max-width: 320px;
+	max-width: 32rem;
 	height: 100%;
 	background-color: var(--color-light);
 	display: flex;
@@ -365,7 +299,7 @@
 .mobile-nav__close {
 	border: none;
 	background: transparent;
-	font-size: 22px;
+	font-size: 2.2rem;
 	line-height: 1;
 	cursor: pointer;
 	color: var(--brand-primary);
@@ -391,7 +325,7 @@
 	align-items: center;
 	gap: var(--sp-3);
 	font-family: Montserrat, var(--font-primary);
-	font-size: 16px;
+	font-size: 1.6rem;
 	color: var(--gray-900);
 	text-decoration: none;
 	padding: 0;
@@ -418,7 +352,7 @@
 
 .mobile-nav__footer-title {
 	font-family: Montserrat, var(--font-primary);
-	font-size: 14px;
+	font-size: 1.4rem;
 	margin-bottom: var(--sp-3);
 }
 
@@ -429,8 +363,8 @@
 }
 
 .mobile-nav__social {
-	width: 36px;
-	height: 36px;
+	width: 3.6rem;
+	height: 3.6rem;
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
@@ -445,31 +379,20 @@
 	opacity: 0.9;
 }
 
-/* Social media brand colors */
 .mobile-nav__social--facebook {
 	background-color: #1877f2;
 }
-
 .mobile-nav__social--youtube {
 	background-color: #ff0000;
 }
-
 .mobile-nav__social--tiktok {
 	background-color: #000000;
 }
-
 .mobile-nav__social--email {
 	background-color: #ea4335;
 }
-
 .mobile-nav__social--zalo {
 	background-color: #0068ff;
-}
-
-@media (min-width: 992px) {
-	.mobile-nav {
-		display: none !important;
-	}
 }
 
 /* ================================================
@@ -503,24 +426,20 @@
 	right: var(--sp-4);
 	border: none;
 	background: transparent;
-	font-size: 32px;
+	font-size: 3.2rem;
 	line-height: 1;
 	cursor: pointer;
 	color: var(--color-light);
 	padding: var(--sp-2);
 }
 
-.mobile-search__close:hover {
-	color: var(--gray-300);
-}
-
 .mobile-search__container {
 	display: flex;
 	align-items: stretch;
 	width: 100%;
-	max-width: 500px;
+	max-width: 50rem;
 	gap: var(--sp-2);
-	transform: translateY(-30px);
+	transform: translateY(-3rem);
 	opacity: 0;
 	transition: transform 0.3s ease, opacity 0.3s ease;
 }
@@ -533,23 +452,23 @@
 .mobile-search__input {
 	flex: 1;
 	border: none;
-	border-radius: 8px;
+	border-radius: 0.8rem;
 	padding: var(--sp-3) var(--sp-4);
 	font-family: Montserrat, var(--font-primary);
-	font-size: 16px;
+	font-size: 1.6rem;
 	outline: none;
 	background-color: var(--color-light);
 }
 
 .mobile-search__input:focus {
-	box-shadow: 0 0 0 2px var(--brand-primary);
+	box-shadow: 0 0 0 0.2rem var(--brand-primary);
 }
 
 .mobile-search__submit {
 	border: none;
 	background: var(--brand-primary);
 	padding: 0 var(--sp-4);
-	border-radius: 8px;
+	border-radius: 0.8rem;
 	cursor: pointer;
 	display: flex;
 	align-items: center;
@@ -563,6 +482,6 @@
 
 .mobile-search__submit img {
 	filter: brightness(0) invert(1);
-	width: 20px;
-	height: 20px;
+	width: 2rem;
+	height: 2rem;
 }

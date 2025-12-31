@@ -2,11 +2,11 @@
    COMPONENT: Hero Section
    ============================================ */
 
-/* Base Hero Section (dùng cho tất cả pages) */
+/* Base Hero Section */
 .hero-section {
 	position: relative;
 	width: 100%;
-	height: calc(100vh - var(--header-total-height-mobile, 112px));
+	height: calc(100vh - var(--header-total-height-mobile, 11.2rem));
 	overflow: hidden;
 }
 
@@ -44,7 +44,7 @@
 	justify-content: center;
 	height: 100%;
 	padding-bottom: 2.5rem;
-	max-width: 320px;
+	max-width: 32rem;
 	color: #fafafa;
 	pointer-events: auto;
 }
@@ -79,7 +79,7 @@
 	bottom: 5.5rem;
 	display: flex;
 	flex-direction: column;
-	gap: 24px;
+	gap: 2.4rem;
 }
 
 .hero-mobile__fab {
@@ -91,24 +91,23 @@
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+	box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.25);
 }
 
 /* ============================================
    DAI-HOC PAGE VARIANT
-   Hero giống index + Feature cards overlay
    ============================================ */
 
 /* Hero banner cho các trang con - Desktop */
 .hero-section--banner {
-	height: clamp(480px, 42vh, 580px);
-	min-height: 480px;
+	height: clamp(48rem, 42vh, 58rem);
+	min-height: 48rem;
 }
 
 /* Feature Cards Section */
 .feature-cards-section {
 	background-color: var(--color-light);
-	padding: 60px 0;
+	padding: 6rem 0;
 	overflow: hidden;
 }
 
@@ -143,7 +142,7 @@
 /* Tablet */
 @media (max-width: 1199.98px) {
 	.hero-mobile__content {
-		max-width: 420px;
+		max-width: 42rem;
 		padding-bottom: 3.5rem;
 	}
 
@@ -152,7 +151,7 @@
 	}
 
 	.feature-cards-section {
-		padding: 48px 0;
+		padding: 4.8rem 0;
 	}
 
 	.feature-cards-section__subtitle {
@@ -170,10 +169,9 @@
 
 /* Tablet - 2 cards per row */
 @media (min-width: 576px) and (max-width: 1199.98px) {
-	/* Hero banner tablet */
 	.hero-section--banner {
-		height: clamp(320px, 35vh, 400px);
-		min-height: 320px;
+		height: clamp(32rem, 35vh, 40rem);
+		min-height: 32rem;
 	}
 
 	.feature-cards-wrapper {
@@ -206,16 +204,15 @@
 @media (max-width: 575.98px) {
 	.hero-section {
 		height: auto;
-		min-height: calc(100vh - var(--header-total-height-mobile, 112px));
+		min-height: calc(100vh - var(--header-total-height-mobile, 11.2rem));
 	}
 
-	/* Hero banner cho các trang con */
 	.hero-section--banner {
 		min-height: unset;
 	}
 
 	.feature-cards-section {
-		padding: 40px 0;
+		padding: 4rem 0;
 	}
 
 	.feature-cards-section__subtitle {
