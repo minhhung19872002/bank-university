@@ -21,19 +21,19 @@
    FEATURED ANNOUNCEMENTS SECTION
    ============================================ */
 .announcements-featured {
-	padding-top: 50px;
-	padding-bottom: 50px;
+	padding-top: 5rem; /* 50px -> 5.0rem */
+	padding-bottom: 5rem;
 	background-color: var(--color-light);
 }
 
 .announcements-featured__title {
-	font-family: var(--font-primary);
+	font-family: var(--font-family-primary);
 	font-size: var(--section-title);
 	font-weight: 700;
 	line-height: var(--lh-tight);
 	color: var(--brand-primary);
 	text-transform: capitalize;
-	margin-bottom: 29px;
+	margin-bottom: 2.9rem; /* 29px -> 2.9rem */
 }
 
 /* Link reset for clickable cards */
@@ -47,22 +47,22 @@ a.news-card {
 .announcement-card {
 	background-color: var(--gray-100);
 	border-radius: var(--radius-10);
-	padding: 26px 28px 28px;
+	padding: 2.6rem 2.8rem 2.8rem; /* 26px 28px 28px -> 2.6rem 2.8rem 2.8rem */
 	display: flex;
-	gap: 18px;
-	height: 180px;
+	gap: 1.8rem; /* 18px -> 1.8rem */
+	height: 18rem; /* 180px -> 18.0rem */
 	transition: transform var(--transition-base),
 		box-shadow var(--transition-base);
 }
 
 .announcement-card:hover {
-	transform: translateY(-2px);
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+	transform: translateY(-0.2rem); /* -2px -> -0.2rem */
+	box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.08);
 }
 
 .announcement-card__date {
-	width: 79px;
-	height: 88px;
+	width: 7.9rem; /* 79px -> 7.9rem */
+	height: 8.8rem; /* 88px -> 8.8rem */
 	background-color: var(--brand-primary);
 	border-radius: var(--radius-10);
 	flex-shrink: 0;
@@ -70,7 +70,7 @@ a.news-card {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	gap: 2px;
+	gap: 0.2rem; /* 2px -> 0.2rem */
 	position: relative;
 }
 
@@ -78,7 +78,7 @@ a.news-card {
 	font-family: var(--font-primary);
 	font-size: var(--fs-350);
 	font-weight: 500;
-	line-height: 1.15; /* 20/16 */
+	line-height: 1.15;
 	color: var(--color-light);
 	text-transform: capitalize;
 }
@@ -87,7 +87,7 @@ a.news-card {
 	font-family: var(--font-primary);
 	font-size: var(--fs-350);
 	font-weight: 500;
-	line-height: 1.15; /* 20/16 */
+	line-height: 1.15;
 	color: var(--color-light);
 	text-transform: capitalize;
 	order: 2;
@@ -97,7 +97,7 @@ a.news-card {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	gap: 5px;
+	gap: 0.5rem; /* 5px -> 0.5rem */
 	min-width: 0;
 }
 
@@ -105,7 +105,7 @@ a.news-card {
 	font-family: var(--font-primary);
 	font-size: var(--fs-300);
 	font-weight: 700;
-	line-height: 1.38; /* 22/16 */
+	line-height: 1.38;
 	color: var(--gray-800);
 	text-transform: capitalize;
 	margin: 0;
@@ -120,7 +120,7 @@ a.news-card {
 	font-family: var(--font-primary);
 	font-size: var(--fs-200);
 	font-weight: 400;
-	line-height: 1.57; /* 22/14 */
+	line-height: 1.57;
 	color: var(--gray-800);
 	margin: 0;
 	flex: 1;
@@ -135,10 +135,10 @@ a.news-card {
 	font-family: var(--font-primary);
 	font-size: var(--fs-200);
 	font-weight: 500;
-	line-height: 1.22; /* 20/16 */
+	line-height: 1.22;
 	color: var(--brand-primary);
 	text-decoration: none;
-	border-bottom: 1px solid var(--brand-primary);
+	border-bottom: 0.1rem solid var(--brand-primary); /* 1px -> 0.1rem */
 	display: inline-block;
 	width: fit-content;
 	transition: opacity var(--transition-base);
@@ -152,16 +152,16 @@ a.news-card {
    PAGINATION
    ============================================ */
 .pagination {
-	margin-top: 30px;
+	margin-top: 3rem; /* 30px -> 3.0rem */
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 7px;
+	gap: 0.7rem; /* 7px -> 0.7rem */
 }
 
 .pagination__btn {
-	width: 40px;
-	height: 40px;
+	width: 4rem; /* 40px -> 4.0rem */
+	height: 4rem;
 	border: none;
 	border-radius: 50%;
 	background-color: var(--gray-100);
@@ -178,14 +178,14 @@ a.news-card {
 }
 
 .pagination__btn img {
-	width: 11px;
-	height: 10px;
+	width: 1.1rem; /* 11px -> 1.1rem */
+	height: 1rem; /* 10px -> 1.0rem */
 	display: block;
 }
 
 .pagination__item {
-	width: 40px;
-	height: 40px;
+	width: 4rem; /* 40px -> 4.0rem */
+	height: 4rem;
 	border-radius: 50%;
 	background-color: var(--gray-100);
 	display: flex;
@@ -194,7 +194,7 @@ a.news-card {
 	font-family: var(--font-primary);
 	font-size: var(--fs-400);
 	font-weight: 400;
-	line-height: 1.22; /* 22/18 */
+	line-height: 1.22;
 	color: var(--gray-800);
 	text-decoration: none;
 	transition: background-color var(--transition-base),
@@ -218,7 +218,7 @@ a.news-card {
    HIGHLIGHTED NEWS SECTION
    ============================================ */
 .announcements-highlighted {
-	padding-bottom: 60px;
+	padding-bottom: 6rem; /* 60px -> 6.0rem */
 	background-color: var(--color-light);
 }
 
@@ -226,24 +226,24 @@ a.news-card {
 	font-family: var(--font-primary);
 	font-size: var(--section-title);
 	font-weight: 700;
-	line-height: 1.22; /* 49/40 */
+	line-height: 1.22;
 	color: var(--brand-primary);
 	text-transform: capitalize;
 	text-align: center;
-	margin-bottom: 29px;
+	margin-bottom: 2.9rem; /* 29px -> 2.9rem */
 }
 
 .announcements-highlighted__wrapper {
 	position: relative;
-	max-width: 1200px;
+	max-width: 120rem; /* 1200px -> 120rem */
 	margin: 0 auto;
 }
 
 .announcements-highlighted__track {
 	display: flex;
-	gap: 19px;
+	gap: 1.9rem; /* 19px -> 1.9rem */
 	justify-content: flex-start;
-	padding: 0 50px;
+	padding: 0 5rem; /* 50px -> 5.0rem */
 	overflow-x: auto;
 	overflow-y: visible;
 	scroll-behavior: smooth;
@@ -265,28 +265,28 @@ a.news-card {
 
 /* News Card */
 .news-card {
-	width: 374px;
+	width: 37.4rem; /* 374px -> 37.4rem */
 	flex-shrink: 0;
 	display: flex;
 	flex-direction: column;
-	gap: 16px;
+	gap: 1.6rem; /* 16px -> 1.6rem */
 }
 
 .news-card__image {
 	width: 100%;
-	height: 340px;
+	height: 34rem; /* 340px -> 34.0rem */
 	object-fit: cover;
 	display: block;
 	border-radius: var(--radius-10);
 }
 
 .news-card__title {
-	width: 320px;
+	width: 32rem; /* 320px -> 32.0rem */
 	margin: 0 auto;
 	font-family: var(--font-primary);
 	font-size: var(--fs-300);
 	font-weight: 700;
-	line-height: 1.47; /* 22/15 */
+	line-height: 1.47;
 	color: var(--gray-800);
 	text-align: center;
 	text-transform: capitalize;
@@ -306,13 +306,13 @@ a.news-card {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 10px;
-	margin-top: 30px;
+	gap: 1rem; /* 10px -> 1.0rem */
+	margin-top: 3rem; /* 30px -> 3.0rem */
 }
 
 .news-pagination__btn {
-	width: 40px;
-	height: 40px;
+	width: 4rem; /* 40px -> 4.0rem */
+	height: 4rem;
 	border: none;
 	border-radius: 50%;
 	cursor: pointer;
@@ -340,8 +340,8 @@ a.news-card {
 }
 
 .news-pagination__btn img {
-	width: 11px;
-	height: 10px;
+	width: 1.1rem; /* 11px -> 1.1rem */
+	height: 1rem; /* 10px -> 1.0rem */
 	display: block;
 }
 
@@ -393,9 +393,9 @@ a.news-card {
 		background-color: var(--color-light);
 		border-radius: var(--radius-10);
 		padding: 0 0 var(--sp-4);
-		flex: 0 0 calc(100% - 32px);
-		max-width: calc(100% - 32px);
-		min-width: calc(100% - 32px);
+		flex: 0 0 calc(100% - 3.2rem); /* 32px -> 3.2rem */
+		max-width: calc(100% - 3.2rem);
+		min-width: calc(100% - 3.2rem);
 		scroll-snap-align: center;
 	}
 
@@ -430,8 +430,8 @@ a.news-card {
 
 	.announcements-highlighted__track {
 		gap: var(--sp-3);
-		padding: 0 16px;
-		margin: 0 -16px;
+		padding: 0 1.6rem; /* 16px -> 1.6rem */
+		margin: 0 -1.6rem;
 		scroll-snap-type: x proximity;
 		scroll-behavior: smooth;
 		-webkit-overflow-scrolling: touch;

@@ -1,16 +1,15 @@
 /* ============================================
    COMPONENT: Feature Card
-   Breakpoints: Desktop (default), Tablet (max-width: 1199px), Mobile (max-width: 575px)
    ============================================ */
 
 /* Desktop-first base styles */
 .feature-card {
 	position: relative;
-	width: 254px;
-	height: 202px;
+	width: 25.4rem;
+	height: 20.2rem;
 	background-color: var(--color-light);
 	border-radius: var(--radius-40) var(--radius-40) var(--radius-40) 0;
-	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+	box-shadow: 0 0.4rem 2rem rgba(0, 0, 0, 0.08);
 	padding: 0;
 	transition: all var(--transition-base);
 	flex-shrink: 0;
@@ -23,54 +22,59 @@
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 4px;
-	background: linear-gradient(90deg, var(--brand-primary), var(--brand-secondary));
+	height: 0.4rem;
+	background: linear-gradient(
+		90deg,
+		var(--brand-primary),
+		var(--brand-secondary)
+	);
 	opacity: 0;
 	transition: opacity var(--transition-base);
 }
 
 .feature-card:hover {
-	box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-	transform: translateY(-6px);
+	box-shadow: 0 0.8rem 3rem rgba(0, 0, 0, 0.12);
+	transform: translateY(-0.6rem);
 }
 
 .feature-card:hover::before {
 	opacity: 1;
 }
 
-/* Icon Wrapper - Absolute positioning */
+/* Icon Wrapper */
 .feature-card__icon-wrapper {
 	position: absolute;
-	top: 17px;
-	left: 21px;
-	width: 70px;
-	height: 70px;
+	top: 1.7rem;
+	left: 2.1rem;
+	width: 7rem;
+	height: 7rem;
 }
 
 .feature-card__icon-bg {
 	position: absolute;
-	top: 4px;
-	left: 4px;
-	width: 70px;
-	height: 70px;
+	top: 0.4rem;
+	left: 0.4rem;
+	width: 7rem;
+	height: 7rem;
 	background: linear-gradient(135deg, var(--brand-primary), #c41e3a);
 	border-radius: 50%;
 	z-index: 1;
-	box-shadow: 0 4px 12px rgba(164, 16, 52, 0.3);
-	transition: transform var(--transition-base), box-shadow var(--transition-base);
+	box-shadow: 0 0.4rem 1.2rem rgba(164, 16, 52, 0.3);
+	transition: transform var(--transition-base),
+		box-shadow var(--transition-base);
 }
 
 .feature-card:hover .feature-card__icon-bg {
 	transform: scale(1.05);
-	box-shadow: 0 6px 16px rgba(164, 16, 52, 0.4);
+	box-shadow: 0 0.6rem 1.6rem rgba(164, 16, 52, 0.4);
 }
 
 .feature-card__icon {
 	position: absolute;
-	top: 15px;
-	left: 15px;
-	width: 40px;
-	height: 40px;
+	top: 1.5rem;
+	left: 1.5rem;
+	width: 4rem;
+	height: 4rem;
 	object-fit: contain;
 	z-index: 2;
 	filter: brightness(0) invert(1);
@@ -81,18 +85,18 @@
 	transform: scale(1.1);
 }
 
-/* Number Badge - Absolute positioning */
+/* Number Badge */
 .feature-card__number {
 	position: absolute;
-	top: 29px;
-	right: 30px;
+	top: 2.9rem;
+	right: 3rem;
 	font-family: var(--font-family-heading);
-	font-size: 50px;
+	font-size: 5rem;
 	font-weight: var(--fw-bold);
-	line-height: 60.95px;
+	line-height: 6.095rem;
 	color: transparent;
-	-webkit-text-stroke: 1.5px var(--brand-primary);
-	text-stroke: 1.5px var(--brand-primary);
+	-webkit-text-stroke: 0.15rem var(--brand-primary);
+	text-stroke: 0.15rem var(--brand-primary);
 	user-select: none;
 	pointer-events: none;
 	opacity: 0.6;
@@ -103,12 +107,12 @@
 	opacity: 1;
 }
 
-/* Title - Positioned */
+/* Title */
 .feature-card__title {
 	position: absolute;
-	top: 108px;
-	left: 21px;
-	right: 21px;
+	top: 10.8rem;
+	left: 2.1rem;
+	right: 2.1rem;
 	font-family: var(--font-family-heading);
 	font-size: var(--fs-body-sm);
 	font-weight: var(--fw-bold);
@@ -126,9 +130,9 @@
 /* Description */
 .feature-card__description {
 	position: absolute;
-	top: 137px;
-	left: 21px;
-	right: 21px;
+	top: 13.7rem;
+	left: 2.1rem;
+	right: 2.1rem;
 	font-family: var(--font-family-heading);
 	font-size: var(--fs-body-sm);
 	font-weight: var(--fw-regular);
@@ -143,31 +147,31 @@
 @media (max-width: 1199px) {
 	.feature-card {
 		width: 100%;
-		height: 200px;
-		min-height: 200px;
+		height: 20rem;
+		min-height: 20rem;
 		padding: var(--sp-4);
 	}
 
 	.feature-card__icon-wrapper {
 		top: var(--sp-4);
 		left: var(--sp-4);
-		width: 56px;
-		height: 56px;
+		width: 5.6rem;
+		height: 5.6rem;
 	}
 
 	.feature-card__icon-bg {
 		top: 0;
 		left: 0;
-		width: 56px;
-		height: 56px;
+		width: 5.6rem;
+		height: 5.6rem;
 	}
 
 	.feature-card__icon {
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		width: 28px;
-		height: 28px;
+		width: 2.8rem;
+		height: 2.8rem;
 	}
 
 	.feature-card:hover .feature-card__icon {
@@ -175,7 +179,7 @@
 	}
 
 	.feature-card__number {
-		font-size: 44px;
+		font-size: 4.4rem;
 		line-height: 1;
 		top: var(--sp-4);
 		right: var(--sp-4);
@@ -183,7 +187,7 @@
 
 	.feature-card__title {
 		top: auto;
-		bottom: 50px;
+		bottom: 5rem;
 		left: var(--sp-4);
 		right: var(--sp-4);
 		font-size: var(--fs-body-sm);
@@ -205,8 +209,8 @@
    ================================================ */
 @media (max-width: 575px) {
 	.feature-card {
-		min-height: 180px;
-		height: 180px;
+		min-height: 18rem;
+		height: 18rem;
 		padding: var(--sp-4);
 		border-radius: var(--radius-30) var(--radius-30) var(--radius-30) 0;
 		width: 100%;
@@ -215,23 +219,23 @@
 	.feature-card__icon-wrapper {
 		top: var(--sp-4);
 		left: var(--sp-4);
-		width: 56px;
-		height: 56px;
+		width: 5.6rem;
+		height: 5.6rem;
 	}
 
 	.feature-card__icon-bg {
 		top: 0;
 		left: 0;
-		width: 56px;
-		height: 56px;
+		width: 5.6rem;
+		height: 5.6rem;
 	}
 
 	.feature-card__icon {
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		width: 28px;
-		height: 28px;
+		width: 2.8rem;
+		height: 2.8rem;
 	}
 
 	.feature-card:hover .feature-card__icon {
@@ -239,7 +243,7 @@
 	}
 
 	.feature-card__number {
-		font-size: 44px;
+		font-size: 4.4rem;
 		line-height: 1;
 		top: var(--sp-4);
 		right: var(--sp-4);
@@ -247,7 +251,7 @@
 
 	.feature-card__title {
 		top: auto;
-		bottom: 58px;
+		bottom: 5.8rem;
 		font-size: var(--fs-body);
 		line-height: 1.3;
 	}

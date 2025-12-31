@@ -21,8 +21,8 @@
    EVENTS CONTENT SECTION
    ============================================ */
 .events-content {
-	padding-top: 57px;
-	padding-bottom: 60px;
+	padding-top: 5.7rem; /* 57px */
+	padding-bottom: 6rem; /* 60px */
 	background-color: var(--color-light);
 }
 
@@ -31,12 +31,12 @@
    ============================================ */
 .featured-event {
 	background-color: var(--brand-primary);
-	border-radius: 20px;
-	padding: 18px 18px 48px;
+	border-radius: 2rem; /* 20px */
+	padding: 1.8rem 1.8rem 4.8rem; /* 18px 18px 48px */
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	height: 643px;
+	height: 64.3rem; /* 643px */
 }
 
 .featured-event__category {
@@ -47,7 +47,7 @@
 	color: var(--color-light);
 	text-transform: uppercase;
 	text-align: center;
-	margin-bottom: 4px;
+	margin-bottom: 0.4rem; /* 4px */
 }
 
 .featured-event__title {
@@ -57,7 +57,7 @@
 	line-height: 1.22; /* 37/30 */
 	color: var(--color-light);
 	text-align: left;
-	margin: 0 0 12px;
+	margin: 0 0 1.2rem; /* 12px */
 }
 
 .featured-event__title--desktop {
@@ -65,11 +65,11 @@
 }
 
 .featured-event__image {
-	width: 477px;
-	height: 369px;
+	width: 47.7rem; /* 477px */
+	height: 36.9rem; /* 369px */
 	object-fit: cover;
 	display: block;
-	margin-bottom: 16px;
+	margin-bottom: 1.6rem; /* 16px */
 }
 
 .featured-event__subtitle {
@@ -79,26 +79,26 @@
 	line-height: 1.21; /* 17/14 */
 	color: var(--color-light);
 	text-align: center;
-	margin: 0 0 24px;
+	margin: 0 0 2.4rem; /* 24px */
 }
 
 /* Countdown Timer */
 .featured-event__countdown {
 	display: flex;
-	gap: 18px;
-	margin-bottom: 31px;
+	gap: 1.8rem; /* 18px */
+	margin-bottom: 3.1rem; /* 31px */
 }
 
 .countdown-item {
-	width: 74px;
-	height: 68px;
+	width: 7.4rem; /* 74px */
+	height: 6.8rem; /* 68px */
 	background-color: var(--color-light);
 	border-radius: var(--radius-10);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	gap: 1px;
+	gap: 0.1rem; /* 1px */
 }
 
 .countdown-item__value {
@@ -126,7 +126,7 @@
 	line-height: 1.22; /* 20/16 */
 	color: var(--color-light);
 	text-decoration: none;
-	border-bottom: 1px solid var(--color-light);
+	border-bottom: 0.1rem solid var(--color-light); /* 1px */
 	display: inline-block;
 	transition: opacity var(--transition-base);
 }
@@ -149,7 +149,7 @@
 	line-height: 1.21; /* 17/14 */
 	color: var(--brand-secondary);
 	display: block;
-	margin-bottom: 4px;
+	margin-bottom: 0.4rem; /* 4px */
 }
 
 .upcoming-events__title {
@@ -158,14 +158,14 @@
 	font-weight: 700;
 	line-height: 1.22; /* 49/40 */
 	color: var(--brand-primary);
-	margin: 0 0 39px;
+	margin: 0 0 3.9rem; /* 39px */
 }
 
 /* Events List */
 .events-list {
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
+	gap: 2rem; /* 20px */
 }
 
 /* Event Card */
@@ -176,13 +176,13 @@ a.event-card {
 
 .event-card {
 	display: flex;
-	gap: 18px;
-	height: 169px;
+	gap: 1.8rem; /* 18px */
+	height: 16.9rem; /* 169px */
 }
 
 .event-card__image {
-	width: 186px;
-	height: 169px;
+	width: 18.6rem; /* 186px */
+	height: 16.9rem; /* 169px */
 	object-fit: cover;
 	display: block;
 	border-radius: var(--radius-10) 0 0 var(--radius-10);
@@ -193,8 +193,8 @@ a.event-card {
 	flex: 1;
 	display: flex;
 	flex-direction: column;
-	gap: 6px;
-	padding-top: 20px;
+	gap: 0.6rem; /* 6px */
+	padding-top: 2rem; /* 20px */
 	min-width: 0;
 }
 
@@ -239,13 +239,13 @@ a.event-card {
 .event-card__date {
 	display: flex;
 	align-items: center;
-	gap: 6px;
+	gap: 0.6rem; /* 6px */
 	margin-top: auto;
 }
 
 .event-card__icon {
-	width: 15px;
-	height: 15px;
+	width: 1.5rem; /* 15px */
+	height: 1.5rem; /* 15px */
 	display: block;
 	flex-shrink: 0;
 }
@@ -262,16 +262,16 @@ a.event-card {
    PAGINATION
    ============================================ */
 .pagination {
-	margin-top: 30px;
+	margin-top: 3rem; /* 30px */
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 7px;
+	gap: 0.7rem; /* 7px */
 }
 
 .pagination__btn {
-	width: 40px;
-	height: 40px;
+	width: 4rem; /* 40px */
+	height: 4rem; /* 40px */
 	border: none;
 	border-radius: 50%;
 	background-color: var(--gray-100);
@@ -289,15 +289,15 @@ a.event-card {
 
 .pagination__btn img,
 .pagination__btn svg {
-	width: 11px;
-	height: 10px;
+	width: 1.1rem; /* 11px */
+	height: 1rem; /* 10px */
 	display: block;
 	color: var(--gray-800);
 }
 
 .pagination__item {
-	width: 40px;
-	height: 40px;
+	width: 4rem; /* 40px */
+	height: 4rem; /* 40px */
 	border-radius: 50%;
 	background-color: var(--gray-100);
 	display: flex;
@@ -330,16 +330,16 @@ a.event-card {
    EVENTS PAGINATION (New)
    ============================================ */
 .events-pagination {
-	margin-top: 30px;
+	margin-top: 3rem; /* 30px */
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	gap: 7px;
+	gap: 0.7rem; /* 7px */
 }
 
 .events-pagination__btn {
-	width: 40px;
-	height: 40px;
+	width: 4rem; /* 40px */
+	height: 4rem; /* 40px */
 	border: none;
 	border-radius: 50%;
 	background-color: var(--gray-100);
@@ -360,14 +360,14 @@ a.event-card {
 }
 
 .events-pagination__btn img {
-	width: 11px;
-	height: 10px;
+	width: 1.1rem; /* 11px */
+	height: 1rem; /* 10px */
 	display: block;
 }
 
 .events-pagination__item {
-	width: 40px;
-	height: 40px;
+	width: 4rem; /* 40px */
+	height: 4rem; /* 40px */
 	border: none;
 	border-radius: 50%;
 	background-color: var(--gray-100);
@@ -435,8 +435,8 @@ a.event-card {
 	}
 
 	.event-card__image {
-		width: 150px;
-		height: 140px;
+		width: 15rem; /* 150px */
+		height: 14rem; /* 140px */
 	}
 
 	.event-card__content {
@@ -496,8 +496,8 @@ a.event-card {
 	}
 
 	.countdown-item {
-		width: 60px;
-		height: 56px;
+		width: 6rem; /* 60px */
+		height: 5.6rem; /* 56px */
 		background-color: var(--color-light);
 		border: none;
 	}
@@ -535,7 +535,7 @@ a.event-card {
 	/* Event Card - Mobile */
 	.event-card {
 		padding-bottom: var(--sp-4);
-		border-bottom: 1px solid var(--gray-200);
+		border-bottom: 0.1rem solid var(--gray-200); /* 1px */
 	}
 
 	.event-card:last-child {
@@ -582,8 +582,8 @@ a.event-card {
 
 	.pagination__btn,
 	.pagination__item {
-		width: 36px;
-		height: 36px;
+		width: 3.6rem; /* 36px */
+		height: 3.6rem; /* 36px */
 	}
 
 	.pagination__item {
@@ -597,8 +597,8 @@ a.event-card {
 
 	.events-pagination__btn,
 	.events-pagination__item {
-		width: 36px;
-		height: 36px;
+		width: 3.6rem; /* 36px */
+		height: 3.6rem; /* 36px */
 	}
 
 	.events-pagination__item {

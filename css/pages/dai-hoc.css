@@ -52,16 +52,16 @@
 .hero-content__image-wrapper {
 	position: relative;
 	width: 100%;
-	max-width: 582px;
+	max-width: 58.2rem;
 	margin: 0 auto;
 }
 
 .hero-content__image-bg {
 	position: absolute;
-	top: 3px;
-	left: -15px;
-	width: 597px;
-	height: 398px;
+	top: 0.3rem;
+	left: -1.5rem;
+	width: 59.7rem;
+	height: 39.8rem;
 	background-color: var(--brand-primary);
 	border-radius: var(--radius-40);
 	z-index: 0;
@@ -70,7 +70,7 @@
 .hero-content__image {
 	position: relative;
 	width: 100%;
-	max-width: 582px;
+	max-width: 58.2rem;
 	height: auto;
 	border-radius: var(--radius-40);
 	z-index: 1;
@@ -80,8 +80,8 @@
 	position: absolute;
 	bottom: 0;
 	left: 0;
-	width: 152px;
-	height: 152px;
+	width: 15.2rem;
+	height: 15.2rem;
 	object-fit: contain;
 	z-index: 0;
 	transform: translate(-50%, 50%);
@@ -91,7 +91,7 @@
 
 .programs-section {
 	background-color: var(--color-light);
-	padding: var(--sp-8) 0 80px;
+	padding: var(--sp-8) 0 8rem;
 	overflow: hidden;
 }
 
@@ -114,7 +114,7 @@
 	margin-bottom: 0;
 }
 
-/* Program Cards Grid - Desktop: 3 columns using flexbox like thac-si */
+/* Program Cards Grid - Desktop: 3 columns using flexbox */
 .programs-section .row.g-4[data-program-grid] {
 	display: flex;
 	flex-wrap: wrap;
@@ -170,8 +170,8 @@
 
 .faq-section__image {
 	width: 100%;
-	max-width: 452px;
-	height: 520px;
+	max-width: 45.2rem;
+	height: 52rem;
 	border-radius: var(--radius-10);
 	object-fit: cover;
 }
@@ -195,8 +195,8 @@
 }
 
 .faq-section__view-all-icon {
-	width: 16px;
-	height: 16px;
+	width: 1.6rem;
+	height: 1.6rem;
 }
 
 .faq-section__view-all:hover {
@@ -237,16 +237,16 @@
 	}
 
 	.hero-content__image-bg {
-		width: 500px;
-		height: 330px;
+		width: 50rem;
+		height: 33rem;
 	}
 
 	.hero-content__decoration {
-		bottom: -25px;
-		right: -25px;
+		bottom: -2.5rem;
+		right: -2.5rem;
 		left: auto;
-		width: 130px;
-		height: 130px;
+		width: 13rem;
+		height: 13rem;
 		transform: none;
 	}
 
@@ -339,9 +339,9 @@
 	}
 
 	.programs-section__icon-wrapper {
-		width: 48px;
-		height: 48px;
-		min-width: 48px;
+		width: 4.8rem;
+		height: 4.8rem;
+		min-width: 4.8rem;
 		background-color: var(--brand-primary);
 		border-radius: 50%;
 		display: flex;
@@ -350,8 +350,8 @@
 	}
 
 	.programs-section__icon {
-		width: 24px;
-		height: 24px;
+		width: 2.4rem;
+		height: 2.4rem;
 		filter: brightness(0) invert(1);
 	}
 
@@ -378,8 +378,8 @@
 		scrollbar-width: none;
 		-ms-overflow-style: none;
 		gap: var(--sp-3);
-		margin: 0 -16px;
-		padding: var(--sp-4) 16px 0;
+		margin: 0 -1.6rem;
+		padding: var(--sp-4) 1.6rem 0;
 	}
 
 	.programs-section .row.g-4[data-program-grid]::-webkit-scrollbar {
@@ -393,9 +393,9 @@
 	}
 
 	.programs-section .row.g-4[data-program-grid] > .col-lg-4 {
-		flex: 0 0 calc(100% - 32px);
-		max-width: calc(100% - 32px);
-		min-width: calc(100% - 32px);
+		flex: 0 0 calc(100% - 3.2rem);
+		max-width: calc(100% - 3.2rem);
+		min-width: calc(100% - 3.2rem);
 		scroll-snap-align: center;
 		padding: 0;
 	}
@@ -414,8 +414,8 @@
 	}
 
 	.program-slider-nav__btn {
-		width: 40px;
-		height: 40px;
+		width: 4rem;
+		height: 4rem;
 		border-radius: 50%;
 		background-color: var(--gray-200, #e5e7eb);
 		border: none;
@@ -436,8 +436,8 @@
 	}
 
 	.program-slider-nav__btn img {
-		width: 11px;
-		height: 10px;
+		width: 1.1rem;
+		height: 1rem;
 		object-fit: contain;
 	}
 

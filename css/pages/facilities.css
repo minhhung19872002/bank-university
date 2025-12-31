@@ -37,11 +37,11 @@
 }
 
 .facilities-about__content {
-	max-width: 1200px;
+	max-width: 120rem; /* 1200px -> 120rem */
 	font-family: var(--font-primary);
 	font-size: var(--section-description);
 	font-weight: 400;
-	line-height: 1.57; /* 22/14 */
+	line-height: 1.57;
 	color: var(--gray-800);
 	margin-bottom: var(--sp-4);
 }
@@ -56,10 +56,10 @@
 
 .facilities-about__image {
 	width: 100%;
-	max-width: 1200px;
-	height: 546px;
+	max-width: 120rem; /* 1200px -> 120rem */
+	height: 54.6rem; /* 546px -> 54.6rem */
 	object-fit: cover;
-	border-radius: 20px;
+	border-radius: 2rem; /* 20px -> 2rem */
 	display: block;
 }
 
@@ -82,11 +82,11 @@
 }
 
 .facilities-list__intro {
-	max-width: 1200px;
+	max-width: 120rem; /* 1200px -> 120rem */
 	font-family: var(--font-primary);
 	font-size: var(--section-description);
 	font-weight: 400;
-	line-height: 1.57; /* 22/14 */
+	line-height: 1.57;
 	color: var(--gray-800);
 	margin-bottom: var(--sp-3);
 }
@@ -103,11 +103,11 @@
 
 .facilities-list__items li {
 	position: relative;
-	padding-left: 23px;
+	padding-left: 2.3rem; /* 23px -> 2.3rem */
 	font-family: var(--font-primary);
 	font-size: var(--section-description);
 	font-weight: 400;
-	line-height: 1.57; /* 22/14 */
+	line-height: 1.57;
 	color: var(--gray-800);
 }
 
@@ -115,9 +115,9 @@
 	content: "";
 	position: absolute;
 	left: 0;
-	top: 5px;
-	width: 12px;
-	height: 12px;
+	top: 0.5rem; /* 5px -> 0.5rem */
+	width: 1.2rem; /* 12px -> 1.2rem */
+	height: 1.2rem;
 	background-color: var(--brand-primary);
 	border-radius: 50%;
 	flex-shrink: 0;
@@ -126,14 +126,14 @@
 /* Facility Cards */
 .facilities-card {
 	width: 100%;
-	height: 260px;
-	border-radius: 20px;
+	height: 26rem; /* 260px -> 26rem */
+	border-radius: 2rem; /* 20px -> 2rem */
 	overflow: hidden;
 	transition: transform var(--transition-base);
 }
 
 .facilities-card:hover {
-	transform: translateY(-4px);
+	transform: translateY(-0.4rem);
 }
 
 .facilities-card__image {
@@ -163,11 +163,11 @@
 }
 
 .facilities-details__intro {
-	max-width: 1200px;
+	max-width: 120rem; /* 1200px -> 120rem */
 	font-family: var(--font-primary);
 	font-size: var(--section-description);
 	font-weight: 400;
-	line-height: 1.57; /* 22/14 */
+	line-height: 1.57;
 	color: var(--gray-800);
 	margin-bottom: var(--sp-4);
 }
@@ -176,7 +176,7 @@
 	list-style: none;
 	padding: 0;
 	margin: var(--sp-4) 0 0;
-	max-width: 1200px;
+	max-width: 120rem;
 	display: flex;
 	flex-direction: column;
 	gap: var(--sp-3);
@@ -184,11 +184,11 @@
 
 .facilities-details__list li {
 	position: relative;
-	padding-left: 16px;
+	padding-left: 1.6rem; /* 16px -> 1.6rem */
 	font-family: var(--font-primary);
 	font-size: var(--section-description);
 	font-weight: 400;
-	line-height: 1.57; /* 22/14 */
+	line-height: 1.57;
 	color: var(--gray-800);
 }
 
@@ -196,9 +196,9 @@
 	content: "";
 	position: absolute;
 	left: 0;
-	top: 8px;
-	width: 4px;
-	height: 4px;
+	top: 0.8rem; /* 8px -> 0.8rem */
+	width: 0.4rem; /* 4px -> 0.4rem */
+	height: 0.4rem;
 	background-color: var(--gray-900);
 	border-radius: 50%;
 	flex-shrink: 0;
@@ -217,8 +217,8 @@
 	}
 
 	.facilities-about__image {
-		height: 400px;
-		border-radius: var(--radius-16);
+		height: 40rem; /* 400px -> 40rem */
+		border-radius: var(--radius-lg); /* var(--radius-16) */
 	}
 
 	.facilities-list {
@@ -234,8 +234,8 @@
 	}
 
 	.facilities-card {
-		height: 220px;
-		border-radius: var(--radius-16);
+		height: 22rem; /* 220px -> 22rem */
+		border-radius: var(--radius-lg);
 	}
 
 	.facilities-details {
@@ -267,7 +267,7 @@
 @media (max-width: 575px) {
 	/* Hero Section - Mobile */
 	.facilities-hero__image {
-		height: 200px;
+		height: 20rem; /* 200px -> 20rem */
 		object-fit: cover;
 	}
 
@@ -292,7 +292,7 @@
 	}
 
 	.facilities-about__image {
-		height: 200px;
+		height: 20rem; /* 200px -> 20rem */
 		border-radius: var(--radius-10);
 	}
 
@@ -320,17 +320,17 @@
 
 	.facilities-list__items li {
 		font-size: var(--section-description-mobile);
-		padding-left: 20px;
+		padding-left: 2rem; /* 20px -> 2rem */
 	}
 
 	.facilities-list__items li::before {
-		width: 10px;
-		height: 10px;
-		top: 4px;
+		width: 1rem; /* 10px -> 1rem */
+		height: 1rem;
+		top: 0.4rem; /* 4px -> 0.4rem */
 	}
 
 	.facilities-card {
-		height: 180px;
+		height: 18rem; /* 180px -> 18rem */
 		border-radius: var(--radius-10);
 	}
 
@@ -359,10 +359,10 @@
 
 	.facilities-details__list li {
 		font-size: var(--section-description-mobile);
-		padding-left: 14px;
+		padding-left: 1.4rem; /* 14px -> 1.4rem */
 	}
 
 	.facilities-details__list li::before {
-		top: 7px;
+		top: 0.7rem; /* 7px -> 0.7rem */
 	}
 }

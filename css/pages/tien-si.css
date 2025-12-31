@@ -6,7 +6,7 @@
 /* Hero Section */
 .tiensi-hero {
 	width: 100%;
-	height: 500px;
+	height: 50rem; /* 500px */
 	background-image: url("/assets/images/hero_bg.png");
 	background-size: cover;
 	background-position: center;
@@ -66,8 +66,8 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	width: 70px;
-	height: 70px;
+	width: 7rem; /* 70px */
+	height: 7rem; /* 70px */
 	cursor: pointer;
 	transition: transform var(--transition-base);
 }
@@ -125,7 +125,7 @@
    ================================================ */
 @media (max-width: 1199px) {
 	.tiensi-hero {
-		height: 400px;
+		height: 40rem; /* 400px */
 	}
 
 	.program-intro--tiensi {
@@ -162,7 +162,7 @@
    ================================================ */
 @media (max-width: 575px) {
 	.tiensi-hero {
-		height: 300px;
+		height: 30rem; /* 300px */
 	}
 
 	.program-intro--tiensi {
@@ -191,8 +191,8 @@
 		scrollbar-width: none;
 		-ms-overflow-style: none;
 		gap: var(--sp-3);
-		margin: 0 -16px;
-		padding: var(--sp-4) 16px 0;
+		margin: 0 -1.6rem; /* -16px */
+		padding: var(--sp-4) 1.6rem 0; /* 16px */
 	}
 
 	.program-cards-grid::-webkit-scrollbar {
@@ -200,9 +200,9 @@
 	}
 
 	.program-cards-grid .program-card-item {
-		flex: 0 0 calc(100% - 32px);
-		max-width: calc(100% - 32px);
-		min-width: calc(100% - 32px);
+		flex: 0 0 calc(100% - 3.2rem); /* 32px */
+		max-width: calc(100% - 3.2rem); /* 32px */
+		min-width: calc(100% - 3.2rem); /* 32px */
 		scroll-snap-align: center;
 	}
 
@@ -216,8 +216,8 @@
 	}
 
 	.program-slider-nav__btn {
-		width: 40px;
-		height: 40px;
+		width: 4rem; /* 40px */
+		height: 4rem; /* 40px */
 		border-radius: 50%;
 		background-color: var(--gray-200, #e5e7eb);
 		border: none;
@@ -238,8 +238,8 @@
 	}
 
 	.program-slider-nav__btn img {
-		width: 11px;
-		height: 10px;
+		width: 1.1rem; /* 11px */
+		height: 1rem; /* 10px */
 		object-fit: contain;
 	}
 }
@@ -267,7 +267,7 @@
 .program-advantages__stage {
 	position: relative;
 	width: 100%;
-	max-width: 1200px;
+	max-width: 120rem; /* 1200px */
 	margin: 0 auto;
 	aspect-ratio: 2/1;
 }
@@ -318,7 +318,7 @@
 /* Advantage text items positioned around the SVG */
 .program-advantages__item {
 	position: absolute;
-	max-width: 280px;
+	max-width: 28rem; /* 280px */
 }
 
 .program-advantages__text {
@@ -388,7 +388,7 @@
 
 	.program-advantages__svg {
 		width: 100%;
-		max-width: 600px;
+		max-width: 60rem; /* 600px */
 		margin: 0 auto var(--sp-4);
 	}
 
@@ -454,7 +454,7 @@
 		position: static !important;
 		max-width: 100%;
 		text-align: left;
-		padding: 0 16px;
+		padding: 0 1.6rem; /* 16px */
 		margin-bottom: var(--sp-3);
 	}
 
@@ -496,7 +496,7 @@
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	gap: var(--sp-3);
-	max-width: 1200px;
+	max-width: 120rem; /* 1200px */
 	margin: 0 auto;
 }
 
@@ -508,13 +508,13 @@
 	display: flex;
 	align-items: center;
 	gap: var(--sp-3);
-	min-height: 91px;
+	min-height: 9.1rem; /* 91px */
 	cursor: pointer;
 	transition: all var(--transition-base);
 }
 
 .scholarship-policy__item:hover {
-	transform: translateY(-5px);
+	transform: translateY(-0.5rem); /* -5px */
 	box-shadow: var(--shadow-2);
 }
 
@@ -528,13 +528,13 @@
 
 .scholarship-policy__item--wide {
 	grid-column: 1 / -1;
-	max-width: 794px;
+	max-width: 79.4rem; /* 794px */
 	margin: 0 auto;
 }
 
 .scholarship-policy__icon {
-	width: 24px;
-	height: 24px;
+	width: 2.4rem; /* 24px */
+	height: 2.4rem; /* 24px */
 	flex-shrink: 0;
 	margin-left: auto;
 	order: 2;
@@ -547,8 +547,8 @@
 }
 
 .scholarship-policy__icon svg {
-	width: 14px;
-	height: 14px;
+	width: 1.4rem; /* 14px */
+	height: 1.4rem; /* 14px */
 }
 
 .scholarship-policy__item--primary .scholarship-policy__icon {
@@ -622,8 +622,8 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 182px;
-	height: 123px;
+	width: 18.2rem; /* 182px */
+	height: 12.3rem; /* 123px */
 	background-image: url("/assets/images/decorations/training-format-top.png");
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -635,8 +635,8 @@
 	position: absolute;
 	bottom: 0;
 	right: 0;
-	width: 268px;
-	height: 127px;
+	width: 26.8rem; /* 268px */
+	height: 12.7rem; /* 127px */
 	background-image: url("/assets/images/decorations/training-format-bottom.png");
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -680,7 +680,7 @@
 	font-family: var(--font-family-heading);
 	font-size: var(--section-subtitle);
 	font-weight: var(--fw-bold);
-	line-height: 30px;
+	line-height: 3rem; /* 30px */
 	color: var(--color-light);
 	margin-bottom: var(--sp-2);
 }
@@ -712,8 +712,8 @@
 	position: absolute;
 	left: 0;
 	color: var(--color-light);
-	font-size: 18px;
-	line-height: 22px;
+	font-size: 1.8rem; /* 18px */
+	line-height: 2.2rem; /* 22px */
 }
 
 .training-format__image-wrapper {
@@ -871,7 +871,7 @@
 	display: none;
 	justify-content: center;
 	align-items: center;
-	gap: 7px;
+	gap: 0.7rem; /* 7px */
 	margin-top: var(--sp-6);
 }
 
@@ -887,8 +887,8 @@
 }
 
 .program-pagination__btn {
-	width: 40px;
-	height: 40px;
+	width: 4rem; /* 40px */
+	height: 4rem; /* 40px */
 	border-radius: 50%;
 	border: none;
 	background-color: var(--gray-200, #e5e7eb);
@@ -913,14 +913,14 @@
 }
 
 .program-pagination__btn img {
-	width: 11px;
-	height: 10px;
+	width: 1.1rem; /* 11px */
+	height: 1rem; /* 10px */
 }
 
 /* Pagination Page Items (dynamically generated) */
 .program-pagination__item {
-	width: 40px;
-	height: 40px;
+	width: 4rem; /* 40px */
+	height: 4rem; /* 40px */
 	border: none;
 	border-radius: 50%;
 	background-color: var(--gray-200, #e5e7eb);

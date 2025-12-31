@@ -1,55 +1,45 @@
-/* ================================================
-   Card Components
-   ================================================ */
-
-/* ========== Program Cards ========== */
+/* Program Cards */
 a.program-card {
 	text-decoration: none;
 	cursor: pointer;
 }
-
 .program-card {
 	background-color: var(--color-light);
-	border: 1px solid var(--gray-300);
-	border-radius: 60px;
+	border: 0.1rem solid var(--gray-300);
+	border-radius: 6rem;
 	padding: var(--sp-2);
 	display: flex;
 	align-items: center;
 	gap: var(--sp-3);
 	transition: all var(--transition-base);
-	height: 75px;
+	height: 7.5rem;
 }
-
 .program-card:hover {
-	transform: translateY(-4px);
-	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	transform: translateY(-0.4rem);
+	box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.1);
 	border-color: var(--brand-primary);
 }
-
 .program-card__icon-wrapper {
 	position: relative;
-	width: 58px;
-	height: 58px;
+	width: 5.8rem;
+	height: 5.8rem;
 	flex-shrink: 0;
 }
-
 .program-card__icon-bg {
 	width: 100%;
 	height: 100%;
 	border-radius: 50%;
 	object-fit: cover;
 }
-
 .program-card__icon {
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	max-width: 40px;
-	max-height: 40px;
+	max-width: 4rem;
+	max-height: 4rem;
 	object-fit: contain;
 }
-
 .program-card__title {
 	font-family: Montserrat, var(--font-primary);
 	font-size: var(--fs-300);
@@ -59,18 +49,16 @@ a.program-card {
 	line-height: 1.22;
 }
 
-/* ========== News Cards ========== */
+/* News Cards */
 a.news-card {
 	text-decoration: none;
 	cursor: pointer;
 	transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
 a.news-card:hover {
-	transform: translateY(-4px);
-	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+	transform: translateY(-0.4rem);
+	box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.12);
 }
-
 .news-card {
 	background-color: var(--color-light);
 	border-radius: var(--radius-lg);
@@ -79,23 +67,19 @@ a.news-card:hover {
 	display: flex;
 	flex-direction: column;
 }
-
 .news-card--featured {
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.08);
 }
-
 .news-card__image {
 	width: 100%;
-	height: 286px;
+	height: 28.6rem;
 	object-fit: cover;
 	border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
-
 .news-card__content {
 	padding: var(--sp-4);
 	flex: 1;
 }
-
 .news-card__title {
 	font-family: Montserrat, var(--font-primary);
 	font-size: var(--fs-350);
@@ -105,14 +89,12 @@ a.news-card:hover {
 	margin-bottom: var(--sp-3);
 	text-transform: capitalize;
 }
-
 .news-card__divider {
 	border: none;
-	height: 1px;
+	height: 0.1rem;
 	background-color: var(--gray-300);
 	margin: var(--sp-3) 0;
 }
-
 .news-card__excerpt {
 	font-family: Montserrat, var(--font-primary);
 	font-size: var(--fs-300);
@@ -125,42 +107,37 @@ a.news-card:hover {
 	overflow: hidden;
 }
 
-/* News Card - Horizontal Layout */
+/* News Horizontal */
 .news-card--horizontal {
 	flex-direction: row;
 	margin-bottom: var(--sp-3);
-	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+	box-shadow: 0 0.1rem 0.4rem rgba(0, 0, 0, 0.06);
 }
-
 .news-card--horizontal:last-child {
 	margin-bottom: 0;
 }
-
 .news-card__thumbnail {
-	width: 218px;
-	height: 155px;
+	width: 21.8rem;
+	height: 15.5rem;
 	object-fit: cover;
 	border-radius: var(--radius-lg) 0 0 var(--radius-lg);
 	flex-shrink: 0;
 }
-
 .news-card--horizontal .news-card__content {
 	padding: var(--sp-3);
 }
-
 .news-card--horizontal .news-card__title {
 	font-size: var(--fs-400);
 	line-height: 1.33;
 	margin-bottom: var(--sp-2);
 }
-
 .news-list {
 	display: flex;
 	flex-direction: column;
 	gap: var(--sp-3);
 }
 
-/* ========== Event Cards ========== */
+/* Event Cards */
 .event-card--list {
 	background-color: var(--gray-100);
 	border-radius: var(--radius-md);
@@ -169,24 +146,20 @@ a.news-card:hover {
 	margin-bottom: var(--sp-3);
 	overflow: hidden;
 }
-
 .event-card--list:last-child {
 	margin-bottom: 0;
 }
-
 .event-card__thumbnail {
-	width: 186px;
-	height: 169px;
+	width: 18.6rem;
+	height: 16.9rem;
 	object-fit: cover;
 	border-radius: var(--radius-md) 0 0 var(--radius-md);
 	flex-shrink: 0;
 }
-
 .event-card__content {
 	padding: var(--sp-3) var(--sp-4) var(--sp-3) 0;
 	flex: 1;
 }
-
 .event-card__title {
 	font-family: Montserrat, var(--font-primary);
 	font-size: var(--fs-350);
@@ -194,7 +167,6 @@ a.news-card:hover {
 	color: var(--gray-900);
 	margin-bottom: var(--sp-2);
 }
-
 .event-card__excerpt {
 	font-family: Montserrat, var(--font-primary);
 	font-size: var(--fs-300);
@@ -203,7 +175,6 @@ a.news-card:hover {
 	line-height: 1.71;
 	margin-bottom: var(--sp-3);
 }
-
 .event-card__meta {
 	display: flex;
 	align-items: center;
@@ -212,33 +183,29 @@ a.news-card:hover {
 	font-size: var(--fs-200);
 	color: var(--gray-900);
 }
-
 .event-card__icon {
-	width: 15px;
-	height: 15px;
+	width: 1.5rem;
+	height: 1.5rem;
 	object-fit: contain;
 }
 
-/* Event Card - Featured (with Countdown) */
+/* Event Card Featured */
 .event-card--featured {
 	background-color: var(--brand-primary);
 	border-radius: var(--radius-lg);
 	padding: var(--sp-4);
 	height: 100%;
 }
-
 .event-card__featured-image {
 	width: 100%;
-	height: 369px;
+	height: 36.9rem;
 	object-fit: cover;
 	border-radius: var(--radius-md);
 	margin-bottom: var(--sp-3);
 }
-
 .event-card__featured-content {
 	text-align: center;
 }
-
 .event-card__featured-title {
 	font-family: Montserrat, var(--font-primary);
 	font-size: var(--fs-600);
@@ -246,7 +213,6 @@ a.news-card:hover {
 	color: #ffffff;
 	margin-bottom: var(--sp-2);
 }
-
 .event-card__featured-subtitle {
 	font-family: Montserrat, var(--font-primary);
 	font-size: var(--fs-300);
@@ -255,22 +221,20 @@ a.news-card:hover {
 	margin-bottom: var(--sp-4);
 }
 
-/* Event Countdown */
+/* Countdown */
 .event-countdown {
 	display: flex;
 	justify-content: center;
 	gap: var(--sp-3);
 	margin-bottom: var(--sp-4);
 }
-
 .event-countdown__item {
 	background-color: var(--color-light);
 	border-radius: var(--radius-md);
 	padding: var(--sp-2) var(--sp-3);
 	text-align: center;
-	min-width: 74px;
+	min-width: 7.4rem;
 }
-
 .event-countdown__value {
 	display: block;
 	font-family: Montserrat, var(--font-primary);
@@ -280,7 +244,6 @@ a.news-card:hover {
 	line-height: 1.2;
 	margin-bottom: var(--sp-1);
 }
-
 .event-countdown__label {
 	display: block;
 	font-family: Montserrat, var(--font-primary);
@@ -288,7 +251,6 @@ a.news-card:hover {
 	font-weight: 400;
 	color: var(--brand-primary);
 }
-
 .event-card__link {
 	display: inline-block;
 	font-family: Montserrat, var(--font-primary);
@@ -299,28 +261,23 @@ a.news-card:hover {
 	padding-bottom: var(--sp-1);
 	transition: all var(--transition-base);
 }
-
 .event-card__link:hover {
 	color: var(--color-light);
 	opacity: 0.8;
 }
 
-/* Responsive */
 @media (max-width: 575px) {
 	.event-card--list {
 		flex-direction: column;
 	}
-
 	.event-card__thumbnail {
 		width: 100%;
 		border-radius: var(--radius-md) var(--radius-md) 0 0;
 	}
-
 	.event-countdown {
 		flex-wrap: wrap;
 	}
-
 	.program-card__title {
-		font-size: 14px;
+		font-size: 1.4rem;
 	}
 }

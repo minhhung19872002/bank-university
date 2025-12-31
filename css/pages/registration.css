@@ -1,11 +1,7 @@
 /* ============================================
    PAGE: Registration (Đăng ký tư vấn tuyển sinh)
-   Contact/consultation registration form
    ============================================ */
 
-/* ============================================
-   HERO SECTION
-   ============================================ */
 .registration-hero {
 	width: 100%;
 	overflow: hidden;
@@ -21,16 +17,16 @@
    REGISTRATION FORM SECTION
    ============================================ */
 .registration-form-section {
-	padding-top: 60px;
-	padding-bottom: 60px;
+	padding-top: 6rem;
+	padding-bottom: 6rem;
 	background-color: var(--color-light);
 }
 
 .registration-page-wrapper {
 	position: relative;
 	width: 100%;
-	max-width: 1200px;
-	height: 577px;
+	max-width: 120rem;
+	height: 57.7rem;
 	margin: 0 auto;
 }
 
@@ -41,8 +37,8 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 746px;
-	height: 415px;
+	width: 74.6rem;
+	height: 41.5rem;
 	z-index: 0;
 }
 
@@ -50,7 +46,7 @@
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
-	border-radius: 20px;
+	border-radius: 2rem;
 	display: block;
 }
 
@@ -60,13 +56,13 @@
 .registration-card {
 	position: absolute;
 	top: 0;
-	left: 714px;
-	width: 486px;
-	height: 577px;
+	left: 71.4rem;
+	width: 48.6rem;
+	height: 57.7rem;
 	background-color: var(--color-light);
-	border-radius: 20px;
-	padding: 53px 38px;
-	box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
+	border-radius: 2rem;
+	padding: 5.3rem 3.8rem;
+	box-shadow: 0 0 1.5rem 0 rgba(0, 0, 0, 0.15);
 	z-index: 1;
 }
 
@@ -76,11 +72,11 @@
 
 .registration-card__title {
 	font-family: var(--font-primary);
-	font-size: 28px;
+	font-size: 2.8rem;
 	font-weight: 700;
-	line-height: 1.21; /* 34/28 */
+	line-height: 1.21;
 	color: var(--brand-primary);
-	margin: 0 0 25px;
+	margin: 0 0 2.5rem;
 }
 
 /* ============================================
@@ -89,16 +85,14 @@
 .registration-form {
 	display: flex;
 	flex-direction: column;
-	gap: 19px;
+	gap: 1.9rem;
 }
 
-/* Form Row (2 columns) */
 .registration-form__row {
 	display: flex;
-	gap: 20px;
+	gap: 2rem;
 }
 
-/* Form Group */
 .registration-form__group {
 	flex: 1;
 	min-width: 0;
@@ -108,20 +102,19 @@
 	width: 100%;
 }
 
-/* Input Fields */
 .registration-form__input,
 .registration-form__select,
 .registration-form__textarea {
 	width: 100%;
-	height: 37px;
-	padding: 9px 18px;
+	height: 3.7rem;
+	padding: 0.9rem 1.8rem;
 	background-color: var(--color-light);
-	border: 1px solid #ededed;
-	border-radius: 6px;
+	border: 0.1rem solid #ededed;
+	border-radius: 0.6rem;
 	font-family: var(--font-primary);
 	font-size: var(--fs-200);
 	font-weight: 400;
-	line-height: 1.21; /* 17/14 */
+	line-height: 1.21;
 	color: var(--gray-800);
 	transition: border-color var(--transition-base);
 }
@@ -138,14 +131,13 @@
 	color: var(--gray-800);
 }
 
-/* Select Dropdown */
 .registration-form__select {
 	appearance: none;
 	background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10"><path fill="%23333333" d="M0 0l5 5 5-5z"/></svg>');
 	background-repeat: no-repeat;
-	background-position: right 18px center;
-	background-size: 10px 10px;
-	padding-right: 40px;
+	background-position: right 1.8rem center;
+	background-size: 1rem 1rem;
+	padding-right: 4rem;
 	cursor: pointer;
 }
 
@@ -153,11 +145,10 @@
 	color: var(--gray-800);
 }
 
-/* Textarea */
 .registration-form__textarea {
-	height: 100px;
+	height: 10rem;
 	resize: none;
-	padding-top: 9px;
+	padding-top: 0.9rem;
 }
 
 /* ============================================
@@ -165,21 +156,21 @@
    ============================================ */
 .registration-form__checkboxes {
 	display: flex;
-	gap: 27px;
-	margin-top: -6px;
+	gap: 2.7rem;
+	margin-top: -0.6rem;
 }
 
 .registration-form__checkbox {
 	display: flex;
 	align-items: center;
-	gap: 10px;
+	gap: 1rem;
 }
 
 .registration-form__checkbox-input {
-	width: 17px;
-	height: 17px;
-	border: 1px solid #ededed;
-	border-radius: 2px;
+	width: 1.7rem;
+	height: 1.7rem;
+	border: 0.1rem solid #ededed;
+	border-radius: 0.2rem;
 	cursor: pointer;
 	flex-shrink: 0;
 }
@@ -188,7 +179,7 @@
 	font-family: var(--font-primary);
 	font-size: var(--fs-100);
 	font-weight: 400;
-	line-height: 1.22; /* 15/12 */
+	line-height: 1.22;
 	color: var(--gray-800);
 	cursor: pointer;
 	user-select: none;
@@ -199,18 +190,18 @@
    ============================================ */
 .registration-form__submit {
 	width: 100%;
-	height: 37px;
+	height: 3.7rem;
 	background-color: var(--brand-primary);
 	border: none;
-	border-radius: 10px;
+	border-radius: 1rem;
 	font-family: var(--font-primary);
 	font-size: var(--fs-350);
 	font-weight: 700;
-	line-height: 1.22; /* 20/16 */
+	line-height: 1.22;
 	color: var(--color-light);
 	cursor: pointer;
 	transition: background-color var(--transition-base);
-	margin-top: 6px;
+	margin-top: 0.6rem;
 }
 
 .registration-form__submit:hover {
@@ -218,7 +209,7 @@
 }
 
 .registration-form__submit:active {
-	transform: translateY(1px);
+	transform: translateY(0.1rem);
 }
 
 /* ============================================
@@ -226,29 +217,26 @@
    ============================================ */
 .registration-text-effect {
 	position: absolute;
-	top: 403px;
-	left: 14px;
+	top: 40.3rem;
+	left: 1.4rem;
 	font-family: var(--font-primary);
-	font-size: 100px;
+	font-size: 10rem;
 	font-weight: 700;
-	line-height: 1.22; /* 122/100 */
+	line-height: 1.22;
 	color: transparent;
-	-webkit-text-stroke: 1px rgba(0, 0, 0, 0.1);
-	text-stroke: 1px rgba(0, 0, 0, 0.1);
+	-webkit-text-stroke: 0.1rem rgba(0, 0, 0, 0.1);
+	text-stroke: 0.1rem rgba(0, 0, 0, 0.1);
 	white-space: nowrap;
 	pointer-events: none;
 	z-index: 2;
 }
 
-/* ============================================
-   RESPONSIVE - TABLET (max-width: 1199px)
-   ============================================ */
+/* Responsive Tablet */
 @media (max-width: 1199px) {
 	.registration-form-section {
 		padding-top: var(--sp-5);
 		padding-bottom: var(--sp-5);
 	}
-
 	.registration-page-wrapper {
 		position: relative;
 		height: auto;
@@ -257,65 +245,54 @@
 		align-items: center;
 		gap: 0;
 	}
-
 	.registration-image {
 		position: relative;
 		top: auto;
 		left: auto;
 		width: 100%;
-		max-width: 800px;
+		max-width: 80rem;
 		height: auto;
 		aspect-ratio: 746/415;
 		z-index: 0;
 	}
-
 	.registration-card {
 		position: relative;
-		top: -80px;
+		top: -8rem;
 		left: auto;
 		width: 100%;
-		max-width: 700px;
+		max-width: 70rem;
 		height: auto;
 		padding: var(--sp-5) var(--sp-4);
 		z-index: 1;
 	}
-
 	.registration-card__title {
-		font-size: 24px;
-		margin-bottom: 20px;
+		font-size: 2.4rem;
+		margin-bottom: 2rem;
 	}
-
 	.registration-text-effect {
 		display: none;
 	}
 }
 
-/* ============================================
-   RESPONSIVE - MOBILE (max-width: 575px)
-   ============================================ */
+/* Responsive Mobile */
 @media (max-width: 575px) {
 	.registration-hero {
 		display: none;
 	}
-
 	.registration-form-section {
 		padding-top: var(--sp-4);
 		padding-bottom: var(--sp-4);
 	}
-
 	.registration-page-wrapper {
 		gap: var(--sp-3);
 		align-items: stretch;
 	}
-
 	.registration-image {
 		max-width: 100%;
 	}
-
 	.registration-image__img {
 		border-radius: var(--radius-20);
 	}
-
 	.registration-card {
 		position: relative;
 		top: auto;
@@ -327,7 +304,6 @@
 		border-radius: var(--radius-10);
 		background-color: var(--brand-primary);
 	}
-
 	.registration-card__subtitle {
 		display: block;
 		font-family: var(--font-primary);
@@ -336,52 +312,43 @@
 		line-height: 1.2;
 		color: var(--color-light);
 		text-align: center;
-		margin: 0 0 8px;
+		margin: 0 0 0.8rem;
 	}
-
 	.registration-card__title {
-		font-size: 20px;
+		font-size: 2rem;
 		margin-bottom: var(--sp-3);
 		color: var(--color-light);
 		text-align: center;
 	}
-
 	.registration-form {
-		gap: 14px;
+		gap: 1.4rem;
 	}
-
 	.registration-form__row {
 		flex-direction: column;
-		gap: 14px;
+		gap: 1.4rem;
 	}
-
 	.registration-form__input,
 	.registration-form__select,
 	.registration-form__textarea {
-		height: 40px;
-		padding: 10px 14px;
+		height: 4rem;
+		padding: 1rem 1.4rem;
 	}
-
 	.registration-form__textarea {
-		height: 90px;
+		height: 9rem;
 	}
-
 	.registration-form__checkboxes {
 		flex-direction: column;
-		gap: 12px;
+		gap: 1.2rem;
 		margin-top: 0;
 	}
-
 	.registration-form__submit {
-		height: 42px;
+		height: 4.2rem;
 		margin-top: var(--sp-2);
 		background-color: var(--brand-secondary);
 	}
-
 	.registration-form__submit:hover {
 		background-color: var(--brand-secondary-dark, #1a2a4a);
 	}
-
 	.registration-form__checkbox-label {
 		color: var(--color-light);
 	}

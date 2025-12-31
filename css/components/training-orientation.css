@@ -115,9 +115,9 @@
 	content: "";
 	position: absolute;
 	left: 0;
-	top: 7px;
-	width: 15px;
-	height: 15px;
+	top: 0.7rem; /* 7px */
+	width: 1.5rem; /* 15px */
+	height: 1.5rem; /* 15px */
 	background-image: url("../../assets/images/achievement.png");
 	background-size: cover;
 	background-position: center;
@@ -137,7 +137,7 @@
 	width: 100%;
 	height: auto;
 	border-radius: var(--radius-20);
-	max-width: 550px;
+	max-width: 55rem; /* 550px */
 	margin: 0 auto;
 	display: block;
 }
@@ -163,7 +163,7 @@
 	}
 
 	.training-orientation__image {
-		max-width: 450px;
+		max-width: 45rem; /* 450px */
 	}
 }
 
