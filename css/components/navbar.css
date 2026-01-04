@@ -49,6 +49,15 @@
 	text-decoration: none;
 }
 
+/* Make active dropdown-item match hover style (override bootstrap default blue) */
+.navbar-nav .dropdown-item.active,
+.navbar-nav .dropdown-item:active {
+	background: transparent !important;
+	color: var(--brand-primary) !important;
+	font-weight: 500;
+	text-decoration: none;
+}
+
 /* ================================================
    Navbar Component
    ================================================ */
@@ -148,11 +157,13 @@
 }
 .navbar-nav .nav-link:hover::after,
 .navbar-nav .nav-link:focus::after,
-.navbar-nav .nav-item.show > .nav-link::after {
+.navbar-nav .nav-item.show .nav-link::after {
 	width: 100%;
 }
 .navbar-nav .nav-link:hover,
-.navbar-nav .nav-link:focus {
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-item.show .nav-link,
+.navbar-nav .nav-item.dropdown:hover .nav-link {
 	color: var(--brand-primary);
 }
 
@@ -174,7 +185,9 @@
 
 .navbar-nav .nav-link.active::after,
 .navbar-nav .nav-link.show::after,
-.navbar-nav .nav-link--active::after {
+.navbar-nav .nav-link--active::after,
+.navbar-nav .nav-item.show .nav-link::after,
+.navbar-nav .nav-item.dropdown:hover .nav-link::after {
 	width: 100%;
 	left: 0;
 	right: auto;
@@ -197,7 +210,6 @@
 		padding: var(--sp-2) 0.5rem !important;
 	}
 }
-
 
 @media (max-width: 1030px) {
 	.navbar {
@@ -484,4 +496,51 @@
 	filter: brightness(0) invert(1);
 	width: 2rem;
 	height: 2rem;
+}
+
+/* Mobile Submenu */
+.mobile-nav__submenu {
+	list-style: none;
+	padding-left: 4rem;
+	margin-top: 1rem;
+	display: none;
+}
+
+.mobile-nav__submenu.open {
+	display: block;
+}
+
+.mobile-nav__submenu-item {
+	margin-bottom: 1rem;
+}
+
+.mobile-nav__submenu-link {
+	font-family: Montserrat, var(--font-primary);
+	font-size: 1.4rem;
+	color: var(--gray-700);
+	text-decoration: none;
+	display: block;
+	padding: 0.5rem 0;
+}
+
+.mobile-nav__submenu-link:hover,
+.mobile-nav__submenu-link.active {
+	color: var(--brand-primary);
+}
+
+.mobile-nav__toggle {
+	margin-left: auto;
+	background: none;
+	border: none;
+	padding: 0.5rem;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--gray-500);
+	transition: transform 0.3s ease;
+}
+
+.mobile-nav__toggle.open {
+	transform: rotate(180deg);
 }

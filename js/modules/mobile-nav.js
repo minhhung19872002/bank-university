@@ -9,8 +9,10 @@
  * Uses Router.getActiveNavLabel() to determine which nav item to highlight
  */
 function initActiveNav() {
-    if (typeof Router === 'undefined') {
-        console.warn('Router not loaded. Make sure to include js/utils/router.js');
+    if (typeof Router === "undefined") {
+        console.warn(
+            "Router not loaded. Make sure to include js/utils/router.js"
+        );
         return;
     }
 
@@ -20,27 +22,31 @@ function initActiveNav() {
     if (!activeNavText) return;
 
     // Desktop nav links
-    const desktopLinks = document.querySelectorAll('.navbar-nav .nav-link');
-    desktopLinks.forEach(link => {
-        link.classList.remove('active');
+    const desktopLinks = document.querySelectorAll(".navbar-nav .nav-link");
+    desktopLinks.forEach((link) => {
+        link.classList.remove("active");
         if (link.textContent.trim() === activeNavText) {
-            link.classList.add('active');
+            link.classList.add("active");
         }
     });
 
     // Mobile nav links
-    const mobileLinks = document.querySelectorAll('.mobile-nav__link');
-    mobileLinks.forEach(link => {
-        link.classList.remove('mobile-nav__link--active');
-        const linkText = link.querySelector('span');
-        if (linkText && linkText.textContent.trim().toLowerCase() === activeNavText.toLowerCase()) {
-            link.classList.add('mobile-nav__link--active');
+    const mobileLinks = document.querySelectorAll(".mobile-nav__link");
+    mobileLinks.forEach((link) => {
+        link.classList.remove("mobile-nav__link--active");
+        const linkText = link.querySelector("span");
+        if (
+            linkText &&
+            linkText.textContent.trim().toLowerCase() ===
+                activeNavText.toLowerCase()
+        ) {
+            link.classList.add("mobile-nav__link--active");
         }
     });
 }
 
 function initStickyHeader() {
-    const header = document.querySelector('[data-header]');
+    const header = document.querySelector("[data-header]");
     if (!header) return;
 
     let lastScrollY = 0;
@@ -50,61 +56,67 @@ function initStickyHeader() {
         const currentScrollY = window.scrollY;
 
         if (currentScrollY > scrollThreshold) {
-            header.classList.add('is-scrolled');
+            header.classList.add("is-scrolled");
         } else {
-            header.classList.remove('is-scrolled');
+            header.classList.remove("is-scrolled");
         }
 
         lastScrollY = currentScrollY;
     }
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll(); // Initial check
 }
 
 function initMobileNav() {
-    const mobileNav = document.querySelector('[data-mobile-nav]');
-    const toggleBtn = document.querySelector('[data-nav-toggle]');
-    const closeBtn = document.querySelector('[data-nav-close]');
-    const overlay = document.querySelector('[data-mobile-nav-overlay]');
+    const mobileNav = document.querySelector("[data-mobile-nav]");
+    const toggleBtn = document.querySelector("[data-nav-toggle]");
+    const closeBtn = document.querySelector("[data-nav-close]");
+    const overlay = document.querySelector("[data-mobile-nav-overlay]");
     const links = mobileNav
-        ? mobileNav.querySelectorAll('.mobile-nav__link')
+        ? mobileNav.querySelectorAll(".mobile-nav__link")
         : [];
 
     if (!mobileNav || !toggleBtn) return;
 
     const openNav = () => {
-        mobileNav.classList.add('mobile-nav--open');
-        mobileNav.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
+        mobileNav.classList.add("mobile-nav--open");
+        mobileNav.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
     };
 
     const closeNav = () => {
-        mobileNav.classList.remove('mobile-nav--open');
-        mobileNav.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
+        mobileNav.classList.remove("mobile-nav--open");
+        mobileNav.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
     };
 
-    toggleBtn.addEventListener('click', openNav);
+    toggleBtn.addEventListener("click", openNav);
 
     if (closeBtn) {
-        closeBtn.addEventListener('click', closeNav);
+        closeBtn.addEventListener("click", closeNav);
     }
 
     if (overlay) {
-        overlay.addEventListener('click', closeNav);
+        overlay.addEventListener("click", closeNav);
     }
 
-    links.forEach(link => {
-        link.addEventListener('click', () => {
+    // Use event delegation for links (handles dynamic content)
+    mobileNav.addEventListener("click", (e) => {
+        const link =
+            e.target.closest(".mobile-nav__link") ||
+            e.target.closest(".mobile-nav__submenu-link");
+        if (link) {
+            // Don't close if it's just a toggle button click (handled separately)
+            // But toggle button is outside the link usually, or we stop propagation.
             closeNav();
-        });
+        }
     });
 }
 
 // Auto-initialize after partials are loaded
 // This handles the case where header is loaded via data-include
-(function() {
+(function () {
     let initialized = false;
 
     function initAll() {
@@ -117,15 +129,15 @@ function initMobileNav() {
     }
 
     // Wait for DOM to be ready
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() {
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", function () {
             // Check if header is already in DOM
-            if (document.querySelector('[data-nav-toggle]')) {
+            if (document.querySelector("[data-nav-toggle]")) {
                 initAll();
             } else {
                 // Observe for header being added (e.g., via data-include)
                 const observer = new MutationObserver((mutations, obs) => {
-                    if (document.querySelector('[data-nav-toggle]')) {
+                    if (document.querySelector("[data-nav-toggle]")) {
                         initAll();
                         obs.disconnect();
                     }
@@ -133,18 +145,18 @@ function initMobileNav() {
 
                 observer.observe(document.body, {
                     childList: true,
-                    subtree: true
+                    subtree: true,
                 });
             }
         });
     } else {
         // DOM already ready
-        if (document.querySelector('[data-nav-toggle]')) {
+        if (document.querySelector("[data-nav-toggle]")) {
             initAll();
         } else {
             // Observe for header being added
             const observer = new MutationObserver((mutations, obs) => {
-                if (document.querySelector('[data-nav-toggle]')) {
+                if (document.querySelector("[data-nav-toggle]")) {
                     initAll();
                     obs.disconnect();
                 }
@@ -152,7 +164,7 @@ function initMobileNav() {
 
             observer.observe(document.body, {
                 childList: true,
-                subtree: true
+                subtree: true,
             });
         }
     }

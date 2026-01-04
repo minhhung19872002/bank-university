@@ -61,6 +61,7 @@
     <link rel="stylesheet" href="/css/components/footer.css" />
     <link rel="stylesheet" href="/css/components/program-card.css" />
     <link rel="stylesheet" href="/css/components/faq.css" />
+    <link rel="stylesheet" href="/css/components/breadcrumb.css" />
     <link rel="stylesheet" href="/css/pages/program-detail.css" />
   </head>
   <body>
@@ -387,6 +388,23 @@
 
     <!-- Main Content -->
     <main class="program-detail">
+      <!-- Breadcrumb Navigation - Mobile only -->
+      <nav class="hero-breadcrumb d-sm-none" aria-label="Breadcrumb">
+        <div class="container">
+          <ol class="hero-breadcrumb__list">
+            <li class="hero-breadcrumb__item">
+              <a href="/" class="hero-breadcrumb__link">Trang chủ</a>
+            </li>
+            <li class="hero-breadcrumb__item">
+              <a href="/thac-si/" class="hero-breadcrumb__link">Thạc sĩ</a>
+            </li>
+            <li class="hero-breadcrumb__item hero-breadcrumb__item--active">
+              <span class="hero-breadcrumb__current">Chi tiết ngành học</span>
+            </li>
+          </ol>
+        </div>
+      </nav>
+
       <!-- Breadcrumb & Title Section -->
       <section class="program-header">
         <div class="container">
