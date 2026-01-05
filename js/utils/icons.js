@@ -64,8 +64,9 @@
         svg.setAttribute("aria-hidden", "true");
 
         // Copy classes from original element
-        if (el.className) {
-          svg.setAttribute("class", el.className.replace("iconify", "").trim());
+        const currentClass = el.getAttribute("class");
+        if (currentClass) {
+          svg.setAttribute("class", currentClass.replace("iconify", "").trim());
         }
 
         const use = document.createElementNS(
