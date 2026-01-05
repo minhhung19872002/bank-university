@@ -58,6 +58,7 @@
     <link rel="stylesheet" href="/css/components/footer.css" />
     <link rel="stylesheet" href="/css/components/breadcrumb.css" />
     <link rel="stylesheet" href="/css/components/hero.css" />
+    <link rel="stylesheet" href="/css/components/pagination.css" />
     <link rel="stylesheet" href="/css/pages/search-results.css" />
   </head>
   <body>
@@ -461,19 +462,52 @@
                 </div>
               </div>
 
-              <!-- Hidden Google Custom Search (for functionality) -->
-              <div style="display: none">
-                <div
-                  class="gcse-searchbox-only"
-                  data-resultsurl="/ket-qua-tim-kiem.html"
-                ></div>
+              <!-- Search Meta Bar (Tabs + Info) -->
+              <div class="search-meta-bar">
+                <!-- Search Tabs -->
+                <div class="search-tabs">
+                  <a href="#" class="search-tab active" data-tab="web">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                      />
+                    </svg>
+                    Web
+                  </a>
+                  <a href="#" class="search-tab" data-tab="images">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"
+                      />
+                    </svg>
+                    Hình ảnh
+                  </a>
+                  <a href="#" class="search-tab" data-tab="videos">
+                    <svg viewBox="0 0 24 24">
+                      <path
+                        d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"
+                      />
+                    </svg>
+                    Video
+                  </a>
+                </div>
+
+                <!-- Search Info -->
+                <div class="search-result-info">
+                  <span id="resultCount">Khoảng 0 kết quả</span>
+                  <span id="searchTime">(0.20 giây)</span>
+                </div>
               </div>
 
               <!-- Search Results Container -->
               <div class="search-filter__results">
-                <!-- Google Custom Search Results -->
-                <div class="gcse-searchresults-only"></div>
+                <div id="searchResultsList" class="search-results-list">
+                  <!-- Results will be injected here -->
+                </div>
               </div>
+
+              <!-- Pagination -->
+              <div id="pagination" class="pagination"></div>
             </div>
           </div>
         </div>
@@ -486,12 +520,6 @@
     <!-- Bootstrap 5 JS -->
     <script src="/js/vendor/bootstrap.bundle.min.js"></script>
     <script src="/js/utils/icons.js"></script>
-
-    <!-- Google Custom Search Engine -->
-    <script
-      async
-      src="https://cse.google.com/cse.js?cx=042ef78de73db43ac"
-    ></script>
 
     <!-- Mobile Navigation -->
     <script src="/routes.js"></script>
@@ -510,6 +538,10 @@
     </script>
     <script src="/js/modules/navbar.js"></script>
 
+    <!-- Search Results Logic -->
+    <script src="/js/utils/pagination.js"></script>
+    <script src="/js/pages/search-results.js"></script>
+
     <!-- Custom Search Box JavaScript -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -517,9 +549,6 @@
         const searchInput = document.getElementById("searchInput");
         const searchBtn = document.getElementById("searchBtn");
         const clearBtn = document.getElementById("clearBtn");
-        const resultsContainer = document.querySelector(
-          ".search-filter__results"
-        );
 
         // Get URL parameters
         const urlParams = new URLSearchParams(window.location.search);
@@ -564,225 +593,16 @@
           searchInput.focus();
         });
 
-        // Google Custom Search configuration
-        window.__gcse = window.__gcse || {};
-        window.__gcse.callback = function () {
-          if (
-            window.google &&
-            window.google.search &&
-            window.google.search.cse
-          ) {
-            const originalRenderFunction =
-              window.google.search.cse.element.render;
-            window.google.search.cse.element.render = function (
-              componentConfig,
-              componentElement
-            ) {
-              if (componentConfig) {
-                componentConfig.queryParameterName = "q";
-                componentConfig.resultsUrl = "/ket-qua-tim-kiem.html";
-                componentConfig.noResultsString =
-                  "Không tìm thấy kết quả nào cho từ khóa của bạn.";
-                componentConfig.overlayResults = false;
-
-                // Check current tab and configure accordingly
-                const activeTab = document.querySelector(".search-tab.active");
-                if (activeTab && activeTab.dataset.tab === "images") {
-                  // Force image search
-                  componentConfig.defaultToImageSearch = true;
-                  componentConfig.imageSearchLayout = "popup";
-                  componentConfig.enableImageSearch = true;
-                  componentConfig.disableWebSearch = true;
-                } else if (activeTab && activeTab.dataset.tab === "videos") {
-                  // Add video search refinement
-                  componentConfig.webSearchQueryAddition = "video youtube";
-                }
-              }
-              return originalRenderFunction.call(
-                this,
-                componentConfig,
-                componentElement
-              );
-            };
-          }
-        };
-
-        // Remove overlay behaviors and customize pagination
-        const observer = new MutationObserver(function (mutations) {
-          if (document.body.classList.contains("gsc-overflow-hidden")) {
-            document.body.classList.remove("gsc-overflow-hidden");
-          }
-
-          const overlayElements = document.querySelectorAll(
-            ".gsc-results-wrapper-overlay"
-          );
-          overlayElements.forEach(function (el) {
-            el.classList.remove("gsc-results-wrapper-overlay");
-            el.classList.add("gsc-results-wrapper-inline");
+        // Tab handling
+        const tabs = document.querySelectorAll(".search-tab");
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", function (e) {
+            e.preventDefault();
+            tabs.forEach((t) => t.classList.remove("active"));
+            this.classList.add("active");
+            // In a real app, this would filter results
           });
-
-          // Customize pagination
-          customizePagination();
         });
-
-        observer.observe(document.body, {
-          attributes: true,
-          childList: true,
-          subtree: true,
-          attributeFilter: ["class"],
-        });
-
-        // Function to customize Google CSE pagination
-        function customizePagination() {
-          const cursorBox = document.querySelector(".gsc-cursor-box");
-          if (!cursorBox) return;
-
-          // Check if already customized
-          if (cursorBox.classList.contains("pagination-customized")) return;
-          cursorBox.classList.add("pagination-customized");
-
-          const pages = Array.from(
-            cursorBox.querySelectorAll(".gsc-cursor-page")
-          );
-          if (pages.length <= 1) return;
-
-          const totalPages = pages.length;
-          let currentPageIndex = 0;
-
-          // Find current page
-          pages.forEach((page, index) => {
-            if (page.classList.contains("gsc-cursor-current-page")) {
-              currentPageIndex = index;
-            }
-          });
-
-          // Create new custom pagination container
-          const customPagination = document.createElement("div");
-          customPagination.className = "custom-pagination";
-
-          // Left arrow
-          const leftArrow = document.createElement("button");
-          leftArrow.className = "pagination-arrow pagination-arrow--prev";
-          leftArrow.innerHTML = `<svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>`;
-          leftArrow.disabled = currentPageIndex === 0;
-          leftArrow.onclick = function () {
-            if (currentPageIndex > 0) pages[currentPageIndex - 1].click();
-          };
-          customPagination.appendChild(leftArrow);
-
-          // Desktop: first 2, last 2, current ±2 neighbors (CSS will hide extras on mobile/tablet)
-          const edgeCount = 2;
-          const neighborCount = 2;
-
-          const pagesToShow = [];
-          for (let i = 0; i < totalPages; i++) {
-            const isFirstEdge = i < edgeCount;
-            const isLastEdge = i >= totalPages - edgeCount;
-            const isCurrent = i === currentPageIndex;
-            const distanceFromCurrent = Math.abs(i - currentPageIndex);
-            const isNearCurrent = distanceFromCurrent <= neighborCount;
-
-            if (isFirstEdge || isLastEdge || isCurrent || isNearCurrent) {
-              // Determine position type for CSS responsive hiding
-              let positionType = "";
-              if (isCurrent) {
-                positionType = "current";
-              } else if (isFirstEdge && i === 0) {
-                positionType = "edge-first";
-              } else if (isFirstEdge && i === 1) {
-                positionType = "edge-second";
-              } else if (isLastEdge && i === totalPages - 1) {
-                positionType = "edge-last";
-              } else if (isLastEdge && i === totalPages - 2) {
-                positionType = "edge-second-last";
-              } else if (distanceFromCurrent === 1) {
-                positionType = "neighbor-1";
-              } else if (distanceFromCurrent === 2) {
-                positionType = "neighbor-2";
-              }
-
-              pagesToShow.push({
-                index: i,
-                type: "page",
-                position: positionType,
-                distance: distanceFromCurrent,
-              });
-            }
-          }
-
-          // Add ellipsis where there are gaps
-          const finalItems = [];
-          for (let i = 0; i < pagesToShow.length; i++) {
-            const current = pagesToShow[i];
-            const prev = pagesToShow[i - 1];
-
-            // Add ellipsis if there's a gap
-            if (prev && current.index - prev.index > 1) {
-              finalItems.push({ type: "ellipsis" });
-            }
-            finalItems.push(current);
-          }
-
-          // Function to scroll to search filter section with header offset
-          function scrollToSearchFilter() {
-            const searchFilter = document.querySelector(".search-filter");
-            if (searchFilter) {
-              const header = document.querySelector(".header-wrapper");
-              const headerHeight = header ? header.offsetHeight : 0;
-              const offsetTop =
-                searchFilter.getBoundingClientRect().top +
-                window.pageYOffset -
-                headerHeight -
-                20;
-              window.scrollTo({
-                top: offsetTop,
-                behavior: "smooth",
-              });
-            }
-          }
-
-          // Render pagination items
-          finalItems.forEach((item) => {
-            if (item.type === "ellipsis") {
-              const ellipsis = document.createElement("span");
-              ellipsis.className = "pagination-ellipsis";
-              ellipsis.textContent = "...";
-              customPagination.appendChild(ellipsis);
-            } else {
-              const pageClone = pages[item.index].cloneNode(true);
-              // Add data attribute for CSS responsive hiding
-              if (item.position) {
-                pageClone.setAttribute("data-position", item.position);
-              }
-              if (item.distance !== undefined) {
-                pageClone.setAttribute("data-distance", item.distance);
-              }
-              pageClone.onclick = function () {
-                pages[item.index].click();
-                scrollToSearchFilter();
-              };
-              customPagination.appendChild(pageClone);
-            }
-          });
-
-          // Right arrow
-          const rightArrow = document.createElement("button");
-          rightArrow.className = "pagination-arrow pagination-arrow--next";
-          rightArrow.innerHTML = `<svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>`;
-          rightArrow.disabled = currentPageIndex === totalPages - 1;
-          rightArrow.onclick = function () {
-            if (currentPageIndex < totalPages - 1)
-              pages[currentPageIndex + 1].click();
-          };
-          customPagination.appendChild(rightArrow);
-
-          // Hide original pagination and show custom one
-          const originalContent = cursorBox.querySelector(".gsc-cursor");
-          if (originalContent) {
-            originalContent.style.display = "none";
-          }
-          cursorBox.appendChild(customPagination);
-        }
       });
     </script>
   </body>
