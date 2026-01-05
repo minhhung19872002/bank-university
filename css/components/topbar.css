@@ -49,6 +49,14 @@
 	line-height: 1.22;
 }
 
+.topbar__contact-text--hotline {
+	display: inline;
+}
+
+.topbar__contact-text--school {
+	display: none;
+}
+
 .topbar__actions {
 	display: flex;
 	align-items: center;
@@ -94,7 +102,7 @@
 	background-color: var(--brand-secondary);
 	color: #ffffff;
 	font-family: Montserrat, var(--font-primary);
-	font-size: var(--fs-200);
+	font-size: 1.4rem;
 	font-weight: 600;
 	padding: var(--sp-1) var(--sp-3);
 	border-radius: 4rem;
@@ -111,6 +119,16 @@
 	transform: translateY(-0.2rem);
 }
 
+@media (max-width: 1200px) {
+	.topbar__contact-text {
+		font-size: 1.2rem;
+	}
+
+	.topbar__register-btn {
+		font-size: 1.2rem;
+	}
+}
+
 @media (max-width: 1030px) {
 	.topbar__contact-text {
 		font-size: var(--fs-100);
@@ -118,33 +136,94 @@
 }
 
 /* Responsive */
-@media (max-width: 991.98px) {
+@media (max-width: 1024px) {
 	.topbar {
-		height: var(--header-topbar-height-mobile, 4.8rem);
-		padding: 0;
+		height: auto;
+		padding: var(--sp-2) 0;
 		display: flex;
 		align-items: center;
 	}
 
-	.topbar .row {
-		justify-content: center;
+	.topbar .container > div {
+		justify-content: space-between !important;
+		flex-direction: row !important;
+		gap: var(--sp-2);
 	}
 
-	.topbar__contact,
-	.topbar__actions {
-		width: 100%;
-		justify-content: center;
+	.topbar__contact {
+		width: auto;
+		justify-content: flex-start;
+		flex: 1;
+		min-width: 0;
+		margin-right: var(--sp-2);
 	}
 
-	.topbar__contact-icon,
+	.topbar__contact-icon {
+		display: none;
+	}
+
 	.topbar__actions {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		width: auto;
+		flex-shrink: 0;
+	}
+
+	/* Hide email info and search on mobile */
+	.topbar__actions .topbar__contact-icon,
+	.topbar__actions .topbar__contact-text,
+	.topbar__search {
 		display: none;
 	}
 
 	.topbar__contact-text--school {
 		display: block;
-		text-align: center;
+		text-align: left;
 		font-size: var(--fs-100);
 		text-transform: uppercase;
+		white-space: normal;
+		line-height: 1.3;
+	}
+
+	.topbar__contact-text--hotline {
+		display: none;
+	}
+
+	.topbar__register-btn {
+		font-size: 1.1rem;
+		padding: 0.5rem 1.2rem;
+		white-space: nowrap;
+		width: auto;
+	}
+}
+
+@media (max-width: 576px) {
+	.topbar {
+		padding: var(--sp-2) 0;
+	}
+
+	.topbar .container > div {
+		flex-direction: column !important;
+		justify-content: center !important;
+	}
+
+	.topbar__contact {
+		width: 100%;
+		justify-content: center;
+		margin-right: 0;
+	}
+
+	.topbar__contact-text--school {
+		text-align: center;
+	}
+
+	.topbar__actions {
+		width: 100%;
+		justify-content: center;
+	}
+
+	.topbar__register-btn {
+		font-size: 1rem;
 	}
 }
