@@ -45,7 +45,6 @@
 .navbar-nav .dropdown-item:focus {
 	background: transparent;
 	color: var(--brand-primary);
-	font-weight: 500;
 	text-decoration: none;
 }
 
