@@ -721,33 +721,69 @@ function initRegistrationForm() {
         const form = document.getElementById('registrationForm');
         if (!form) return false;
 
+        // Prevent double initialization
+        if (form.dataset.initialized) return true;
+        form.dataset.initialized = 'true';
+
         form.addEventListener('submit', function (e) {
             e.preventDefault();
 
             // Get form data
             const formData = new FormData(form);
-            const data = Object.fromEntries(formData.entries());
-
-            // Basic validation
+            
+            // Manual Validation
             const fullName = form.querySelector('#fullName');
             const phone = form.querySelector('#phone');
             const email = form.querySelector('#email');
+            const program = form.querySelector('#program');
+            const major = form.querySelector('#major');
 
-            if (!fullName?.value.trim()) {
+            // Validate Full Name
+            if (!fullName || !fullName.value.trim()) {
                 showSnackbar('Vui lòng nhập họ tên', 'error');
                 fullName?.focus();
                 return;
             }
 
-            if (!phone?.value.trim()) {
+            // Validate Phone
+            if (!phone || !phone.value.trim()) {
                 showSnackbar('Vui lòng nhập số điện thoại', 'error');
                 phone?.focus();
                 return;
             }
+            // Simple phone regex (10-11 digits)
+            const phoneRegex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/;
+            if (!phoneRegex.test(phone.value.trim())) {
+                 showSnackbar('Số điện thoại không hợp lệ', 'error');
+                 phone?.focus();
+                 return;
+            }
 
-            if (!email?.value.trim()) {
+            // Validate Email
+            if (!email || !email.value.trim()) {
                 showSnackbar('Vui lòng nhập email', 'error');
                 email?.focus();
+                return;
+            }
+            // Basic email regex
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email.value.trim())) {
+                showSnackbar('Email không đúng định dạng (ví dụ: abc@gmail.com)', 'error');
+                email?.focus();
+                return;
+            }
+
+            // Validate Program
+            if (!program || !program.value) {
+                showSnackbar('Vui lòng chọn chương trình quan tâm', 'error');
+                program?.focus();
+                return;
+            }
+
+            // Validate Major
+            if (!major || !major.value) {
+                showSnackbar('Vui lòng chọn ngành học quan tâm', 'error');
+                major?.focus();
                 return;
             }
 
@@ -756,7 +792,6 @@ function initRegistrationForm() {
             showSnackbar('Đăng ký thành công! Chúng tôi sẽ liên hệ bạn sớm.', 'success');
             form.reset();
         });
-
         return true;
     }
 
@@ -776,3 +811,4 @@ function initRegistrationForm() {
         subtree: true
     });
 }
+
