@@ -35,7 +35,12 @@ a.related-article {
 }
 
 .admissions-detail-header__icon {
-	font-size: 1.4rem;
+	width: 1.4rem;
+	height: 1.4rem;
+	display: inline-block;
+	object-fit: contain;
+	vertical-align: middle;
+	/* keep color for inline SVGs or icon fonts */
 	color: var(--gray-500);
 }
 

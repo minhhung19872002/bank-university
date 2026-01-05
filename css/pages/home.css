@@ -878,6 +878,30 @@ a.event-card--featured:hover {
 		flex: 0 0 32rem;
 	}
 
+	/* Program card icon sizing: use rem-based sizes and modifier classes
+   - --sm: ~30px -> 1.875rem
+   - --md: ~35px -> 2.1875rem
+   - --lg: ~40px -> 2.5rem
+*/
+	.program-card__icon {
+		display: block;
+		width: 1.875rem;
+		height: 1.875rem;
+		object-fit: contain;
+	}
+	.program-card__icon--sm {
+		width: 1.875rem;
+		height: 1.875rem;
+	}
+	.program-card__icon--md {
+		width: 2.1875rem;
+		height: 2.1875rem;
+	}
+	.program-card__icon--lg {
+		width: 2.5rem;
+		height: 2.5rem;
+	}
+
 	.news-section {
 		background-color: var(--brand-primary);
 		padding: var(--sp-8) 0;
