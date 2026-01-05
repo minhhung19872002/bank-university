@@ -4,7 +4,73 @@
  * Redirects to search results page
  */
 
+// Snackbar functionality
+function injectSnackbarCSS() {
+    if (document.querySelector('link[href*="snackbar.css"]')) return;
+
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '/css/components/snackbar.css';
+    document.head.appendChild(link);
+}
+
+function getOrCreateSnackbar() {
+    let snackbar = document.getElementById('snackbar');
+    if (!snackbar) {
+        snackbar = document.createElement('div');
+        snackbar.id = 'snackbar';
+        snackbar.className = 'snackbar';
+        snackbar.style.display = 'none';
+        snackbar.setAttribute('aria-hidden', 'true');
+        snackbar.innerHTML = `
+            <span class="snackbar__icon"></span>
+            <span class="snackbar__message"></span>
+        `;
+        document.body.appendChild(snackbar);
+    }
+    return snackbar;
+}
+
+function showSnackbar(message, type = 'default') {
+    injectSnackbarCSS();
+    const snackbar = getOrCreateSnackbar();
+    
+    const iconEl = snackbar.querySelector('.snackbar__icon');
+    const messageEl = snackbar.querySelector('.snackbar__message');
+    
+    messageEl.textContent = message;
+    
+    // Reset classes
+    snackbar.className = 'snackbar';
+    
+    if (type === 'success') {
+        snackbar.classList.add('snackbar--success');
+        iconEl.textContent = '✓';
+    } else if (type === 'error') {
+        snackbar.classList.add('snackbar--error');
+        iconEl.textContent = '✕';
+    } else {
+        iconEl.textContent = '!';
+    }
+
+    // Show
+    snackbar.classList.add('snackbar--show');
+    snackbar.style.display = '';
+    snackbar.setAttribute('aria-hidden', 'false');
+
+    // Hide after 3 seconds
+    if (window.snackbarTimeout) clearTimeout(window.snackbarTimeout);
+    window.snackbarTimeout = setTimeout(() => {
+        snackbar.classList.remove('snackbar--show');
+        snackbar.style.display = 'none';
+        snackbar.setAttribute('aria-hidden', 'true');
+    }, 3000);
+}
+
 function initHeaderSearch() {
+    // Ensure CSS is loaded
+    injectSnackbarCSS();
+
     // Desktop search (topbar)
     initDesktopSearch();
 
@@ -24,6 +90,9 @@ function initDesktopSearch() {
         const searchTerm = searchInput.value.trim();
         if (searchTerm) {
             window.location.href = '/ket-qua-tim-kiem/?q=' + encodeURIComponent(searchTerm);
+        } else {
+            showSnackbar('Vui lòng nhập từ khóa tìm kiếm', 'error');
+            searchInput.focus();
         }
     }
 
@@ -75,6 +144,9 @@ function initMobileSearch() {
         const searchTerm = searchInput.value.trim();
         if (searchTerm) {
             window.location.href = '/ket-qua-tim-kiem/?q=' + encodeURIComponent(searchTerm);
+        } else {
+            showSnackbar('Vui lòng nhập từ khóa tìm kiếm', 'error');
+            searchInput.focus();
         }
     }
 
