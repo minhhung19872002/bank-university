@@ -41,6 +41,7 @@
 		rgba(0, 0, 0, 0.8) 0%,
 		transparent 80%
 	);
+	pointer-events: none;
 }
 .hero-section__overlay > .container {
 	display: flex;
@@ -49,6 +50,7 @@
 .hero-section__content {
 	color: var(--color-light);
 	text-align: left;
+	pointer-events: auto;
 }
 .hero-section__brand {
 	font-family: var(--font-family-heading);
