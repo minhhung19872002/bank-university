@@ -791,7 +791,17 @@ function initRegistrationForm() {
             const RECAPTCHA_SITE_KEY = '6LfQiUEsAAAAAGiC3h3lM8swyCEIo8cTA_DjeSD0';
             const CAPTCHA_API_URL = 'https://verify-captcha-v3.vercel.app/api/verify';
 
+            // Get submit button and show loading state
+            const submitBtn = form.querySelector('.registration-form__submit');
+            const setLoading = (isLoading) => {
+                if (submitBtn) {
+                    submitBtn.classList.toggle('registration-form__submit--loading', isLoading);
+                    submitBtn.disabled = isLoading;
+                }
+            };
+
             if (typeof grecaptcha !== 'undefined') {
+                setLoading(true);
                 grecaptcha.ready(async function() {
                     try {
                         // Get reCAPTCHA token
@@ -806,6 +816,7 @@ function initRegistrationForm() {
 
                         const result = await res.json();
 
+                        setLoading(false);
                         if (result.success) {
                             // Captcha verified - submit form
                             showSnackbar('Đăng ký thành công! Chúng tôi sẽ liên hệ bạn sớm.', 'success');
@@ -815,6 +826,7 @@ function initRegistrationForm() {
                             showSnackbar('Xác minh thất bại. Vui lòng thử lại.', 'error');
                         }
                     } catch (error) {
+                        setLoading(false);
                         console.error('reCAPTCHA error:', error);
                         showSnackbar('Lỗi xác minh. Vui lòng thử lại.', 'error');
                     }

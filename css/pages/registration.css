@@ -212,6 +212,33 @@
 	transform: translateY(0.1rem);
 }
 
+.registration-form__submit--loading {
+	position: relative;
+	pointer-events: none;
+	opacity: 0.8;
+	color: transparent;
+}
+
+.registration-form__submit--loading::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 2rem;
+	height: 2rem;
+	margin: -1rem 0 0 -1rem;
+	border: 0.2rem solid var(--color-light);
+	border-top-color: transparent;
+	border-radius: 50%;
+	animation: btn-spinner 0.8s linear infinite;
+}
+
+@keyframes btn-spinner {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
 /* ============================================
    BACKGROUND TEXT EFFECT
    ============================================ */
