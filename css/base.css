@@ -126,7 +126,7 @@ p {
 .container-lg,
 .container-xl,
 .container-xxl {
-	--bs-gutter-x: 2.5rem;
+	--bs-gutter-x: 4rem;
 	padding-right: calc(var(--bs-gutter-x) * 0.5);
 	padding-left: calc(var(--bs-gutter-x) * 0.5);
 	width: 100%;
@@ -135,15 +135,17 @@ p {
 }
 
 /* Tablet (Giữ max-width cứng theo pixel/rem để ổn định) */
-@media (min-width: 768px) {
+@media (min-width: 576px) {
 	.container {
 		max-width: 72rem;
+		--bs-gutter-x: 8rem;
 	}
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
 	.container {
 		max-width: 96rem;
+		--bs-gutter-x: 8rem;
 	}
 }
 
@@ -156,10 +158,9 @@ p {
 	.container-xl,
 	.container-xxl {
 		/* Chuyển max-width sang rem. 
-           132rem sẽ tương đương 1320px ở màn hình 1920px.
-           Khi màn hình to hơn 1920px -> 1rem > 10px -> Container > 1320px (Scale lên).
+           120rem sẽ tương đương 1200px khi 1rem = 10px.
         */
-		max-width: 132rem !important;
+		max-width: 120rem !important;
 
 		/* Gutter cũng scale theo rem */
 		--bs-gutter-x: 4rem;

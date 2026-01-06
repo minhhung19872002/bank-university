@@ -32,7 +32,6 @@
    ============================================ */
 .custom-search-box {
 	width: 100%;
-	max-width: 80rem; /* 800px */
 	margin: 0 auto;
 }
 
@@ -129,9 +128,8 @@
 /* Search Results Container */
 .search-filter__results {
 	width: 100%;
-	max-width: 80rem; /* 800px */
-	margin: 3rem auto 0; /* 30px */
-	padding: 0 2rem; /* 20px */
+	margin: 0 auto; /* Centered */
+	padding: 0;
 	background-color: transparent;
 	min-height: 20rem; /* 200px */
 }
@@ -611,11 +609,11 @@ body.gsc-overflow-hidden {
 	}
 
 	.custom-search-box {
-		max-width: 70rem; /* 700px */
+		max-width: 100%;
 	}
 
 	.search-filter__results {
-		max-width: 70rem; /* 700px */
+		max-width: 100%;
 	}
 
 	/* Pagination: Hide edge-second and neighbor-2 on tablet */
@@ -736,5 +734,205 @@ body.gsc-overflow-hidden {
 	/* Image Results */
 	.gsc-imageResult {
 		width: 50% !important;
+	}
+}
+
+/* ============================================
+   SEARCH META BAR (Tabs + Info)
+   ============================================ */
+.search-meta-bar {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 0.1rem solid #ebebeb;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	width: 100%;
+}
+
+/* ============================================
+   SEARCH TABS (Web, Image, Video)
+   ============================================ */
+.search-tabs {
+	display: flex;
+	align-items: center;
+	gap: 2rem; /* 20px */
+	padding-left: 0;
+	width: auto;
+}
+
+.search-tab {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	padding: 1rem 0.4rem;
+	color: #5f6368;
+	font-size: 1.4rem; /* 14px */
+	font-weight: 500;
+	text-decoration: none;
+	border-bottom: 0.3rem solid transparent;
+	cursor: pointer;
+	transition: all 0.2s ease;
+	margin-bottom: -0.1rem; /* Overlap border */
+}
+
+.search-tab:hover {
+	color: #1a73e8;
+}
+
+.search-tab.active {
+	color: #1a73e8;
+	border-bottom-color: #1a73e8;
+}
+
+.search-tab svg {
+	width: 1.8rem;
+	height: 1.8rem;
+	fill: currentColor;
+}
+
+/* ============================================
+   SEARCH RESULTS LIST (NEW)
+   ============================================ */
+.search-results-list {
+	margin-top: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+}
+
+.search-result-info {
+	margin: 0;
+	width: auto;
+	color: var(--gray-600);
+	font-size: var(--fs-300);
+}
+
+.search-result-item {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	word-break: break-word;
+	min-width: 0; /* Ensure it doesn't overflow flex/grid containers */
+}
+
+.search-result-item__header {
+	display: flex;
+	align-items: center;
+	gap: 1.2rem;
+	margin-bottom: 0.5rem;
+}
+
+.search-result-item__logo {
+	width: 2.8rem;
+	height: 2.8rem;
+	object-fit: contain;
+	border-radius: 50%;
+	background-color: #fff;
+	padding: 0.2rem;
+	border: 1px solid var(--gray-200);
+}
+
+.search-result-item__site-info {
+	display: flex;
+	flex-direction: column;
+	line-height: 1.3;
+	min-width: 0; /* Allow flex item to shrink below content size */
+	flex: 1;
+}
+
+.search-result-item__site-name {
+	font-size: 1.4rem;
+	color: var(--gray-900);
+	font-weight: 400;
+}
+
+.search-result-item__url {
+	font-size: 1.2rem;
+	color: var(--gray-600);
+	text-decoration: none;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 100%;
+}
+
+.search-result-item__title {
+	font-size: 2rem;
+	line-height: 1.3;
+	margin: 0;
+	font-weight: 400;
+}
+
+.search-result-item__title a {
+	color: #1a0dab; /* Google Blue */
+	text-decoration: none;
+}
+
+.search-result-item__title a:hover {
+	text-decoration: underline;
+}
+
+.search-result-item__meta {
+	font-size: 1.4rem;
+	color: var(--gray-700);
+	line-height: 1.58;
+}
+
+.search-result-item__date {
+	color: var(--gray-600);
+	font-size: 1.4rem;
+}
+
+.search-result-item__separator {
+	margin: 0 0.4rem;
+	color: var(--gray-500);
+}
+
+.search-result-item__desc {
+	display: inline;
+	margin: 0;
+	color: #4d5156; /* Google Gray */
+}
+
+/* Pagination Override */
+.pagination {
+	display: flex !important;
+	margin-top: 4rem;
+	padding-bottom: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+	.search-meta-bar {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1rem;
+	}
+
+	.search-tabs {
+		width: 100%;
+		padding-left: 0;
+		overflow-x: auto;
+		white-space: nowrap;
+		-webkit-overflow-scrolling: touch;
+		padding-bottom: 0.5rem;
+	}
+
+	.search-result-info {
+		width: 100%;
+		font-size: 1.3rem;
+	}
+
+	.search-result-item__title {
+		font-size: 1.8rem;
+	}
+
+	.search-result-item__url {
+		max-width: 100%;
+	}
+
+	.search-result-item__header {
+		flex-wrap: wrap;
 	}
 }

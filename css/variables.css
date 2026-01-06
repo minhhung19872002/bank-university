@@ -97,7 +97,7 @@
 	--container-md: 72rem;
 	--container-lg: 96rem;
 	--container-xl: 114rem;
-	--container-xxl: 132rem;
+	--container-xxl: 120rem;
 
 	--header-topbar-height-mobile: 4.8rem;
 	--header-navbar-height-mobile: 7.2rem;
@@ -146,13 +146,11 @@
 	}
 }
 
-/* 2. Desktop (>= 1024px): Scale theo VW */
+/* 2. Desktop (>= 1024px): Fixed 1rem = 10px */
 @media (min-width: 1024px) {
 	html {
-		/* Sử dụng tỉ lệ 0.625vw (Chuẩn 1600px) thay vì 0.52vw (1920px).
-           Điều này giúp font chữ trên laptop to hơn giống bản gốc,
-           nhưng vẫn đảm bảo scale lên khi màn hình rộng hơn 1600px */
-		font-size: 0.625vw !important;
+		/* Cố định 1rem = 10px để không scale quá lớn trên màn hình rộng */
+		font-size: 62.5% !important;
 	}
 
 	:root {

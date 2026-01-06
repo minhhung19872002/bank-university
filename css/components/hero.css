@@ -25,6 +25,40 @@
 	object-position: center;
 }
 
+/* Carousel Controls Customization */
+.hero-section .carousel-control-prev,
+.hero-section .carousel-control-next {
+	width: 5rem;
+	height: 5rem;
+	background-color: rgba(0, 0, 0, 0.5);
+	border-radius: 50%;
+	top: 50%;
+	transform: translateY(-50%);
+	opacity: 0.8;
+	transition: all 0.3s ease;
+	z-index: 10; /* Ensure above overlay */
+}
+
+.hero-section .carousel-control-prev {
+	left: 2rem;
+}
+
+.hero-section .carousel-control-next {
+	right: 2rem;
+}
+
+.hero-section .carousel-control-prev:hover,
+.hero-section .carousel-control-next:hover {
+	background-color: var(--brand-primary);
+	opacity: 1;
+}
+
+.hero-section .carousel-control-prev-icon,
+.hero-section .carousel-control-next-icon {
+	width: 2.5rem;
+	height: 2.5rem;
+}
+
 /* ============================================
    Mobile Hero (Home page)
    ============================================ */
@@ -193,7 +227,7 @@
 	}
 
 	.hero-section--banner .hero-section__bg {
-		position: relative; 
+		position: relative;
 		height: auto;
 		width: 100%;
 		overflow: hidden;
