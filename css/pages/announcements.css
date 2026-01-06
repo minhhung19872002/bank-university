@@ -218,6 +218,7 @@ a.news-card {
    HIGHLIGHTED NEWS SECTION
    ============================================ */
 .announcements-highlighted {
+	padding-top: 5rem;
 	padding-bottom: 6rem; /* 60px -> 6.0rem */
 	background-color: var(--color-light);
 }
