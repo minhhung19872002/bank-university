@@ -33,7 +33,7 @@
 }
 
 .navbar-nav .dropdown-item {
-	font-family: Montserrat, var(--font-primary);
+	font-family: var(--font-primary);
 	font-size: 1.5rem;
 	color: var(--gray-900);
 	padding: 0.8rem 2.4rem;
@@ -90,7 +90,7 @@
 
 .navbar-brand__text {
 	margin-left: 0.6rem;
-	font-family: Montserrat, var(--font-primary);
+	font-family: var(--font-primary);
 	font-size: 1.2rem;
 	font-weight: 600;
 	line-height: 1.25;
@@ -130,7 +130,7 @@
 }
 
 .nav-link {
-	font-family: Montserrat, var(--font-primary);
+	font-family: var(--font-primary);
 	font-size: 1.4rem;
 	font-weight: 600;
 	line-height: 1.8rem;
@@ -176,7 +176,7 @@
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link.show,
 .navbar-nav .nav-link--active {
-	font-family: Montserrat, var(--font-primary);
+	font-family: var(--font-primary);
 	font-weight: 700;
 	line-height: 1.8rem;
 	color: var(--brand-primary) !important;
@@ -342,7 +342,7 @@
 	display: flex;
 	align-items: center;
 	gap: var(--sp-3);
-	font-family: Montserrat, var(--font-primary);
+	font-family: var(--font-primary);
 	font-size: 1.6rem;
 	color: var(--gray-900);
 	text-decoration: none;
@@ -369,7 +369,7 @@
 }
 
 .mobile-nav__footer-title {
-	font-family: Montserrat, var(--font-primary);
+	font-family: var(--font-primary);
 	font-size: 1.4rem;
 	margin-bottom: var(--sp-3);
 }
@@ -472,7 +472,7 @@
 	border: none;
 	border-radius: 0.8rem;
 	padding: var(--sp-3) var(--sp-4);
-	font-family: Montserrat, var(--font-primary);
+	font-family: var(--font-primary);
 	font-size: 1.6rem;
 	outline: none;
 	background-color: var(--color-light);
@@ -521,7 +521,7 @@
 }
 
 .mobile-nav__submenu-link {
-	font-family: Montserrat, var(--font-primary);
+	font-family: var(--font-primary);
 	font-size: 1.4rem;
 	color: var(--gray-700);
 	text-decoration: none;

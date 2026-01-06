@@ -41,7 +41,7 @@ a.program-card {
 	object-fit: contain;
 }
 .program-card__title {
-	font-family: Montserrat, var(--font-primary);
+	font-family: var(--font-primary);
 	font-size: var(--fs-300);
 	font-weight: 500;
 	color: var(--gray-900);
@@ -81,7 +81,7 @@ a.news-card:hover {
 	flex: 1;
 }
 .news-card__title {
-	font-family: Montserrat, var(--font-primary);
+	font-family: var(--font-primary);
 	font-size: var(--fs-350);
 	font-weight: 600;
 	color: var(--gray-900);
@@ -96,7 +96,7 @@ a.news-card:hover {
 	margin: var(--sp-3) 0;
 }
 .news-card__excerpt {
-	font-family: Montserrat, var(--font-primary);
+	font-family: var(--font-primary);
 	font-size: var(--fs-300);
 	font-weight: 400;
 	color: var(--gray-900);
@@ -161,14 +161,14 @@ a.news-card:hover {
 	flex: 1;
 }
 .event-card__title {
-	font-family: Montserrat, var(--font-primary);
+	font-family: var(--font-primary);
 	font-size: var(--fs-350);
 	font-weight: 700;
 	color: var(--gray-900);
 	margin-bottom: var(--sp-2);
 }
 .event-card__excerpt {
-	font-family: Montserrat, var(--font-primary);
+	font-family: var(--font-primary);
 	font-size: var(--fs-300);
 	font-weight: 400;
 	color: var(--gray-900);
@@ -179,7 +179,7 @@ a.news-card:hover {
 	display: flex;
 	align-items: center;
 	gap: var(--sp-2);
-	font-family: Montserrat, var(--font-primary);
+	font-family: var(--font-primary);
 	font-size: var(--fs-200);
 	color: var(--gray-900);
 }
@@ -207,14 +207,14 @@ a.news-card:hover {
 	text-align: center;
 }
 .event-card__featured-title {
-	font-family: Montserrat, var(--font-primary);
+	font-family: var(--font-primary);
 	font-size: var(--fs-600);
 	font-weight: 700;
 	color: #ffffff;
 	margin-bottom: var(--sp-2);
 }
 .event-card__featured-subtitle {
-	font-family: Montserrat, var(--font-primary);
+	font-family: var(--font-primary);
 	font-size: var(--fs-300);
 	font-weight: 500;
 	color: #ffffff;
@@ -237,7 +237,7 @@ a.news-card:hover {
 }
 .event-countdown__value {
 	display: block;
-	font-family: Montserrat, var(--font-primary);
+	font-family: var(--font-primary);
 	font-size: var(--fs-525);
 	font-weight: 600;
 	color: var(--brand-primary);
@@ -246,14 +246,14 @@ a.news-card:hover {
 }
 .event-countdown__label {
 	display: block;
-	font-family: Montserrat, var(--font-primary);
+	font-family: var(--font-primary);
 	font-size: var(--fs-200);
 	font-weight: 400;
 	color: var(--brand-primary);
 }
 .event-card__link {
 	display: inline-block;
-	font-family: Montserrat, var(--font-primary);
+	font-family: var(--font-primary);
 	font-size: var(--fs-300);
 	font-weight: 600;
 	color: var(--color-light);

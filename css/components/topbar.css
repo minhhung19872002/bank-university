@@ -27,7 +27,7 @@
 .topbar {
 	background-color: var(--brand-primary);
 	padding: var(--sp-2) 0;
-	font-family: Montserrat, var(--font-primary);
+	font-family: var(--font-primary);
 }
 
 .topbar__contact {
@@ -80,7 +80,7 @@
 	border: none;
 	outline: none;
 	background: transparent;
-	font-family: Montserrat, var(--font-primary);
+	font-family: var(--font-primary);
 	font-size: var(--fs-100);
 	color: var(--gray-900);
 	width: 100%;
@@ -101,7 +101,7 @@
 .topbar__register-btn {
 	background-color: var(--brand-secondary);
 	color: #ffffff;
-	font-family: Montserrat, var(--font-primary);
+	font-family: var(--font-primary);
 	font-size: 1.4rem;
 	font-weight: 600;
 	padding: var(--sp-1) var(--sp-3);

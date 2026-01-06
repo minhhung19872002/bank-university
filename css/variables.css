@@ -36,10 +36,7 @@
 	--gradient-brand: linear-gradient(277.07deg, #a61b28 0%, #213368 100%);
 
 	/* --- FONTS --- */
-	--ff-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial,
-		sans-serif;
-	--ff-serif: Georgia, "Times New Roman", serif;
-	--font-primary: "Montserrat", sans-serif;
+	--font-primary: "Inter", sans-serif;
 	--font-secondary: "Inter", sans-serif;
 	--font-family-base: var(--font-secondary);
 	--font-family-heading: var(--font-primary);
