@@ -787,10 +787,42 @@ function initRegistrationForm() {
                 return;
             }
 
-            // Simulate form submission (replace with actual API call)
-            // For now, just show success message and reset form
-            showSnackbar('Đăng ký thành công! Chúng tôi sẽ liên hệ bạn sớm.', 'success');
-            form.reset();
+            // reCAPTCHA v3 verification
+            const RECAPTCHA_SITE_KEY = '6LfQiUEsAAAAAGiC3h3lM8swyCEIo8cTA_DjeSD0';
+            const CAPTCHA_API_URL = 'https://verify-captcha-v3.vercel.app/api/verify';
+
+            if (typeof grecaptcha !== 'undefined') {
+                grecaptcha.ready(async function() {
+                    try {
+                        // Get reCAPTCHA token
+                        const token = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'submit_registration' });
+
+                        // Verify token with server
+                        const res = await fetch(CAPTCHA_API_URL, {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ recaptchaToken: token })
+                        });
+
+                        const result = await res.json();
+
+                        if (result.success) {
+                            // Captcha verified - submit form
+                            showSnackbar('Đăng ký thành công! Chúng tôi sẽ liên hệ bạn sớm.', 'success');
+                            form.reset();
+                        } else {
+                            // Captcha failed - block spam
+                            showSnackbar('Xác minh thất bại. Vui lòng thử lại.', 'error');
+                        }
+                    } catch (error) {
+                        console.error('reCAPTCHA error:', error);
+                        showSnackbar('Lỗi xác minh. Vui lòng thử lại.', 'error');
+                    }
+                });
+            } else {
+                // reCAPTCHA not loaded - block submission
+                showSnackbar('Không thể xác minh. Vui lòng tải lại trang.', 'error');
+            }
         });
         return true;
     }
