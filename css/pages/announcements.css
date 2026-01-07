@@ -47,22 +47,23 @@ a.news-card {
 .announcement-card {
 	background-color: var(--gray-100);
 	border-radius: var(--radius-10);
-	padding: 2.6rem 2.8rem 2.8rem; /* 26px 28px 28px -> 2.6rem 2.8rem 2.8rem */
+	padding: 2rem 2.4rem;
 	display: flex;
-	gap: 1.8rem; /* 18px -> 1.8rem */
-	height: 18rem; /* 180px -> 18.0rem */
+	align-items: center;
+	gap: 2rem;
+	min-height: 10rem;
 	transition: transform var(--transition-base),
 		box-shadow var(--transition-base);
 }
 
 .announcement-card:hover {
-	transform: translateY(-0.2rem); /* -2px -> -0.2rem */
+	transform: translateY(-0.2rem);
 	box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.08);
 }
 
 .announcement-card__date {
-	width: 7.9rem; /* 79px -> 7.9rem */
-	height: 8.8rem; /* 88px -> 8.8rem */
+	width: 7rem;
+	height: 7rem;
 	background-color: var(--brand-primary);
 	border-radius: var(--radius-10);
 	flex-shrink: 0;
@@ -70,44 +71,39 @@ a.news-card {
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	gap: 0.2rem; /* 2px -> 0.2rem */
-	position: relative;
+	gap: 0.2rem;
 }
 
 .announcement-card__date-text {
 	font-family: var(--font-primary);
-	font-size: var(--fs-350);
-	font-weight: 500;
+	font-size: var(--fs-300);
+	font-weight: 600;
 	line-height: 1.15;
 	color: var(--color-light);
-	text-transform: capitalize;
+	text-transform: uppercase;
 }
 
 .announcement-card__date-year {
 	font-family: var(--font-primary);
-	font-size: var(--fs-350);
+	font-size: var(--fs-200);
 	font-weight: 500;
 	line-height: 1.15;
 	color: var(--color-light);
-	text-transform: capitalize;
-	order: 2;
 }
 
 .announcement-card__content {
 	flex: 1;
 	display: flex;
-	flex-direction: column;
-	gap: 0.5rem; /* 5px -> 0.5rem */
+	align-items: center;
 	min-width: 0;
 }
 
 .announcement-card__title {
 	font-family: var(--font-primary);
 	font-size: var(--fs-300);
-	font-weight: 700;
-	line-height: 1.38;
+	font-weight: 600;
+	line-height: 1.5;
 	color: var(--gray-800);
-	text-transform: capitalize;
 	margin: 0;
 	display: -webkit-box;
 	-webkit-line-clamp: 2;
@@ -116,6 +112,11 @@ a.news-card {
 	text-overflow: ellipsis;
 }
 
+
+/* Inline date - hidden on desktop, shown on mobile */
+.announcement-card__date-inline {
+	display: none;
+}
 
 .announcement-card__link {
 	font-family: var(--font-primary);
@@ -362,6 +363,74 @@ a.news-card {
 		font-size: var(--section-title-mobile);
 		text-align: left;
 		margin-bottom: var(--sp-3);
+	}
+
+	/* Announcement Card - Mobile: clean list style with inline date */
+	.announcement-card {
+		padding: 1.6rem;
+		padding-right: 4rem;
+		gap: 0;
+		min-height: unset;
+		position: relative;
+		background-color: var(--color-light);
+		border-radius: var(--radius-8);
+		margin-bottom: 1rem; /* Better separation between items */
+	}
+
+	.announcement-card:last-child {
+		margin-bottom: 0;
+	}
+
+	/* Hide date box on mobile */
+	.announcement-card__date {
+		display: none;
+	}
+
+	/* Content layout */
+	.announcement-card__content {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.4rem;
+		width: 100%;
+	}
+
+	.announcement-card__title {
+		font-size: var(--fs-200);
+		font-weight: 600;
+		line-height: 1.4;
+	}
+
+	/* Show inline date on mobile */
+	.announcement-card__date-inline {
+		display: block;
+		font-family: var(--font-primary);
+		font-size: 1.2rem;
+		font-weight: 400;
+		color: var(--gray-500);
+		order: 2;
+	}
+
+	/* Arrow icon indicator - subtle gray, red on hover */
+	.announcement-card::after {
+		content: '';
+		position: absolute;
+		right: 1.6rem;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 1.6rem;
+		height: 1.6rem;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
+		background-size: contain;
+		background-repeat: no-repeat;
+		opacity: 0.8;
+		transition: transform 0.2s ease, opacity 0.2s ease, background-image 0.2s ease;
+	}
+
+	.announcement-card:hover::after,
+	.announcement-card:active::after {
+		transform: translateY(-50%) translateX(0.2rem);
+		opacity: 1;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23A01130' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='9 18 15 12 9 6'%3E%3C/polyline%3E%3C/svg%3E");
 	}
 
 	.announcements-highlighted__title {
