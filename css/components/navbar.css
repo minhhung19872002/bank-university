@@ -268,10 +268,10 @@
 
 .mobile-nav {
 	position: fixed;
-	top: var(--header-topbar-height-mobile, 4.8rem);
+	top: 0;
 	left: 0;
 	width: 100%;
-	height: calc(100vh - var(--header-topbar-height-mobile, 4.8rem));
+	height: 100vh;
 	z-index: 1040;
 	opacity: 0;
 	pointer-events: none;
