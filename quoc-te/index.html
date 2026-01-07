@@ -59,6 +59,7 @@
     <link rel="stylesheet" href="/css/components/hero.css" />
     <link rel="stylesheet" href="/css/components/breadcrumb.css" />
     <link rel="stylesheet" href="/css/pages/international.css" />
+    <link rel="stylesheet" href="/css/components/chat-widget.css" />
   </head>
   <body>
     <!-- HEADER: Topbar + Navbar -->
@@ -870,6 +871,28 @@
     <!-- FOOTER -->
     <div data-include="/partials/footer.html"></div>
 
+    <!-- Floating Chat Widget -->
+    <div class="chat-widget" aria-label="Chat support options">
+      <div class="chat-widget__buttons">
+        <a href="#" rel="noopener noreferrer" class="chat-widget__btn chat-widget__btn--zalo" aria-label="Chat qua Zalo">
+          <span class="iconify chat-widget__icon" data-icon="simple-icons:zalo" data-width="24" data-height="24"></span>
+          <span class="chat-widget__tooltip">Chat Zalo tư vấn</span>
+        </a>
+        <a href="#" class="chat-widget__btn chat-widget__btn--ai" aria-label="AI Chat tư vấn 24/7">
+          <span class="iconify chat-widget__icon" data-icon="mdi:robot" data-width="24" data-height="24"></span>
+          <span class="chat-widget__tooltip">AI tư vấn 24/7</span>
+        </a>
+        <a href="https://m.me/YOUR_PAGE_ID" target="_blank" rel="noopener noreferrer" class="chat-widget__btn chat-widget__btn--messenger" aria-label="Chat qua Facebook Messenger">
+          <span class="iconify chat-widget__icon" data-icon="mdi:facebook-messenger" data-width="24" data-height="24"></span>
+          <span class="chat-widget__tooltip">Chat tư vấn tuyển sinh</span>
+        </a>
+      </div>
+      <button class="chat-widget__toggle" aria-label="Mở menu chat" aria-expanded="false">
+        <span class="iconify chat-widget__toggle-icon chat-widget__toggle-icon--chat" data-icon="mdi:chat" data-width="28" data-height="28"></span>
+        <span class="iconify chat-widget__toggle-icon chat-widget__toggle-icon--close" data-icon="mdi:close" data-width="28" data-height="28"></span>
+      </button>
+    </div>
+
     <!-- Bootstrap 5 JS -->
     <script src="/js/vendor/bootstrap.bundle.min.js"></script>
     <script src="/js/utils/icons.js"></script>
@@ -978,5 +1001,6 @@
       window.addEventListener("resize", checkTabsOverflow);
     </script>
     <script src="/js/modules/navbar.js"></script>
+    <script src="/js/components/chat-widget.js"></script>
   </body>
 </html>
