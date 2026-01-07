@@ -22,6 +22,10 @@
     "mdi:twitter": "icon-twitter",
     "mdi:linkedin": "icon-linkedin",
     "mdi:phone": "icon-phone",
+    "mdi:facebook-messenger": "icon-messenger",
+    "mdi:robot": "icon-robot",
+    "mdi:chat": "icon-chat",
+    "mdi:close": "icon-close",
   };
 
   let spriteLoaded = false;
