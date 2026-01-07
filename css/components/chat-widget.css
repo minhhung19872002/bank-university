@@ -106,8 +106,8 @@
 
 /* Main toggle button (mobile) */
 .chat-widget__toggle {
-	width: 5rem;
-	height: 5rem;
+	width: 5.5rem;
+	height: 5.5rem;
 	border-radius: 50%;
 	border: none;
 	background: var(--brand-secondary, #213368);
@@ -221,8 +221,8 @@
 	}
 
 	.chat-widget__toggle {
-		width: 4rem;
-		height: 4rem;
+		width: 5rem;
+		height: 5rem;
 	}
 
 	.chat-widget__btn {
