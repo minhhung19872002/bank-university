@@ -245,6 +245,11 @@
 		min-height: unset;
 	}
 
+	.hero-section .carousel-control-prev,
+	.hero-section .carousel-control-next {
+		display: none;
+	}
+
 	.feature-cards-section {
 		padding: 4rem 0;
 	}
