@@ -168,3 +168,10 @@ p {
 		padding-left: calc(var(--bs-gutter-x) * 0.5);
 	}
 }
+
+
+/* Hidden grecaptcha badge */
+.grecaptcha-badge {
+  right: -100% !important;
+  visibility: hidden;
+}

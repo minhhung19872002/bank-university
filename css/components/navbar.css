@@ -460,6 +460,7 @@
 	transform: translateY(-3rem);
 	opacity: 0;
 	transition: transform 0.3s ease, opacity 0.3s ease;
+	box-sizing: border-box;
 }
 
 .mobile-search--open .mobile-search__container {
@@ -469,6 +470,7 @@
 
 .mobile-search__input {
 	flex: 1;
+	min-width: 0;
 	border: none;
 	border-radius: 0.8rem;
 	padding: var(--sp-3) var(--sp-4);

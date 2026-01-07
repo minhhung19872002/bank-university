@@ -291,12 +291,10 @@ a.related-article {
 	line-height: 1.57;
 	color: var(--gray-800);
 	margin: 0;
-	flex: 1;
 	display: -webkit-box;
 	-webkit-line-clamp: 2;
 	-webkit-box-orient: vertical;
 	overflow: hidden;
-	text-overflow: ellipsis;
 }
 
 .related-article__link {
