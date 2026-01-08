@@ -4,7 +4,7 @@
 
 .hero-breadcrumb {
 	background-color: #f6f7f8;
-	padding: var(--sp-3) 0;
+	padding: var(--sp-4) 0;
 }
 
 .hero-breadcrumb__list {
@@ -57,6 +57,10 @@
 
 /* Mobile */
 @media (max-width: 575px) {
+	.hero-breadcrumb {
+		padding: var(--sp-3) 0;
+	}
+
 	.hero-breadcrumb__item {
 		font-size: var(--fs-caption);
 	}

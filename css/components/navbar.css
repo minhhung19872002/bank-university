@@ -378,8 +378,8 @@
 
 .mobile-nav__footer-title {
 	font-family: var(--font-primary);
-	font-size: 1.4rem;
-	margin-bottom: var(--sp-3);
+	font-size: 1.6rem;
+	margin-bottom: var(--sp-4);
 }
 
 .mobile-nav__socials {
@@ -532,7 +532,7 @@
 
 .mobile-nav__submenu-link {
 	font-family: var(--font-primary);
-	font-size: 1.4rem;
+	font-size: 1.6rem;
 	color: var(--gray-700);
 	text-decoration: none;
 	display: block;
