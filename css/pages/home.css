@@ -4,7 +4,7 @@
 
 /* Global Utilities */
 .section-spacing {
-	padding: var(--sp-8) 0;
+	padding: var(--sp-6) 0;
 }
 .section-title {
 	font-family: var(--font-family-heading);
@@ -183,7 +183,7 @@
 }
 .about-section__description {
 	font-family: var(--font-family-heading);
-	font-size: var(--section-description);
+	font-size: var(--section-description-mobile);
 	color: var(--gray-900);
 	line-height: 1.6;
 	margin-bottom: var(--sp-5);
@@ -210,7 +210,7 @@
 /* Admission Info */
 .admission-info-section {
 	background: none;
-	padding: var(--sp-5) 0 var(--sp-6);
+	padding: 0 0 var(--sp-6);
 }
 .admission-info-section__wrapper {
 	padding: 0;
@@ -733,6 +733,9 @@ a.event-card--featured:hover {
 	.section-title {
 		font-size: var(--section-title-tablet);
 	}
+	.about-section__description {
+		font-size: var(--section-description-tablet);
+	}
 	.hero-section {
 		height: clamp(32rem, 35vh, 40rem);
 		min-height: 32rem;
@@ -1138,6 +1141,9 @@ a.event-card--featured:hover {
 	}
 	.about-section__title {
 		font-size: var(--section-title);
+	}
+	.about-section__description {
+		font-size: var(--section-description);
 	}
 	.about-section__main-image {
 		max-width: 61.8rem;
