@@ -53,30 +53,42 @@ function initNavigation() {
 // Set active nav based on current path using Router utility
 function setActiveNavByPath() {
     if (typeof Router === 'undefined') {
-        console.warn('Router not loaded. Make sure to include js/utils/router.js');
+        console.warn(
+            'Router not loaded. Make sure to include js/utils/router.js'
+        );
         return;
     }
 
     const currentPath = window.location.pathname;
-    const activeNavText = Router.getActiveNavLabel(currentPath);
+    // Find the active route configuration object
+    const activeRoute = Router.findParentRoute(currentPath);
 
-    if (!activeNavText) return;
+    if (!activeRoute) return;
+
+    // Use path comparison instead of text
+    const targetPath = activeRoute.path;
+
+    // Helper to normalize paths for comparison (remove trailing slashes, query, hashes)
+    const normalize = (p) =>
+        (p || '').split(/[?#]/)[0].replace(/\/$/, '') || '/';
+    const normTarget = normalize(targetPath);
 
     // Update desktop nav
     const navLinks = document.querySelectorAll('.navbar .nav-link');
-    navLinks.forEach(link => {
+    navLinks.forEach((link) => {
         link.classList.remove('active', 'nav-link--active');
-        if (link.textContent.trim() === activeNavText) {
+        const href = link.getAttribute('href');
+        if (normalize(href) === normTarget) {
             link.classList.add('active');
         }
     });
 
     // Update mobile nav
     const mobileNavLinks = document.querySelectorAll('.mobile-nav__link');
-    mobileNavLinks.forEach(link => {
+    mobileNavLinks.forEach((link) => {
         link.classList.remove('mobile-nav__link--active');
-        const linkText = link.querySelector('span');
-        if (linkText && linkText.textContent.trim().toLowerCase() === activeNavText.toLowerCase()) {
+        const href = link.getAttribute('href');
+        if (normalize(href) === normTarget) {
             link.classList.add('mobile-nav__link--active');
         }
     });
@@ -86,13 +98,13 @@ function setActiveNavByPath() {
 function initFAQAccordion() {
     const faqHeaders = document.querySelectorAll('.faq-item__header');
 
-    faqHeaders.forEach(header => {
+    faqHeaders.forEach((header) => {
         header.addEventListener('click', function () {
             const faqItem = this.closest('.faq-item');
             const isActive = faqItem.classList.contains('faq-item--active');
 
             // Close other FAQ items (single-open accordion)
-            document.querySelectorAll('.faq-item').forEach(item => {
+            document.querySelectorAll('.faq-item').forEach((item) => {
                 if (item !== faqItem) {
                     item.classList.remove('faq-item--active');
                     const otherHeader = item.querySelector('.faq-item__header');
@@ -157,7 +169,7 @@ function initMobileNav() {
             overlay.addEventListener('click', closeNav);
         }
 
-        links.forEach(link => {
+        links.forEach((link) => {
             link.addEventListener('click', () => {
                 closeNav();
             });
@@ -179,7 +191,7 @@ function initMobileNav() {
 
     observer.observe(document.body, {
         childList: true,
-        subtree: true
+        subtree: true,
     });
 }
 
@@ -217,7 +229,7 @@ function initStickyHeader() {
 
     observer.observe(document.body, {
         childList: true,
-        subtree: true
+        subtree: true,
     });
 }
 
@@ -227,14 +239,12 @@ function initProgramsTabs() {
     if (!tabs.length) return;
 
     const groups = document.querySelectorAll('.programs-group');
-    const rows = document.querySelectorAll(
-        '#programs .row.g-3'
-    );
+    const rows = document.querySelectorAll('#programs .row.g-3');
 
-    tabs.forEach(tab => {
+    tabs.forEach((tab) => {
         tab.addEventListener('click', () => {
             // update active tab state
-            tabs.forEach(t => {
+            tabs.forEach((t) => {
                 t.classList.remove('programs-tabs__item--active');
                 t.setAttribute('aria-selected', 'false');
             });
@@ -245,7 +255,7 @@ function initProgramsTabs() {
 
             // desktop / tablet: show matching group
             if (targetId && groups.length) {
-                groups.forEach(group => {
+                groups.forEach((group) => {
                     if (group.id === targetId) {
                         group.classList.add('programs-group--active');
                     } else {
@@ -273,10 +283,11 @@ function initProgramsAccordionMobile() {
 
     const headers = accordion.querySelectorAll('.programs-accordion__header');
 
-    headers.forEach(header => {
+    headers.forEach((header) => {
         // Panel luôn nằm ngay sau header tương ứng
         const panel = header.nextElementSibling;
-        if (!panel || !panel.classList.contains('programs-accordion__panel')) return;
+        if (!panel || !panel.classList.contains('programs-accordion__panel'))
+            return;
 
         // Remove existing listeners by cloning
         const newHeader = header.cloneNode(true);
@@ -287,15 +298,21 @@ function initProgramsAccordionMobile() {
             e.stopPropagation();
 
             const currentPanel = newHeader.nextElementSibling;
-            const isActive = newHeader.classList.contains('programs-accordion__header--active');
+            const isActive = newHeader.classList.contains(
+                'programs-accordion__header--active'
+            );
 
             // Đóng tất cả
-            accordion.querySelectorAll('.programs-accordion__header').forEach(h => {
-                h.classList.remove('programs-accordion__header--active');
-            });
-            accordion.querySelectorAll('.programs-accordion__panel').forEach(p => {
-                p.classList.remove('programs-accordion__panel--open');
-            });
+            accordion
+                .querySelectorAll('.programs-accordion__header')
+                .forEach((h) => {
+                    h.classList.remove('programs-accordion__header--active');
+                });
+            accordion
+                .querySelectorAll('.programs-accordion__panel')
+                .forEach((p) => {
+                    p.classList.remove('programs-accordion__panel--open');
+                });
 
             // Nếu header đang đóng thì mở nó (single-open accordion)
             if (!isActive && currentPanel) {
@@ -308,14 +325,19 @@ function initProgramsAccordionMobile() {
 
 // Mobile slider for program cards (dai-hoc page)
 function initProgramSliderMobile() {
-    const programGrid = document.querySelector('.programs-section [data-program-grid]');
+    const programGrid = document.querySelector(
+        '.programs-section [data-program-grid]'
+    );
     const sliderNav = document.querySelector('.program-slider-nav');
 
-    if (!programGrid || !sliderNav || typeof initGallerySlider !== 'function') return;
+    if (!programGrid || !sliderNav || typeof initGallerySlider !== 'function')
+        return;
 
     // Function to update slider nav visibility based on visible items
     const updateSliderNavVisibility = () => {
-        const visibleItems = programGrid.querySelectorAll('.col-lg-4:not([style*="display: none"])');
+        const visibleItems = programGrid.querySelectorAll(
+            '.col-lg-4:not([style*="display: none"])'
+        );
         sliderNav.style.display = visibleItems.length <= 1 ? 'none' : '';
     };
 
@@ -340,11 +362,17 @@ function initProgramSliderMobile() {
     // Store all cards for mobile show/hide
     const allCards = Array.from(programGrid.querySelectorAll('.col-lg-4'));
     window.showAllProgramCards = () => {
-        allCards.forEach(card => {
+        allCards.forEach((card) => {
             card.classList.remove('pagination-hidden');
             // Only show if matches current filter
-            if (!card.style.display || card.style.display !== 'none' || card.getAttribute('data-category')) {
-                const activeFilter = document.querySelector('.filter-button--active[data-filter]');
+            if (
+                !card.style.display ||
+                card.style.display !== 'none' ||
+                card.getAttribute('data-category')
+            ) {
+                const activeFilter = document.querySelector(
+                    '.filter-button--active[data-filter]'
+                );
                 if (activeFilter) {
                     const filter = activeFilter.getAttribute('data-filter');
                     if (card.getAttribute('data-category') === filter) {
@@ -361,25 +389,40 @@ function initProgramSliderMobile() {
 
 // Filter buttons and pagination for program cards
 function initFilterButtons() {
-    const filterButtons = document.querySelectorAll('.filter-button[data-filter]');
+    const filterButtons = document.querySelectorAll(
+        '.filter-button[data-filter]'
+    );
     const programGrid = document.querySelector('[data-program-grid]');
-    const paginationNav = document.querySelector('.programs-section .pagination');
+    const paginationNav = document.querySelector(
+        '.programs-section .pagination'
+    );
 
     if (!programGrid) return;
 
-    const allCards = Array.from(programGrid.querySelectorAll('[data-category]'));
+    const allCards = Array.from(
+        programGrid.querySelectorAll('[data-category]')
+    );
 
     // Get initial filter from active button
-    const activeButton = document.querySelector('.filter-button--active[data-filter]');
-    const initialFilter = activeButton ? activeButton.getAttribute('data-filter') : null;
+    const activeButton = document.querySelector(
+        '.filter-button--active[data-filter]'
+    );
+    const initialFilter = activeButton
+        ? activeButton.getAttribute('data-filter')
+        : null;
     let currentFilteredCards = initialFilter
-        ? allCards.filter(card => card.getAttribute('data-category') === initialFilter)
+        ? allCards.filter(
+              (card) => card.getAttribute('data-category') === initialFilter
+          )
         : allCards;
 
     // Hide cards not matching initial filter
     if (initialFilter) {
-        allCards.forEach(card => {
-            card.style.display = card.getAttribute('data-category') === initialFilter ? '' : 'none';
+        allCards.forEach((card) => {
+            card.style.display =
+                card.getAttribute('data-category') === initialFilter
+                    ? ''
+                    : 'none';
         });
     }
 
@@ -401,18 +444,20 @@ function initFilterButtons() {
             classes: { active: 'pagination__button--active' },
             createPageElement: (pageNum, isActive) => {
                 const btn = document.createElement('button');
-                btn.className = 'pagination__button' + (isActive ? ' pagination__button--active' : '');
+                btn.className =
+                    'pagination__button' +
+                    (isActive ? ' pagination__button--active' : '');
                 btn.type = 'button';
                 btn.setAttribute('aria-label', `Trang ${pageNum}`);
                 btn.textContent = pageNum;
                 return btn;
-            }
+            },
         });
     }
 
     function showAllFilteredCards() {
         // Show all cards matching current filter for mobile slider
-        currentFilteredCards.forEach(card => {
+        currentFilteredCards.forEach((card) => {
             card.classList.remove('pagination-hidden');
             card.style.display = '';
         });
@@ -443,18 +488,23 @@ function initFilterButtons() {
 
     // Initialize filter buttons
     if (filterButtons.length) {
-        filterButtons.forEach(button => {
+        filterButtons.forEach((button) => {
             button.addEventListener('click', () => {
                 // Update active state
-                filterButtons.forEach(btn => btn.classList.remove('filter-button--active'));
+                filterButtons.forEach((btn) =>
+                    btn.classList.remove('filter-button--active')
+                );
                 button.classList.add('filter-button--active');
 
                 // Filter cards and update current filtered cards
                 const selectedFilter = button.getAttribute('data-filter');
-                currentFilteredCards = allCards.filter(card => card.getAttribute('data-category') === selectedFilter);
+                currentFilteredCards = allCards.filter(
+                    (card) =>
+                        card.getAttribute('data-category') === selectedFilter
+                );
 
                 // Hide all cards first
-                allCards.forEach(card => card.style.display = 'none');
+                allCards.forEach((card) => (card.style.display = 'none'));
 
                 // Show filtered cards based on viewport
                 if (mobileQuery.matches) {
@@ -482,16 +532,24 @@ function initEventCountdown() {
     const countdownContainers = document.querySelectorAll('.event-countdown');
     if (!countdownContainers.length) return;
 
-    countdownContainers.forEach(container => {
+    countdownContainers.forEach((container) => {
         setupCountdown(container);
     });
 
     function setupCountdown(countdownContainer) {
         // Get countdown value elements
-        const daysEl = countdownContainer.querySelector('.event-countdown__item:nth-child(1) .event-countdown__value');
-        const hoursEl = countdownContainer.querySelector('.event-countdown__item:nth-child(2) .event-countdown__value');
-        const minsEl = countdownContainer.querySelector('.event-countdown__item:nth-child(3) .event-countdown__value');
-        const secsEl = countdownContainer.querySelector('.event-countdown__item:nth-child(4) .event-countdown__value');
+        const daysEl = countdownContainer.querySelector(
+            '.event-countdown__item:nth-child(1) .event-countdown__value'
+        );
+        const hoursEl = countdownContainer.querySelector(
+            '.event-countdown__item:nth-child(2) .event-countdown__value'
+        );
+        const minsEl = countdownContainer.querySelector(
+            '.event-countdown__item:nth-child(3) .event-countdown__value'
+        );
+        const secsEl = countdownContainer.querySelector(
+            '.event-countdown__item:nth-child(4) .event-countdown__value'
+        );
 
         if (!daysEl || !hoursEl || !minsEl || !secsEl) return;
 
@@ -538,7 +596,9 @@ function initEventCountdown() {
 
             // Calculate time parts
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const hours = Math.floor(
+                (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+            );
             const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
             const secs = Math.floor((diff % (1000 * 60)) / 1000);
 
@@ -560,12 +620,18 @@ function initEventCountdown() {
 // Related articles pagination (tuyen-sinh-chi-tiet page)
 function initRelatedArticlesPagination() {
     const articlesContainer = document.querySelector('.related-articles');
-    const paginationNav = document.querySelector('.admissions-detail-pagination');
+    const paginationNav = document.querySelector(
+        '.admissions-detail-pagination'
+    );
 
     if (!articlesContainer || !paginationNav) return;
 
-    const allArticles = Array.from(articlesContainer.querySelectorAll('.related-article'));
-    const allDividers = Array.from(articlesContainer.querySelectorAll('.related-article-divider'));
+    const allArticles = Array.from(
+        articlesContainer.querySelectorAll('.related-article')
+    );
+    const allDividers = Array.from(
+        articlesContainer.querySelectorAll('.related-article-divider')
+    );
 
     // Get header height for scroll offset
     const header = document.querySelector('.header');
@@ -580,32 +646,42 @@ function initRelatedArticlesPagination() {
         scrollOffset: headerHeight + 20,
         onPageChange: (_visibleItems, startIndex, endIndex, items) => {
             // Hide all articles and dividers first
-            items.forEach(article => article.style.display = 'none');
-            allDividers.forEach(divider => divider.style.display = 'none');
+            items.forEach((article) => (article.style.display = 'none'));
+            allDividers.forEach((divider) => (divider.style.display = 'none'));
 
             // Show articles for current page
             items.forEach((article, index) => {
                 if (index >= startIndex && index < endIndex) {
                     article.style.display = '';
                     // Show divider after each article except the last one on the page
-                    if (allDividers[index] && index < endIndex - 1 && index < items.length - 1) {
+                    if (
+                        allDividers[index] &&
+                        index < endIndex - 1 &&
+                        index < items.length - 1
+                    ) {
                         allDividers[index].style.display = '';
                     }
                 }
             });
-        }
+        },
     });
 }
 
 // Admissions news pagination (tin-tuyen-sinh page)
 function initAdmissionsNewsPagination() {
     const newsContainer = document.querySelector('.news-items');
-    const paginationNav = document.querySelector('.admissions-news-list .pagination');
+    const paginationNav = document.querySelector(
+        '.admissions-news-list .pagination'
+    );
 
     if (!newsContainer || !paginationNav) return;
 
-    const allNewsItems = Array.from(newsContainer.querySelectorAll('.news-item'));
-    const allDividers = Array.from(newsContainer.querySelectorAll('.news-divider'));
+    const allNewsItems = Array.from(
+        newsContainer.querySelectorAll('.news-item')
+    );
+    const allDividers = Array.from(
+        newsContainer.querySelectorAll('.news-divider')
+    );
 
     // Get header height for scroll offset
     const header = document.querySelector('.header');
@@ -623,40 +699,48 @@ function initAdmissionsNewsPagination() {
         createPageElement: (pageNum, isActive) => {
             const link = document.createElement('a');
             link.href = '#';
-            link.className = 'pagination__item' + (isActive ? ' pagination__item--active' : '');
+            link.className =
+                'pagination__item' +
+                (isActive ? ' pagination__item--active' : '');
             link.textContent = pageNum;
             if (isActive) link.setAttribute('aria-current', 'page');
             return link;
         },
         onPageChange: (_visibleItems, startIndex, endIndex, items) => {
             // Hide all news items and dividers first
-            items.forEach(item => item.style.display = 'none');
-            allDividers.forEach(divider => divider.style.display = 'none');
+            items.forEach((item) => (item.style.display = 'none'));
+            allDividers.forEach((divider) => (divider.style.display = 'none'));
 
             // Show items for current page
             items.forEach((item, index) => {
                 if (index >= startIndex && index < endIndex) {
                     item.style.display = '';
                     // Show divider after each item except the last one on the page
-                    if (allDividers[index] && index < endIndex - 1 && index < items.length - 1) {
+                    if (
+                        allDividers[index] &&
+                        index < endIndex - 1 &&
+                        index < items.length - 1
+                    ) {
                         allDividers[index].style.display = '';
                     }
                 }
             });
-        }
+        },
     });
 }
 
 // Announcements pagination (danh-muc-thong-bao page)
 function initAnnouncementsPagination() {
-    const announcementsSection = document.querySelector('.announcements-featured');
+    const announcementsSection = document.querySelector(
+        '.announcements-featured'
+    );
     const paginationNav = announcementsSection?.querySelector('.pagination');
 
     if (!announcementsSection || !paginationNav) return;
 
-    const allCards = Array.from(announcementsSection.querySelectorAll('.announcement-card')).map(
-        card => card.closest('.col-12')
-    );
+    const allCards = Array.from(
+        announcementsSection.querySelectorAll('.announcement-card')
+    ).map((card) => card.closest('.col-12'));
 
     // Get header height for scroll offset
     const header = document.querySelector('.header');
@@ -674,11 +758,13 @@ function initAnnouncementsPagination() {
         createPageElement: (pageNum, isActive) => {
             const link = document.createElement('a');
             link.href = '#';
-            link.className = 'pagination__item' + (isActive ? ' pagination__item--active' : '');
+            link.className =
+                'pagination__item' +
+                (isActive ? ' pagination__item--active' : '');
             link.textContent = pageNum;
             if (isActive) link.setAttribute('aria-current', 'page');
             return link;
-        }
+        },
     });
 }
 
@@ -690,7 +776,7 @@ function initRegistrationForm() {
         snackbar = document.createElement('div');
         snackbar.id = 'snackbar';
         snackbar.className = 'snackbar';
-        snackbar.style.display = 'none';         
+        snackbar.style.display = 'none';
         snackbar.setAttribute('aria-hidden', 'true');
         snackbar.innerHTML = `
             <span class="snackbar__icon">✓</span>
@@ -730,7 +816,7 @@ function initRegistrationForm() {
 
             // Get form data
             const formData = new FormData(form);
-            
+
             // Manual Validation
             const fullName = form.querySelector('#fullName');
             const phone = form.querySelector('#phone');
@@ -754,9 +840,9 @@ function initRegistrationForm() {
             // Simple phone regex (10-11 digits)
             const phoneRegex = /(84|0[3|5|7|8|9])+([0-9]{8})\b/;
             if (!phoneRegex.test(phone.value.trim())) {
-                 showSnackbar('Số điện thoại không hợp lệ', 'error');
-                 phone?.focus();
-                 return;
+                showSnackbar('Số điện thoại không hợp lệ', 'error');
+                phone?.focus();
+                return;
             }
 
             // Validate Email
@@ -768,7 +854,10 @@ function initRegistrationForm() {
             // Basic email regex
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             if (!emailRegex.test(email.value.trim())) {
-                showSnackbar('Email không đúng định dạng (ví dụ: abc@gmail.com)', 'error');
+                showSnackbar(
+                    'Email không đúng định dạng (ví dụ: abc@gmail.com)',
+                    'error'
+                );
                 email?.focus();
                 return;
             }
@@ -788,30 +877,38 @@ function initRegistrationForm() {
             }
 
             // reCAPTCHA v3 verification
-            const RECAPTCHA_SITE_KEY = '6LfQiUEsAAAAAGiC3h3lM8swyCEIo8cTA_DjeSD0';
-            const CAPTCHA_API_URL = 'https://verify-captcha-v3.vercel.app/api/verify';
+            const RECAPTCHA_SITE_KEY =
+                '6LfQiUEsAAAAAGiC3h3lM8swyCEIo8cTA_DjeSD0';
+            const CAPTCHA_API_URL =
+                'https://verify-captcha-v3.vercel.app/api/verify';
 
             // Get submit button and show loading state
             const submitBtn = form.querySelector('.registration-form__submit');
             const setLoading = (isLoading) => {
                 if (submitBtn) {
-                    submitBtn.classList.toggle('registration-form__submit--loading', isLoading);
+                    submitBtn.classList.toggle(
+                        'registration-form__submit--loading',
+                        isLoading
+                    );
                     submitBtn.disabled = isLoading;
                 }
             };
 
             if (typeof grecaptcha !== 'undefined') {
                 setLoading(true);
-                grecaptcha.ready(async function() {
+                grecaptcha.ready(async function () {
                     try {
                         // Get reCAPTCHA token
-                        const token = await grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: 'submit_registration' });
+                        const token = await grecaptcha.execute(
+                            RECAPTCHA_SITE_KEY,
+                            { action: 'submit_registration' }
+                        );
 
                         // Verify token with server
                         const res = await fetch(CAPTCHA_API_URL, {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ recaptchaToken: token })
+                            body: JSON.stringify({ recaptchaToken: token }),
                         });
 
                         const result = await res.json();
@@ -819,21 +916,33 @@ function initRegistrationForm() {
                         setLoading(false);
                         if (result.success) {
                             // Captcha verified - submit form
-                            showSnackbar('Đăng ký thành công! Chúng tôi sẽ liên hệ bạn sớm.', 'success');
+                            showSnackbar(
+                                'Đăng ký thành công! Chúng tôi sẽ liên hệ bạn sớm.',
+                                'success'
+                            );
                             form.reset();
                         } else {
                             // Captcha failed - block spam
-                            showSnackbar('Xác minh thất bại. Vui lòng thử lại.', 'error');
+                            showSnackbar(
+                                'Xác minh thất bại. Vui lòng thử lại.',
+                                'error'
+                            );
                         }
                     } catch (error) {
                         setLoading(false);
                         console.error('reCAPTCHA error:', error);
-                        showSnackbar('Lỗi xác minh. Vui lòng thử lại.', 'error');
+                        showSnackbar(
+                            'Lỗi xác minh. Vui lòng thử lại.',
+                            'error'
+                        );
                     }
                 });
             } else {
                 // reCAPTCHA not loaded - block submission
-                showSnackbar('Không thể xác minh. Vui lòng tải lại trang.', 'error');
+                showSnackbar(
+                    'Không thể xác minh. Vui lòng tải lại trang.',
+                    'error'
+                );
             }
         });
         return true;
@@ -852,7 +961,6 @@ function initRegistrationForm() {
 
     observer.observe(document.body, {
         childList: true,
-        subtree: true
+        subtree: true,
     });
 }
-

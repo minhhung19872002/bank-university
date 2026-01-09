@@ -8,42 +8,6 @@
  * Highlight active navigation link based on current URL
  * Uses Router.getActiveNavLabel() to determine which nav item to highlight
  */
-function initActiveNav() {
-    if (typeof Router === "undefined") {
-        console.warn(
-            "Router not loaded. Make sure to include js/utils/router.js"
-        );
-        return;
-    }
-
-    const currentPath = window.location.pathname;
-    const activeNavText = Router.getActiveNavLabel(currentPath);
-
-    if (!activeNavText) return;
-
-    // Desktop nav links
-    const desktopLinks = document.querySelectorAll(".navbar-nav .nav-link");
-    desktopLinks.forEach((link) => {
-        link.classList.remove("active");
-        if (link.textContent.trim() === activeNavText) {
-            link.classList.add("active");
-        }
-    });
-
-    // Mobile nav links
-    const mobileLinks = document.querySelectorAll(".mobile-nav__link");
-    mobileLinks.forEach((link) => {
-        link.classList.remove("mobile-nav__link--active");
-        const linkText = link.querySelector("span");
-        if (
-            linkText &&
-            linkText.textContent.trim().toLowerCase() ===
-                activeNavText.toLowerCase()
-        ) {
-            link.classList.add("mobile-nav__link--active");
-        }
-    });
-}
 
 function initStickyHeader() {
     const header = document.querySelector("[data-header]");
@@ -125,7 +89,6 @@ function initMobileNav() {
 
         initMobileNav();
         initStickyHeader();
-        initActiveNav();
     }
 
     // Wait for DOM to be ready
