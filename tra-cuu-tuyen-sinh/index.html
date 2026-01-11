@@ -423,17 +423,14 @@
                     id="captcha"
                     name="captcha"
                     class="lookup-form__input lookup-form__input--captcha"
-                    placeholder="Nhập mã xác nhận"
-                    required
+                    placeholder="Nhập kết quả phép tính"
+                    autocomplete="off"
                   />
-                  <div class="lookup-form__captcha-box">
-                    <span id="captchaCode" class="lookup-form__captcha-code">6s1qP</span>
-                  </div>
                   <button
                     type="button"
+                    id="captchaRefresh"
                     class="lookup-form__captcha-refresh"
                     aria-label="Làm mới mã xác nhận"
-                    onclick="refreshCaptcha()"
                   >
                     <span class="iconify" data-icon="mdi:refresh" data-width="24" data-height="24"></span>
                   </button>
@@ -487,41 +484,62 @@
     <script src="/js/main.js"></script>
     <script src="/js/components/chat-widget.js"></script>
 
+    <!-- Simple Captcha -->
+    <script src="/js/utils/simple-captcha.js"></script>
+
     <!-- Lookup Form Script -->
     <script>
-      // Generate random captcha
-      function generateCaptcha() {
-        const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghjkmnpqrstuvwxyz23456789';
-        let captcha = '';
-        for (let i = 0; i < 5; i++) {
-          captcha += chars.charAt(Math.floor(Math.random() * chars.length));
-        }
-        return captcha;
-      }
+      let myCaptcha;
 
-      // Refresh captcha
-      function refreshCaptcha() {
-        document.getElementById('captchaCode').textContent = generateCaptcha();
-      }
+      document.addEventListener('DOMContentLoaded', function() {
+        // Initialize SimpleCaptcha
+        myCaptcha = new SimpleCaptcha({
+          el: '#captcha',
+          canvasClass: 'jCaptchaCanvas',
+          canvasStyle: {
+            width: 100,
+            height: 18,
+            font: '14px Inter, sans-serif',
+            fillStyle: '#343a40',
+            backgroundColor: '#f1f3f5'
+          },
+          callback: function(response, inputElement) {
+            if (response === 'success') {
+              const cccd = document.getElementById('cccd').value;
+              const soBaoDanh = document.getElementById('soBaoDanh').value;
 
-      // Form submission handler
-      document.getElementById('lookupForm')?.addEventListener('submit', function(e) {
-        e.preventDefault();
+              // Here you would typically make an API call to check the result
+              alert('Đang tra cứu kết quả cho CCCD: ' + cccd + ', Số báo danh: ' + soBaoDanh);
 
-        const cccd = document.getElementById('cccd').value;
-        const soBaoDanh = document.getElementById('soBaoDanh').value;
-        const captchaInput = document.getElementById('captcha').value;
-        const captchaCode = document.getElementById('captchaCode').textContent;
+              myCaptcha.reset();
+            }
+            if (response === 'error') {
+              alert('Mã xác nhận không đúng. Vui lòng thử lại.');
+              inputElement.value = '';
+              myCaptcha.reset();
+            }
+          }
+        });
 
-        if (captchaInput !== captchaCode) {
-          alert('Mã xác nhận không đúng. Vui lòng thử lại.');
-          refreshCaptcha();
-          document.getElementById('captcha').value = '';
-          return;
-        }
+        // Refresh button handler
+        document.getElementById('captchaRefresh')?.addEventListener('click', function() {
+          myCaptcha.reset();
+        });
 
-        // Here you would typically make an API call to check the result
-        alert('Đang tra cứu kết quả cho CCCD: ' + cccd + ', Số báo danh: ' + soBaoDanh);
+        // Form submission handler
+        document.getElementById('lookupForm')?.addEventListener('submit', function(e) {
+          e.preventDefault();
+
+          const cccd = document.getElementById('cccd').value;
+          const soBaoDanh = document.getElementById('soBaoDanh').value;
+
+          if (!cccd || !soBaoDanh) {
+            alert('Vui lòng nhập đầy đủ thông tin.');
+            return;
+          }
+
+          myCaptcha.validate();
+        });
       });
     </script>
   </body>
