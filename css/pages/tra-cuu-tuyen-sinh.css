@@ -1,0 +1,195 @@
+/* ==========================================================================
+   TRA CỨU TUYỂN SINH PAGE STYLES
+   ========================================================================== */
+
+/* Layout */
+.lookup-page {
+	display: flex;
+	flex-direction: column;
+}
+
+/* ==========================================================================
+   FORM SECTION
+   ========================================================================== */
+.lookup-form-section {
+	flex: 1;
+	padding: var(--sp-7) 0;
+	background-color: var(--gray-50);
+}
+
+.lookup-form-card {
+	max-width: 60rem;
+	margin: 0 auto;
+	background: var(--color-light);
+	border: 0.1rem solid var(--gray-300);
+	border-radius: var(--radius-md);
+	padding: var(--sp-6);
+}
+
+.lookup-form-card__title {
+	font-family: var(--font-primary);
+	font-weight: 700;
+	color: var(--brand-secondary);
+	font-size: var(--fs-heading-m);
+	text-align: center;
+	margin: 0 0 var(--sp-2) 0;
+	text-transform: uppercase;
+	line-height: 1.21;
+}
+
+.lookup-form-card__subtitle {
+	font-family: var(--font-primary);
+	color: var(--brand-primary);
+	font-size: var(--fs-body-sm);
+	text-align: center;
+	margin: 0 0 var(--sp-5) 0;
+}
+
+/* Form Styles */
+.lookup-form__group {
+	margin-bottom: var(--sp-4);
+}
+
+.lookup-form__label {
+	display: block;
+	font-family: var(--font-primary);
+	font-weight: 600;
+	color: var(--gray-800);
+	font-size: var(--fs-body-sm);
+	margin-bottom: var(--sp-2);
+}
+
+.lookup-form__input {
+	width: 100%;
+	padding: var(--sp-3) var(--sp-4);
+	font-family: var(--font-primary);
+	font-size: var(--fs-200);
+	font-weight: 400;
+	color: var(--gray-800);
+	background-color: var(--color-light);
+	border: none;
+	border-bottom: 0.1rem solid var(--gray-400);
+	outline: none;
+	transition: border-color var(--transition-base);
+	line-height: 1.21;
+}
+
+.lookup-form__input::placeholder {
+	color: var(--gray-500);
+}
+
+.lookup-form__input:focus {
+	border-bottom-color: var(--brand-primary);
+}
+
+/* Captcha */
+.lookup-form__captcha-wrapper {
+	display: flex;
+	align-items: center;
+	gap: var(--sp-3);
+}
+
+.lookup-form__input--captcha {
+	flex: 1;
+}
+
+.lookup-form__captcha-box {
+	min-width: 10rem;
+	padding: var(--sp-2) var(--sp-4);
+	background-color: var(--gray-100);
+	border: 0.1rem dashed var(--gray-400);
+	border-radius: var(--radius-sm);
+	text-align: center;
+}
+
+.lookup-form__captcha-code {
+	font-family: var(--font-primary);
+	font-size: var(--fs-400);
+	font-weight: 400;
+	color: var(--gray-700);
+	font-style: italic;
+	letter-spacing: 0.2rem;
+	user-select: none;
+}
+
+.lookup-form__captcha-refresh {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 4rem;
+	height: 4rem;
+	background: transparent;
+	border: none;
+	color: var(--gray-600);
+	cursor: pointer;
+	transition: color var(--transition-base);
+}
+
+.lookup-form__captcha-refresh:hover {
+	color: var(--brand-primary);
+}
+
+/* Submit Button */
+.lookup-form__submit {
+	display: block;
+	width: 100%;
+	height: 3.7rem;
+	margin: var(--sp-5) auto 0;
+	padding: 0.9rem 1.8rem;
+	font-family: var(--font-primary);
+	font-weight: 700;
+	font-size: var(--fs-350);
+	line-height: 1.22;
+	color: var(--color-light);
+	background-color: var(--brand-primary);
+	border: none;
+	border-radius: 1rem;
+	cursor: pointer;
+	transition: background-color var(--transition-base);
+	text-transform: uppercase;
+	letter-spacing: 0.1rem;
+}
+
+.lookup-form__submit:hover {
+	background-color: #8a0d2a;
+}
+
+.lookup-form__submit:active {
+	transform: translateY(0.1rem);
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+/* Mobile */
+@media (max-width: 575px) {
+	.lookup-form-section {
+		padding: var(--sp-5) 0;
+	}
+
+	.lookup-form-card {
+		padding: var(--sp-4);
+	}
+
+	.lookup-form-card__title {
+		font-size: var(--fs-body);
+	}
+
+	.lookup-form__captcha-wrapper {
+		flex-wrap: wrap;
+	}
+
+	.lookup-form__input--captcha {
+		width: 100%;
+		flex: none;
+	}
+
+	.lookup-form__captcha-box {
+		flex: 1;
+	}
+
+	.lookup-form__submit {
+		height: 4.2rem;
+	}
+}
