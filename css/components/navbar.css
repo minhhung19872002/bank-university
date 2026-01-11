@@ -167,8 +167,7 @@
 }
 
 /* Dropdown hover giữ menu khi rê vào menu con */
-.navbar-nav .dropdown:hover > .dropdown-menu,
-.navbar-nav .dropdown:focus-within > .dropdown-menu {
+.navbar-nav .dropdown:hover > .dropdown-menu {
 	display: block;
 }
 
