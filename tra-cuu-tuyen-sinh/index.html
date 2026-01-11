@@ -60,6 +60,7 @@
     <link rel="stylesheet" href="/css/components/navbar.css" />
     <link rel="stylesheet" href="/css/components/footer.css" />
     <link rel="stylesheet" href="/css/components/chat-widget.css" />
+    <link rel="stylesheet" href="/css/components/snackbar.css" />
     <link rel="stylesheet" href="/css/pages/tra-cuu-tuyen-sinh.css" />
   </head>
   <body>
@@ -387,10 +388,10 @@
           <div class="lookup-form-card">
             <h2 class="lookup-form-card__title">TRA CỨU KẾT QUẢ TRÚNG TUYỂN</h2>
             <p class="lookup-form-card__subtitle">
-              ( Thí sinh nhập số CCCD và số báo danh để tra cứu)
+              (Thí sinh nhập số CCCD và số báo danh để tra cứu)
             </p>
 
-            <form id="lookupForm" class="lookup-form">
+            <form id="lookupForm" class="lookup-form" novalidate>
               <div class="lookup-form__group">
                 <label for="cccd" class="lookup-form__label">Số CCCD</label>
                 <input
@@ -404,7 +405,9 @@
               </div>
 
               <div class="lookup-form__group">
-                <label for="soBaoDanh" class="lookup-form__label">Số báo danh</label>
+                <label for="soBaoDanh" class="lookup-form__label"
+                  >Số báo danh</label
+                >
                 <input
                   type="text"
                   id="soBaoDanh"
@@ -416,7 +419,9 @@
               </div>
 
               <div class="lookup-form__group">
-                <label for="captcha" class="lookup-form__label">Mã xác nhận</label>
+                <label for="captcha" class="lookup-form__label"
+                  >Mã xác nhận</label
+                >
                 <div class="lookup-form__captcha-wrapper">
                   <input
                     type="text"
@@ -432,7 +437,12 @@
                     class="lookup-form__captcha-refresh"
                     aria-label="Làm mới mã xác nhận"
                   >
-                    <span class="iconify" data-icon="mdi:refresh" data-width="24" data-height="24"></span>
+                    <span
+                      class="iconify"
+                      data-icon="mdi:refresh"
+                      data-width="24"
+                      data-height="24"
+                    ></span>
                   </button>
                 </div>
               </div>
@@ -450,22 +460,66 @@
     <!-- Floating Chat Widget -->
     <div class="chat-widget" aria-label="Chat support options">
       <div class="chat-widget__buttons">
-        <a href="#" rel="noopener noreferrer" class="chat-widget__btn chat-widget__btn--zalo" aria-label="Chat qua Zalo">
-          <span class="iconify chat-widget__icon" data-icon="simple-icons:zalo" data-width="24" data-height="24"></span>
+        <a
+          href="#"
+          rel="noopener noreferrer"
+          class="chat-widget__btn chat-widget__btn--zalo"
+          aria-label="Chat qua Zalo"
+        >
+          <span
+            class="iconify chat-widget__icon"
+            data-icon="simple-icons:zalo"
+            data-width="24"
+            data-height="24"
+          ></span>
           <span class="chat-widget__tooltip">Chat Zalo tư vấn</span>
         </a>
-        <a href="#" class="chat-widget__btn chat-widget__btn--ai" aria-label="AI Chat tư vấn 24/7">
-          <span class="iconify chat-widget__icon" data-icon="mdi:robot" data-width="24" data-height="24"></span>
+        <a
+          href="#"
+          class="chat-widget__btn chat-widget__btn--ai"
+          aria-label="AI Chat tư vấn 24/7"
+        >
+          <span
+            class="iconify chat-widget__icon"
+            data-icon="mdi:robot"
+            data-width="24"
+            data-height="24"
+          ></span>
           <span class="chat-widget__tooltip">AI tư vấn 24/7</span>
         </a>
-        <a href="https://m.me/YOUR_PAGE_ID" target="_blank" rel="noopener noreferrer" class="chat-widget__btn chat-widget__btn--messenger" aria-label="Chat qua Facebook Messenger">
-          <span class="iconify chat-widget__icon" data-icon="mdi:facebook-messenger" data-width="24" data-height="24"></span>
+        <a
+          href="https://m.me/YOUR_PAGE_ID"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="chat-widget__btn chat-widget__btn--messenger"
+          aria-label="Chat qua Facebook Messenger"
+        >
+          <span
+            class="iconify chat-widget__icon"
+            data-icon="mdi:facebook-messenger"
+            data-width="24"
+            data-height="24"
+          ></span>
           <span class="chat-widget__tooltip">Chat tư vấn tuyển sinh</span>
         </a>
       </div>
-      <button class="chat-widget__toggle" aria-label="Mở menu chat" aria-expanded="false">
-        <span class="iconify chat-widget__toggle-icon chat-widget__toggle-icon--chat" data-icon="mdi:chat" data-width="28" data-height="28"></span>
-        <span class="iconify chat-widget__toggle-icon chat-widget__toggle-icon--close" data-icon="mdi:close" data-width="28" data-height="28"></span>
+      <button
+        class="chat-widget__toggle"
+        aria-label="Mở menu chat"
+        aria-expanded="false"
+      >
+        <span
+          class="iconify chat-widget__toggle-icon chat-widget__toggle-icon--chat"
+          data-icon="mdi:chat"
+          data-width="28"
+          data-height="28"
+        ></span>
+        <span
+          class="iconify chat-widget__toggle-icon chat-widget__toggle-icon--close"
+          data-icon="mdi:close"
+          data-width="28"
+          data-height="28"
+        ></span>
       </button>
     </div>
 
@@ -491,55 +545,138 @@
     <script>
       let myCaptcha;
 
-      document.addEventListener('DOMContentLoaded', function() {
+      // Create snackbar element if not exists
+      function initSnackbar() {
+        let snackbar = document.getElementById("snackbar");
+        if (!snackbar) {
+          snackbar = document.createElement("div");
+          snackbar.id = "snackbar";
+          snackbar.className = "snackbar";
+          snackbar.style.display = "none";
+          snackbar.setAttribute("aria-hidden", "true");
+          snackbar.innerHTML = `
+            <span class="snackbar__icon">✓</span>
+            <span class="snackbar__message"></span>
+          `;
+          document.body.appendChild(snackbar);
+        }
+        return snackbar;
+      }
+
+      // Show snackbar function
+      function showSnackbar(message, type = "success") {
+        const snackbar = initSnackbar();
+        const icon = type === "success" ? "✓" : "✕";
+        snackbar.querySelector(".snackbar__icon").textContent = icon;
+        snackbar.querySelector(".snackbar__message").textContent = message;
+        snackbar.className = `snackbar snackbar--${type} snackbar--show`;
+        snackbar.style.display = "";
+        snackbar.setAttribute("aria-hidden", "false");
+
+        // Auto hide after 4 seconds
+        setTimeout(() => {
+          snackbar.classList.remove("snackbar--show");
+          snackbar.style.display = "none";
+          snackbar.setAttribute("aria-hidden", "true");
+        }, 4000);
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize snackbar
+        initSnackbar();
+
+        // Get submit button
+        const submitBtn = document.querySelector(".lookup-form__submit");
+
+        // Loading state functions
+        function setLoading(isLoading) {
+          if (submitBtn) {
+            submitBtn.classList.toggle("lookup-form__submit--loading", isLoading);
+            submitBtn.disabled = isLoading;
+          }
+        }
+
         // Initialize SimpleCaptcha
         myCaptcha = new SimpleCaptcha({
-          el: '#captcha',
-          canvasClass: 'jCaptchaCanvas',
+          el: "#captcha",
+          canvasClass: "jCaptchaCanvas",
           canvasStyle: {
             width: 100,
             height: 18,
-            font: '14px Inter, sans-serif',
-            fillStyle: '#343a40',
-            backgroundColor: '#f1f3f5'
+            font: "14px Inter, sans-serif",
+            fillStyle: "#343a40",
+            backgroundColor: "#f1f3f5",
           },
-          callback: function(response, inputElement) {
-            if (response === 'success') {
-              const cccd = document.getElementById('cccd').value;
-              const soBaoDanh = document.getElementById('soBaoDanh').value;
+          callback: function (response, inputElement) {
+            if (response === "success") {
+              const cccd = document.getElementById("cccd").value;
+              const soBaoDanh = document.getElementById("soBaoDanh").value;
 
-              // Here you would typically make an API call to check the result
-              alert('Đang tra cứu kết quả cho CCCD: ' + cccd + ', Số báo danh: ' + soBaoDanh);
+              // Show loading state
+              setLoading(true);
 
+              // TODO: Make API call to check result, then redirect to result page
+              // Simulate API call with timeout
+              setTimeout(function () {
+                setLoading(false);
+                // Redirect to result page with query params
+                const params = new URLSearchParams();
+                if (cccd) params.append("cccd", cccd);
+                if (soBaoDanh) params.append("sbd", soBaoDanh);
+                // window.location.href = "/tra-cuu-tuyen-sinh/ket-qua/?" + params.toString();
+
+                // Temporary: show success message until result page is ready
+                showSnackbar("Tra cứu thành công!", "success");
+                myCaptcha.reset();
+              }, 1500);
+            }
+            if (response === "error") {
+              showSnackbar(
+                "Mã xác nhận không đúng. Vui lòng thử lại.",
+                "error"
+              );
+              inputElement.value = "";
               myCaptcha.reset();
             }
-            if (response === 'error') {
-              alert('Mã xác nhận không đúng. Vui lòng thử lại.');
-              inputElement.value = '';
-              myCaptcha.reset();
-            }
-          }
+          },
         });
 
         // Refresh button handler
-        document.getElementById('captchaRefresh')?.addEventListener('click', function() {
-          myCaptcha.reset();
-        });
+        document
+          .getElementById("captchaRefresh")
+          ?.addEventListener("click", function () {
+            myCaptcha.reset();
+          });
 
         // Form submission handler
-        document.getElementById('lookupForm')?.addEventListener('submit', function(e) {
-          e.preventDefault();
+        document
+          .getElementById("lookupForm")
+          ?.addEventListener("submit", function (e) {
+            e.preventDefault();
 
-          const cccd = document.getElementById('cccd').value;
-          const soBaoDanh = document.getElementById('soBaoDanh').value;
+            const cccd = document.getElementById("cccd");
+            const soBaoDanh = document.getElementById("soBaoDanh");
+            const captcha = document.getElementById("captcha");
 
-          if (!cccd || !soBaoDanh) {
-            alert('Vui lòng nhập đầy đủ thông tin.');
-            return;
-          }
+            const hasCccd = cccd && cccd.value.trim();
+            const hasSoBaoDanh = soBaoDanh && soBaoDanh.value.trim();
 
-          myCaptcha.validate();
-        });
+            // Validate: phải nhập ít nhất 1 trong 2 (CCCD hoặc Số báo danh)
+            if (!hasCccd && !hasSoBaoDanh) {
+              showSnackbar("Vui lòng nhập số CCCD hoặc số báo danh", "error");
+              cccd?.focus();
+              return;
+            }
+
+            // Validate Captcha
+            if (!captcha || !captcha.value.trim()) {
+              showSnackbar("Vui lòng nhập mã xác nhận", "error");
+              captcha?.focus();
+              return;
+            }
+
+            myCaptcha.validate();
+          });
       });
     </script>
   </body>
