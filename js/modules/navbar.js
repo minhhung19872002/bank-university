@@ -44,6 +44,13 @@ function isPathActive(itemPath, currentFull) {
 
     if (itemBase === currentBase) return true;
 
+    // Check if item path is a parent/ancestor of current path
+    // Example: /tin-tuyen-sinh/ should be active when viewing /tra-cuu-tuyen-sinh/ket-qua/
+    // because current path STARTS WITH item path
+    if (itemBase !== '/' && currentBase.startsWith(itemBase)) {
+        return true;
+    }
+
     // Check Router config for relationships (e.g. su-kien-chi-tiet -> su-kien)
     if (typeof Router !== 'undefined' && typeof ROUTES_CONFIG !== 'undefined') {
         const parentRoute = Router.findParentRoute(currentFull);
