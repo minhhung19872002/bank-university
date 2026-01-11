@@ -27,6 +27,7 @@
     "mdi:chat": "icon-chat",
     "mdi:close": "icon-close",
     "mdi:refresh": "icon-refresh",
+    "mdi:account": "icon-account",
   };
 
   let spriteLoaded = false;

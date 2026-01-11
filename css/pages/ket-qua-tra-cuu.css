@@ -1,0 +1,314 @@
+/* ==========================================================================
+   KẾT QUẢ TRA CỨU TUYỂN SINH PAGE STYLES
+   ========================================================================== */
+
+/* Layout */
+.result-page {
+	display: flex;
+	flex-direction: column;
+	min-height: calc(100vh - 12rem);
+}
+
+/* ==========================================================================
+   RESULT SECTION
+   ========================================================================== */
+.result-section {
+	flex: 1;
+	padding: var(--sp-7) 0;
+	background-color: var(--gray-50);
+}
+
+/* ==========================================================================
+   RESULT HEADER
+   ========================================================================== */
+.result-header {
+	display: flex;
+	align-items: center;
+	gap: var(--sp-2);
+	background-color: var(--brand-primary);
+	padding: var(--sp-3) var(--sp-4);
+	border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.result-header__icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--color-light);
+}
+
+.result-header__title {
+	font-family: var(--font-primary);
+	font-weight: 700;
+	font-size: var(--fs-body);
+	color: var(--color-light);
+	margin: 0;
+	text-transform: uppercase;
+	letter-spacing: 0.02rem;
+}
+
+/* ==========================================================================
+   RESULT CARD
+   ========================================================================== */
+.result-card {
+	background: var(--color-light);
+	border: 0.1rem solid var(--gray-300);
+	border-top: none;
+	border-radius: 0 0 var(--radius-md) var(--radius-md);
+	padding: var(--sp-5);
+	margin-bottom: var(--sp-5);
+}
+
+/* ==========================================================================
+   STUDENT INFO
+   ========================================================================== */
+.result-info {
+	margin-bottom: var(--sp-5);
+}
+
+.result-info__header {
+	display: flex;
+	align-items: center;
+	gap: var(--sp-2);
+	margin-bottom: var(--sp-3);
+	padding-bottom: var(--sp-2);
+	border-bottom: 0.1rem solid var(--gray-200);
+}
+
+.result-info__icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--brand-primary);
+}
+
+.result-info__title {
+	font-family: var(--font-primary);
+	font-weight: 600;
+	font-size: var(--fs-body-sm);
+	color: var(--gray-800);
+}
+
+.result-info__content {
+	display: flex;
+	flex-direction: column;
+}
+
+.result-info__row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: var(--sp-5);
+}
+
+.result-info__col {
+	display: flex;
+	flex-direction: column;
+	gap: var(--sp-3);
+}
+
+.result-info__item {
+	display: flex;
+	align-items: baseline;
+	gap: var(--sp-2);
+}
+
+.result-info__label {
+	font-family: var(--font-primary);
+	font-weight: 400;
+	font-size: var(--fs-body-sm);
+	color: var(--gray-600);
+	white-space: nowrap;
+}
+
+.result-info__value {
+	font-family: var(--font-primary);
+	font-weight: 600;
+	font-size: var(--fs-body-sm);
+	color: var(--gray-800);
+}
+
+/* ==========================================================================
+   SCORE TABLE
+   ========================================================================== */
+.result-table-wrapper {
+	overflow-x: auto;
+}
+
+.result-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-family: var(--font-primary);
+	font-size: var(--fs-body-sm);
+}
+
+.result-table__th {
+	background-color: var(--gray-100);
+	padding: var(--sp-3) var(--sp-4);
+	text-align: left;
+	font-weight: 600;
+	color: var(--gray-800);
+	border: 0.1rem solid var(--gray-300);
+	white-space: nowrap;
+}
+
+.result-table__th--stt {
+	width: 6rem;
+	text-align: center;
+}
+
+.result-table__th--subject {
+	min-width: 12rem;
+}
+
+.result-table__th--score {
+	width: 10rem;
+	text-align: center;
+}
+
+.result-table__th--priority {
+	width: 15rem;
+	text-align: center;
+}
+
+.result-table__th--note {
+	min-width: 10rem;
+}
+
+.result-table__td {
+	padding: var(--sp-3) var(--sp-4);
+	border: 0.1rem solid var(--gray-300);
+	color: var(--gray-700);
+	vertical-align: middle;
+}
+
+.result-table__td--center {
+	text-align: center;
+}
+
+.result-table__td--score {
+	text-align: center;
+	color: var(--brand-primary);
+	font-weight: 600;
+}
+
+/* ==========================================================================
+   TOTAL SCORE
+   ========================================================================== */
+.result-total {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: var(--sp-2);
+	padding: var(--sp-3) var(--sp-4);
+	background-color: var(--gray-50);
+	border: 0.1rem solid var(--gray-300);
+	border-top: none;
+}
+
+.result-total__label {
+	font-family: var(--font-primary);
+	font-weight: 600;
+	font-size: var(--fs-body-sm);
+	color: var(--gray-800);
+}
+
+.result-total__value {
+	font-family: var(--font-primary);
+	font-weight: 700;
+	font-size: var(--fs-body);
+	color: var(--brand-primary);
+}
+
+/* ==========================================================================
+   RESULT ACTIONS
+   ========================================================================== */
+.result-actions {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.result-actions__btn {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--sp-2);
+	padding: var(--sp-3) var(--sp-5);
+	font-family: var(--font-primary);
+	font-weight: 600;
+	font-size: var(--fs-body-sm);
+	color: var(--color-light);
+	background-color: var(--brand-primary);
+	border: none;
+	border-radius: var(--radius-md);
+	text-decoration: none;
+	transition: background-color var(--transition-base);
+}
+
+.result-actions__btn:hover {
+	background-color: #8a0d2a;
+	color: var(--color-light);
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+/* Tablet */
+@media (max-width: 991px) {
+	.result-info__row {
+		grid-template-columns: 1fr;
+		gap: var(--sp-4);
+	}
+
+	.result-info__col {
+		gap: var(--sp-2);
+	}
+}
+
+/* Mobile */
+@media (max-width: 575px) {
+	.result-section {
+		padding: var(--sp-5) 0;
+	}
+
+	.result-header {
+		padding: var(--sp-3);
+		gap: var(--sp-2);
+	}
+
+	.result-header__title {
+		font-size: var(--fs-body);
+	}
+
+	.result-card {
+		padding: var(--sp-4);
+	}
+
+	.result-info__item {
+		flex-direction: column;
+		gap: var(--sp-1);
+	}
+
+	.result-table__th,
+	.result-table__td {
+		padding: var(--sp-2) var(--sp-3);
+		font-size: var(--fs-100);
+	}
+
+	.result-table__th--stt {
+		width: 4rem;
+	}
+
+	.result-table__th--score,
+	.result-table__th--priority {
+		width: auto;
+	}
+
+	.result-total {
+		padding: var(--sp-2) var(--sp-3);
+	}
+
+	.result-actions__btn {
+		width: 100%;
+		justify-content: center;
+	}
+}

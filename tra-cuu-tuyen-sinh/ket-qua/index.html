@@ -6,29 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- SEO Meta Tags -->
-    <title>Tra Cứu Kết Quả Tuyển Sinh | HUB University</title>
+    <title>Kết Quả Tra Cứu Tuyển Sinh | HUB University</title>
     <meta
       name="description"
-      content="Tra cứu kết quả trúng tuyển tại Trường Đại học Ngân hàng TP. Hồ Chí Minh - Nhập số CCCD và số báo danh để tra cứu"
+      content="Kết quả tra cứu điểm thi tuyển sinh tại Trường Đại học Ngân hàng TP. Hồ Chí Minh"
     />
     <meta
       name="keywords"
-      content="tra cứu kết quả tuyển sinh HUB, kết quả trúng tuyển, tra cứu HUB, admission result"
+      content="kết quả tuyển sinh HUB, điểm thi, kết quả trúng tuyển, admission result"
     />
     <meta name="author" content="HUB University" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="noindex, nofollow" />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Tra Cứu Kết Quả Tuyển Sinh - HUB University"
+      content="Kết Quả Tra Cứu Tuyển Sinh - HUB University"
     />
     <meta
       property="og:description"
-      content="Tra cứu kết quả trúng tuyển tại HUB University"
+      content="Kết quả tra cứu điểm thi tuyển sinh tại HUB University"
     />
-    <meta property="og:url" content="https://hub.edu.vn/tra-cuu-tuyen-sinh" />
+    <meta property="og:url" content="https://hub.edu.vn/tra-cuu-tuyen-sinh/ket-qua" />
     <meta property="og:locale" content="vi_VN" />
 
     <!-- Favicon -->
@@ -60,8 +60,7 @@
     <link rel="stylesheet" href="/css/components/navbar.css" />
     <link rel="stylesheet" href="/css/components/footer.css" />
     <link rel="stylesheet" href="/css/components/chat-widget.css" />
-    <link rel="stylesheet" href="/css/components/snackbar.css" />
-    <link rel="stylesheet" href="/css/pages/tra-cuu-tuyen-sinh.css" />
+    <link rel="stylesheet" href="/css/pages/ket-qua-tra-cuu.css" />
   </head>
   <body>
     <!-- HEADER: Topbar + Navbar -->
@@ -381,74 +380,108 @@
     </aside>
 
     <!-- Main Content -->
-    <main class="lookup-page">
-      <!-- Lookup Form Section -->
-      <section class="lookup-form-section">
+    <main class="result-page">
+      <!-- Result Section -->
+      <section class="result-section">
         <div class="container">
-          <div class="lookup-form-card">
-            <h2 class="lookup-form-card__title">TRA CỨU KẾT QUẢ TRÚNG TUYỂN</h2>
-            <p class="lookup-form-card__subtitle">
-              (Thí sinh nhập số CCCD và số báo danh để tra cứu)
-            </p>
+          <!-- Section Header -->
+          <div class="result-header">
+            <span class="result-header__icon">
+              <span class="iconify" data-icon="iconoir:search" data-width="20" data-height="20"></span>
+            </span>
+            <h1 class="result-header__title">THÔNG TIN ĐIỂM THI</h1>
+          </div>
 
-            <form id="lookupForm" class="lookup-form" novalidate>
-              <div class="lookup-form__group">
-                <label for="cccd" class="lookup-form__label">Số CCCD</label>
-                <input
-                  type="text"
-                  id="cccd"
-                  name="cccd"
-                  class="lookup-form__input"
-                  placeholder="Nhập số CCCD"
-                  required
-                />
+          <!-- Result Card -->
+          <div class="result-card">
+            <!-- Student Info -->
+            <div class="result-info">
+              <div class="result-info__header">
+                <span class="result-info__icon">
+                  <span class="iconify" data-icon="mdi:account" data-width="16" data-height="16"></span>
+                </span>
+                <span class="result-info__title">Thông tin thí sinh</span>
               </div>
-
-              <div class="lookup-form__group">
-                <label for="soBaoDanh" class="lookup-form__label"
-                  >Số báo danh</label
-                >
-                <input
-                  type="text"
-                  id="soBaoDanh"
-                  name="soBaoDanh"
-                  class="lookup-form__input"
-                  placeholder="Nhập số báo danh"
-                  required
-                />
-              </div>
-
-              <div class="lookup-form__group">
-                <label for="captcha" class="lookup-form__label"
-                  >Mã xác nhận</label
-                >
-                <div class="lookup-form__captcha-wrapper">
-                  <input
-                    type="text"
-                    id="captcha"
-                    name="captcha"
-                    class="lookup-form__input lookup-form__input--captcha"
-                    placeholder="Nhập kết quả phép tính"
-                    autocomplete="off"
-                  />
-                  <button
-                    type="button"
-                    id="captchaRefresh"
-                    class="lookup-form__captcha-refresh"
-                    aria-label="Làm mới mã xác nhận"
-                  >
-                    <span
-                      class="iconify"
-                      data-icon="mdi:refresh"
-                      data-width="24"
-                      data-height="24"
-                    ></span>
-                  </button>
+              <div class="result-info__content">
+                <div class="result-info__row">
+                  <div class="result-info__col">
+                    <div class="result-info__item">
+                      <span class="result-info__label">Họ tên:</span>
+                      <span class="result-info__value" id="studentName">Nguyễn Văn A</span>
+                    </div>
+                    <div class="result-info__item">
+                      <span class="result-info__label">Số CCCD:</span>
+                      <span class="result-info__value" id="studentCccd">0123456789</span>
+                    </div>
+                  </div>
+                  <div class="result-info__col">
+                    <div class="result-info__item">
+                      <span class="result-info__label">Số báo danh:</span>
+                      <span class="result-info__value" id="studentSbd">HU2025</span>
+                    </div>
+                    <div class="result-info__item">
+                      <span class="result-info__label">Ngành đăng ký:</span>
+                      <span class="result-info__value" id="studentMajor">Tài chính - ngân hàng</span>
+                    </div>
+                  </div>
                 </div>
               </div>
+            </div>
 
-              <button type="submit" class="lookup-form__submit">TRA CỨU</button>
-            </form>
+            <!-- Score Table -->
+            <div class="result-table-wrapper">
+              <table class="result-table">
+                <thead>
+                  <tr>
+                    <th class="result-table__th result-table__th--stt">STT</th>
+                    <th class="result-table__th result-table__th--subject">Môn thi</th>
+                    <th class="result-table__th result-table__th--score">Điểm thi</th>
+                    <th class="result-table__th result-table__th--priority">Điểm ưu tiên khu vực</th>
+                    <th class="result-table__th result-table__th--priority">Điểm ưu tiên đối tượng</th>
+                    <th class="result-table__th result-table__th--note">Ghi chú</th>
+                  </tr>
+                </thead>
+                <tbody id="scoreTableBody">
+                  <tr>
+                    <td class="result-table__td result-table__td--center">1</td>
+                    <td class="result-table__td">Toán</td>
+                    <td class="result-table__td result-table__td--score">8,25</td>
+                    <td class="result-table__td result-table__td--center"></td>
+                    <td class="result-table__td result-table__td--center"></td>
+                    <td class="result-table__td"></td>
+                  </tr>
+                  <tr>
+                    <td class="result-table__td result-table__td--center">2</td>
+                    <td class="result-table__td">Ngữ văn</td>
+                    <td class="result-table__td result-table__td--score">7,50</td>
+                    <td class="result-table__td result-table__td--center"></td>
+                    <td class="result-table__td result-table__td--center"></td>
+                    <td class="result-table__td"></td>
+                  </tr>
+                  <tr>
+                    <td class="result-table__td result-table__td--center">3</td>
+                    <td class="result-table__td">Tiếng Anh</td>
+                    <td class="result-table__td result-table__td--score">8,25</td>
+                    <td class="result-table__td result-table__td--center"></td>
+                    <td class="result-table__td result-table__td--center"></td>
+                    <td class="result-table__td"></td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- Total Score -->
+              <div class="result-total">
+                <span class="result-total__label">Tổng điểm:</span>
+                <span class="result-total__value" id="totalScore">24,00</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Back Button -->
+          <div class="result-actions">
+            <a href="/tra-cuu-tuyen-sinh/" class="result-actions__btn">
+              <span class="iconify" data-icon="mdi:arrow-left" data-width="20" data-height="20"></span>
+              Tra cứu lại
+            </a>
           </div>
         </div>
       </section>
@@ -538,140 +571,21 @@
     <script src="/js/main.js"></script>
     <script src="/js/components/chat-widget.js"></script>
 
-    <!-- Simple Captcha -->
-    <script src="/js/utils/simple-captcha.js"></script>
-
-    <!-- Lookup Form Script -->
+    <!-- Result Page Script -->
     <script>
-      let myCaptcha;
-
-      // Create snackbar element if not exists
-      function initSnackbar() {
-        let snackbar = document.getElementById("snackbar");
-        if (!snackbar) {
-          snackbar = document.createElement("div");
-          snackbar.id = "snackbar";
-          snackbar.className = "snackbar";
-          snackbar.style.display = "none";
-          snackbar.setAttribute("aria-hidden", "true");
-          snackbar.innerHTML = `
-            <span class="snackbar__icon">✓</span>
-            <span class="snackbar__message"></span>
-          `;
-          document.body.appendChild(snackbar);
-        }
-        return snackbar;
-      }
-
-      // Show snackbar function
-      function showSnackbar(message, type = "success") {
-        const snackbar = initSnackbar();
-        const icon = type === "success" ? "✓" : "✕";
-        snackbar.querySelector(".snackbar__icon").textContent = icon;
-        snackbar.querySelector(".snackbar__message").textContent = message;
-        snackbar.className = `snackbar snackbar--${type} snackbar--show`;
-        snackbar.style.display = "";
-        snackbar.setAttribute("aria-hidden", "false");
-
-        // Auto hide after 4 seconds
-        setTimeout(() => {
-          snackbar.classList.remove("snackbar--show");
-          snackbar.style.display = "none";
-          snackbar.setAttribute("aria-hidden", "true");
-        }, 4000);
-      }
-
       document.addEventListener("DOMContentLoaded", function () {
-        // Initialize snackbar
-        initSnackbar();
+        // Get query params
+        const params = new URLSearchParams(window.location.search);
+        const cccd = params.get("cccd");
+        const sbd = params.get("sbd");
 
-        // Get submit button
-        const submitBtn = document.querySelector(".lookup-form__submit");
+        // TODO: Fetch actual data from API using cccd/sbd
+        // For now, display demo data
 
-        // Loading state functions
-        function setLoading(isLoading) {
-          if (submitBtn) {
-            submitBtn.classList.toggle("lookup-form__submit--loading", isLoading);
-            submitBtn.disabled = isLoading;
-          }
+        // If no params, redirect back to lookup page
+        if (!cccd && !sbd) {
+          // window.location.href = "/tra-cuu-tuyen-sinh/";
         }
-
-        // Initialize SimpleCaptcha
-        myCaptcha = new SimpleCaptcha({
-          el: "#captcha",
-          canvasClass: "jCaptchaCanvas",
-          canvasStyle: {
-            width: 100,
-            height: 18,
-            font: "14px Inter, sans-serif",
-            fillStyle: "#343a40",
-            backgroundColor: "#f1f3f5",
-          },
-          callback: function (response, inputElement) {
-            if (response === "success") {
-              const cccd = document.getElementById("cccd").value;
-              const soBaoDanh = document.getElementById("soBaoDanh").value;
-
-              // Show loading state
-              setLoading(true);
-
-              // TODO: Make API call to check result, then redirect to result page
-              // Simulate API call with timeout
-              setTimeout(function () {
-                // Redirect to result page with query params
-                const params = new URLSearchParams();
-                if (cccd) params.append("cccd", cccd);
-                if (soBaoDanh) params.append("sbd", soBaoDanh);
-                window.location.href = "/tra-cuu-tuyen-sinh/ket-qua/?" + params.toString();
-              }, 1500);
-            }
-            if (response === "error") {
-              showSnackbar(
-                "Mã xác nhận không đúng. Vui lòng thử lại.",
-                "error"
-              );
-              inputElement.value = "";
-              myCaptcha.reset();
-            }
-          },
-        });
-
-        // Refresh button handler
-        document
-          .getElementById("captchaRefresh")
-          ?.addEventListener("click", function () {
-            myCaptcha.reset();
-          });
-
-        // Form submission handler
-        document
-          .getElementById("lookupForm")
-          ?.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            const cccd = document.getElementById("cccd");
-            const soBaoDanh = document.getElementById("soBaoDanh");
-            const captcha = document.getElementById("captcha");
-
-            const hasCccd = cccd && cccd.value.trim();
-            const hasSoBaoDanh = soBaoDanh && soBaoDanh.value.trim();
-
-            // Validate: phải nhập ít nhất 1 trong 2 (CCCD hoặc Số báo danh)
-            if (!hasCccd && !hasSoBaoDanh) {
-              showSnackbar("Vui lòng nhập số CCCD hoặc số báo danh", "error");
-              cccd?.focus();
-              return;
-            }
-
-            // Validate Captcha
-            if (!captcha || !captcha.value.trim()) {
-              showSnackbar("Vui lòng nhập mã xác nhận", "error");
-              captcha?.focus();
-              return;
-            }
-
-            myCaptcha.validate();
-          });
       });
     </script>
   </body>
