@@ -84,7 +84,7 @@ const NAVBAR_MENU = [
         path: "/dai-hoc/",
         children: [
           {
-            label: "Khoa Tài Chínhhh",
+            label: "Khoa Tài Chính",
             path: "/tai-chinh/",
             children: [
               {

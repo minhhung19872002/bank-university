@@ -60,75 +60,6 @@
 }
 
 /* ============================================
-   Mobile Hero (Home page)
-   ============================================ */
-
-.hero-mobile {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	pointer-events: none;
-}
-
-.hero-mobile__content {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	height: 100%;
-	padding-bottom: 2.5rem;
-	max-width: 32rem;
-	color: #fafafa;
-	pointer-events: auto;
-}
-
-.hero-mobile__btn {
-	margin-top: 1.5rem;
-	background-color: var(--color-secondary);
-	border-color: var(--color-secondary);
-	color: var(--color-on-secondary);
-	border-radius: var(--radius-md);
-	padding: 0.75rem 1.25rem;
-	display: inline-flex;
-	align-items: center;
-	gap: 0.5rem;
-	font-family: var(--font-primary);
-	font-size: var(--fs-200);
-	text-transform: uppercase;
-	align-self: flex-start;
-	white-space: nowrap;
-}
-
-.hero-mobile__btn:hover,
-.hero-mobile__btn:focus {
-	background-color: #1a294f;
-	border-color: #1a294f;
-	color: var(--color-on-secondary);
-}
-
-.hero-mobile__fab-group {
-	position: absolute;
-	right: 1rem;
-	bottom: 5.5rem;
-	display: flex;
-	flex-direction: column;
-	gap: 2.4rem;
-}
-
-.hero-mobile__fab {
-	width: 3.75rem;
-	height: 3.75rem;
-	border-radius: 999px;
-	border: none;
-	background-color: transparent;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-size: cover;
-	box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.25);
-}
-
-/* ============================================
    DAI-HOC PAGE VARIANT
    ============================================ */
 
@@ -175,21 +106,8 @@
 
 /* Tablet */
 @media (max-width: 1199.98px) {
-	.hero-mobile__content {
-		max-width: 42rem;
-		padding-bottom: 3.5rem;
-	}
-
-	.hero-mobile__fab-group {
-		bottom: 6.5rem;
-	}
-
 	.feature-cards-section {
 		padding: 4.8rem 0;
-	}
-
-	.feature-cards-section__subtitle {
-		font-size: var(--fs-350);
 	}
 
 	.feature-cards-section__title {
@@ -252,11 +170,6 @@
 
 	.feature-cards-section {
 		padding: 4rem 0;
-	}
-
-	.feature-cards-section__subtitle {
-		font-size: var(--fs-300);
-		text-align: left;
 	}
 
 	.feature-cards-section__title {
