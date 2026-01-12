@@ -525,9 +525,6 @@ function initFilterButtons() {
 }
 
 // Event countdown timer
-// Usage: <div class="event-countdown" data-target-date="2025-10-01">
-// Formats: "2025-10-01", "2025-10-01T09:00:00", "October 1, 2025"
-// When countdown reaches 0, it stops and displays 0 - user needs to update data-target-date
 function initEventCountdown() {
     const countdownContainers = document.querySelectorAll('.event-countdown');
     if (!countdownContainers.length) return;

@@ -1,29 +1,4 @@
-/**
- * Reusable Pagination Utility
- *
- * Usage:
- * const paginator = createPagination({
- *     items: document.querySelectorAll('.item'),
- *     paginationNav: document.querySelector('.pagination'),
- *     itemsPerPage: 9,
- *     scrollTarget: document.querySelector('.section'),
- *     scrollOffset: 140, // Offset for sticky header (header height + padding)
- *     selectors: {
- *         prevBtn: '.pagination__btn--prev',
- *         nextBtn: '.pagination__btn--next',
- *         pageItem: '.pagination__item'
- *     },
- *     classes: { active: 'pagination__item--active' },
- *     createPageElement: (pageNum, isActive) => { return element; },
- *     onPageChange: (visibleItems, startIndex, endIndex, items) => { }
- * });
- *
- * // Public API:
- * paginator.setItems(newItems); // Update items (e.g., after filtering)
- * paginator.goToPage(2);        // Go to specific page
- * paginator.getCurrentPage();   // Get current page number
- * paginator.refresh();          // Refresh pagination display
- */
+// Pagination utility
 
 function createPagination(options) {
 	const {

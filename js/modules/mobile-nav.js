@@ -71,8 +71,7 @@ function initMobileNav() {
             e.target.closest(".mobile-nav__link") ||
             e.target.closest(".mobile-nav__submenu-link");
         if (link) {
-            // Don't close if it's just a toggle button click (handled separately)
-            // But toggle button is outside the link usually, or we stop propagation.
+            // Close nav when link clicked
             closeNav();
         }
     });

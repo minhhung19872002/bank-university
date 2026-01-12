@@ -1,22 +1,4 @@
-/**
- * Gallery Slider Module
- * Reusable horizontal slider with drag/swipe support for mobile and desktop
- *
- * Usage:
- * initGallerySlider({
- *   gallerySelector: '.your-gallery',
- *   prevBtnSelector: '.your-prev-btn',    // optional
- *   nextBtnSelector: '.your-next-btn',    // optional
- *   itemSelector: '.your-item',           // optional, default: first child class
- *   gap: 12,                              // optional, gap between items in px
- *   swipeThreshold: 50,                   // optional, min distance to trigger swipe
- *   mode: 'snap'                          // optional: 'snap' or 'simple'
- * });
- *
- * Modes:
- * - 'snap': Snap to item after drag/swipe (1 item per swipe)
- * - 'simple': Only prev/next buttons, no drag functionality
- */
+// Gallery Slider - horizontal slider with drag/swipe support
 
 function initGallerySlider(options = {}) {
     const {

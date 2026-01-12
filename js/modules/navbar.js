@@ -37,21 +37,18 @@ function isPathActive(itemPath, currentFull) {
         return itemPure === currentPure;
     }
 
-    // If item has NO hash, match against the base path of current URL
-    // This allows Parent (/page/) to be active when Child (/page/#section) is active
+    // No hash - match base path only
     const itemBase = normalizePathForComparison(itemPure);
     const currentBase = normalizePathForComparison(currentPure);
 
     if (itemBase === currentBase) return true;
 
-    // Check if item path is a parent/ancestor of current path
-    // Example: /tin-tuyen-sinh/ should be active when viewing /tra-cuu-tuyen-sinh/ket-qua/
-    // because current path STARTS WITH item path
+    // Check parent/ancestor path
     if (itemBase !== '/' && currentBase.startsWith(itemBase)) {
         return true;
     }
 
-    // Check Router config for relationships (e.g. su-kien-chi-tiet -> su-kien)
+    // Check Router config
     if (typeof Router !== 'undefined' && typeof ROUTES_CONFIG !== 'undefined') {
         const parentRoute = Router.findParentRoute(currentFull);
         if (
@@ -65,17 +62,11 @@ function isPathActive(itemPath, currentFull) {
     return false;
 }
 
-// Helper to resolve which children should be visually active
-// Resolves conflict when a parent path is also present as a child item
+// Get active child paths
 function getActiveChildPaths(children, currentPath) {
-    // 1. Find all potentially active children
     const activeChildren = children.filter((child) =>
         isPathActive(child.path, currentPath)
     );
-
-    // 2. Filter out those that are ancestors of others in the list
-    // (This heuristic might need adjustment if hash-based nesting implies ancestor relationship differently,
-    // but for now, we rely on the generic check)
     return activeChildren.map((c) => c.path);
 }
 
@@ -381,9 +372,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     timer = setTimeout(hideMenu, 200); // 200ms delay to bridge gaps
                 };
 
-                // Attach ONLY to the main container (li.dropdown)
-                // This relies on 'mouseleave' not firing when moving to children (a, ul, etc)
-                // which is standard DOM behavior.
+                // Hover events
                 dropdown.addEventListener('mouseenter', startShow);
                 dropdown.addEventListener('mouseleave', startHide);
             });
